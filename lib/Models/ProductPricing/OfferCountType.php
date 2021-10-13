@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OfferCountType Class Doc Comment.
  *
-
  * @description The total number of offers for the specified condition and fulfillment channel.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OfferCountType implements ModelInterface, ArrayAccess
-{
+class OfferCountType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class OfferCountType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'condition' => 'string',
-'fulfillment_channel' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\FulfillmentChannelType',
-'offer_count' => 'int',    ];
+        'condition'           => 'string',
+        'fulfillment_channel' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\FulfillmentChannelType',
+        'offer_count'         => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class OfferCountType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'condition' => null,
-'fulfillment_channel' => null,
-'offer_count' => 'int32',    ];
+        'condition'           => null,
+        'fulfillment_channel' => null,
+        'offer_count'         => 'int32',];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class OfferCountType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'condition' => 'condition',
-'fulfillment_channel' => 'fulfillmentChannel',
-'offer_count' => 'OfferCount',    ];
+        'condition'           => 'condition',
+        'fulfillment_channel' => 'fulfillmentChannel',
+        'offer_count'         => 'OfferCount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class OfferCountType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'condition' => 'setCondition',
-'fulfillment_channel' => 'setFulfillmentChannel',
-'offer_count' => 'setOfferCount',    ];
+        'condition'           => 'setCondition',
+        'fulfillment_channel' => 'setFulfillmentChannel',
+        'offer_count'         => 'setOfferCount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class OfferCountType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'condition' => 'getCondition',
-'fulfillment_channel' => 'getFulfillmentChannel',
-'offer_count' => 'getOfferCount',    ];
+        'condition'           => 'getCondition',
+        'fulfillment_channel' => 'getFulfillmentChannel',
+        'offer_count'         => 'getOfferCount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
         $this->container['fulfillment_channel'] = isset($data['fulfillment_channel']) ? $data['fulfillment_channel'] : null;
         $this->container['offer_count'] = isset($data['offer_count']) ? $data['offer_count'] : null;
@@ -177,8 +168,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,8 +180,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -200,8 +189,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->container['condition'];
     }
 
@@ -212,8 +200,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->container['condition'] = $condition;
 
         return $this;
@@ -222,22 +209,20 @@ class OfferCountType implements ModelInterface, ArrayAccess
     /**
      * Gets fulfillment_channel.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\FulfillmentChannelType
+     * @return FulfillmentChannelType
      */
-    public function getFulfillmentChannel()
-    {
+    public function getFulfillmentChannel() {
         return $this->container['fulfillment_channel'];
     }
 
     /**
      * Sets fulfillment_channel.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\FulfillmentChannelType $fulfillment_channel fulfillment_channel
+     * @param FulfillmentChannelType $fulfillment_channel fulfillment_channel
      *
      * @return $this
      */
-    public function setFulfillmentChannel($fulfillment_channel)
-    {
+    public function setFulfillmentChannel($fulfillment_channel) {
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
         return $this;
@@ -248,8 +233,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getOfferCount()
-    {
+    public function getOfferCount() {
         return $this->container['offer_count'];
     }
 
@@ -260,8 +244,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOfferCount($offer_count)
-    {
+    public function setOfferCount($offer_count) {
         $this->container['offer_count'] = $offer_count;
 
         return $this;
@@ -274,8 +257,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class OfferCountType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

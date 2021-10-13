@@ -1,32 +1,33 @@
 <?php
 
-namespace ClouSale\AmazonSellingPartnerAPI\Helpers;
+namespace SellerLegend\AmazonSellingPartnerAPI\Helpers;
 
-use ClouSale\AmazonSellingPartnerAPI\ApiException;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
-use ClouSale\AmazonSellingPartnerAPI\Signature;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Query;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Utils;
+use RuntimeException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Signature;
+use stdClass;
 
 /**
  * Trait SellingPartnerApiRequest.
  *
  * @author Stefan Neuhaus / ClouSale
  */
-trait SellingPartnerApiRequest
-{
+trait SellingPartnerApiRequest {
     private function generateRequest(
-        bool $multipart,
-        array $formParams,
-        array $queryParams,
+        bool   $multipart,
+        array  $formParams,
+        array  $queryParams,
         string $resourcePath,
-        array $headerParams,
+        array  $headerParams,
         string $method,
-        $httpBody
+               $httpBody
     ): Request {
         if (null != $formParams) {
             ksort($formParams);
@@ -51,7 +52,7 @@ trait SellingPartnerApiRequest
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
             // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && 'application/json' === $headers['Content-Type']) {
+            if ($httpBody instanceof stdClass && 'application/json' === $headers['Content-Type']) {
                 $httpBody = Utils::jsonEncode($httpBody);
             }
         } elseif (count($formParams) > 0) {
@@ -59,7 +60,7 @@ trait SellingPartnerApiRequest
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
-                        'name' => $formParamName,
+                        'name'     => $formParamName,
                         'contents' => $formParamValue,
                     ];
                 }
@@ -79,7 +80,7 @@ trait SellingPartnerApiRequest
             $method,
             $resourcePath,
             $query,
-            (string) $httpBody,
+            (string)$httpBody,
         );
         $headers = array_merge(
             $headerParams,
@@ -89,7 +90,7 @@ trait SellingPartnerApiRequest
 
         return new Request(
             $method,
-            $this->config->getHost().$resourcePath.($query ? "?{$query}" : ''),
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -98,8 +99,7 @@ trait SellingPartnerApiRequest
     /**
      * @throws ApiException
      */
-    private function sendRequest(Request $request, string $returnType): array
-    {
+    private function sendRequest(Request $request, string $returnType): array {
         try {
             $options = $this->createHttpClientOption();
             try {
@@ -155,17 +155,16 @@ trait SellingPartnerApiRequest
     /**
      * Create http client option.
      *
-     * @throws \RuntimeException on file opening failure
-     *
      * @return array of http client options
+     * @throws RuntimeException on file opening failure
+     *
      */
-    protected function createHttpClientOption(): array
-    {
+    protected function createHttpClientOption(): array {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
+                throw new RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 
@@ -173,12 +172,11 @@ trait SellingPartnerApiRequest
     }
 
     /**
+     * @return mixed
      * @throws ApiException
      *
-     * @return mixed
      */
-    private function sendRequestAsync(Request $request, string $returnType)
-    {
+    private function sendRequestAsync(Request $request, string $returnType) {
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(

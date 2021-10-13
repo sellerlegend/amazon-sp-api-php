@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Address Class Doc Comment.
  *
-
  * @description The postal address information.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Address implements ModelInterface, ArrayAccess
-{
+class Address implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,17 +44,17 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressName',
-'address_line1' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine1',
-'address_line2' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine2',
-'address_line3' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine3',
-'district_or_county' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DistrictOrCounty',
-'email' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\EmailAddress',
-'city' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\City',
-'state_or_province_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\StateOrProvinceCode',
-'postal_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PostalCode',
-'country_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CountryCode',
-'phone' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PhoneNumber',    ];
+        'name'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressName',
+        'address_line1'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine1',
+        'address_line2'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine2',
+        'address_line3'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine3',
+        'district_or_county'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DistrictOrCounty',
+        'email'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\EmailAddress',
+        'city'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\City',
+        'state_or_province_code' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\StateOrProvinceCode',
+        'postal_code'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PostalCode',
+        'country_code'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CountryCode',
+        'phone'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PhoneNumber',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -64,25 +62,24 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'address_line1' => null,
-'address_line2' => null,
-'address_line3' => null,
-'district_or_county' => null,
-'email' => null,
-'city' => null,
-'state_or_province_code' => null,
-'postal_code' => null,
-'country_code' => null,
-'phone' => null,    ];
+        'name'                   => null,
+        'address_line1'          => null,
+        'address_line2'          => null,
+        'address_line3'          => null,
+        'district_or_county'     => null,
+        'email'                  => null,
+        'city'                   => null,
+        'state_or_province_code' => null,
+        'postal_code'            => null,
+        'country_code'           => null,
+        'phone'                  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -91,8 +88,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -103,17 +99,17 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-'address_line1' => 'AddressLine1',
-'address_line2' => 'AddressLine2',
-'address_line3' => 'AddressLine3',
-'district_or_county' => 'DistrictOrCounty',
-'email' => 'Email',
-'city' => 'City',
-'state_or_province_code' => 'StateOrProvinceCode',
-'postal_code' => 'PostalCode',
-'country_code' => 'CountryCode',
-'phone' => 'Phone',    ];
+        'name'                   => 'Name',
+        'address_line1'          => 'AddressLine1',
+        'address_line2'          => 'AddressLine2',
+        'address_line3'          => 'AddressLine3',
+        'district_or_county'     => 'DistrictOrCounty',
+        'email'                  => 'Email',
+        'city'                   => 'City',
+        'state_or_province_code' => 'StateOrProvinceCode',
+        'postal_code'            => 'PostalCode',
+        'country_code'           => 'CountryCode',
+        'phone'                  => 'Phone',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -121,17 +117,17 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'address_line1' => 'setAddressLine1',
-'address_line2' => 'setAddressLine2',
-'address_line3' => 'setAddressLine3',
-'district_or_county' => 'setDistrictOrCounty',
-'email' => 'setEmail',
-'city' => 'setCity',
-'state_or_province_code' => 'setStateOrProvinceCode',
-'postal_code' => 'setPostalCode',
-'country_code' => 'setCountryCode',
-'phone' => 'setPhone',    ];
+        'name'                   => 'setName',
+        'address_line1'          => 'setAddressLine1',
+        'address_line2'          => 'setAddressLine2',
+        'address_line3'          => 'setAddressLine3',
+        'district_or_county'     => 'setDistrictOrCounty',
+        'email'                  => 'setEmail',
+        'city'                   => 'setCity',
+        'state_or_province_code' => 'setStateOrProvinceCode',
+        'postal_code'            => 'setPostalCode',
+        'country_code'           => 'setCountryCode',
+        'phone'                  => 'setPhone',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -139,17 +135,17 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'address_line1' => 'getAddressLine1',
-'address_line2' => 'getAddressLine2',
-'address_line3' => 'getAddressLine3',
-'district_or_county' => 'getDistrictOrCounty',
-'email' => 'getEmail',
-'city' => 'getCity',
-'state_or_province_code' => 'getStateOrProvinceCode',
-'postal_code' => 'getPostalCode',
-'country_code' => 'getCountryCode',
-'phone' => 'getPhone',    ];
+        'name'                   => 'getName',
+        'address_line1'          => 'getAddressLine1',
+        'address_line2'          => 'getAddressLine2',
+        'address_line3'          => 'getAddressLine3',
+        'district_or_county'     => 'getDistrictOrCounty',
+        'email'                  => 'getEmail',
+        'city'                   => 'getCity',
+        'state_or_province_code' => 'getStateOrProvinceCode',
+        'postal_code'            => 'getPostalCode',
+        'country_code'           => 'getCountryCode',
+        'phone'                  => 'getPhone',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -157,8 +153,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -167,8 +162,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -177,8 +171,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -187,8 +180,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -205,8 +197,7 @@ class Address implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
         $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
@@ -225,8 +216,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['name']) {
@@ -260,30 +250,27 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets name.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressName
+     * @return AddressName
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
     /**
      * Sets name.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressName $name name
+     * @param AddressName $name name
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -292,22 +279,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets address_line1.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine1
+     * @return AddressLine1
      */
-    public function getAddressLine1()
-    {
+    public function getAddressLine1() {
         return $this->container['address_line1'];
     }
 
     /**
      * Sets address_line1.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine1 $address_line1 address_line1
+     * @param AddressLine1 $address_line1 address_line1
      *
      * @return $this
      */
-    public function setAddressLine1($address_line1)
-    {
+    public function setAddressLine1($address_line1) {
         $this->container['address_line1'] = $address_line1;
 
         return $this;
@@ -316,22 +301,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets address_line2.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine2
+     * @return AddressLine2
      */
-    public function getAddressLine2()
-    {
+    public function getAddressLine2() {
         return $this->container['address_line2'];
     }
 
     /**
      * Sets address_line2.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine2 $address_line2 address_line2
+     * @param AddressLine2 $address_line2 address_line2
      *
      * @return $this
      */
-    public function setAddressLine2($address_line2)
-    {
+    public function setAddressLine2($address_line2) {
         $this->container['address_line2'] = $address_line2;
 
         return $this;
@@ -340,22 +323,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets address_line3.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine3
+     * @return AddressLine3
      */
-    public function getAddressLine3()
-    {
+    public function getAddressLine3() {
         return $this->container['address_line3'];
     }
 
     /**
      * Sets address_line3.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AddressLine3 $address_line3 address_line3
+     * @param AddressLine3 $address_line3 address_line3
      *
      * @return $this
      */
-    public function setAddressLine3($address_line3)
-    {
+    public function setAddressLine3($address_line3) {
         $this->container['address_line3'] = $address_line3;
 
         return $this;
@@ -364,22 +345,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets district_or_county.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DistrictOrCounty
+     * @return DistrictOrCounty
      */
-    public function getDistrictOrCounty()
-    {
+    public function getDistrictOrCounty() {
         return $this->container['district_or_county'];
     }
 
     /**
      * Sets district_or_county.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DistrictOrCounty $district_or_county district_or_county
+     * @param DistrictOrCounty $district_or_county district_or_county
      *
      * @return $this
      */
-    public function setDistrictOrCounty($district_or_county)
-    {
+    public function setDistrictOrCounty($district_or_county) {
         $this->container['district_or_county'] = $district_or_county;
 
         return $this;
@@ -388,22 +367,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets email.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\EmailAddress
+     * @return EmailAddress
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->container['email'];
     }
 
     /**
      * Sets email.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\EmailAddress $email email
+     * @param EmailAddress $email email
      *
      * @return $this
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->container['email'] = $email;
 
         return $this;
@@ -412,22 +389,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets city.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\City
+     * @return City
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->container['city'];
     }
 
     /**
      * Sets city.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\City $city city
+     * @param City $city city
      *
      * @return $this
      */
-    public function setCity($city)
-    {
+    public function setCity($city) {
         $this->container['city'] = $city;
 
         return $this;
@@ -436,22 +411,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets state_or_province_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\StateOrProvinceCode
+     * @return StateOrProvinceCode
      */
-    public function getStateOrProvinceCode()
-    {
+    public function getStateOrProvinceCode() {
         return $this->container['state_or_province_code'];
     }
 
     /**
      * Sets state_or_province_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\StateOrProvinceCode $state_or_province_code state_or_province_code
+     * @param StateOrProvinceCode $state_or_province_code state_or_province_code
      *
      * @return $this
      */
-    public function setStateOrProvinceCode($state_or_province_code)
-    {
+    public function setStateOrProvinceCode($state_or_province_code) {
         $this->container['state_or_province_code'] = $state_or_province_code;
 
         return $this;
@@ -460,22 +433,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets postal_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PostalCode
+     * @return PostalCode
      */
-    public function getPostalCode()
-    {
+    public function getPostalCode() {
         return $this->container['postal_code'];
     }
 
     /**
      * Sets postal_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PostalCode $postal_code postal_code
+     * @param PostalCode $postal_code postal_code
      *
      * @return $this
      */
-    public function setPostalCode($postal_code)
-    {
+    public function setPostalCode($postal_code) {
         $this->container['postal_code'] = $postal_code;
 
         return $this;
@@ -484,22 +455,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets country_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CountryCode
+     * @return CountryCode
      */
-    public function getCountryCode()
-    {
+    public function getCountryCode() {
         return $this->container['country_code'];
     }
 
     /**
      * Sets country_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CountryCode $country_code country_code
+     * @param CountryCode $country_code country_code
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
-    {
+    public function setCountryCode($country_code) {
         $this->container['country_code'] = $country_code;
 
         return $this;
@@ -508,22 +477,20 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Gets phone.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PhoneNumber
+     * @return PhoneNumber
      */
-    public function getPhone()
-    {
+    public function getPhone() {
         return $this->container['phone'];
     }
 
     /**
      * Sets phone.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PhoneNumber $phone phone
+     * @param PhoneNumber $phone phone
      *
      * @return $this
      */
-    public function setPhone($phone)
-    {
+    public function setPhone($phone) {
         $this->container['phone'] = $phone;
 
         return $this;
@@ -536,8 +503,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -548,21 +514,19 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -577,8 +541,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -587,8 +550,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

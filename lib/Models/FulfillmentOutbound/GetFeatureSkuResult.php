@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetFeatureSkuResult Class Doc Comment.
  *
-
  * @description The payload for the getFeatureSKU operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetFeatureSkuResult implements ModelInterface, ArrayAccess
-{
+class GetFeatureSkuResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'marketplace_id' => 'string',
-'feature_name' => 'string',
-'is_eligible' => 'bool',
-'ineligible_reasons' => 'string[]',
-'sku_info' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku',    ];
+        'marketplace_id'     => 'string',
+        'feature_name'       => 'string',
+        'is_eligible'        => 'bool',
+        'ineligible_reasons' => 'string[]',
+        'sku_info'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'marketplace_id' => null,
-'feature_name' => null,
-'is_eligible' => null,
-'ineligible_reasons' => null,
-'sku_info' => null,    ];
+        'marketplace_id'     => null,
+        'feature_name'       => null,
+        'is_eligible'        => null,
+        'ineligible_reasons' => null,
+        'sku_info'           => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplace_id' => 'marketplaceId',
-'feature_name' => 'featureName',
-'is_eligible' => 'isEligible',
-'ineligible_reasons' => 'ineligibleReasons',
-'sku_info' => 'skuInfo',    ];
+        'marketplace_id'     => 'marketplaceId',
+        'feature_name'       => 'featureName',
+        'is_eligible'        => 'isEligible',
+        'ineligible_reasons' => 'ineligibleReasons',
+        'sku_info'           => 'skuInfo',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-'feature_name' => 'setFeatureName',
-'is_eligible' => 'setIsEligible',
-'ineligible_reasons' => 'setIneligibleReasons',
-'sku_info' => 'setSkuInfo',    ];
+        'marketplace_id'     => 'setMarketplaceId',
+        'feature_name'       => 'setFeatureName',
+        'is_eligible'        => 'setIsEligible',
+        'ineligible_reasons' => 'setIneligibleReasons',
+        'sku_info'           => 'setSkuInfo',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'marketplace_id' => 'getMarketplaceId',
-'feature_name' => 'getFeatureName',
-'is_eligible' => 'getIsEligible',
-'ineligible_reasons' => 'getIneligibleReasons',
-'sku_info' => 'getSkuInfo',    ];
+        'marketplace_id'     => 'getMarketplaceId',
+        'feature_name'       => 'getFeatureName',
+        'is_eligible'        => 'getIsEligible',
+        'ineligible_reasons' => 'getIneligibleReasons',
+        'sku_info'           => 'getSkuInfo',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['feature_name'] = isset($data['feature_name']) ? $data['feature_name'] : null;
         $this->container['is_eligible'] = isset($data['is_eligible']) ? $data['is_eligible'] : null;
@@ -189,8 +180,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['marketplace_id']) {
@@ -212,8 +202,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -222,8 +211,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -234,8 +222,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -246,8 +233,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeatureName()
-    {
+    public function getFeatureName() {
         return $this->container['feature_name'];
     }
 
@@ -258,8 +244,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeatureName($feature_name)
-    {
+    public function setFeatureName($feature_name) {
         $this->container['feature_name'] = $feature_name;
 
         return $this;
@@ -270,8 +255,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsEligible()
-    {
+    public function getIsEligible() {
         return $this->container['is_eligible'];
     }
 
@@ -282,8 +266,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsEligible($is_eligible)
-    {
+    public function setIsEligible($is_eligible) {
         $this->container['is_eligible'] = $is_eligible;
 
         return $this;
@@ -294,8 +277,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getIneligibleReasons()
-    {
+    public function getIneligibleReasons() {
         return $this->container['ineligible_reasons'];
     }
 
@@ -306,8 +288,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIneligibleReasons($ineligible_reasons)
-    {
+    public function setIneligibleReasons($ineligible_reasons) {
         $this->container['ineligible_reasons'] = $ineligible_reasons;
 
         return $this;
@@ -316,22 +297,20 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
     /**
      * Gets sku_info.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku
+     * @return FeatureSku
      */
-    public function getSkuInfo()
-    {
+    public function getSkuInfo() {
         return $this->container['sku_info'];
     }
 
     /**
      * Sets sku_info.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku $sku_info sku_info
+     * @param FeatureSku $sku_info sku_info
      *
      * @return $this
      */
-    public function setSkuInfo($sku_info)
-    {
+    public function setSkuInfo($sku_info) {
         $this->container['sku_info'] = $sku_info;
 
         return $this;
@@ -344,8 +323,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -356,21 +334,19 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -385,8 +361,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -395,8 +370,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

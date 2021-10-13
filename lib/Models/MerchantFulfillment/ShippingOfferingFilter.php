@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ShippingOfferingFilter Class Doc Comment.
  *
-
  * @description Filter for use when requesting eligible shipping services.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ShippingOfferingFilter implements ModelInterface, ArrayAccess
-{
+class ShippingOfferingFilter implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'include_packing_slip_with_label' => 'bool',
-'include_complex_shipping_options' => 'bool',
-'carrier_will_pick_up' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption',
-'delivery_experience' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption',    ];
+        'include_packing_slip_with_label'  => 'bool',
+        'include_complex_shipping_options' => 'bool',
+        'carrier_will_pick_up'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption',
+        'delivery_experience'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,18 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'include_packing_slip_with_label' => null,
-'include_complex_shipping_options' => null,
-'carrier_will_pick_up' => null,
-'delivery_experience' => null,    ];
+        'include_packing_slip_with_label'  => null,
+        'include_complex_shipping_options' => null,
+        'carrier_will_pick_up'             => null,
+        'delivery_experience'              => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +76,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +87,10 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'include_packing_slip_with_label' => 'IncludePackingSlipWithLabel',
-'include_complex_shipping_options' => 'IncludeComplexShippingOptions',
-'carrier_will_pick_up' => 'CarrierWillPickUp',
-'delivery_experience' => 'DeliveryExperience',    ];
+        'include_packing_slip_with_label'  => 'IncludePackingSlipWithLabel',
+        'include_complex_shipping_options' => 'IncludeComplexShippingOptions',
+        'carrier_will_pick_up'             => 'CarrierWillPickUp',
+        'delivery_experience'              => 'DeliveryExperience',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +98,10 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
-'include_complex_shipping_options' => 'setIncludeComplexShippingOptions',
-'carrier_will_pick_up' => 'setCarrierWillPickUp',
-'delivery_experience' => 'setDeliveryExperience',    ];
+        'include_packing_slip_with_label'  => 'setIncludePackingSlipWithLabel',
+        'include_complex_shipping_options' => 'setIncludeComplexShippingOptions',
+        'carrier_will_pick_up'             => 'setCarrierWillPickUp',
+        'delivery_experience'              => 'setDeliveryExperience',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +109,10 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'include_packing_slip_with_label' => 'getIncludePackingSlipWithLabel',
-'include_complex_shipping_options' => 'getIncludeComplexShippingOptions',
-'carrier_will_pick_up' => 'getCarrierWillPickUp',
-'delivery_experience' => 'getDeliveryExperience',    ];
+        'include_packing_slip_with_label'  => 'getIncludePackingSlipWithLabel',
+        'include_complex_shipping_options' => 'getIncludeComplexShippingOptions',
+        'carrier_will_pick_up'             => 'getCarrierWillPickUp',
+        'delivery_experience'              => 'getDeliveryExperience',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +120,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +129,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +138,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +147,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +164,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['include_packing_slip_with_label'] = isset($data['include_packing_slip_with_label']) ? $data['include_packing_slip_with_label'] : null;
         $this->container['include_complex_shipping_options'] = isset($data['include_complex_shipping_options']) ? $data['include_complex_shipping_options'] : null;
         $this->container['carrier_will_pick_up'] = isset($data['carrier_will_pick_up']) ? $data['carrier_will_pick_up'] : null;
@@ -183,8 +176,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +188,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +197,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIncludePackingSlipWithLabel()
-    {
+    public function getIncludePackingSlipWithLabel() {
         return $this->container['include_packing_slip_with_label'];
     }
 
@@ -218,8 +208,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIncludePackingSlipWithLabel($include_packing_slip_with_label)
-    {
+    public function setIncludePackingSlipWithLabel($include_packing_slip_with_label) {
         $this->container['include_packing_slip_with_label'] = $include_packing_slip_with_label;
 
         return $this;
@@ -230,8 +219,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIncludeComplexShippingOptions()
-    {
+    public function getIncludeComplexShippingOptions() {
         return $this->container['include_complex_shipping_options'];
     }
 
@@ -242,8 +230,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIncludeComplexShippingOptions($include_complex_shipping_options)
-    {
+    public function setIncludeComplexShippingOptions($include_complex_shipping_options) {
         $this->container['include_complex_shipping_options'] = $include_complex_shipping_options;
 
         return $this;
@@ -252,22 +239,20 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
     /**
      * Gets carrier_will_pick_up.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption
+     * @return CarrierWillPickUpOption
      */
-    public function getCarrierWillPickUp()
-    {
+    public function getCarrierWillPickUp() {
         return $this->container['carrier_will_pick_up'];
     }
 
     /**
      * Sets carrier_will_pick_up.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption $carrier_will_pick_up carrier_will_pick_up
+     * @param CarrierWillPickUpOption $carrier_will_pick_up carrier_will_pick_up
      *
      * @return $this
      */
-    public function setCarrierWillPickUp($carrier_will_pick_up)
-    {
+    public function setCarrierWillPickUp($carrier_will_pick_up) {
         $this->container['carrier_will_pick_up'] = $carrier_will_pick_up;
 
         return $this;
@@ -276,22 +261,20 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_experience.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption
+     * @return DeliveryExperienceOption
      */
-    public function getDeliveryExperience()
-    {
+    public function getDeliveryExperience() {
         return $this->container['delivery_experience'];
     }
 
     /**
      * Sets delivery_experience.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption $delivery_experience delivery_experience
+     * @param DeliveryExperienceOption $delivery_experience delivery_experience
      *
      * @return $this
      */
-    public function setDeliveryExperience($delivery_experience)
-    {
+    public function setDeliveryExperience($delivery_experience) {
         $this->container['delivery_experience'] = $delivery_experience;
 
         return $this;
@@ -304,8 +287,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +298,19 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +325,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +334,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

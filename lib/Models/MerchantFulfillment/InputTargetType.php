@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * InputTargetType Class Doc Comment.
  *
-
  * @description Indicates whether the additional seller input is at the item or shipment level.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InputTargetType
-{
+class InputTargetType {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class InputTargetType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SHIPMENT_LEVEL,
-self::ITEM_LEVEL,        ];
+            self::ITEM_LEVEL,];
     }
 }

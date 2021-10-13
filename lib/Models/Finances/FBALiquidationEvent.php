@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FBALiquidationEvent Class Doc Comment.
  *
-
  * @description A payment event for Fulfillment by Amazon (FBA) inventory liquidation. This event is used only in the US marketplace.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FBALiquidationEvent implements ModelInterface, ArrayAccess
-{
+class FBALiquidationEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +45,10 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'original_removal_order_id' => 'string',
-'liquidation_proceeds_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'liquidation_fee_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'posted_date'                 => '\DateTime',
+        'original_removal_order_id'   => 'string',
+        'liquidation_proceeds_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'liquidation_fee_amount'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'posted_date' => null,
-'original_removal_order_id' => null,
-'liquidation_proceeds_amount' => null,
-'liquidation_fee_amount' => null,    ];
+        'posted_date'                 => null,
+        'original_removal_order_id'   => null,
+        'liquidation_proceeds_amount' => null,
+        'liquidation_fee_amount'      => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'posted_date' => 'PostedDate',
-'original_removal_order_id' => 'OriginalRemovalOrderId',
-'liquidation_proceeds_amount' => 'LiquidationProceedsAmount',
-'liquidation_fee_amount' => 'LiquidationFeeAmount',    ];
+        'posted_date'                 => 'PostedDate',
+        'original_removal_order_id'   => 'OriginalRemovalOrderId',
+        'liquidation_proceeds_amount' => 'LiquidationProceedsAmount',
+        'liquidation_fee_amount'      => 'LiquidationFeeAmount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
-'original_removal_order_id' => 'setOriginalRemovalOrderId',
-'liquidation_proceeds_amount' => 'setLiquidationProceedsAmount',
-'liquidation_fee_amount' => 'setLiquidationFeeAmount',    ];
+        'posted_date'                 => 'setPostedDate',
+        'original_removal_order_id'   => 'setOriginalRemovalOrderId',
+        'liquidation_proceeds_amount' => 'setLiquidationProceedsAmount',
+        'liquidation_fee_amount'      => 'setLiquidationFeeAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'posted_date' => 'getPostedDate',
-'original_removal_order_id' => 'getOriginalRemovalOrderId',
-'liquidation_proceeds_amount' => 'getLiquidationProceedsAmount',
-'liquidation_fee_amount' => 'getLiquidationFeeAmount',    ];
+        'posted_date'                 => 'getPostedDate',
+        'original_removal_order_id'   => 'getOriginalRemovalOrderId',
+        'liquidation_proceeds_amount' => 'getLiquidationProceedsAmount',
+        'liquidation_fee_amount'      => 'getLiquidationFeeAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
         $this->container['original_removal_order_id'] = isset($data['original_removal_order_id']) ? $data['original_removal_order_id'] : null;
         $this->container['liquidation_proceeds_amount'] = isset($data['liquidation_proceeds_amount']) ? $data['liquidation_proceeds_amount'] : null;
@@ -183,8 +175,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,30 +187,27 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -230,8 +218,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOriginalRemovalOrderId()
-    {
+    public function getOriginalRemovalOrderId() {
         return $this->container['original_removal_order_id'];
     }
 
@@ -242,8 +229,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOriginalRemovalOrderId($original_removal_order_id)
-    {
+    public function setOriginalRemovalOrderId($original_removal_order_id) {
         $this->container['original_removal_order_id'] = $original_removal_order_id;
 
         return $this;
@@ -252,22 +238,20 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
     /**
      * Gets liquidation_proceeds_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getLiquidationProceedsAmount()
-    {
+    public function getLiquidationProceedsAmount() {
         return $this->container['liquidation_proceeds_amount'];
     }
 
     /**
      * Sets liquidation_proceeds_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $liquidation_proceeds_amount liquidation_proceeds_amount
+     * @param Currency $liquidation_proceeds_amount liquidation_proceeds_amount
      *
      * @return $this
      */
-    public function setLiquidationProceedsAmount($liquidation_proceeds_amount)
-    {
+    public function setLiquidationProceedsAmount($liquidation_proceeds_amount) {
         $this->container['liquidation_proceeds_amount'] = $liquidation_proceeds_amount;
 
         return $this;
@@ -276,22 +260,20 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
     /**
      * Gets liquidation_fee_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getLiquidationFeeAmount()
-    {
+    public function getLiquidationFeeAmount() {
         return $this->container['liquidation_fee_amount'];
     }
 
     /**
      * Sets liquidation_fee_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $liquidation_fee_amount liquidation_fee_amount
+     * @param Currency $liquidation_fee_amount liquidation_fee_amount
      *
      * @return $this
      */
-    public function setLiquidationFeeAmount($liquidation_fee_amount)
-    {
+    public function setLiquidationFeeAmount($liquidation_fee_amount) {
         $this->container['liquidation_fee_amount'] = $liquidation_fee_amount;
 
         return $this;
@@ -304,8 +286,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +297,19 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +324,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +333,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

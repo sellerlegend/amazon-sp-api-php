@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Container Class Doc Comment.
  *
-
  * @description Container in the shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Container implements ModelInterface, ArrayAccess
-{
+class Container implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +45,13 @@ class Container implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'container_type' => 'string',
-'container_reference_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId',
-'value' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Currency',
-'dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Dimensions',
-'items' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerItem[]',
-'weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight',    ];
+        'container_type'         => 'string',
+        'container_reference_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId',
+        'value'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Currency',
+        'dimensions'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Dimensions',
+        'items'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ContainerItem[]',
+        'weight'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Weight'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +59,20 @@ class Container implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'container_type' => null,
-'container_reference_id' => null,
-'value' => null,
-'dimensions' => null,
-'items' => null,
-'weight' => null,    ];
+        'container_type'         => null,
+        'container_reference_id' => null,
+        'value'                  => null,
+        'dimensions'             => null,
+        'items'                  => null,
+        'weight'                 => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +81,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +92,12 @@ class Container implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'container_type' => 'containerType',
-'container_reference_id' => 'containerReferenceId',
-'value' => 'value',
-'dimensions' => 'dimensions',
-'items' => 'items',
-'weight' => 'weight',    ];
+        'container_type'         => 'containerType',
+        'container_reference_id' => 'containerReferenceId',
+        'value'                  => 'value',
+        'dimensions'             => 'dimensions',
+        'items'                  => 'items',
+        'weight'                 => 'weight',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +105,12 @@ class Container implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'container_type' => 'setContainerType',
-'container_reference_id' => 'setContainerReferenceId',
-'value' => 'setValue',
-'dimensions' => 'setDimensions',
-'items' => 'setItems',
-'weight' => 'setWeight',    ];
+        'container_type'         => 'setContainerType',
+        'container_reference_id' => 'setContainerReferenceId',
+        'value'                  => 'setValue',
+        'dimensions'             => 'setDimensions',
+        'items'                  => 'setItems',
+        'weight'                 => 'setWeight',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +118,12 @@ class Container implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'container_type' => 'getContainerType',
-'container_reference_id' => 'getContainerReferenceId',
-'value' => 'getValue',
-'dimensions' => 'getDimensions',
-'items' => 'getItems',
-'weight' => 'getWeight',    ];
+        'container_type'         => 'getContainerType',
+        'container_reference_id' => 'getContainerReferenceId',
+        'value'                  => 'getValue',
+        'dimensions'             => 'getDimensions',
+        'items'                  => 'getItems',
+        'weight'                 => 'getWeight',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +131,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +140,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +149,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +158,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -174,10 +169,9 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getContainerTypeAllowableValues()
-    {
+    public function getContainerTypeAllowableValues() {
         return [
-            self::CONTAINER_TYPE_PACKAGE,        ];
+            self::CONTAINER_TYPE_PACKAGE,];
     }
 
     /**
@@ -193,8 +187,7 @@ class Container implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['container_type'] = isset($data['container_type']) ? $data['container_type'] : null;
         $this->container['container_reference_id'] = isset($data['container_reference_id']) ? $data['container_reference_id'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
@@ -208,8 +201,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getContainerTypeAllowableValues();
@@ -245,8 +237,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -255,8 +246,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getContainerType()
-    {
+    public function getContainerType() {
         return $this->container['container_type'];
     }
 
@@ -267,11 +257,10 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContainerType($container_type)
-    {
+    public function setContainerType($container_type) {
         $allowedValues = $this->getContainerTypeAllowableValues();
         if (!is_null($container_type) && !in_array($container_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'container_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'container_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['container_type'] = $container_type;
 
@@ -281,22 +270,20 @@ class Container implements ModelInterface, ArrayAccess
     /**
      * Gets container_reference_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId
+     * @return ContainerReferenceId
      */
-    public function getContainerReferenceId()
-    {
+    public function getContainerReferenceId() {
         return $this->container['container_reference_id'];
     }
 
     /**
      * Sets container_reference_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId $container_reference_id container_reference_id
+     * @param ContainerReferenceId $container_reference_id container_reference_id
      *
      * @return $this
      */
-    public function setContainerReferenceId($container_reference_id)
-    {
+    public function setContainerReferenceId($container_reference_id) {
         $this->container['container_reference_id'] = $container_reference_id;
 
         return $this;
@@ -305,22 +292,20 @@ class Container implements ModelInterface, ArrayAccess
     /**
      * Gets value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Currency
+     * @return Currency
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->container['value'];
     }
 
     /**
      * Sets value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Currency $value value
+     * @param Currency $value value
      *
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->container['value'] = $value;
 
         return $this;
@@ -329,22 +314,20 @@ class Container implements ModelInterface, ArrayAccess
     /**
      * Gets dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Dimensions
+     * @return Dimensions
      */
-    public function getDimensions()
-    {
+    public function getDimensions() {
         return $this->container['dimensions'];
     }
 
     /**
      * Sets dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Dimensions $dimensions dimensions
+     * @param Dimensions $dimensions dimensions
      *
      * @return $this
      */
-    public function setDimensions($dimensions)
-    {
+    public function setDimensions($dimensions) {
         $this->container['dimensions'] = $dimensions;
 
         return $this;
@@ -353,22 +336,20 @@ class Container implements ModelInterface, ArrayAccess
     /**
      * Gets items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerItem[]
+     * @return ContainerItem[]
      */
-    public function getItems()
-    {
+    public function getItems() {
         return $this->container['items'];
     }
 
     /**
      * Sets items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerItem[] $items a list of the items in the container
+     * @param ContainerItem[] $items a list of the items in the container
      *
      * @return $this
      */
-    public function setItems($items)
-    {
+    public function setItems($items) {
         $this->container['items'] = $items;
 
         return $this;
@@ -377,22 +358,20 @@ class Container implements ModelInterface, ArrayAccess
     /**
      * Gets weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight
+     * @return Weight
      */
-    public function getWeight()
-    {
+    public function getWeight() {
         return $this->container['weight'];
     }
 
     /**
      * Sets weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight $weight weight
+     * @param Weight $weight weight
      *
      * @return $this
      */
-    public function setWeight($weight)
-    {
+    public function setWeight($weight) {
         $this->container['weight'] = $weight;
 
         return $this;
@@ -405,8 +384,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -417,21 +395,19 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -446,8 +422,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -456,8 +431,7 @@ class Container implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

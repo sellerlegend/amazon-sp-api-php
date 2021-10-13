@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ItemIdentifier Class Doc Comment.
  *
-
  * @description Information that identifies an item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ItemIdentifier implements ModelInterface, ArrayAccess
-{
+class ItemIdentifier implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,9 +45,9 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'marketplace_id' => 'string',
-'asin' => 'string',
-'seller_sku' => 'string',
-'item_condition' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType',    ];
+        'asin'           => 'string',
+        'seller_sku'     => 'string',
+        'item_condition' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,17 +56,16 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'marketplace_id' => null,
-'asin' => null,
-'seller_sku' => null,
-'item_condition' => null,    ];
+        'asin'           => null,
+        'seller_sku'     => null,
+        'item_condition' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,9 +86,9 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'marketplace_id' => 'MarketplaceId',
-'asin' => 'ASIN',
-'seller_sku' => 'SellerSKU',
-'item_condition' => 'ItemCondition',    ];
+        'asin'           => 'ASIN',
+        'seller_sku'     => 'SellerSKU',
+        'item_condition' => 'ItemCondition',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,9 +97,9 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
-'asin' => 'setAsin',
-'seller_sku' => 'setSellerSku',
-'item_condition' => 'setItemCondition',    ];
+        'asin'           => 'setAsin',
+        'seller_sku'     => 'setSellerSku',
+        'item_condition' => 'setItemCondition',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,9 +108,9 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-'asin' => 'getAsin',
-'seller_sku' => 'getSellerSku',
-'item_condition' => 'getItemCondition',    ];
+        'asin'           => 'getAsin',
+        'seller_sku'     => 'getSellerSku',
+        'item_condition' => 'getItemCondition',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
@@ -183,8 +174,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['marketplace_id']) {
@@ -203,8 +193,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -213,8 +202,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -225,8 +213,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -237,8 +224,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -249,8 +235,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -261,8 +246,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -273,8 +257,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -283,22 +266,20 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
     /**
      * Gets item_condition.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType
+     * @return ConditionType
      */
-    public function getItemCondition()
-    {
+    public function getItemCondition() {
         return $this->container['item_condition'];
     }
 
     /**
      * Sets item_condition.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType $item_condition item_condition
+     * @param ConditionType $item_condition item_condition
      *
      * @return $this
      */
-    public function setItemCondition($item_condition)
-    {
+    public function setItemCondition($item_condition) {
         $this->container['item_condition'] = $item_condition;
 
         return $this;
@@ -311,8 +292,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -323,21 +303,19 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -352,8 +330,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -362,8 +339,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

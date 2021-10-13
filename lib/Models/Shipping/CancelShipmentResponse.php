@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CancelShipmentResponse Class Doc Comment.
  *
-
  * @description The response schema for the cancelShipment operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CancelShipmentResponse implements ModelInterface, ArrayAccess
-{
+class CancelShipmentResponse implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,8 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'errors' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ErrorList',    ];
+        'errors' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ErrorList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +53,15 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'errors' => null,    ];
+        'errors' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +70,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +81,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'errors',    ];
+        'errors' => 'errors',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +89,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors',    ];
+        'errors' => 'setErrors',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +97,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors',    ];
+        'errors' => 'getErrors',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +105,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +114,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +123,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +132,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +149,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
@@ -165,8 +158,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -178,30 +170,27 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets errors.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ErrorList
+     * @return ErrorList
      */
-    public function getErrors()
-    {
+    public function getErrors() {
         return $this->container['errors'];
     }
 
     /**
      * Sets errors.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ErrorList $errors errors
+     * @param ErrorList $errors errors
      *
      * @return $this
      */
-    public function setErrors($errors)
-    {
+    public function setErrors($errors) {
         $this->container['errors'] = $errors;
 
         return $this;
@@ -214,8 +203,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -226,21 +214,19 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -255,8 +241,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -265,8 +250,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

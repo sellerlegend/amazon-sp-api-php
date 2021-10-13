@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * DeliveryExperienceOption Class Doc Comment.
  *
-
  * @description The delivery confirmation level.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class DeliveryExperienceOption
-{
+class DeliveryExperienceOption {
     /**
      * Possible values of this enum.
      */
@@ -41,13 +39,12 @@ class DeliveryExperienceOption
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE,
-self::DELIVERY_CONFIRMATION_WITH_SIGNATURE,
-self::DELIVERY_CONFIRMATION_WITHOUT_SIGNATURE,
-self::NO_TRACKING,
-self::NO_PREFERENCE,        ];
+            self::DELIVERY_CONFIRMATION_WITH_SIGNATURE,
+            self::DELIVERY_CONFIRMATION_WITHOUT_SIGNATURE,
+            self::NO_TRACKING,
+            self::NO_PREFERENCE,];
     }
 }

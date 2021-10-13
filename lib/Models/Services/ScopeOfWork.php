@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ScopeOfWork Class Doc Comment.
  *
-
  * @description The scope of work for the order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ScopeOfWork implements ModelInterface, ArrayAccess
-{
+class ScopeOfWork implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'title' => 'string',
-'quantity' => 'int',
-'required_skills' => 'string[]',    ];
+        'asin'            => 'string',
+        'title'           => 'string',
+        'quantity'        => 'int',
+        'required_skills' => 'string[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'title' => null,
-'quantity' => null,
-'required_skills' => null,    ];
+        'asin'            => null,
+        'title'           => null,
+        'quantity'        => null,
+        'required_skills' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'asin',
-'title' => 'title',
-'quantity' => 'quantity',
-'required_skills' => 'requiredSkills',    ];
+        'asin'            => 'asin',
+        'title'           => 'title',
+        'quantity'        => 'quantity',
+        'required_skills' => 'requiredSkills',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'title' => 'setTitle',
-'quantity' => 'setQuantity',
-'required_skills' => 'setRequiredSkills',    ];
+        'asin'            => 'setAsin',
+        'title'           => 'setTitle',
+        'quantity'        => 'setQuantity',
+        'required_skills' => 'setRequiredSkills',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'title' => 'getTitle',
-'quantity' => 'getQuantity',
-'required_skills' => 'getRequiredSkills',    ];
+        'asin'            => 'getAsin',
+        'title'           => 'getTitle',
+        'quantity'        => 'getQuantity',
+        'required_skills' => 'getRequiredSkills',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
@@ -183,8 +174,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +186,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +195,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -218,8 +206,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -230,8 +217,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->container['title'];
     }
 
@@ -242,8 +228,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->container['title'] = $title;
 
         return $this;
@@ -254,8 +239,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
@@ -266,8 +250,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -278,8 +261,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getRequiredSkills()
-    {
+    public function getRequiredSkills() {
         return $this->container['required_skills'];
     }
 
@@ -290,8 +272,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRequiredSkills($required_skills)
-    {
+    public function setRequiredSkills($required_skills) {
         $this->container['required_skills'] = $required_skills;
 
         return $this;
@@ -304,8 +285,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +296,19 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +323,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +332,7 @@ class ScopeOfWork implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeatureSku Class Doc Comment.
  *
-
  * @description Information about an SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeatureSku implements ModelInterface, ArrayAccess
-{
+class FeatureSku implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class FeatureSku implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'fn_sku' => 'string',
-'asin' => 'string',
-'sku_count' => 'float',
-'overlapping_skus' => 'string[]',    ];
+        'seller_sku'       => 'string',
+        'fn_sku'           => 'string',
+        'asin'             => 'string',
+        'sku_count'        => 'float',
+        'overlapping_skus' => 'string[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class FeatureSku implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'fn_sku' => null,
-'asin' => null,
-'sku_count' => null,
-'overlapping_skus' => null,    ];
+        'seller_sku'       => null,
+        'fn_sku'           => null,
+        'asin'             => null,
+        'sku_count'        => null,
+        'overlapping_skus' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class FeatureSku implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'sellerSku',
-'fn_sku' => 'fnSku',
-'asin' => 'asin',
-'sku_count' => 'skuCount',
-'overlapping_skus' => 'overlappingSkus',    ];
+        'seller_sku'       => 'sellerSku',
+        'fn_sku'           => 'fnSku',
+        'asin'             => 'asin',
+        'sku_count'        => 'skuCount',
+        'overlapping_skus' => 'overlappingSkus',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class FeatureSku implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'fn_sku' => 'setFnSku',
-'asin' => 'setAsin',
-'sku_count' => 'setSkuCount',
-'overlapping_skus' => 'setOverlappingSkus',    ];
+        'seller_sku'       => 'setSellerSku',
+        'fn_sku'           => 'setFnSku',
+        'asin'             => 'setAsin',
+        'sku_count'        => 'setSkuCount',
+        'overlapping_skus' => 'setOverlappingSkus',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class FeatureSku implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'fn_sku' => 'getFnSku',
-'asin' => 'getAsin',
-'sku_count' => 'getSkuCount',
-'overlapping_skus' => 'getOverlappingSkus',    ];
+        'seller_sku'       => 'getSellerSku',
+        'fn_sku'           => 'getFnSku',
+        'asin'             => 'getAsin',
+        'sku_count'        => 'getSkuCount',
+        'overlapping_skus' => 'getOverlappingSkus',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['fn_sku'] = isset($data['fn_sku']) ? $data['fn_sku'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
@@ -189,8 +180,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -202,8 +192,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -212,8 +201,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -224,8 +212,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -236,8 +223,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFnSku()
-    {
+    public function getFnSku() {
         return $this->container['fn_sku'];
     }
 
@@ -248,8 +234,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFnSku($fn_sku)
-    {
+    public function setFnSku($fn_sku) {
         $this->container['fn_sku'] = $fn_sku;
 
         return $this;
@@ -260,8 +245,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -272,8 +256,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -284,8 +267,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getSkuCount()
-    {
+    public function getSkuCount() {
         return $this->container['sku_count'];
     }
 
@@ -296,8 +278,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSkuCount($sku_count)
-    {
+    public function setSkuCount($sku_count) {
         $this->container['sku_count'] = $sku_count;
 
         return $this;
@@ -308,8 +289,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getOverlappingSkus()
-    {
+    public function getOverlappingSkus() {
         return $this->container['overlapping_skus'];
     }
 
@@ -320,8 +300,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOverlappingSkus($overlapping_skus)
-    {
+    public function setOverlappingSkus($overlapping_skus) {
         $this->container['overlapping_skus'] = $overlapping_skus;
 
         return $this;
@@ -334,8 +313,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -346,21 +324,19 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -375,8 +351,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -385,8 +360,7 @@ class FeatureSku implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

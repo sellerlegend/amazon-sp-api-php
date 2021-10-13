@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * RemovalShipmentItem Class Doc Comment.
  *
-
  * @description Item-level information for a removal shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class RemovalShipmentItem implements ModelInterface, ArrayAccess
-{
+class RemovalShipmentItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,13 +45,13 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'removal_shipment_item_id' => 'string',
-'tax_collection_model' => 'string',
-'fulfillment_network_sku' => 'string',
-'quantity' => 'int',
-'revenue' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'fee_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'tax_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'tax_withheld' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'tax_collection_model'     => 'string',
+        'fulfillment_network_sku'  => 'string',
+        'quantity'                 => 'int',
+        'revenue'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'fee_amount'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'tax_amount'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'tax_withheld'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -62,21 +60,20 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'removal_shipment_item_id' => null,
-'tax_collection_model' => null,
-'fulfillment_network_sku' => null,
-'quantity' => 'int32',
-'revenue' => null,
-'fee_amount' => null,
-'tax_amount' => null,
-'tax_withheld' => null,    ];
+        'tax_collection_model'     => null,
+        'fulfillment_network_sku'  => null,
+        'quantity'                 => 'int32',
+        'revenue'                  => null,
+        'fee_amount'               => null,
+        'tax_amount'               => null,
+        'tax_withheld'             => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -85,8 +82,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -98,13 +94,13 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'removal_shipment_item_id' => 'RemovalShipmentItemId',
-'tax_collection_model' => 'TaxCollectionModel',
-'fulfillment_network_sku' => 'FulfillmentNetworkSKU',
-'quantity' => 'Quantity',
-'revenue' => 'Revenue',
-'fee_amount' => 'FeeAmount',
-'tax_amount' => 'TaxAmount',
-'tax_withheld' => 'TaxWithheld',    ];
+        'tax_collection_model'     => 'TaxCollectionModel',
+        'fulfillment_network_sku'  => 'FulfillmentNetworkSKU',
+        'quantity'                 => 'Quantity',
+        'revenue'                  => 'Revenue',
+        'fee_amount'               => 'FeeAmount',
+        'tax_amount'               => 'TaxAmount',
+        'tax_withheld'             => 'TaxWithheld',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -113,13 +109,13 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'removal_shipment_item_id' => 'setRemovalShipmentItemId',
-'tax_collection_model' => 'setTaxCollectionModel',
-'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
-'quantity' => 'setQuantity',
-'revenue' => 'setRevenue',
-'fee_amount' => 'setFeeAmount',
-'tax_amount' => 'setTaxAmount',
-'tax_withheld' => 'setTaxWithheld',    ];
+        'tax_collection_model'     => 'setTaxCollectionModel',
+        'fulfillment_network_sku'  => 'setFulfillmentNetworkSku',
+        'quantity'                 => 'setQuantity',
+        'revenue'                  => 'setRevenue',
+        'fee_amount'               => 'setFeeAmount',
+        'tax_amount'               => 'setTaxAmount',
+        'tax_withheld'             => 'setTaxWithheld',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -128,13 +124,13 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'removal_shipment_item_id' => 'getRemovalShipmentItemId',
-'tax_collection_model' => 'getTaxCollectionModel',
-'fulfillment_network_sku' => 'getFulfillmentNetworkSku',
-'quantity' => 'getQuantity',
-'revenue' => 'getRevenue',
-'fee_amount' => 'getFeeAmount',
-'tax_amount' => 'getTaxAmount',
-'tax_withheld' => 'getTaxWithheld',    ];
+        'tax_collection_model'     => 'getTaxCollectionModel',
+        'fulfillment_network_sku'  => 'getFulfillmentNetworkSku',
+        'quantity'                 => 'getQuantity',
+        'revenue'                  => 'getRevenue',
+        'fee_amount'               => 'getFeeAmount',
+        'tax_amount'               => 'getTaxAmount',
+        'tax_withheld'             => 'getTaxWithheld',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -142,8 +138,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -152,8 +147,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -162,8 +156,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -172,8 +165,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -190,8 +182,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['removal_shipment_item_id'] = isset($data['removal_shipment_item_id']) ? $data['removal_shipment_item_id'] : null;
         $this->container['tax_collection_model'] = isset($data['tax_collection_model']) ? $data['tax_collection_model'] : null;
         $this->container['fulfillment_network_sku'] = isset($data['fulfillment_network_sku']) ? $data['fulfillment_network_sku'] : null;
@@ -207,8 +198,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -220,8 +210,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -230,8 +219,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRemovalShipmentItemId()
-    {
+    public function getRemovalShipmentItemId() {
         return $this->container['removal_shipment_item_id'];
     }
 
@@ -242,8 +230,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRemovalShipmentItemId($removal_shipment_item_id)
-    {
+    public function setRemovalShipmentItemId($removal_shipment_item_id) {
         $this->container['removal_shipment_item_id'] = $removal_shipment_item_id;
 
         return $this;
@@ -254,8 +241,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTaxCollectionModel()
-    {
+    public function getTaxCollectionModel() {
         return $this->container['tax_collection_model'];
     }
 
@@ -266,8 +252,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaxCollectionModel($tax_collection_model)
-    {
+    public function setTaxCollectionModel($tax_collection_model) {
         $this->container['tax_collection_model'] = $tax_collection_model;
 
         return $this;
@@ -278,8 +263,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFulfillmentNetworkSku()
-    {
+    public function getFulfillmentNetworkSku() {
         return $this->container['fulfillment_network_sku'];
     }
 
@@ -290,8 +274,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFulfillmentNetworkSku($fulfillment_network_sku)
-    {
+    public function setFulfillmentNetworkSku($fulfillment_network_sku) {
         $this->container['fulfillment_network_sku'] = $fulfillment_network_sku;
 
         return $this;
@@ -302,8 +285,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
@@ -314,8 +296,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -324,22 +305,20 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets revenue.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getRevenue()
-    {
+    public function getRevenue() {
         return $this->container['revenue'];
     }
 
     /**
      * Sets revenue.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $revenue revenue
+     * @param Currency $revenue revenue
      *
      * @return $this
      */
-    public function setRevenue($revenue)
-    {
+    public function setRevenue($revenue) {
         $this->container['revenue'] = $revenue;
 
         return $this;
@@ -348,22 +327,20 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets fee_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getFeeAmount()
-    {
+    public function getFeeAmount() {
         return $this->container['fee_amount'];
     }
 
     /**
      * Sets fee_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $fee_amount fee_amount
+     * @param Currency $fee_amount fee_amount
      *
      * @return $this
      */
-    public function setFeeAmount($fee_amount)
-    {
+    public function setFeeAmount($fee_amount) {
         $this->container['fee_amount'] = $fee_amount;
 
         return $this;
@@ -372,22 +349,20 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets tax_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTaxAmount()
-    {
+    public function getTaxAmount() {
         return $this->container['tax_amount'];
     }
 
     /**
      * Sets tax_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $tax_amount tax_amount
+     * @param Currency $tax_amount tax_amount
      *
      * @return $this
      */
-    public function setTaxAmount($tax_amount)
-    {
+    public function setTaxAmount($tax_amount) {
         $this->container['tax_amount'] = $tax_amount;
 
         return $this;
@@ -396,22 +371,20 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets tax_withheld.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTaxWithheld()
-    {
+    public function getTaxWithheld() {
         return $this->container['tax_withheld'];
     }
 
     /**
      * Sets tax_withheld.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $tax_withheld tax_withheld
+     * @param Currency $tax_withheld tax_withheld
      *
      * @return $this
      */
-    public function setTaxWithheld($tax_withheld)
-    {
+    public function setTaxWithheld($tax_withheld) {
         $this->container['tax_withheld'] = $tax_withheld;
 
         return $this;
@@ -424,8 +397,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -436,21 +408,19 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -465,8 +435,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -475,8 +444,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

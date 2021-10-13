@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SellerInputDefinition Class Doc Comment.
  *
-
  * @description Specifies characteristics that apply to a seller input.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SellerInputDefinition implements ModelInterface, ArrayAccess
-{
+class SellerInputDefinition implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,13 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_required' => 'bool',
-'data_type' => 'string',
-'constraints' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Constraints',
-'input_display_text' => 'string',
-'input_target' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\InputTargetType',
-'stored_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput',
-'restricted_set_values' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\RestrictedSetValues',    ];
+        'is_required'           => 'bool',
+        'data_type'             => 'string',
+        'constraints'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Constraints',
+        'input_display_text'    => 'string',
+        'input_target'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\InputTargetType',
+        'stored_value'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput',
+        'restricted_set_values' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\RestrictedSetValues',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +58,20 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_required' => null,
-'data_type' => null,
-'constraints' => null,
-'input_display_text' => null,
-'input_target' => null,
-'stored_value' => null,
-'restricted_set_values' => null,    ];
+        'is_required'           => null,
+        'data_type'             => null,
+        'constraints'           => null,
+        'input_display_text'    => null,
+        'input_target'          => null,
+        'stored_value'          => null,
+        'restricted_set_values' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +80,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +91,13 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_required' => 'IsRequired',
-'data_type' => 'DataType',
-'constraints' => 'Constraints',
-'input_display_text' => 'InputDisplayText',
-'input_target' => 'InputTarget',
-'stored_value' => 'StoredValue',
-'restricted_set_values' => 'RestrictedSetValues',    ];
+        'is_required'           => 'IsRequired',
+        'data_type'             => 'DataType',
+        'constraints'           => 'Constraints',
+        'input_display_text'    => 'InputDisplayText',
+        'input_target'          => 'InputTarget',
+        'stored_value'          => 'StoredValue',
+        'restricted_set_values' => 'RestrictedSetValues',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +105,13 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_required' => 'setIsRequired',
-'data_type' => 'setDataType',
-'constraints' => 'setConstraints',
-'input_display_text' => 'setInputDisplayText',
-'input_target' => 'setInputTarget',
-'stored_value' => 'setStoredValue',
-'restricted_set_values' => 'setRestrictedSetValues',    ];
+        'is_required'           => 'setIsRequired',
+        'data_type'             => 'setDataType',
+        'constraints'           => 'setConstraints',
+        'input_display_text'    => 'setInputDisplayText',
+        'input_target'          => 'setInputTarget',
+        'stored_value'          => 'setStoredValue',
+        'restricted_set_values' => 'setRestrictedSetValues',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +119,13 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_required' => 'getIsRequired',
-'data_type' => 'getDataType',
-'constraints' => 'getConstraints',
-'input_display_text' => 'getInputDisplayText',
-'input_target' => 'getInputTarget',
-'stored_value' => 'getStoredValue',
-'restricted_set_values' => 'getRestrictedSetValues',    ];
+        'is_required'           => 'getIsRequired',
+        'data_type'             => 'getDataType',
+        'constraints'           => 'getConstraints',
+        'input_display_text'    => 'getInputDisplayText',
+        'input_target'          => 'getInputTarget',
+        'stored_value'          => 'getStoredValue',
+        'restricted_set_values' => 'getRestrictedSetValues',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +133,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +142,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +151,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +160,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +177,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['is_required'] = isset($data['is_required']) ? $data['is_required'] : null;
         $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
         $this->container['constraints'] = isset($data['constraints']) ? $data['constraints'] : null;
@@ -201,8 +192,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['is_required']) {
@@ -230,8 +220,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -240,8 +229,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsRequired()
-    {
+    public function getIsRequired() {
         return $this->container['is_required'];
     }
 
@@ -252,8 +240,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsRequired($is_required)
-    {
+    public function setIsRequired($is_required) {
         $this->container['is_required'] = $is_required;
 
         return $this;
@@ -264,8 +251,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDataType()
-    {
+    public function getDataType() {
         return $this->container['data_type'];
     }
 
@@ -276,8 +262,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDataType($data_type)
-    {
+    public function setDataType($data_type) {
         $this->container['data_type'] = $data_type;
 
         return $this;
@@ -286,22 +271,20 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
     /**
      * Gets constraints.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Constraints
+     * @return Constraints
      */
-    public function getConstraints()
-    {
+    public function getConstraints() {
         return $this->container['constraints'];
     }
 
     /**
      * Sets constraints.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Constraints $constraints constraints
+     * @param Constraints $constraints constraints
      *
      * @return $this
      */
-    public function setConstraints($constraints)
-    {
+    public function setConstraints($constraints) {
         $this->container['constraints'] = $constraints;
 
         return $this;
@@ -312,8 +295,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getInputDisplayText()
-    {
+    public function getInputDisplayText() {
         return $this->container['input_display_text'];
     }
 
@@ -324,8 +306,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInputDisplayText($input_display_text)
-    {
+    public function setInputDisplayText($input_display_text) {
         $this->container['input_display_text'] = $input_display_text;
 
         return $this;
@@ -334,22 +315,20 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
     /**
      * Gets input_target.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\InputTargetType
+     * @return InputTargetType
      */
-    public function getInputTarget()
-    {
+    public function getInputTarget() {
         return $this->container['input_target'];
     }
 
     /**
      * Sets input_target.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\InputTargetType $input_target input_target
+     * @param InputTargetType $input_target input_target
      *
      * @return $this
      */
-    public function setInputTarget($input_target)
-    {
+    public function setInputTarget($input_target) {
         $this->container['input_target'] = $input_target;
 
         return $this;
@@ -358,22 +337,20 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
     /**
      * Gets stored_value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput
+     * @return AdditionalSellerInput
      */
-    public function getStoredValue()
-    {
+    public function getStoredValue() {
         return $this->container['stored_value'];
     }
 
     /**
      * Sets stored_value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput $stored_value stored_value
+     * @param AdditionalSellerInput $stored_value stored_value
      *
      * @return $this
      */
-    public function setStoredValue($stored_value)
-    {
+    public function setStoredValue($stored_value) {
         $this->container['stored_value'] = $stored_value;
 
         return $this;
@@ -382,22 +359,20 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
     /**
      * Gets restricted_set_values.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\RestrictedSetValues
+     * @return RestrictedSetValues
      */
-    public function getRestrictedSetValues()
-    {
+    public function getRestrictedSetValues() {
         return $this->container['restricted_set_values'];
     }
 
     /**
      * Sets restricted_set_values.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\RestrictedSetValues $restricted_set_values restricted_set_values
+     * @param RestrictedSetValues $restricted_set_values restricted_set_values
      *
      * @return $this
      */
-    public function setRestrictedSetValues($restricted_set_values)
-    {
+    public function setRestrictedSetValues($restricted_set_values) {
         $this->container['restricted_set_values'] = $restricted_set_values;
 
         return $this;
@@ -410,8 +385,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -422,21 +396,19 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -451,8 +423,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -461,8 +432,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

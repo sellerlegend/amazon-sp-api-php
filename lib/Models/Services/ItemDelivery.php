@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ItemDelivery Class Doc Comment.
  *
-
  * @description Delivery information for the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ItemDelivery implements ModelInterface, ArrayAccess
-{
+class ItemDelivery implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +46,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'estimated_delivery_date' => '\DateTime',
-'item_delivery_promise' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\ItemDeliveryPromise',    ];
+        'item_delivery_promise'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\ItemDeliveryPromise',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,14 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'estimated_delivery_date' => 'date-time',
-'item_delivery_promise' => null,    ];
+        'item_delivery_promise'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +83,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'estimated_delivery_date' => 'estimatedDeliveryDate',
-'item_delivery_promise' => 'itemDeliveryPromise',    ];
+        'item_delivery_promise'   => 'itemDeliveryPromise',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +92,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'estimated_delivery_date' => 'setEstimatedDeliveryDate',
-'item_delivery_promise' => 'setItemDeliveryPromise',    ];
+        'item_delivery_promise'   => 'setItemDeliveryPromise',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +101,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'estimated_delivery_date' => 'getEstimatedDeliveryDate',
-'item_delivery_promise' => 'getItemDeliveryPromise',    ];
+        'item_delivery_promise'   => 'getItemDeliveryPromise',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['estimated_delivery_date'] = isset($data['estimated_delivery_date']) ? $data['estimated_delivery_date'] : null;
         $this->container['item_delivery_promise'] = isset($data['item_delivery_promise']) ? $data['item_delivery_promise'] : null;
     }
@@ -171,8 +163,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +175,27 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets estimated_delivery_date.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEstimatedDeliveryDate()
-    {
+    public function getEstimatedDeliveryDate() {
         return $this->container['estimated_delivery_date'];
     }
 
     /**
      * Sets estimated_delivery_date.
      *
-     * @param \DateTime $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
+     * @param DateTime $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
      *
      * @return $this
      */
-    public function setEstimatedDeliveryDate($estimated_delivery_date)
-    {
+    public function setEstimatedDeliveryDate($estimated_delivery_date) {
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
         return $this;
@@ -216,22 +204,20 @@ class ItemDelivery implements ModelInterface, ArrayAccess
     /**
      * Gets item_delivery_promise.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\ItemDeliveryPromise
+     * @return ItemDeliveryPromise
      */
-    public function getItemDeliveryPromise()
-    {
+    public function getItemDeliveryPromise() {
         return $this->container['item_delivery_promise'];
     }
 
     /**
      * Sets item_delivery_promise.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\ItemDeliveryPromise $item_delivery_promise item_delivery_promise
+     * @param ItemDeliveryPromise $item_delivery_promise item_delivery_promise
      *
      * @return $this
      */
-    public function setItemDeliveryPromise($item_delivery_promise)
-    {
+    public function setItemDeliveryPromise($item_delivery_promise) {
         $this->container['item_delivery_promise'] = $item_delivery_promise;
 
         return $this;
@@ -244,8 +230,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +241,19 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +268,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +277,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetAdditionalSellerInputsRequest Class Doc Comment.
  *
-
  * @description Request schema.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
-{
+class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipping_service_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier',
-'ship_from_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
-'order_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId',    ];
+        'shipping_service_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier',
+        'ship_from_address'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
+        'order_id'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +55,15 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'shipping_service_id' => null,
-'ship_from_address' => null,
-'order_id' => null,    ];
+        'ship_from_address'   => null,
+        'order_id'            => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +84,8 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'shipping_service_id' => 'ShippingServiceId',
-'ship_from_address' => 'ShipFromAddress',
-'order_id' => 'OrderId',    ];
+        'ship_from_address'   => 'ShipFromAddress',
+        'order_id'            => 'OrderId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +94,8 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'shipping_service_id' => 'setShippingServiceId',
-'ship_from_address' => 'setShipFromAddress',
-'order_id' => 'setOrderId',    ];
+        'ship_from_address'   => 'setShipFromAddress',
+        'order_id'            => 'setOrderId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +104,8 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'shipping_service_id' => 'getShippingServiceId',
-'ship_from_address' => 'getShipFromAddress',
-'order_id' => 'getOrderId',    ];
+        'ship_from_address'   => 'getShipFromAddress',
+        'order_id'            => 'getOrderId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipping_service_id'] = isset($data['shipping_service_id']) ? $data['shipping_service_id'] : null;
         $this->container['ship_from_address'] = isset($data['ship_from_address']) ? $data['ship_from_address'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
@@ -177,8 +168,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['shipping_service_id']) {
@@ -200,30 +190,27 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipping_service_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier
+     * @return ShippingServiceIdentifier
      */
-    public function getShippingServiceId()
-    {
+    public function getShippingServiceId() {
         return $this->container['shipping_service_id'];
     }
 
     /**
      * Sets shipping_service_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier $shipping_service_id shipping_service_id
+     * @param ShippingServiceIdentifier $shipping_service_id shipping_service_id
      *
      * @return $this
      */
-    public function setShippingServiceId($shipping_service_id)
-    {
+    public function setShippingServiceId($shipping_service_id) {
         $this->container['shipping_service_id'] = $shipping_service_id;
 
         return $this;
@@ -232,22 +219,20 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
     /**
      * Gets ship_from_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address
+     * @return Address
      */
-    public function getShipFromAddress()
-    {
+    public function getShipFromAddress() {
         return $this->container['ship_from_address'];
     }
 
     /**
      * Sets ship_from_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address $ship_from_address ship_from_address
+     * @param Address $ship_from_address ship_from_address
      *
      * @return $this
      */
-    public function setShipFromAddress($ship_from_address)
-    {
+    public function setShipFromAddress($ship_from_address) {
         $this->container['ship_from_address'] = $ship_from_address;
 
         return $this;
@@ -256,22 +241,20 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
     /**
      * Gets order_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId
+     * @return AmazonOrderId
      */
-    public function getOrderId()
-    {
+    public function getOrderId() {
         return $this->container['order_id'];
     }
 
     /**
      * Sets order_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId $order_id order_id
+     * @param AmazonOrderId $order_id order_id
      *
      * @return $this
      */
-    public function setOrderId($order_id)
-    {
+    public function setOrderId($order_id) {
         $this->container['order_id'] = $order_id;
 
         return $this;
@@ -284,8 +267,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +278,19 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +305,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +314,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

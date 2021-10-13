@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 /**
  * FulfillmentChannelType Class Doc Comment.
  *
-
  * @description Indicates whether the item is fulfilled by Amazon or by the seller (merchant).
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentChannelType
-{
+class FulfillmentChannelType {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class FulfillmentChannelType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::AMAZON,
-self::MERCHANT,        ];
+            self::MERCHANT,];
     }
 }

@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * ReturnItemDisposition Class Doc Comment.
  *
-
  * @description The condition of the return item when received by an Amazon fulfillment center.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ReturnItemDisposition
-{
+class ReturnItemDisposition {
     /**
      * Possible values of this enum.
      */
@@ -41,13 +39,12 @@ class ReturnItemDisposition
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SELLABLE,
-self::DEFECTIVE,
-self::CUSTOMER_DAMAGED,
-self::CARRIER_DAMAGED,
-self::FULFILLER_DAMAGED,        ];
+            self::DEFECTIVE,
+            self::CUSTOMER_DAMAGED,
+            self::CARRIER_DAMAGED,
+            self::FULFILLER_DAMAGED,];
     }
 }

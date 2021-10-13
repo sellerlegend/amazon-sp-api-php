@@ -13,25 +13,29 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\GetInventorySummariesResponse;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory\GetInventorySummariesResponse;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FbaInventoryApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FbaInventoryApi
-{
+class FbaInventoryApi {
     use SellingPartnerApiRequest;
+
     /**
      * @var ClientInterface
      */
@@ -47,8 +51,7 @@ class FbaInventoryApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -57,30 +60,28 @@ class FbaInventoryApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
     /**
      * Operation getInventorySummaries.
      *
-     * @param string    $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string    $granularity_id   The granularity ID for the inventory aggregation level. (required)
-     * @param string[]  $marketplace_ids  The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool      $details          true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $start_date_time  A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[]  $seller_skus      A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string    $next_token       String token returned in the response of your previous request. (optional)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
+     * @param DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return GetInventorySummariesResponse
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\GetInventorySummariesResponse
      */
-    public function getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
-    {
-        list($response) = $this->getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
+    public function getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null) {
+        [$response] = $this->getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
         return $response;
     }
@@ -88,21 +89,20 @@ class FbaInventoryApi
     /**
      * Operation getInventorySummariesWithHttpInfo.
      *
-     * @param string    $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string    $granularity_id   The granularity ID for the inventory aggregation level. (required)
-     * @param string[]  $marketplace_ids  The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool      $details          true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $start_date_time  A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[]  $seller_skus      A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string    $next_token       String token returned in the response of your previous request. (optional)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
+     * @param DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory\GetInventorySummariesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\GetInventorySummariesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
-    {
+    public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null) {
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
         return $this->sendRequest($request, GetInventorySummariesResponse::class);
@@ -111,20 +111,19 @@ class FbaInventoryApi
     /**
      * Operation getInventorySummariesAsync.
      *
-     * @param string    $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string    $granularity_id   The granularity ID for the inventory aggregation level. (required)
-     * @param string[]  $marketplace_ids  The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool      $details          true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $start_date_time  A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[]  $seller_skus      A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string    $next_token       String token returned in the response of your previous request. (optional)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
+     * @param DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInventorySummariesAsync($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
-    {
+    public function getInventorySummariesAsync($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null) {
         return $this->getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token)
             ->then(
                 function ($response) {
@@ -136,20 +135,19 @@ class FbaInventoryApi
     /**
      * Operation getInventorySummariesAsyncWithHttpInfo.
      *
-     * @param string    $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string    $granularity_id   The granularity ID for the inventory aggregation level. (required)
-     * @param string[]  $marketplace_ids  The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool      $details          true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $start_date_time  A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[]  $seller_skus      A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string    $next_token       String token returned in the response of your previous request. (optional)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
+     * @param DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
-    {
+    public function getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null) {
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
         return $this->sendRequestAsync($request, GetInventorySummariesResponse::class);
@@ -158,31 +156,30 @@ class FbaInventoryApi
     /**
      * Create request for operation 'getInventorySummaries'.
      *
-     * @param string    $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string    $granularity_id   The granularity ID for the inventory aggregation level. (required)
-     * @param string[]  $marketplace_ids  The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool      $details          true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $start_date_time  A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[]  $seller_skus      A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string    $next_token       String token returned in the response of your previous request. (optional)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
+     * @param DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
-    {
+    protected function getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null) {
         // verify the required parameter 'granularity_type' is set
         if (null === $granularity_type || (is_array($granularity_type) && 0 === count($granularity_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $granularity_type when calling getInventorySummaries');
+            throw new InvalidArgumentException('Missing the required parameter $granularity_type when calling getInventorySummaries');
         }
         // verify the required parameter 'granularity_id' is set
         if (null === $granularity_id || (is_array($granularity_id) && 0 === count($granularity_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $granularity_id when calling getInventorySummaries');
+            throw new InvalidArgumentException('Missing the required parameter $granularity_id when calling getInventorySummaries');
         }
         // verify the required parameter 'marketplace_ids' is set
         if (null === $marketplace_ids || (is_array($marketplace_ids) && 0 === count($marketplace_ids))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_ids when calling getInventorySummaries');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_ids when calling getInventorySummaries');
         }
 
         $resourcePath = '/fba/inventory/v1/summaries';

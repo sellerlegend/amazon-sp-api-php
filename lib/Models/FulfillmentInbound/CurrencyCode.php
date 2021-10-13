@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * CurrencyCode Class Doc Comment.
  *
-
  * @description The currency code.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CurrencyCode
-{
+class CurrencyCode {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class CurrencyCode
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::USD,
-self::GBP,        ];
+            self::GBP,];
     }
 }

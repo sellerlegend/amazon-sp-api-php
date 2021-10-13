@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TrialShipmentEvent Class Doc Comment.
  *
-
  * @description An event related to a trial shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TrialShipmentEvent implements ModelInterface, ArrayAccess
-{
+class TrialShipmentEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +45,12 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amazon_order_id' => 'string',
-'financial_event_group_id' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'sku' => 'string',
-'fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',    ];
+        'amazon_order_id'          => 'string',
+        'financial_event_group_id' => 'string',
+        'posted_date'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
+        'sku'                      => 'string',
+        'fee_list'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +58,19 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amazon_order_id' => null,
-'financial_event_group_id' => null,
-'posted_date' => null,
-'sku' => null,
-'fee_list' => null,    ];
+        'amazon_order_id'          => null,
+        'financial_event_group_id' => null,
+        'posted_date'              => null,
+        'sku'                      => null,
+        'fee_list'                 => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +79,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +90,11 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'AmazonOrderId',
-'financial_event_group_id' => 'FinancialEventGroupId',
-'posted_date' => 'PostedDate',
-'sku' => 'SKU',
-'fee_list' => 'FeeList',    ];
+        'amazon_order_id'          => 'AmazonOrderId',
+        'financial_event_group_id' => 'FinancialEventGroupId',
+        'posted_date'              => 'PostedDate',
+        'sku'                      => 'SKU',
+        'fee_list'                 => 'FeeList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +102,11 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
-'financial_event_group_id' => 'setFinancialEventGroupId',
-'posted_date' => 'setPostedDate',
-'sku' => 'setSku',
-'fee_list' => 'setFeeList',    ];
+        'amazon_order_id'          => 'setAmazonOrderId',
+        'financial_event_group_id' => 'setFinancialEventGroupId',
+        'posted_date'              => 'setPostedDate',
+        'sku'                      => 'setSku',
+        'fee_list'                 => 'setFeeList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +114,11 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
-'financial_event_group_id' => 'getFinancialEventGroupId',
-'posted_date' => 'getPostedDate',
-'sku' => 'getSku',
-'fee_list' => 'getFeeList',    ];
+        'amazon_order_id'          => 'getAmazonOrderId',
+        'financial_event_group_id' => 'getFinancialEventGroupId',
+        'posted_date'              => 'getPostedDate',
+        'sku'                      => 'getSku',
+        'fee_list'                 => 'getFeeList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +126,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +135,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +144,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +153,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +170,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['financial_event_group_id'] = isset($data['financial_event_group_id']) ? $data['financial_event_group_id'] : null;
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
@@ -189,8 +183,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -202,8 +195,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -212,8 +204,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -224,8 +215,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -236,8 +226,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFinancialEventGroupId()
-    {
+    public function getFinancialEventGroupId() {
         return $this->container['financial_event_group_id'];
     }
 
@@ -248,8 +237,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFinancialEventGroupId($financial_event_group_id)
-    {
+    public function setFinancialEventGroupId($financial_event_group_id) {
         $this->container['financial_event_group_id'] = $financial_event_group_id;
 
         return $this;
@@ -258,22 +246,20 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -284,8 +270,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSku()
-    {
+    public function getSku() {
         return $this->container['sku'];
     }
 
@@ -296,8 +281,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSku($sku)
-    {
+    public function setSku($sku) {
         $this->container['sku'] = $sku;
 
         return $this;
@@ -306,22 +290,20 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getFeeList()
-    {
+    public function getFeeList() {
         return $this->container['fee_list'];
     }
 
     /**
      * Sets fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $fee_list fee_list
+     * @param FeeComponentList $fee_list fee_list
      *
      * @return $this
      */
-    public function setFeeList($fee_list)
-    {
+    public function setFeeList($fee_list) {
         $this->container['fee_list'] = $fee_list;
 
         return $this;
@@ -334,8 +316,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -346,21 +327,19 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -375,8 +354,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -385,8 +363,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

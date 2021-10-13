@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OrderItem Class Doc Comment.
  *
-
  * @description A single order item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OrderItem implements ModelInterface, ArrayAccess
-{
+class OrderItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,37 +45,37 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'seller_sku' => 'string',
-'order_item_id' => 'string',
-'title' => 'string',
-'quantity_ordered' => 'int',
-'quantity_shipped' => 'int',
-'product_info' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail',
-'points_granted' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail',
-'item_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'shipping_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'item_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'shipping_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'shipping_discount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'shipping_discount_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'promotion_discount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'promotion_discount_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'promotion_ids' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\PromotionIdList',
-'cod_fee' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'cod_fee_discount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'is_gift' => 'bool',
-'condition_note' => 'string',
-'condition_id' => 'string',
-'condition_subtype_id' => 'string',
-'scheduled_delivery_start_date' => 'string',
-'scheduled_delivery_end_date' => 'string',
-'price_designation' => 'string',
-'tax_collection' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\TaxCollection',
-'serial_number_required' => 'bool',
-'is_transparency' => 'bool',
-'ioss_number' => 'string',
-'deemed_reseller_category' => 'string',    ];
+        'asin'                          => 'string',
+        'seller_sku'                    => 'string',
+        'order_item_id'                 => 'string',
+        'title'                         => 'string',
+        'quantity_ordered'              => 'int',
+        'quantity_shipped'              => 'int',
+        'product_info'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail',
+        'points_granted'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail',
+        'item_price'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'shipping_price'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'item_tax'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'shipping_tax'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'shipping_discount'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'shipping_discount_tax'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'promotion_discount'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'promotion_discount_tax'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'promotion_ids'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PromotionIdList',
+        'cod_fee'                       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'cod_fee_discount'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'is_gift'                       => 'bool',
+        'condition_note'                => 'string',
+        'condition_id'                  => 'string',
+        'condition_subtype_id'          => 'string',
+        'scheduled_delivery_start_date' => 'string',
+        'scheduled_delivery_end_date'   => 'string',
+        'price_designation'             => 'string',
+        'tax_collection'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxCollection',
+        'serial_number_required'        => 'bool',
+        'is_transparency'               => 'bool',
+        'ioss_number'                   => 'string',
+        'deemed_reseller_category'      => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -84,45 +83,44 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'seller_sku' => null,
-'order_item_id' => null,
-'title' => null,
-'quantity_ordered' => null,
-'quantity_shipped' => null,
-'product_info' => null,
-'points_granted' => null,
-'item_price' => null,
-'shipping_price' => null,
-'item_tax' => null,
-'shipping_tax' => null,
-'shipping_discount' => null,
-'shipping_discount_tax' => null,
-'promotion_discount' => null,
-'promotion_discount_tax' => null,
-'promotion_ids' => null,
-'cod_fee' => null,
-'cod_fee_discount' => null,
-'is_gift' => null,
-'condition_note' => null,
-'condition_id' => null,
-'condition_subtype_id' => null,
-'scheduled_delivery_start_date' => null,
-'scheduled_delivery_end_date' => null,
-'price_designation' => null,
-'tax_collection' => null,
-'serial_number_required' => null,
-'is_transparency' => null,
-'ioss_number' => null,
-'deemed_reseller_category' => null,    ];
+        'asin'                          => null,
+        'seller_sku'                    => null,
+        'order_item_id'                 => null,
+        'title'                         => null,
+        'quantity_ordered'              => null,
+        'quantity_shipped'              => null,
+        'product_info'                  => null,
+        'points_granted'                => null,
+        'item_price'                    => null,
+        'shipping_price'                => null,
+        'item_tax'                      => null,
+        'shipping_tax'                  => null,
+        'shipping_discount'             => null,
+        'shipping_discount_tax'         => null,
+        'promotion_discount'            => null,
+        'promotion_discount_tax'        => null,
+        'promotion_ids'                 => null,
+        'cod_fee'                       => null,
+        'cod_fee_discount'              => null,
+        'is_gift'                       => null,
+        'condition_note'                => null,
+        'condition_id'                  => null,
+        'condition_subtype_id'          => null,
+        'scheduled_delivery_start_date' => null,
+        'scheduled_delivery_end_date'   => null,
+        'price_designation'             => null,
+        'tax_collection'                => null,
+        'serial_number_required'        => null,
+        'is_transparency'               => null,
+        'ioss_number'                   => null,
+        'deemed_reseller_category'      => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -131,8 +129,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -143,37 +140,37 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'ASIN',
-'seller_sku' => 'SellerSKU',
-'order_item_id' => 'OrderItemId',
-'title' => 'Title',
-'quantity_ordered' => 'QuantityOrdered',
-'quantity_shipped' => 'QuantityShipped',
-'product_info' => 'ProductInfo',
-'points_granted' => 'PointsGranted',
-'item_price' => 'ItemPrice',
-'shipping_price' => 'ShippingPrice',
-'item_tax' => 'ItemTax',
-'shipping_tax' => 'ShippingTax',
-'shipping_discount' => 'ShippingDiscount',
-'shipping_discount_tax' => 'ShippingDiscountTax',
-'promotion_discount' => 'PromotionDiscount',
-'promotion_discount_tax' => 'PromotionDiscountTax',
-'promotion_ids' => 'PromotionIds',
-'cod_fee' => 'CODFee',
-'cod_fee_discount' => 'CODFeeDiscount',
-'is_gift' => 'IsGift',
-'condition_note' => 'ConditionNote',
-'condition_id' => 'ConditionId',
-'condition_subtype_id' => 'ConditionSubtypeId',
-'scheduled_delivery_start_date' => 'ScheduledDeliveryStartDate',
-'scheduled_delivery_end_date' => 'ScheduledDeliveryEndDate',
-'price_designation' => 'PriceDesignation',
-'tax_collection' => 'TaxCollection',
-'serial_number_required' => 'SerialNumberRequired',
-'is_transparency' => 'IsTransparency',
-'ioss_number' => 'IossNumber',
-'deemed_reseller_category' => 'DeemedResellerCategory',    ];
+        'asin'                          => 'ASIN',
+        'seller_sku'                    => 'SellerSKU',
+        'order_item_id'                 => 'OrderItemId',
+        'title'                         => 'Title',
+        'quantity_ordered'              => 'QuantityOrdered',
+        'quantity_shipped'              => 'QuantityShipped',
+        'product_info'                  => 'ProductInfo',
+        'points_granted'                => 'PointsGranted',
+        'item_price'                    => 'ItemPrice',
+        'shipping_price'                => 'ShippingPrice',
+        'item_tax'                      => 'ItemTax',
+        'shipping_tax'                  => 'ShippingTax',
+        'shipping_discount'             => 'ShippingDiscount',
+        'shipping_discount_tax'         => 'ShippingDiscountTax',
+        'promotion_discount'            => 'PromotionDiscount',
+        'promotion_discount_tax'        => 'PromotionDiscountTax',
+        'promotion_ids'                 => 'PromotionIds',
+        'cod_fee'                       => 'CODFee',
+        'cod_fee_discount'              => 'CODFeeDiscount',
+        'is_gift'                       => 'IsGift',
+        'condition_note'                => 'ConditionNote',
+        'condition_id'                  => 'ConditionId',
+        'condition_subtype_id'          => 'ConditionSubtypeId',
+        'scheduled_delivery_start_date' => 'ScheduledDeliveryStartDate',
+        'scheduled_delivery_end_date'   => 'ScheduledDeliveryEndDate',
+        'price_designation'             => 'PriceDesignation',
+        'tax_collection'                => 'TaxCollection',
+        'serial_number_required'        => 'SerialNumberRequired',
+        'is_transparency'               => 'IsTransparency',
+        'ioss_number'                   => 'IossNumber',
+        'deemed_reseller_category'      => 'DeemedResellerCategory',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -181,37 +178,37 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'seller_sku' => 'setSellerSku',
-'order_item_id' => 'setOrderItemId',
-'title' => 'setTitle',
-'quantity_ordered' => 'setQuantityOrdered',
-'quantity_shipped' => 'setQuantityShipped',
-'product_info' => 'setProductInfo',
-'points_granted' => 'setPointsGranted',
-'item_price' => 'setItemPrice',
-'shipping_price' => 'setShippingPrice',
-'item_tax' => 'setItemTax',
-'shipping_tax' => 'setShippingTax',
-'shipping_discount' => 'setShippingDiscount',
-'shipping_discount_tax' => 'setShippingDiscountTax',
-'promotion_discount' => 'setPromotionDiscount',
-'promotion_discount_tax' => 'setPromotionDiscountTax',
-'promotion_ids' => 'setPromotionIds',
-'cod_fee' => 'setCodFee',
-'cod_fee_discount' => 'setCodFeeDiscount',
-'is_gift' => 'setIsGift',
-'condition_note' => 'setConditionNote',
-'condition_id' => 'setConditionId',
-'condition_subtype_id' => 'setConditionSubtypeId',
-'scheduled_delivery_start_date' => 'setScheduledDeliveryStartDate',
-'scheduled_delivery_end_date' => 'setScheduledDeliveryEndDate',
-'price_designation' => 'setPriceDesignation',
-'tax_collection' => 'setTaxCollection',
-'serial_number_required' => 'setSerialNumberRequired',
-'is_transparency' => 'setIsTransparency',
-'ioss_number' => 'setIossNumber',
-'deemed_reseller_category' => 'setDeemedResellerCategory',    ];
+        'asin'                          => 'setAsin',
+        'seller_sku'                    => 'setSellerSku',
+        'order_item_id'                 => 'setOrderItemId',
+        'title'                         => 'setTitle',
+        'quantity_ordered'              => 'setQuantityOrdered',
+        'quantity_shipped'              => 'setQuantityShipped',
+        'product_info'                  => 'setProductInfo',
+        'points_granted'                => 'setPointsGranted',
+        'item_price'                    => 'setItemPrice',
+        'shipping_price'                => 'setShippingPrice',
+        'item_tax'                      => 'setItemTax',
+        'shipping_tax'                  => 'setShippingTax',
+        'shipping_discount'             => 'setShippingDiscount',
+        'shipping_discount_tax'         => 'setShippingDiscountTax',
+        'promotion_discount'            => 'setPromotionDiscount',
+        'promotion_discount_tax'        => 'setPromotionDiscountTax',
+        'promotion_ids'                 => 'setPromotionIds',
+        'cod_fee'                       => 'setCodFee',
+        'cod_fee_discount'              => 'setCodFeeDiscount',
+        'is_gift'                       => 'setIsGift',
+        'condition_note'                => 'setConditionNote',
+        'condition_id'                  => 'setConditionId',
+        'condition_subtype_id'          => 'setConditionSubtypeId',
+        'scheduled_delivery_start_date' => 'setScheduledDeliveryStartDate',
+        'scheduled_delivery_end_date'   => 'setScheduledDeliveryEndDate',
+        'price_designation'             => 'setPriceDesignation',
+        'tax_collection'                => 'setTaxCollection',
+        'serial_number_required'        => 'setSerialNumberRequired',
+        'is_transparency'               => 'setIsTransparency',
+        'ioss_number'                   => 'setIossNumber',
+        'deemed_reseller_category'      => 'setDeemedResellerCategory',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -219,37 +216,37 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'seller_sku' => 'getSellerSku',
-'order_item_id' => 'getOrderItemId',
-'title' => 'getTitle',
-'quantity_ordered' => 'getQuantityOrdered',
-'quantity_shipped' => 'getQuantityShipped',
-'product_info' => 'getProductInfo',
-'points_granted' => 'getPointsGranted',
-'item_price' => 'getItemPrice',
-'shipping_price' => 'getShippingPrice',
-'item_tax' => 'getItemTax',
-'shipping_tax' => 'getShippingTax',
-'shipping_discount' => 'getShippingDiscount',
-'shipping_discount_tax' => 'getShippingDiscountTax',
-'promotion_discount' => 'getPromotionDiscount',
-'promotion_discount_tax' => 'getPromotionDiscountTax',
-'promotion_ids' => 'getPromotionIds',
-'cod_fee' => 'getCodFee',
-'cod_fee_discount' => 'getCodFeeDiscount',
-'is_gift' => 'getIsGift',
-'condition_note' => 'getConditionNote',
-'condition_id' => 'getConditionId',
-'condition_subtype_id' => 'getConditionSubtypeId',
-'scheduled_delivery_start_date' => 'getScheduledDeliveryStartDate',
-'scheduled_delivery_end_date' => 'getScheduledDeliveryEndDate',
-'price_designation' => 'getPriceDesignation',
-'tax_collection' => 'getTaxCollection',
-'serial_number_required' => 'getSerialNumberRequired',
-'is_transparency' => 'getIsTransparency',
-'ioss_number' => 'getIossNumber',
-'deemed_reseller_category' => 'getDeemedResellerCategory',    ];
+        'asin'                          => 'getAsin',
+        'seller_sku'                    => 'getSellerSku',
+        'order_item_id'                 => 'getOrderItemId',
+        'title'                         => 'getTitle',
+        'quantity_ordered'              => 'getQuantityOrdered',
+        'quantity_shipped'              => 'getQuantityShipped',
+        'product_info'                  => 'getProductInfo',
+        'points_granted'                => 'getPointsGranted',
+        'item_price'                    => 'getItemPrice',
+        'shipping_price'                => 'getShippingPrice',
+        'item_tax'                      => 'getItemTax',
+        'shipping_tax'                  => 'getShippingTax',
+        'shipping_discount'             => 'getShippingDiscount',
+        'shipping_discount_tax'         => 'getShippingDiscountTax',
+        'promotion_discount'            => 'getPromotionDiscount',
+        'promotion_discount_tax'        => 'getPromotionDiscountTax',
+        'promotion_ids'                 => 'getPromotionIds',
+        'cod_fee'                       => 'getCodFee',
+        'cod_fee_discount'              => 'getCodFeeDiscount',
+        'is_gift'                       => 'getIsGift',
+        'condition_note'                => 'getConditionNote',
+        'condition_id'                  => 'getConditionId',
+        'condition_subtype_id'          => 'getConditionSubtypeId',
+        'scheduled_delivery_start_date' => 'getScheduledDeliveryStartDate',
+        'scheduled_delivery_end_date'   => 'getScheduledDeliveryEndDate',
+        'price_designation'             => 'getPriceDesignation',
+        'tax_collection'                => 'getTaxCollection',
+        'serial_number_required'        => 'getSerialNumberRequired',
+        'is_transparency'               => 'getIsTransparency',
+        'ioss_number'                   => 'getIossNumber',
+        'deemed_reseller_category'      => 'getDeemedResellerCategory',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -257,8 +254,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -267,8 +263,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -277,8 +272,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -287,24 +281,25 @@ class OrderItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
     const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
+    const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
 
     /**
      * Gets allowable values of the enum.
      *
      * @return string[]
      */
-    public function getDeemedResellerCategoryAllowableValues()
-    {
+    public function getDeemedResellerCategoryAllowableValues() {
         return [
             self::DEEMED_RESELLER_CATEGORY_IOSS,
-self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
+            self::DEEMED_RESELLER_CATEGORY_UOSS,
+            self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
+        ];
     }
 
     /**
@@ -320,8 +315,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['order_item_id'] = isset($data['order_item_id']) ? $data['order_item_id'] : null;
@@ -360,8 +354,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['asin']) {
@@ -390,8 +383,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -400,8 +392,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -412,8 +403,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -424,8 +414,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -436,8 +425,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -448,8 +436,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getOrderItemId()
-    {
+    public function getOrderItemId() {
         return $this->container['order_item_id'];
     }
 
@@ -460,8 +447,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setOrderItemId($order_item_id)
-    {
+    public function setOrderItemId($order_item_id) {
         $this->container['order_item_id'] = $order_item_id;
 
         return $this;
@@ -472,8 +458,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->container['title'];
     }
 
@@ -484,8 +469,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->container['title'] = $title;
 
         return $this;
@@ -496,8 +480,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return int
      */
-    public function getQuantityOrdered()
-    {
+    public function getQuantityOrdered() {
         return $this->container['quantity_ordered'];
     }
 
@@ -508,8 +491,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setQuantityOrdered($quantity_ordered)
-    {
+    public function setQuantityOrdered($quantity_ordered) {
         $this->container['quantity_ordered'] = $quantity_ordered;
 
         return $this;
@@ -520,8 +502,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return int
      */
-    public function getQuantityShipped()
-    {
+    public function getQuantityShipped() {
         return $this->container['quantity_shipped'];
     }
 
@@ -532,8 +513,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setQuantityShipped($quantity_shipped)
-    {
+    public function setQuantityShipped($quantity_shipped) {
         $this->container['quantity_shipped'] = $quantity_shipped;
 
         return $this;
@@ -542,22 +522,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets product_info.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail
+     * @return ProductInfoDetail
      */
-    public function getProductInfo()
-    {
+    public function getProductInfo() {
         return $this->container['product_info'];
     }
 
     /**
      * Sets product_info.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail $product_info product_info
+     * @param ProductInfoDetail $product_info product_info
      *
      * @return $this
      */
-    public function setProductInfo($product_info)
-    {
+    public function setProductInfo($product_info) {
         $this->container['product_info'] = $product_info;
 
         return $this;
@@ -566,22 +544,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets points_granted.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail
+     * @return PointsGrantedDetail
      */
-    public function getPointsGranted()
-    {
+    public function getPointsGranted() {
         return $this->container['points_granted'];
     }
 
     /**
      * Sets points_granted.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail $points_granted points_granted
+     * @param PointsGrantedDetail $points_granted points_granted
      *
      * @return $this
      */
-    public function setPointsGranted($points_granted)
-    {
+    public function setPointsGranted($points_granted) {
         $this->container['points_granted'] = $points_granted;
 
         return $this;
@@ -590,22 +566,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets item_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getItemPrice()
-    {
+    public function getItemPrice() {
         return $this->container['item_price'];
     }
 
     /**
      * Sets item_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $item_price item_price
+     * @param Money $item_price item_price
      *
      * @return $this
      */
-    public function setItemPrice($item_price)
-    {
+    public function setItemPrice($item_price) {
         $this->container['item_price'] = $item_price;
 
         return $this;
@@ -614,22 +588,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets shipping_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getShippingPrice()
-    {
+    public function getShippingPrice() {
         return $this->container['shipping_price'];
     }
 
     /**
      * Sets shipping_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $shipping_price shipping_price
+     * @param Money $shipping_price shipping_price
      *
      * @return $this
      */
-    public function setShippingPrice($shipping_price)
-    {
+    public function setShippingPrice($shipping_price) {
         $this->container['shipping_price'] = $shipping_price;
 
         return $this;
@@ -638,22 +610,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets item_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getItemTax()
-    {
+    public function getItemTax() {
         return $this->container['item_tax'];
     }
 
     /**
      * Sets item_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $item_tax item_tax
+     * @param Money $item_tax item_tax
      *
      * @return $this
      */
-    public function setItemTax($item_tax)
-    {
+    public function setItemTax($item_tax) {
         $this->container['item_tax'] = $item_tax;
 
         return $this;
@@ -662,22 +632,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets shipping_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getShippingTax()
-    {
+    public function getShippingTax() {
         return $this->container['shipping_tax'];
     }
 
     /**
      * Sets shipping_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $shipping_tax shipping_tax
+     * @param Money $shipping_tax shipping_tax
      *
      * @return $this
      */
-    public function setShippingTax($shipping_tax)
-    {
+    public function setShippingTax($shipping_tax) {
         $this->container['shipping_tax'] = $shipping_tax;
 
         return $this;
@@ -686,22 +654,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets shipping_discount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getShippingDiscount()
-    {
+    public function getShippingDiscount() {
         return $this->container['shipping_discount'];
     }
 
     /**
      * Sets shipping_discount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $shipping_discount shipping_discount
+     * @param Money $shipping_discount shipping_discount
      *
      * @return $this
      */
-    public function setShippingDiscount($shipping_discount)
-    {
+    public function setShippingDiscount($shipping_discount) {
         $this->container['shipping_discount'] = $shipping_discount;
 
         return $this;
@@ -710,22 +676,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets shipping_discount_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getShippingDiscountTax()
-    {
+    public function getShippingDiscountTax() {
         return $this->container['shipping_discount_tax'];
     }
 
     /**
      * Sets shipping_discount_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $shipping_discount_tax shipping_discount_tax
+     * @param Money $shipping_discount_tax shipping_discount_tax
      *
      * @return $this
      */
-    public function setShippingDiscountTax($shipping_discount_tax)
-    {
+    public function setShippingDiscountTax($shipping_discount_tax) {
         $this->container['shipping_discount_tax'] = $shipping_discount_tax;
 
         return $this;
@@ -734,22 +698,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets promotion_discount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getPromotionDiscount()
-    {
+    public function getPromotionDiscount() {
         return $this->container['promotion_discount'];
     }
 
     /**
      * Sets promotion_discount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $promotion_discount promotion_discount
+     * @param Money $promotion_discount promotion_discount
      *
      * @return $this
      */
-    public function setPromotionDiscount($promotion_discount)
-    {
+    public function setPromotionDiscount($promotion_discount) {
         $this->container['promotion_discount'] = $promotion_discount;
 
         return $this;
@@ -758,22 +720,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets promotion_discount_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getPromotionDiscountTax()
-    {
+    public function getPromotionDiscountTax() {
         return $this->container['promotion_discount_tax'];
     }
 
     /**
      * Sets promotion_discount_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $promotion_discount_tax promotion_discount_tax
+     * @param Money $promotion_discount_tax promotion_discount_tax
      *
      * @return $this
      */
-    public function setPromotionDiscountTax($promotion_discount_tax)
-    {
+    public function setPromotionDiscountTax($promotion_discount_tax) {
         $this->container['promotion_discount_tax'] = $promotion_discount_tax;
 
         return $this;
@@ -782,22 +742,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets promotion_ids.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PromotionIdList
+     * @return PromotionIdList
      */
-    public function getPromotionIds()
-    {
+    public function getPromotionIds() {
         return $this->container['promotion_ids'];
     }
 
     /**
      * Sets promotion_ids.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PromotionIdList $promotion_ids promotion_ids
+     * @param PromotionIdList $promotion_ids promotion_ids
      *
      * @return $this
      */
-    public function setPromotionIds($promotion_ids)
-    {
+    public function setPromotionIds($promotion_ids) {
         $this->container['promotion_ids'] = $promotion_ids;
 
         return $this;
@@ -806,22 +764,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets cod_fee.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getCodFee()
-    {
+    public function getCodFee() {
         return $this->container['cod_fee'];
     }
 
     /**
      * Sets cod_fee.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $cod_fee cod_fee
+     * @param Money $cod_fee cod_fee
      *
      * @return $this
      */
-    public function setCodFee($cod_fee)
-    {
+    public function setCodFee($cod_fee) {
         $this->container['cod_fee'] = $cod_fee;
 
         return $this;
@@ -830,22 +786,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets cod_fee_discount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getCodFeeDiscount()
-    {
+    public function getCodFeeDiscount() {
         return $this->container['cod_fee_discount'];
     }
 
     /**
      * Sets cod_fee_discount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $cod_fee_discount cod_fee_discount
+     * @param Money $cod_fee_discount cod_fee_discount
      *
      * @return $this
      */
-    public function setCodFeeDiscount($cod_fee_discount)
-    {
+    public function setCodFeeDiscount($cod_fee_discount) {
         $this->container['cod_fee_discount'] = $cod_fee_discount;
 
         return $this;
@@ -856,8 +810,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return bool
      */
-    public function getIsGift()
-    {
+    public function getIsGift() {
         return $this->container['is_gift'];
     }
 
@@ -868,8 +821,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setIsGift($is_gift)
-    {
+    public function setIsGift($is_gift) {
         $this->container['is_gift'] = $is_gift;
 
         return $this;
@@ -880,8 +832,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getConditionNote()
-    {
+    public function getConditionNote() {
         return $this->container['condition_note'];
     }
 
@@ -892,8 +843,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setConditionNote($condition_note)
-    {
+    public function setConditionNote($condition_note) {
         $this->container['condition_note'] = $condition_note;
 
         return $this;
@@ -904,8 +854,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getConditionId()
-    {
+    public function getConditionId() {
         return $this->container['condition_id'];
     }
 
@@ -916,8 +865,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setConditionId($condition_id)
-    {
+    public function setConditionId($condition_id) {
         $this->container['condition_id'] = $condition_id;
 
         return $this;
@@ -928,8 +876,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getConditionSubtypeId()
-    {
+    public function getConditionSubtypeId() {
         return $this->container['condition_subtype_id'];
     }
 
@@ -940,8 +887,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setConditionSubtypeId($condition_subtype_id)
-    {
+    public function setConditionSubtypeId($condition_subtype_id) {
         $this->container['condition_subtype_id'] = $condition_subtype_id;
 
         return $this;
@@ -952,8 +898,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getScheduledDeliveryStartDate()
-    {
+    public function getScheduledDeliveryStartDate() {
         return $this->container['scheduled_delivery_start_date'];
     }
 
@@ -964,8 +909,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setScheduledDeliveryStartDate($scheduled_delivery_start_date)
-    {
+    public function setScheduledDeliveryStartDate($scheduled_delivery_start_date) {
         $this->container['scheduled_delivery_start_date'] = $scheduled_delivery_start_date;
 
         return $this;
@@ -976,8 +920,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getScheduledDeliveryEndDate()
-    {
+    public function getScheduledDeliveryEndDate() {
         return $this->container['scheduled_delivery_end_date'];
     }
 
@@ -988,8 +931,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setScheduledDeliveryEndDate($scheduled_delivery_end_date)
-    {
+    public function setScheduledDeliveryEndDate($scheduled_delivery_end_date) {
         $this->container['scheduled_delivery_end_date'] = $scheduled_delivery_end_date;
 
         return $this;
@@ -1000,8 +942,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getPriceDesignation()
-    {
+    public function getPriceDesignation() {
         return $this->container['price_designation'];
     }
 
@@ -1012,8 +953,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setPriceDesignation($price_designation)
-    {
+    public function setPriceDesignation($price_designation) {
         $this->container['price_designation'] = $price_designation;
 
         return $this;
@@ -1022,22 +962,20 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
     /**
      * Gets tax_collection.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\TaxCollection
+     * @return TaxCollection
      */
-    public function getTaxCollection()
-    {
+    public function getTaxCollection() {
         return $this->container['tax_collection'];
     }
 
     /**
      * Sets tax_collection.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\TaxCollection $tax_collection tax_collection
+     * @param TaxCollection $tax_collection tax_collection
      *
      * @return $this
      */
-    public function setTaxCollection($tax_collection)
-    {
+    public function setTaxCollection($tax_collection) {
         $this->container['tax_collection'] = $tax_collection;
 
         return $this;
@@ -1048,8 +986,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return bool
      */
-    public function getSerialNumberRequired()
-    {
+    public function getSerialNumberRequired() {
         return $this->container['serial_number_required'];
     }
 
@@ -1060,8 +997,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setSerialNumberRequired($serial_number_required)
-    {
+    public function setSerialNumberRequired($serial_number_required) {
         $this->container['serial_number_required'] = $serial_number_required;
 
         return $this;
@@ -1072,8 +1008,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return bool
      */
-    public function getIsTransparency()
-    {
+    public function getIsTransparency() {
         return $this->container['is_transparency'];
     }
 
@@ -1084,8 +1019,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setIsTransparency($is_transparency)
-    {
+    public function setIsTransparency($is_transparency) {
         $this->container['is_transparency'] = $is_transparency;
 
         return $this;
@@ -1096,8 +1030,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getIossNumber()
-    {
+    public function getIossNumber() {
         return $this->container['ioss_number'];
     }
 
@@ -1108,8 +1041,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setIossNumber($ioss_number)
-    {
+    public function setIossNumber($ioss_number) {
         $this->container['ioss_number'] = $ioss_number;
 
         return $this;
@@ -1120,8 +1052,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function getDeemedResellerCategory()
-    {
+    public function getDeemedResellerCategory() {
         return $this->container['deemed_reseller_category'];
     }
 
@@ -1132,11 +1063,10 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return $this
      */
-    public function setDeemedResellerCategory($deemed_reseller_category)
-    {
+    public function setDeemedResellerCategory($deemed_reseller_category) {
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
         if (!is_null($deemed_reseller_category) && !in_array($deemed_reseller_category, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'deemed_reseller_category', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'deemed_reseller_category', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
 
@@ -1150,8 +1080,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -1162,21 +1091,19 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -1191,8 +1118,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -1201,8 +1127,7 @@ self::DEEMED_RESELLER_CATEGORY_UOSS,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

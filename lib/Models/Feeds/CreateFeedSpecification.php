@@ -15,19 +15,18 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFeedSpecification Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFeedSpecification implements ModelInterface, ArrayAccess
-{
+class CreateFeedSpecification implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,10 +42,10 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'feed_type' => 'string',
-'marketplace_ids' => 'string[]',
-'input_feed_document_id' => 'string',
-'feed_options' => '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedOptions',    ];
+        'feed_type'              => 'string',
+        'marketplace_ids'        => 'string[]',
+        'input_feed_document_id' => 'string',
+        'feed_options'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\FeedOptions',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,18 +53,17 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'feed_type' => null,
-'marketplace_ids' => null,
-'input_feed_document_id' => null,
-'feed_options' => null,    ];
+        'feed_type'              => null,
+        'marketplace_ids'        => null,
+        'input_feed_document_id' => null,
+        'feed_options'           => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -74,8 +72,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,10 +83,10 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'feed_type' => 'feedType',
-'marketplace_ids' => 'marketplaceIds',
-'input_feed_document_id' => 'inputFeedDocumentId',
-'feed_options' => 'feedOptions',    ];
+        'feed_type'              => 'feedType',
+        'marketplace_ids'        => 'marketplaceIds',
+        'input_feed_document_id' => 'inputFeedDocumentId',
+        'feed_options'           => 'feedOptions',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,10 +94,10 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'feed_type' => 'setFeedType',
-'marketplace_ids' => 'setMarketplaceIds',
-'input_feed_document_id' => 'setInputFeedDocumentId',
-'feed_options' => 'setFeedOptions',    ];
+        'feed_type'              => 'setFeedType',
+        'marketplace_ids'        => 'setMarketplaceIds',
+        'input_feed_document_id' => 'setInputFeedDocumentId',
+        'feed_options'           => 'setFeedOptions',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,10 +105,10 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'feed_type' => 'getFeedType',
-'marketplace_ids' => 'getMarketplaceIds',
-'input_feed_document_id' => 'getInputFeedDocumentId',
-'feed_options' => 'getFeedOptions',    ];
+        'feed_type'              => 'getFeedType',
+        'marketplace_ids'        => 'getMarketplaceIds',
+        'input_feed_document_id' => 'getInputFeedDocumentId',
+        'feed_options'           => 'getFeedOptions',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -119,8 +116,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -129,8 +125,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -139,8 +134,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -149,8 +143,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -167,8 +160,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['feed_type'] = isset($data['feed_type']) ? $data['feed_type'] : null;
         $this->container['marketplace_ids'] = isset($data['marketplace_ids']) ? $data['marketplace_ids'] : null;
         $this->container['input_feed_document_id'] = isset($data['input_feed_document_id']) ? $data['input_feed_document_id'] : null;
@@ -180,8 +172,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['feed_type']) {
@@ -203,8 +194,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -213,8 +203,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeedType()
-    {
+    public function getFeedType() {
         return $this->container['feed_type'];
     }
 
@@ -225,8 +214,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeedType($feed_type)
-    {
+    public function setFeedType($feed_type) {
         $this->container['feed_type'] = $feed_type;
 
         return $this;
@@ -237,8 +225,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMarketplaceIds()
-    {
+    public function getMarketplaceIds() {
         return $this->container['marketplace_ids'];
     }
 
@@ -249,8 +236,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceIds($marketplace_ids)
-    {
+    public function setMarketplaceIds($marketplace_ids) {
         $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;
@@ -261,8 +247,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getInputFeedDocumentId()
-    {
+    public function getInputFeedDocumentId() {
         return $this->container['input_feed_document_id'];
     }
 
@@ -273,8 +258,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInputFeedDocumentId($input_feed_document_id)
-    {
+    public function setInputFeedDocumentId($input_feed_document_id) {
         $this->container['input_feed_document_id'] = $input_feed_document_id;
 
         return $this;
@@ -283,22 +267,20 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
     /**
      * Gets feed_options.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedOptions
+     * @return FeedOptions
      */
-    public function getFeedOptions()
-    {
+    public function getFeedOptions() {
         return $this->container['feed_options'];
     }
 
     /**
      * Sets feed_options.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedOptions $feed_options feed_options
+     * @param FeedOptions $feed_options feed_options
      *
      * @return $this
      */
-    public function setFeedOptions($feed_options)
-    {
+    public function setFeedOptions($feed_options) {
         $this->container['feed_options'] = $feed_options;
 
         return $this;
@@ -311,8 +293,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -323,21 +304,19 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -352,8 +331,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -362,8 +340,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

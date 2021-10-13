@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetFulfillmentPreviewItem Class Doc Comment.
  *
-
  * @description Item information for a fulfillment order preview.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
-{
+class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity',
-'per_unit_declared_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
-'seller_fulfillment_order_item_id' => 'string',    ];
+        'seller_sku'                       => 'string',
+        'quantity'                         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity',
+        'per_unit_declared_value'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
+        'seller_fulfillment_order_item_id' => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,18 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'quantity' => null,
-'per_unit_declared_value' => null,
-'seller_fulfillment_order_item_id' => null,    ];
+        'seller_sku'                       => null,
+        'quantity'                         => null,
+        'per_unit_declared_value'          => null,
+        'seller_fulfillment_order_item_id' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +76,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +87,11 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'sellerSku',
-'quantity' => 'quantity',
-'per_unit_declared_value' => 'perUnitDeclaredValue',
-'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',    ];
+        'seller_sku'                       => 'sellerSku',
+        'quantity'                         => 'quantity',
+        'per_unit_declared_value'          => 'perUnitDeclaredValue',
+        'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId'
+    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +99,11 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'quantity' => 'setQuantity',
-'per_unit_declared_value' => 'setPerUnitDeclaredValue',
-'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',    ];
+        'seller_sku'                       => 'setSellerSku',
+        'quantity'                         => 'setQuantity',
+        'per_unit_declared_value'          => 'setPerUnitDeclaredValue',
+        'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId'
+    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +111,11 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'quantity' => 'getQuantity',
-'per_unit_declared_value' => 'getPerUnitDeclaredValue',
-'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',    ];
+        'seller_sku'                       => 'getSellerSku',
+        'quantity'                         => 'getQuantity',
+        'per_unit_declared_value'          => 'getPerUnitDeclaredValue',
+        'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +123,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +132,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +141,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +150,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +167,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['per_unit_declared_value'] = isset($data['per_unit_declared_value']) ? $data['per_unit_declared_value'] : null;
@@ -183,8 +179,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_sku']) {
@@ -206,8 +201,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -216,8 +210,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -228,8 +221,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -238,22 +230,20 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
     /**
      * Gets quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity
+     * @return Quantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
     /**
      * Sets quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity $quantity quantity
+     * @param Quantity $quantity quantity
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -262,22 +252,20 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
     /**
      * Gets per_unit_declared_value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money
+     * @return Money
      */
-    public function getPerUnitDeclaredValue()
-    {
+    public function getPerUnitDeclaredValue() {
         return $this->container['per_unit_declared_value'];
     }
 
     /**
      * Sets per_unit_declared_value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money $per_unit_declared_value per_unit_declared_value
+     * @param Money $per_unit_declared_value per_unit_declared_value
      *
      * @return $this
      */
-    public function setPerUnitDeclaredValue($per_unit_declared_value)
-    {
+    public function setPerUnitDeclaredValue($per_unit_declared_value) {
         $this->container['per_unit_declared_value'] = $per_unit_declared_value;
 
         return $this;
@@ -288,8 +276,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerFulfillmentOrderItemId()
-    {
+    public function getSellerFulfillmentOrderItemId() {
         return $this->container['seller_fulfillment_order_item_id'];
     }
 
@@ -300,8 +287,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
-    {
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id) {
         $this->container['seller_fulfillment_order_item_id'] = $seller_fulfillment_order_item_id;
 
         return $this;
@@ -314,8 +300,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -326,21 +311,19 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -355,8 +338,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -365,8 +347,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

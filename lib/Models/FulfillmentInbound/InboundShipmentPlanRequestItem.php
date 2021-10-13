@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InboundShipmentPlanRequestItem Class Doc Comment.
  *
-
  * @description Item information for creating an inbound shipment plan. Submitted with a call to the createInboundShipmentPlan operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
-{
+class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,12 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'asin' => 'string',
-'condition' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Condition',
-'quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
-'quantity_in_case' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
-'prep_details_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepDetailsList',    ];
+        'seller_sku'        => 'string',
+        'asin'              => 'string',
+        'condition'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Condition',
+        'quantity'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
+        'quantity_in_case'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
+        'prep_details_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepDetailsList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +57,19 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'asin' => null,
-'condition' => null,
-'quantity' => null,
-'quantity_in_case' => null,
-'prep_details_list' => null,    ];
+        'seller_sku'        => null,
+        'asin'              => null,
+        'condition'         => null,
+        'quantity'          => null,
+        'quantity_in_case'  => null,
+        'prep_details_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +78,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +89,12 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'SellerSKU',
-'asin' => 'ASIN',
-'condition' => 'Condition',
-'quantity' => 'Quantity',
-'quantity_in_case' => 'QuantityInCase',
-'prep_details_list' => 'PrepDetailsList',    ];
+        'seller_sku'        => 'SellerSKU',
+        'asin'              => 'ASIN',
+        'condition'         => 'Condition',
+        'quantity'          => 'Quantity',
+        'quantity_in_case'  => 'QuantityInCase',
+        'prep_details_list' => 'PrepDetailsList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +102,12 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'asin' => 'setAsin',
-'condition' => 'setCondition',
-'quantity' => 'setQuantity',
-'quantity_in_case' => 'setQuantityInCase',
-'prep_details_list' => 'setPrepDetailsList',    ];
+        'seller_sku'        => 'setSellerSku',
+        'asin'              => 'setAsin',
+        'condition'         => 'setCondition',
+        'quantity'          => 'setQuantity',
+        'quantity_in_case'  => 'setQuantityInCase',
+        'prep_details_list' => 'setPrepDetailsList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +115,12 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'asin' => 'getAsin',
-'condition' => 'getCondition',
-'quantity' => 'getQuantity',
-'quantity_in_case' => 'getQuantityInCase',
-'prep_details_list' => 'getPrepDetailsList',    ];
+        'seller_sku'        => 'getSellerSku',
+        'asin'              => 'getAsin',
+        'condition'         => 'getCondition',
+        'quantity'          => 'getQuantity',
+        'quantity_in_case'  => 'getQuantityInCase',
+        'prep_details_list' => 'getPrepDetailsList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +128,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +137,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +146,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +155,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +172,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
@@ -195,8 +186,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_sku']) {
@@ -221,8 +211,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -231,8 +220,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -243,8 +231,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -255,8 +242,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -267,8 +253,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -277,22 +262,20 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
     /**
      * Gets condition.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Condition
+     * @return Condition
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->container['condition'];
     }
 
     /**
      * Sets condition.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Condition $condition condition
+     * @param Condition $condition condition
      *
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->container['condition'] = $condition;
 
         return $this;
@@ -301,22 +284,20 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
     /**
      * Gets quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity
+     * @return Quantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
     /**
      * Sets quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity $quantity quantity
+     * @param Quantity $quantity quantity
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -325,22 +306,20 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
     /**
      * Gets quantity_in_case.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity
+     * @return Quantity
      */
-    public function getQuantityInCase()
-    {
+    public function getQuantityInCase() {
         return $this->container['quantity_in_case'];
     }
 
     /**
      * Sets quantity_in_case.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity $quantity_in_case quantity_in_case
+     * @param Quantity $quantity_in_case quantity_in_case
      *
      * @return $this
      */
-    public function setQuantityInCase($quantity_in_case)
-    {
+    public function setQuantityInCase($quantity_in_case) {
         $this->container['quantity_in_case'] = $quantity_in_case;
 
         return $this;
@@ -349,22 +328,20 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
     /**
      * Gets prep_details_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepDetailsList
+     * @return PrepDetailsList
      */
-    public function getPrepDetailsList()
-    {
+    public function getPrepDetailsList() {
         return $this->container['prep_details_list'];
     }
 
     /**
      * Sets prep_details_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepDetailsList $prep_details_list prep_details_list
+     * @param PrepDetailsList $prep_details_list prep_details_list
      *
      * @return $this
      */
-    public function setPrepDetailsList($prep_details_list)
-    {
+    public function setPrepDetailsList($prep_details_list) {
         $this->container['prep_details_list'] = $prep_details_list;
 
         return $this;
@@ -377,8 +354,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -389,21 +365,19 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -418,8 +392,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -428,8 +401,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

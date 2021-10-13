@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetEligibleShipmentServicesRequest Class Doc Comment.
  *
-
  * @description Request schema.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
-{
+class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,9 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipment_request_details' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentRequestDetails',
-'shipping_offering_filter' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingOfferingFilter',    ];
+        'shipment_request_details' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentRequestDetails',
+        'shipping_offering_filter' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingOfferingFilter'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,15 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'shipment_request_details' => null,
-'shipping_offering_filter' => null,    ];
+        'shipping_offering_filter' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +84,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'shipment_request_details' => 'ShipmentRequestDetails',
-'shipping_offering_filter' => 'ShippingOfferingFilter',    ];
+        'shipping_offering_filter' => 'ShippingOfferingFilter',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +93,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'shipment_request_details' => 'setShipmentRequestDetails',
-'shipping_offering_filter' => 'setShippingOfferingFilter',    ];
+        'shipping_offering_filter' => 'setShippingOfferingFilter',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +102,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'shipment_request_details' => 'getShipmentRequestDetails',
-'shipping_offering_filter' => 'getShippingOfferingFilter',    ];
+        'shipping_offering_filter' => 'getShippingOfferingFilter',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +154,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipment_request_details'] = isset($data['shipment_request_details']) ? $data['shipment_request_details'] : null;
         $this->container['shipping_offering_filter'] = isset($data['shipping_offering_filter']) ? $data['shipping_offering_filter'] : null;
     }
@@ -171,8 +164,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['shipment_request_details']) {
@@ -188,30 +180,27 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_request_details.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentRequestDetails
+     * @return ShipmentRequestDetails
      */
-    public function getShipmentRequestDetails()
-    {
+    public function getShipmentRequestDetails() {
         return $this->container['shipment_request_details'];
     }
 
     /**
      * Sets shipment_request_details.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     * @param ShipmentRequestDetails $shipment_request_details shipment_request_details
      *
      * @return $this
      */
-    public function setShipmentRequestDetails($shipment_request_details)
-    {
+    public function setShipmentRequestDetails($shipment_request_details) {
         $this->container['shipment_request_details'] = $shipment_request_details;
 
         return $this;
@@ -220,22 +209,20 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_offering_filter.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingOfferingFilter
+     * @return ShippingOfferingFilter
      */
-    public function getShippingOfferingFilter()
-    {
+    public function getShippingOfferingFilter() {
         return $this->container['shipping_offering_filter'];
     }
 
     /**
      * Sets shipping_offering_filter.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingOfferingFilter $shipping_offering_filter shipping_offering_filter
+     * @param ShippingOfferingFilter $shipping_offering_filter shipping_offering_filter
      *
      * @return $this
      */
-    public function setShippingOfferingFilter($shipping_offering_filter)
-    {
+    public function setShippingOfferingFilter($shipping_offering_filter) {
         $this->container['shipping_offering_filter'] = $shipping_offering_filter;
 
         return $this;
@@ -248,8 +235,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +246,19 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +273,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +282,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

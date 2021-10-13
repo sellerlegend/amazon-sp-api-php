@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Notifications;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Notifications;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SqsResource Class Doc Comment.
  *
-
  * @description The information required to create an Amazon Simple Queue Service (Amazon SQS) queue destination.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SqsResource implements ModelInterface, ArrayAccess
-{
+class SqsResource implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'arn' => 'string',    ];
+        'arn' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +52,14 @@ class SqsResource implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'arn' => null,    ];
+        'arn' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +68,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +79,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'arn' => 'arn',    ];
+        'arn' => 'arn',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +87,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'arn' => 'setArn',    ];
+        'arn' => 'setArn',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +95,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'arn' => 'getArn',    ];
+        'arn' => 'getArn',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +103,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +112,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +121,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +130,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +147,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['arn'] = isset($data['arn']) ? $data['arn'] : null;
     }
 
@@ -165,8 +156,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['arn']) {
@@ -182,8 +172,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -192,8 +181,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getArn()
-    {
+    public function getArn() {
         return $this->container['arn'];
     }
 
@@ -204,8 +192,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setArn($arn)
-    {
+    public function setArn($arn) {
         $this->container['arn'] = $arn;
 
         return $this;
@@ -218,8 +205,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -230,21 +216,19 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -259,8 +243,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -269,8 +252,7 @@ class SqsResource implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

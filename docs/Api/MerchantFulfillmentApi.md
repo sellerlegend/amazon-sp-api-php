@@ -4,21 +4,26 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelShipment**](MerchantFulfillmentApi.md#cancelshipment) | **DELETE** /mfn/v0/shipments/{shipmentId} | 
-[**cancelShipmentOld**](MerchantFulfillmentApi.md#cancelshipmentold) | **PUT** /mfn/v0/shipments/{shipmentId}/cancel | 
-[**createShipment**](MerchantFulfillmentApi.md#createshipment) | **POST** /mfn/v0/shipments | 
-[**getAdditionalSellerInputs**](MerchantFulfillmentApi.md#getadditionalsellerinputs) | **POST** /mfn/v0/additionalSellerInputs | 
-[**getAdditionalSellerInputsOld**](MerchantFulfillmentApi.md#getadditionalsellerinputsold) | **POST** /mfn/v0/sellerInputs | 
-[**getEligibleShipmentServices**](MerchantFulfillmentApi.md#geteligibleshipmentservices) | **POST** /mfn/v0/eligibleShippingServices | 
-[**getEligibleShipmentServicesOld**](MerchantFulfillmentApi.md#geteligibleshipmentservicesold) | **POST** /mfn/v0/eligibleServices | 
-[**getShipment**](MerchantFulfillmentApi.md#getshipment) | **GET** /mfn/v0/shipments/{shipmentId} | 
+[**cancelShipment**](MerchantFulfillmentApi.md#cancelshipment) | **DELETE** /mfn/v0/shipments/{shipmentId} |
+[**cancelShipmentOld**](MerchantFulfillmentApi.md#cancelshipmentold) | **PUT** /mfn/v0/shipments/{shipmentId}/cancel |
+[**createShipment**](MerchantFulfillmentApi.md#createshipment) | **POST** /mfn/v0/shipments |
+[**getAdditionalSellerInputs**](MerchantFulfillmentApi.md#getadditionalsellerinputs) | **
+POST** /mfn/v0/additionalSellerInputs |
+[**getAdditionalSellerInputsOld**](MerchantFulfillmentApi.md#getadditionalsellerinputsold) | **
+POST** /mfn/v0/sellerInputs |
+[**getEligibleShipmentServices**](MerchantFulfillmentApi.md#geteligibleshipmentservices) | **
+POST** /mfn/v0/eligibleShippingServices |
+[**getEligibleShipmentServicesOld**](MerchantFulfillmentApi.md#geteligibleshipmentservicesold) | **
+POST** /mfn/v0/eligibleServices |
+[**getShipment**](MerchantFulfillmentApi.md#getshipment) | **GET** /mfn/v0/shipments/{shipmentId} |
 
 # **cancelShipment**
+
 > \Swagger\Client\Models\CancelShipmentResponse cancelShipment($shipment_id)
 
 
 
-Cancel the shipment indicated by the specified shipment identifier.  
+Cancel the shipment indicated by the specified shipment identifier.
 
 **Usage Plan:**
 
@@ -27,6 +32,7 @@ Cancel the shipment indicated by the specified shipment identifier.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -58,7 +64,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment_id** | **string**| The Amazon-defined shipment identifier for the shipment to cancel. |
+**shipment_id** | **string**| The Amazon-defined shipment identifier for the shipment to cancel. |
 
 ### Return type
 
@@ -70,17 +76,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelShipmentOld**
+
 > \Swagger\Client\Models\CancelShipmentResponse cancelShipmentOld($shipment_id)
 
 
 
-Cancel the shipment indicated by the specified shipment identifer.  
+Cancel the shipment indicated by the specified shipment identifer.
 
 **Usage Plan:**
 
@@ -89,6 +96,7 @@ Cancel the shipment indicated by the specified shipment identifer.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -120,7 +128,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment_id** | **string**| The Amazon-defined shipment identifier for the shipment to cancel. |
+**shipment_id** | **string**| The Amazon-defined shipment identifier for the shipment to cancel. |
 
 ### Return type
 
@@ -132,17 +140,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createShipment**
+
 > \Swagger\Client\Models\CreateShipmentResponse createShipment($body)
 
 
 
-Create a shipment with the information provided.  
+Create a shipment with the information provided.
 
 **Usage Plan:**
 
@@ -151,6 +160,7 @@ Create a shipment with the information provided.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -182,7 +192,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
+**body** | [**\Swagger\Client\Models\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
 
 ### Return type
 
@@ -194,17 +204,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAdditionalSellerInputs**
+
 > \Swagger\Client\Models\GetAdditionalSellerInputsResponse getAdditionalSellerInputs($body)
 
 
 
-Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.  
+Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.
 
 **Usage Plan:**
 
@@ -213,6 +224,7 @@ Gets a list of additional seller inputs required for a ship method. This is gene
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -244,7 +256,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
+**body** | [**
+\Swagger\Client\Models\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
@@ -256,17 +269,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAdditionalSellerInputsOld**
+
 > \Swagger\Client\Models\GetAdditionalSellerInputsResponse getAdditionalSellerInputsOld($body)
 
 
 
-Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  
+Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.
 
 **Usage Plan:**
 
@@ -275,6 +289,7 @@ Get a list of additional seller inputs required for a ship method. This is gener
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -306,7 +321,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
+**body** | [**
+\Swagger\Client\Models\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
@@ -318,17 +334,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEligibleShipmentServices**
+
 > \Swagger\Client\Models\GetEligibleShipmentServicesResponse getEligibleShipmentServices($body)
 
 
 
-Returns a list of shipping service offers that satisfy the specified shipment request details.  
+Returns a list of shipping service offers that satisfy the specified shipment request details.
 
 **Usage Plan:**
 
@@ -337,6 +354,7 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -368,7 +386,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
+**body** | [**
+\Swagger\Client\Models\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
@@ -380,17 +399,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEligibleShipmentServicesOld**
+
 > \Swagger\Client\Models\GetEligibleShipmentServicesResponse getEligibleShipmentServicesOld($body)
 
 
 
-Returns a list of shipping service offers that satisfy the specified shipment request details.  
+Returns a list of shipping service offers that satisfy the specified shipment request details.
 
 **Usage Plan:**
 
@@ -399,6 +419,7 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -430,7 +451,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
+**body** | [**
+\Swagger\Client\Models\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
@@ -442,17 +464,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getShipment**
+
 > \Swagger\Client\Models\GetShipmentResponse getShipment($shipment_id)
 
 
 
-Returns the shipment information for an existing shipment.  
+Returns the shipment information for an existing shipment.
 
 **Usage Plan:**
 
@@ -461,6 +484,7 @@ Returns the shipment information for an existing shipment.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -492,7 +516,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment_id** | **string**| The Amazon-defined shipment identifier for the shipment. |
+**shipment_id** | **string**| The Amazon-defined shipment identifier for the shipment. |
 
 ### Return type
 
@@ -504,8 +528,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Technician Class Doc Comment.
  *
-
  * @description A technician who is assigned to perform the service job in part or in full.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Technician implements ModelInterface, ArrayAccess
-{
+class Technician implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class Technician implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'technician_id' => 'string',
-'name' => 'string',    ];
+        'name'          => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class Technician implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'technician_id' => null,
-'name' => null,    ];
+        'name'          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class Technician implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'technician_id' => 'technicianId',
-'name' => 'name',    ];
+        'name'          => 'name',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class Technician implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'technician_id' => 'setTechnicianId',
-'name' => 'setName',    ];
+        'name'          => 'setName',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class Technician implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'technician_id' => 'getTechnicianId',
-'name' => 'getName',    ];
+        'name'          => 'getName',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class Technician implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['technician_id'] = isset($data['technician_id']) ? $data['technician_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
@@ -171,8 +162,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +174,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +183,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTechnicianId()
-    {
+    public function getTechnicianId() {
         return $this->container['technician_id'];
     }
 
@@ -206,8 +194,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTechnicianId($technician_id)
-    {
+    public function setTechnicianId($technician_id) {
         $this->container['technician_id'] = $technician_id;
 
         return $this;
@@ -218,8 +205,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -230,8 +216,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -244,8 +229,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class Technician implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -13,23 +13,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI;
+namespace SellerLegend\AmazonSellingPartnerAPI;
 
 /**
  * ApiException Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class HeaderSelector
-{
+class HeaderSelector {
     /**
      * @param string[] $accept
      * @param string[] $contentTypes
      *
      * @return array
      */
-    public function selectHeaders($accept, $contentTypes)
-    {
+    public function selectHeaders($accept, $contentTypes) {
         $headers = [];
 
         $accept = $this->selectAcceptHeader($accept);
@@ -47,8 +45,7 @@ class HeaderSelector
      *
      * @return array
      */
-    public function selectHeadersForMultipart($accept)
-    {
+    public function selectHeadersForMultipart($accept) {
         $headers = $this->selectHeaders($accept, []);
 
         unset($headers['Content-Type']);
@@ -63,8 +60,7 @@ class HeaderSelector
      *
      * @return string Accept (e.g. application/json)
      */
-    private function selectAcceptHeader($accept)
-    {
+    private function selectAcceptHeader($accept) {
         if (0 === count($accept) || (1 === count($accept) && '' === $accept[0])) {
             return null;
         } elseif (preg_grep("/application\/json/i", $accept)) {
@@ -81,8 +77,7 @@ class HeaderSelector
      *
      * @return string Content-Type (e.g. application/json)
      */
-    private function selectContentTypeHeader($contentType)
-    {
+    private function selectContentTypeHeader($contentType) {
         if (0 === count($contentType) || (1 === count($contentType) && '' === $contentType[0])) {
             return 'application/json';
         } elseif (preg_grep("/application\/json/i", $contentType)) {

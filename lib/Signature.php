@@ -1,9 +1,10 @@
 <?php
 
-namespace ClouSale\AmazonSellingPartnerAPI;
+namespace SellerLegend\AmazonSellingPartnerAPI;
 
-class Signature
-{
+use Exception;
+
+class Signature {
     /**
      * ## Signature Version 4 signing process.
      *
@@ -24,19 +25,19 @@ class Signature
      * @param $method
      * @param string $uri
      * @param string $queryString
-     * @param array  $data
+     * @param array $data
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @author crazyfactory https://github.com/crazyfactory
      */
     public static function calculateSignature(
         Configuration $config,
-        string $host,
-        string $method,
-        $uri = '',
-        $queryString = '',
-        $data = []
+        string        $host,
+        string        $method,
+                      $uri = '',
+                      $queryString = '',
+                      $data = []
     ): array {
         return self::calculateSignatureForService(
             $host,
@@ -57,16 +58,16 @@ class Signature
     public static function calculateSignatureForService(
         string $host,
         string $method,
-        $uri,
-        $queryString,
-        $data,
+               $uri,
+               $queryString,
+               $data,
         string $service,
         string $accessKey,
         string $secretKey,
         string $region,
-        $accessToken,
-        $securityToken,
-        $userAgent
+               $accessToken,
+               $securityToken,
+               $userAgent
     ): array {
         $terminationString = 'aws4_request';
         $algorithm = 'AWS4-HMAC-SHA256';
@@ -90,7 +91,7 @@ class Signature
 
         //Compute Canonical Headers
         $canonicalHeaders = [
-            'host' => $host,
+            'host'       => $host,
             'user-agent' => $userAgent,
         ];
 
@@ -106,22 +107,22 @@ class Signature
 
         $canonicalHeadersStr = '';
         foreach ($canonicalHeaders as $h => $v) {
-            $canonicalHeadersStr .= $h.':'.$v."\n";
+            $canonicalHeadersStr .= $h . ':' . $v . "\n";
         }
         $signedHeadersStr = join(';', array_keys($canonicalHeaders));
 
         //Prepare credentials scope
-        $credentialScope = $date.'/'.$region.'/'.$service.'/'.$terminationString;
+        $credentialScope = $date . '/' . $region . '/' . $service . '/' . $terminationString;
 
         //prepare canonical request
-        $canonicalRequest = $method."\n".$uri."\n".$queryString."\n".$canonicalHeadersStr."\n".$signedHeadersStr."\n".$hashedPayload;
+        $canonicalRequest = $method . "\n" . $uri . "\n" . $queryString . "\n" . $canonicalHeadersStr . "\n" . $signedHeadersStr . "\n" . $hashedPayload;
 
         //Prepare the string to sign
-        $stringToSign = $algorithm."\n".$amzdate."\n".$credentialScope."\n".hash('sha256', $canonicalRequest);
+        $stringToSign = $algorithm . "\n" . $amzdate . "\n" . $credentialScope . "\n" . hash('sha256', $canonicalRequest);
 
         //Start signing locker process
         //Reference : https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-        $kSecret = 'AWS4'.$secretKey;
+        $kSecret = 'AWS4' . $secretKey;
         $kDate = hash_hmac('sha256', $date, $kSecret, true);
         $kRegion = hash_hmac('sha256', $region, $kDate, true);
         $kService = hash_hmac('sha256', $service, $kRegion, true);
@@ -131,7 +132,7 @@ class Signature
         $signature = trim(hash_hmac('sha256', $stringToSign, $kSigning));
 
         //Finalize the authorization structure
-        $authorizationHeader = $algorithm." Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
+        $authorizationHeader = $algorithm . " Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
 
         return array_merge($canonicalHeaders, [
             'Authorization' => $authorizationHeader,

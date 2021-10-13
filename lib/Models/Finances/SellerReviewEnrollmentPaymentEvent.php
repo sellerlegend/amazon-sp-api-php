@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SellerReviewEnrollmentPaymentEvent Class Doc Comment.
  *
-
  * @description A fee payment event for the Early Reviewer Program.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
-{
+class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +45,12 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'enrollment_id' => 'string',
-'parent_asin' => 'string',
-'fee_component' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponent',
-'charge_component' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent',
-'total_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'posted_date'      => '\DateTime',
+        'enrollment_id'    => 'string',
+        'parent_asin'      => 'string',
+        'fee_component'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponent',
+        'charge_component' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent',
+        'total_amount'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +58,19 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'posted_date' => null,
-'enrollment_id' => null,
-'parent_asin' => null,
-'fee_component' => null,
-'charge_component' => null,
-'total_amount' => null,    ];
+        'posted_date'      => null,
+        'enrollment_id'    => null,
+        'parent_asin'      => null,
+        'fee_component'    => null,
+        'charge_component' => null,
+        'total_amount'     => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +79,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +90,12 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'posted_date' => 'PostedDate',
-'enrollment_id' => 'EnrollmentId',
-'parent_asin' => 'ParentASIN',
-'fee_component' => 'FeeComponent',
-'charge_component' => 'ChargeComponent',
-'total_amount' => 'TotalAmount',    ];
+        'posted_date'      => 'PostedDate',
+        'enrollment_id'    => 'EnrollmentId',
+        'parent_asin'      => 'ParentASIN',
+        'fee_component'    => 'FeeComponent',
+        'charge_component' => 'ChargeComponent',
+        'total_amount'     => 'TotalAmount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +103,12 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
-'enrollment_id' => 'setEnrollmentId',
-'parent_asin' => 'setParentAsin',
-'fee_component' => 'setFeeComponent',
-'charge_component' => 'setChargeComponent',
-'total_amount' => 'setTotalAmount',    ];
+        'posted_date'      => 'setPostedDate',
+        'enrollment_id'    => 'setEnrollmentId',
+        'parent_asin'      => 'setParentAsin',
+        'fee_component'    => 'setFeeComponent',
+        'charge_component' => 'setChargeComponent',
+        'total_amount'     => 'setTotalAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +116,12 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'posted_date' => 'getPostedDate',
-'enrollment_id' => 'getEnrollmentId',
-'parent_asin' => 'getParentAsin',
-'fee_component' => 'getFeeComponent',
-'charge_component' => 'getChargeComponent',
-'total_amount' => 'getTotalAmount',    ];
+        'posted_date'      => 'getPostedDate',
+        'enrollment_id'    => 'getEnrollmentId',
+        'parent_asin'      => 'getParentAsin',
+        'fee_component'    => 'getFeeComponent',
+        'charge_component' => 'getChargeComponent',
+        'total_amount'     => 'getTotalAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +129,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +138,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +147,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +156,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +173,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
         $this->container['enrollment_id'] = isset($data['enrollment_id']) ? $data['enrollment_id'] : null;
         $this->container['parent_asin'] = isset($data['parent_asin']) ? $data['parent_asin'] : null;
@@ -195,8 +187,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -208,30 +199,27 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -242,8 +230,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEnrollmentId()
-    {
+    public function getEnrollmentId() {
         return $this->container['enrollment_id'];
     }
 
@@ -254,8 +241,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEnrollmentId($enrollment_id)
-    {
+    public function setEnrollmentId($enrollment_id) {
         $this->container['enrollment_id'] = $enrollment_id;
 
         return $this;
@@ -266,8 +252,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getParentAsin()
-    {
+    public function getParentAsin() {
         return $this->container['parent_asin'];
     }
 
@@ -278,8 +263,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setParentAsin($parent_asin)
-    {
+    public function setParentAsin($parent_asin) {
         $this->container['parent_asin'] = $parent_asin;
 
         return $this;
@@ -288,22 +272,20 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets fee_component.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponent
+     * @return FeeComponent
      */
-    public function getFeeComponent()
-    {
+    public function getFeeComponent() {
         return $this->container['fee_component'];
     }
 
     /**
      * Sets fee_component.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponent $fee_component fee_component
+     * @param FeeComponent $fee_component fee_component
      *
      * @return $this
      */
-    public function setFeeComponent($fee_component)
-    {
+    public function setFeeComponent($fee_component) {
         $this->container['fee_component'] = $fee_component;
 
         return $this;
@@ -312,22 +294,20 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets charge_component.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent
+     * @return ChargeComponent
      */
-    public function getChargeComponent()
-    {
+    public function getChargeComponent() {
         return $this->container['charge_component'];
     }
 
     /**
      * Sets charge_component.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent $charge_component charge_component
+     * @param ChargeComponent $charge_component charge_component
      *
      * @return $this
      */
-    public function setChargeComponent($charge_component)
-    {
+    public function setChargeComponent($charge_component) {
         $this->container['charge_component'] = $charge_component;
 
         return $this;
@@ -336,22 +316,20 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets total_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTotalAmount()
-    {
+    public function getTotalAmount() {
         return $this->container['total_amount'];
     }
 
     /**
      * Sets total_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $total_amount total_amount
+     * @param Currency $total_amount total_amount
      *
      * @return $this
      */
-    public function setTotalAmount($total_amount)
-    {
+    public function setTotalAmount($total_amount) {
         $this->container['total_amount'] = $total_amount;
 
         return $this;
@@ -364,8 +342,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -376,21 +353,19 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -405,8 +380,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -415,8 +389,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

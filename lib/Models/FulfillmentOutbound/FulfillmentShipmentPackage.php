@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FulfillmentShipmentPackage Class Doc Comment.
  *
-
  * @description Package information for a shipment in a fulfillment order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
-{
+class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'package_number' => 'int',
-'carrier_code' => 'string',
-'tracking_number' => 'string',
-'estimated_arrival_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',    ];
+        'package_number'         => 'int',
+        'carrier_code'           => 'string',
+        'tracking_number'        => 'string',
+        'estimated_arrival_date' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'package_number' => 'int32',
-'carrier_code' => null,
-'tracking_number' => null,
-'estimated_arrival_date' => null,    ];
+        'package_number'         => 'int32',
+        'carrier_code'           => null,
+        'tracking_number'        => null,
+        'estimated_arrival_date' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'package_number' => 'packageNumber',
-'carrier_code' => 'carrierCode',
-'tracking_number' => 'trackingNumber',
-'estimated_arrival_date' => 'estimatedArrivalDate',    ];
+        'package_number'         => 'packageNumber',
+        'carrier_code'           => 'carrierCode',
+        'tracking_number'        => 'trackingNumber',
+        'estimated_arrival_date' => 'estimatedArrivalDate',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'package_number' => 'setPackageNumber',
-'carrier_code' => 'setCarrierCode',
-'tracking_number' => 'setTrackingNumber',
-'estimated_arrival_date' => 'setEstimatedArrivalDate',    ];
+        'package_number'         => 'setPackageNumber',
+        'carrier_code'           => 'setCarrierCode',
+        'tracking_number'        => 'setTrackingNumber',
+        'estimated_arrival_date' => 'setEstimatedArrivalDate',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'package_number' => 'getPackageNumber',
-'carrier_code' => 'getCarrierCode',
-'tracking_number' => 'getTrackingNumber',
-'estimated_arrival_date' => 'getEstimatedArrivalDate',    ];
+        'package_number'         => 'getPackageNumber',
+        'carrier_code'           => 'getCarrierCode',
+        'tracking_number'        => 'getTrackingNumber',
+        'estimated_arrival_date' => 'getEstimatedArrivalDate',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['package_number'] = isset($data['package_number']) ? $data['package_number'] : null;
         $this->container['carrier_code'] = isset($data['carrier_code']) ? $data['carrier_code'] : null;
         $this->container['tracking_number'] = isset($data['tracking_number']) ? $data['tracking_number'] : null;
@@ -183,8 +174,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['package_number']) {
@@ -203,8 +193,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -213,8 +202,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPackageNumber()
-    {
+    public function getPackageNumber() {
         return $this->container['package_number'];
     }
 
@@ -225,8 +213,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPackageNumber($package_number)
-    {
+    public function setPackageNumber($package_number) {
         $this->container['package_number'] = $package_number;
 
         return $this;
@@ -237,8 +224,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierCode()
-    {
+    public function getCarrierCode() {
         return $this->container['carrier_code'];
     }
 
@@ -249,8 +235,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierCode($carrier_code)
-    {
+    public function setCarrierCode($carrier_code) {
         $this->container['carrier_code'] = $carrier_code;
 
         return $this;
@@ -261,8 +246,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrackingNumber()
-    {
+    public function getTrackingNumber() {
         return $this->container['tracking_number'];
     }
 
@@ -273,8 +257,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrackingNumber($tracking_number)
-    {
+    public function setTrackingNumber($tracking_number) {
         $this->container['tracking_number'] = $tracking_number;
 
         return $this;
@@ -283,22 +266,20 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
     /**
      * Gets estimated_arrival_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEstimatedArrivalDate()
-    {
+    public function getEstimatedArrivalDate() {
         return $this->container['estimated_arrival_date'];
     }
 
     /**
      * Sets estimated_arrival_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $estimated_arrival_date estimated_arrival_date
+     * @param Timestamp $estimated_arrival_date estimated_arrival_date
      *
      * @return $this
      */
-    public function setEstimatedArrivalDate($estimated_arrival_date)
-    {
+    public function setEstimatedArrivalDate($estimated_arrival_date) {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
         return $this;
@@ -311,8 +292,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -323,21 +303,19 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -352,8 +330,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -362,8 +339,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

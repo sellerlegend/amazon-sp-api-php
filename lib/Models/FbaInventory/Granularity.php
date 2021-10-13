@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Granularity Class Doc Comment.
  *
-
  * @description Describes a granularity at which inventory data can be aggregated. For example, if you use Marketplace granularity, the fulfillable quantity will reflect inventory that could be fulfilled in the given marketplace.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Granularity implements ModelInterface, ArrayAccess
-{
+class Granularity implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +46,7 @@ class Granularity implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'granularity_type' => 'string',
-'granularity_id' => 'string',    ];
+        'granularity_id'   => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,14 @@ class Granularity implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'granularity_type' => null,
-'granularity_id' => null,    ];
+        'granularity_id'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +83,7 @@ class Granularity implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'granularity_type' => 'granularityType',
-'granularity_id' => 'granularityId',    ];
+        'granularity_id'   => 'granularityId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +92,7 @@ class Granularity implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'granularity_type' => 'setGranularityType',
-'granularity_id' => 'setGranularityId',    ];
+        'granularity_id'   => 'setGranularityId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +101,7 @@ class Granularity implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'granularity_type' => 'getGranularityType',
-'granularity_id' => 'getGranularityId',    ];
+        'granularity_id'   => 'getGranularityId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -154,10 +147,9 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getGranularityTypeAllowableValues()
-    {
+    public function getGranularityTypeAllowableValues() {
         return [
-            self::GRANULARITY_TYPE_MARKETPLACE,        ];
+            self::GRANULARITY_TYPE_MARKETPLACE,];
     }
 
     /**
@@ -173,8 +165,7 @@ class Granularity implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['granularity_type'] = isset($data['granularity_type']) ? $data['granularity_type'] : null;
         $this->container['granularity_id'] = isset($data['granularity_id']) ? $data['granularity_id'] : null;
     }
@@ -184,8 +175,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getGranularityTypeAllowableValues();
@@ -205,8 +195,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -215,8 +204,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGranularityType()
-    {
+    public function getGranularityType() {
         return $this->container['granularity_type'];
     }
 
@@ -227,11 +215,10 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGranularityType($granularity_type)
-    {
+    public function setGranularityType($granularity_type) {
         $allowedValues = $this->getGranularityTypeAllowableValues();
         if (!is_null($granularity_type) && !in_array($granularity_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'granularity_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'granularity_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['granularity_type'] = $granularity_type;
 
@@ -243,8 +230,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGranularityId()
-    {
+    public function getGranularityId() {
         return $this->container['granularity_id'];
     }
 
@@ -255,8 +241,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGranularityId($granularity_id)
-    {
+    public function setGranularityId($granularity_id) {
         $this->container['granularity_id'] = $granularity_id;
 
         return $this;
@@ -269,8 +254,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -281,21 +265,19 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -310,8 +292,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -320,8 +301,7 @@ class Granularity implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

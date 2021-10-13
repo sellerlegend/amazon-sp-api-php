@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInboundEligibility;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInboundEligibility;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ItemEligibilityPreview Class Doc Comment.
  *
-
  * @description The response object which contains the ASIN, marketplaceId if required, eligibility program, the eligibility status (boolean), and a list of ineligibility reason codes.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ItemEligibilityPreview implements ModelInterface, ArrayAccess
-{
+class ItemEligibilityPreview implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +45,11 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'marketplace_id' => 'string',
-'program' => 'string',
-'is_eligible_for_program' => 'bool',
-'ineligibility_reason_list' => 'string[]',    ];
+        'asin'                      => 'string',
+        'marketplace_id'            => 'string',
+        'program'                   => 'string',
+        'is_eligible_for_program'   => 'bool',
+        'ineligibility_reason_list' => 'string[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +57,18 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'marketplace_id' => null,
-'program' => null,
-'is_eligible_for_program' => null,
-'ineligibility_reason_list' => null,    ];
+        'asin'                      => null,
+        'marketplace_id'            => null,
+        'program'                   => null,
+        'is_eligible_for_program'   => null,
+        'ineligibility_reason_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +77,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +88,11 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'asin',
-'marketplace_id' => 'marketplaceId',
-'program' => 'program',
-'is_eligible_for_program' => 'isEligibleForProgram',
-'ineligibility_reason_list' => 'ineligibilityReasonList',    ];
+        'asin'                      => 'asin',
+        'marketplace_id'            => 'marketplaceId',
+        'program'                   => 'program',
+        'is_eligible_for_program'   => 'isEligibleForProgram',
+        'ineligibility_reason_list' => 'ineligibilityReasonList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +100,11 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'marketplace_id' => 'setMarketplaceId',
-'program' => 'setProgram',
-'is_eligible_for_program' => 'setIsEligibleForProgram',
-'ineligibility_reason_list' => 'setIneligibilityReasonList',    ];
+        'asin'                      => 'setAsin',
+        'marketplace_id'            => 'setMarketplaceId',
+        'program'                   => 'setProgram',
+        'is_eligible_for_program'   => 'setIsEligibleForProgram',
+        'ineligibility_reason_list' => 'setIneligibilityReasonList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +112,11 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'marketplace_id' => 'getMarketplaceId',
-'program' => 'getProgram',
-'is_eligible_for_program' => 'getIsEligibleForProgram',
-'ineligibility_reason_list' => 'getIneligibilityReasonList',    ];
+        'asin'                      => 'getAsin',
+        'marketplace_id'            => 'getMarketplaceId',
+        'program'                   => 'getProgram',
+        'is_eligible_for_program'   => 'getIsEligibleForProgram',
+        'ineligibility_reason_list' => 'getIneligibilityReasonList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +124,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +133,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +142,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +151,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -208,11 +201,10 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getProgramAllowableValues()
-    {
+    public function getProgramAllowableValues() {
         return [
             self::PROGRAM_INBOUND,
-self::PROGRAM_COMMINGLING,        ];
+            self::PROGRAM_COMMINGLING,];
     }
 
     /**
@@ -220,47 +212,46 @@ self::PROGRAM_COMMINGLING,        ];
      *
      * @return string[]
      */
-    public function getIneligibilityReasonListAllowableValues()
-    {
+    public function getIneligibilityReasonListAllowableValues() {
         return [
             self::INELIGIBILITY_REASON_LIST_FBA_INB_0004,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0006,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0007,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0008,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0009,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0010,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0011,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0012,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0013,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0014,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0015,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0016,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0017,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0018,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0019,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0034,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0035,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0036,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0037,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0038,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0050,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0051,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0053,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0055,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0056,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0059,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0065,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0066,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0067,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0068,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0095,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0097,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0098,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0099,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0100,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0103,
-self::INELIGIBILITY_REASON_LIST_FBA_INB_0104,
-self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0006,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0007,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0008,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0009,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0010,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0011,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0012,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0013,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0014,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0015,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0016,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0017,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0018,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0019,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0034,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0035,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0036,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0037,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0038,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0050,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0051,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0053,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0055,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0056,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0059,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0065,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0066,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0067,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0068,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0095,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0097,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0098,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0099,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0100,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0103,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0104,
+            self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,];
     }
 
     /**
@@ -276,8 +267,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['program'] = isset($data['program']) ? $data['program'] : null;
@@ -290,8 +280,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['asin']) {
@@ -321,8 +310,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -331,8 +319,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -343,8 +330,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -355,8 +341,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -367,8 +352,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -379,8 +363,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return string
      */
-    public function getProgram()
-    {
+    public function getProgram() {
         return $this->container['program'];
     }
 
@@ -391,11 +374,10 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return $this
      */
-    public function setProgram($program)
-    {
+    public function setProgram($program) {
         $allowedValues = $this->getProgramAllowableValues();
         if (!in_array($program, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'program', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'program', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['program'] = $program;
 
@@ -407,8 +389,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return bool
      */
-    public function getIsEligibleForProgram()
-    {
+    public function getIsEligibleForProgram() {
         return $this->container['is_eligible_for_program'];
     }
 
@@ -419,8 +400,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return $this
      */
-    public function setIsEligibleForProgram($is_eligible_for_program)
-    {
+    public function setIsEligibleForProgram($is_eligible_for_program) {
         $this->container['is_eligible_for_program'] = $is_eligible_for_program;
 
         return $this;
@@ -431,8 +411,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return string[]
      */
-    public function getIneligibilityReasonList()
-    {
+    public function getIneligibilityReasonList() {
         return $this->container['ineligibility_reason_list'];
     }
 
@@ -443,11 +422,10 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return $this
      */
-    public function setIneligibilityReasonList($ineligibility_reason_list)
-    {
+    public function setIneligibilityReasonList($ineligibility_reason_list) {
         $allowedValues = $this->getIneligibilityReasonListAllowableValues();
         if (!is_null($ineligibility_reason_list) && array_diff($ineligibility_reason_list, $allowedValues)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'ineligibility_reason_list', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'ineligibility_reason_list', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['ineligibility_reason_list'] = $ineligibility_reason_list;
 
@@ -461,8 +439,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -473,21 +450,19 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -502,8 +477,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -512,8 +486,7 @@ self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

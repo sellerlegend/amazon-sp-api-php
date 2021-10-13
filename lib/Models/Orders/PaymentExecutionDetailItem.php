@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PaymentExecutionDetailItem Class Doc Comment.
  *
-
  * @description Information about a sub-payment method used to pay for a COD order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
-{
+class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payment' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'payment_method' => 'string',    ];
+        'payment'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'payment_method' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'payment' => null,
-'payment_method' => null,    ];
+        'payment'        => null,
+        'payment_method' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment' => 'Payment',
-'payment_method' => 'PaymentMethod',    ];
+        'payment'        => 'Payment',
+        'payment_method' => 'PaymentMethod',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payment' => 'setPayment',
-'payment_method' => 'setPaymentMethod',    ];
+        'payment'        => 'setPayment',
+        'payment_method' => 'setPaymentMethod',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payment' => 'getPayment',
-'payment_method' => 'getPaymentMethod',    ];
+        'payment'        => 'getPayment',
+        'payment_method' => 'getPaymentMethod',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
     }
@@ -171,8 +162,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['payment']) {
@@ -191,30 +181,27 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets payment.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getPayment()
-    {
+    public function getPayment() {
         return $this->container['payment'];
     }
 
     /**
      * Sets payment.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $payment payment
+     * @param Money $payment payment
      *
      * @return $this
      */
-    public function setPayment($payment)
-    {
+    public function setPayment($payment) {
         $this->container['payment'] = $payment;
 
         return $this;
@@ -225,8 +212,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPaymentMethod()
-    {
+    public function getPaymentMethod() {
         return $this->container['payment_method'];
     }
 
@@ -237,8 +223,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentMethod($payment_method)
-    {
+    public function setPaymentMethod($payment_method) {
         $this->container['payment_method'] = $payment_method;
 
         return $this;
@@ -251,8 +236,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

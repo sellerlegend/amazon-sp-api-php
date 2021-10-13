@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetFeedsResponse Class Doc Comment.
  *
-
  * @description Response schema.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetFeedsResponse implements ModelInterface, ArrayAccess
-{
+class GetFeedsResponse implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedList',
-'next_token' => 'string',
-'errors' => '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\ErrorList',    ];
+        'payload'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\FeedList',
+        'next_token' => 'string',
+        'errors'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\ErrorList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +55,16 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-'next_token' => null,
-'errors' => null,    ];
+        'payload'    => null,
+        'next_token' => null,
+        'errors'     => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +84,9 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payload' => 'payload',
-'next_token' => 'nextToken',
-'errors' => 'errors',    ];
+        'payload'    => 'payload',
+        'next_token' => 'nextToken',
+        'errors'     => 'errors',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +94,9 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payload' => 'setPayload',
-'next_token' => 'setNextToken',
-'errors' => 'setErrors',    ];
+        'payload'    => 'setPayload',
+        'next_token' => 'setNextToken',
+        'errors'     => 'setErrors',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +104,9 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payload' => 'getPayload',
-'next_token' => 'getNextToken',
-'errors' => 'getErrors',    ];
+        'payload'    => 'getPayload',
+        'next_token' => 'getNextToken',
+        'errors'     => 'getErrors',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['payload'] = isset($data['payload']) ? $data['payload'] : null;
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
@@ -177,8 +169,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,30 +181,27 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets payload.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedList
+     * @return FeedList
      */
-    public function getPayload()
-    {
+    public function getPayload() {
         return $this->container['payload'];
     }
 
     /**
      * Sets payload.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedList $payload payload
+     * @param FeedList $payload payload
      *
      * @return $this
      */
-    public function setPayload($payload)
-    {
+    public function setPayload($payload) {
         $this->container['payload'] = $payload;
 
         return $this;
@@ -224,8 +212,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -236,8 +223,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -246,22 +232,20 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets errors.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\ErrorList
+     * @return ErrorList
      */
-    public function getErrors()
-    {
+    public function getErrors() {
         return $this->container['errors'];
     }
 
     /**
      * Sets errors.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\ErrorList $errors errors
+     * @param ErrorList $errors errors
      *
      * @return $this
      */
-    public function setErrors($errors)
-    {
+    public function setErrors($errors) {
         $this->container['errors'] = $errors;
 
         return $this;
@@ -274,8 +258,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +269,19 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +296,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +305,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

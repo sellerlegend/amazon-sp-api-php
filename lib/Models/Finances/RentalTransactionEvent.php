@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * RentalTransactionEvent Class Doc Comment.
  *
-
  * @description An event related to a rental transaction.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class RentalTransactionEvent implements ModelInterface, ArrayAccess
-{
+class RentalTransactionEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,16 +45,16 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amazon_order_id' => 'string',
-'rental_event_type' => 'string',
-'extension_length' => 'int',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'rental_charge_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
-'rental_fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'marketplace_name' => 'string',
-'rental_initial_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'rental_reimbursement' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'rental_tax_withheld_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList',    ];
+        'amazon_order_id'          => 'string',
+        'rental_event_type'        => 'string',
+        'extension_length'         => 'int',
+        'posted_date'              => '\DateTime',
+        'rental_charge_list'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
+        'rental_fee_list'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'marketplace_name'         => 'string',
+        'rental_initial_value'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'rental_reimbursement'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'rental_tax_withheld_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -63,24 +62,23 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amazon_order_id' => null,
-'rental_event_type' => null,
-'extension_length' => 'int32',
-'posted_date' => null,
-'rental_charge_list' => null,
-'rental_fee_list' => null,
-'marketplace_name' => null,
-'rental_initial_value' => null,
-'rental_reimbursement' => null,
-'rental_tax_withheld_list' => null,    ];
+        'amazon_order_id'          => null,
+        'rental_event_type'        => null,
+        'extension_length'         => 'int32',
+        'posted_date'              => null,
+        'rental_charge_list'       => null,
+        'rental_fee_list'          => null,
+        'marketplace_name'         => null,
+        'rental_initial_value'     => null,
+        'rental_reimbursement'     => null,
+        'rental_tax_withheld_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -89,8 +87,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -101,16 +98,16 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'AmazonOrderId',
-'rental_event_type' => 'RentalEventType',
-'extension_length' => 'ExtensionLength',
-'posted_date' => 'PostedDate',
-'rental_charge_list' => 'RentalChargeList',
-'rental_fee_list' => 'RentalFeeList',
-'marketplace_name' => 'MarketplaceName',
-'rental_initial_value' => 'RentalInitialValue',
-'rental_reimbursement' => 'RentalReimbursement',
-'rental_tax_withheld_list' => 'RentalTaxWithheldList',    ];
+        'amazon_order_id'          => 'AmazonOrderId',
+        'rental_event_type'        => 'RentalEventType',
+        'extension_length'         => 'ExtensionLength',
+        'posted_date'              => 'PostedDate',
+        'rental_charge_list'       => 'RentalChargeList',
+        'rental_fee_list'          => 'RentalFeeList',
+        'marketplace_name'         => 'MarketplaceName',
+        'rental_initial_value'     => 'RentalInitialValue',
+        'rental_reimbursement'     => 'RentalReimbursement',
+        'rental_tax_withheld_list' => 'RentalTaxWithheldList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -118,16 +115,16 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
-'rental_event_type' => 'setRentalEventType',
-'extension_length' => 'setExtensionLength',
-'posted_date' => 'setPostedDate',
-'rental_charge_list' => 'setRentalChargeList',
-'rental_fee_list' => 'setRentalFeeList',
-'marketplace_name' => 'setMarketplaceName',
-'rental_initial_value' => 'setRentalInitialValue',
-'rental_reimbursement' => 'setRentalReimbursement',
-'rental_tax_withheld_list' => 'setRentalTaxWithheldList',    ];
+        'amazon_order_id'          => 'setAmazonOrderId',
+        'rental_event_type'        => 'setRentalEventType',
+        'extension_length'         => 'setExtensionLength',
+        'posted_date'              => 'setPostedDate',
+        'rental_charge_list'       => 'setRentalChargeList',
+        'rental_fee_list'          => 'setRentalFeeList',
+        'marketplace_name'         => 'setMarketplaceName',
+        'rental_initial_value'     => 'setRentalInitialValue',
+        'rental_reimbursement'     => 'setRentalReimbursement',
+        'rental_tax_withheld_list' => 'setRentalTaxWithheldList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -135,16 +132,16 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
-'rental_event_type' => 'getRentalEventType',
-'extension_length' => 'getExtensionLength',
-'posted_date' => 'getPostedDate',
-'rental_charge_list' => 'getRentalChargeList',
-'rental_fee_list' => 'getRentalFeeList',
-'marketplace_name' => 'getMarketplaceName',
-'rental_initial_value' => 'getRentalInitialValue',
-'rental_reimbursement' => 'getRentalReimbursement',
-'rental_tax_withheld_list' => 'getRentalTaxWithheldList',    ];
+        'amazon_order_id'          => 'getAmazonOrderId',
+        'rental_event_type'        => 'getRentalEventType',
+        'extension_length'         => 'getExtensionLength',
+        'posted_date'              => 'getPostedDate',
+        'rental_charge_list'       => 'getRentalChargeList',
+        'rental_fee_list'          => 'getRentalFeeList',
+        'marketplace_name'         => 'getMarketplaceName',
+        'rental_initial_value'     => 'getRentalInitialValue',
+        'rental_reimbursement'     => 'getRentalReimbursement',
+        'rental_tax_withheld_list' => 'getRentalTaxWithheldList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -152,8 +149,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -162,8 +158,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -172,8 +167,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -182,8 +176,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -200,8 +193,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['rental_event_type'] = isset($data['rental_event_type']) ? $data['rental_event_type'] : null;
         $this->container['extension_length'] = isset($data['extension_length']) ? $data['extension_length'] : null;
@@ -219,8 +211,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -232,8 +223,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -242,8 +232,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -254,8 +243,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -266,8 +254,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRentalEventType()
-    {
+    public function getRentalEventType() {
         return $this->container['rental_event_type'];
     }
 
@@ -278,8 +265,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRentalEventType($rental_event_type)
-    {
+    public function setRentalEventType($rental_event_type) {
         $this->container['rental_event_type'] = $rental_event_type;
 
         return $this;
@@ -290,8 +276,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getExtensionLength()
-    {
+    public function getExtensionLength() {
         return $this->container['extension_length'];
     }
 
@@ -302,8 +287,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setExtensionLength($extension_length)
-    {
+    public function setExtensionLength($extension_length) {
         $this->container['extension_length'] = $extension_length;
 
         return $this;
@@ -312,22 +296,20 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -336,22 +318,20 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets rental_charge_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList
+     * @return ChargeComponentList
      */
-    public function getRentalChargeList()
-    {
+    public function getRentalChargeList() {
         return $this->container['rental_charge_list'];
     }
 
     /**
      * Sets rental_charge_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList $rental_charge_list rental_charge_list
+     * @param ChargeComponentList $rental_charge_list rental_charge_list
      *
      * @return $this
      */
-    public function setRentalChargeList($rental_charge_list)
-    {
+    public function setRentalChargeList($rental_charge_list) {
         $this->container['rental_charge_list'] = $rental_charge_list;
 
         return $this;
@@ -360,22 +340,20 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets rental_fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getRentalFeeList()
-    {
+    public function getRentalFeeList() {
         return $this->container['rental_fee_list'];
     }
 
     /**
      * Sets rental_fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $rental_fee_list rental_fee_list
+     * @param FeeComponentList $rental_fee_list rental_fee_list
      *
      * @return $this
      */
-    public function setRentalFeeList($rental_fee_list)
-    {
+    public function setRentalFeeList($rental_fee_list) {
         $this->container['rental_fee_list'] = $rental_fee_list;
 
         return $this;
@@ -386,8 +364,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceName()
-    {
+    public function getMarketplaceName() {
         return $this->container['marketplace_name'];
     }
 
@@ -398,8 +375,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceName($marketplace_name)
-    {
+    public function setMarketplaceName($marketplace_name) {
         $this->container['marketplace_name'] = $marketplace_name;
 
         return $this;
@@ -408,22 +384,20 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets rental_initial_value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getRentalInitialValue()
-    {
+    public function getRentalInitialValue() {
         return $this->container['rental_initial_value'];
     }
 
     /**
      * Sets rental_initial_value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $rental_initial_value rental_initial_value
+     * @param Currency $rental_initial_value rental_initial_value
      *
      * @return $this
      */
-    public function setRentalInitialValue($rental_initial_value)
-    {
+    public function setRentalInitialValue($rental_initial_value) {
         $this->container['rental_initial_value'] = $rental_initial_value;
 
         return $this;
@@ -432,22 +406,20 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets rental_reimbursement.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getRentalReimbursement()
-    {
+    public function getRentalReimbursement() {
         return $this->container['rental_reimbursement'];
     }
 
     /**
      * Sets rental_reimbursement.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $rental_reimbursement rental_reimbursement
+     * @param Currency $rental_reimbursement rental_reimbursement
      *
      * @return $this
      */
-    public function setRentalReimbursement($rental_reimbursement)
-    {
+    public function setRentalReimbursement($rental_reimbursement) {
         $this->container['rental_reimbursement'] = $rental_reimbursement;
 
         return $this;
@@ -456,22 +428,20 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets rental_tax_withheld_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList
+     * @return TaxWithheldComponentList
      */
-    public function getRentalTaxWithheldList()
-    {
+    public function getRentalTaxWithheldList() {
         return $this->container['rental_tax_withheld_list'];
     }
 
     /**
      * Sets rental_tax_withheld_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList $rental_tax_withheld_list rental_tax_withheld_list
+     * @param TaxWithheldComponentList $rental_tax_withheld_list rental_tax_withheld_list
      *
      * @return $this
      */
-    public function setRentalTaxWithheldList($rental_tax_withheld_list)
-    {
+    public function setRentalTaxWithheldList($rental_tax_withheld_list) {
         $this->container['rental_tax_withheld_list'] = $rental_tax_withheld_list;
 
         return $this;
@@ -484,8 +454,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -496,21 +465,19 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -525,8 +492,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -535,8 +501,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

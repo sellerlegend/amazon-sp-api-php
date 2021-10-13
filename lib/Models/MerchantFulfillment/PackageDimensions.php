@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PackageDimensions Class Doc Comment.
  *
-
  * @description The dimensions of a package contained in a shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PackageDimensions implements ModelInterface, ArrayAccess
-{
+class PackageDimensions implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'length' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension',
-'width' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension',
-'height' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension',
-'unit' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength',
-'predefined_package_dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PredefinedPackageDimensions',    ];
+        'length'                        => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension',
+        'width'                         => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension',
+        'height'                        => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension',
+        'unit'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength',
+        'predefined_package_dimensions' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PredefinedPackageDimensions',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'length' => null,
-'width' => null,
-'height' => null,
-'unit' => null,
-'predefined_package_dimensions' => null,    ];
+        'length'                        => null,
+        'width'                         => null,
+        'height'                        => null,
+        'unit'                          => null,
+        'predefined_package_dimensions' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'length' => 'Length',
-'width' => 'Width',
-'height' => 'Height',
-'unit' => 'Unit',
-'predefined_package_dimensions' => 'PredefinedPackageDimensions',    ];
+        'length'                        => 'Length',
+        'width'                         => 'Width',
+        'height'                        => 'Height',
+        'unit'                          => 'Unit',
+        'predefined_package_dimensions' => 'PredefinedPackageDimensions',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'length' => 'setLength',
-'width' => 'setWidth',
-'height' => 'setHeight',
-'unit' => 'setUnit',
-'predefined_package_dimensions' => 'setPredefinedPackageDimensions',    ];
+        'length'                        => 'setLength',
+        'width'                         => 'setWidth',
+        'height'                        => 'setHeight',
+        'unit'                          => 'setUnit',
+        'predefined_package_dimensions' => 'setPredefinedPackageDimensions',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'length' => 'getLength',
-'width' => 'getWidth',
-'height' => 'getHeight',
-'unit' => 'getUnit',
-'predefined_package_dimensions' => 'getPredefinedPackageDimensions',    ];
+        'length'                        => 'getLength',
+        'width'                         => 'getWidth',
+        'height'                        => 'getHeight',
+        'unit'                          => 'getUnit',
+        'predefined_package_dimensions' => 'getPredefinedPackageDimensions',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
@@ -189,8 +180,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -202,30 +192,27 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets length.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension
+     * @return PackageDimension
      */
-    public function getLength()
-    {
+    public function getLength() {
         return $this->container['length'];
     }
 
     /**
      * Sets length.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension $length length
+     * @param PackageDimension $length length
      *
      * @return $this
      */
-    public function setLength($length)
-    {
+    public function setLength($length) {
         $this->container['length'] = $length;
 
         return $this;
@@ -234,22 +221,20 @@ class PackageDimensions implements ModelInterface, ArrayAccess
     /**
      * Gets width.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension
+     * @return PackageDimension
      */
-    public function getWidth()
-    {
+    public function getWidth() {
         return $this->container['width'];
     }
 
     /**
      * Sets width.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension $width width
+     * @param PackageDimension $width width
      *
      * @return $this
      */
-    public function setWidth($width)
-    {
+    public function setWidth($width) {
         $this->container['width'] = $width;
 
         return $this;
@@ -258,22 +243,20 @@ class PackageDimensions implements ModelInterface, ArrayAccess
     /**
      * Gets height.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension
+     * @return PackageDimension
      */
-    public function getHeight()
-    {
+    public function getHeight() {
         return $this->container['height'];
     }
 
     /**
      * Sets height.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimension $height height
+     * @param PackageDimension $height height
      *
      * @return $this
      */
-    public function setHeight($height)
-    {
+    public function setHeight($height) {
         $this->container['height'] = $height;
 
         return $this;
@@ -282,22 +265,20 @@ class PackageDimensions implements ModelInterface, ArrayAccess
     /**
      * Gets unit.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength
+     * @return UnitOfLength
      */
-    public function getUnit()
-    {
+    public function getUnit() {
         return $this->container['unit'];
     }
 
     /**
      * Sets unit.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength $unit unit
+     * @param UnitOfLength $unit unit
      *
      * @return $this
      */
-    public function setUnit($unit)
-    {
+    public function setUnit($unit) {
         $this->container['unit'] = $unit;
 
         return $this;
@@ -306,22 +287,20 @@ class PackageDimensions implements ModelInterface, ArrayAccess
     /**
      * Gets predefined_package_dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PredefinedPackageDimensions
+     * @return PredefinedPackageDimensions
      */
-    public function getPredefinedPackageDimensions()
-    {
+    public function getPredefinedPackageDimensions() {
         return $this->container['predefined_package_dimensions'];
     }
 
     /**
      * Sets predefined_package_dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PredefinedPackageDimensions $predefined_package_dimensions predefined_package_dimensions
+     * @param PredefinedPackageDimensions $predefined_package_dimensions predefined_package_dimensions
      *
      * @return $this
      */
-    public function setPredefinedPackageDimensions($predefined_package_dimensions)
-    {
+    public function setPredefinedPackageDimensions($predefined_package_dimensions) {
         $this->container['predefined_package_dimensions'] = $predefined_package_dimensions;
 
         return $this;
@@ -334,8 +313,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -346,21 +324,19 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -375,8 +351,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -385,8 +360,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

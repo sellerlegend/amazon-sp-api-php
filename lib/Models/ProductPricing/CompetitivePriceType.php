@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CompetitivePriceType Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CompetitivePriceType implements ModelInterface, ArrayAccess
-{
+class CompetitivePriceType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -44,10 +43,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'competitive_price_id' => 'string',
-'price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType',
-'condition' => 'string',
-'subcondition' => 'string',
-'belongs_to_requester' => 'bool',    ];
+        'price'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType',
+        'condition'            => 'string',
+        'subcondition'         => 'string',
+        'belongs_to_requester' => 'bool',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,18 +55,17 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'competitive_price_id' => null,
-'price' => null,
-'condition' => null,
-'subcondition' => null,
-'belongs_to_requester' => null,    ];
+        'price'                => null,
+        'condition'            => null,
+        'subcondition'         => null,
+        'belongs_to_requester' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -76,8 +74,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'competitive_price_id' => 'CompetitivePriceId',
-'price' => 'Price',
-'condition' => 'condition',
-'subcondition' => 'subcondition',
-'belongs_to_requester' => 'belongsToRequester',    ];
+        'price'                => 'Price',
+        'condition'            => 'condition',
+        'subcondition'         => 'subcondition',
+        'belongs_to_requester' => 'belongsToRequester',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,10 +98,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'competitive_price_id' => 'setCompetitivePriceId',
-'price' => 'setPrice',
-'condition' => 'setCondition',
-'subcondition' => 'setSubcondition',
-'belongs_to_requester' => 'setBelongsToRequester',    ];
+        'price'                => 'setPrice',
+        'condition'            => 'setCondition',
+        'subcondition'         => 'setSubcondition',
+        'belongs_to_requester' => 'setBelongsToRequester',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -113,10 +110,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'competitive_price_id' => 'getCompetitivePriceId',
-'price' => 'getPrice',
-'condition' => 'getCondition',
-'subcondition' => 'getSubcondition',
-'belongs_to_requester' => 'getBelongsToRequester',    ];
+        'price'                => 'getPrice',
+        'condition'            => 'getCondition',
+        'subcondition'         => 'getSubcondition',
+        'belongs_to_requester' => 'getBelongsToRequester',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -124,8 +121,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -134,8 +130,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -144,8 +139,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -154,8 +148,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -172,8 +165,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['competitive_price_id'] = isset($data['competitive_price_id']) ? $data['competitive_price_id'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
@@ -186,8 +178,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['competitive_price_id']) {
@@ -206,8 +197,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -216,8 +206,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCompetitivePriceId()
-    {
+    public function getCompetitivePriceId() {
         return $this->container['competitive_price_id'];
     }
 
@@ -228,8 +217,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCompetitivePriceId($competitive_price_id)
-    {
+    public function setCompetitivePriceId($competitive_price_id) {
         $this->container['competitive_price_id'] = $competitive_price_id;
 
         return $this;
@@ -238,22 +226,20 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
     /**
      * Gets price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType
+     * @return PriceType
      */
-    public function getPrice()
-    {
+    public function getPrice() {
         return $this->container['price'];
     }
 
     /**
      * Sets price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType $price price
+     * @param PriceType $price price
      *
      * @return $this
      */
-    public function setPrice($price)
-    {
+    public function setPrice($price) {
         $this->container['price'] = $price;
 
         return $this;
@@ -264,8 +250,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->container['condition'];
     }
 
@@ -276,8 +261,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->container['condition'] = $condition;
 
         return $this;
@@ -288,8 +272,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubcondition()
-    {
+    public function getSubcondition() {
         return $this->container['subcondition'];
     }
 
@@ -300,8 +283,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubcondition($subcondition)
-    {
+    public function setSubcondition($subcondition) {
         $this->container['subcondition'] = $subcondition;
 
         return $this;
@@ -312,8 +294,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getBelongsToRequester()
-    {
+    public function getBelongsToRequester() {
         return $this->container['belongs_to_requester'];
     }
 
@@ -324,8 +305,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBelongsToRequester($belongs_to_requester)
-    {
+    public function setBelongsToRequester($belongs_to_requester) {
         $this->container['belongs_to_requester'] = $belongs_to_requester;
 
         return $this;
@@ -338,8 +318,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -350,21 +329,19 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -379,8 +356,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -389,8 +365,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

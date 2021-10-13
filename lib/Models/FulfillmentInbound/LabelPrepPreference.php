@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * LabelPrepPreference Class Doc Comment.
  *
-
  * @description The preference for label preparation for an inbound shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LabelPrepPreference
-{
+class LabelPrepPreference {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class LabelPrepPreference
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SELLER_LABEL,
-self::AMAZON_LABEL_ONLY,
-self::AMAZON_LABEL_PREFERRED,        ];
+            self::AMAZON_LABEL_ONLY,
+            self::AMAZON_LABEL_PREFERRED,];
     }
 }

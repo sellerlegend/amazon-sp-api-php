@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * DetailedShippingTimeType Class Doc Comment.
  *
-
  * @description The time range in which an item will likely be shipped once an order has been placed.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class DetailedShippingTimeType implements ModelInterface, ArrayAccess
-{
+class DetailedShippingTimeType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +45,10 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'minimum_hours' => 'int',
-'maximum_hours' => 'int',
-'available_date' => 'float',
-'availability_type' => 'string',    ];
+        'minimum_hours'     => 'int',
+        'maximum_hours'     => 'int',
+        'available_date'    => 'float',
+        'availability_type' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'minimum_hours' => 'int64',
-'maximum_hours' => 'int64',
-'available_date' => null,
-'availability_type' => null,    ];
+        'minimum_hours'     => 'int64',
+        'maximum_hours'     => 'int64',
+        'available_date'    => null,
+        'availability_type' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'minimum_hours' => 'minimumHours',
-'maximum_hours' => 'maximumHours',
-'available_date' => 'availableDate',
-'availability_type' => 'availabilityType',    ];
+        'minimum_hours'     => 'minimumHours',
+        'maximum_hours'     => 'maximumHours',
+        'available_date'    => 'availableDate',
+        'availability_type' => 'availabilityType',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'minimum_hours' => 'setMinimumHours',
-'maximum_hours' => 'setMaximumHours',
-'available_date' => 'setAvailableDate',
-'availability_type' => 'setAvailabilityType',    ];
+        'minimum_hours'     => 'setMinimumHours',
+        'maximum_hours'     => 'setMaximumHours',
+        'available_date'    => 'setAvailableDate',
+        'availability_type' => 'setAvailabilityType',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'minimum_hours' => 'getMinimumHours',
-'maximum_hours' => 'getMaximumHours',
-'available_date' => 'getAvailableDate',
-'availability_type' => 'getAvailabilityType',    ];
+        'minimum_hours'     => 'getMinimumHours',
+        'maximum_hours'     => 'getMaximumHours',
+        'available_date'    => 'getAvailableDate',
+        'availability_type' => 'getAvailabilityType',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -166,12 +159,11 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAvailabilityTypeAllowableValues()
-    {
+    public function getAvailabilityTypeAllowableValues() {
         return [
             self::AVAILABILITY_TYPE_NOW,
-self::AVAILABILITY_TYPE_FUTURE_WITHOUT_DATE,
-self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
+            self::AVAILABILITY_TYPE_FUTURE_WITHOUT_DATE,
+            self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,];
     }
 
     /**
@@ -187,8 +179,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['minimum_hours'] = isset($data['minimum_hours']) ? $data['minimum_hours'] : null;
         $this->container['maximum_hours'] = isset($data['maximum_hours']) ? $data['maximum_hours'] : null;
         $this->container['available_date'] = isset($data['available_date']) ? $data['available_date'] : null;
@@ -200,8 +191,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
@@ -221,8 +211,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -231,8 +220,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return int
      */
-    public function getMinimumHours()
-    {
+    public function getMinimumHours() {
         return $this->container['minimum_hours'];
     }
 
@@ -243,8 +231,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return $this
      */
-    public function setMinimumHours($minimum_hours)
-    {
+    public function setMinimumHours($minimum_hours) {
         $this->container['minimum_hours'] = $minimum_hours;
 
         return $this;
@@ -255,8 +242,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return int
      */
-    public function getMaximumHours()
-    {
+    public function getMaximumHours() {
         return $this->container['maximum_hours'];
     }
 
@@ -267,8 +253,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return $this
      */
-    public function setMaximumHours($maximum_hours)
-    {
+    public function setMaximumHours($maximum_hours) {
         $this->container['maximum_hours'] = $maximum_hours;
 
         return $this;
@@ -279,8 +264,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return float
      */
-    public function getAvailableDate()
-    {
+    public function getAvailableDate() {
         return $this->container['available_date'];
     }
 
@@ -291,8 +275,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return $this
      */
-    public function setAvailableDate($available_date)
-    {
+    public function setAvailableDate($available_date) {
         $this->container['available_date'] = $available_date;
 
         return $this;
@@ -303,8 +286,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return string
      */
-    public function getAvailabilityType()
-    {
+    public function getAvailabilityType() {
         return $this->container['availability_type'];
     }
 
@@ -315,11 +297,10 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return $this
      */
-    public function setAvailabilityType($availability_type)
-    {
+    public function setAvailabilityType($availability_type) {
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
         if (!is_null($availability_type) && !in_array($availability_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'availability_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'availability_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['availability_type'] = $availability_type;
 
@@ -333,8 +314,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -345,21 +325,19 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -374,8 +352,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -384,8 +361,7 @@ self::AVAILABILITY_TYPE_FUTURE_WITH_DATE,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Price Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Price implements ModelInterface, ArrayAccess
-{
+class Price implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,10 +42,10 @@ class Price implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'status' => 'string',
-'seller_sku' => 'string',
-'asin' => 'string',
-'product' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Product',    ];
+        'status'     => 'string',
+        'seller_sku' => 'string',
+        'asin'       => 'string',
+        'product'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\Product',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,18 +53,17 @@ class Price implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'status' => null,
-'seller_sku' => null,
-'asin' => null,
-'product' => null,    ];
+        'status'     => null,
+        'seller_sku' => null,
+        'asin'       => null,
+        'product'    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -74,8 +72,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,10 +83,10 @@ class Price implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-'seller_sku' => 'SellerSKU',
-'asin' => 'ASIN',
-'product' => 'Product',    ];
+        'status'     => 'status',
+        'seller_sku' => 'SellerSKU',
+        'asin'       => 'ASIN',
+        'product'    => 'Product',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,10 +94,10 @@ class Price implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-'seller_sku' => 'setSellerSku',
-'asin' => 'setAsin',
-'product' => 'setProduct',    ];
+        'status'     => 'setStatus',
+        'seller_sku' => 'setSellerSku',
+        'asin'       => 'setAsin',
+        'product'    => 'setProduct',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,10 +105,10 @@ class Price implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-'seller_sku' => 'getSellerSku',
-'asin' => 'getAsin',
-'product' => 'getProduct',    ];
+        'status'     => 'getStatus',
+        'seller_sku' => 'getSellerSku',
+        'asin'       => 'getAsin',
+        'product'    => 'getProduct',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -119,8 +116,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -129,8 +125,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -139,8 +134,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -149,8 +143,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -167,8 +160,7 @@ class Price implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
@@ -180,8 +172,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['status']) {
@@ -197,8 +188,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -207,8 +197,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->container['status'];
     }
 
@@ -219,8 +208,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->container['status'] = $status;
 
         return $this;
@@ -231,8 +219,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -243,8 +230,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -255,8 +241,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -267,8 +252,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -277,22 +261,20 @@ class Price implements ModelInterface, ArrayAccess
     /**
      * Gets product.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Product
+     * @return Product
      */
-    public function getProduct()
-    {
+    public function getProduct() {
         return $this->container['product'];
     }
 
     /**
      * Sets product.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Product $product product
+     * @param Product $product product
      *
      * @return $this
      */
-    public function setProduct($product)
-    {
+    public function setProduct($product) {
         $this->container['product'] = $product;
 
         return $this;
@@ -305,8 +287,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -317,21 +298,19 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -346,8 +325,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -356,8 +334,7 @@ class Price implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

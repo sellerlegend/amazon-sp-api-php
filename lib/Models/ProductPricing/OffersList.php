@@ -15,23 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\IterableType;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\IterableType;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OffersList Class Doc Comment.
  *
-
  * @description A list of offers.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OffersList implements ModelInterface, ArrayAccess, IterableType
-{
+class OffersList implements ModelInterface, ArrayAccess, IterableType {
     const DISCRIMINATOR = null;
 
     /**
@@ -62,8 +60,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -72,8 +69,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -108,8 +104,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -118,8 +113,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -128,8 +122,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -138,8 +131,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -156,8 +148,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
     }
 
     /**
@@ -165,8 +156,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
@@ -178,8 +168,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -190,8 +179,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -202,21 +190,19 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -231,8 +217,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -241,8 +226,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
@@ -253,8 +237,7 @@ class OffersList implements ModelInterface, ArrayAccess, IterableType
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
-    public function getSubClass()
-    {
+    public function getSubClass() {
         return OfferType::class;
     }
 }

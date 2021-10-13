@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * InboundGuidance Class Doc Comment.
  *
-
  * @description Specific inbound guidance for an item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InboundGuidance
-{
+class InboundGuidance {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class InboundGuidance
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::INBOUND_NOT_RECOMMENDED,
-self::INBOUND_OK,        ];
+            self::INBOUND_OK,];
     }
 }

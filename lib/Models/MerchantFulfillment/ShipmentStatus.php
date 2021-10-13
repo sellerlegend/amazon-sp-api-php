@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * ShipmentStatus Class Doc Comment.
  *
-
  * @description The shipment status.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ShipmentStatus
-{
+class ShipmentStatus {
     /**
      * Possible values of this enum.
      */
@@ -40,12 +38,11 @@ class ShipmentStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::PURCHASED,
-self::REFUND_PENDING,
-self::REFUND_REJECTED,
-self::REFUND_APPLIED,        ];
+            self::REFUND_PENDING,
+            self::REFUND_REJECTED,
+            self::REFUND_APPLIED,];
     }
 }

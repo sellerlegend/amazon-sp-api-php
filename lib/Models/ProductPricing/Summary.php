@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Summary Class Doc Comment.
  *
-
  * @description Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Summary implements ModelInterface, ArrayAccess
-{
+class Summary implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,14 +45,15 @@ class Summary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'total_offer_count' => 'int',
-'number_of_offers' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOffers',
-'lowest_prices' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\LowestPrices',
-'buy_box_prices' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxPrices',
-'list_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'suggested_lower_price_plus_shipping' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'buy_box_eligible_offers' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxEligibleOffers',
-'offers_available_time' => '\DateTime',    ];
+        'total_offer_count'                   => 'int',
+        'number_of_offers'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOffers',
+        'lowest_prices'                       => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\LowestPrices',
+        'buy_box_prices'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxPrices',
+        'list_price'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'suggested_lower_price_plus_shipping' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'buy_box_eligible_offers'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxEligibleOffers',
+        'offers_available_time'               => '\DateTime'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -61,22 +61,21 @@ class Summary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'total_offer_count' => 'int32',
-'number_of_offers' => null,
-'lowest_prices' => null,
-'buy_box_prices' => null,
-'list_price' => null,
-'suggested_lower_price_plus_shipping' => null,
-'buy_box_eligible_offers' => null,
-'offers_available_time' => 'date-time',    ];
+        'total_offer_count'                   => 'int32',
+        'number_of_offers'                    => null,
+        'lowest_prices'                       => null,
+        'buy_box_prices'                      => null,
+        'list_price'                          => null,
+        'suggested_lower_price_plus_shipping' => null,
+        'buy_box_eligible_offers'             => null,
+        'offers_available_time'               => 'date-time',];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -85,8 +84,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -97,14 +95,14 @@ class Summary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_offer_count' => 'TotalOfferCount',
-'number_of_offers' => 'NumberOfOffers',
-'lowest_prices' => 'LowestPrices',
-'buy_box_prices' => 'BuyBoxPrices',
-'list_price' => 'ListPrice',
-'suggested_lower_price_plus_shipping' => 'SuggestedLowerPricePlusShipping',
-'buy_box_eligible_offers' => 'BuyBoxEligibleOffers',
-'offers_available_time' => 'OffersAvailableTime',    ];
+        'total_offer_count'                   => 'TotalOfferCount',
+        'number_of_offers'                    => 'NumberOfOffers',
+        'lowest_prices'                       => 'LowestPrices',
+        'buy_box_prices'                      => 'BuyBoxPrices',
+        'list_price'                          => 'ListPrice',
+        'suggested_lower_price_plus_shipping' => 'SuggestedLowerPricePlusShipping',
+        'buy_box_eligible_offers'             => 'BuyBoxEligibleOffers',
+        'offers_available_time'               => 'OffersAvailableTime',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -112,14 +110,14 @@ class Summary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_offer_count' => 'setTotalOfferCount',
-'number_of_offers' => 'setNumberOfOffers',
-'lowest_prices' => 'setLowestPrices',
-'buy_box_prices' => 'setBuyBoxPrices',
-'list_price' => 'setListPrice',
-'suggested_lower_price_plus_shipping' => 'setSuggestedLowerPricePlusShipping',
-'buy_box_eligible_offers' => 'setBuyBoxEligibleOffers',
-'offers_available_time' => 'setOffersAvailableTime',    ];
+        'total_offer_count'                   => 'setTotalOfferCount',
+        'number_of_offers'                    => 'setNumberOfOffers',
+        'lowest_prices'                       => 'setLowestPrices',
+        'buy_box_prices'                      => 'setBuyBoxPrices',
+        'list_price'                          => 'setListPrice',
+        'suggested_lower_price_plus_shipping' => 'setSuggestedLowerPricePlusShipping',
+        'buy_box_eligible_offers'             => 'setBuyBoxEligibleOffers',
+        'offers_available_time'               => 'setOffersAvailableTime',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -127,14 +125,14 @@ class Summary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_offer_count' => 'getTotalOfferCount',
-'number_of_offers' => 'getNumberOfOffers',
-'lowest_prices' => 'getLowestPrices',
-'buy_box_prices' => 'getBuyBoxPrices',
-'list_price' => 'getListPrice',
-'suggested_lower_price_plus_shipping' => 'getSuggestedLowerPricePlusShipping',
-'buy_box_eligible_offers' => 'getBuyBoxEligibleOffers',
-'offers_available_time' => 'getOffersAvailableTime',    ];
+        'total_offer_count'                   => 'getTotalOfferCount',
+        'number_of_offers'                    => 'getNumberOfOffers',
+        'lowest_prices'                       => 'getLowestPrices',
+        'buy_box_prices'                      => 'getBuyBoxPrices',
+        'list_price'                          => 'getListPrice',
+        'suggested_lower_price_plus_shipping' => 'getSuggestedLowerPricePlusShipping',
+        'buy_box_eligible_offers'             => 'getBuyBoxEligibleOffers',
+        'offers_available_time'               => 'getOffersAvailableTime',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -142,8 +140,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -152,8 +149,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -162,8 +158,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -172,8 +167,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -190,8 +184,7 @@ class Summary implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['total_offer_count'] = isset($data['total_offer_count']) ? $data['total_offer_count'] : null;
         $this->container['number_of_offers'] = isset($data['number_of_offers']) ? $data['number_of_offers'] : null;
         $this->container['lowest_prices'] = isset($data['lowest_prices']) ? $data['lowest_prices'] : null;
@@ -207,8 +200,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['total_offer_count']) {
@@ -224,8 +216,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -234,8 +225,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getTotalOfferCount()
-    {
+    public function getTotalOfferCount() {
         return $this->container['total_offer_count'];
     }
 
@@ -246,8 +236,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTotalOfferCount($total_offer_count)
-    {
+    public function setTotalOfferCount($total_offer_count) {
         $this->container['total_offer_count'] = $total_offer_count;
 
         return $this;
@@ -256,22 +245,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets number_of_offers.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOffers
+     * @return NumberOfOffers
      */
-    public function getNumberOfOffers()
-    {
+    public function getNumberOfOffers() {
         return $this->container['number_of_offers'];
     }
 
     /**
      * Sets number_of_offers.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOffers $number_of_offers number_of_offers
+     * @param NumberOfOffers $number_of_offers number_of_offers
      *
      * @return $this
      */
-    public function setNumberOfOffers($number_of_offers)
-    {
+    public function setNumberOfOffers($number_of_offers) {
         $this->container['number_of_offers'] = $number_of_offers;
 
         return $this;
@@ -280,22 +267,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets lowest_prices.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\LowestPrices
+     * @return LowestPrices
      */
-    public function getLowestPrices()
-    {
+    public function getLowestPrices() {
         return $this->container['lowest_prices'];
     }
 
     /**
      * Sets lowest_prices.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\LowestPrices $lowest_prices lowest_prices
+     * @param LowestPrices $lowest_prices lowest_prices
      *
      * @return $this
      */
-    public function setLowestPrices($lowest_prices)
-    {
+    public function setLowestPrices($lowest_prices) {
         $this->container['lowest_prices'] = $lowest_prices;
 
         return $this;
@@ -304,22 +289,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets buy_box_prices.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxPrices
+     * @return BuyBoxPrices
      */
-    public function getBuyBoxPrices()
-    {
+    public function getBuyBoxPrices() {
         return $this->container['buy_box_prices'];
     }
 
     /**
      * Sets buy_box_prices.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxPrices $buy_box_prices buy_box_prices
+     * @param BuyBoxPrices $buy_box_prices buy_box_prices
      *
      * @return $this
      */
-    public function setBuyBoxPrices($buy_box_prices)
-    {
+    public function setBuyBoxPrices($buy_box_prices) {
         $this->container['buy_box_prices'] = $buy_box_prices;
 
         return $this;
@@ -328,22 +311,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets list_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getListPrice()
-    {
+    public function getListPrice() {
         return $this->container['list_price'];
     }
 
     /**
      * Sets list_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $list_price list_price
+     * @param MoneyType $list_price list_price
      *
      * @return $this
      */
-    public function setListPrice($list_price)
-    {
+    public function setListPrice($list_price) {
         $this->container['list_price'] = $list_price;
 
         return $this;
@@ -352,22 +333,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets suggested_lower_price_plus_shipping.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getSuggestedLowerPricePlusShipping()
-    {
+    public function getSuggestedLowerPricePlusShipping() {
         return $this->container['suggested_lower_price_plus_shipping'];
     }
 
     /**
      * Sets suggested_lower_price_plus_shipping.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
+     * @param MoneyType $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
      *
      * @return $this
      */
-    public function setSuggestedLowerPricePlusShipping($suggested_lower_price_plus_shipping)
-    {
+    public function setSuggestedLowerPricePlusShipping($suggested_lower_price_plus_shipping) {
         $this->container['suggested_lower_price_plus_shipping'] = $suggested_lower_price_plus_shipping;
 
         return $this;
@@ -376,22 +355,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets buy_box_eligible_offers.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxEligibleOffers
+     * @return BuyBoxEligibleOffers
      */
-    public function getBuyBoxEligibleOffers()
-    {
+    public function getBuyBoxEligibleOffers() {
         return $this->container['buy_box_eligible_offers'];
     }
 
     /**
      * Sets buy_box_eligible_offers.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\BuyBoxEligibleOffers $buy_box_eligible_offers buy_box_eligible_offers
+     * @param BuyBoxEligibleOffers $buy_box_eligible_offers buy_box_eligible_offers
      *
      * @return $this
      */
-    public function setBuyBoxEligibleOffers($buy_box_eligible_offers)
-    {
+    public function setBuyBoxEligibleOffers($buy_box_eligible_offers) {
         $this->container['buy_box_eligible_offers'] = $buy_box_eligible_offers;
 
         return $this;
@@ -400,22 +377,20 @@ class Summary implements ModelInterface, ArrayAccess
     /**
      * Gets offers_available_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getOffersAvailableTime()
-    {
+    public function getOffersAvailableTime() {
         return $this->container['offers_available_time'];
     }
 
     /**
      * Sets offers_available_time.
      *
-     * @param \DateTime $offers_available_time when the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing
+     * @param DateTime $offers_available_time when the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing
      *
      * @return $this
      */
-    public function setOffersAvailableTime($offers_available_time)
-    {
+    public function setOffersAvailableTime($offers_available_time) {
         $this->container['offers_available_time'] = $offers_available_time;
 
         return $this;
@@ -428,8 +403,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -440,21 +414,19 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -469,8 +441,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -479,8 +450,7 @@ class Summary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

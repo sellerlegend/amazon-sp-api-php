@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * FulfillmentReturnItemStatus Class Doc Comment.
  *
-
  * @description Indicates if the return item has been processed by a fulfillment center.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentReturnItemStatus
-{
+class FulfillmentReturnItemStatus {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class FulfillmentReturnItemStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::_NEW,
-self::PROCESSED,        ];
+            self::PROCESSED,];
     }
 }

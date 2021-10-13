@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * PrepInstruction Class Doc Comment.
  *
-
  * @description Preparation instructions for shipping an item to Amazon&#x27;s fulfillment network. For more information about preparing items for shipment to Amazon&#x27;s fulfillment network, see the Seller Central Help for your marketplace.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PrepInstruction
-{
+class PrepInstruction {
     /**
      * Possible values of this enum.
      */
@@ -42,14 +40,13 @@ class PrepInstruction
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::POLYBAGGING,
-self::BUBBLE_WRAPPING,
-self::TAPING,
-self::BLACK_SHRINK_WRAPPING,
-self::LABELING,
-self::HANG_GARMENT,        ];
+            self::BUBBLE_WRAPPING,
+            self::TAPING,
+            self::BLACK_SHRINK_WRAPPING,
+            self::LABELING,
+            self::HANG_GARMENT,];
     }
 }

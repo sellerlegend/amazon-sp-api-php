@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeePreview Class Doc Comment.
  *
-
  * @description The fee estimate for a specific item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeePreview implements ModelInterface, ArrayAccess
-{
+class FeePreview implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class FeePreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'price' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType',
-'fee_breakdown' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\FeeLineItem[]',
-'total_fees' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType',
-'errors' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\ErrorList',    ];
+        'asin'          => 'string',
+        'price'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType',
+        'fee_breakdown' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\FeeLineItem[]',
+        'total_fees'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType',
+        'errors'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\ErrorList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class FeePreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'price' => null,
-'fee_breakdown' => null,
-'total_fees' => null,
-'errors' => null,    ];
+        'asin'          => null,
+        'price'         => null,
+        'fee_breakdown' => null,
+        'total_fees'    => null,
+        'errors'        => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class FeePreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'asin',
-'price' => 'price',
-'fee_breakdown' => 'feeBreakdown',
-'total_fees' => 'totalFees',
-'errors' => 'errors',    ];
+        'asin'          => 'asin',
+        'price'         => 'price',
+        'fee_breakdown' => 'feeBreakdown',
+        'total_fees'    => 'totalFees',
+        'errors'        => 'errors',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class FeePreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'price' => 'setPrice',
-'fee_breakdown' => 'setFeeBreakdown',
-'total_fees' => 'setTotalFees',
-'errors' => 'setErrors',    ];
+        'asin'          => 'setAsin',
+        'price'         => 'setPrice',
+        'fee_breakdown' => 'setFeeBreakdown',
+        'total_fees'    => 'setTotalFees',
+        'errors'        => 'setErrors',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class FeePreview implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'price' => 'getPrice',
-'fee_breakdown' => 'getFeeBreakdown',
-'total_fees' => 'getTotalFees',
-'errors' => 'getErrors',    ];
+        'asin'          => 'getAsin',
+        'price'         => 'getPrice',
+        'fee_breakdown' => 'getFeeBreakdown',
+        'total_fees'    => 'getTotalFees',
+        'errors'        => 'getErrors',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['fee_breakdown'] = isset($data['fee_breakdown']) ? $data['fee_breakdown'] : null;
@@ -189,8 +180,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -202,8 +192,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -212,8 +201,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -224,8 +212,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -234,22 +221,20 @@ class FeePreview implements ModelInterface, ArrayAccess
     /**
      * Gets price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType
+     * @return MoneyType
      */
-    public function getPrice()
-    {
+    public function getPrice() {
         return $this->container['price'];
     }
 
     /**
      * Sets price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType $price price
+     * @param MoneyType $price price
      *
      * @return $this
      */
-    public function setPrice($price)
-    {
+    public function setPrice($price) {
         $this->container['price'] = $price;
 
         return $this;
@@ -258,22 +243,20 @@ class FeePreview implements ModelInterface, ArrayAccess
     /**
      * Gets fee_breakdown.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\FeeLineItem[]
+     * @return FeeLineItem[]
      */
-    public function getFeeBreakdown()
-    {
+    public function getFeeBreakdown() {
         return $this->container['fee_breakdown'];
     }
 
     /**
      * Sets fee_breakdown.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\FeeLineItem[] $fee_breakdown a list of the Small and Light fees for the item
+     * @param FeeLineItem[] $fee_breakdown a list of the Small and Light fees for the item
      *
      * @return $this
      */
-    public function setFeeBreakdown($fee_breakdown)
-    {
+    public function setFeeBreakdown($fee_breakdown) {
         $this->container['fee_breakdown'] = $fee_breakdown;
 
         return $this;
@@ -282,22 +265,20 @@ class FeePreview implements ModelInterface, ArrayAccess
     /**
      * Gets total_fees.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType
+     * @return MoneyType
      */
-    public function getTotalFees()
-    {
+    public function getTotalFees() {
         return $this->container['total_fees'];
     }
 
     /**
      * Sets total_fees.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType $total_fees total_fees
+     * @param MoneyType $total_fees total_fees
      *
      * @return $this
      */
-    public function setTotalFees($total_fees)
-    {
+    public function setTotalFees($total_fees) {
         $this->container['total_fees'] = $total_fees;
 
         return $this;
@@ -306,22 +287,20 @@ class FeePreview implements ModelInterface, ArrayAccess
     /**
      * Gets errors.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\ErrorList
+     * @return ErrorList
      */
-    public function getErrors()
-    {
+    public function getErrors() {
         return $this->container['errors'];
     }
 
     /**
      * Sets errors.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\ErrorList $errors errors
+     * @param ErrorList $errors errors
      *
      * @return $this
      */
-    public function setErrors($errors)
-    {
+    public function setErrors($errors) {
         $this->container['errors'] = $errors;
 
         return $this;
@@ -334,8 +313,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -346,21 +324,19 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -375,8 +351,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -385,8 +360,7 @@ class FeePreview implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AmazonPrepFeesDetails Class Doc Comment.
  *
-
  * @description The fees for Amazon to prep goods for shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
-{
+class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,9 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'prep_instruction' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstruction',
-'fee_per_unit' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount',    ];
+        'prep_instruction' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstruction',
+        'fee_per_unit'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,15 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'prep_instruction' => null,
-'fee_per_unit' => null,    ];
+        'fee_per_unit'     => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +84,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'prep_instruction' => 'PrepInstruction',
-'fee_per_unit' => 'FeePerUnit',    ];
+        'fee_per_unit'     => 'FeePerUnit',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +93,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'prep_instruction' => 'setPrepInstruction',
-'fee_per_unit' => 'setFeePerUnit',    ];
+        'fee_per_unit'     => 'setFeePerUnit',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +102,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'prep_instruction' => 'getPrepInstruction',
-'fee_per_unit' => 'getFeePerUnit',    ];
+        'fee_per_unit'     => 'getFeePerUnit',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +154,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['prep_instruction'] = isset($data['prep_instruction']) ? $data['prep_instruction'] : null;
         $this->container['fee_per_unit'] = isset($data['fee_per_unit']) ? $data['fee_per_unit'] : null;
     }
@@ -171,8 +164,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +176,27 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets prep_instruction.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstruction
+     * @return PrepInstruction
      */
-    public function getPrepInstruction()
-    {
+    public function getPrepInstruction() {
         return $this->container['prep_instruction'];
     }
 
     /**
      * Sets prep_instruction.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstruction $prep_instruction prep_instruction
+     * @param PrepInstruction $prep_instruction prep_instruction
      *
      * @return $this
      */
-    public function setPrepInstruction($prep_instruction)
-    {
+    public function setPrepInstruction($prep_instruction) {
         $this->container['prep_instruction'] = $prep_instruction;
 
         return $this;
@@ -216,22 +205,20 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
     /**
      * Gets fee_per_unit.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount
+     * @return Amount
      */
-    public function getFeePerUnit()
-    {
+    public function getFeePerUnit() {
         return $this->container['fee_per_unit'];
     }
 
     /**
      * Sets fee_per_unit.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount $fee_per_unit fee_per_unit
+     * @param Amount $fee_per_unit fee_per_unit
      *
      * @return $this
      */
-    public function setFeePerUnit($fee_per_unit)
-    {
+    public function setFeePerUnit($fee_per_unit) {
         $this->container['fee_per_unit'] = $fee_per_unit;
 
         return $this;
@@ -244,8 +231,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +242,19 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +269,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +278,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

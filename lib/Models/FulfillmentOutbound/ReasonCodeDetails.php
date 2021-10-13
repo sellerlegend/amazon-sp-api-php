@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ReasonCodeDetails Class Doc Comment.
  *
-
  * @description A return reason code, a description, and an optional description translation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ReasonCodeDetails implements ModelInterface, ArrayAccess
-{
+class ReasonCodeDetails implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'return_reason_code' => 'string',
-'description' => 'string',
-'translated_description' => 'string',    ];
+        'return_reason_code'     => 'string',
+        'description'            => 'string',
+        'translated_description' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'return_reason_code' => null,
-'description' => null,
-'translated_description' => null,    ];
+        'return_reason_code'     => null,
+        'description'            => null,
+        'translated_description' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'return_reason_code' => 'returnReasonCode',
-'description' => 'description',
-'translated_description' => 'translatedDescription',    ];
+        'return_reason_code'     => 'returnReasonCode',
+        'description'            => 'description',
+        'translated_description' => 'translatedDescription',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'return_reason_code' => 'setReturnReasonCode',
-'description' => 'setDescription',
-'translated_description' => 'setTranslatedDescription',    ];
+        'return_reason_code'     => 'setReturnReasonCode',
+        'description'            => 'setDescription',
+        'translated_description' => 'setTranslatedDescription',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'return_reason_code' => 'getReturnReasonCode',
-'description' => 'getDescription',
-'translated_description' => 'getTranslatedDescription',    ];
+        'return_reason_code'     => 'getReturnReasonCode',
+        'description'            => 'getDescription',
+        'translated_description' => 'getTranslatedDescription',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['return_reason_code'] = isset($data['return_reason_code']) ? $data['return_reason_code'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['translated_description'] = isset($data['translated_description']) ? $data['translated_description'] : null;
@@ -177,8 +168,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['return_reason_code']) {
@@ -197,8 +187,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -207,8 +196,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReturnReasonCode()
-    {
+    public function getReturnReasonCode() {
         return $this->container['return_reason_code'];
     }
 
@@ -219,8 +207,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReturnReasonCode($return_reason_code)
-    {
+    public function setReturnReasonCode($return_reason_code) {
         $this->container['return_reason_code'] = $return_reason_code;
 
         return $this;
@@ -231,8 +218,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->container['description'];
     }
 
@@ -243,8 +229,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->container['description'] = $description;
 
         return $this;
@@ -255,8 +240,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTranslatedDescription()
-    {
+    public function getTranslatedDescription() {
         return $this->container['translated_description'];
     }
 
@@ -267,8 +251,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTranslatedDescription($translated_description)
-    {
+    public function setTranslatedDescription($translated_description) {
         $this->container['translated_description'] = $translated_description;
 
         return $this;
@@ -281,8 +264,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -293,21 +275,19 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -322,8 +302,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -332,8 +311,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

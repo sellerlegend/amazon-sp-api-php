@@ -15,22 +15,21 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeedDocumentEncryptionDetails Class Doc Comment.
  *
-
  * @description Encryption details for required client-side encryption and decryption of document contents.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
-{
+class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +45,9 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'standard' => 'string',
-'initialization_vector' => 'string',
-'key' => 'string',    ];
+        'standard'              => 'string',
+        'initialization_vector' => 'string',
+        'key'                   => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +55,16 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'standard' => null,
-'initialization_vector' => null,
-'key' => null,    ];
+        'standard'              => null,
+        'initialization_vector' => null,
+        'key'                   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +84,9 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'standard' => 'standard',
-'initialization_vector' => 'initializationVector',
-'key' => 'key',    ];
+        'standard'              => 'standard',
+        'initialization_vector' => 'initializationVector',
+        'key'                   => 'key',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +94,9 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'standard' => 'setStandard',
-'initialization_vector' => 'setInitializationVector',
-'key' => 'setKey',    ];
+        'standard'              => 'setStandard',
+        'initialization_vector' => 'setInitializationVector',
+        'key'                   => 'setKey',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +104,9 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'standard' => 'getStandard',
-'initialization_vector' => 'getInitializationVector',
-'key' => 'getKey',    ];
+        'standard'              => 'getStandard',
+        'initialization_vector' => 'getInitializationVector',
+        'key'                   => 'getKey',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -159,10 +152,9 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getStandardAllowableValues()
-    {
+    public function getStandardAllowableValues() {
         return [
-            self::STANDARD_AES,        ];
+            self::STANDARD_AES,];
     }
 
     /**
@@ -178,8 +170,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['standard'] = isset($data['standard']) ? $data['standard'] : null;
         $this->container['initialization_vector'] = isset($data['initialization_vector']) ? $data['initialization_vector'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
@@ -190,8 +181,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['standard']) {
@@ -221,8 +211,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -231,8 +220,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStandard()
-    {
+    public function getStandard() {
         return $this->container['standard'];
     }
 
@@ -243,11 +231,10 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStandard($standard)
-    {
+    public function setStandard($standard) {
         $allowedValues = $this->getStandardAllowableValues();
         if (!in_array($standard, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'standard', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'standard', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['standard'] = $standard;
 
@@ -259,8 +246,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getInitializationVector()
-    {
+    public function getInitializationVector() {
         return $this->container['initialization_vector'];
     }
 
@@ -271,8 +257,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInitializationVector($initialization_vector)
-    {
+    public function setInitializationVector($initialization_vector) {
         $this->container['initialization_vector'] = $initialization_vector;
 
         return $this;
@@ -283,8 +268,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getKey()
-    {
+    public function getKey() {
         return $this->container['key'];
     }
 
@@ -295,8 +279,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setKey($key)
-    {
+    public function setKey($key) {
         $this->container['key'] = $key;
 
         return $this;
@@ -309,8 +292,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -321,21 +303,19 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -350,8 +330,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -360,8 +339,7 @@ class FeedDocumentEncryptionDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeeLineItem Class Doc Comment.
  *
-
  * @description Fee details for a specific fee.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeeLineItem implements ModelInterface, ArrayAccess
-{
+class FeeLineItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,9 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'fee_type' => 'string',
-'fee_charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType',    ];
+        'fee_type'   => 'string',
+        'fee_charge' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +55,15 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'fee_type' => null,
-'fee_charge' => null,    ];
+        'fee_type'   => null,
+        'fee_charge' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +83,8 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fee_type' => 'feeType',
-'fee_charge' => 'feeCharge',    ];
+        'fee_type'   => 'feeType',
+        'fee_charge' => 'feeCharge',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +92,8 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fee_type' => 'setFeeType',
-'fee_charge' => 'setFeeCharge',    ];
+        'fee_type'   => 'setFeeType',
+        'fee_charge' => 'setFeeCharge',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +101,8 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fee_type' => 'getFeeType',
-'fee_charge' => 'getFeeCharge',    ];
+        'fee_type'   => 'getFeeType',
+        'fee_charge' => 'getFeeCharge',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,13 +151,12 @@ class FeeLineItem implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getFeeTypeAllowableValues()
-    {
+    public function getFeeTypeAllowableValues() {
         return [
             self::FEE_TYPE_FBA_WEIGHT_BASED_FEE,
-self::FEE_TYPE_FBA_PER_ORDER_FULFILLMENT_FEE,
-self::FEE_TYPE_FBA_PER_UNIT_FULFILLMENT_FEE,
-self::FEE_TYPE_COMMISSION,        ];
+            self::FEE_TYPE_FBA_PER_ORDER_FULFILLMENT_FEE,
+            self::FEE_TYPE_FBA_PER_UNIT_FULFILLMENT_FEE,
+            self::FEE_TYPE_COMMISSION,];
     }
 
     /**
@@ -179,8 +172,7 @@ self::FEE_TYPE_COMMISSION,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['fee_type'] = isset($data['fee_type']) ? $data['fee_type'] : null;
         $this->container['fee_charge'] = isset($data['fee_charge']) ? $data['fee_charge'] : null;
     }
@@ -190,8 +182,7 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['fee_type']) {
@@ -218,8 +209,7 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -228,8 +218,7 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return string
      */
-    public function getFeeType()
-    {
+    public function getFeeType() {
         return $this->container['fee_type'];
     }
 
@@ -240,11 +229,10 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return $this
      */
-    public function setFeeType($fee_type)
-    {
+    public function setFeeType($fee_type) {
         $allowedValues = $this->getFeeTypeAllowableValues();
         if (!in_array($fee_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'fee_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'fee_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['fee_type'] = $fee_type;
 
@@ -254,22 +242,20 @@ self::FEE_TYPE_COMMISSION,        ];
     /**
      * Gets fee_charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType
+     * @return MoneyType
      */
-    public function getFeeCharge()
-    {
+    public function getFeeCharge() {
         return $this->container['fee_charge'];
     }
 
     /**
      * Sets fee_charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MoneyType $fee_charge fee_charge
+     * @param MoneyType $fee_charge fee_charge
      *
      * @return $this
      */
-    public function setFeeCharge($fee_charge)
-    {
+    public function setFeeCharge($fee_charge) {
         $this->container['fee_charge'] = $fee_charge;
 
         return $this;
@@ -282,8 +268,7 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -294,21 +279,19 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -323,8 +306,7 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -333,8 +315,7 @@ self::FEE_TYPE_COMMISSION,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

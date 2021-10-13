@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Notifications;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Notifications;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateSubscriptionRequest Class Doc Comment.
  *
-
  * @description The request schema for the createSubscription operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
-{
+class CreateSubscriptionRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'payload_version' => 'string',
-'destination_id' => 'string',    ];
+        'destination_id'  => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'payload_version' => null,
-'destination_id' => null,    ];
+        'destination_id'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'payload_version' => 'payloadVersion',
-'destination_id' => 'destinationId',    ];
+        'destination_id'  => 'destinationId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'payload_version' => 'setPayloadVersion',
-'destination_id' => 'setDestinationId',    ];
+        'destination_id'  => 'setDestinationId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'payload_version' => 'getPayloadVersion',
-'destination_id' => 'getDestinationId',    ];
+        'destination_id'  => 'getDestinationId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['payload_version'] = isset($data['payload_version']) ? $data['payload_version'] : null;
         $this->container['destination_id'] = isset($data['destination_id']) ? $data['destination_id'] : null;
     }
@@ -171,8 +162,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +174,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +183,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPayloadVersion()
-    {
+    public function getPayloadVersion() {
         return $this->container['payload_version'];
     }
 
@@ -206,8 +194,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayloadVersion($payload_version)
-    {
+    public function setPayloadVersion($payload_version) {
         $this->container['payload_version'] = $payload_version;
 
         return $this;
@@ -218,8 +205,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDestinationId()
-    {
+    public function getDestinationId() {
         return $this->container['destination_id'];
     }
 
@@ -230,8 +216,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDestinationId($destination_id)
-    {
+    public function setDestinationId($destination_id) {
         $this->container['destination_id'] = $destination_id;
 
         return $this;
@@ -244,8 +229,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

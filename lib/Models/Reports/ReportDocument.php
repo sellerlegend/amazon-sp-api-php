@@ -15,19 +15,19 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Reports;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Reports;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ReportDocument Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ReportDocument implements ModelInterface, ArrayAccess
-{
+class ReportDocument implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,10 +43,11 @@ class ReportDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'report_document_id' => 'string',
-'url' => 'string',
-'encryption_details' => '\ClouSale\AmazonSellingPartnerAPI\Models\Reports\ReportDocumentEncryptionDetails',
-'compression_algorithm' => 'string',    ];
+        'report_document_id'    => 'string',
+        'url'                   => 'string',
+        'encryption_details'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Reports\ReportDocumentEncryptionDetails',
+        'compression_algorithm' => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,18 +55,17 @@ class ReportDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'report_document_id' => null,
-'url' => null,
-'encryption_details' => null,
-'compression_algorithm' => null,    ];
+        'report_document_id'    => null,
+        'url'                   => null,
+        'encryption_details'    => null,
+        'compression_algorithm' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -74,8 +74,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,10 +85,10 @@ class ReportDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'report_document_id' => 'reportDocumentId',
-'url' => 'url',
-'encryption_details' => 'encryptionDetails',
-'compression_algorithm' => 'compressionAlgorithm',    ];
+        'report_document_id'    => 'reportDocumentId',
+        'url'                   => 'url',
+        'encryption_details'    => 'encryptionDetails',
+        'compression_algorithm' => 'compressionAlgorithm',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,10 +96,10 @@ class ReportDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'report_document_id' => 'setReportDocumentId',
-'url' => 'setUrl',
-'encryption_details' => 'setEncryptionDetails',
-'compression_algorithm' => 'setCompressionAlgorithm',    ];
+        'report_document_id'    => 'setReportDocumentId',
+        'url'                   => 'setUrl',
+        'encryption_details'    => 'setEncryptionDetails',
+        'compression_algorithm' => 'setCompressionAlgorithm',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,10 +107,10 @@ class ReportDocument implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'report_document_id' => 'getReportDocumentId',
-'url' => 'getUrl',
-'encryption_details' => 'getEncryptionDetails',
-'compression_algorithm' => 'getCompressionAlgorithm',    ];
+        'report_document_id'    => 'getReportDocumentId',
+        'url'                   => 'getUrl',
+        'encryption_details'    => 'getEncryptionDetails',
+        'compression_algorithm' => 'getCompressionAlgorithm',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -119,8 +118,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -129,8 +127,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -139,8 +136,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -149,8 +145,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -161,10 +156,9 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getCompressionAlgorithmAllowableValues()
-    {
+    public function getCompressionAlgorithmAllowableValues() {
         return [
-            self::COMPRESSION_ALGORITHM_GZIP,        ];
+            self::COMPRESSION_ALGORITHM_GZIP,];
     }
 
     /**
@@ -180,8 +174,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['report_document_id'] = isset($data['report_document_id']) ? $data['report_document_id'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
@@ -193,8 +186,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['report_document_id']) {
@@ -223,8 +215,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -233,8 +224,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReportDocumentId()
-    {
+    public function getReportDocumentId() {
         return $this->container['report_document_id'];
     }
 
@@ -245,8 +235,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReportDocumentId($report_document_id)
-    {
+    public function setReportDocumentId($report_document_id) {
         $this->container['report_document_id'] = $report_document_id;
 
         return $this;
@@ -257,8 +246,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->container['url'];
     }
 
@@ -269,8 +257,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->container['url'] = $url;
 
         return $this;
@@ -279,22 +266,20 @@ class ReportDocument implements ModelInterface, ArrayAccess
     /**
      * Gets encryption_details.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Reports\ReportDocumentEncryptionDetails
+     * @return ReportDocumentEncryptionDetails
      */
-    public function getEncryptionDetails()
-    {
+    public function getEncryptionDetails() {
         return $this->container['encryption_details'];
     }
 
     /**
      * Sets encryption_details.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Reports\ReportDocumentEncryptionDetails $encryption_details encryption_details
+     * @param ReportDocumentEncryptionDetails $encryption_details encryption_details
      *
      * @return $this
      */
-    public function setEncryptionDetails($encryption_details)
-    {
+    public function setEncryptionDetails($encryption_details) {
         $this->container['encryption_details'] = $encryption_details;
 
         return $this;
@@ -305,8 +290,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCompressionAlgorithm()
-    {
+    public function getCompressionAlgorithm() {
         return $this->container['compression_algorithm'];
     }
 
@@ -317,11 +301,10 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCompressionAlgorithm($compression_algorithm)
-    {
+    public function setCompressionAlgorithm($compression_algorithm) {
         $allowedValues = $this->getCompressionAlgorithmAllowableValues();
         if (!is_null($compression_algorithm) && !in_array($compression_algorithm, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'compression_algorithm', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'compression_algorithm', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['compression_algorithm'] = $compression_algorithm;
 
@@ -335,8 +318,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -347,21 +329,19 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -376,8 +356,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -386,8 +365,7 @@ class ReportDocument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

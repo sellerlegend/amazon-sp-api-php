@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Pagination Class Doc Comment.
  *
-
  * @description The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It&#x27;s a form of traffic management.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Pagination implements ModelInterface, ArrayAccess
-{
+class Pagination implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,7 @@ class Pagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'next_token' => 'string',    ];
+        'next_token' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +52,14 @@ class Pagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'next_token' => null,    ];
+        'next_token' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +68,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +79,7 @@ class Pagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'next_token' => 'nextToken',    ];
+        'next_token' => 'nextToken',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +87,7 @@ class Pagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'next_token' => 'setNextToken',    ];
+        'next_token' => 'setNextToken',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +95,7 @@ class Pagination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'next_token' => 'getNextToken',    ];
+        'next_token' => 'getNextToken',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +103,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +112,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +121,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +130,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +147,7 @@ class Pagination implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
     }
 
@@ -165,8 +156,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -178,8 +168,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -188,8 +177,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -200,8 +188,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -214,8 +201,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -226,21 +212,19 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -255,8 +239,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -265,8 +248,7 @@ class Pagination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

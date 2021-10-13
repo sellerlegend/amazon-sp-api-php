@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CODSettings Class Doc Comment.
  *
-
  * @description The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CODSettings implements ModelInterface, ArrayAccess
-{
+class CODSettings implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class CODSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_cod_required' => 'bool',
-'cod_charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
-'cod_charge_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
-'shipping_charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
-'shipping_charge_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',    ];
+        'is_cod_required'     => 'bool',
+        'cod_charge'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
+        'cod_charge_tax'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
+        'shipping_charge'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',
+        'shipping_charge_tax' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class CODSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_cod_required' => null,
-'cod_charge' => null,
-'cod_charge_tax' => null,
-'shipping_charge' => null,
-'shipping_charge_tax' => null,    ];
+        'is_cod_required'     => null,
+        'cod_charge'          => null,
+        'cod_charge_tax'      => null,
+        'shipping_charge'     => null,
+        'shipping_charge_tax' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class CODSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_cod_required' => 'isCodRequired',
-'cod_charge' => 'codCharge',
-'cod_charge_tax' => 'codChargeTax',
-'shipping_charge' => 'shippingCharge',
-'shipping_charge_tax' => 'shippingChargeTax',    ];
+        'is_cod_required'     => 'isCodRequired',
+        'cod_charge'          => 'codCharge',
+        'cod_charge_tax'      => 'codChargeTax',
+        'shipping_charge'     => 'shippingCharge',
+        'shipping_charge_tax' => 'shippingChargeTax',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class CODSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_cod_required' => 'setIsCodRequired',
-'cod_charge' => 'setCodCharge',
-'cod_charge_tax' => 'setCodChargeTax',
-'shipping_charge' => 'setShippingCharge',
-'shipping_charge_tax' => 'setShippingChargeTax',    ];
+        'is_cod_required'     => 'setIsCodRequired',
+        'cod_charge'          => 'setCodCharge',
+        'cod_charge_tax'      => 'setCodChargeTax',
+        'shipping_charge'     => 'setShippingCharge',
+        'shipping_charge_tax' => 'setShippingChargeTax',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class CODSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_cod_required' => 'getIsCodRequired',
-'cod_charge' => 'getCodCharge',
-'cod_charge_tax' => 'getCodChargeTax',
-'shipping_charge' => 'getShippingCharge',
-'shipping_charge_tax' => 'getShippingChargeTax',    ];
+        'is_cod_required'     => 'getIsCodRequired',
+        'cod_charge'          => 'getCodCharge',
+        'cod_charge_tax'      => 'getCodChargeTax',
+        'shipping_charge'     => 'getShippingCharge',
+        'shipping_charge_tax' => 'getShippingChargeTax',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['is_cod_required'] = isset($data['is_cod_required']) ? $data['is_cod_required'] : null;
         $this->container['cod_charge'] = isset($data['cod_charge']) ? $data['cod_charge'] : null;
         $this->container['cod_charge_tax'] = isset($data['cod_charge_tax']) ? $data['cod_charge_tax'] : null;
@@ -189,8 +180,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['is_cod_required']) {
@@ -206,8 +196,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -216,8 +205,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsCodRequired()
-    {
+    public function getIsCodRequired() {
         return $this->container['is_cod_required'];
     }
 
@@ -228,8 +216,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsCodRequired($is_cod_required)
-    {
+    public function setIsCodRequired($is_cod_required) {
         $this->container['is_cod_required'] = $is_cod_required;
 
         return $this;
@@ -238,22 +225,20 @@ class CODSettings implements ModelInterface, ArrayAccess
     /**
      * Gets cod_charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money
+     * @return Money
      */
-    public function getCodCharge()
-    {
+    public function getCodCharge() {
         return $this->container['cod_charge'];
     }
 
     /**
      * Sets cod_charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money $cod_charge cod_charge
+     * @param Money $cod_charge cod_charge
      *
      * @return $this
      */
-    public function setCodCharge($cod_charge)
-    {
+    public function setCodCharge($cod_charge) {
         $this->container['cod_charge'] = $cod_charge;
 
         return $this;
@@ -262,22 +247,20 @@ class CODSettings implements ModelInterface, ArrayAccess
     /**
      * Gets cod_charge_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money
+     * @return Money
      */
-    public function getCodChargeTax()
-    {
+    public function getCodChargeTax() {
         return $this->container['cod_charge_tax'];
     }
 
     /**
      * Sets cod_charge_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money $cod_charge_tax cod_charge_tax
+     * @param Money $cod_charge_tax cod_charge_tax
      *
      * @return $this
      */
-    public function setCodChargeTax($cod_charge_tax)
-    {
+    public function setCodChargeTax($cod_charge_tax) {
         $this->container['cod_charge_tax'] = $cod_charge_tax;
 
         return $this;
@@ -286,22 +269,20 @@ class CODSettings implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money
+     * @return Money
      */
-    public function getShippingCharge()
-    {
+    public function getShippingCharge() {
         return $this->container['shipping_charge'];
     }
 
     /**
      * Sets shipping_charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money $shipping_charge shipping_charge
+     * @param Money $shipping_charge shipping_charge
      *
      * @return $this
      */
-    public function setShippingCharge($shipping_charge)
-    {
+    public function setShippingCharge($shipping_charge) {
         $this->container['shipping_charge'] = $shipping_charge;
 
         return $this;
@@ -310,22 +291,20 @@ class CODSettings implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_charge_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money
+     * @return Money
      */
-    public function getShippingChargeTax()
-    {
+    public function getShippingChargeTax() {
         return $this->container['shipping_charge_tax'];
     }
 
     /**
      * Sets shipping_charge_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money $shipping_charge_tax shipping_charge_tax
+     * @param Money $shipping_charge_tax shipping_charge_tax
      *
      * @return $this
      */
-    public function setShippingChargeTax($shipping_charge_tax)
-    {
+    public function setShippingChargeTax($shipping_charge_tax) {
         $this->container['shipping_charge_tax'] = $shipping_charge_tax;
 
         return $this;
@@ -338,8 +317,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -350,21 +328,19 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -379,8 +355,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -389,8 +364,7 @@ class CODSettings implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

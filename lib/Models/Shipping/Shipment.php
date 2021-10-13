@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Shipment Class Doc Comment.
  *
-
  * @description The shipment related data.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Shipment implements ModelInterface, ArrayAccess
-{
+class Shipment implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,14 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipment_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId',
-'client_reference_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId',
-'ship_from' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address',
-'ship_to' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address',
-'accepted_rate' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate',
-'shipper' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Party',
-'containers' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerList',    ];
+        'shipment_id'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId',
+        'client_reference_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId',
+        'ship_from'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Address',
+        'ship_to'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Address',
+        'accepted_rate'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate',
+        'shipper'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Party',
+        'containers'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ContainerList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +59,20 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'shipment_id' => null,
-'client_reference_id' => null,
-'ship_from' => null,
-'ship_to' => null,
-'accepted_rate' => null,
-'shipper' => null,
-'containers' => null,    ];
+        'shipment_id'         => null,
+        'client_reference_id' => null,
+        'ship_from'           => null,
+        'ship_to'             => null,
+        'accepted_rate'       => null,
+        'shipper'             => null,
+        'containers'          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +81,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +92,13 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shipment_id' => 'shipmentId',
-'client_reference_id' => 'clientReferenceId',
-'ship_from' => 'shipFrom',
-'ship_to' => 'shipTo',
-'accepted_rate' => 'acceptedRate',
-'shipper' => 'shipper',
-'containers' => 'containers',    ];
+        'shipment_id'         => 'shipmentId',
+        'client_reference_id' => 'clientReferenceId',
+        'ship_from'           => 'shipFrom',
+        'ship_to'             => 'shipTo',
+        'accepted_rate'       => 'acceptedRate',
+        'shipper'             => 'shipper',
+        'containers'          => 'containers',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +106,13 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
-'client_reference_id' => 'setClientReferenceId',
-'ship_from' => 'setShipFrom',
-'ship_to' => 'setShipTo',
-'accepted_rate' => 'setAcceptedRate',
-'shipper' => 'setShipper',
-'containers' => 'setContainers',    ];
+        'shipment_id'         => 'setShipmentId',
+        'client_reference_id' => 'setClientReferenceId',
+        'ship_from'           => 'setShipFrom',
+        'ship_to'             => 'setShipTo',
+        'accepted_rate'       => 'setAcceptedRate',
+        'shipper'             => 'setShipper',
+        'containers'          => 'setContainers',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +120,13 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shipment_id' => 'getShipmentId',
-'client_reference_id' => 'getClientReferenceId',
-'ship_from' => 'getShipFrom',
-'ship_to' => 'getShipTo',
-'accepted_rate' => 'getAcceptedRate',
-'shipper' => 'getShipper',
-'containers' => 'getContainers',    ];
+        'shipment_id'         => 'getShipmentId',
+        'client_reference_id' => 'getClientReferenceId',
+        'ship_from'           => 'getShipFrom',
+        'ship_to'             => 'getShipTo',
+        'accepted_rate'       => 'getAcceptedRate',
+        'shipper'             => 'getShipper',
+        'containers'          => 'getContainers',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +134,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +143,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +152,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +161,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +178,7 @@ class Shipment implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipment_id'] = isset($data['shipment_id']) ? $data['shipment_id'] : null;
         $this->container['client_reference_id'] = isset($data['client_reference_id']) ? $data['client_reference_id'] : null;
         $this->container['ship_from'] = isset($data['ship_from']) ? $data['ship_from'] : null;
@@ -201,8 +193,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['shipment_id']) {
@@ -230,30 +221,27 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId
+     * @return ShipmentId
      */
-    public function getShipmentId()
-    {
+    public function getShipmentId() {
         return $this->container['shipment_id'];
     }
 
     /**
      * Sets shipment_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId $shipment_id shipment_id
+     * @param ShipmentId $shipment_id shipment_id
      *
      * @return $this
      */
-    public function setShipmentId($shipment_id)
-    {
+    public function setShipmentId($shipment_id) {
         $this->container['shipment_id'] = $shipment_id;
 
         return $this;
@@ -262,22 +250,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets client_reference_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId
+     * @return ClientReferenceId
      */
-    public function getClientReferenceId()
-    {
+    public function getClientReferenceId() {
         return $this->container['client_reference_id'];
     }
 
     /**
      * Sets client_reference_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId $client_reference_id client_reference_id
+     * @param ClientReferenceId $client_reference_id client_reference_id
      *
      * @return $this
      */
-    public function setClientReferenceId($client_reference_id)
-    {
+    public function setClientReferenceId($client_reference_id) {
         $this->container['client_reference_id'] = $client_reference_id;
 
         return $this;
@@ -286,22 +272,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets ship_from.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address
+     * @return Address
      */
-    public function getShipFrom()
-    {
+    public function getShipFrom() {
         return $this->container['ship_from'];
     }
 
     /**
      * Sets ship_from.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address $ship_from ship_from
+     * @param Address $ship_from ship_from
      *
      * @return $this
      */
-    public function setShipFrom($ship_from)
-    {
+    public function setShipFrom($ship_from) {
         $this->container['ship_from'] = $ship_from;
 
         return $this;
@@ -310,22 +294,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets ship_to.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address
+     * @return Address
      */
-    public function getShipTo()
-    {
+    public function getShipTo() {
         return $this->container['ship_to'];
     }
 
     /**
      * Sets ship_to.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address $ship_to ship_to
+     * @param Address $ship_to ship_to
      *
      * @return $this
      */
-    public function setShipTo($ship_to)
-    {
+    public function setShipTo($ship_to) {
         $this->container['ship_to'] = $ship_to;
 
         return $this;
@@ -334,22 +316,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets accepted_rate.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate
+     * @return AcceptedRate
      */
-    public function getAcceptedRate()
-    {
+    public function getAcceptedRate() {
         return $this->container['accepted_rate'];
     }
 
     /**
      * Sets accepted_rate.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate $accepted_rate accepted_rate
+     * @param AcceptedRate $accepted_rate accepted_rate
      *
      * @return $this
      */
-    public function setAcceptedRate($accepted_rate)
-    {
+    public function setAcceptedRate($accepted_rate) {
         $this->container['accepted_rate'] = $accepted_rate;
 
         return $this;
@@ -358,22 +338,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets shipper.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Party
+     * @return Party
      */
-    public function getShipper()
-    {
+    public function getShipper() {
         return $this->container['shipper'];
     }
 
     /**
      * Sets shipper.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Party $shipper shipper
+     * @param Party $shipper shipper
      *
      * @return $this
      */
-    public function setShipper($shipper)
-    {
+    public function setShipper($shipper) {
         $this->container['shipper'] = $shipper;
 
         return $this;
@@ -382,22 +360,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets containers.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerList
+     * @return ContainerList
      */
-    public function getContainers()
-    {
+    public function getContainers() {
         return $this->container['containers'];
     }
 
     /**
      * Sets containers.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerList $containers containers
+     * @param ContainerList $containers containers
      *
      * @return $this
      */
-    public function setContainers($containers)
-    {
+    public function setContainers($containers) {
         $this->container['containers'] = $containers;
 
         return $this;
@@ -410,8 +386,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -422,21 +397,19 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -451,8 +424,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -461,8 +433,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

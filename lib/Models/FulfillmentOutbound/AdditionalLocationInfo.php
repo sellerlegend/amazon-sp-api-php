@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * AdditionalLocationInfo Class Doc Comment.
  *
-
  * @description Additional location information.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AdditionalLocationInfo
-{
+class AdditionalLocationInfo {
     /**
      * Possible values of this enum.
      */
@@ -62,34 +60,33 @@ class AdditionalLocationInfo
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::AS_INSTRUCTED,
-self::CARPORT,
-self::CUSTOMER_PICKUP,
-self::DECK,
-self::DOOR_PERSON,
-self::FRONT_DESK,
-self::FRONT_DOOR,
-self::GARAGE,
-self::GUARD,
-self::MAIL_ROOM,
-self::MAIL_SLOT,
-self::MAILBOX,
-self::MC_BOY,
-self::MC_GIRL,
-self::MC_MAN,
-self::MC_WOMAN,
-self::NEIGHBOR,
-self::OFFICE,
-self::OUTBUILDING,
-self::PATIO,
-self::PORCH,
-self::REAR_DOOR,
-self::RECEPTIONIST,
-self::RECEIVER,
-self::SECURE_LOCATION,
-self::SIDE_DOOR,        ];
+            self::CARPORT,
+            self::CUSTOMER_PICKUP,
+            self::DECK,
+            self::DOOR_PERSON,
+            self::FRONT_DESK,
+            self::FRONT_DOOR,
+            self::GARAGE,
+            self::GUARD,
+            self::MAIL_ROOM,
+            self::MAIL_SLOT,
+            self::MAILBOX,
+            self::MC_BOY,
+            self::MC_GIRL,
+            self::MC_MAN,
+            self::MC_WOMAN,
+            self::NEIGHBOR,
+            self::OFFICE,
+            self::OUTBUILDING,
+            self::PATIO,
+            self::PORCH,
+            self::REAR_DOOR,
+            self::RECEPTIONIST,
+            self::RECEIVER,
+            self::SECURE_LOCATION,
+            self::SIDE_DOOR,];
     }
 }

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Promotion Class Doc Comment.
  *
-
  * @description A promotion applied to an item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Promotion implements ModelInterface, ArrayAccess
-{
+class Promotion implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class Promotion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'promotion_type' => 'string',
-'promotion_id' => 'string',
-'promotion_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'promotion_type'   => 'string',
+        'promotion_id'     => 'string',
+        'promotion_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class Promotion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'promotion_type' => null,
-'promotion_id' => null,
-'promotion_amount' => null,    ];
+        'promotion_type'   => null,
+        'promotion_id'     => null,
+        'promotion_amount' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class Promotion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'promotion_type' => 'PromotionType',
-'promotion_id' => 'PromotionId',
-'promotion_amount' => 'PromotionAmount',    ];
+        'promotion_type'   => 'PromotionType',
+        'promotion_id'     => 'PromotionId',
+        'promotion_amount' => 'PromotionAmount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class Promotion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'promotion_type' => 'setPromotionType',
-'promotion_id' => 'setPromotionId',
-'promotion_amount' => 'setPromotionAmount',    ];
+        'promotion_type'   => 'setPromotionType',
+        'promotion_id'     => 'setPromotionId',
+        'promotion_amount' => 'setPromotionAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class Promotion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'promotion_type' => 'getPromotionType',
-'promotion_id' => 'getPromotionId',
-'promotion_amount' => 'getPromotionAmount',    ];
+        'promotion_type'   => 'getPromotionType',
+        'promotion_id'     => 'getPromotionId',
+        'promotion_amount' => 'getPromotionAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class Promotion implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['promotion_type'] = isset($data['promotion_type']) ? $data['promotion_type'] : null;
         $this->container['promotion_id'] = isset($data['promotion_id']) ? $data['promotion_id'] : null;
         $this->container['promotion_amount'] = isset($data['promotion_amount']) ? $data['promotion_amount'] : null;
@@ -177,8 +168,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,8 +180,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -200,8 +189,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPromotionType()
-    {
+    public function getPromotionType() {
         return $this->container['promotion_type'];
     }
 
@@ -212,8 +200,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPromotionType($promotion_type)
-    {
+    public function setPromotionType($promotion_type) {
         $this->container['promotion_type'] = $promotion_type;
 
         return $this;
@@ -224,8 +211,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPromotionId()
-    {
+    public function getPromotionId() {
         return $this->container['promotion_id'];
     }
 
@@ -236,8 +222,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPromotionId($promotion_id)
-    {
+    public function setPromotionId($promotion_id) {
         $this->container['promotion_id'] = $promotion_id;
 
         return $this;
@@ -246,22 +231,20 @@ class Promotion implements ModelInterface, ArrayAccess
     /**
      * Gets promotion_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getPromotionAmount()
-    {
+    public function getPromotionAmount() {
         return $this->container['promotion_amount'];
     }
 
     /**
      * Sets promotion_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $promotion_amount promotion_amount
+     * @param Currency $promotion_amount promotion_amount
      *
      * @return $this
      */
-    public function setPromotionAmount($promotion_amount)
-    {
+    public function setPromotionAmount($promotion_amount) {
         $this->container['promotion_amount'] = $promotion_amount;
 
         return $this;
@@ -274,8 +257,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class Promotion implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

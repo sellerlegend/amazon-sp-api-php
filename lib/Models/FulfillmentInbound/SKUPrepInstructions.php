@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SKUPrepInstructions Class Doc Comment.
  *
-
  * @description Labeling requirements and item preparation instructions to help you prepare items for shipment to Amazon&#x27;s fulfillment network.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SKUPrepInstructions implements ModelInterface, ArrayAccess
-{
+class SKUPrepInstructions implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,13 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'asin' => 'string',
-'barcode_instruction' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BarcodeInstruction',
-'prep_guidance' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepGuidance',
-'prep_instruction_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstructionList',
-'amazon_prep_fees_details_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\AmazonPrepFeesDetailsList',    ];
+        'seller_sku'                    => 'string',
+        'asin'                          => 'string',
+        'barcode_instruction'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BarcodeInstruction',
+        'prep_guidance'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepGuidance',
+        'prep_instruction_list'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstructionList',
+        'amazon_prep_fees_details_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\AmazonPrepFeesDetailsList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +58,20 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'asin' => null,
-'barcode_instruction' => null,
-'prep_guidance' => null,
-'prep_instruction_list' => null,
-'amazon_prep_fees_details_list' => null,    ];
+        'seller_sku'                    => null,
+        'asin'                          => null,
+        'barcode_instruction'           => null,
+        'prep_guidance'                 => null,
+        'prep_instruction_list'         => null,
+        'amazon_prep_fees_details_list' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +80,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +91,12 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'SellerSKU',
-'asin' => 'ASIN',
-'barcode_instruction' => 'BarcodeInstruction',
-'prep_guidance' => 'PrepGuidance',
-'prep_instruction_list' => 'PrepInstructionList',
-'amazon_prep_fees_details_list' => 'AmazonPrepFeesDetailsList',    ];
+        'seller_sku'                    => 'SellerSKU',
+        'asin'                          => 'ASIN',
+        'barcode_instruction'           => 'BarcodeInstruction',
+        'prep_guidance'                 => 'PrepGuidance',
+        'prep_instruction_list'         => 'PrepInstructionList',
+        'amazon_prep_fees_details_list' => 'AmazonPrepFeesDetailsList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +104,12 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'asin' => 'setAsin',
-'barcode_instruction' => 'setBarcodeInstruction',
-'prep_guidance' => 'setPrepGuidance',
-'prep_instruction_list' => 'setPrepInstructionList',
-'amazon_prep_fees_details_list' => 'setAmazonPrepFeesDetailsList',    ];
+        'seller_sku'                    => 'setSellerSku',
+        'asin'                          => 'setAsin',
+        'barcode_instruction'           => 'setBarcodeInstruction',
+        'prep_guidance'                 => 'setPrepGuidance',
+        'prep_instruction_list'         => 'setPrepInstructionList',
+        'amazon_prep_fees_details_list' => 'setAmazonPrepFeesDetailsList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +117,12 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'asin' => 'getAsin',
-'barcode_instruction' => 'getBarcodeInstruction',
-'prep_guidance' => 'getPrepGuidance',
-'prep_instruction_list' => 'getPrepInstructionList',
-'amazon_prep_fees_details_list' => 'getAmazonPrepFeesDetailsList',    ];
+        'seller_sku'                    => 'getSellerSku',
+        'asin'                          => 'getAsin',
+        'barcode_instruction'           => 'getBarcodeInstruction',
+        'prep_guidance'                 => 'getPrepGuidance',
+        'prep_instruction_list'         => 'getPrepInstructionList',
+        'amazon_prep_fees_details_list' => 'getAmazonPrepFeesDetailsList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +130,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +139,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +148,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +157,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +174,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['barcode_instruction'] = isset($data['barcode_instruction']) ? $data['barcode_instruction'] : null;
@@ -195,8 +188,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -208,8 +200,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -218,8 +209,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -230,8 +220,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -242,8 +231,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -254,8 +242,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -264,22 +251,20 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
     /**
      * Gets barcode_instruction.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BarcodeInstruction
+     * @return BarcodeInstruction
      */
-    public function getBarcodeInstruction()
-    {
+    public function getBarcodeInstruction() {
         return $this->container['barcode_instruction'];
     }
 
     /**
      * Sets barcode_instruction.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BarcodeInstruction $barcode_instruction barcode_instruction
+     * @param BarcodeInstruction $barcode_instruction barcode_instruction
      *
      * @return $this
      */
-    public function setBarcodeInstruction($barcode_instruction)
-    {
+    public function setBarcodeInstruction($barcode_instruction) {
         $this->container['barcode_instruction'] = $barcode_instruction;
 
         return $this;
@@ -288,22 +273,20 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
     /**
      * Gets prep_guidance.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepGuidance
+     * @return PrepGuidance
      */
-    public function getPrepGuidance()
-    {
+    public function getPrepGuidance() {
         return $this->container['prep_guidance'];
     }
 
     /**
      * Sets prep_guidance.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepGuidance $prep_guidance prep_guidance
+     * @param PrepGuidance $prep_guidance prep_guidance
      *
      * @return $this
      */
-    public function setPrepGuidance($prep_guidance)
-    {
+    public function setPrepGuidance($prep_guidance) {
         $this->container['prep_guidance'] = $prep_guidance;
 
         return $this;
@@ -312,22 +295,20 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
     /**
      * Gets prep_instruction_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstructionList
+     * @return PrepInstructionList
      */
-    public function getPrepInstructionList()
-    {
+    public function getPrepInstructionList() {
         return $this->container['prep_instruction_list'];
     }
 
     /**
      * Sets prep_instruction_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepInstructionList $prep_instruction_list prep_instruction_list
+     * @param PrepInstructionList $prep_instruction_list prep_instruction_list
      *
      * @return $this
      */
-    public function setPrepInstructionList($prep_instruction_list)
-    {
+    public function setPrepInstructionList($prep_instruction_list) {
         $this->container['prep_instruction_list'] = $prep_instruction_list;
 
         return $this;
@@ -336,22 +317,20 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
     /**
      * Gets amazon_prep_fees_details_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\AmazonPrepFeesDetailsList
+     * @return AmazonPrepFeesDetailsList
      */
-    public function getAmazonPrepFeesDetailsList()
-    {
+    public function getAmazonPrepFeesDetailsList() {
         return $this->container['amazon_prep_fees_details_list'];
     }
 
     /**
      * Sets amazon_prep_fees_details_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\AmazonPrepFeesDetailsList $amazon_prep_fees_details_list amazon_prep_fees_details_list
+     * @param AmazonPrepFeesDetailsList $amazon_prep_fees_details_list amazon_prep_fees_details_list
      *
      * @return $this
      */
-    public function setAmazonPrepFeesDetailsList($amazon_prep_fees_details_list)
-    {
+    public function setAmazonPrepFeesDetailsList($amazon_prep_fees_details_list) {
         $this->container['amazon_prep_fees_details_list'] = $amazon_prep_fees_details_list;
 
         return $this;
@@ -364,8 +343,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -376,21 +354,19 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -405,8 +381,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -415,8 +390,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

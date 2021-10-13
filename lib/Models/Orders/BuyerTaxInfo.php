@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * BuyerTaxInfo Class Doc Comment.
  *
-
  * @description Tax information about the buyer.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class BuyerTaxInfo implements ModelInterface, ArrayAccess
-{
+class BuyerTaxInfo implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'company_legal_name' => 'string',
-'taxing_region' => 'string',
-'tax_classifications' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[]',    ];
+        'company_legal_name'  => 'string',
+        'taxing_region'       => 'string',
+        'tax_classifications' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'company_legal_name' => null,
-'taxing_region' => null,
-'tax_classifications' => null,    ];
+        'company_legal_name'  => null,
+        'taxing_region'       => null,
+        'tax_classifications' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'company_legal_name' => 'CompanyLegalName',
-'taxing_region' => 'TaxingRegion',
-'tax_classifications' => 'TaxClassifications',    ];
+        'company_legal_name'  => 'CompanyLegalName',
+        'taxing_region'       => 'TaxingRegion',
+        'tax_classifications' => 'TaxClassifications',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'company_legal_name' => 'setCompanyLegalName',
-'taxing_region' => 'setTaxingRegion',
-'tax_classifications' => 'setTaxClassifications',    ];
+        'company_legal_name'  => 'setCompanyLegalName',
+        'taxing_region'       => 'setTaxingRegion',
+        'tax_classifications' => 'setTaxClassifications',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'company_legal_name' => 'getCompanyLegalName',
-'taxing_region' => 'getTaxingRegion',
-'tax_classifications' => 'getTaxClassifications',    ];
+        'company_legal_name'  => 'getCompanyLegalName',
+        'taxing_region'       => 'getTaxingRegion',
+        'tax_classifications' => 'getTaxClassifications',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['company_legal_name'] = isset($data['company_legal_name']) ? $data['company_legal_name'] : null;
         $this->container['taxing_region'] = isset($data['taxing_region']) ? $data['taxing_region'] : null;
         $this->container['tax_classifications'] = isset($data['tax_classifications']) ? $data['tax_classifications'] : null;
@@ -177,8 +168,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,8 +180,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -200,8 +189,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCompanyLegalName()
-    {
+    public function getCompanyLegalName() {
         return $this->container['company_legal_name'];
     }
 
@@ -212,8 +200,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCompanyLegalName($company_legal_name)
-    {
+    public function setCompanyLegalName($company_legal_name) {
         $this->container['company_legal_name'] = $company_legal_name;
 
         return $this;
@@ -224,8 +211,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTaxingRegion()
-    {
+    public function getTaxingRegion() {
         return $this->container['taxing_region'];
     }
 
@@ -236,8 +222,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaxingRegion($taxing_region)
-    {
+    public function setTaxingRegion($taxing_region) {
         $this->container['taxing_region'] = $taxing_region;
 
         return $this;
@@ -246,22 +231,20 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
     /**
      * Gets tax_classifications.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[]
+     * @return TaxClassification[]
      */
-    public function getTaxClassifications()
-    {
+    public function getTaxClassifications() {
         return $this->container['tax_classifications'];
     }
 
     /**
      * Sets tax_classifications.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[] $tax_classifications a list of tax classifications that apply to the order
+     * @param TaxClassification[] $tax_classifications a list of tax classifications that apply to the order
      *
      * @return $this
      */
-    public function setTaxClassifications($tax_classifications)
-    {
+    public function setTaxClassifications($tax_classifications) {
         $this->container['tax_classifications'] = $tax_classifications;
 
         return $this;
@@ -274,8 +257,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

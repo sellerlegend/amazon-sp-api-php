@@ -15,22 +15,21 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Fee Class Doc Comment.
  *
-
  * @description Fee type and cost.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Fee implements ModelInterface, ArrayAccess
-{
+class Fee implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,9 @@ class Fee implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money',    ];
+        'name'   => 'string',
+        'amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +55,16 @@ class Fee implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'amount' => null,    ];
+        'name'   => null,
+        'amount' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +73,7 @@ class Fee implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +84,8 @@ class Fee implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-'amount' => 'amount',    ];
+        'name'   => 'name',
+        'amount' => 'amount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +93,8 @@ class Fee implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'amount' => 'setAmount',    ];
+        'name'   => 'setName',
+        'amount' => 'setAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +102,8 @@ class Fee implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'amount' => 'getAmount',    ];
+        'name'   => 'getName',
+        'amount' => 'getAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +111,7 @@ class Fee implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +120,7 @@ class Fee implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +129,7 @@ class Fee implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +138,7 @@ class Fee implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,13 +152,12 @@ class Fee implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getNameAllowableValues()
-    {
+    public function getNameAllowableValues() {
         return [
             self::NAME_FBA_PER_UNIT_FULFILLMENT_FEE,
-self::NAME_FBA_PER_ORDER_FULFILLMENT_FEE,
-self::NAME_FBA_TRANSPORTATION_FEE,
-self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
+            self::NAME_FBA_PER_ORDER_FULFILLMENT_FEE,
+            self::NAME_FBA_TRANSPORTATION_FEE,
+            self::NAME_FBA_FULFILLMENT_COD_FEE,];
     }
 
     /**
@@ -179,8 +173,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
     }
@@ -190,8 +183,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['name']) {
@@ -218,8 +210,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -228,8 +219,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -240,11 +230,10 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $allowedValues = $this->getNameAllowableValues();
         if (!in_array($name, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'name', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'name', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['name'] = $name;
 
@@ -254,22 +243,20 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
     /**
      * Gets amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money
+     * @return Money
      */
-    public function getAmount()
-    {
+    public function getAmount() {
         return $this->container['amount'];
     }
 
     /**
      * Sets amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Money $amount amount
+     * @param Money $amount amount
      *
      * @return $this
      */
-    public function setAmount($amount)
-    {
+    public function setAmount($amount) {
         $this->container['amount'] = $amount;
 
         return $this;
@@ -282,8 +269,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -294,21 +280,19 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -323,8 +307,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -333,8 +316,7 @@ self::NAME_FBA_FULFILLMENT_COD_FEE,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

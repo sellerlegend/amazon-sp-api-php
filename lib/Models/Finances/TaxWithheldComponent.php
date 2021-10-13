@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TaxWithheldComponent Class Doc Comment.
  *
-
  * @description Information about the taxes withheld.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TaxWithheldComponent implements ModelInterface, ArrayAccess
-{
+class TaxWithheldComponent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,8 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'tax_collection_model' => 'string',
-'taxes_withheld' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',    ];
+        'taxes_withheld'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,14 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'tax_collection_model' => null,
-'taxes_withheld' => null,    ];
+        'taxes_withheld'       => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +83,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'tax_collection_model' => 'TaxCollectionModel',
-'taxes_withheld' => 'TaxesWithheld',    ];
+        'taxes_withheld'       => 'TaxesWithheld',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +92,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'tax_collection_model' => 'setTaxCollectionModel',
-'taxes_withheld' => 'setTaxesWithheld',    ];
+        'taxes_withheld'       => 'setTaxesWithheld',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +101,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'tax_collection_model' => 'getTaxCollectionModel',
-'taxes_withheld' => 'getTaxesWithheld',    ];
+        'taxes_withheld'       => 'getTaxesWithheld',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['tax_collection_model'] = isset($data['tax_collection_model']) ? $data['tax_collection_model'] : null;
         $this->container['taxes_withheld'] = isset($data['taxes_withheld']) ? $data['taxes_withheld'] : null;
     }
@@ -171,8 +163,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +175,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +184,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTaxCollectionModel()
-    {
+    public function getTaxCollectionModel() {
         return $this->container['tax_collection_model'];
     }
 
@@ -206,8 +195,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTaxCollectionModel($tax_collection_model)
-    {
+    public function setTaxCollectionModel($tax_collection_model) {
         $this->container['tax_collection_model'] = $tax_collection_model;
 
         return $this;
@@ -216,22 +204,20 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
     /**
      * Gets taxes_withheld.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList
+     * @return ChargeComponentList
      */
-    public function getTaxesWithheld()
-    {
+    public function getTaxesWithheld() {
         return $this->container['taxes_withheld'];
     }
 
     /**
      * Sets taxes_withheld.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList $taxes_withheld taxes_withheld
+     * @param ChargeComponentList $taxes_withheld taxes_withheld
      *
      * @return $this
      */
-    public function setTaxesWithheld($taxes_withheld)
-    {
+    public function setTaxesWithheld($taxes_withheld) {
         $this->container['taxes_withheld'] = $taxes_withheld;
 
         return $this;
@@ -244,8 +230,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +241,19 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +268,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +277,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

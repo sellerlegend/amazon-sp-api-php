@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * DeliveryWindow Class Doc Comment.
  *
-
  * @description The time range within which a Scheduled Delivery fulfillment order should be delivered.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class DeliveryWindow implements ModelInterface, ArrayAccess
-{
+class DeliveryWindow implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'start_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'end_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',    ];
+        'start_date' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'end_date'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'start_date' => null,
-'end_date' => null,    ];
+        'end_date'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'start_date' => 'startDate',
-'end_date' => 'endDate',    ];
+        'end_date'   => 'endDate',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'start_date' => 'setStartDate',
-'end_date' => 'setEndDate',    ];
+        'end_date'   => 'setEndDate',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'start_date' => 'getStartDate',
-'end_date' => 'getEndDate',    ];
+        'end_date'   => 'getEndDate',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
     }
@@ -171,8 +162,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['start_date']) {
@@ -191,30 +181,27 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getStartDate()
-    {
+    public function getStartDate() {
         return $this->container['start_date'];
     }
 
     /**
      * Sets start_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $start_date start_date
+     * @param Timestamp $start_date start_date
      *
      * @return $this
      */
-    public function setStartDate($start_date)
-    {
+    public function setStartDate($start_date) {
         $this->container['start_date'] = $start_date;
 
         return $this;
@@ -223,22 +210,20 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
     /**
      * Gets end_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEndDate()
-    {
+    public function getEndDate() {
         return $this->container['end_date'];
     }
 
     /**
      * Sets end_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $end_date end_date
+     * @param Timestamp $end_date end_date
      *
      * @return $this
      */
-    public function setEndDate($end_date)
-    {
+    public function setEndDate($end_date) {
         $this->container['end_date'] = $end_date;
 
         return $this;
@@ -251,8 +236,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

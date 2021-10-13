@@ -4,22 +4,24 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelShipment**](ShippingApi.md#cancelshipment) | **POST** /shipping/v1/shipments/{shipmentId}/cancel | 
-[**createShipment**](ShippingApi.md#createshipment) | **POST** /shipping/v1/shipments | 
-[**getAccount**](ShippingApi.md#getaccount) | **GET** /shipping/v1/account | 
-[**getRates**](ShippingApi.md#getrates) | **POST** /shipping/v1/rates | 
-[**getShipment**](ShippingApi.md#getshipment) | **GET** /shipping/v1/shipments/{shipmentId} | 
-[**getTrackingInformation**](ShippingApi.md#gettrackinginformation) | **GET** /shipping/v1/tracking/{trackingId} | 
-[**purchaseLabels**](ShippingApi.md#purchaselabels) | **POST** /shipping/v1/shipments/{shipmentId}/purchaseLabels | 
-[**purchaseShipment**](ShippingApi.md#purchaseshipment) | **POST** /shipping/v1/purchaseShipment | 
-[**retrieveShippingLabel**](ShippingApi.md#retrieveshippinglabel) | **POST** /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label | 
+[**cancelShipment**](ShippingApi.md#cancelshipment) | **POST** /shipping/v1/shipments/{shipmentId}/cancel |
+[**createShipment**](ShippingApi.md#createshipment) | **POST** /shipping/v1/shipments |
+[**getAccount**](ShippingApi.md#getaccount) | **GET** /shipping/v1/account |
+[**getRates**](ShippingApi.md#getrates) | **POST** /shipping/v1/rates |
+[**getShipment**](ShippingApi.md#getshipment) | **GET** /shipping/v1/shipments/{shipmentId} |
+[**getTrackingInformation**](ShippingApi.md#gettrackinginformation) | **GET** /shipping/v1/tracking/{trackingId} |
+[**purchaseLabels**](ShippingApi.md#purchaselabels) | **POST** /shipping/v1/shipments/{shipmentId}/purchaseLabels |
+[**purchaseShipment**](ShippingApi.md#purchaseshipment) | **POST** /shipping/v1/purchaseShipment |
+[**retrieveShippingLabel**](ShippingApi.md#retrieveshippinglabel) | **
+POST** /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label |
 
 # **cancelShipment**
+
 > \Swagger\Client\Models\CancelShipmentResponse cancelShipment($shipment_id)
 
 
 
-Cancel a shipment by the given shipmentId.  
+Cancel a shipment by the given shipmentId.
 
 **Usage Plan:**
 
@@ -28,6 +30,7 @@ Cancel a shipment by the given shipmentId.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -59,7 +62,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment_id** | **string**|  |
+**shipment_id** | **string**|  |
 
 ### Return type
 
@@ -71,17 +74,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createShipment**
+
 > \Swagger\Client\Models\CreateShipmentResponse createShipment($body)
 
 
 
-Create a new shipment.  
+Create a new shipment.
 
 **Usage Plan:**
 
@@ -90,6 +94,7 @@ Create a new shipment.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -121,7 +126,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
+**body** | [**\Swagger\Client\Models\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
 
 ### Return type
 
@@ -133,17 +138,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccount**
+
 > \Swagger\Client\Models\GetAccountResponse getAccount()
 
 
 
-Verify if the current account is valid.  
+Verify if the current account is valid.
 
 **Usage Plan:**
 
@@ -152,6 +158,7 @@ Verify if the current account is valid.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -179,6 +186,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -191,17 +199,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRates**
+
 > \Swagger\Client\Models\GetRatesResponse getRates($body)
 
 
 
-Get service rates.  
+Get service rates.
 
 **Usage Plan:**
 
@@ -210,6 +219,7 @@ Get service rates.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -241,7 +251,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\GetRatesRequest**](../Model/GetRatesRequest.md)|  |
+**body** | [**\Swagger\Client\Models\GetRatesRequest**](../Model/GetRatesRequest.md)|  |
 
 ### Return type
 
@@ -253,17 +263,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getShipment**
+
 > \Swagger\Client\Models\GetShipmentResponse getShipment($shipment_id)
 
 
 
-Return the entire shipment object for the shipmentId.  
+Return the entire shipment object for the shipmentId.
 
 **Usage Plan:**
 
@@ -272,6 +283,7 @@ Return the entire shipment object for the shipmentId.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -303,7 +315,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment_id** | **string**|  |
+**shipment_id** | **string**|  |
 
 ### Return type
 
@@ -315,17 +327,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTrackingInformation**
+
 > \Swagger\Client\Models\GetTrackingInformationResponse getTrackingInformation($tracking_id)
 
 
 
-Return the tracking information of a shipment.  
+Return the tracking information of a shipment.
 
 **Usage Plan:**
 
@@ -334,6 +347,7 @@ Return the tracking information of a shipment.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -365,7 +379,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tracking_id** | **string**|  |
+**tracking_id** | **string**|  |
 
 ### Return type
 
@@ -377,17 +391,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **purchaseLabels**
+
 > \Swagger\Client\Models\PurchaseLabelsResponse purchaseLabels($body, $shipment_id)
 
 
 
-Purchase shipping labels based on a given rate.  
+Purchase shipping labels based on a given rate.
 
 **Usage Plan:**
 
@@ -396,6 +411,7 @@ Purchase shipping labels based on a given rate.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -428,8 +444,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\PurchaseLabelsRequest**](../Model/PurchaseLabelsRequest.md)|  |
- **shipment_id** | **string**|  |
+**body** | [**\Swagger\Client\Models\PurchaseLabelsRequest**](../Model/PurchaseLabelsRequest.md)|  |
+**shipment_id** | **string**|  |
 
 ### Return type
 
@@ -441,17 +457,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **purchaseShipment**
+
 > \Swagger\Client\Models\PurchaseShipmentResponse purchaseShipment($body)
 
 
 
-Purchase shipping labels.  
+Purchase shipping labels.
 
 **Usage Plan:**
 
@@ -460,6 +477,7 @@ Purchase shipping labels.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -491,7 +509,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\PurchaseShipmentRequest**](../Model/PurchaseShipmentRequest.md)|  |
+**body** | [**\Swagger\Client\Models\PurchaseShipmentRequest**](../Model/PurchaseShipmentRequest.md)|  |
 
 ### Return type
 
@@ -503,17 +521,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveShippingLabel**
+
 > \Swagger\Client\Models\RetrieveShippingLabelResponse retrieveShippingLabel($body, $shipment_id, $tracking_id)
 
 
 
-Retrieve shipping label based on the shipment id and tracking id.  
+Retrieve shipping label based on the shipment id and tracking id.
 
 **Usage Plan:**
 
@@ -522,6 +541,7 @@ Retrieve shipping label based on the shipment id and tracking id.
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -555,9 +575,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\RetrieveShippingLabelRequest**](../Model/RetrieveShippingLabelRequest.md)|  |
- **shipment_id** | **string**|  |
- **tracking_id** | **string**|  |
+**body** | [**\Swagger\Client\Models\RetrieveShippingLabelRequest**](../Model/RetrieveShippingLabelRequest.md)|  |
+**shipment_id** | **string**|  |
+**tracking_id** | **string**|  |
 
 ### Return type
 
@@ -569,8 +589,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

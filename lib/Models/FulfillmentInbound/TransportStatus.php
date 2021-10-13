@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * TransportStatus Class Doc Comment.
  *
-
  * @description Indicates the status of the Amazon-partnered carrier shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TransportStatus
-{
+class TransportStatus {
     /**
      * Possible values of this enum.
      */
@@ -47,19 +45,18 @@ class TransportStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::WORKING,
-self::ESTIMATING,
-self::ESTIMATED,
-self::ERROR_ON_ESTIMATING,
-self::CONFIRMING,
-self::CONFIRMED,
-self::ERROR_ON_CONFIRMING,
-self::VOIDING,
-self::VOIDED,
-self::ERROR_IN_VOIDING,
-self::ERROR,        ];
+            self::ESTIMATING,
+            self::ESTIMATED,
+            self::ERROR_ON_ESTIMATING,
+            self::CONFIRMING,
+            self::CONFIRMED,
+            self::ERROR_ON_CONFIRMING,
+            self::VOIDING,
+            self::VOIDED,
+            self::ERROR_IN_VOIDING,
+            self::ERROR,];
     }
 }

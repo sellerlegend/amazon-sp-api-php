@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * JobListing Class Doc Comment.
  *
-
  * @description The payload for the GetJobs operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class JobListing implements ModelInterface, ArrayAccess
-{
+class JobListing implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class JobListing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'total_result_size' => 'int',
-'next_page_token' => 'string',
-'previous_page_token' => 'string',
-'jobs' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\ServiceJob[]',    ];
+        'total_result_size'   => 'int',
+        'next_page_token'     => 'string',
+        'previous_page_token' => 'string',
+        'jobs'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\ServiceJob[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class JobListing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'total_result_size' => null,
-'next_page_token' => null,
-'previous_page_token' => null,
-'jobs' => null,    ];
+        'total_result_size'   => null,
+        'next_page_token'     => null,
+        'previous_page_token' => null,
+        'jobs'                => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class JobListing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_result_size' => 'totalResultSize',
-'next_page_token' => 'nextPageToken',
-'previous_page_token' => 'previousPageToken',
-'jobs' => 'jobs',    ];
+        'total_result_size'   => 'totalResultSize',
+        'next_page_token'     => 'nextPageToken',
+        'previous_page_token' => 'previousPageToken',
+        'jobs'                => 'jobs',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class JobListing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_result_size' => 'setTotalResultSize',
-'next_page_token' => 'setNextPageToken',
-'previous_page_token' => 'setPreviousPageToken',
-'jobs' => 'setJobs',    ];
+        'total_result_size'   => 'setTotalResultSize',
+        'next_page_token'     => 'setNextPageToken',
+        'previous_page_token' => 'setPreviousPageToken',
+        'jobs'                => 'setJobs',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class JobListing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_result_size' => 'getTotalResultSize',
-'next_page_token' => 'getNextPageToken',
-'previous_page_token' => 'getPreviousPageToken',
-'jobs' => 'getJobs',    ];
+        'total_result_size'   => 'getTotalResultSize',
+        'next_page_token'     => 'getNextPageToken',
+        'previous_page_token' => 'getPreviousPageToken',
+        'jobs'                => 'getJobs',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class JobListing implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['total_result_size'] = isset($data['total_result_size']) ? $data['total_result_size'] : null;
         $this->container['next_page_token'] = isset($data['next_page_token']) ? $data['next_page_token'] : null;
         $this->container['previous_page_token'] = isset($data['previous_page_token']) ? $data['previous_page_token'] : null;
@@ -183,8 +174,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +186,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +195,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getTotalResultSize()
-    {
+    public function getTotalResultSize() {
         return $this->container['total_result_size'];
     }
 
@@ -218,8 +206,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTotalResultSize($total_result_size)
-    {
+    public function setTotalResultSize($total_result_size) {
         $this->container['total_result_size'] = $total_result_size;
 
         return $this;
@@ -230,8 +217,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextPageToken()
-    {
+    public function getNextPageToken() {
         return $this->container['next_page_token'];
     }
 
@@ -242,8 +228,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextPageToken($next_page_token)
-    {
+    public function setNextPageToken($next_page_token) {
         $this->container['next_page_token'] = $next_page_token;
 
         return $this;
@@ -254,8 +239,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPreviousPageToken()
-    {
+    public function getPreviousPageToken() {
         return $this->container['previous_page_token'];
     }
 
@@ -266,8 +250,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPreviousPageToken($previous_page_token)
-    {
+    public function setPreviousPageToken($previous_page_token) {
         $this->container['previous_page_token'] = $previous_page_token;
 
         return $this;
@@ -276,22 +259,20 @@ class JobListing implements ModelInterface, ArrayAccess
     /**
      * Gets jobs.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\ServiceJob[]
+     * @return ServiceJob[]
      */
-    public function getJobs()
-    {
+    public function getJobs() {
         return $this->container['jobs'];
     }
 
     /**
      * Sets jobs.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\ServiceJob[] $jobs list of job details for the given input
+     * @param ServiceJob[] $jobs list of job details for the given input
      *
      * @return $this
      */
-    public function setJobs($jobs)
-    {
+    public function setJobs($jobs) {
         $this->container['jobs'] = $jobs;
 
         return $this;
@@ -304,8 +285,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +296,19 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +323,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +332,7 @@ class JobListing implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

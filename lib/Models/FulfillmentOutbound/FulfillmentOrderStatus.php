@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * FulfillmentOrderStatus Class Doc Comment.
  *
-
  * @description The current status of the fulfillment order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentOrderStatus
-{
+class FulfillmentOrderStatus {
     /**
      * Possible values of this enum.
      */
@@ -45,17 +43,16 @@ class FulfillmentOrderStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::_NEW,
-self::RECEIVED,
-self::PLANNING,
-self::PROCESSING,
-self::CANCELLED,
-self::COMPLETE,
-self::COMPLETE_PARTIALLED,
-self::UNFULFILLABLE,
-self::INVALID,        ];
+            self::RECEIVED,
+            self::PLANNING,
+            self::PROCESSING,
+            self::CANCELLED,
+            self::COMPLETE,
+            self::COMPLETE_PARTIALLED,
+            self::UNFULFILLABLE,
+            self::INVALID,];
     }
 }

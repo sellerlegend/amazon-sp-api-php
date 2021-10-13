@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ServiceFeeEvent Class Doc Comment.
  *
-
  * @description A service fee on the seller&#x27;s account.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ServiceFeeEvent implements ModelInterface, ArrayAccess
-{
+class ServiceFeeEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,12 +45,12 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'amazon_order_id' => 'string',
-'fee_reason' => 'string',
-'fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'seller_sku' => 'string',
-'fn_sku' => 'string',
-'fee_description' => 'string',
-'asin' => 'string',    ];
+        'fee_reason'      => 'string',
+        'fee_list'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'seller_sku'      => 'string',
+        'fn_sku'          => 'string',
+        'fee_description' => 'string',
+        'asin'            => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -61,20 +59,19 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'amazon_order_id' => null,
-'fee_reason' => null,
-'fee_list' => null,
-'seller_sku' => null,
-'fn_sku' => null,
-'fee_description' => null,
-'asin' => null,    ];
+        'fee_reason'      => null,
+        'fee_list'        => null,
+        'seller_sku'      => null,
+        'fn_sku'          => null,
+        'fee_description' => null,
+        'asin'            => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +80,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -96,12 +92,12 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
-'fee_reason' => 'FeeReason',
-'fee_list' => 'FeeList',
-'seller_sku' => 'SellerSKU',
-'fn_sku' => 'FnSKU',
-'fee_description' => 'FeeDescription',
-'asin' => 'ASIN',    ];
+        'fee_reason'      => 'FeeReason',
+        'fee_list'        => 'FeeList',
+        'seller_sku'      => 'SellerSKU',
+        'fn_sku'          => 'FnSKU',
+        'fee_description' => 'FeeDescription',
+        'asin'            => 'ASIN',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -110,12 +106,12 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
-'fee_reason' => 'setFeeReason',
-'fee_list' => 'setFeeList',
-'seller_sku' => 'setSellerSku',
-'fn_sku' => 'setFnSku',
-'fee_description' => 'setFeeDescription',
-'asin' => 'setAsin',    ];
+        'fee_reason'      => 'setFeeReason',
+        'fee_list'        => 'setFeeList',
+        'seller_sku'      => 'setSellerSku',
+        'fn_sku'          => 'setFnSku',
+        'fee_description' => 'setFeeDescription',
+        'asin'            => 'setAsin',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -124,12 +120,12 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
-'fee_reason' => 'getFeeReason',
-'fee_list' => 'getFeeList',
-'seller_sku' => 'getSellerSku',
-'fn_sku' => 'getFnSku',
-'fee_description' => 'getFeeDescription',
-'asin' => 'getAsin',    ];
+        'fee_reason'      => 'getFeeReason',
+        'fee_list'        => 'getFeeList',
+        'seller_sku'      => 'getSellerSku',
+        'fn_sku'          => 'getFnSku',
+        'fee_description' => 'getFeeDescription',
+        'asin'            => 'getAsin',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +133,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +142,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +151,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +160,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +177,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['fee_reason'] = isset($data['fee_reason']) ? $data['fee_reason'] : null;
         $this->container['fee_list'] = isset($data['fee_list']) ? $data['fee_list'] : null;
@@ -201,8 +192,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -214,8 +204,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -224,8 +213,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -236,8 +224,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -248,8 +235,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeeReason()
-    {
+    public function getFeeReason() {
         return $this->container['fee_reason'];
     }
 
@@ -260,8 +246,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeeReason($fee_reason)
-    {
+    public function setFeeReason($fee_reason) {
         $this->container['fee_reason'] = $fee_reason;
 
         return $this;
@@ -270,22 +255,20 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getFeeList()
-    {
+    public function getFeeList() {
         return $this->container['fee_list'];
     }
 
     /**
      * Sets fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $fee_list fee_list
+     * @param FeeComponentList $fee_list fee_list
      *
      * @return $this
      */
-    public function setFeeList($fee_list)
-    {
+    public function setFeeList($fee_list) {
         $this->container['fee_list'] = $fee_list;
 
         return $this;
@@ -296,8 +279,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -308,8 +290,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -320,8 +301,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFnSku()
-    {
+    public function getFnSku() {
         return $this->container['fn_sku'];
     }
 
@@ -332,8 +312,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFnSku($fn_sku)
-    {
+    public function setFnSku($fn_sku) {
         $this->container['fn_sku'] = $fn_sku;
 
         return $this;
@@ -344,8 +323,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeeDescription()
-    {
+    public function getFeeDescription() {
         return $this->container['fee_description'];
     }
 
@@ -356,8 +334,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeeDescription($fee_description)
-    {
+    public function setFeeDescription($fee_description) {
         $this->container['fee_description'] = $fee_description;
 
         return $this;
@@ -368,8 +345,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -380,8 +356,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -394,8 +369,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -406,21 +380,19 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -435,8 +407,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -445,8 +416,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

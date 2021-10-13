@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SAFETReimbursementEvent Class Doc Comment.
  *
-
  * @description A SAFE-T claim reimbursement on the seller&#x27;s account.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
-{
+class SAFETReimbursementEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +45,11 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'safet_claim_id' => 'string',
-'reimbursed_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'reason_code' => 'string',
-'safet_reimbursement_item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\SAFETReimbursementItemList',    ];
+        'posted_date'                   => '\DateTime',
+        'safet_claim_id'                => 'string',
+        'reimbursed_amount'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'reason_code'                   => 'string',
+        'safet_reimbursement_item_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\SAFETReimbursementItemList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +57,18 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'posted_date' => null,
-'safet_claim_id' => null,
-'reimbursed_amount' => null,
-'reason_code' => null,
-'safet_reimbursement_item_list' => null,    ];
+        'posted_date'                   => null,
+        'safet_claim_id'                => null,
+        'reimbursed_amount'             => null,
+        'reason_code'                   => null,
+        'safet_reimbursement_item_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +77,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +88,11 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'posted_date' => 'PostedDate',
-'safet_claim_id' => 'SAFETClaimId',
-'reimbursed_amount' => 'ReimbursedAmount',
-'reason_code' => 'ReasonCode',
-'safet_reimbursement_item_list' => 'SAFETReimbursementItemList',    ];
+        'posted_date'                   => 'PostedDate',
+        'safet_claim_id'                => 'SAFETClaimId',
+        'reimbursed_amount'             => 'ReimbursedAmount',
+        'reason_code'                   => 'ReasonCode',
+        'safet_reimbursement_item_list' => 'SAFETReimbursementItemList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +100,11 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
-'safet_claim_id' => 'setSafetClaimId',
-'reimbursed_amount' => 'setReimbursedAmount',
-'reason_code' => 'setReasonCode',
-'safet_reimbursement_item_list' => 'setSafetReimbursementItemList',    ];
+        'posted_date'                   => 'setPostedDate',
+        'safet_claim_id'                => 'setSafetClaimId',
+        'reimbursed_amount'             => 'setReimbursedAmount',
+        'reason_code'                   => 'setReasonCode',
+        'safet_reimbursement_item_list' => 'setSafetReimbursementItemList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +112,11 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'posted_date' => 'getPostedDate',
-'safet_claim_id' => 'getSafetClaimId',
-'reimbursed_amount' => 'getReimbursedAmount',
-'reason_code' => 'getReasonCode',
-'safet_reimbursement_item_list' => 'getSafetReimbursementItemList',    ];
+        'posted_date'                   => 'getPostedDate',
+        'safet_claim_id'                => 'getSafetClaimId',
+        'reimbursed_amount'             => 'getReimbursedAmount',
+        'reason_code'                   => 'getReasonCode',
+        'safet_reimbursement_item_list' => 'getSafetReimbursementItemList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +124,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +133,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +142,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +151,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +168,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
         $this->container['safet_claim_id'] = isset($data['safet_claim_id']) ? $data['safet_claim_id'] : null;
         $this->container['reimbursed_amount'] = isset($data['reimbursed_amount']) ? $data['reimbursed_amount'] : null;
@@ -189,8 +181,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -202,30 +193,27 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -236,8 +224,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSafetClaimId()
-    {
+    public function getSafetClaimId() {
         return $this->container['safet_claim_id'];
     }
 
@@ -248,8 +235,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSafetClaimId($safet_claim_id)
-    {
+    public function setSafetClaimId($safet_claim_id) {
         $this->container['safet_claim_id'] = $safet_claim_id;
 
         return $this;
@@ -258,22 +244,20 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
     /**
      * Gets reimbursed_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getReimbursedAmount()
-    {
+    public function getReimbursedAmount() {
         return $this->container['reimbursed_amount'];
     }
 
     /**
      * Sets reimbursed_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $reimbursed_amount reimbursed_amount
+     * @param Currency $reimbursed_amount reimbursed_amount
      *
      * @return $this
      */
-    public function setReimbursedAmount($reimbursed_amount)
-    {
+    public function setReimbursedAmount($reimbursed_amount) {
         $this->container['reimbursed_amount'] = $reimbursed_amount;
 
         return $this;
@@ -284,8 +268,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReasonCode()
-    {
+    public function getReasonCode() {
         return $this->container['reason_code'];
     }
 
@@ -296,8 +279,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReasonCode($reason_code)
-    {
+    public function setReasonCode($reason_code) {
         $this->container['reason_code'] = $reason_code;
 
         return $this;
@@ -306,22 +288,20 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
     /**
      * Gets safet_reimbursement_item_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\SAFETReimbursementItemList
+     * @return SAFETReimbursementItemList
      */
-    public function getSafetReimbursementItemList()
-    {
+    public function getSafetReimbursementItemList() {
         return $this->container['safet_reimbursement_item_list'];
     }
 
     /**
      * Sets safet_reimbursement_item_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\SAFETReimbursementItemList $safet_reimbursement_item_list safet_reimbursement_item_list
+     * @param SAFETReimbursementItemList $safet_reimbursement_item_list safet_reimbursement_item_list
      *
      * @return $this
      */
-    public function setSafetReimbursementItemList($safet_reimbursement_item_list)
-    {
+    public function setSafetReimbursementItemList($safet_reimbursement_item_list) {
         $this->container['safet_reimbursement_item_list'] = $safet_reimbursement_item_list;
 
         return $this;
@@ -334,8 +314,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -346,21 +325,19 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -375,8 +352,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -385,8 +361,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

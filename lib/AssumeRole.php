@@ -1,12 +1,13 @@
 <?php
 
-namespace ClouSale\AmazonSellingPartnerAPI;
+namespace SellerLegend\AmazonSellingPartnerAPI;
 
+use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Query;
 
-class AssumeRole
-{
+class AssumeRole {
     /** @var string */
     private $accessKeyId;
     /** @var string */
@@ -17,30 +18,26 @@ class AssumeRole
     /**
      * AssumeRole constructor.
      */
-    public function __construct(string $accessKeyId, string $secretAccessKey, string $sessionToken)
-    {
+    public function __construct(string $accessKeyId, string $secretAccessKey, string $sessionToken) {
         $this->accessKeyId = $accessKeyId;
         $this->secretAccessKey = $secretAccessKey;
         $this->sessionToken = $sessionToken;
     }
 
-    public function getAccessKeyId(): string
-    {
+    public function getAccessKeyId(): string {
         return $this->accessKeyId;
     }
 
-    public function getSecretAccessKey(): string
-    {
+    public function getSecretAccessKey(): string {
         return $this->secretAccessKey;
     }
 
-    public function getSessionToken(): string
-    {
+    public function getSessionToken(): string {
         return $this->sessionToken;
     }
 
     /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      *
      * @author crazyfactory https://github.com/crazyfactory
      *
@@ -48,18 +45,17 @@ class AssumeRole
      *
      * Thanks to
      */
-    public static function assume(string $region, string $accessKey, string $secretKey, string $roleArn, int $durationSeconds = 3600): AssumeRole
-    {
+    public static function assume(string $region, string $accessKey, string $secretKey, string $roleArn, int $durationSeconds = 3600): AssumeRole {
         $requestOptions = [
-            'headers' => [
+            'headers'     => [
                 'accept' => 'application/json',
             ],
             'form_params' => [
-                'Action' => 'AssumeRole',
+                'Action'          => 'AssumeRole',
                 'DurationSeconds' => $durationSeconds,
-                'RoleArn' => $roleArn,
+                'RoleArn'         => $roleArn,
                 'RoleSessionName' => 'amazon-sp-api-php',
-                'Version' => '2011-06-15',
+                'Version'         => '2011-06-15',
             ],
         ];
 
@@ -91,13 +87,13 @@ class AssumeRole
                 null,
                 'cs-php-sp-api-client/2.1'
             );
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             echo "Error (Signing process) : {$e->getMessage()}";
             throw $e;
         }
 
         $client = new Client([
-            'base_uri' => 'https://'.$host,
+            'base_uri' => 'https://' . $host,
         ]);
 
         $requestOptions['headers'] = array_merge($requestOptions['headers'], $signedHeader);
@@ -120,7 +116,7 @@ class AssumeRole
             );
 
 //            return $tokens;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             echo "Error (Signing process) : {$e->getMessage()}";
             throw $e;
         }

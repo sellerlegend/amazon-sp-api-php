@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductFees;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeesEstimateIdentifier Class Doc Comment.
  *
-
  * @description An item identifier, marketplace, time of request, and other details that identify an estimate.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
-{
+class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,13 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'marketplace_id' => 'string',
-'seller_id' => 'string',
-'id_type' => 'string',
-'id_value' => 'string',
-'is_amazon_fulfilled' => 'bool',
-'price_to_estimate_fees' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees',
-'seller_input_identifier' => 'string',    ];
+        'marketplace_id'          => 'string',
+        'seller_id'               => 'string',
+        'id_type'                 => 'string',
+        'id_value'                => 'string',
+        'is_amazon_fulfilled'     => 'bool',
+        'price_to_estimate_fees'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees',
+        'seller_input_identifier' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +58,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'marketplace_id' => null,
-'seller_id' => null,
-'id_type' => null,
-'id_value' => null,
-'is_amazon_fulfilled' => null,
-'price_to_estimate_fees' => null,
-'seller_input_identifier' => null,    ];
+        'marketplace_id'          => null,
+        'seller_id'               => null,
+        'id_type'                 => null,
+        'id_value'                => null,
+        'is_amazon_fulfilled'     => null,
+        'price_to_estimate_fees'  => null,
+        'seller_input_identifier' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +80,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +91,13 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplace_id' => 'MarketplaceId',
-'seller_id' => 'SellerId',
-'id_type' => 'IdType',
-'id_value' => 'IdValue',
-'is_amazon_fulfilled' => 'IsAmazonFulfilled',
-'price_to_estimate_fees' => 'PriceToEstimateFees',
-'seller_input_identifier' => 'SellerInputIdentifier',    ];
+        'marketplace_id'          => 'MarketplaceId',
+        'seller_id'               => 'SellerId',
+        'id_type'                 => 'IdType',
+        'id_value'                => 'IdValue',
+        'is_amazon_fulfilled'     => 'IsAmazonFulfilled',
+        'price_to_estimate_fees'  => 'PriceToEstimateFees',
+        'seller_input_identifier' => 'SellerInputIdentifier',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +105,13 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-'seller_id' => 'setSellerId',
-'id_type' => 'setIdType',
-'id_value' => 'setIdValue',
-'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
-'price_to_estimate_fees' => 'setPriceToEstimateFees',
-'seller_input_identifier' => 'setSellerInputIdentifier',    ];
+        'marketplace_id'          => 'setMarketplaceId',
+        'seller_id'               => 'setSellerId',
+        'id_type'                 => 'setIdType',
+        'id_value'                => 'setIdValue',
+        'is_amazon_fulfilled'     => 'setIsAmazonFulfilled',
+        'price_to_estimate_fees'  => 'setPriceToEstimateFees',
+        'seller_input_identifier' => 'setSellerInputIdentifier',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +119,13 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'marketplace_id' => 'getMarketplaceId',
-'seller_id' => 'getSellerId',
-'id_type' => 'getIdType',
-'id_value' => 'getIdValue',
-'is_amazon_fulfilled' => 'getIsAmazonFulfilled',
-'price_to_estimate_fees' => 'getPriceToEstimateFees',
-'seller_input_identifier' => 'getSellerInputIdentifier',    ];
+        'marketplace_id'          => 'getMarketplaceId',
+        'seller_id'               => 'getSellerId',
+        'id_type'                 => 'getIdType',
+        'id_value'                => 'getIdValue',
+        'is_amazon_fulfilled'     => 'getIsAmazonFulfilled',
+        'price_to_estimate_fees'  => 'getPriceToEstimateFees',
+        'seller_input_identifier' => 'getSellerInputIdentifier',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +133,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +142,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +151,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +160,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +177,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['seller_id'] = isset($data['seller_id']) ? $data['seller_id'] : null;
         $this->container['id_type'] = isset($data['id_type']) ? $data['id_type'] : null;
@@ -201,8 +192,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -214,8 +204,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -224,8 +213,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -236,8 +224,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -248,8 +235,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerId()
-    {
+    public function getSellerId() {
         return $this->container['seller_id'];
     }
 
@@ -260,8 +246,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerId($seller_id)
-    {
+    public function setSellerId($seller_id) {
         $this->container['seller_id'] = $seller_id;
 
         return $this;
@@ -272,8 +257,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdType()
-    {
+    public function getIdType() {
         return $this->container['id_type'];
     }
 
@@ -284,8 +268,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdType($id_type)
-    {
+    public function setIdType($id_type) {
         $this->container['id_type'] = $id_type;
 
         return $this;
@@ -296,8 +279,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getIdValue()
-    {
+    public function getIdValue() {
         return $this->container['id_value'];
     }
 
@@ -308,8 +290,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIdValue($id_value)
-    {
+    public function setIdValue($id_value) {
         $this->container['id_value'] = $id_value;
 
         return $this;
@@ -320,8 +301,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsAmazonFulfilled()
-    {
+    public function getIsAmazonFulfilled() {
         return $this->container['is_amazon_fulfilled'];
     }
 
@@ -332,8 +312,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsAmazonFulfilled($is_amazon_fulfilled)
-    {
+    public function setIsAmazonFulfilled($is_amazon_fulfilled) {
         $this->container['is_amazon_fulfilled'] = $is_amazon_fulfilled;
 
         return $this;
@@ -342,22 +321,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
     /**
      * Gets price_to_estimate_fees.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees
+     * @return PriceToEstimateFees
      */
-    public function getPriceToEstimateFees()
-    {
+    public function getPriceToEstimateFees() {
         return $this->container['price_to_estimate_fees'];
     }
 
     /**
      * Sets price_to_estimate_fees.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
+     * @param PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
      *
      * @return $this
      */
-    public function setPriceToEstimateFees($price_to_estimate_fees)
-    {
+    public function setPriceToEstimateFees($price_to_estimate_fees) {
         $this->container['price_to_estimate_fees'] = $price_to_estimate_fees;
 
         return $this;
@@ -368,8 +345,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerInputIdentifier()
-    {
+    public function getSellerInputIdentifier() {
         return $this->container['seller_input_identifier'];
     }
 
@@ -380,8 +356,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerInputIdentifier($seller_input_identifier)
-    {
+    public function setSellerInputIdentifier($seller_input_identifier) {
         $this->container['seller_input_identifier'] = $seller_input_identifier;
 
         return $this;
@@ -394,8 +369,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -406,21 +380,19 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -435,8 +407,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -445,8 +416,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

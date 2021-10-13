@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TemporarilyUnavailableCarrier Class Doc Comment.
  *
-
  * @description A carrier who is temporarily unavailable, most likely due to a service outage experienced by the carrier.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
-{
+class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'carrier_name' => 'string',    ];
+        'carrier_name' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +52,14 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'carrier_name' => null,    ];
+        'carrier_name' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +68,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +79,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'carrier_name' => 'CarrierName',    ];
+        'carrier_name' => 'CarrierName',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +87,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'carrier_name' => 'setCarrierName',    ];
+        'carrier_name' => 'setCarrierName',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +95,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'carrier_name' => 'getCarrierName',    ];
+        'carrier_name' => 'getCarrierName',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +103,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +112,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +121,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +130,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +147,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['carrier_name'] = isset($data['carrier_name']) ? $data['carrier_name'] : null;
     }
 
@@ -165,8 +156,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['carrier_name']) {
@@ -182,8 +172,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -192,8 +181,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierName()
-    {
+    public function getCarrierName() {
         return $this->container['carrier_name'];
     }
 
@@ -204,8 +192,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierName($carrier_name)
-    {
+    public function setCarrierName($carrier_name) {
         $this->container['carrier_name'] = $carrier_name;
 
         return $this;
@@ -218,8 +205,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -230,21 +216,19 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -259,8 +243,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -269,8 +252,7 @@ class TemporarilyUnavailableCarrier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * PrepGuidance Class Doc Comment.
  *
-
  * @description Item preparation instructions.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PrepGuidance
-{
+class PrepGuidance {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class PrepGuidance
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::CONSULT_HELP_DOCUMENTS,
-self::NO_ADDITIONAL_PREP_REQUIRED,
-self::SEE_PREP_INSTRUCTIONS_LIST,        ];
+            self::NO_ADDITIONAL_PREP_REQUIRED,
+            self::SEE_PREP_INSTRUCTIONS_LIST,];
     }
 }

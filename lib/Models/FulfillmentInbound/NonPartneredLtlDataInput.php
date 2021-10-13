@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * NonPartneredLtlDataInput Class Doc Comment.
  *
-
  * @description Information that you provide to Amazon about a Less Than Truckload/Full Truckload (LTL/FTL) shipment by a carrier that has not partnered with Amazon.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
-{
+class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'carrier_name' => 'string',
-'pro_number' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ProNumber',    ];
+        'pro_number'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ProNumber',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,15 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'carrier_name' => null,
-'pro_number' => null,    ];
+        'pro_number'   => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +83,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'carrier_name' => 'CarrierName',
-'pro_number' => 'ProNumber',    ];
+        'pro_number'   => 'ProNumber',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +92,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'carrier_name' => 'setCarrierName',
-'pro_number' => 'setProNumber',    ];
+        'pro_number'   => 'setProNumber',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +101,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'carrier_name' => 'getCarrierName',
-'pro_number' => 'getProNumber',    ];
+        'pro_number'   => 'getProNumber',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['carrier_name'] = isset($data['carrier_name']) ? $data['carrier_name'] : null;
         $this->container['pro_number'] = isset($data['pro_number']) ? $data['pro_number'] : null;
     }
@@ -171,8 +163,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['carrier_name']) {
@@ -191,8 +182,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -201,8 +191,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierName()
-    {
+    public function getCarrierName() {
         return $this->container['carrier_name'];
     }
 
@@ -213,8 +202,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierName($carrier_name)
-    {
+    public function setCarrierName($carrier_name) {
         $this->container['carrier_name'] = $carrier_name;
 
         return $this;
@@ -223,22 +211,20 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
     /**
      * Gets pro_number.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ProNumber
+     * @return ProNumber
      */
-    public function getProNumber()
-    {
+    public function getProNumber() {
         return $this->container['pro_number'];
     }
 
     /**
      * Sets pro_number.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ProNumber $pro_number pro_number
+     * @param ProNumber $pro_number pro_number
      *
      * @return $this
      */
-    public function setProNumber($pro_number)
-    {
+    public function setProNumber($pro_number) {
         $this->container['pro_number'] = $pro_number;
 
         return $this;
@@ -251,8 +237,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +248,19 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +275,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +284,7 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

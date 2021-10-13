@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Price Class Doc Comment.
  *
-
  * @description The price attribute of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Price extends Categories implements ModelInterface, ArrayAccess
-{
+class Price extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amount' => 'float',
-'currency_code' => 'string',    ];
+        'amount'        => 'float',
+        'currency_code' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amount' => null,
-'currency_code' => null,    ];
+        'amount'        => null,
+        'currency_code' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'Amount',
-'currency_code' => 'CurrencyCode',    ];
+        'amount'        => 'Amount',
+        'currency_code' => 'CurrencyCode',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-'currency_code' => 'setCurrencyCode',    ];
+        'amount'        => 'setAmount',
+        'currency_code' => 'setCurrencyCode',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-'currency_code' => 'getCurrencyCode',    ];
+        'amount'        => 'getAmount',
+        'currency_code' => 'getCurrencyCode',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
     }
@@ -171,8 +162,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +174,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +183,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getAmount()
-    {
+    public function getAmount() {
         return $this->container['amount'];
     }
 
@@ -206,8 +194,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmount($amount)
-    {
+    public function setAmount($amount) {
         $this->container['amount'] = $amount;
 
         return $this;
@@ -218,8 +205,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrencyCode()
-    {
+    public function getCurrencyCode() {
         return $this->container['currency_code'];
     }
 
@@ -230,8 +216,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrencyCode($currency_code)
-    {
+    public function setCurrencyCode($currency_code) {
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -244,8 +229,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class Price extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

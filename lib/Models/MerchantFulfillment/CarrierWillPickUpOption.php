@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * CarrierWillPickUpOption Class Doc Comment.
  *
-
  * @description Carrier will pick up option.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CarrierWillPickUpOption
-{
+class CarrierWillPickUpOption {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class CarrierWillPickUpOption
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::CARRIER_WILL_PICK_UP,
-self::SHIPPER_WILL_DROP_OFF,
-self::NO_PREFERENCE,        ];
+            self::SHIPPER_WILL_DROP_OFF,
+            self::NO_PREFERENCE,];
     }
 }

@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ShipmentEvent Class Doc Comment.
  *
-
  * @description A shipment, refund, guarantee claim, or chargeback.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ShipmentEvent implements ModelInterface, ArrayAccess
-{
+class ShipmentEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,19 +45,19 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amazon_order_id' => 'string',
-'seller_order_id' => 'string',
-'marketplace_name' => 'string',
-'order_charge_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
-'order_charge_adjustment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
-'shipment_fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'shipment_fee_adjustment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'order_fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'order_fee_adjustment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'direct_payment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\DirectPaymentList',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'shipment_item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList',
-'shipment_item_adjustment_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList',    ];
+        'amazon_order_id'               => 'string',
+        'seller_order_id'               => 'string',
+        'marketplace_name'              => 'string',
+        'order_charge_list'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
+        'order_charge_adjustment_list'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
+        'shipment_fee_list'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'shipment_fee_adjustment_list'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'order_fee_list'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'order_fee_adjustment_list'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'direct_payment_list'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\DirectPaymentList',
+        'posted_date'                   => '\DateTime',
+        'shipment_item_list'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList',
+        'shipment_item_adjustment_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -66,27 +65,26 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amazon_order_id' => null,
-'seller_order_id' => null,
-'marketplace_name' => null,
-'order_charge_list' => null,
-'order_charge_adjustment_list' => null,
-'shipment_fee_list' => null,
-'shipment_fee_adjustment_list' => null,
-'order_fee_list' => null,
-'order_fee_adjustment_list' => null,
-'direct_payment_list' => null,
-'posted_date' => null,
-'shipment_item_list' => null,
-'shipment_item_adjustment_list' => null,    ];
+        'amazon_order_id'               => null,
+        'seller_order_id'               => null,
+        'marketplace_name'              => null,
+        'order_charge_list'             => null,
+        'order_charge_adjustment_list'  => null,
+        'shipment_fee_list'             => null,
+        'shipment_fee_adjustment_list'  => null,
+        'order_fee_list'                => null,
+        'order_fee_adjustment_list'     => null,
+        'direct_payment_list'           => null,
+        'posted_date'                   => null,
+        'shipment_item_list'            => null,
+        'shipment_item_adjustment_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -95,8 +93,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -107,19 +104,19 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'AmazonOrderId',
-'seller_order_id' => 'SellerOrderId',
-'marketplace_name' => 'MarketplaceName',
-'order_charge_list' => 'OrderChargeList',
-'order_charge_adjustment_list' => 'OrderChargeAdjustmentList',
-'shipment_fee_list' => 'ShipmentFeeList',
-'shipment_fee_adjustment_list' => 'ShipmentFeeAdjustmentList',
-'order_fee_list' => 'OrderFeeList',
-'order_fee_adjustment_list' => 'OrderFeeAdjustmentList',
-'direct_payment_list' => 'DirectPaymentList',
-'posted_date' => 'PostedDate',
-'shipment_item_list' => 'ShipmentItemList',
-'shipment_item_adjustment_list' => 'ShipmentItemAdjustmentList',    ];
+        'amazon_order_id'               => 'AmazonOrderId',
+        'seller_order_id'               => 'SellerOrderId',
+        'marketplace_name'              => 'MarketplaceName',
+        'order_charge_list'             => 'OrderChargeList',
+        'order_charge_adjustment_list'  => 'OrderChargeAdjustmentList',
+        'shipment_fee_list'             => 'ShipmentFeeList',
+        'shipment_fee_adjustment_list'  => 'ShipmentFeeAdjustmentList',
+        'order_fee_list'                => 'OrderFeeList',
+        'order_fee_adjustment_list'     => 'OrderFeeAdjustmentList',
+        'direct_payment_list'           => 'DirectPaymentList',
+        'posted_date'                   => 'PostedDate',
+        'shipment_item_list'            => 'ShipmentItemList',
+        'shipment_item_adjustment_list' => 'ShipmentItemAdjustmentList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -127,19 +124,19 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
-'seller_order_id' => 'setSellerOrderId',
-'marketplace_name' => 'setMarketplaceName',
-'order_charge_list' => 'setOrderChargeList',
-'order_charge_adjustment_list' => 'setOrderChargeAdjustmentList',
-'shipment_fee_list' => 'setShipmentFeeList',
-'shipment_fee_adjustment_list' => 'setShipmentFeeAdjustmentList',
-'order_fee_list' => 'setOrderFeeList',
-'order_fee_adjustment_list' => 'setOrderFeeAdjustmentList',
-'direct_payment_list' => 'setDirectPaymentList',
-'posted_date' => 'setPostedDate',
-'shipment_item_list' => 'setShipmentItemList',
-'shipment_item_adjustment_list' => 'setShipmentItemAdjustmentList',    ];
+        'amazon_order_id'               => 'setAmazonOrderId',
+        'seller_order_id'               => 'setSellerOrderId',
+        'marketplace_name'              => 'setMarketplaceName',
+        'order_charge_list'             => 'setOrderChargeList',
+        'order_charge_adjustment_list'  => 'setOrderChargeAdjustmentList',
+        'shipment_fee_list'             => 'setShipmentFeeList',
+        'shipment_fee_adjustment_list'  => 'setShipmentFeeAdjustmentList',
+        'order_fee_list'                => 'setOrderFeeList',
+        'order_fee_adjustment_list'     => 'setOrderFeeAdjustmentList',
+        'direct_payment_list'           => 'setDirectPaymentList',
+        'posted_date'                   => 'setPostedDate',
+        'shipment_item_list'            => 'setShipmentItemList',
+        'shipment_item_adjustment_list' => 'setShipmentItemAdjustmentList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -147,19 +144,19 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
-'seller_order_id' => 'getSellerOrderId',
-'marketplace_name' => 'getMarketplaceName',
-'order_charge_list' => 'getOrderChargeList',
-'order_charge_adjustment_list' => 'getOrderChargeAdjustmentList',
-'shipment_fee_list' => 'getShipmentFeeList',
-'shipment_fee_adjustment_list' => 'getShipmentFeeAdjustmentList',
-'order_fee_list' => 'getOrderFeeList',
-'order_fee_adjustment_list' => 'getOrderFeeAdjustmentList',
-'direct_payment_list' => 'getDirectPaymentList',
-'posted_date' => 'getPostedDate',
-'shipment_item_list' => 'getShipmentItemList',
-'shipment_item_adjustment_list' => 'getShipmentItemAdjustmentList',    ];
+        'amazon_order_id'               => 'getAmazonOrderId',
+        'seller_order_id'               => 'getSellerOrderId',
+        'marketplace_name'              => 'getMarketplaceName',
+        'order_charge_list'             => 'getOrderChargeList',
+        'order_charge_adjustment_list'  => 'getOrderChargeAdjustmentList',
+        'shipment_fee_list'             => 'getShipmentFeeList',
+        'shipment_fee_adjustment_list'  => 'getShipmentFeeAdjustmentList',
+        'order_fee_list'                => 'getOrderFeeList',
+        'order_fee_adjustment_list'     => 'getOrderFeeAdjustmentList',
+        'direct_payment_list'           => 'getDirectPaymentList',
+        'posted_date'                   => 'getPostedDate',
+        'shipment_item_list'            => 'getShipmentItemList',
+        'shipment_item_adjustment_list' => 'getShipmentItemAdjustmentList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -167,8 +164,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -177,8 +173,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -187,8 +182,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -197,8 +191,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -215,8 +208,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
         $this->container['marketplace_name'] = isset($data['marketplace_name']) ? $data['marketplace_name'] : null;
@@ -237,8 +229,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -250,8 +241,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -260,8 +250,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -272,8 +261,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -284,8 +272,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerOrderId()
-    {
+    public function getSellerOrderId() {
         return $this->container['seller_order_id'];
     }
 
@@ -296,8 +283,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerOrderId($seller_order_id)
-    {
+    public function setSellerOrderId($seller_order_id) {
         $this->container['seller_order_id'] = $seller_order_id;
 
         return $this;
@@ -308,8 +294,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceName()
-    {
+    public function getMarketplaceName() {
         return $this->container['marketplace_name'];
     }
 
@@ -320,8 +305,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceName($marketplace_name)
-    {
+    public function setMarketplaceName($marketplace_name) {
         $this->container['marketplace_name'] = $marketplace_name;
 
         return $this;
@@ -330,22 +314,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets order_charge_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList
+     * @return ChargeComponentList
      */
-    public function getOrderChargeList()
-    {
+    public function getOrderChargeList() {
         return $this->container['order_charge_list'];
     }
 
     /**
      * Sets order_charge_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList $order_charge_list order_charge_list
+     * @param ChargeComponentList $order_charge_list order_charge_list
      *
      * @return $this
      */
-    public function setOrderChargeList($order_charge_list)
-    {
+    public function setOrderChargeList($order_charge_list) {
         $this->container['order_charge_list'] = $order_charge_list;
 
         return $this;
@@ -354,22 +336,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets order_charge_adjustment_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList
+     * @return ChargeComponentList
      */
-    public function getOrderChargeAdjustmentList()
-    {
+    public function getOrderChargeAdjustmentList() {
         return $this->container['order_charge_adjustment_list'];
     }
 
     /**
      * Sets order_charge_adjustment_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList $order_charge_adjustment_list order_charge_adjustment_list
+     * @param ChargeComponentList $order_charge_adjustment_list order_charge_adjustment_list
      *
      * @return $this
      */
-    public function setOrderChargeAdjustmentList($order_charge_adjustment_list)
-    {
+    public function setOrderChargeAdjustmentList($order_charge_adjustment_list) {
         $this->container['order_charge_adjustment_list'] = $order_charge_adjustment_list;
 
         return $this;
@@ -378,22 +358,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets shipment_fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getShipmentFeeList()
-    {
+    public function getShipmentFeeList() {
         return $this->container['shipment_fee_list'];
     }
 
     /**
      * Sets shipment_fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $shipment_fee_list shipment_fee_list
+     * @param FeeComponentList $shipment_fee_list shipment_fee_list
      *
      * @return $this
      */
-    public function setShipmentFeeList($shipment_fee_list)
-    {
+    public function setShipmentFeeList($shipment_fee_list) {
         $this->container['shipment_fee_list'] = $shipment_fee_list;
 
         return $this;
@@ -402,22 +380,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets shipment_fee_adjustment_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getShipmentFeeAdjustmentList()
-    {
+    public function getShipmentFeeAdjustmentList() {
         return $this->container['shipment_fee_adjustment_list'];
     }
 
     /**
      * Sets shipment_fee_adjustment_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $shipment_fee_adjustment_list shipment_fee_adjustment_list
+     * @param FeeComponentList $shipment_fee_adjustment_list shipment_fee_adjustment_list
      *
      * @return $this
      */
-    public function setShipmentFeeAdjustmentList($shipment_fee_adjustment_list)
-    {
+    public function setShipmentFeeAdjustmentList($shipment_fee_adjustment_list) {
         $this->container['shipment_fee_adjustment_list'] = $shipment_fee_adjustment_list;
 
         return $this;
@@ -426,22 +402,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets order_fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getOrderFeeList()
-    {
+    public function getOrderFeeList() {
         return $this->container['order_fee_list'];
     }
 
     /**
      * Sets order_fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $order_fee_list order_fee_list
+     * @param FeeComponentList $order_fee_list order_fee_list
      *
      * @return $this
      */
-    public function setOrderFeeList($order_fee_list)
-    {
+    public function setOrderFeeList($order_fee_list) {
         $this->container['order_fee_list'] = $order_fee_list;
 
         return $this;
@@ -450,22 +424,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets order_fee_adjustment_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getOrderFeeAdjustmentList()
-    {
+    public function getOrderFeeAdjustmentList() {
         return $this->container['order_fee_adjustment_list'];
     }
 
     /**
      * Sets order_fee_adjustment_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $order_fee_adjustment_list order_fee_adjustment_list
+     * @param FeeComponentList $order_fee_adjustment_list order_fee_adjustment_list
      *
      * @return $this
      */
-    public function setOrderFeeAdjustmentList($order_fee_adjustment_list)
-    {
+    public function setOrderFeeAdjustmentList($order_fee_adjustment_list) {
         $this->container['order_fee_adjustment_list'] = $order_fee_adjustment_list;
 
         return $this;
@@ -474,22 +446,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets direct_payment_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DirectPaymentList
+     * @return DirectPaymentList
      */
-    public function getDirectPaymentList()
-    {
+    public function getDirectPaymentList() {
         return $this->container['direct_payment_list'];
     }
 
     /**
      * Sets direct_payment_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DirectPaymentList $direct_payment_list direct_payment_list
+     * @param DirectPaymentList $direct_payment_list direct_payment_list
      *
      * @return $this
      */
-    public function setDirectPaymentList($direct_payment_list)
-    {
+    public function setDirectPaymentList($direct_payment_list) {
         $this->container['direct_payment_list'] = $direct_payment_list;
 
         return $this;
@@ -498,22 +468,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -522,22 +490,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets shipment_item_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList
+     * @return ShipmentItemList
      */
-    public function getShipmentItemList()
-    {
+    public function getShipmentItemList() {
         return $this->container['shipment_item_list'];
     }
 
     /**
      * Sets shipment_item_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList $shipment_item_list shipment_item_list
+     * @param ShipmentItemList $shipment_item_list shipment_item_list
      *
      * @return $this
      */
-    public function setShipmentItemList($shipment_item_list)
-    {
+    public function setShipmentItemList($shipment_item_list) {
         $this->container['shipment_item_list'] = $shipment_item_list;
 
         return $this;
@@ -546,22 +512,20 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets shipment_item_adjustment_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList
+     * @return ShipmentItemList
      */
-    public function getShipmentItemAdjustmentList()
-    {
+    public function getShipmentItemAdjustmentList() {
         return $this->container['shipment_item_adjustment_list'];
     }
 
     /**
      * Sets shipment_item_adjustment_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ShipmentItemList $shipment_item_adjustment_list shipment_item_adjustment_list
+     * @param ShipmentItemList $shipment_item_adjustment_list shipment_item_adjustment_list
      *
      * @return $this
      */
-    public function setShipmentItemAdjustmentList($shipment_item_adjustment_list)
-    {
+    public function setShipmentItemAdjustmentList($shipment_item_adjustment_list) {
         $this->container['shipment_item_adjustment_list'] = $shipment_item_adjustment_list;
 
         return $this;
@@ -574,8 +538,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -586,21 +549,19 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -615,8 +576,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -625,8 +585,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

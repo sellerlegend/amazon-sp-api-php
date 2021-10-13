@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Product Class Doc Comment.
  *
-
  * @description An item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Product implements ModelInterface, ArrayAccess
-{
+class Product implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,12 @@ class Product implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'identifiers' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\IdentifierType',
-'attribute_sets' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\AttributeSetList',
-'relationships' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\RelationshipList',
-'competitive_pricing' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePricingType',
-'sales_rankings' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\SalesRankList',
-'offers' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\OffersList',    ];
+        'identifiers'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\IdentifierType',
+        'attribute_sets'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\AttributeSetList',
+        'relationships'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\RelationshipList',
+        'competitive_pricing' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePricingType',
+        'sales_rankings'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\SalesRankList',
+        'offers'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\OffersList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +57,19 @@ class Product implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'identifiers' => null,
-'attribute_sets' => null,
-'relationships' => null,
-'competitive_pricing' => null,
-'sales_rankings' => null,
-'offers' => null,    ];
+        'identifiers'         => null,
+        'attribute_sets'      => null,
+        'relationships'       => null,
+        'competitive_pricing' => null,
+        'sales_rankings'      => null,
+        'offers'              => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +78,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +89,12 @@ class Product implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'identifiers' => 'Identifiers',
-'attribute_sets' => 'AttributeSets',
-'relationships' => 'Relationships',
-'competitive_pricing' => 'CompetitivePricing',
-'sales_rankings' => 'SalesRankings',
-'offers' => 'Offers',    ];
+        'identifiers'         => 'Identifiers',
+        'attribute_sets'      => 'AttributeSets',
+        'relationships'       => 'Relationships',
+        'competitive_pricing' => 'CompetitivePricing',
+        'sales_rankings'      => 'SalesRankings',
+        'offers'              => 'Offers',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +102,12 @@ class Product implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'identifiers' => 'setIdentifiers',
-'attribute_sets' => 'setAttributeSets',
-'relationships' => 'setRelationships',
-'competitive_pricing' => 'setCompetitivePricing',
-'sales_rankings' => 'setSalesRankings',
-'offers' => 'setOffers',    ];
+        'identifiers'         => 'setIdentifiers',
+        'attribute_sets'      => 'setAttributeSets',
+        'relationships'       => 'setRelationships',
+        'competitive_pricing' => 'setCompetitivePricing',
+        'sales_rankings'      => 'setSalesRankings',
+        'offers'              => 'setOffers',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +115,12 @@ class Product implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'identifiers' => 'getIdentifiers',
-'attribute_sets' => 'getAttributeSets',
-'relationships' => 'getRelationships',
-'competitive_pricing' => 'getCompetitivePricing',
-'sales_rankings' => 'getSalesRankings',
-'offers' => 'getOffers',    ];
+        'identifiers'         => 'getIdentifiers',
+        'attribute_sets'      => 'getAttributeSets',
+        'relationships'       => 'getRelationships',
+        'competitive_pricing' => 'getCompetitivePricing',
+        'sales_rankings'      => 'getSalesRankings',
+        'offers'              => 'getOffers',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +128,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +137,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +146,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +155,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +172,7 @@ class Product implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['identifiers'] = isset($data['identifiers']) ? $data['identifiers'] : null;
         $this->container['attribute_sets'] = isset($data['attribute_sets']) ? $data['attribute_sets'] : null;
         $this->container['relationships'] = isset($data['relationships']) ? $data['relationships'] : null;
@@ -195,8 +186,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['identifiers']) {
@@ -212,30 +202,27 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets identifiers.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\IdentifierType
+     * @return IdentifierType
      */
-    public function getIdentifiers()
-    {
+    public function getIdentifiers() {
         return $this->container['identifiers'];
     }
 
     /**
      * Sets identifiers.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\IdentifierType $identifiers identifiers
+     * @param IdentifierType $identifiers identifiers
      *
      * @return $this
      */
-    public function setIdentifiers($identifiers)
-    {
+    public function setIdentifiers($identifiers) {
         $this->container['identifiers'] = $identifiers;
 
         return $this;
@@ -244,22 +231,20 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets attribute_sets.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\AttributeSetList
+     * @return AttributeSetList
      */
-    public function getAttributeSets()
-    {
+    public function getAttributeSets() {
         return $this->container['attribute_sets'];
     }
 
     /**
      * Sets attribute_sets.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\AttributeSetList $attribute_sets attribute_sets
+     * @param AttributeSetList $attribute_sets attribute_sets
      *
      * @return $this
      */
-    public function setAttributeSets($attribute_sets)
-    {
+    public function setAttributeSets($attribute_sets) {
         $this->container['attribute_sets'] = $attribute_sets;
 
         return $this;
@@ -268,22 +253,20 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets relationships.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\RelationshipList
+     * @return RelationshipList
      */
-    public function getRelationships()
-    {
+    public function getRelationships() {
         return $this->container['relationships'];
     }
 
     /**
      * Sets relationships.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\RelationshipList $relationships relationships
+     * @param RelationshipList $relationships relationships
      *
      * @return $this
      */
-    public function setRelationships($relationships)
-    {
+    public function setRelationships($relationships) {
         $this->container['relationships'] = $relationships;
 
         return $this;
@@ -292,22 +275,20 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets competitive_pricing.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePricingType
+     * @return CompetitivePricingType
      */
-    public function getCompetitivePricing()
-    {
+    public function getCompetitivePricing() {
         return $this->container['competitive_pricing'];
     }
 
     /**
      * Sets competitive_pricing.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePricingType $competitive_pricing competitive_pricing
+     * @param CompetitivePricingType $competitive_pricing competitive_pricing
      *
      * @return $this
      */
-    public function setCompetitivePricing($competitive_pricing)
-    {
+    public function setCompetitivePricing($competitive_pricing) {
         $this->container['competitive_pricing'] = $competitive_pricing;
 
         return $this;
@@ -316,22 +297,20 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets sales_rankings.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\SalesRankList
+     * @return SalesRankList
      */
-    public function getSalesRankings()
-    {
+    public function getSalesRankings() {
         return $this->container['sales_rankings'];
     }
 
     /**
      * Sets sales_rankings.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\SalesRankList $sales_rankings sales_rankings
+     * @param SalesRankList $sales_rankings sales_rankings
      *
      * @return $this
      */
-    public function setSalesRankings($sales_rankings)
-    {
+    public function setSalesRankings($sales_rankings) {
         $this->container['sales_rankings'] = $sales_rankings;
 
         return $this;
@@ -340,22 +319,20 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets offers.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\OffersList
+     * @return OffersList
      */
-    public function getOffers()
-    {
+    public function getOffers() {
         return $this->container['offers'];
     }
 
     /**
      * Sets offers.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\OffersList $offers offers
+     * @param OffersList $offers offers
      *
      * @return $this
      */
-    public function setOffers($offers)
-    {
+    public function setOffers($offers) {
         $this->container['offers'] = $offers;
 
         return $this;
@@ -368,8 +345,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -380,21 +356,19 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -409,8 +383,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -419,8 +392,7 @@ class Product implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * PredefinedPackageDimensions Class Doc Comment.
  *
-
  * @description An enumeration of predefined parcel tokens. If you specify a PredefinedPackageDimensions token, you are not obligated to use a branded package from a carrier. For example, if you specify the FedEx_Box_10kg token, you do not have to use that particular package from FedEx. You are only obligated to use a box that matches the dimensions specified by the token.  Note: Please note that carriers can have restrictions on the type of package allowed for certain ship methods. Check the carrier website for all details. Example: Flat rate pricing is available when materials are sent by USPS in a USPS-produced Flat Rate Envelope or Box.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PredefinedPackageDimensions
-{
+class PredefinedPackageDimensions {
     /**
      * Possible values of this enum.
      */
@@ -86,58 +84,57 @@ class PredefinedPackageDimensions
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::FED_EX_BOX_10KG,
-self::FED_EX_BOX_25KG,
-self::FED_EX_BOX_EXTRA_LARGE_1,
-self::FED_EX_BOX_EXTRA_LARGE_2,
-self::FED_EX_BOX_LARGE_1,
-self::FED_EX_BOX_LARGE_2,
-self::FED_EX_BOX_MEDIUM_1,
-self::FED_EX_BOX_MEDIUM_2,
-self::FED_EX_BOX_SMALL_1,
-self::FED_EX_BOX_SMALL_2,
-self::FED_EX_ENVELOPE,
-self::FED_EX_PADDED_PAK,
-self::FED_EX_PAK_1,
-self::FED_EX_PAK_2,
-self::FED_EX_TUBE,
-self::FED_EX_XL_PAK,
-self::UPS_BOX_10KG,
-self::UPS_BOX_25KG,
-self::UPS_EXPRESS_BOX,
-self::UPS_EXPRESS_BOX_LARGE,
-self::UPS_EXPRESS_BOX_MEDIUM,
-self::UPS_EXPRESS_BOX_SMALL,
-self::UPS_EXPRESS_ENVELOPE,
-self::UPS_EXPRESS_HARD_PAK,
-self::UPS_EXPRESS_LEGAL_ENVELOPE,
-self::UPS_EXPRESS_PAK,
-self::UPS_EXPRESS_TUBE,
-self::UPS_LABORATORY_PAK,
-self::UPS_PAD_PAK,
-self::UPS_PALLET,
-self::USPS_CARD,
-self::USPS_FLAT,
-self::USPS_FLAT_RATE_CARDBOARD_ENVELOPE,
-self::USPS_FLAT_RATE_ENVELOPE,
-self::USPS_FLAT_RATE_GIFT_CARD_ENVELOPE,
-self::USPS_FLAT_RATE_LEGAL_ENVELOPE,
-self::USPS_FLAT_RATE_PADDED_ENVELOPE,
-self::USPS_FLAT_RATE_WINDOW_ENVELOPE,
-self::USPS_LARGE_FLAT_RATE_BOARD_GAME_BOX,
-self::USPS_LARGE_FLAT_RATE_BOX,
-self::USPS_LETTER,
-self::USPS_MEDIUM_FLAT_RATE_BOX1,
-self::USPS_MEDIUM_FLAT_RATE_BOX2,
-self::USPS_REGIONAL_RATE_BOX_A1,
-self::USPS_REGIONAL_RATE_BOX_A2,
-self::USPS_REGIONAL_RATE_BOX_B1,
-self::USPS_REGIONAL_RATE_BOX_B2,
-self::USPS_REGIONAL_RATE_BOX_C,
-self::USPS_SMALL_FLAT_RATE_BOX,
-self::USPS_SMALL_FLAT_RATE_ENVELOPE,        ];
+            self::FED_EX_BOX_25KG,
+            self::FED_EX_BOX_EXTRA_LARGE_1,
+            self::FED_EX_BOX_EXTRA_LARGE_2,
+            self::FED_EX_BOX_LARGE_1,
+            self::FED_EX_BOX_LARGE_2,
+            self::FED_EX_BOX_MEDIUM_1,
+            self::FED_EX_BOX_MEDIUM_2,
+            self::FED_EX_BOX_SMALL_1,
+            self::FED_EX_BOX_SMALL_2,
+            self::FED_EX_ENVELOPE,
+            self::FED_EX_PADDED_PAK,
+            self::FED_EX_PAK_1,
+            self::FED_EX_PAK_2,
+            self::FED_EX_TUBE,
+            self::FED_EX_XL_PAK,
+            self::UPS_BOX_10KG,
+            self::UPS_BOX_25KG,
+            self::UPS_EXPRESS_BOX,
+            self::UPS_EXPRESS_BOX_LARGE,
+            self::UPS_EXPRESS_BOX_MEDIUM,
+            self::UPS_EXPRESS_BOX_SMALL,
+            self::UPS_EXPRESS_ENVELOPE,
+            self::UPS_EXPRESS_HARD_PAK,
+            self::UPS_EXPRESS_LEGAL_ENVELOPE,
+            self::UPS_EXPRESS_PAK,
+            self::UPS_EXPRESS_TUBE,
+            self::UPS_LABORATORY_PAK,
+            self::UPS_PAD_PAK,
+            self::UPS_PALLET,
+            self::USPS_CARD,
+            self::USPS_FLAT,
+            self::USPS_FLAT_RATE_CARDBOARD_ENVELOPE,
+            self::USPS_FLAT_RATE_ENVELOPE,
+            self::USPS_FLAT_RATE_GIFT_CARD_ENVELOPE,
+            self::USPS_FLAT_RATE_LEGAL_ENVELOPE,
+            self::USPS_FLAT_RATE_PADDED_ENVELOPE,
+            self::USPS_FLAT_RATE_WINDOW_ENVELOPE,
+            self::USPS_LARGE_FLAT_RATE_BOARD_GAME_BOX,
+            self::USPS_LARGE_FLAT_RATE_BOX,
+            self::USPS_LETTER,
+            self::USPS_MEDIUM_FLAT_RATE_BOX1,
+            self::USPS_MEDIUM_FLAT_RATE_BOX2,
+            self::USPS_REGIONAL_RATE_BOX_A1,
+            self::USPS_REGIONAL_RATE_BOX_A2,
+            self::USPS_REGIONAL_RATE_BOX_B1,
+            self::USPS_REGIONAL_RATE_BOX_B2,
+            self::USPS_REGIONAL_RATE_BOX_C,
+            self::USPS_SMALL_FLAT_RATE_BOX,
+            self::USPS_SMALL_FLAT_RATE_ENVELOPE,];
     }
 }

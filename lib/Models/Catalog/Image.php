@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Image Class Doc Comment.
  *
-
  * @description The image attribute of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Image extends Categories implements ModelInterface, ArrayAccess
-{
+class Image extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'url' => 'string',
-'height' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'width' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',    ];
+        'url'    => 'string',
+        'height' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'width'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'url' => null,
-'height' => null,
-'width' => null,    ];
+        'url'    => null,
+        'height' => null,
+        'width'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'URL',
-'height' => 'Height',
-'width' => 'Width',    ];
+        'url'    => 'URL',
+        'height' => 'Height',
+        'width'  => 'Width',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-'height' => 'setHeight',
-'width' => 'setWidth',    ];
+        'url'    => 'setUrl',
+        'height' => 'setHeight',
+        'width'  => 'setWidth',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-'height' => 'getHeight',
-'width' => 'getWidth',    ];
+        'url'    => 'getUrl',
+        'height' => 'getHeight',
+        'width'  => 'getWidth',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
@@ -177,8 +168,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,8 +180,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -200,8 +189,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->container['url'];
     }
 
@@ -212,8 +200,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->container['url'] = $url;
 
         return $this;
@@ -222,22 +209,20 @@ class Image extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets height.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getHeight()
-    {
+    public function getHeight() {
         return $this->container['height'];
     }
 
     /**
      * Sets height.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $height height
+     * @param DecimalWithUnits $height height
      *
      * @return $this
      */
-    public function setHeight($height)
-    {
+    public function setHeight($height) {
         $this->container['height'] = $height;
 
         return $this;
@@ -246,22 +231,20 @@ class Image extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets width.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getWidth()
-    {
+    public function getWidth() {
         return $this->container['width'];
     }
 
     /**
      * Sets width.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $width width
+     * @param DecimalWithUnits $width width
      *
      * @return $this
      */
-    public function setWidth($width)
-    {
+    public function setWidth($width) {
         $this->container['width'] = $width;
 
         return $this;
@@ -274,8 +257,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class Image extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

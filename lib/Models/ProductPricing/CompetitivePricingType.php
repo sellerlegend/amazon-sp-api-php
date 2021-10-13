@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CompetitivePricingType Class Doc Comment.
  *
-
  * @description Competitive pricing information for the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CompetitivePricingType implements ModelInterface, ArrayAccess
-{
+class CompetitivePricingType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'competitive_prices' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePriceList',
-'number_of_offer_listings' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOfferListingsList',
-'trade_in_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',    ];
+        'competitive_prices'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePriceList',
+        'number_of_offer_listings' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOfferListingsList',
+        'trade_in_value'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +55,16 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'competitive_prices' => null,
-'number_of_offer_listings' => null,
-'trade_in_value' => null,    ];
+        'competitive_prices'       => null,
+        'number_of_offer_listings' => null,
+        'trade_in_value'           => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +84,9 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'competitive_prices' => 'CompetitivePrices',
-'number_of_offer_listings' => 'NumberOfOfferListings',
-'trade_in_value' => 'TradeInValue',    ];
+        'competitive_prices'       => 'CompetitivePrices',
+        'number_of_offer_listings' => 'NumberOfOfferListings',
+        'trade_in_value'           => 'TradeInValue',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +94,9 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'competitive_prices' => 'setCompetitivePrices',
-'number_of_offer_listings' => 'setNumberOfOfferListings',
-'trade_in_value' => 'setTradeInValue',    ];
+        'competitive_prices'       => 'setCompetitivePrices',
+        'number_of_offer_listings' => 'setNumberOfOfferListings',
+        'trade_in_value'           => 'setTradeInValue',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +104,9 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'competitive_prices' => 'getCompetitivePrices',
-'number_of_offer_listings' => 'getNumberOfOfferListings',
-'trade_in_value' => 'getTradeInValue',    ];
+        'competitive_prices'       => 'getCompetitivePrices',
+        'number_of_offer_listings' => 'getNumberOfOfferListings',
+        'trade_in_value'           => 'getTradeInValue',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['competitive_prices'] = isset($data['competitive_prices']) ? $data['competitive_prices'] : null;
         $this->container['number_of_offer_listings'] = isset($data['number_of_offer_listings']) ? $data['number_of_offer_listings'] : null;
         $this->container['trade_in_value'] = isset($data['trade_in_value']) ? $data['trade_in_value'] : null;
@@ -177,8 +169,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['competitive_prices']) {
@@ -197,30 +188,27 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets competitive_prices.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePriceList
+     * @return CompetitivePriceList
      */
-    public function getCompetitivePrices()
-    {
+    public function getCompetitivePrices() {
         return $this->container['competitive_prices'];
     }
 
     /**
      * Sets competitive_prices.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\CompetitivePriceList $competitive_prices competitive_prices
+     * @param CompetitivePriceList $competitive_prices competitive_prices
      *
      * @return $this
      */
-    public function setCompetitivePrices($competitive_prices)
-    {
+    public function setCompetitivePrices($competitive_prices) {
         $this->container['competitive_prices'] = $competitive_prices;
 
         return $this;
@@ -229,22 +217,20 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
     /**
      * Gets number_of_offer_listings.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOfferListingsList
+     * @return NumberOfOfferListingsList
      */
-    public function getNumberOfOfferListings()
-    {
+    public function getNumberOfOfferListings() {
         return $this->container['number_of_offer_listings'];
     }
 
     /**
      * Sets number_of_offer_listings.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\NumberOfOfferListingsList $number_of_offer_listings number_of_offer_listings
+     * @param NumberOfOfferListingsList $number_of_offer_listings number_of_offer_listings
      *
      * @return $this
      */
-    public function setNumberOfOfferListings($number_of_offer_listings)
-    {
+    public function setNumberOfOfferListings($number_of_offer_listings) {
         $this->container['number_of_offer_listings'] = $number_of_offer_listings;
 
         return $this;
@@ -253,22 +239,20 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
     /**
      * Gets trade_in_value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getTradeInValue()
-    {
+    public function getTradeInValue() {
         return $this->container['trade_in_value'];
     }
 
     /**
      * Sets trade_in_value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $trade_in_value trade_in_value
+     * @param MoneyType $trade_in_value trade_in_value
      *
      * @return $this
      */
-    public function setTradeInValue($trade_in_value)
-    {
+    public function setTradeInValue($trade_in_value) {
         $this->container['trade_in_value'] = $trade_in_value;
 
         return $this;
@@ -281,8 +265,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -293,21 +276,19 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -322,8 +303,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -332,8 +312,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

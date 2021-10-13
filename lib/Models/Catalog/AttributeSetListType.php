@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AttributeSetListType Class Doc Comment.
  *
-
  * @description The attributes of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AttributeSetListType extends Categories implements ModelInterface, ArrayAccess
-{
+class AttributeSetListType extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,102 +44,102 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'actor' => 'string[]',
-'artist' => 'string[]',
-'aspect_ratio' => 'string',
-'audience_rating' => 'string',
-'author' => 'string[]',
-'back_finding' => 'string',
-'band_material_type' => 'string',
-'binding' => 'string',
-'bluray_region' => 'string',
-'brand' => 'string',
-'cero_age_rating' => 'string',
-'chain_type' => 'string',
-'clasp_type' => 'string',
-'color' => 'string',
-'cpu_manufacturer' => 'string',
-'cpu_speed' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'cpu_type' => 'string',
-'creator' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\CreatorType[]',
-'department' => 'string',
-'director' => 'string[]',
-'display_size' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'edition' => 'string',
-'episode_sequence' => 'string',
-'esrb_age_rating' => 'string',
-'feature' => 'string[]',
-'flavor' => 'string',
-'format' => 'string[]',
-'gem_type' => 'string[]',
-'genre' => 'string',
-'golf_club_flex' => 'string',
-'golf_club_loft' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'hand_orientation' => 'string',
-'hard_disk_interface' => 'string',
-'hard_disk_size' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'hardware_platform' => 'string',
-'hazardous_material_type' => 'string',
-'item_dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType',
-'is_adult_product' => 'bool',
-'is_autographed' => 'bool',
-'is_eligible_for_trade_in' => 'bool',
-'is_memorabilia' => 'bool',
-'issues_per_year' => 'string',
-'item_part_number' => 'string',
-'label' => 'string',
-'languages' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\LanguageType[]',
-'legal_disclaimer' => 'string',
-'list_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Price',
-'manufacturer' => 'string',
-'manufacturer_maximum_age' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'manufacturer_minimum_age' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'manufacturer_parts_warranty_description' => 'string',
-'material_type' => 'string[]',
-'maximum_resolution' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'media_type' => 'string[]',
-'metal_stamp' => 'string',
-'metal_type' => 'string',
-'model' => 'string',
-'number_of_discs' => 'int',
-'number_of_issues' => 'int',
-'number_of_items' => 'int',
-'number_of_pages' => 'int',
-'number_of_tracks' => 'int',
-'operating_system' => 'string[]',
-'optical_zoom' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'package_dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType',
-'package_quantity' => 'int',
-'part_number' => 'string',
-'pegi_rating' => 'string',
-'platform' => 'string[]',
-'processor_count' => 'int',
-'product_group' => 'string',
-'product_type_name' => 'string',
-'product_type_subcategory' => 'string',
-'publication_date' => 'string',
-'publisher' => 'string',
-'region_code' => 'string',
-'release_date' => 'string',
-'ring_size' => 'string',
-'running_time' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'shaft_material' => 'string',
-'scent' => 'string',
-'season_sequence' => 'string',
-'seikodo_product_code' => 'string',
-'size' => 'string',
-'size_per_pearl' => 'string',
-'small_image' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Image',
-'studio' => 'string',
-'subscription_length' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'system_memory_size' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'system_memory_type' => 'string',
-'theatrical_release_date' => 'string',
-'title' => 'string',
-'total_diamond_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'total_gem_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'warranty' => 'string',
-'weee_tax_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Price',    ];
+        'actor'                                   => 'string[]',
+        'artist'                                  => 'string[]',
+        'aspect_ratio'                            => 'string',
+        'audience_rating'                         => 'string',
+        'author'                                  => 'string[]',
+        'back_finding'                            => 'string',
+        'band_material_type'                      => 'string',
+        'binding'                                 => 'string',
+        'bluray_region'                           => 'string',
+        'brand'                                   => 'string',
+        'cero_age_rating'                         => 'string',
+        'chain_type'                              => 'string',
+        'clasp_type'                              => 'string',
+        'color'                                   => 'string',
+        'cpu_manufacturer'                        => 'string',
+        'cpu_speed'                               => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'cpu_type'                                => 'string',
+        'creator'                                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\CreatorType[]',
+        'department'                              => 'string',
+        'director'                                => 'string[]',
+        'display_size'                            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'edition'                                 => 'string',
+        'episode_sequence'                        => 'string',
+        'esrb_age_rating'                         => 'string',
+        'feature'                                 => 'string[]',
+        'flavor'                                  => 'string',
+        'format'                                  => 'string[]',
+        'gem_type'                                => 'string[]',
+        'genre'                                   => 'string',
+        'golf_club_flex'                          => 'string',
+        'golf_club_loft'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'hand_orientation'                        => 'string',
+        'hard_disk_interface'                     => 'string',
+        'hard_disk_size'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'hardware_platform'                       => 'string',
+        'hazardous_material_type'                 => 'string',
+        'item_dimensions'                         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DimensionType',
+        'is_adult_product'                        => 'bool',
+        'is_autographed'                          => 'bool',
+        'is_eligible_for_trade_in'                => 'bool',
+        'is_memorabilia'                          => 'bool',
+        'issues_per_year'                         => 'string',
+        'item_part_number'                        => 'string',
+        'label'                                   => 'string',
+        'languages'                               => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\LanguageType[]',
+        'legal_disclaimer'                        => 'string',
+        'list_price'                              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\Price',
+        'manufacturer'                            => 'string',
+        'manufacturer_maximum_age'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'manufacturer_minimum_age'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'manufacturer_parts_warranty_description' => 'string',
+        'material_type'                           => 'string[]',
+        'maximum_resolution'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'media_type'                              => 'string[]',
+        'metal_stamp'                             => 'string',
+        'metal_type'                              => 'string',
+        'model'                                   => 'string',
+        'number_of_discs'                         => 'int',
+        'number_of_issues'                        => 'int',
+        'number_of_items'                         => 'int',
+        'number_of_pages'                         => 'int',
+        'number_of_tracks'                        => 'int',
+        'operating_system'                        => 'string[]',
+        'optical_zoom'                            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'package_dimensions'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DimensionType',
+        'package_quantity'                        => 'int',
+        'part_number'                             => 'string',
+        'pegi_rating'                             => 'string',
+        'platform'                                => 'string[]',
+        'processor_count'                         => 'int',
+        'product_group'                           => 'string',
+        'product_type_name'                       => 'string',
+        'product_type_subcategory'                => 'string',
+        'publication_date'                        => 'string',
+        'publisher'                               => 'string',
+        'region_code'                             => 'string',
+        'release_date'                            => 'string',
+        'ring_size'                               => 'string',
+        'running_time'                            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'shaft_material'                          => 'string',
+        'scent'                                   => 'string',
+        'season_sequence'                         => 'string',
+        'seikodo_product_code'                    => 'string',
+        'size'                                    => 'string',
+        'size_per_pearl'                          => 'string',
+        'small_image'                             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\Image',
+        'studio'                                  => 'string',
+        'subscription_length'                     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'system_memory_size'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'system_memory_type'                      => 'string',
+        'theatrical_release_date'                 => 'string',
+        'title'                                   => 'string',
+        'total_diamond_weight'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'total_gem_weight'                        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'warranty'                                => 'string',
+        'weee_tax_value'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\Price',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -149,110 +147,109 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'actor' => null,
-'artist' => null,
-'aspect_ratio' => null,
-'audience_rating' => null,
-'author' => null,
-'back_finding' => null,
-'band_material_type' => null,
-'binding' => null,
-'bluray_region' => null,
-'brand' => null,
-'cero_age_rating' => null,
-'chain_type' => null,
-'clasp_type' => null,
-'color' => null,
-'cpu_manufacturer' => null,
-'cpu_speed' => null,
-'cpu_type' => null,
-'creator' => null,
-'department' => null,
-'director' => null,
-'display_size' => null,
-'edition' => null,
-'episode_sequence' => null,
-'esrb_age_rating' => null,
-'feature' => null,
-'flavor' => null,
-'format' => null,
-'gem_type' => null,
-'genre' => null,
-'golf_club_flex' => null,
-'golf_club_loft' => null,
-'hand_orientation' => null,
-'hard_disk_interface' => null,
-'hard_disk_size' => null,
-'hardware_platform' => null,
-'hazardous_material_type' => null,
-'item_dimensions' => null,
-'is_adult_product' => null,
-'is_autographed' => null,
-'is_eligible_for_trade_in' => null,
-'is_memorabilia' => null,
-'issues_per_year' => null,
-'item_part_number' => null,
-'label' => null,
-'languages' => null,
-'legal_disclaimer' => null,
-'list_price' => null,
-'manufacturer' => null,
-'manufacturer_maximum_age' => null,
-'manufacturer_minimum_age' => null,
-'manufacturer_parts_warranty_description' => null,
-'material_type' => null,
-'maximum_resolution' => null,
-'media_type' => null,
-'metal_stamp' => null,
-'metal_type' => null,
-'model' => null,
-'number_of_discs' => null,
-'number_of_issues' => null,
-'number_of_items' => null,
-'number_of_pages' => null,
-'number_of_tracks' => null,
-'operating_system' => null,
-'optical_zoom' => null,
-'package_dimensions' => null,
-'package_quantity' => null,
-'part_number' => null,
-'pegi_rating' => null,
-'platform' => null,
-'processor_count' => null,
-'product_group' => null,
-'product_type_name' => null,
-'product_type_subcategory' => null,
-'publication_date' => null,
-'publisher' => null,
-'region_code' => null,
-'release_date' => null,
-'ring_size' => null,
-'running_time' => null,
-'shaft_material' => null,
-'scent' => null,
-'season_sequence' => null,
-'seikodo_product_code' => null,
-'size' => null,
-'size_per_pearl' => null,
-'small_image' => null,
-'studio' => null,
-'subscription_length' => null,
-'system_memory_size' => null,
-'system_memory_type' => null,
-'theatrical_release_date' => null,
-'title' => null,
-'total_diamond_weight' => null,
-'total_gem_weight' => null,
-'warranty' => null,
-'weee_tax_value' => null,    ];
+        'actor'                                   => null,
+        'artist'                                  => null,
+        'aspect_ratio'                            => null,
+        'audience_rating'                         => null,
+        'author'                                  => null,
+        'back_finding'                            => null,
+        'band_material_type'                      => null,
+        'binding'                                 => null,
+        'bluray_region'                           => null,
+        'brand'                                   => null,
+        'cero_age_rating'                         => null,
+        'chain_type'                              => null,
+        'clasp_type'                              => null,
+        'color'                                   => null,
+        'cpu_manufacturer'                        => null,
+        'cpu_speed'                               => null,
+        'cpu_type'                                => null,
+        'creator'                                 => null,
+        'department'                              => null,
+        'director'                                => null,
+        'display_size'                            => null,
+        'edition'                                 => null,
+        'episode_sequence'                        => null,
+        'esrb_age_rating'                         => null,
+        'feature'                                 => null,
+        'flavor'                                  => null,
+        'format'                                  => null,
+        'gem_type'                                => null,
+        'genre'                                   => null,
+        'golf_club_flex'                          => null,
+        'golf_club_loft'                          => null,
+        'hand_orientation'                        => null,
+        'hard_disk_interface'                     => null,
+        'hard_disk_size'                          => null,
+        'hardware_platform'                       => null,
+        'hazardous_material_type'                 => null,
+        'item_dimensions'                         => null,
+        'is_adult_product'                        => null,
+        'is_autographed'                          => null,
+        'is_eligible_for_trade_in'                => null,
+        'is_memorabilia'                          => null,
+        'issues_per_year'                         => null,
+        'item_part_number'                        => null,
+        'label'                                   => null,
+        'languages'                               => null,
+        'legal_disclaimer'                        => null,
+        'list_price'                              => null,
+        'manufacturer'                            => null,
+        'manufacturer_maximum_age'                => null,
+        'manufacturer_minimum_age'                => null,
+        'manufacturer_parts_warranty_description' => null,
+        'material_type'                           => null,
+        'maximum_resolution'                      => null,
+        'media_type'                              => null,
+        'metal_stamp'                             => null,
+        'metal_type'                              => null,
+        'model'                                   => null,
+        'number_of_discs'                         => null,
+        'number_of_issues'                        => null,
+        'number_of_items'                         => null,
+        'number_of_pages'                         => null,
+        'number_of_tracks'                        => null,
+        'operating_system'                        => null,
+        'optical_zoom'                            => null,
+        'package_dimensions'                      => null,
+        'package_quantity'                        => null,
+        'part_number'                             => null,
+        'pegi_rating'                             => null,
+        'platform'                                => null,
+        'processor_count'                         => null,
+        'product_group'                           => null,
+        'product_type_name'                       => null,
+        'product_type_subcategory'                => null,
+        'publication_date'                        => null,
+        'publisher'                               => null,
+        'region_code'                             => null,
+        'release_date'                            => null,
+        'ring_size'                               => null,
+        'running_time'                            => null,
+        'shaft_material'                          => null,
+        'scent'                                   => null,
+        'season_sequence'                         => null,
+        'seikodo_product_code'                    => null,
+        'size'                                    => null,
+        'size_per_pearl'                          => null,
+        'small_image'                             => null,
+        'studio'                                  => null,
+        'subscription_length'                     => null,
+        'system_memory_size'                      => null,
+        'system_memory_type'                      => null,
+        'theatrical_release_date'                 => null,
+        'title'                                   => null,
+        'total_diamond_weight'                    => null,
+        'total_gem_weight'                        => null,
+        'warranty'                                => null,
+        'weee_tax_value'                          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -261,8 +258,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -273,102 +269,102 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'actor' => 'Actor',
-'artist' => 'Artist',
-'aspect_ratio' => 'AspectRatio',
-'audience_rating' => 'AudienceRating',
-'author' => 'Author',
-'back_finding' => 'BackFinding',
-'band_material_type' => 'BandMaterialType',
-'binding' => 'Binding',
-'bluray_region' => 'BlurayRegion',
-'brand' => 'Brand',
-'cero_age_rating' => 'CeroAgeRating',
-'chain_type' => 'ChainType',
-'clasp_type' => 'ClaspType',
-'color' => 'Color',
-'cpu_manufacturer' => 'CpuManufacturer',
-'cpu_speed' => 'CpuSpeed',
-'cpu_type' => 'CpuType',
-'creator' => 'Creator',
-'department' => 'Department',
-'director' => 'Director',
-'display_size' => 'DisplaySize',
-'edition' => 'Edition',
-'episode_sequence' => 'EpisodeSequence',
-'esrb_age_rating' => 'EsrbAgeRating',
-'feature' => 'Feature',
-'flavor' => 'Flavor',
-'format' => 'Format',
-'gem_type' => 'GemType',
-'genre' => 'Genre',
-'golf_club_flex' => 'GolfClubFlex',
-'golf_club_loft' => 'GolfClubLoft',
-'hand_orientation' => 'HandOrientation',
-'hard_disk_interface' => 'HardDiskInterface',
-'hard_disk_size' => 'HardDiskSize',
-'hardware_platform' => 'HardwarePlatform',
-'hazardous_material_type' => 'HazardousMaterialType',
-'item_dimensions' => 'ItemDimensions',
-'is_adult_product' => 'IsAdultProduct',
-'is_autographed' => 'IsAutographed',
-'is_eligible_for_trade_in' => 'IsEligibleForTradeIn',
-'is_memorabilia' => 'IsMemorabilia',
-'issues_per_year' => 'IssuesPerYear',
-'item_part_number' => 'ItemPartNumber',
-'label' => 'Label',
-'languages' => 'Languages',
-'legal_disclaimer' => 'LegalDisclaimer',
-'list_price' => 'ListPrice',
-'manufacturer' => 'Manufacturer',
-'manufacturer_maximum_age' => 'ManufacturerMaximumAge',
-'manufacturer_minimum_age' => 'ManufacturerMinimumAge',
-'manufacturer_parts_warranty_description' => 'ManufacturerPartsWarrantyDescription',
-'material_type' => 'MaterialType',
-'maximum_resolution' => 'MaximumResolution',
-'media_type' => 'MediaType',
-'metal_stamp' => 'MetalStamp',
-'metal_type' => 'MetalType',
-'model' => 'Model',
-'number_of_discs' => 'NumberOfDiscs',
-'number_of_issues' => 'NumberOfIssues',
-'number_of_items' => 'NumberOfItems',
-'number_of_pages' => 'NumberOfPages',
-'number_of_tracks' => 'NumberOfTracks',
-'operating_system' => 'OperatingSystem',
-'optical_zoom' => 'OpticalZoom',
-'package_dimensions' => 'PackageDimensions',
-'package_quantity' => 'PackageQuantity',
-'part_number' => 'PartNumber',
-'pegi_rating' => 'PegiRating',
-'platform' => 'Platform',
-'processor_count' => 'ProcessorCount',
-'product_group' => 'ProductGroup',
-'product_type_name' => 'ProductTypeName',
-'product_type_subcategory' => 'ProductTypeSubcategory',
-'publication_date' => 'PublicationDate',
-'publisher' => 'Publisher',
-'region_code' => 'RegionCode',
-'release_date' => 'ReleaseDate',
-'ring_size' => 'RingSize',
-'running_time' => 'RunningTime',
-'shaft_material' => 'ShaftMaterial',
-'scent' => 'Scent',
-'season_sequence' => 'SeasonSequence',
-'seikodo_product_code' => 'SeikodoProductCode',
-'size' => 'Size',
-'size_per_pearl' => 'SizePerPearl',
-'small_image' => 'SmallImage',
-'studio' => 'Studio',
-'subscription_length' => 'SubscriptionLength',
-'system_memory_size' => 'SystemMemorySize',
-'system_memory_type' => 'SystemMemoryType',
-'theatrical_release_date' => 'TheatricalReleaseDate',
-'title' => 'Title',
-'total_diamond_weight' => 'TotalDiamondWeight',
-'total_gem_weight' => 'TotalGemWeight',
-'warranty' => 'Warranty',
-'weee_tax_value' => 'WeeeTaxValue',    ];
+        'actor'                                   => 'Actor',
+        'artist'                                  => 'Artist',
+        'aspect_ratio'                            => 'AspectRatio',
+        'audience_rating'                         => 'AudienceRating',
+        'author'                                  => 'Author',
+        'back_finding'                            => 'BackFinding',
+        'band_material_type'                      => 'BandMaterialType',
+        'binding'                                 => 'Binding',
+        'bluray_region'                           => 'BlurayRegion',
+        'brand'                                   => 'Brand',
+        'cero_age_rating'                         => 'CeroAgeRating',
+        'chain_type'                              => 'ChainType',
+        'clasp_type'                              => 'ClaspType',
+        'color'                                   => 'Color',
+        'cpu_manufacturer'                        => 'CpuManufacturer',
+        'cpu_speed'                               => 'CpuSpeed',
+        'cpu_type'                                => 'CpuType',
+        'creator'                                 => 'Creator',
+        'department'                              => 'Department',
+        'director'                                => 'Director',
+        'display_size'                            => 'DisplaySize',
+        'edition'                                 => 'Edition',
+        'episode_sequence'                        => 'EpisodeSequence',
+        'esrb_age_rating'                         => 'EsrbAgeRating',
+        'feature'                                 => 'Feature',
+        'flavor'                                  => 'Flavor',
+        'format'                                  => 'Format',
+        'gem_type'                                => 'GemType',
+        'genre'                                   => 'Genre',
+        'golf_club_flex'                          => 'GolfClubFlex',
+        'golf_club_loft'                          => 'GolfClubLoft',
+        'hand_orientation'                        => 'HandOrientation',
+        'hard_disk_interface'                     => 'HardDiskInterface',
+        'hard_disk_size'                          => 'HardDiskSize',
+        'hardware_platform'                       => 'HardwarePlatform',
+        'hazardous_material_type'                 => 'HazardousMaterialType',
+        'item_dimensions'                         => 'ItemDimensions',
+        'is_adult_product'                        => 'IsAdultProduct',
+        'is_autographed'                          => 'IsAutographed',
+        'is_eligible_for_trade_in'                => 'IsEligibleForTradeIn',
+        'is_memorabilia'                          => 'IsMemorabilia',
+        'issues_per_year'                         => 'IssuesPerYear',
+        'item_part_number'                        => 'ItemPartNumber',
+        'label'                                   => 'Label',
+        'languages'                               => 'Languages',
+        'legal_disclaimer'                        => 'LegalDisclaimer',
+        'list_price'                              => 'ListPrice',
+        'manufacturer'                            => 'Manufacturer',
+        'manufacturer_maximum_age'                => 'ManufacturerMaximumAge',
+        'manufacturer_minimum_age'                => 'ManufacturerMinimumAge',
+        'manufacturer_parts_warranty_description' => 'ManufacturerPartsWarrantyDescription',
+        'material_type'                           => 'MaterialType',
+        'maximum_resolution'                      => 'MaximumResolution',
+        'media_type'                              => 'MediaType',
+        'metal_stamp'                             => 'MetalStamp',
+        'metal_type'                              => 'MetalType',
+        'model'                                   => 'Model',
+        'number_of_discs'                         => 'NumberOfDiscs',
+        'number_of_issues'                        => 'NumberOfIssues',
+        'number_of_items'                         => 'NumberOfItems',
+        'number_of_pages'                         => 'NumberOfPages',
+        'number_of_tracks'                        => 'NumberOfTracks',
+        'operating_system'                        => 'OperatingSystem',
+        'optical_zoom'                            => 'OpticalZoom',
+        'package_dimensions'                      => 'PackageDimensions',
+        'package_quantity'                        => 'PackageQuantity',
+        'part_number'                             => 'PartNumber',
+        'pegi_rating'                             => 'PegiRating',
+        'platform'                                => 'Platform',
+        'processor_count'                         => 'ProcessorCount',
+        'product_group'                           => 'ProductGroup',
+        'product_type_name'                       => 'ProductTypeName',
+        'product_type_subcategory'                => 'ProductTypeSubcategory',
+        'publication_date'                        => 'PublicationDate',
+        'publisher'                               => 'Publisher',
+        'region_code'                             => 'RegionCode',
+        'release_date'                            => 'ReleaseDate',
+        'ring_size'                               => 'RingSize',
+        'running_time'                            => 'RunningTime',
+        'shaft_material'                          => 'ShaftMaterial',
+        'scent'                                   => 'Scent',
+        'season_sequence'                         => 'SeasonSequence',
+        'seikodo_product_code'                    => 'SeikodoProductCode',
+        'size'                                    => 'Size',
+        'size_per_pearl'                          => 'SizePerPearl',
+        'small_image'                             => 'SmallImage',
+        'studio'                                  => 'Studio',
+        'subscription_length'                     => 'SubscriptionLength',
+        'system_memory_size'                      => 'SystemMemorySize',
+        'system_memory_type'                      => 'SystemMemoryType',
+        'theatrical_release_date'                 => 'TheatricalReleaseDate',
+        'title'                                   => 'Title',
+        'total_diamond_weight'                    => 'TotalDiamondWeight',
+        'total_gem_weight'                        => 'TotalGemWeight',
+        'warranty'                                => 'Warranty',
+        'weee_tax_value'                          => 'WeeeTaxValue',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -376,102 +372,102 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'actor' => 'setActor',
-'artist' => 'setArtist',
-'aspect_ratio' => 'setAspectRatio',
-'audience_rating' => 'setAudienceRating',
-'author' => 'setAuthor',
-'back_finding' => 'setBackFinding',
-'band_material_type' => 'setBandMaterialType',
-'binding' => 'setBinding',
-'bluray_region' => 'setBlurayRegion',
-'brand' => 'setBrand',
-'cero_age_rating' => 'setCeroAgeRating',
-'chain_type' => 'setChainType',
-'clasp_type' => 'setClaspType',
-'color' => 'setColor',
-'cpu_manufacturer' => 'setCpuManufacturer',
-'cpu_speed' => 'setCpuSpeed',
-'cpu_type' => 'setCpuType',
-'creator' => 'setCreator',
-'department' => 'setDepartment',
-'director' => 'setDirector',
-'display_size' => 'setDisplaySize',
-'edition' => 'setEdition',
-'episode_sequence' => 'setEpisodeSequence',
-'esrb_age_rating' => 'setEsrbAgeRating',
-'feature' => 'setFeature',
-'flavor' => 'setFlavor',
-'format' => 'setFormat',
-'gem_type' => 'setGemType',
-'genre' => 'setGenre',
-'golf_club_flex' => 'setGolfClubFlex',
-'golf_club_loft' => 'setGolfClubLoft',
-'hand_orientation' => 'setHandOrientation',
-'hard_disk_interface' => 'setHardDiskInterface',
-'hard_disk_size' => 'setHardDiskSize',
-'hardware_platform' => 'setHardwarePlatform',
-'hazardous_material_type' => 'setHazardousMaterialType',
-'item_dimensions' => 'setItemDimensions',
-'is_adult_product' => 'setIsAdultProduct',
-'is_autographed' => 'setIsAutographed',
-'is_eligible_for_trade_in' => 'setIsEligibleForTradeIn',
-'is_memorabilia' => 'setIsMemorabilia',
-'issues_per_year' => 'setIssuesPerYear',
-'item_part_number' => 'setItemPartNumber',
-'label' => 'setLabel',
-'languages' => 'setLanguages',
-'legal_disclaimer' => 'setLegalDisclaimer',
-'list_price' => 'setListPrice',
-'manufacturer' => 'setManufacturer',
-'manufacturer_maximum_age' => 'setManufacturerMaximumAge',
-'manufacturer_minimum_age' => 'setManufacturerMinimumAge',
-'manufacturer_parts_warranty_description' => 'setManufacturerPartsWarrantyDescription',
-'material_type' => 'setMaterialType',
-'maximum_resolution' => 'setMaximumResolution',
-'media_type' => 'setMediaType',
-'metal_stamp' => 'setMetalStamp',
-'metal_type' => 'setMetalType',
-'model' => 'setModel',
-'number_of_discs' => 'setNumberOfDiscs',
-'number_of_issues' => 'setNumberOfIssues',
-'number_of_items' => 'setNumberOfItems',
-'number_of_pages' => 'setNumberOfPages',
-'number_of_tracks' => 'setNumberOfTracks',
-'operating_system' => 'setOperatingSystem',
-'optical_zoom' => 'setOpticalZoom',
-'package_dimensions' => 'setPackageDimensions',
-'package_quantity' => 'setPackageQuantity',
-'part_number' => 'setPartNumber',
-'pegi_rating' => 'setPegiRating',
-'platform' => 'setPlatform',
-'processor_count' => 'setProcessorCount',
-'product_group' => 'setProductGroup',
-'product_type_name' => 'setProductTypeName',
-'product_type_subcategory' => 'setProductTypeSubcategory',
-'publication_date' => 'setPublicationDate',
-'publisher' => 'setPublisher',
-'region_code' => 'setRegionCode',
-'release_date' => 'setReleaseDate',
-'ring_size' => 'setRingSize',
-'running_time' => 'setRunningTime',
-'shaft_material' => 'setShaftMaterial',
-'scent' => 'setScent',
-'season_sequence' => 'setSeasonSequence',
-'seikodo_product_code' => 'setSeikodoProductCode',
-'size' => 'setSize',
-'size_per_pearl' => 'setSizePerPearl',
-'small_image' => 'setSmallImage',
-'studio' => 'setStudio',
-'subscription_length' => 'setSubscriptionLength',
-'system_memory_size' => 'setSystemMemorySize',
-'system_memory_type' => 'setSystemMemoryType',
-'theatrical_release_date' => 'setTheatricalReleaseDate',
-'title' => 'setTitle',
-'total_diamond_weight' => 'setTotalDiamondWeight',
-'total_gem_weight' => 'setTotalGemWeight',
-'warranty' => 'setWarranty',
-'weee_tax_value' => 'setWeeeTaxValue',    ];
+        'actor'                                   => 'setActor',
+        'artist'                                  => 'setArtist',
+        'aspect_ratio'                            => 'setAspectRatio',
+        'audience_rating'                         => 'setAudienceRating',
+        'author'                                  => 'setAuthor',
+        'back_finding'                            => 'setBackFinding',
+        'band_material_type'                      => 'setBandMaterialType',
+        'binding'                                 => 'setBinding',
+        'bluray_region'                           => 'setBlurayRegion',
+        'brand'                                   => 'setBrand',
+        'cero_age_rating'                         => 'setCeroAgeRating',
+        'chain_type'                              => 'setChainType',
+        'clasp_type'                              => 'setClaspType',
+        'color'                                   => 'setColor',
+        'cpu_manufacturer'                        => 'setCpuManufacturer',
+        'cpu_speed'                               => 'setCpuSpeed',
+        'cpu_type'                                => 'setCpuType',
+        'creator'                                 => 'setCreator',
+        'department'                              => 'setDepartment',
+        'director'                                => 'setDirector',
+        'display_size'                            => 'setDisplaySize',
+        'edition'                                 => 'setEdition',
+        'episode_sequence'                        => 'setEpisodeSequence',
+        'esrb_age_rating'                         => 'setEsrbAgeRating',
+        'feature'                                 => 'setFeature',
+        'flavor'                                  => 'setFlavor',
+        'format'                                  => 'setFormat',
+        'gem_type'                                => 'setGemType',
+        'genre'                                   => 'setGenre',
+        'golf_club_flex'                          => 'setGolfClubFlex',
+        'golf_club_loft'                          => 'setGolfClubLoft',
+        'hand_orientation'                        => 'setHandOrientation',
+        'hard_disk_interface'                     => 'setHardDiskInterface',
+        'hard_disk_size'                          => 'setHardDiskSize',
+        'hardware_platform'                       => 'setHardwarePlatform',
+        'hazardous_material_type'                 => 'setHazardousMaterialType',
+        'item_dimensions'                         => 'setItemDimensions',
+        'is_adult_product'                        => 'setIsAdultProduct',
+        'is_autographed'                          => 'setIsAutographed',
+        'is_eligible_for_trade_in'                => 'setIsEligibleForTradeIn',
+        'is_memorabilia'                          => 'setIsMemorabilia',
+        'issues_per_year'                         => 'setIssuesPerYear',
+        'item_part_number'                        => 'setItemPartNumber',
+        'label'                                   => 'setLabel',
+        'languages'                               => 'setLanguages',
+        'legal_disclaimer'                        => 'setLegalDisclaimer',
+        'list_price'                              => 'setListPrice',
+        'manufacturer'                            => 'setManufacturer',
+        'manufacturer_maximum_age'                => 'setManufacturerMaximumAge',
+        'manufacturer_minimum_age'                => 'setManufacturerMinimumAge',
+        'manufacturer_parts_warranty_description' => 'setManufacturerPartsWarrantyDescription',
+        'material_type'                           => 'setMaterialType',
+        'maximum_resolution'                      => 'setMaximumResolution',
+        'media_type'                              => 'setMediaType',
+        'metal_stamp'                             => 'setMetalStamp',
+        'metal_type'                              => 'setMetalType',
+        'model'                                   => 'setModel',
+        'number_of_discs'                         => 'setNumberOfDiscs',
+        'number_of_issues'                        => 'setNumberOfIssues',
+        'number_of_items'                         => 'setNumberOfItems',
+        'number_of_pages'                         => 'setNumberOfPages',
+        'number_of_tracks'                        => 'setNumberOfTracks',
+        'operating_system'                        => 'setOperatingSystem',
+        'optical_zoom'                            => 'setOpticalZoom',
+        'package_dimensions'                      => 'setPackageDimensions',
+        'package_quantity'                        => 'setPackageQuantity',
+        'part_number'                             => 'setPartNumber',
+        'pegi_rating'                             => 'setPegiRating',
+        'platform'                                => 'setPlatform',
+        'processor_count'                         => 'setProcessorCount',
+        'product_group'                           => 'setProductGroup',
+        'product_type_name'                       => 'setProductTypeName',
+        'product_type_subcategory'                => 'setProductTypeSubcategory',
+        'publication_date'                        => 'setPublicationDate',
+        'publisher'                               => 'setPublisher',
+        'region_code'                             => 'setRegionCode',
+        'release_date'                            => 'setReleaseDate',
+        'ring_size'                               => 'setRingSize',
+        'running_time'                            => 'setRunningTime',
+        'shaft_material'                          => 'setShaftMaterial',
+        'scent'                                   => 'setScent',
+        'season_sequence'                         => 'setSeasonSequence',
+        'seikodo_product_code'                    => 'setSeikodoProductCode',
+        'size'                                    => 'setSize',
+        'size_per_pearl'                          => 'setSizePerPearl',
+        'small_image'                             => 'setSmallImage',
+        'studio'                                  => 'setStudio',
+        'subscription_length'                     => 'setSubscriptionLength',
+        'system_memory_size'                      => 'setSystemMemorySize',
+        'system_memory_type'                      => 'setSystemMemoryType',
+        'theatrical_release_date'                 => 'setTheatricalReleaseDate',
+        'title'                                   => 'setTitle',
+        'total_diamond_weight'                    => 'setTotalDiamondWeight',
+        'total_gem_weight'                        => 'setTotalGemWeight',
+        'warranty'                                => 'setWarranty',
+        'weee_tax_value'                          => 'setWeeeTaxValue',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -479,102 +475,102 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'actor' => 'getActor',
-'artist' => 'getArtist',
-'aspect_ratio' => 'getAspectRatio',
-'audience_rating' => 'getAudienceRating',
-'author' => 'getAuthor',
-'back_finding' => 'getBackFinding',
-'band_material_type' => 'getBandMaterialType',
-'binding' => 'getBinding',
-'bluray_region' => 'getBlurayRegion',
-'brand' => 'getBrand',
-'cero_age_rating' => 'getCeroAgeRating',
-'chain_type' => 'getChainType',
-'clasp_type' => 'getClaspType',
-'color' => 'getColor',
-'cpu_manufacturer' => 'getCpuManufacturer',
-'cpu_speed' => 'getCpuSpeed',
-'cpu_type' => 'getCpuType',
-'creator' => 'getCreator',
-'department' => 'getDepartment',
-'director' => 'getDirector',
-'display_size' => 'getDisplaySize',
-'edition' => 'getEdition',
-'episode_sequence' => 'getEpisodeSequence',
-'esrb_age_rating' => 'getEsrbAgeRating',
-'feature' => 'getFeature',
-'flavor' => 'getFlavor',
-'format' => 'getFormat',
-'gem_type' => 'getGemType',
-'genre' => 'getGenre',
-'golf_club_flex' => 'getGolfClubFlex',
-'golf_club_loft' => 'getGolfClubLoft',
-'hand_orientation' => 'getHandOrientation',
-'hard_disk_interface' => 'getHardDiskInterface',
-'hard_disk_size' => 'getHardDiskSize',
-'hardware_platform' => 'getHardwarePlatform',
-'hazardous_material_type' => 'getHazardousMaterialType',
-'item_dimensions' => 'getItemDimensions',
-'is_adult_product' => 'getIsAdultProduct',
-'is_autographed' => 'getIsAutographed',
-'is_eligible_for_trade_in' => 'getIsEligibleForTradeIn',
-'is_memorabilia' => 'getIsMemorabilia',
-'issues_per_year' => 'getIssuesPerYear',
-'item_part_number' => 'getItemPartNumber',
-'label' => 'getLabel',
-'languages' => 'getLanguages',
-'legal_disclaimer' => 'getLegalDisclaimer',
-'list_price' => 'getListPrice',
-'manufacturer' => 'getManufacturer',
-'manufacturer_maximum_age' => 'getManufacturerMaximumAge',
-'manufacturer_minimum_age' => 'getManufacturerMinimumAge',
-'manufacturer_parts_warranty_description' => 'getManufacturerPartsWarrantyDescription',
-'material_type' => 'getMaterialType',
-'maximum_resolution' => 'getMaximumResolution',
-'media_type' => 'getMediaType',
-'metal_stamp' => 'getMetalStamp',
-'metal_type' => 'getMetalType',
-'model' => 'getModel',
-'number_of_discs' => 'getNumberOfDiscs',
-'number_of_issues' => 'getNumberOfIssues',
-'number_of_items' => 'getNumberOfItems',
-'number_of_pages' => 'getNumberOfPages',
-'number_of_tracks' => 'getNumberOfTracks',
-'operating_system' => 'getOperatingSystem',
-'optical_zoom' => 'getOpticalZoom',
-'package_dimensions' => 'getPackageDimensions',
-'package_quantity' => 'getPackageQuantity',
-'part_number' => 'getPartNumber',
-'pegi_rating' => 'getPegiRating',
-'platform' => 'getPlatform',
-'processor_count' => 'getProcessorCount',
-'product_group' => 'getProductGroup',
-'product_type_name' => 'getProductTypeName',
-'product_type_subcategory' => 'getProductTypeSubcategory',
-'publication_date' => 'getPublicationDate',
-'publisher' => 'getPublisher',
-'region_code' => 'getRegionCode',
-'release_date' => 'getReleaseDate',
-'ring_size' => 'getRingSize',
-'running_time' => 'getRunningTime',
-'shaft_material' => 'getShaftMaterial',
-'scent' => 'getScent',
-'season_sequence' => 'getSeasonSequence',
-'seikodo_product_code' => 'getSeikodoProductCode',
-'size' => 'getSize',
-'size_per_pearl' => 'getSizePerPearl',
-'small_image' => 'getSmallImage',
-'studio' => 'getStudio',
-'subscription_length' => 'getSubscriptionLength',
-'system_memory_size' => 'getSystemMemorySize',
-'system_memory_type' => 'getSystemMemoryType',
-'theatrical_release_date' => 'getTheatricalReleaseDate',
-'title' => 'getTitle',
-'total_diamond_weight' => 'getTotalDiamondWeight',
-'total_gem_weight' => 'getTotalGemWeight',
-'warranty' => 'getWarranty',
-'weee_tax_value' => 'getWeeeTaxValue',    ];
+        'actor'                                   => 'getActor',
+        'artist'                                  => 'getArtist',
+        'aspect_ratio'                            => 'getAspectRatio',
+        'audience_rating'                         => 'getAudienceRating',
+        'author'                                  => 'getAuthor',
+        'back_finding'                            => 'getBackFinding',
+        'band_material_type'                      => 'getBandMaterialType',
+        'binding'                                 => 'getBinding',
+        'bluray_region'                           => 'getBlurayRegion',
+        'brand'                                   => 'getBrand',
+        'cero_age_rating'                         => 'getCeroAgeRating',
+        'chain_type'                              => 'getChainType',
+        'clasp_type'                              => 'getClaspType',
+        'color'                                   => 'getColor',
+        'cpu_manufacturer'                        => 'getCpuManufacturer',
+        'cpu_speed'                               => 'getCpuSpeed',
+        'cpu_type'                                => 'getCpuType',
+        'creator'                                 => 'getCreator',
+        'department'                              => 'getDepartment',
+        'director'                                => 'getDirector',
+        'display_size'                            => 'getDisplaySize',
+        'edition'                                 => 'getEdition',
+        'episode_sequence'                        => 'getEpisodeSequence',
+        'esrb_age_rating'                         => 'getEsrbAgeRating',
+        'feature'                                 => 'getFeature',
+        'flavor'                                  => 'getFlavor',
+        'format'                                  => 'getFormat',
+        'gem_type'                                => 'getGemType',
+        'genre'                                   => 'getGenre',
+        'golf_club_flex'                          => 'getGolfClubFlex',
+        'golf_club_loft'                          => 'getGolfClubLoft',
+        'hand_orientation'                        => 'getHandOrientation',
+        'hard_disk_interface'                     => 'getHardDiskInterface',
+        'hard_disk_size'                          => 'getHardDiskSize',
+        'hardware_platform'                       => 'getHardwarePlatform',
+        'hazardous_material_type'                 => 'getHazardousMaterialType',
+        'item_dimensions'                         => 'getItemDimensions',
+        'is_adult_product'                        => 'getIsAdultProduct',
+        'is_autographed'                          => 'getIsAutographed',
+        'is_eligible_for_trade_in'                => 'getIsEligibleForTradeIn',
+        'is_memorabilia'                          => 'getIsMemorabilia',
+        'issues_per_year'                         => 'getIssuesPerYear',
+        'item_part_number'                        => 'getItemPartNumber',
+        'label'                                   => 'getLabel',
+        'languages'                               => 'getLanguages',
+        'legal_disclaimer'                        => 'getLegalDisclaimer',
+        'list_price'                              => 'getListPrice',
+        'manufacturer'                            => 'getManufacturer',
+        'manufacturer_maximum_age'                => 'getManufacturerMaximumAge',
+        'manufacturer_minimum_age'                => 'getManufacturerMinimumAge',
+        'manufacturer_parts_warranty_description' => 'getManufacturerPartsWarrantyDescription',
+        'material_type'                           => 'getMaterialType',
+        'maximum_resolution'                      => 'getMaximumResolution',
+        'media_type'                              => 'getMediaType',
+        'metal_stamp'                             => 'getMetalStamp',
+        'metal_type'                              => 'getMetalType',
+        'model'                                   => 'getModel',
+        'number_of_discs'                         => 'getNumberOfDiscs',
+        'number_of_issues'                        => 'getNumberOfIssues',
+        'number_of_items'                         => 'getNumberOfItems',
+        'number_of_pages'                         => 'getNumberOfPages',
+        'number_of_tracks'                        => 'getNumberOfTracks',
+        'operating_system'                        => 'getOperatingSystem',
+        'optical_zoom'                            => 'getOpticalZoom',
+        'package_dimensions'                      => 'getPackageDimensions',
+        'package_quantity'                        => 'getPackageQuantity',
+        'part_number'                             => 'getPartNumber',
+        'pegi_rating'                             => 'getPegiRating',
+        'platform'                                => 'getPlatform',
+        'processor_count'                         => 'getProcessorCount',
+        'product_group'                           => 'getProductGroup',
+        'product_type_name'                       => 'getProductTypeName',
+        'product_type_subcategory'                => 'getProductTypeSubcategory',
+        'publication_date'                        => 'getPublicationDate',
+        'publisher'                               => 'getPublisher',
+        'region_code'                             => 'getRegionCode',
+        'release_date'                            => 'getReleaseDate',
+        'ring_size'                               => 'getRingSize',
+        'running_time'                            => 'getRunningTime',
+        'shaft_material'                          => 'getShaftMaterial',
+        'scent'                                   => 'getScent',
+        'season_sequence'                         => 'getSeasonSequence',
+        'seikodo_product_code'                    => 'getSeikodoProductCode',
+        'size'                                    => 'getSize',
+        'size_per_pearl'                          => 'getSizePerPearl',
+        'small_image'                             => 'getSmallImage',
+        'studio'                                  => 'getStudio',
+        'subscription_length'                     => 'getSubscriptionLength',
+        'system_memory_size'                      => 'getSystemMemorySize',
+        'system_memory_type'                      => 'getSystemMemoryType',
+        'theatrical_release_date'                 => 'getTheatricalReleaseDate',
+        'title'                                   => 'getTitle',
+        'total_diamond_weight'                    => 'getTotalDiamondWeight',
+        'total_gem_weight'                        => 'getTotalGemWeight',
+        'warranty'                                => 'getWarranty',
+        'weee_tax_value'                          => 'getWeeeTaxValue',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -582,8 +578,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -592,8 +587,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -602,8 +596,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -612,8 +605,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -630,8 +622,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['actor'] = isset($data['actor']) ? $data['actor'] : null;
         $this->container['artist'] = isset($data['artist']) ? $data['artist'] : null;
         $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
@@ -735,8 +726,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -748,8 +738,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -758,8 +747,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getActor()
-    {
+    public function getActor() {
         return $this->container['actor'];
     }
 
@@ -770,8 +758,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setActor($actor)
-    {
+    public function setActor($actor) {
         $this->container['actor'] = $actor;
 
         return $this;
@@ -782,8 +769,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getArtist()
-    {
+    public function getArtist() {
         return $this->container['artist'];
     }
 
@@ -794,8 +780,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setArtist($artist)
-    {
+    public function setArtist($artist) {
         $this->container['artist'] = $artist;
 
         return $this;
@@ -806,8 +791,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getAspectRatio()
-    {
+    public function getAspectRatio() {
         return $this->container['aspect_ratio'];
     }
 
@@ -818,8 +802,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setAspectRatio($aspect_ratio)
-    {
+    public function setAspectRatio($aspect_ratio) {
         $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
@@ -830,8 +813,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getAudienceRating()
-    {
+    public function getAudienceRating() {
         return $this->container['audience_rating'];
     }
 
@@ -842,8 +824,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setAudienceRating($audience_rating)
-    {
+    public function setAudienceRating($audience_rating) {
         $this->container['audience_rating'] = $audience_rating;
 
         return $this;
@@ -854,8 +835,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getAuthor()
-    {
+    public function getAuthor() {
         return $this->container['author'];
     }
 
@@ -866,8 +846,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setAuthor($author)
-    {
+    public function setAuthor($author) {
         $this->container['author'] = $author;
 
         return $this;
@@ -878,8 +857,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getBackFinding()
-    {
+    public function getBackFinding() {
         return $this->container['back_finding'];
     }
 
@@ -890,8 +868,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setBackFinding($back_finding)
-    {
+    public function setBackFinding($back_finding) {
         $this->container['back_finding'] = $back_finding;
 
         return $this;
@@ -902,8 +879,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getBandMaterialType()
-    {
+    public function getBandMaterialType() {
         return $this->container['band_material_type'];
     }
 
@@ -914,8 +890,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setBandMaterialType($band_material_type)
-    {
+    public function setBandMaterialType($band_material_type) {
         $this->container['band_material_type'] = $band_material_type;
 
         return $this;
@@ -926,8 +901,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getBinding()
-    {
+    public function getBinding() {
         return $this->container['binding'];
     }
 
@@ -938,8 +912,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setBinding($binding)
-    {
+    public function setBinding($binding) {
         $this->container['binding'] = $binding;
 
         return $this;
@@ -950,8 +923,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getBlurayRegion()
-    {
+    public function getBlurayRegion() {
         return $this->container['bluray_region'];
     }
 
@@ -962,8 +934,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setBlurayRegion($bluray_region)
-    {
+    public function setBlurayRegion($bluray_region) {
         $this->container['bluray_region'] = $bluray_region;
 
         return $this;
@@ -974,8 +945,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getBrand()
-    {
+    public function getBrand() {
         return $this->container['brand'];
     }
 
@@ -986,8 +956,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setBrand($brand)
-    {
+    public function setBrand($brand) {
         $this->container['brand'] = $brand;
 
         return $this;
@@ -998,8 +967,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getCeroAgeRating()
-    {
+    public function getCeroAgeRating() {
         return $this->container['cero_age_rating'];
     }
 
@@ -1010,8 +978,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setCeroAgeRating($cero_age_rating)
-    {
+    public function setCeroAgeRating($cero_age_rating) {
         $this->container['cero_age_rating'] = $cero_age_rating;
 
         return $this;
@@ -1022,8 +989,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getChainType()
-    {
+    public function getChainType() {
         return $this->container['chain_type'];
     }
 
@@ -1034,8 +1000,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setChainType($chain_type)
-    {
+    public function setChainType($chain_type) {
         $this->container['chain_type'] = $chain_type;
 
         return $this;
@@ -1046,8 +1011,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getClaspType()
-    {
+    public function getClaspType() {
         return $this->container['clasp_type'];
     }
 
@@ -1058,8 +1022,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setClaspType($clasp_type)
-    {
+    public function setClaspType($clasp_type) {
         $this->container['clasp_type'] = $clasp_type;
 
         return $this;
@@ -1070,8 +1033,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getColor()
-    {
+    public function getColor() {
         return $this->container['color'];
     }
 
@@ -1082,8 +1044,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setColor($color)
-    {
+    public function setColor($color) {
         $this->container['color'] = $color;
 
         return $this;
@@ -1094,8 +1055,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getCpuManufacturer()
-    {
+    public function getCpuManufacturer() {
         return $this->container['cpu_manufacturer'];
     }
 
@@ -1106,8 +1066,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setCpuManufacturer($cpu_manufacturer)
-    {
+    public function setCpuManufacturer($cpu_manufacturer) {
         $this->container['cpu_manufacturer'] = $cpu_manufacturer;
 
         return $this;
@@ -1116,22 +1075,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets cpu_speed.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getCpuSpeed()
-    {
+    public function getCpuSpeed() {
         return $this->container['cpu_speed'];
     }
 
     /**
      * Sets cpu_speed.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $cpu_speed cpu_speed
+     * @param DecimalWithUnits $cpu_speed cpu_speed
      *
      * @return $this
      */
-    public function setCpuSpeed($cpu_speed)
-    {
+    public function setCpuSpeed($cpu_speed) {
         $this->container['cpu_speed'] = $cpu_speed;
 
         return $this;
@@ -1142,8 +1099,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getCpuType()
-    {
+    public function getCpuType() {
         return $this->container['cpu_type'];
     }
 
@@ -1154,8 +1110,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setCpuType($cpu_type)
-    {
+    public function setCpuType($cpu_type) {
         $this->container['cpu_type'] = $cpu_type;
 
         return $this;
@@ -1164,22 +1119,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets creator.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\CreatorType[]
+     * @return CreatorType[]
      */
-    public function getCreator()
-    {
+    public function getCreator() {
         return $this->container['creator'];
     }
 
     /**
      * Sets creator.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\CreatorType[] $creator the creator attributes of the item
+     * @param CreatorType[] $creator the creator attributes of the item
      *
      * @return $this
      */
-    public function setCreator($creator)
-    {
+    public function setCreator($creator) {
         $this->container['creator'] = $creator;
 
         return $this;
@@ -1190,8 +1143,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getDepartment()
-    {
+    public function getDepartment() {
         return $this->container['department'];
     }
 
@@ -1202,8 +1154,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setDepartment($department)
-    {
+    public function setDepartment($department) {
         $this->container['department'] = $department;
 
         return $this;
@@ -1214,8 +1165,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getDirector()
-    {
+    public function getDirector() {
         return $this->container['director'];
     }
 
@@ -1226,8 +1176,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setDirector($director)
-    {
+    public function setDirector($director) {
         $this->container['director'] = $director;
 
         return $this;
@@ -1236,22 +1185,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets display_size.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getDisplaySize()
-    {
+    public function getDisplaySize() {
         return $this->container['display_size'];
     }
 
     /**
      * Sets display_size.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $display_size display_size
+     * @param DecimalWithUnits $display_size display_size
      *
      * @return $this
      */
-    public function setDisplaySize($display_size)
-    {
+    public function setDisplaySize($display_size) {
         $this->container['display_size'] = $display_size;
 
         return $this;
@@ -1262,8 +1209,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getEdition()
-    {
+    public function getEdition() {
         return $this->container['edition'];
     }
 
@@ -1274,8 +1220,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setEdition($edition)
-    {
+    public function setEdition($edition) {
         $this->container['edition'] = $edition;
 
         return $this;
@@ -1286,8 +1231,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getEpisodeSequence()
-    {
+    public function getEpisodeSequence() {
         return $this->container['episode_sequence'];
     }
 
@@ -1298,8 +1242,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setEpisodeSequence($episode_sequence)
-    {
+    public function setEpisodeSequence($episode_sequence) {
         $this->container['episode_sequence'] = $episode_sequence;
 
         return $this;
@@ -1310,8 +1253,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getEsrbAgeRating()
-    {
+    public function getEsrbAgeRating() {
         return $this->container['esrb_age_rating'];
     }
 
@@ -1322,8 +1264,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setEsrbAgeRating($esrb_age_rating)
-    {
+    public function setEsrbAgeRating($esrb_age_rating) {
         $this->container['esrb_age_rating'] = $esrb_age_rating;
 
         return $this;
@@ -1334,8 +1275,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getFeature()
-    {
+    public function getFeature() {
         return $this->container['feature'];
     }
 
@@ -1346,8 +1286,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setFeature($feature)
-    {
+    public function setFeature($feature) {
         $this->container['feature'] = $feature;
 
         return $this;
@@ -1358,8 +1297,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getFlavor()
-    {
+    public function getFlavor() {
         return $this->container['flavor'];
     }
 
@@ -1370,8 +1308,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setFlavor($flavor)
-    {
+    public function setFlavor($flavor) {
         $this->container['flavor'] = $flavor;
 
         return $this;
@@ -1382,8 +1319,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getFormat()
-    {
+    public function getFormat() {
         return $this->container['format'];
     }
 
@@ -1394,8 +1330,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setFormat($format)
-    {
+    public function setFormat($format) {
         $this->container['format'] = $format;
 
         return $this;
@@ -1406,8 +1341,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getGemType()
-    {
+    public function getGemType() {
         return $this->container['gem_type'];
     }
 
@@ -1418,8 +1352,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setGemType($gem_type)
-    {
+    public function setGemType($gem_type) {
         $this->container['gem_type'] = $gem_type;
 
         return $this;
@@ -1430,8 +1363,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getGenre()
-    {
+    public function getGenre() {
         return $this->container['genre'];
     }
 
@@ -1442,8 +1374,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setGenre($genre)
-    {
+    public function setGenre($genre) {
         $this->container['genre'] = $genre;
 
         return $this;
@@ -1454,8 +1385,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getGolfClubFlex()
-    {
+    public function getGolfClubFlex() {
         return $this->container['golf_club_flex'];
     }
 
@@ -1466,8 +1396,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setGolfClubFlex($golf_club_flex)
-    {
+    public function setGolfClubFlex($golf_club_flex) {
         $this->container['golf_club_flex'] = $golf_club_flex;
 
         return $this;
@@ -1476,22 +1405,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets golf_club_loft.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getGolfClubLoft()
-    {
+    public function getGolfClubLoft() {
         return $this->container['golf_club_loft'];
     }
 
     /**
      * Sets golf_club_loft.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $golf_club_loft golf_club_loft
+     * @param DecimalWithUnits $golf_club_loft golf_club_loft
      *
      * @return $this
      */
-    public function setGolfClubLoft($golf_club_loft)
-    {
+    public function setGolfClubLoft($golf_club_loft) {
         $this->container['golf_club_loft'] = $golf_club_loft;
 
         return $this;
@@ -1502,8 +1429,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getHandOrientation()
-    {
+    public function getHandOrientation() {
         return $this->container['hand_orientation'];
     }
 
@@ -1514,8 +1440,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setHandOrientation($hand_orientation)
-    {
+    public function setHandOrientation($hand_orientation) {
         $this->container['hand_orientation'] = $hand_orientation;
 
         return $this;
@@ -1526,8 +1451,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getHardDiskInterface()
-    {
+    public function getHardDiskInterface() {
         return $this->container['hard_disk_interface'];
     }
 
@@ -1538,8 +1462,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setHardDiskInterface($hard_disk_interface)
-    {
+    public function setHardDiskInterface($hard_disk_interface) {
         $this->container['hard_disk_interface'] = $hard_disk_interface;
 
         return $this;
@@ -1548,22 +1471,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets hard_disk_size.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getHardDiskSize()
-    {
+    public function getHardDiskSize() {
         return $this->container['hard_disk_size'];
     }
 
     /**
      * Sets hard_disk_size.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $hard_disk_size hard_disk_size
+     * @param DecimalWithUnits $hard_disk_size hard_disk_size
      *
      * @return $this
      */
-    public function setHardDiskSize($hard_disk_size)
-    {
+    public function setHardDiskSize($hard_disk_size) {
         $this->container['hard_disk_size'] = $hard_disk_size;
 
         return $this;
@@ -1574,8 +1495,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getHardwarePlatform()
-    {
+    public function getHardwarePlatform() {
         return $this->container['hardware_platform'];
     }
 
@@ -1586,8 +1506,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setHardwarePlatform($hardware_platform)
-    {
+    public function setHardwarePlatform($hardware_platform) {
         $this->container['hardware_platform'] = $hardware_platform;
 
         return $this;
@@ -1598,8 +1517,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getHazardousMaterialType()
-    {
+    public function getHazardousMaterialType() {
         return $this->container['hazardous_material_type'];
     }
 
@@ -1610,8 +1528,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setHazardousMaterialType($hazardous_material_type)
-    {
+    public function setHazardousMaterialType($hazardous_material_type) {
         $this->container['hazardous_material_type'] = $hazardous_material_type;
 
         return $this;
@@ -1620,22 +1537,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets item_dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType
+     * @return DimensionType
      */
-    public function getItemDimensions()
-    {
+    public function getItemDimensions() {
         return $this->container['item_dimensions'];
     }
 
     /**
      * Sets item_dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType $item_dimensions item_dimensions
+     * @param DimensionType $item_dimensions item_dimensions
      *
      * @return $this
      */
-    public function setItemDimensions($item_dimensions)
-    {
+    public function setItemDimensions($item_dimensions) {
         $this->container['item_dimensions'] = $item_dimensions;
 
         return $this;
@@ -1646,8 +1561,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return bool
      */
-    public function getIsAdultProduct()
-    {
+    public function getIsAdultProduct() {
         return $this->container['is_adult_product'];
     }
 
@@ -1658,8 +1572,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setIsAdultProduct($is_adult_product)
-    {
+    public function setIsAdultProduct($is_adult_product) {
         $this->container['is_adult_product'] = $is_adult_product;
 
         return $this;
@@ -1670,8 +1583,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return bool
      */
-    public function getIsAutographed()
-    {
+    public function getIsAutographed() {
         return $this->container['is_autographed'];
     }
 
@@ -1682,8 +1594,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setIsAutographed($is_autographed)
-    {
+    public function setIsAutographed($is_autographed) {
         $this->container['is_autographed'] = $is_autographed;
 
         return $this;
@@ -1694,8 +1605,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return bool
      */
-    public function getIsEligibleForTradeIn()
-    {
+    public function getIsEligibleForTradeIn() {
         return $this->container['is_eligible_for_trade_in'];
     }
 
@@ -1706,8 +1616,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setIsEligibleForTradeIn($is_eligible_for_trade_in)
-    {
+    public function setIsEligibleForTradeIn($is_eligible_for_trade_in) {
         $this->container['is_eligible_for_trade_in'] = $is_eligible_for_trade_in;
 
         return $this;
@@ -1718,8 +1627,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return bool
      */
-    public function getIsMemorabilia()
-    {
+    public function getIsMemorabilia() {
         return $this->container['is_memorabilia'];
     }
 
@@ -1730,8 +1638,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setIsMemorabilia($is_memorabilia)
-    {
+    public function setIsMemorabilia($is_memorabilia) {
         $this->container['is_memorabilia'] = $is_memorabilia;
 
         return $this;
@@ -1742,8 +1649,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getIssuesPerYear()
-    {
+    public function getIssuesPerYear() {
         return $this->container['issues_per_year'];
     }
 
@@ -1754,8 +1660,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setIssuesPerYear($issues_per_year)
-    {
+    public function setIssuesPerYear($issues_per_year) {
         $this->container['issues_per_year'] = $issues_per_year;
 
         return $this;
@@ -1766,8 +1671,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getItemPartNumber()
-    {
+    public function getItemPartNumber() {
         return $this->container['item_part_number'];
     }
 
@@ -1778,8 +1682,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setItemPartNumber($item_part_number)
-    {
+    public function setItemPartNumber($item_part_number) {
         $this->container['item_part_number'] = $item_part_number;
 
         return $this;
@@ -1790,8 +1693,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getLabel()
-    {
+    public function getLabel() {
         return $this->container['label'];
     }
 
@@ -1802,8 +1704,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setLabel($label)
-    {
+    public function setLabel($label) {
         $this->container['label'] = $label;
 
         return $this;
@@ -1812,22 +1713,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets languages.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\LanguageType[]
+     * @return LanguageType[]
      */
-    public function getLanguages()
-    {
+    public function getLanguages() {
         return $this->container['languages'];
     }
 
     /**
      * Sets languages.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\LanguageType[] $languages the languages attribute of the item
+     * @param LanguageType[] $languages the languages attribute of the item
      *
      * @return $this
      */
-    public function setLanguages($languages)
-    {
+    public function setLanguages($languages) {
         $this->container['languages'] = $languages;
 
         return $this;
@@ -1838,8 +1737,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getLegalDisclaimer()
-    {
+    public function getLegalDisclaimer() {
         return $this->container['legal_disclaimer'];
     }
 
@@ -1850,8 +1748,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setLegalDisclaimer($legal_disclaimer)
-    {
+    public function setLegalDisclaimer($legal_disclaimer) {
         $this->container['legal_disclaimer'] = $legal_disclaimer;
 
         return $this;
@@ -1860,22 +1757,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets list_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Price
+     * @return Price
      */
-    public function getListPrice()
-    {
+    public function getListPrice() {
         return $this->container['list_price'];
     }
 
     /**
      * Sets list_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Price $list_price list_price
+     * @param Price $list_price list_price
      *
      * @return $this
      */
-    public function setListPrice($list_price)
-    {
+    public function setListPrice($list_price) {
         $this->container['list_price'] = $list_price;
 
         return $this;
@@ -1886,8 +1781,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getManufacturer()
-    {
+    public function getManufacturer() {
         return $this->container['manufacturer'];
     }
 
@@ -1898,8 +1792,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setManufacturer($manufacturer)
-    {
+    public function setManufacturer($manufacturer) {
         $this->container['manufacturer'] = $manufacturer;
 
         return $this;
@@ -1908,22 +1801,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets manufacturer_maximum_age.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getManufacturerMaximumAge()
-    {
+    public function getManufacturerMaximumAge() {
         return $this->container['manufacturer_maximum_age'];
     }
 
     /**
      * Sets manufacturer_maximum_age.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $manufacturer_maximum_age manufacturer_maximum_age
+     * @param DecimalWithUnits $manufacturer_maximum_age manufacturer_maximum_age
      *
      * @return $this
      */
-    public function setManufacturerMaximumAge($manufacturer_maximum_age)
-    {
+    public function setManufacturerMaximumAge($manufacturer_maximum_age) {
         $this->container['manufacturer_maximum_age'] = $manufacturer_maximum_age;
 
         return $this;
@@ -1932,22 +1823,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets manufacturer_minimum_age.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getManufacturerMinimumAge()
-    {
+    public function getManufacturerMinimumAge() {
         return $this->container['manufacturer_minimum_age'];
     }
 
     /**
      * Sets manufacturer_minimum_age.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $manufacturer_minimum_age manufacturer_minimum_age
+     * @param DecimalWithUnits $manufacturer_minimum_age manufacturer_minimum_age
      *
      * @return $this
      */
-    public function setManufacturerMinimumAge($manufacturer_minimum_age)
-    {
+    public function setManufacturerMinimumAge($manufacturer_minimum_age) {
         $this->container['manufacturer_minimum_age'] = $manufacturer_minimum_age;
 
         return $this;
@@ -1958,8 +1847,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getManufacturerPartsWarrantyDescription()
-    {
+    public function getManufacturerPartsWarrantyDescription() {
         return $this->container['manufacturer_parts_warranty_description'];
     }
 
@@ -1970,8 +1858,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setManufacturerPartsWarrantyDescription($manufacturer_parts_warranty_description)
-    {
+    public function setManufacturerPartsWarrantyDescription($manufacturer_parts_warranty_description) {
         $this->container['manufacturer_parts_warranty_description'] = $manufacturer_parts_warranty_description;
 
         return $this;
@@ -1982,8 +1869,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getMaterialType()
-    {
+    public function getMaterialType() {
         return $this->container['material_type'];
     }
 
@@ -1994,8 +1880,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setMaterialType($material_type)
-    {
+    public function setMaterialType($material_type) {
         $this->container['material_type'] = $material_type;
 
         return $this;
@@ -2004,22 +1889,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets maximum_resolution.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getMaximumResolution()
-    {
+    public function getMaximumResolution() {
         return $this->container['maximum_resolution'];
     }
 
     /**
      * Sets maximum_resolution.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $maximum_resolution maximum_resolution
+     * @param DecimalWithUnits $maximum_resolution maximum_resolution
      *
      * @return $this
      */
-    public function setMaximumResolution($maximum_resolution)
-    {
+    public function setMaximumResolution($maximum_resolution) {
         $this->container['maximum_resolution'] = $maximum_resolution;
 
         return $this;
@@ -2030,8 +1913,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getMediaType()
-    {
+    public function getMediaType() {
         return $this->container['media_type'];
     }
 
@@ -2042,8 +1924,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setMediaType($media_type)
-    {
+    public function setMediaType($media_type) {
         $this->container['media_type'] = $media_type;
 
         return $this;
@@ -2054,8 +1935,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getMetalStamp()
-    {
+    public function getMetalStamp() {
         return $this->container['metal_stamp'];
     }
 
@@ -2066,8 +1946,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setMetalStamp($metal_stamp)
-    {
+    public function setMetalStamp($metal_stamp) {
         $this->container['metal_stamp'] = $metal_stamp;
 
         return $this;
@@ -2078,8 +1957,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getMetalType()
-    {
+    public function getMetalType() {
         return $this->container['metal_type'];
     }
 
@@ -2090,8 +1968,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setMetalType($metal_type)
-    {
+    public function setMetalType($metal_type) {
         $this->container['metal_type'] = $metal_type;
 
         return $this;
@@ -2102,8 +1979,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getModel()
-    {
+    public function getModel() {
         return $this->container['model'];
     }
 
@@ -2114,8 +1990,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setModel($model)
-    {
+    public function setModel($model) {
         $this->container['model'] = $model;
 
         return $this;
@@ -2126,8 +2001,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getNumberOfDiscs()
-    {
+    public function getNumberOfDiscs() {
         return $this->container['number_of_discs'];
     }
 
@@ -2138,8 +2012,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setNumberOfDiscs($number_of_discs)
-    {
+    public function setNumberOfDiscs($number_of_discs) {
         $this->container['number_of_discs'] = $number_of_discs;
 
         return $this;
@@ -2150,8 +2023,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getNumberOfIssues()
-    {
+    public function getNumberOfIssues() {
         return $this->container['number_of_issues'];
     }
 
@@ -2162,8 +2034,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setNumberOfIssues($number_of_issues)
-    {
+    public function setNumberOfIssues($number_of_issues) {
         $this->container['number_of_issues'] = $number_of_issues;
 
         return $this;
@@ -2174,8 +2045,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getNumberOfItems()
-    {
+    public function getNumberOfItems() {
         return $this->container['number_of_items'];
     }
 
@@ -2186,8 +2056,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setNumberOfItems($number_of_items)
-    {
+    public function setNumberOfItems($number_of_items) {
         $this->container['number_of_items'] = $number_of_items;
 
         return $this;
@@ -2198,8 +2067,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getNumberOfPages()
-    {
+    public function getNumberOfPages() {
         return $this->container['number_of_pages'];
     }
 
@@ -2210,8 +2078,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setNumberOfPages($number_of_pages)
-    {
+    public function setNumberOfPages($number_of_pages) {
         $this->container['number_of_pages'] = $number_of_pages;
 
         return $this;
@@ -2222,8 +2089,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getNumberOfTracks()
-    {
+    public function getNumberOfTracks() {
         return $this->container['number_of_tracks'];
     }
 
@@ -2234,8 +2100,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setNumberOfTracks($number_of_tracks)
-    {
+    public function setNumberOfTracks($number_of_tracks) {
         $this->container['number_of_tracks'] = $number_of_tracks;
 
         return $this;
@@ -2246,8 +2111,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getOperatingSystem()
-    {
+    public function getOperatingSystem() {
         return $this->container['operating_system'];
     }
 
@@ -2258,8 +2122,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setOperatingSystem($operating_system)
-    {
+    public function setOperatingSystem($operating_system) {
         $this->container['operating_system'] = $operating_system;
 
         return $this;
@@ -2268,22 +2131,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets optical_zoom.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getOpticalZoom()
-    {
+    public function getOpticalZoom() {
         return $this->container['optical_zoom'];
     }
 
     /**
      * Sets optical_zoom.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $optical_zoom optical_zoom
+     * @param DecimalWithUnits $optical_zoom optical_zoom
      *
      * @return $this
      */
-    public function setOpticalZoom($optical_zoom)
-    {
+    public function setOpticalZoom($optical_zoom) {
         $this->container['optical_zoom'] = $optical_zoom;
 
         return $this;
@@ -2292,22 +2153,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets package_dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType
+     * @return DimensionType
      */
-    public function getPackageDimensions()
-    {
+    public function getPackageDimensions() {
         return $this->container['package_dimensions'];
     }
 
     /**
      * Sets package_dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType $package_dimensions package_dimensions
+     * @param DimensionType $package_dimensions package_dimensions
      *
      * @return $this
      */
-    public function setPackageDimensions($package_dimensions)
-    {
+    public function setPackageDimensions($package_dimensions) {
         $this->container['package_dimensions'] = $package_dimensions;
 
         return $this;
@@ -2318,8 +2177,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getPackageQuantity()
-    {
+    public function getPackageQuantity() {
         return $this->container['package_quantity'];
     }
 
@@ -2330,8 +2188,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setPackageQuantity($package_quantity)
-    {
+    public function setPackageQuantity($package_quantity) {
         $this->container['package_quantity'] = $package_quantity;
 
         return $this;
@@ -2342,8 +2199,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getPartNumber()
-    {
+    public function getPartNumber() {
         return $this->container['part_number'];
     }
 
@@ -2354,8 +2210,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setPartNumber($part_number)
-    {
+    public function setPartNumber($part_number) {
         $this->container['part_number'] = $part_number;
 
         return $this;
@@ -2366,8 +2221,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getPegiRating()
-    {
+    public function getPegiRating() {
         return $this->container['pegi_rating'];
     }
 
@@ -2378,8 +2232,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setPegiRating($pegi_rating)
-    {
+    public function setPegiRating($pegi_rating) {
         $this->container['pegi_rating'] = $pegi_rating;
 
         return $this;
@@ -2390,8 +2243,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string[]
      */
-    public function getPlatform()
-    {
+    public function getPlatform() {
         return $this->container['platform'];
     }
 
@@ -2402,8 +2254,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setPlatform($platform)
-    {
+    public function setPlatform($platform) {
         $this->container['platform'] = $platform;
 
         return $this;
@@ -2414,8 +2265,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return int
      */
-    public function getProcessorCount()
-    {
+    public function getProcessorCount() {
         return $this->container['processor_count'];
     }
 
@@ -2426,8 +2276,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setProcessorCount($processor_count)
-    {
+    public function setProcessorCount($processor_count) {
         $this->container['processor_count'] = $processor_count;
 
         return $this;
@@ -2438,8 +2287,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getProductGroup()
-    {
+    public function getProductGroup() {
         return $this->container['product_group'];
     }
 
@@ -2450,8 +2298,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setProductGroup($product_group)
-    {
+    public function setProductGroup($product_group) {
         $this->container['product_group'] = $product_group;
 
         return $this;
@@ -2462,8 +2309,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getProductTypeName()
-    {
+    public function getProductTypeName() {
         return $this->container['product_type_name'];
     }
 
@@ -2474,8 +2320,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setProductTypeName($product_type_name)
-    {
+    public function setProductTypeName($product_type_name) {
         $this->container['product_type_name'] = $product_type_name;
 
         return $this;
@@ -2486,8 +2331,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getProductTypeSubcategory()
-    {
+    public function getProductTypeSubcategory() {
         return $this->container['product_type_subcategory'];
     }
 
@@ -2498,8 +2342,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setProductTypeSubcategory($product_type_subcategory)
-    {
+    public function setProductTypeSubcategory($product_type_subcategory) {
         $this->container['product_type_subcategory'] = $product_type_subcategory;
 
         return $this;
@@ -2510,8 +2353,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getPublicationDate()
-    {
+    public function getPublicationDate() {
         return $this->container['publication_date'];
     }
 
@@ -2522,8 +2364,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setPublicationDate($publication_date)
-    {
+    public function setPublicationDate($publication_date) {
         $this->container['publication_date'] = $publication_date;
 
         return $this;
@@ -2534,8 +2375,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->container['publisher'];
     }
 
@@ -2546,8 +2386,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->container['publisher'] = $publisher;
 
         return $this;
@@ -2558,8 +2397,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getRegionCode()
-    {
+    public function getRegionCode() {
         return $this->container['region_code'];
     }
 
@@ -2570,8 +2408,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setRegionCode($region_code)
-    {
+    public function setRegionCode($region_code) {
         $this->container['region_code'] = $region_code;
 
         return $this;
@@ -2582,8 +2419,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getReleaseDate()
-    {
+    public function getReleaseDate() {
         return $this->container['release_date'];
     }
 
@@ -2594,8 +2430,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setReleaseDate($release_date)
-    {
+    public function setReleaseDate($release_date) {
         $this->container['release_date'] = $release_date;
 
         return $this;
@@ -2606,8 +2441,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getRingSize()
-    {
+    public function getRingSize() {
         return $this->container['ring_size'];
     }
 
@@ -2618,8 +2452,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setRingSize($ring_size)
-    {
+    public function setRingSize($ring_size) {
         $this->container['ring_size'] = $ring_size;
 
         return $this;
@@ -2628,22 +2461,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets running_time.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getRunningTime()
-    {
+    public function getRunningTime() {
         return $this->container['running_time'];
     }
 
     /**
      * Sets running_time.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $running_time running_time
+     * @param DecimalWithUnits $running_time running_time
      *
      * @return $this
      */
-    public function setRunningTime($running_time)
-    {
+    public function setRunningTime($running_time) {
         $this->container['running_time'] = $running_time;
 
         return $this;
@@ -2654,8 +2485,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getShaftMaterial()
-    {
+    public function getShaftMaterial() {
         return $this->container['shaft_material'];
     }
 
@@ -2666,8 +2496,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setShaftMaterial($shaft_material)
-    {
+    public function setShaftMaterial($shaft_material) {
         $this->container['shaft_material'] = $shaft_material;
 
         return $this;
@@ -2678,8 +2507,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getScent()
-    {
+    public function getScent() {
         return $this->container['scent'];
     }
 
@@ -2690,8 +2518,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setScent($scent)
-    {
+    public function setScent($scent) {
         $this->container['scent'] = $scent;
 
         return $this;
@@ -2702,8 +2529,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getSeasonSequence()
-    {
+    public function getSeasonSequence() {
         return $this->container['season_sequence'];
     }
 
@@ -2714,8 +2540,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setSeasonSequence($season_sequence)
-    {
+    public function setSeasonSequence($season_sequence) {
         $this->container['season_sequence'] = $season_sequence;
 
         return $this;
@@ -2726,8 +2551,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getSeikodoProductCode()
-    {
+    public function getSeikodoProductCode() {
         return $this->container['seikodo_product_code'];
     }
 
@@ -2738,8 +2562,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setSeikodoProductCode($seikodo_product_code)
-    {
+    public function setSeikodoProductCode($seikodo_product_code) {
         $this->container['seikodo_product_code'] = $seikodo_product_code;
 
         return $this;
@@ -2750,8 +2573,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getSize()
-    {
+    public function getSize() {
         return $this->container['size'];
     }
 
@@ -2762,8 +2584,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setSize($size)
-    {
+    public function setSize($size) {
         $this->container['size'] = $size;
 
         return $this;
@@ -2774,8 +2595,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getSizePerPearl()
-    {
+    public function getSizePerPearl() {
         return $this->container['size_per_pearl'];
     }
 
@@ -2786,8 +2606,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setSizePerPearl($size_per_pearl)
-    {
+    public function setSizePerPearl($size_per_pearl) {
         $this->container['size_per_pearl'] = $size_per_pearl;
 
         return $this;
@@ -2796,22 +2615,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets small_image.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Image
+     * @return Image
      */
-    public function getSmallImage()
-    {
+    public function getSmallImage() {
         return $this->container['small_image'];
     }
 
     /**
      * Sets small_image.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Image $small_image small_image
+     * @param Image $small_image small_image
      *
      * @return $this
      */
-    public function setSmallImage($small_image)
-    {
+    public function setSmallImage($small_image) {
         $this->container['small_image'] = $small_image;
 
         return $this;
@@ -2822,8 +2639,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getStudio()
-    {
+    public function getStudio() {
         return $this->container['studio'];
     }
 
@@ -2834,8 +2650,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setStudio($studio)
-    {
+    public function setStudio($studio) {
         $this->container['studio'] = $studio;
 
         return $this;
@@ -2844,22 +2659,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets subscription_length.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getSubscriptionLength()
-    {
+    public function getSubscriptionLength() {
         return $this->container['subscription_length'];
     }
 
     /**
      * Sets subscription_length.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $subscription_length subscription_length
+     * @param DecimalWithUnits $subscription_length subscription_length
      *
      * @return $this
      */
-    public function setSubscriptionLength($subscription_length)
-    {
+    public function setSubscriptionLength($subscription_length) {
         $this->container['subscription_length'] = $subscription_length;
 
         return $this;
@@ -2868,22 +2681,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets system_memory_size.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getSystemMemorySize()
-    {
+    public function getSystemMemorySize() {
         return $this->container['system_memory_size'];
     }
 
     /**
      * Sets system_memory_size.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $system_memory_size system_memory_size
+     * @param DecimalWithUnits $system_memory_size system_memory_size
      *
      * @return $this
      */
-    public function setSystemMemorySize($system_memory_size)
-    {
+    public function setSystemMemorySize($system_memory_size) {
         $this->container['system_memory_size'] = $system_memory_size;
 
         return $this;
@@ -2894,8 +2705,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getSystemMemoryType()
-    {
+    public function getSystemMemoryType() {
         return $this->container['system_memory_type'];
     }
 
@@ -2906,8 +2716,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setSystemMemoryType($system_memory_type)
-    {
+    public function setSystemMemoryType($system_memory_type) {
         $this->container['system_memory_type'] = $system_memory_type;
 
         return $this;
@@ -2918,8 +2727,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getTheatricalReleaseDate()
-    {
+    public function getTheatricalReleaseDate() {
         return $this->container['theatrical_release_date'];
     }
 
@@ -2930,8 +2738,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setTheatricalReleaseDate($theatrical_release_date)
-    {
+    public function setTheatricalReleaseDate($theatrical_release_date) {
         $this->container['theatrical_release_date'] = $theatrical_release_date;
 
         return $this;
@@ -2942,8 +2749,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->container['title'];
     }
 
@@ -2954,8 +2760,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->container['title'] = $title;
 
         return $this;
@@ -2964,22 +2769,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets total_diamond_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getTotalDiamondWeight()
-    {
+    public function getTotalDiamondWeight() {
         return $this->container['total_diamond_weight'];
     }
 
     /**
      * Sets total_diamond_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $total_diamond_weight total_diamond_weight
+     * @param DecimalWithUnits $total_diamond_weight total_diamond_weight
      *
      * @return $this
      */
-    public function setTotalDiamondWeight($total_diamond_weight)
-    {
+    public function setTotalDiamondWeight($total_diamond_weight) {
         $this->container['total_diamond_weight'] = $total_diamond_weight;
 
         return $this;
@@ -2988,22 +2791,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets total_gem_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getTotalGemWeight()
-    {
+    public function getTotalGemWeight() {
         return $this->container['total_gem_weight'];
     }
 
     /**
      * Sets total_gem_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $total_gem_weight total_gem_weight
+     * @param DecimalWithUnits $total_gem_weight total_gem_weight
      *
      * @return $this
      */
-    public function setTotalGemWeight($total_gem_weight)
-    {
+    public function setTotalGemWeight($total_gem_weight) {
         $this->container['total_gem_weight'] = $total_gem_weight;
 
         return $this;
@@ -3014,8 +2815,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function getWarranty()
-    {
+    public function getWarranty() {
         return $this->container['warranty'];
     }
 
@@ -3026,8 +2826,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return $this
      */
-    public function setWarranty($warranty)
-    {
+    public function setWarranty($warranty) {
         $this->container['warranty'] = $warranty;
 
         return $this;
@@ -3036,22 +2835,20 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
     /**
      * Gets weee_tax_value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Price
+     * @return Price
      */
-    public function getWeeeTaxValue()
-    {
+    public function getWeeeTaxValue() {
         return $this->container['weee_tax_value'];
     }
 
     /**
      * Sets weee_tax_value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\Price $weee_tax_value weee_tax_value
+     * @param Price $weee_tax_value weee_tax_value
      *
      * @return $this
      */
-    public function setWeeeTaxValue($weee_tax_value)
-    {
+    public function setWeeeTaxValue($weee_tax_value) {
         $this->container['weee_tax_value'] = $weee_tax_value;
 
         return $this;
@@ -3064,8 +2861,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -3076,21 +2872,19 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -3105,8 +2899,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -3115,8 +2908,7 @@ class AttributeSetListType extends Categories implements ModelInterface, ArrayAc
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

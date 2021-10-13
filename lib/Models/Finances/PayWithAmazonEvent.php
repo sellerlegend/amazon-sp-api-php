@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PayWithAmazonEvent Class Doc Comment.
  *
-
  * @description An event related to the seller&#x27;s Pay with Amazon account.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PayWithAmazonEvent implements ModelInterface, ArrayAccess
-{
+class PayWithAmazonEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,16 +45,16 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_order_id' => 'string',
-'transaction_posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'business_object_type' => 'string',
-'sales_channel' => 'string',
-'charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent',
-'fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
-'payment_amount_type' => 'string',
-'amount_description' => 'string',
-'fulfillment_channel' => 'string',
-'store_name' => 'string',    ];
+        'seller_order_id'         => 'string',
+        'transaction_posted_date' => '\DateTime',
+        'business_object_type'    => 'string',
+        'sales_channel'           => 'string',
+        'charge'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent',
+        'fee_list'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',
+        'payment_amount_type'     => 'string',
+        'amount_description'      => 'string',
+        'fulfillment_channel'     => 'string',
+        'store_name'              => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -63,24 +62,23 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_order_id' => null,
-'transaction_posted_date' => null,
-'business_object_type' => null,
-'sales_channel' => null,
-'charge' => null,
-'fee_list' => null,
-'payment_amount_type' => null,
-'amount_description' => null,
-'fulfillment_channel' => null,
-'store_name' => null,    ];
+        'seller_order_id'         => null,
+        'transaction_posted_date' => null,
+        'business_object_type'    => null,
+        'sales_channel'           => null,
+        'charge'                  => null,
+        'fee_list'                => null,
+        'payment_amount_type'     => null,
+        'amount_description'      => null,
+        'fulfillment_channel'     => null,
+        'store_name'              => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -89,8 +87,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -101,16 +98,16 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_order_id' => 'SellerOrderId',
-'transaction_posted_date' => 'TransactionPostedDate',
-'business_object_type' => 'BusinessObjectType',
-'sales_channel' => 'SalesChannel',
-'charge' => 'Charge',
-'fee_list' => 'FeeList',
-'payment_amount_type' => 'PaymentAmountType',
-'amount_description' => 'AmountDescription',
-'fulfillment_channel' => 'FulfillmentChannel',
-'store_name' => 'StoreName',    ];
+        'seller_order_id'         => 'SellerOrderId',
+        'transaction_posted_date' => 'TransactionPostedDate',
+        'business_object_type'    => 'BusinessObjectType',
+        'sales_channel'           => 'SalesChannel',
+        'charge'                  => 'Charge',
+        'fee_list'                => 'FeeList',
+        'payment_amount_type'     => 'PaymentAmountType',
+        'amount_description'      => 'AmountDescription',
+        'fulfillment_channel'     => 'FulfillmentChannel',
+        'store_name'              => 'StoreName',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -118,16 +115,16 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_order_id' => 'setSellerOrderId',
-'transaction_posted_date' => 'setTransactionPostedDate',
-'business_object_type' => 'setBusinessObjectType',
-'sales_channel' => 'setSalesChannel',
-'charge' => 'setCharge',
-'fee_list' => 'setFeeList',
-'payment_amount_type' => 'setPaymentAmountType',
-'amount_description' => 'setAmountDescription',
-'fulfillment_channel' => 'setFulfillmentChannel',
-'store_name' => 'setStoreName',    ];
+        'seller_order_id'         => 'setSellerOrderId',
+        'transaction_posted_date' => 'setTransactionPostedDate',
+        'business_object_type'    => 'setBusinessObjectType',
+        'sales_channel'           => 'setSalesChannel',
+        'charge'                  => 'setCharge',
+        'fee_list'                => 'setFeeList',
+        'payment_amount_type'     => 'setPaymentAmountType',
+        'amount_description'      => 'setAmountDescription',
+        'fulfillment_channel'     => 'setFulfillmentChannel',
+        'store_name'              => 'setStoreName',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -135,16 +132,16 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_order_id' => 'getSellerOrderId',
-'transaction_posted_date' => 'getTransactionPostedDate',
-'business_object_type' => 'getBusinessObjectType',
-'sales_channel' => 'getSalesChannel',
-'charge' => 'getCharge',
-'fee_list' => 'getFeeList',
-'payment_amount_type' => 'getPaymentAmountType',
-'amount_description' => 'getAmountDescription',
-'fulfillment_channel' => 'getFulfillmentChannel',
-'store_name' => 'getStoreName',    ];
+        'seller_order_id'         => 'getSellerOrderId',
+        'transaction_posted_date' => 'getTransactionPostedDate',
+        'business_object_type'    => 'getBusinessObjectType',
+        'sales_channel'           => 'getSalesChannel',
+        'charge'                  => 'getCharge',
+        'fee_list'                => 'getFeeList',
+        'payment_amount_type'     => 'getPaymentAmountType',
+        'amount_description'      => 'getAmountDescription',
+        'fulfillment_channel'     => 'getFulfillmentChannel',
+        'store_name'              => 'getStoreName',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -152,8 +149,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -162,8 +158,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -172,8 +167,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -182,8 +176,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -200,8 +193,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
         $this->container['transaction_posted_date'] = isset($data['transaction_posted_date']) ? $data['transaction_posted_date'] : null;
         $this->container['business_object_type'] = isset($data['business_object_type']) ? $data['business_object_type'] : null;
@@ -219,8 +211,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -232,8 +223,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -242,8 +232,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerOrderId()
-    {
+    public function getSellerOrderId() {
         return $this->container['seller_order_id'];
     }
 
@@ -254,8 +243,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerOrderId($seller_order_id)
-    {
+    public function setSellerOrderId($seller_order_id) {
         $this->container['seller_order_id'] = $seller_order_id;
 
         return $this;
@@ -264,22 +252,20 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
     /**
      * Gets transaction_posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getTransactionPostedDate()
-    {
+    public function getTransactionPostedDate() {
         return $this->container['transaction_posted_date'];
     }
 
     /**
      * Sets transaction_posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $transaction_posted_date transaction_posted_date
+     * @param DateTime $transaction_posted_date transaction_posted_date
      *
      * @return $this
      */
-    public function setTransactionPostedDate($transaction_posted_date)
-    {
+    public function setTransactionPostedDate($transaction_posted_date) {
         $this->container['transaction_posted_date'] = $transaction_posted_date;
 
         return $this;
@@ -290,8 +276,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBusinessObjectType()
-    {
+    public function getBusinessObjectType() {
         return $this->container['business_object_type'];
     }
 
@@ -302,8 +287,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBusinessObjectType($business_object_type)
-    {
+    public function setBusinessObjectType($business_object_type) {
         $this->container['business_object_type'] = $business_object_type;
 
         return $this;
@@ -314,8 +298,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSalesChannel()
-    {
+    public function getSalesChannel() {
         return $this->container['sales_channel'];
     }
 
@@ -326,8 +309,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSalesChannel($sales_channel)
-    {
+    public function setSalesChannel($sales_channel) {
         $this->container['sales_channel'] = $sales_channel;
 
         return $this;
@@ -336,22 +318,20 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
     /**
      * Gets charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent
+     * @return ChargeComponent
      */
-    public function getCharge()
-    {
+    public function getCharge() {
         return $this->container['charge'];
     }
 
     /**
      * Sets charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponent $charge charge
+     * @param ChargeComponent $charge charge
      *
      * @return $this
      */
-    public function setCharge($charge)
-    {
+    public function setCharge($charge) {
         $this->container['charge'] = $charge;
 
         return $this;
@@ -360,22 +340,20 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
     /**
      * Gets fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getFeeList()
-    {
+    public function getFeeList() {
         return $this->container['fee_list'];
     }
 
     /**
      * Sets fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $fee_list fee_list
+     * @param FeeComponentList $fee_list fee_list
      *
      * @return $this
      */
-    public function setFeeList($fee_list)
-    {
+    public function setFeeList($fee_list) {
         $this->container['fee_list'] = $fee_list;
 
         return $this;
@@ -386,8 +364,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPaymentAmountType()
-    {
+    public function getPaymentAmountType() {
         return $this->container['payment_amount_type'];
     }
 
@@ -398,8 +375,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPaymentAmountType($payment_amount_type)
-    {
+    public function setPaymentAmountType($payment_amount_type) {
         $this->container['payment_amount_type'] = $payment_amount_type;
 
         return $this;
@@ -410,8 +386,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmountDescription()
-    {
+    public function getAmountDescription() {
         return $this->container['amount_description'];
     }
 
@@ -422,8 +397,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmountDescription($amount_description)
-    {
+    public function setAmountDescription($amount_description) {
         $this->container['amount_description'] = $amount_description;
 
         return $this;
@@ -434,8 +408,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFulfillmentChannel()
-    {
+    public function getFulfillmentChannel() {
         return $this->container['fulfillment_channel'];
     }
 
@@ -446,8 +419,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFulfillmentChannel($fulfillment_channel)
-    {
+    public function setFulfillmentChannel($fulfillment_channel) {
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
         return $this;
@@ -458,8 +430,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStoreName()
-    {
+    public function getStoreName() {
         return $this->container['store_name'];
     }
 
@@ -470,8 +441,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStoreName($store_name)
-    {
+    public function setStoreName($store_name) {
         $this->container['store_name'] = $store_name;
 
         return $this;
@@ -484,8 +454,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -496,21 +465,19 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -525,8 +492,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -535,8 +501,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

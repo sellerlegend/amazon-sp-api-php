@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetAdditionalSellerInputsResult Class Doc Comment.
  *
-
  * @description The payload for the getAdditionalSellerInputs operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
-{
+class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipment_level_fields' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList',
-'item_level_fields_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemLevelFieldsList',    ];
+        'shipment_level_fields'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList',
+        'item_level_fields_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemLevelFieldsList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'shipment_level_fields' => null,
-'item_level_fields_list' => null,    ];
+        'shipment_level_fields'  => null,
+        'item_level_fields_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shipment_level_fields' => 'ShipmentLevelFields',
-'item_level_fields_list' => 'ItemLevelFieldsList',    ];
+        'shipment_level_fields'  => 'ShipmentLevelFields',
+        'item_level_fields_list' => 'ItemLevelFieldsList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shipment_level_fields' => 'setShipmentLevelFields',
-'item_level_fields_list' => 'setItemLevelFieldsList',    ];
+        'shipment_level_fields'  => 'setShipmentLevelFields',
+        'item_level_fields_list' => 'setItemLevelFieldsList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shipment_level_fields' => 'getShipmentLevelFields',
-'item_level_fields_list' => 'getItemLevelFieldsList',    ];
+        'shipment_level_fields'  => 'getShipmentLevelFields',
+        'item_level_fields_list' => 'getItemLevelFieldsList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipment_level_fields'] = isset($data['shipment_level_fields']) ? $data['shipment_level_fields'] : null;
         $this->container['item_level_fields_list'] = isset($data['item_level_fields_list']) ? $data['item_level_fields_list'] : null;
     }
@@ -171,8 +162,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +174,27 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_level_fields.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList
+     * @return AdditionalInputsList
      */
-    public function getShipmentLevelFields()
-    {
+    public function getShipmentLevelFields() {
         return $this->container['shipment_level_fields'];
     }
 
     /**
      * Sets shipment_level_fields.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList $shipment_level_fields shipment_level_fields
+     * @param AdditionalInputsList $shipment_level_fields shipment_level_fields
      *
      * @return $this
      */
-    public function setShipmentLevelFields($shipment_level_fields)
-    {
+    public function setShipmentLevelFields($shipment_level_fields) {
         $this->container['shipment_level_fields'] = $shipment_level_fields;
 
         return $this;
@@ -216,22 +203,20 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
     /**
      * Gets item_level_fields_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemLevelFieldsList
+     * @return ItemLevelFieldsList
      */
-    public function getItemLevelFieldsList()
-    {
+    public function getItemLevelFieldsList() {
         return $this->container['item_level_fields_list'];
     }
 
     /**
      * Sets item_level_fields_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemLevelFieldsList $item_level_fields_list item_level_fields_list
+     * @param ItemLevelFieldsList $item_level_fields_list item_level_fields_list
      *
      * @return $this
      */
-    public function setItemLevelFieldsList($item_level_fields_list)
-    {
+    public function setItemLevelFieldsList($item_level_fields_list) {
         $this->container['item_level_fields_list'] = $item_level_fields_list;
 
         return $this;
@@ -244,8 +229,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,23 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\IterableType;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\IterableType;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OrderItemsBuyerInfoList Class Doc Comment.
  *
-
  * @description A single order item&#x27;s buyer information list with the order ID.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableType
-{
+class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableType {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,9 +45,9 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'order_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderItemBuyerInfoList',
-'next_token' => 'string',
-'amazon_order_id' => 'string',    ];
+        'order_items'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderItemBuyerInfoList',
+        'next_token'      => 'string',
+        'amazon_order_id' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,17 +55,16 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'order_items' => null,
-'next_token' => null,
-'amazon_order_id' => null,    ];
+        'order_items'     => null,
+        'next_token'      => null,
+        'amazon_order_id' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -76,8 +73,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,9 +84,9 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      * @var string[]
      */
     protected static $attributeMap = [
-        'order_items' => 'OrderItems',
-'next_token' => 'NextToken',
-'amazon_order_id' => 'AmazonOrderId',    ];
+        'order_items'     => 'OrderItems',
+        'next_token'      => 'NextToken',
+        'amazon_order_id' => 'AmazonOrderId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,9 +94,9 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      * @var string[]
      */
     protected static $setters = [
-        'order_items' => 'setOrderItems',
-'next_token' => 'setNextToken',
-'amazon_order_id' => 'setAmazonOrderId',    ];
+        'order_items'     => 'setOrderItems',
+        'next_token'      => 'setNextToken',
+        'amazon_order_id' => 'setAmazonOrderId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,9 +104,9 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      * @var string[]
      */
     protected static $getters = [
-        'order_items' => 'getOrderItems',
-'next_token' => 'getNextToken',
-'amazon_order_id' => 'getAmazonOrderId',    ];
+        'order_items'     => 'getOrderItems',
+        'next_token'      => 'getNextToken',
+        'amazon_order_id' => 'getAmazonOrderId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -118,8 +114,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -128,8 +123,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -138,8 +132,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -148,8 +141,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -166,8 +158,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['order_items'] = isset($data['order_items']) ? $data['order_items'] : null;
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
@@ -178,8 +169,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['order_items']) {
@@ -198,30 +188,27 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets order_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderItemBuyerInfoList
+     * @return OrderItemBuyerInfoList
      */
-    public function getOrderItems()
-    {
+    public function getOrderItems() {
         return $this->container['order_items'];
     }
 
     /**
      * Sets order_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderItemBuyerInfoList $order_items order_items
+     * @param OrderItemBuyerInfoList $order_items order_items
      *
      * @return $this
      */
-    public function setOrderItems($order_items)
-    {
+    public function setOrderItems($order_items) {
         $this->container['order_items'] = $order_items;
 
         return $this;
@@ -232,8 +219,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -244,8 +230,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -256,8 +241,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -268,8 +252,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -282,8 +265,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -294,21 +276,19 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -323,8 +303,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -333,8 +312,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
@@ -345,8 +323,7 @@ class OrderItemsBuyerInfoList implements ModelInterface, ArrayAccess, IterableTy
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
-    public function getSubClass()
-    {
+    public function getSubClass() {
         return OrderItemBuyerInfo::class;
     }
 }

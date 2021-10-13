@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * ShipmentType Class Doc Comment.
  *
-
  * @description Specifies the carrier shipment type in a putTransportDetails request.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ShipmentType
-{
+class ShipmentType {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class ShipmentType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SP,
-self::LTL,        ];
+            self::LTL,];
     }
 }

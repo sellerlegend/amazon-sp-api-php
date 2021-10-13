@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetShipmentItemsResult Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetShipmentItemsResult implements ModelInterface, ArrayAccess
-{
+class GetShipmentItemsResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,8 +42,9 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'item_data' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList',
-'next_token' => 'string',    ];
+        'item_data'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList',
+        'next_token' => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -52,16 +52,16 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'item_data' => null,
-'next_token' => null,    ];
+        'item_data'  => null,
+        'next_token' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -70,8 +70,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -82,8 +81,8 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item_data' => 'ItemData',
-'next_token' => 'NextToken',    ];
+        'item_data'  => 'ItemData',
+        'next_token' => 'NextToken',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,8 +90,8 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item_data' => 'setItemData',
-'next_token' => 'setNextToken',    ];
+        'item_data'  => 'setItemData',
+        'next_token' => 'setNextToken',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -100,8 +99,8 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item_data' => 'getItemData',
-'next_token' => 'getNextToken',    ];
+        'item_data'  => 'getItemData',
+        'next_token' => 'getNextToken',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -109,8 +108,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -119,8 +117,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -129,8 +126,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -139,8 +135,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,8 +152,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['item_data'] = isset($data['item_data']) ? $data['item_data'] : null;
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
     }
@@ -168,8 +162,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -181,30 +174,27 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets item_data.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList
+     * @return InboundShipmentItemList
      */
-    public function getItemData()
-    {
+    public function getItemData() {
         return $this->container['item_data'];
     }
 
     /**
      * Sets item_data.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList $item_data item_data
+     * @param InboundShipmentItemList $item_data item_data
      *
      * @return $this
      */
-    public function setItemData($item_data)
-    {
+    public function setItemData($item_data) {
         $this->container['item_data'] = $item_data;
 
         return $this;
@@ -215,8 +205,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -227,8 +216,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -241,8 +229,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -253,21 +240,19 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -282,8 +267,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -292,8 +276,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

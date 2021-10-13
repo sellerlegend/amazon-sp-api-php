@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Order Class Doc Comment.
  *
-
  * @description Order information.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Order implements ModelInterface, ArrayAccess
-{
+class Order implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,41 +45,41 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amazon_order_id' => 'string',
-'seller_order_id' => 'string',
-'purchase_date' => 'string',
-'last_update_date' => 'string',
-'order_status' => 'string',
-'fulfillment_channel' => 'string',
-'sales_channel' => 'string',
-'order_channel' => 'string',
-'ship_service_level' => 'string',
-'order_total' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'number_of_items_shipped' => 'int',
-'number_of_items_unshipped' => 'int',
-'payment_execution_detail' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\PaymentExecutionDetailItemList',
-'payment_method' => 'string',
-'payment_method_details' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\PaymentMethodDetailItemList',
-'marketplace_id' => 'string',
-'shipment_service_level_category' => 'string',
-'easy_ship_shipment_status' => 'string',
-'cba_displayable_shipping_label' => 'string',
-'order_type' => 'string',
-'earliest_ship_date' => 'string',
-'latest_ship_date' => 'string',
-'earliest_delivery_date' => 'string',
-'latest_delivery_date' => 'string',
-'is_business_order' => 'bool',
-'is_prime' => 'bool',
-'is_premium_order' => 'bool',
-'is_global_express_enabled' => 'bool',
-'replaced_order_id' => 'string',
-'is_replacement_order' => 'bool',
-'promise_response_due_date' => 'string',
-'is_estimated_ship_date_set' => 'bool',
-'is_sold_by_ab' => 'bool',
-'assigned_ship_from_location_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address',
-'fulfillment_instruction' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction',    ];
+        'amazon_order_id'                     => 'string',
+        'seller_order_id'                     => 'string',
+        'purchase_date'                       => 'string',
+        'last_update_date'                    => 'string',
+        'order_status'                        => 'string',
+        'fulfillment_channel'                 => 'string',
+        'sales_channel'                       => 'string',
+        'order_channel'                       => 'string',
+        'ship_service_level'                  => 'string',
+        'order_total'                         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'number_of_items_shipped'             => 'int',
+        'number_of_items_unshipped'           => 'int',
+        'payment_execution_detail'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PaymentExecutionDetailItemList',
+        'payment_method'                      => 'string',
+        'payment_method_details'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PaymentMethodDetailItemList',
+        'marketplace_id'                      => 'string',
+        'shipment_service_level_category'     => 'string',
+        'easy_ship_shipment_status'           => 'string',
+        'cba_displayable_shipping_label'      => 'string',
+        'order_type'                          => 'string',
+        'earliest_ship_date'                  => 'string',
+        'latest_ship_date'                    => 'string',
+        'earliest_delivery_date'              => 'string',
+        'latest_delivery_date'                => 'string',
+        'is_business_order'                   => 'bool',
+        'is_prime'                            => 'bool',
+        'is_premium_order'                    => 'bool',
+        'is_global_express_enabled'           => 'bool',
+        'replaced_order_id'                   => 'string',
+        'is_replacement_order'                => 'bool',
+        'promise_response_due_date'           => 'string',
+        'is_estimated_ship_date_set'          => 'bool',
+        'is_sold_by_ab'                       => 'bool',
+        'assigned_ship_from_location_address' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Address',
+        'fulfillment_instruction'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -88,49 +87,48 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amazon_order_id' => null,
-'seller_order_id' => null,
-'purchase_date' => null,
-'last_update_date' => null,
-'order_status' => null,
-'fulfillment_channel' => null,
-'sales_channel' => null,
-'order_channel' => null,
-'ship_service_level' => null,
-'order_total' => null,
-'number_of_items_shipped' => null,
-'number_of_items_unshipped' => null,
-'payment_execution_detail' => null,
-'payment_method' => null,
-'payment_method_details' => null,
-'marketplace_id' => null,
-'shipment_service_level_category' => null,
-'easy_ship_shipment_status' => null,
-'cba_displayable_shipping_label' => null,
-'order_type' => null,
-'earliest_ship_date' => null,
-'latest_ship_date' => null,
-'earliest_delivery_date' => null,
-'latest_delivery_date' => null,
-'is_business_order' => null,
-'is_prime' => null,
-'is_premium_order' => null,
-'is_global_express_enabled' => null,
-'replaced_order_id' => null,
-'is_replacement_order' => null,
-'promise_response_due_date' => null,
-'is_estimated_ship_date_set' => null,
-'is_sold_by_ab' => null,
-'assigned_ship_from_location_address' => null,
-'fulfillment_instruction' => null,    ];
+        'amazon_order_id'                     => null,
+        'seller_order_id'                     => null,
+        'purchase_date'                       => null,
+        'last_update_date'                    => null,
+        'order_status'                        => null,
+        'fulfillment_channel'                 => null,
+        'sales_channel'                       => null,
+        'order_channel'                       => null,
+        'ship_service_level'                  => null,
+        'order_total'                         => null,
+        'number_of_items_shipped'             => null,
+        'number_of_items_unshipped'           => null,
+        'payment_execution_detail'            => null,
+        'payment_method'                      => null,
+        'payment_method_details'              => null,
+        'marketplace_id'                      => null,
+        'shipment_service_level_category'     => null,
+        'easy_ship_shipment_status'           => null,
+        'cba_displayable_shipping_label'      => null,
+        'order_type'                          => null,
+        'earliest_ship_date'                  => null,
+        'latest_ship_date'                    => null,
+        'earliest_delivery_date'              => null,
+        'latest_delivery_date'                => null,
+        'is_business_order'                   => null,
+        'is_prime'                            => null,
+        'is_premium_order'                    => null,
+        'is_global_express_enabled'           => null,
+        'replaced_order_id'                   => null,
+        'is_replacement_order'                => null,
+        'promise_response_due_date'           => null,
+        'is_estimated_ship_date_set'          => null,
+        'is_sold_by_ab'                       => null,
+        'assigned_ship_from_location_address' => null,
+        'fulfillment_instruction'             => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -139,8 +137,7 @@ class Order implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -151,41 +148,41 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'AmazonOrderId',
-'seller_order_id' => 'SellerOrderId',
-'purchase_date' => 'PurchaseDate',
-'last_update_date' => 'LastUpdateDate',
-'order_status' => 'OrderStatus',
-'fulfillment_channel' => 'FulfillmentChannel',
-'sales_channel' => 'SalesChannel',
-'order_channel' => 'OrderChannel',
-'ship_service_level' => 'ShipServiceLevel',
-'order_total' => 'OrderTotal',
-'number_of_items_shipped' => 'NumberOfItemsShipped',
-'number_of_items_unshipped' => 'NumberOfItemsUnshipped',
-'payment_execution_detail' => 'PaymentExecutionDetail',
-'payment_method' => 'PaymentMethod',
-'payment_method_details' => 'PaymentMethodDetails',
-'marketplace_id' => 'MarketplaceId',
-'shipment_service_level_category' => 'ShipmentServiceLevelCategory',
-'easy_ship_shipment_status' => 'EasyShipShipmentStatus',
-'cba_displayable_shipping_label' => 'CbaDisplayableShippingLabel',
-'order_type' => 'OrderType',
-'earliest_ship_date' => 'EarliestShipDate',
-'latest_ship_date' => 'LatestShipDate',
-'earliest_delivery_date' => 'EarliestDeliveryDate',
-'latest_delivery_date' => 'LatestDeliveryDate',
-'is_business_order' => 'IsBusinessOrder',
-'is_prime' => 'IsPrime',
-'is_premium_order' => 'IsPremiumOrder',
-'is_global_express_enabled' => 'IsGlobalExpressEnabled',
-'replaced_order_id' => 'ReplacedOrderId',
-'is_replacement_order' => 'IsReplacementOrder',
-'promise_response_due_date' => 'PromiseResponseDueDate',
-'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
-'is_sold_by_ab' => 'IsSoldByAB',
-'assigned_ship_from_location_address' => 'AssignedShipFromLocationAddress',
-'fulfillment_instruction' => 'FulfillmentInstruction',    ];
+        'amazon_order_id'                     => 'AmazonOrderId',
+        'seller_order_id'                     => 'SellerOrderId',
+        'purchase_date'                       => 'PurchaseDate',
+        'last_update_date'                    => 'LastUpdateDate',
+        'order_status'                        => 'OrderStatus',
+        'fulfillment_channel'                 => 'FulfillmentChannel',
+        'sales_channel'                       => 'SalesChannel',
+        'order_channel'                       => 'OrderChannel',
+        'ship_service_level'                  => 'ShipServiceLevel',
+        'order_total'                         => 'OrderTotal',
+        'number_of_items_shipped'             => 'NumberOfItemsShipped',
+        'number_of_items_unshipped'           => 'NumberOfItemsUnshipped',
+        'payment_execution_detail'            => 'PaymentExecutionDetail',
+        'payment_method'                      => 'PaymentMethod',
+        'payment_method_details'              => 'PaymentMethodDetails',
+        'marketplace_id'                      => 'MarketplaceId',
+        'shipment_service_level_category'     => 'ShipmentServiceLevelCategory',
+        'easy_ship_shipment_status'           => 'EasyShipShipmentStatus',
+        'cba_displayable_shipping_label'      => 'CbaDisplayableShippingLabel',
+        'order_type'                          => 'OrderType',
+        'earliest_ship_date'                  => 'EarliestShipDate',
+        'latest_ship_date'                    => 'LatestShipDate',
+        'earliest_delivery_date'              => 'EarliestDeliveryDate',
+        'latest_delivery_date'                => 'LatestDeliveryDate',
+        'is_business_order'                   => 'IsBusinessOrder',
+        'is_prime'                            => 'IsPrime',
+        'is_premium_order'                    => 'IsPremiumOrder',
+        'is_global_express_enabled'           => 'IsGlobalExpressEnabled',
+        'replaced_order_id'                   => 'ReplacedOrderId',
+        'is_replacement_order'                => 'IsReplacementOrder',
+        'promise_response_due_date'           => 'PromiseResponseDueDate',
+        'is_estimated_ship_date_set'          => 'IsEstimatedShipDateSet',
+        'is_sold_by_ab'                       => 'IsSoldByAB',
+        'assigned_ship_from_location_address' => 'AssignedShipFromLocationAddress',
+        'fulfillment_instruction'             => 'FulfillmentInstruction',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -193,41 +190,41 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
-'seller_order_id' => 'setSellerOrderId',
-'purchase_date' => 'setPurchaseDate',
-'last_update_date' => 'setLastUpdateDate',
-'order_status' => 'setOrderStatus',
-'fulfillment_channel' => 'setFulfillmentChannel',
-'sales_channel' => 'setSalesChannel',
-'order_channel' => 'setOrderChannel',
-'ship_service_level' => 'setShipServiceLevel',
-'order_total' => 'setOrderTotal',
-'number_of_items_shipped' => 'setNumberOfItemsShipped',
-'number_of_items_unshipped' => 'setNumberOfItemsUnshipped',
-'payment_execution_detail' => 'setPaymentExecutionDetail',
-'payment_method' => 'setPaymentMethod',
-'payment_method_details' => 'setPaymentMethodDetails',
-'marketplace_id' => 'setMarketplaceId',
-'shipment_service_level_category' => 'setShipmentServiceLevelCategory',
-'easy_ship_shipment_status' => 'setEasyShipShipmentStatus',
-'cba_displayable_shipping_label' => 'setCbaDisplayableShippingLabel',
-'order_type' => 'setOrderType',
-'earliest_ship_date' => 'setEarliestShipDate',
-'latest_ship_date' => 'setLatestShipDate',
-'earliest_delivery_date' => 'setEarliestDeliveryDate',
-'latest_delivery_date' => 'setLatestDeliveryDate',
-'is_business_order' => 'setIsBusinessOrder',
-'is_prime' => 'setIsPrime',
-'is_premium_order' => 'setIsPremiumOrder',
-'is_global_express_enabled' => 'setIsGlobalExpressEnabled',
-'replaced_order_id' => 'setReplacedOrderId',
-'is_replacement_order' => 'setIsReplacementOrder',
-'promise_response_due_date' => 'setPromiseResponseDueDate',
-'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
-'is_sold_by_ab' => 'setIsSoldByAb',
-'assigned_ship_from_location_address' => 'setAssignedShipFromLocationAddress',
-'fulfillment_instruction' => 'setFulfillmentInstruction',    ];
+        'amazon_order_id'                     => 'setAmazonOrderId',
+        'seller_order_id'                     => 'setSellerOrderId',
+        'purchase_date'                       => 'setPurchaseDate',
+        'last_update_date'                    => 'setLastUpdateDate',
+        'order_status'                        => 'setOrderStatus',
+        'fulfillment_channel'                 => 'setFulfillmentChannel',
+        'sales_channel'                       => 'setSalesChannel',
+        'order_channel'                       => 'setOrderChannel',
+        'ship_service_level'                  => 'setShipServiceLevel',
+        'order_total'                         => 'setOrderTotal',
+        'number_of_items_shipped'             => 'setNumberOfItemsShipped',
+        'number_of_items_unshipped'           => 'setNumberOfItemsUnshipped',
+        'payment_execution_detail'            => 'setPaymentExecutionDetail',
+        'payment_method'                      => 'setPaymentMethod',
+        'payment_method_details'              => 'setPaymentMethodDetails',
+        'marketplace_id'                      => 'setMarketplaceId',
+        'shipment_service_level_category'     => 'setShipmentServiceLevelCategory',
+        'easy_ship_shipment_status'           => 'setEasyShipShipmentStatus',
+        'cba_displayable_shipping_label'      => 'setCbaDisplayableShippingLabel',
+        'order_type'                          => 'setOrderType',
+        'earliest_ship_date'                  => 'setEarliestShipDate',
+        'latest_ship_date'                    => 'setLatestShipDate',
+        'earliest_delivery_date'              => 'setEarliestDeliveryDate',
+        'latest_delivery_date'                => 'setLatestDeliveryDate',
+        'is_business_order'                   => 'setIsBusinessOrder',
+        'is_prime'                            => 'setIsPrime',
+        'is_premium_order'                    => 'setIsPremiumOrder',
+        'is_global_express_enabled'           => 'setIsGlobalExpressEnabled',
+        'replaced_order_id'                   => 'setReplacedOrderId',
+        'is_replacement_order'                => 'setIsReplacementOrder',
+        'promise_response_due_date'           => 'setPromiseResponseDueDate',
+        'is_estimated_ship_date_set'          => 'setIsEstimatedShipDateSet',
+        'is_sold_by_ab'                       => 'setIsSoldByAb',
+        'assigned_ship_from_location_address' => 'setAssignedShipFromLocationAddress',
+        'fulfillment_instruction'             => 'setFulfillmentInstruction',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -235,41 +232,41 @@ class Order implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
-'seller_order_id' => 'getSellerOrderId',
-'purchase_date' => 'getPurchaseDate',
-'last_update_date' => 'getLastUpdateDate',
-'order_status' => 'getOrderStatus',
-'fulfillment_channel' => 'getFulfillmentChannel',
-'sales_channel' => 'getSalesChannel',
-'order_channel' => 'getOrderChannel',
-'ship_service_level' => 'getShipServiceLevel',
-'order_total' => 'getOrderTotal',
-'number_of_items_shipped' => 'getNumberOfItemsShipped',
-'number_of_items_unshipped' => 'getNumberOfItemsUnshipped',
-'payment_execution_detail' => 'getPaymentExecutionDetail',
-'payment_method' => 'getPaymentMethod',
-'payment_method_details' => 'getPaymentMethodDetails',
-'marketplace_id' => 'getMarketplaceId',
-'shipment_service_level_category' => 'getShipmentServiceLevelCategory',
-'easy_ship_shipment_status' => 'getEasyShipShipmentStatus',
-'cba_displayable_shipping_label' => 'getCbaDisplayableShippingLabel',
-'order_type' => 'getOrderType',
-'earliest_ship_date' => 'getEarliestShipDate',
-'latest_ship_date' => 'getLatestShipDate',
-'earliest_delivery_date' => 'getEarliestDeliveryDate',
-'latest_delivery_date' => 'getLatestDeliveryDate',
-'is_business_order' => 'getIsBusinessOrder',
-'is_prime' => 'getIsPrime',
-'is_premium_order' => 'getIsPremiumOrder',
-'is_global_express_enabled' => 'getIsGlobalExpressEnabled',
-'replaced_order_id' => 'getReplacedOrderId',
-'is_replacement_order' => 'getIsReplacementOrder',
-'promise_response_due_date' => 'getPromiseResponseDueDate',
-'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
-'is_sold_by_ab' => 'getIsSoldByAb',
-'assigned_ship_from_location_address' => 'getAssignedShipFromLocationAddress',
-'fulfillment_instruction' => 'getFulfillmentInstruction',    ];
+        'amazon_order_id'                     => 'getAmazonOrderId',
+        'seller_order_id'                     => 'getSellerOrderId',
+        'purchase_date'                       => 'getPurchaseDate',
+        'last_update_date'                    => 'getLastUpdateDate',
+        'order_status'                        => 'getOrderStatus',
+        'fulfillment_channel'                 => 'getFulfillmentChannel',
+        'sales_channel'                       => 'getSalesChannel',
+        'order_channel'                       => 'getOrderChannel',
+        'ship_service_level'                  => 'getShipServiceLevel',
+        'order_total'                         => 'getOrderTotal',
+        'number_of_items_shipped'             => 'getNumberOfItemsShipped',
+        'number_of_items_unshipped'           => 'getNumberOfItemsUnshipped',
+        'payment_execution_detail'            => 'getPaymentExecutionDetail',
+        'payment_method'                      => 'getPaymentMethod',
+        'payment_method_details'              => 'getPaymentMethodDetails',
+        'marketplace_id'                      => 'getMarketplaceId',
+        'shipment_service_level_category'     => 'getShipmentServiceLevelCategory',
+        'easy_ship_shipment_status'           => 'getEasyShipShipmentStatus',
+        'cba_displayable_shipping_label'      => 'getCbaDisplayableShippingLabel',
+        'order_type'                          => 'getOrderType',
+        'earliest_ship_date'                  => 'getEarliestShipDate',
+        'latest_ship_date'                    => 'getLatestShipDate',
+        'earliest_delivery_date'              => 'getEarliestDeliveryDate',
+        'latest_delivery_date'                => 'getLatestDeliveryDate',
+        'is_business_order'                   => 'getIsBusinessOrder',
+        'is_prime'                            => 'getIsPrime',
+        'is_premium_order'                    => 'getIsPremiumOrder',
+        'is_global_express_enabled'           => 'getIsGlobalExpressEnabled',
+        'replaced_order_id'                   => 'getReplacedOrderId',
+        'is_replacement_order'                => 'getIsReplacementOrder',
+        'promise_response_due_date'           => 'getPromiseResponseDueDate',
+        'is_estimated_ship_date_set'          => 'getIsEstimatedShipDateSet',
+        'is_sold_by_ab'                       => 'getIsSoldByAb',
+        'assigned_ship_from_location_address' => 'getAssignedShipFromLocationAddress',
+        'fulfillment_instruction'             => 'getFulfillmentInstruction',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -277,8 +274,7 @@ class Order implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -287,8 +283,7 @@ class Order implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -297,8 +292,7 @@ class Order implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -307,8 +301,7 @@ class Order implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -336,17 +329,16 @@ class Order implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getOrderStatusAllowableValues()
-    {
+    public function getOrderStatusAllowableValues() {
         return [
             self::ORDER_STATUS_PENDING,
-self::ORDER_STATUS_UNSHIPPED,
-self::ORDER_STATUS_PARTIALLY_SHIPPED,
-self::ORDER_STATUS_SHIPPED,
-self::ORDER_STATUS_CANCELED,
-self::ORDER_STATUS_UNFULFILLABLE,
-self::ORDER_STATUS_INVOICE_UNCONFIRMED,
-self::ORDER_STATUS_PENDING_AVAILABILITY,        ];
+            self::ORDER_STATUS_UNSHIPPED,
+            self::ORDER_STATUS_PARTIALLY_SHIPPED,
+            self::ORDER_STATUS_SHIPPED,
+            self::ORDER_STATUS_CANCELED,
+            self::ORDER_STATUS_UNFULFILLABLE,
+            self::ORDER_STATUS_INVOICE_UNCONFIRMED,
+            self::ORDER_STATUS_PENDING_AVAILABILITY,];
     }
 
     /**
@@ -354,11 +346,10 @@ self::ORDER_STATUS_PENDING_AVAILABILITY,        ];
      *
      * @return string[]
      */
-    public function getFulfillmentChannelAllowableValues()
-    {
+    public function getFulfillmentChannelAllowableValues() {
         return [
             self::FULFILLMENT_CHANNEL_MFN,
-self::FULFILLMENT_CHANNEL_AFN,        ];
+            self::FULFILLMENT_CHANNEL_AFN,];
     }
 
     /**
@@ -366,12 +357,11 @@ self::FULFILLMENT_CHANNEL_AFN,        ];
      *
      * @return string[]
      */
-    public function getPaymentMethodAllowableValues()
-    {
+    public function getPaymentMethodAllowableValues() {
         return [
             self::PAYMENT_METHOD_COD,
-self::PAYMENT_METHOD_CVS,
-self::PAYMENT_METHOD_OTHER,        ];
+            self::PAYMENT_METHOD_CVS,
+            self::PAYMENT_METHOD_OTHER,];
     }
 
     /**
@@ -379,14 +369,13 @@ self::PAYMENT_METHOD_OTHER,        ];
      *
      * @return string[]
      */
-    public function getOrderTypeAllowableValues()
-    {
+    public function getOrderTypeAllowableValues() {
         return [
             self::ORDER_TYPE_STANDARD_ORDER,
-self::ORDER_TYPE_LONG_LEAD_TIME_ORDER,
-self::ORDER_TYPE_PREORDER,
-self::ORDER_TYPE_BACK_ORDER,
-self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
+            self::ORDER_TYPE_LONG_LEAD_TIME_ORDER,
+            self::ORDER_TYPE_PREORDER,
+            self::ORDER_TYPE_BACK_ORDER,
+            self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,];
     }
 
     /**
@@ -402,8 +391,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
         $this->container['purchase_date'] = isset($data['purchase_date']) ? $data['purchase_date'] : null;
@@ -446,8 +434,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['amazon_order_id']) {
@@ -503,8 +490,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -513,8 +499,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -525,8 +510,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -537,8 +521,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getSellerOrderId()
-    {
+    public function getSellerOrderId() {
         return $this->container['seller_order_id'];
     }
 
@@ -549,8 +532,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setSellerOrderId($seller_order_id)
-    {
+    public function setSellerOrderId($seller_order_id) {
         $this->container['seller_order_id'] = $seller_order_id;
 
         return $this;
@@ -561,8 +543,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getPurchaseDate()
-    {
+    public function getPurchaseDate() {
         return $this->container['purchase_date'];
     }
 
@@ -573,8 +554,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setPurchaseDate($purchase_date)
-    {
+    public function setPurchaseDate($purchase_date) {
         $this->container['purchase_date'] = $purchase_date;
 
         return $this;
@@ -585,8 +565,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getLastUpdateDate()
-    {
+    public function getLastUpdateDate() {
         return $this->container['last_update_date'];
     }
 
@@ -597,8 +576,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setLastUpdateDate($last_update_date)
-    {
+    public function setLastUpdateDate($last_update_date) {
         $this->container['last_update_date'] = $last_update_date;
 
         return $this;
@@ -609,8 +587,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getOrderStatus()
-    {
+    public function getOrderStatus() {
         return $this->container['order_status'];
     }
 
@@ -621,11 +598,10 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setOrderStatus($order_status)
-    {
+    public function setOrderStatus($order_status) {
         $allowedValues = $this->getOrderStatusAllowableValues();
         if (!in_array($order_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'order_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'order_status', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['order_status'] = $order_status;
 
@@ -637,8 +613,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getFulfillmentChannel()
-    {
+    public function getFulfillmentChannel() {
         return $this->container['fulfillment_channel'];
     }
 
@@ -649,11 +624,10 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setFulfillmentChannel($fulfillment_channel)
-    {
+    public function setFulfillmentChannel($fulfillment_channel) {
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
         if (!is_null($fulfillment_channel) && !in_array($fulfillment_channel, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'fulfillment_channel', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'fulfillment_channel', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
@@ -665,8 +639,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getSalesChannel()
-    {
+    public function getSalesChannel() {
         return $this->container['sales_channel'];
     }
 
@@ -677,8 +650,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setSalesChannel($sales_channel)
-    {
+    public function setSalesChannel($sales_channel) {
         $this->container['sales_channel'] = $sales_channel;
 
         return $this;
@@ -689,8 +661,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getOrderChannel()
-    {
+    public function getOrderChannel() {
         return $this->container['order_channel'];
     }
 
@@ -701,8 +672,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setOrderChannel($order_channel)
-    {
+    public function setOrderChannel($order_channel) {
         $this->container['order_channel'] = $order_channel;
 
         return $this;
@@ -713,8 +683,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getShipServiceLevel()
-    {
+    public function getShipServiceLevel() {
         return $this->container['ship_service_level'];
     }
 
@@ -725,8 +694,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setShipServiceLevel($ship_service_level)
-    {
+    public function setShipServiceLevel($ship_service_level) {
         $this->container['ship_service_level'] = $ship_service_level;
 
         return $this;
@@ -735,22 +703,20 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     /**
      * Gets order_total.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getOrderTotal()
-    {
+    public function getOrderTotal() {
         return $this->container['order_total'];
     }
 
     /**
      * Sets order_total.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $order_total order_total
+     * @param Money $order_total order_total
      *
      * @return $this
      */
-    public function setOrderTotal($order_total)
-    {
+    public function setOrderTotal($order_total) {
         $this->container['order_total'] = $order_total;
 
         return $this;
@@ -761,8 +727,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return int
      */
-    public function getNumberOfItemsShipped()
-    {
+    public function getNumberOfItemsShipped() {
         return $this->container['number_of_items_shipped'];
     }
 
@@ -773,8 +738,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setNumberOfItemsShipped($number_of_items_shipped)
-    {
+    public function setNumberOfItemsShipped($number_of_items_shipped) {
         $this->container['number_of_items_shipped'] = $number_of_items_shipped;
 
         return $this;
@@ -785,8 +749,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return int
      */
-    public function getNumberOfItemsUnshipped()
-    {
+    public function getNumberOfItemsUnshipped() {
         return $this->container['number_of_items_unshipped'];
     }
 
@@ -797,8 +760,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setNumberOfItemsUnshipped($number_of_items_unshipped)
-    {
+    public function setNumberOfItemsUnshipped($number_of_items_unshipped) {
         $this->container['number_of_items_unshipped'] = $number_of_items_unshipped;
 
         return $this;
@@ -807,22 +769,20 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     /**
      * Gets payment_execution_detail.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PaymentExecutionDetailItemList
+     * @return PaymentExecutionDetailItemList
      */
-    public function getPaymentExecutionDetail()
-    {
+    public function getPaymentExecutionDetail() {
         return $this->container['payment_execution_detail'];
     }
 
     /**
      * Sets payment_execution_detail.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PaymentExecutionDetailItemList $payment_execution_detail payment_execution_detail
+     * @param PaymentExecutionDetailItemList $payment_execution_detail payment_execution_detail
      *
      * @return $this
      */
-    public function setPaymentExecutionDetail($payment_execution_detail)
-    {
+    public function setPaymentExecutionDetail($payment_execution_detail) {
         $this->container['payment_execution_detail'] = $payment_execution_detail;
 
         return $this;
@@ -833,8 +793,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getPaymentMethod()
-    {
+    public function getPaymentMethod() {
         return $this->container['payment_method'];
     }
 
@@ -845,11 +804,10 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setPaymentMethod($payment_method)
-    {
+    public function setPaymentMethod($payment_method) {
         $allowedValues = $this->getPaymentMethodAllowableValues();
         if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'payment_method', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'payment_method', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['payment_method'] = $payment_method;
 
@@ -859,22 +817,20 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     /**
      * Gets payment_method_details.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PaymentMethodDetailItemList
+     * @return PaymentMethodDetailItemList
      */
-    public function getPaymentMethodDetails()
-    {
+    public function getPaymentMethodDetails() {
         return $this->container['payment_method_details'];
     }
 
     /**
      * Sets payment_method_details.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\PaymentMethodDetailItemList $payment_method_details payment_method_details
+     * @param PaymentMethodDetailItemList $payment_method_details payment_method_details
      *
      * @return $this
      */
-    public function setPaymentMethodDetails($payment_method_details)
-    {
+    public function setPaymentMethodDetails($payment_method_details) {
         $this->container['payment_method_details'] = $payment_method_details;
 
         return $this;
@@ -885,8 +841,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -897,8 +852,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -909,8 +863,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getShipmentServiceLevelCategory()
-    {
+    public function getShipmentServiceLevelCategory() {
         return $this->container['shipment_service_level_category'];
     }
 
@@ -921,8 +874,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setShipmentServiceLevelCategory($shipment_service_level_category)
-    {
+    public function setShipmentServiceLevelCategory($shipment_service_level_category) {
         $this->container['shipment_service_level_category'] = $shipment_service_level_category;
 
         return $this;
@@ -933,8 +885,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getEasyShipShipmentStatus()
-    {
+    public function getEasyShipShipmentStatus() {
         return $this->container['easy_ship_shipment_status'];
     }
 
@@ -945,8 +896,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setEasyShipShipmentStatus($easy_ship_shipment_status)
-    {
+    public function setEasyShipShipmentStatus($easy_ship_shipment_status) {
         $this->container['easy_ship_shipment_status'] = $easy_ship_shipment_status;
 
         return $this;
@@ -957,8 +907,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getCbaDisplayableShippingLabel()
-    {
+    public function getCbaDisplayableShippingLabel() {
         return $this->container['cba_displayable_shipping_label'];
     }
 
@@ -969,8 +918,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setCbaDisplayableShippingLabel($cba_displayable_shipping_label)
-    {
+    public function setCbaDisplayableShippingLabel($cba_displayable_shipping_label) {
         $this->container['cba_displayable_shipping_label'] = $cba_displayable_shipping_label;
 
         return $this;
@@ -981,8 +929,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getOrderType()
-    {
+    public function getOrderType() {
         return $this->container['order_type'];
     }
 
@@ -993,11 +940,10 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setOrderType($order_type)
-    {
+    public function setOrderType($order_type) {
         $allowedValues = $this->getOrderTypeAllowableValues();
         if (!is_null($order_type) && !in_array($order_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'order_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'order_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['order_type'] = $order_type;
 
@@ -1009,8 +955,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getEarliestShipDate()
-    {
+    public function getEarliestShipDate() {
         return $this->container['earliest_ship_date'];
     }
 
@@ -1021,8 +966,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setEarliestShipDate($earliest_ship_date)
-    {
+    public function setEarliestShipDate($earliest_ship_date) {
         $this->container['earliest_ship_date'] = $earliest_ship_date;
 
         return $this;
@@ -1033,8 +977,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getLatestShipDate()
-    {
+    public function getLatestShipDate() {
         return $this->container['latest_ship_date'];
     }
 
@@ -1045,8 +988,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setLatestShipDate($latest_ship_date)
-    {
+    public function setLatestShipDate($latest_ship_date) {
         $this->container['latest_ship_date'] = $latest_ship_date;
 
         return $this;
@@ -1057,8 +999,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getEarliestDeliveryDate()
-    {
+    public function getEarliestDeliveryDate() {
         return $this->container['earliest_delivery_date'];
     }
 
@@ -1069,8 +1010,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setEarliestDeliveryDate($earliest_delivery_date)
-    {
+    public function setEarliestDeliveryDate($earliest_delivery_date) {
         $this->container['earliest_delivery_date'] = $earliest_delivery_date;
 
         return $this;
@@ -1081,8 +1021,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getLatestDeliveryDate()
-    {
+    public function getLatestDeliveryDate() {
         return $this->container['latest_delivery_date'];
     }
 
@@ -1093,8 +1032,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setLatestDeliveryDate($latest_delivery_date)
-    {
+    public function setLatestDeliveryDate($latest_delivery_date) {
         $this->container['latest_delivery_date'] = $latest_delivery_date;
 
         return $this;
@@ -1105,8 +1043,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsBusinessOrder()
-    {
+    public function getIsBusinessOrder() {
         return $this->container['is_business_order'];
     }
 
@@ -1117,8 +1054,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsBusinessOrder($is_business_order)
-    {
+    public function setIsBusinessOrder($is_business_order) {
         $this->container['is_business_order'] = $is_business_order;
 
         return $this;
@@ -1129,8 +1065,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsPrime()
-    {
+    public function getIsPrime() {
         return $this->container['is_prime'];
     }
 
@@ -1141,8 +1076,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsPrime($is_prime)
-    {
+    public function setIsPrime($is_prime) {
         $this->container['is_prime'] = $is_prime;
 
         return $this;
@@ -1153,8 +1087,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsPremiumOrder()
-    {
+    public function getIsPremiumOrder() {
         return $this->container['is_premium_order'];
     }
 
@@ -1165,8 +1098,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsPremiumOrder($is_premium_order)
-    {
+    public function setIsPremiumOrder($is_premium_order) {
         $this->container['is_premium_order'] = $is_premium_order;
 
         return $this;
@@ -1177,8 +1109,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsGlobalExpressEnabled()
-    {
+    public function getIsGlobalExpressEnabled() {
         return $this->container['is_global_express_enabled'];
     }
 
@@ -1189,8 +1120,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsGlobalExpressEnabled($is_global_express_enabled)
-    {
+    public function setIsGlobalExpressEnabled($is_global_express_enabled) {
         $this->container['is_global_express_enabled'] = $is_global_express_enabled;
 
         return $this;
@@ -1201,8 +1131,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getReplacedOrderId()
-    {
+    public function getReplacedOrderId() {
         return $this->container['replaced_order_id'];
     }
 
@@ -1213,8 +1142,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setReplacedOrderId($replaced_order_id)
-    {
+    public function setReplacedOrderId($replaced_order_id) {
         $this->container['replaced_order_id'] = $replaced_order_id;
 
         return $this;
@@ -1225,8 +1153,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsReplacementOrder()
-    {
+    public function getIsReplacementOrder() {
         return $this->container['is_replacement_order'];
     }
 
@@ -1237,8 +1164,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsReplacementOrder($is_replacement_order)
-    {
+    public function setIsReplacementOrder($is_replacement_order) {
         $this->container['is_replacement_order'] = $is_replacement_order;
 
         return $this;
@@ -1249,8 +1175,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function getPromiseResponseDueDate()
-    {
+    public function getPromiseResponseDueDate() {
         return $this->container['promise_response_due_date'];
     }
 
@@ -1261,8 +1186,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setPromiseResponseDueDate($promise_response_due_date)
-    {
+    public function setPromiseResponseDueDate($promise_response_due_date) {
         $this->container['promise_response_due_date'] = $promise_response_due_date;
 
         return $this;
@@ -1273,8 +1197,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsEstimatedShipDateSet()
-    {
+    public function getIsEstimatedShipDateSet() {
         return $this->container['is_estimated_ship_date_set'];
     }
 
@@ -1285,8 +1208,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsEstimatedShipDateSet($is_estimated_ship_date_set)
-    {
+    public function setIsEstimatedShipDateSet($is_estimated_ship_date_set) {
         $this->container['is_estimated_ship_date_set'] = $is_estimated_ship_date_set;
 
         return $this;
@@ -1297,8 +1219,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function getIsSoldByAb()
-    {
+    public function getIsSoldByAb() {
         return $this->container['is_sold_by_ab'];
     }
 
@@ -1309,8 +1230,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return $this
      */
-    public function setIsSoldByAb($is_sold_by_ab)
-    {
+    public function setIsSoldByAb($is_sold_by_ab) {
         $this->container['is_sold_by_ab'] = $is_sold_by_ab;
 
         return $this;
@@ -1319,22 +1239,20 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     /**
      * Gets assigned_ship_from_location_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address
+     * @return Address
      */
-    public function getAssignedShipFromLocationAddress()
-    {
+    public function getAssignedShipFromLocationAddress() {
         return $this->container['assigned_ship_from_location_address'];
     }
 
     /**
      * Sets assigned_ship_from_location_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address $assigned_ship_from_location_address assigned_ship_from_location_address
+     * @param Address $assigned_ship_from_location_address assigned_ship_from_location_address
      *
      * @return $this
      */
-    public function setAssignedShipFromLocationAddress($assigned_ship_from_location_address)
-    {
+    public function setAssignedShipFromLocationAddress($assigned_ship_from_location_address) {
         $this->container['assigned_ship_from_location_address'] = $assigned_ship_from_location_address;
 
         return $this;
@@ -1343,22 +1261,20 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
     /**
      * Gets fulfillment_instruction.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction
+     * @return FulfillmentInstruction
      */
-    public function getFulfillmentInstruction()
-    {
+    public function getFulfillmentInstruction() {
         return $this->container['fulfillment_instruction'];
     }
 
     /**
      * Sets fulfillment_instruction.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction $fulfillment_instruction fulfillment_instruction
+     * @param FulfillmentInstruction $fulfillment_instruction fulfillment_instruction
      *
      * @return $this
      */
-    public function setFulfillmentInstruction($fulfillment_instruction)
-    {
+    public function setFulfillmentInstruction($fulfillment_instruction) {
         $this->container['fulfillment_instruction'] = $fulfillment_instruction;
 
         return $this;
@@ -1371,8 +1287,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -1383,21 +1298,19 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -1412,8 +1325,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -1422,8 +1334,7 @@ self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AdditionalSellerInputs Class Doc Comment.
  *
-
  * @description An additional set of seller inputs required to purchase shipping.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AdditionalSellerInputs implements ModelInterface, ArrayAccess
-{
+class AdditionalSellerInputs implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,8 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'additional_input_field_name' => 'string',
-'additional_seller_input' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput',    ];
+        'additional_seller_input'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,15 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'additional_input_field_name' => null,
-'additional_seller_input' => null,    ];
+        'additional_seller_input'     => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +84,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'additional_input_field_name' => 'AdditionalInputFieldName',
-'additional_seller_input' => 'AdditionalSellerInput',    ];
+        'additional_seller_input'     => 'AdditionalSellerInput',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +93,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'additional_input_field_name' => 'setAdditionalInputFieldName',
-'additional_seller_input' => 'setAdditionalSellerInput',    ];
+        'additional_seller_input'     => 'setAdditionalSellerInput',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +102,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'additional_input_field_name' => 'getAdditionalInputFieldName',
-'additional_seller_input' => 'getAdditionalSellerInput',    ];
+        'additional_seller_input'     => 'getAdditionalSellerInput',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +154,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['additional_input_field_name'] = isset($data['additional_input_field_name']) ? $data['additional_input_field_name'] : null;
         $this->container['additional_seller_input'] = isset($data['additional_seller_input']) ? $data['additional_seller_input'] : null;
     }
@@ -171,8 +164,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['additional_input_field_name']) {
@@ -191,8 +183,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -201,8 +192,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAdditionalInputFieldName()
-    {
+    public function getAdditionalInputFieldName() {
         return $this->container['additional_input_field_name'];
     }
 
@@ -213,8 +203,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdditionalInputFieldName($additional_input_field_name)
-    {
+    public function setAdditionalInputFieldName($additional_input_field_name) {
         $this->container['additional_input_field_name'] = $additional_input_field_name;
 
         return $this;
@@ -223,22 +212,20 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
     /**
      * Gets additional_seller_input.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput
+     * @return AdditionalSellerInput
      */
-    public function getAdditionalSellerInput()
-    {
+    public function getAdditionalSellerInput() {
         return $this->container['additional_seller_input'];
     }
 
     /**
      * Sets additional_seller_input.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInput $additional_seller_input additional_seller_input
+     * @param AdditionalSellerInput $additional_seller_input additional_seller_input
      *
      * @return $this
      */
-    public function setAdditionalSellerInput($additional_seller_input)
-    {
+    public function setAdditionalSellerInput($additional_seller_input) {
         $this->container['additional_seller_input'] = $additional_seller_input;
 
         return $this;
@@ -251,8 +238,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +249,19 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +276,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +285,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

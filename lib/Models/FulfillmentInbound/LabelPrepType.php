@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * LabelPrepType Class Doc Comment.
  *
-
  * @description The type of label preparation that is required for the inbound shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LabelPrepType
-{
+class LabelPrepType {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class LabelPrepType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::NO_LABEL,
-self::SELLER_LABEL,
-self::AMAZON_LABEL,        ];
+            self::SELLER_LABEL,
+            self::AMAZON_LABEL,];
     }
 }

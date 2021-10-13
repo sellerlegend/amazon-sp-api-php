@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SolutionProviderCreditEvent Class Doc Comment.
  *
-
  * @description A credit given to a solution provider.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
-{
+class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,15 +46,15 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'provider_transaction_type' => 'string',
-'seller_order_id' => 'string',
-'marketplace_id' => 'string',
-'marketplace_country_code' => 'string',
-'seller_id' => 'string',
-'seller_store_name' => 'string',
-'provider_id' => 'string',
-'provider_store_name' => 'string',
-'transaction_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'transaction_creation_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',    ];
+        'seller_order_id'           => 'string',
+        'marketplace_id'            => 'string',
+        'marketplace_country_code'  => 'string',
+        'seller_id'                 => 'string',
+        'seller_store_name'         => 'string',
+        'provider_id'               => 'string',
+        'provider_store_name'       => 'string',
+        'transaction_amount'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'transaction_creation_date' => '\DateTime',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -64,23 +63,22 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'provider_transaction_type' => null,
-'seller_order_id' => null,
-'marketplace_id' => null,
-'marketplace_country_code' => null,
-'seller_id' => null,
-'seller_store_name' => null,
-'provider_id' => null,
-'provider_store_name' => null,
-'transaction_amount' => null,
-'transaction_creation_date' => null,    ];
+        'seller_order_id'           => null,
+        'marketplace_id'            => null,
+        'marketplace_country_code'  => null,
+        'seller_id'                 => null,
+        'seller_store_name'         => null,
+        'provider_id'               => null,
+        'provider_store_name'       => null,
+        'transaction_amount'        => null,
+        'transaction_creation_date' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -89,8 +87,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -102,15 +99,15 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'provider_transaction_type' => 'ProviderTransactionType',
-'seller_order_id' => 'SellerOrderId',
-'marketplace_id' => 'MarketplaceId',
-'marketplace_country_code' => 'MarketplaceCountryCode',
-'seller_id' => 'SellerId',
-'seller_store_name' => 'SellerStoreName',
-'provider_id' => 'ProviderId',
-'provider_store_name' => 'ProviderStoreName',
-'transaction_amount' => 'TransactionAmount',
-'transaction_creation_date' => 'TransactionCreationDate',    ];
+        'seller_order_id'           => 'SellerOrderId',
+        'marketplace_id'            => 'MarketplaceId',
+        'marketplace_country_code'  => 'MarketplaceCountryCode',
+        'seller_id'                 => 'SellerId',
+        'seller_store_name'         => 'SellerStoreName',
+        'provider_id'               => 'ProviderId',
+        'provider_store_name'       => 'ProviderStoreName',
+        'transaction_amount'        => 'TransactionAmount',
+        'transaction_creation_date' => 'TransactionCreationDate',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -119,15 +116,15 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'provider_transaction_type' => 'setProviderTransactionType',
-'seller_order_id' => 'setSellerOrderId',
-'marketplace_id' => 'setMarketplaceId',
-'marketplace_country_code' => 'setMarketplaceCountryCode',
-'seller_id' => 'setSellerId',
-'seller_store_name' => 'setSellerStoreName',
-'provider_id' => 'setProviderId',
-'provider_store_name' => 'setProviderStoreName',
-'transaction_amount' => 'setTransactionAmount',
-'transaction_creation_date' => 'setTransactionCreationDate',    ];
+        'seller_order_id'           => 'setSellerOrderId',
+        'marketplace_id'            => 'setMarketplaceId',
+        'marketplace_country_code'  => 'setMarketplaceCountryCode',
+        'seller_id'                 => 'setSellerId',
+        'seller_store_name'         => 'setSellerStoreName',
+        'provider_id'               => 'setProviderId',
+        'provider_store_name'       => 'setProviderStoreName',
+        'transaction_amount'        => 'setTransactionAmount',
+        'transaction_creation_date' => 'setTransactionCreationDate',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -136,15 +133,15 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'provider_transaction_type' => 'getProviderTransactionType',
-'seller_order_id' => 'getSellerOrderId',
-'marketplace_id' => 'getMarketplaceId',
-'marketplace_country_code' => 'getMarketplaceCountryCode',
-'seller_id' => 'getSellerId',
-'seller_store_name' => 'getSellerStoreName',
-'provider_id' => 'getProviderId',
-'provider_store_name' => 'getProviderStoreName',
-'transaction_amount' => 'getTransactionAmount',
-'transaction_creation_date' => 'getTransactionCreationDate',    ];
+        'seller_order_id'           => 'getSellerOrderId',
+        'marketplace_id'            => 'getMarketplaceId',
+        'marketplace_country_code'  => 'getMarketplaceCountryCode',
+        'seller_id'                 => 'getSellerId',
+        'seller_store_name'         => 'getSellerStoreName',
+        'provider_id'               => 'getProviderId',
+        'provider_store_name'       => 'getProviderStoreName',
+        'transaction_amount'        => 'getTransactionAmount',
+        'transaction_creation_date' => 'getTransactionCreationDate',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -152,8 +149,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -162,8 +158,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -172,8 +167,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -182,8 +176,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -200,8 +193,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['provider_transaction_type'] = isset($data['provider_transaction_type']) ? $data['provider_transaction_type'] : null;
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
@@ -219,8 +211,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -232,8 +223,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -242,8 +232,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProviderTransactionType()
-    {
+    public function getProviderTransactionType() {
         return $this->container['provider_transaction_type'];
     }
 
@@ -254,8 +243,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProviderTransactionType($provider_transaction_type)
-    {
+    public function setProviderTransactionType($provider_transaction_type) {
         $this->container['provider_transaction_type'] = $provider_transaction_type;
 
         return $this;
@@ -266,8 +254,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerOrderId()
-    {
+    public function getSellerOrderId() {
         return $this->container['seller_order_id'];
     }
 
@@ -278,8 +265,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerOrderId($seller_order_id)
-    {
+    public function setSellerOrderId($seller_order_id) {
         $this->container['seller_order_id'] = $seller_order_id;
 
         return $this;
@@ -290,8 +276,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -302,8 +287,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -314,8 +298,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceCountryCode()
-    {
+    public function getMarketplaceCountryCode() {
         return $this->container['marketplace_country_code'];
     }
 
@@ -326,8 +309,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceCountryCode($marketplace_country_code)
-    {
+    public function setMarketplaceCountryCode($marketplace_country_code) {
         $this->container['marketplace_country_code'] = $marketplace_country_code;
 
         return $this;
@@ -338,8 +320,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerId()
-    {
+    public function getSellerId() {
         return $this->container['seller_id'];
     }
 
@@ -350,8 +331,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerId($seller_id)
-    {
+    public function setSellerId($seller_id) {
         $this->container['seller_id'] = $seller_id;
 
         return $this;
@@ -362,8 +342,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerStoreName()
-    {
+    public function getSellerStoreName() {
         return $this->container['seller_store_name'];
     }
 
@@ -374,8 +353,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerStoreName($seller_store_name)
-    {
+    public function setSellerStoreName($seller_store_name) {
         $this->container['seller_store_name'] = $seller_store_name;
 
         return $this;
@@ -386,8 +364,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProviderId()
-    {
+    public function getProviderId() {
         return $this->container['provider_id'];
     }
 
@@ -398,8 +375,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProviderId($provider_id)
-    {
+    public function setProviderId($provider_id) {
         $this->container['provider_id'] = $provider_id;
 
         return $this;
@@ -410,8 +386,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProviderStoreName()
-    {
+    public function getProviderStoreName() {
         return $this->container['provider_store_name'];
     }
 
@@ -422,8 +397,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProviderStoreName($provider_store_name)
-    {
+    public function setProviderStoreName($provider_store_name) {
         $this->container['provider_store_name'] = $provider_store_name;
 
         return $this;
@@ -432,22 +406,20 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
     /**
      * Gets transaction_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTransactionAmount()
-    {
+    public function getTransactionAmount() {
         return $this->container['transaction_amount'];
     }
 
     /**
      * Sets transaction_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $transaction_amount transaction_amount
+     * @param Currency $transaction_amount transaction_amount
      *
      * @return $this
      */
-    public function setTransactionAmount($transaction_amount)
-    {
+    public function setTransactionAmount($transaction_amount) {
         $this->container['transaction_amount'] = $transaction_amount;
 
         return $this;
@@ -456,22 +428,20 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
     /**
      * Gets transaction_creation_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getTransactionCreationDate()
-    {
+    public function getTransactionCreationDate() {
         return $this->container['transaction_creation_date'];
     }
 
     /**
      * Sets transaction_creation_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $transaction_creation_date transaction_creation_date
+     * @param DateTime $transaction_creation_date transaction_creation_date
      *
      * @return $this
      */
-    public function setTransactionCreationDate($transaction_creation_date)
-    {
+    public function setTransactionCreationDate($transaction_creation_date) {
         $this->container['transaction_creation_date'] = $transaction_creation_date;
 
         return $this;
@@ -484,8 +454,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -496,21 +465,19 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -525,8 +492,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -535,8 +501,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

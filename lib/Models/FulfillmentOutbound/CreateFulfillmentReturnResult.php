@@ -15,19 +15,18 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFulfillmentReturnResult Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
-{
+class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,9 +42,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'return_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList',
-'invalid_return_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidReturnItemList',
-'return_authorizations' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList',    ];
+        'return_items'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList',
+        'invalid_return_items'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidReturnItemList',
+        'return_authorizations' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -53,17 +52,16 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'return_items' => null,
-'invalid_return_items' => null,
-'return_authorizations' => null,    ];
+        'return_items'          => null,
+        'invalid_return_items'  => null,
+        'return_authorizations' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -72,8 +70,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -84,9 +81,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'return_items' => 'returnItems',
-'invalid_return_items' => 'invalidReturnItems',
-'return_authorizations' => 'returnAuthorizations',    ];
+        'return_items'          => 'returnItems',
+        'invalid_return_items'  => 'invalidReturnItems',
+        'return_authorizations' => 'returnAuthorizations',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,9 +91,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'return_items' => 'setReturnItems',
-'invalid_return_items' => 'setInvalidReturnItems',
-'return_authorizations' => 'setReturnAuthorizations',    ];
+        'return_items'          => 'setReturnItems',
+        'invalid_return_items'  => 'setInvalidReturnItems',
+        'return_authorizations' => 'setReturnAuthorizations',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,9 +101,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'return_items' => 'getReturnItems',
-'invalid_return_items' => 'getInvalidReturnItems',
-'return_authorizations' => 'getReturnAuthorizations',    ];
+        'return_items'          => 'getReturnItems',
+        'invalid_return_items'  => 'getInvalidReturnItems',
+        'return_authorizations' => 'getReturnAuthorizations',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -114,8 +111,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -124,8 +120,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -134,8 +129,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -144,8 +138,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -162,8 +155,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['return_items'] = isset($data['return_items']) ? $data['return_items'] : null;
         $this->container['invalid_return_items'] = isset($data['invalid_return_items']) ? $data['invalid_return_items'] : null;
         $this->container['return_authorizations'] = isset($data['return_authorizations']) ? $data['return_authorizations'] : null;
@@ -174,8 +166,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -187,30 +178,27 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets return_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList
+     * @return ReturnItemList
      */
-    public function getReturnItems()
-    {
+    public function getReturnItems() {
         return $this->container['return_items'];
     }
 
     /**
      * Sets return_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList $return_items return_items
+     * @param ReturnItemList $return_items return_items
      *
      * @return $this
      */
-    public function setReturnItems($return_items)
-    {
+    public function setReturnItems($return_items) {
         $this->container['return_items'] = $return_items;
 
         return $this;
@@ -219,22 +207,20 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
     /**
      * Gets invalid_return_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidReturnItemList
+     * @return InvalidReturnItemList
      */
-    public function getInvalidReturnItems()
-    {
+    public function getInvalidReturnItems() {
         return $this->container['invalid_return_items'];
     }
 
     /**
      * Sets invalid_return_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidReturnItemList $invalid_return_items invalid_return_items
+     * @param InvalidReturnItemList $invalid_return_items invalid_return_items
      *
      * @return $this
      */
-    public function setInvalidReturnItems($invalid_return_items)
-    {
+    public function setInvalidReturnItems($invalid_return_items) {
         $this->container['invalid_return_items'] = $invalid_return_items;
 
         return $this;
@@ -243,22 +229,20 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
     /**
      * Gets return_authorizations.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList
+     * @return ReturnAuthorizationList
      */
-    public function getReturnAuthorizations()
-    {
+    public function getReturnAuthorizations() {
         return $this->container['return_authorizations'];
     }
 
     /**
      * Sets return_authorizations.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList $return_authorizations return_authorizations
+     * @param ReturnAuthorizationList $return_authorizations return_authorizations
      *
      * @return $this
      */
-    public function setReturnAuthorizations($return_authorizations)
-    {
+    public function setReturnAuthorizations($return_authorizations) {
         $this->container['return_authorizations'] = $return_authorizations;
 
         return $this;
@@ -271,8 +255,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -283,21 +266,19 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -312,8 +293,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -322,8 +302,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

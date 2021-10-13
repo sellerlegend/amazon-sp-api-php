@@ -1,19 +1,19 @@
 {
-    "name": "clousale/amazon-sp-api-php",
+    "name": "sellerlegend/amazon-sp-api-php",
     "description": "",
     "keywords": [
         "api",
         "amazon",
         "selling-partner",
         "sp-api",
-        "clousale"
+        "sellerlegend"
     ],
-    "homepage": "http://www.clousale.com",
+    "homepage": "https://sellerlegend.com/",
     "license": "MIT",
     "authors": [
         {
-            "name": "ClouSale",
-            "homepage": "https://www.clousale.com"
+            "name": "SellerLegend",
+            "homepage": "https://sellerlegend.com/"
         }
     ],
     "require": {
@@ -30,9 +30,9 @@
         "friendsofphp/php-cs-fixer": "v2.17.3"
     },
     "autoload": {
-        "psr-4": { "ClouSale\\AmazonSellingPartnerAPI\\" : "lib/" }
+        "psr-4": { "SellerLegend\\AmazonSellingPartnerAPI\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "ClouSale\\AmazonSellingPartnerAPI\\" : "test/" }
+        "psr-4": { "SellerLegend\\AmazonSellingPartnerAPI\\" : "test/" }
     }
 }

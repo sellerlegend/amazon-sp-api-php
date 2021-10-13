@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * FileType Class Doc Comment.
  *
-
  * @description The file type for a label.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FileType
-{
+class FileType {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class FileType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::APPLICATIONPDF,
-self::APPLICATIONZPL,
-self::IMAGEPNG,        ];
+            self::APPLICATIONZPL,
+            self::IMAGEPNG,];
     }
 }

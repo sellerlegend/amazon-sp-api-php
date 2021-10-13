@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetFulfillmentPreviewRequest Class Doc Comment.
  *
-
  * @description The request body schema for the getFulfillmentPreview operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
-{
+class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,14 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'marketplace_id' => 'string',
-'address' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address',
-'items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\GetFulfillmentPreviewItemList',
-'shipping_speed_categories' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategoryList',
-'include_cod_fulfillment_preview' => 'bool',
-'include_delivery_windows' => 'bool',
-'feature_constraints' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[]',    ];
+        'marketplace_id'                  => 'string',
+        'address'                         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address',
+        'items'                           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\GetFulfillmentPreviewItemList',
+        'shipping_speed_categories'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategoryList',
+        'include_cod_fulfillment_preview' => 'bool',
+        'include_delivery_windows'        => 'bool',
+        'feature_constraints'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[]'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +59,21 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'marketplace_id' => null,
-'address' => null,
-'items' => null,
-'shipping_speed_categories' => null,
-'include_cod_fulfillment_preview' => null,
-'include_delivery_windows' => null,
-'feature_constraints' => null,    ];
+        'marketplace_id'                  => null,
+        'address'                         => null,
+        'items'                           => null,
+        'shipping_speed_categories'       => null,
+        'include_cod_fulfillment_preview' => null,
+        'include_delivery_windows'        => null,
+        'feature_constraints'             => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +82,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +93,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplace_id' => 'marketplaceId',
-'address' => 'address',
-'items' => 'items',
-'shipping_speed_categories' => 'shippingSpeedCategories',
-'include_cod_fulfillment_preview' => 'includeCODFulfillmentPreview',
-'include_delivery_windows' => 'includeDeliveryWindows',
-'feature_constraints' => 'featureConstraints',    ];
+        'marketplace_id'                  => 'marketplaceId',
+        'address'                         => 'address',
+        'items'                           => 'items',
+        'shipping_speed_categories'       => 'shippingSpeedCategories',
+        'include_cod_fulfillment_preview' => 'includeCODFulfillmentPreview',
+        'include_delivery_windows'        => 'includeDeliveryWindows',
+        'feature_constraints'             => 'featureConstraints',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +107,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-'address' => 'setAddress',
-'items' => 'setItems',
-'shipping_speed_categories' => 'setShippingSpeedCategories',
-'include_cod_fulfillment_preview' => 'setIncludeCodFulfillmentPreview',
-'include_delivery_windows' => 'setIncludeDeliveryWindows',
-'feature_constraints' => 'setFeatureConstraints',    ];
+        'marketplace_id'                  => 'setMarketplaceId',
+        'address'                         => 'setAddress',
+        'items'                           => 'setItems',
+        'shipping_speed_categories'       => 'setShippingSpeedCategories',
+        'include_cod_fulfillment_preview' => 'setIncludeCodFulfillmentPreview',
+        'include_delivery_windows'        => 'setIncludeDeliveryWindows',
+        'feature_constraints'             => 'setFeatureConstraints',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +121,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'marketplace_id' => 'getMarketplaceId',
-'address' => 'getAddress',
-'items' => 'getItems',
-'shipping_speed_categories' => 'getShippingSpeedCategories',
-'include_cod_fulfillment_preview' => 'getIncludeCodFulfillmentPreview',
-'include_delivery_windows' => 'getIncludeDeliveryWindows',
-'feature_constraints' => 'getFeatureConstraints',    ];
+        'marketplace_id'                  => 'getMarketplaceId',
+        'address'                         => 'getAddress',
+        'items'                           => 'getItems',
+        'shipping_speed_categories'       => 'getShippingSpeedCategories',
+        'include_cod_fulfillment_preview' => 'getIncludeCodFulfillmentPreview',
+        'include_delivery_windows'        => 'getIncludeDeliveryWindows',
+        'feature_constraints'             => 'getFeatureConstraints',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +135,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +144,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +153,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +162,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +179,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['items'] = isset($data['items']) ? $data['items'] : null;
@@ -201,8 +194,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['address']) {
@@ -221,8 +213,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -231,8 +222,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -243,8 +233,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -253,22 +242,20 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
     /**
      * Gets address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address
+     * @return Address
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->container['address'];
     }
 
     /**
      * Sets address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address $address address
+     * @param Address $address address
      *
      * @return $this
      */
-    public function setAddress($address)
-    {
+    public function setAddress($address) {
         $this->container['address'] = $address;
 
         return $this;
@@ -277,22 +264,20 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
     /**
      * Gets items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\GetFulfillmentPreviewItemList
+     * @return GetFulfillmentPreviewItemList
      */
-    public function getItems()
-    {
+    public function getItems() {
         return $this->container['items'];
     }
 
     /**
      * Sets items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\GetFulfillmentPreviewItemList $items items
+     * @param GetFulfillmentPreviewItemList $items items
      *
      * @return $this
      */
-    public function setItems($items)
-    {
+    public function setItems($items) {
         $this->container['items'] = $items;
 
         return $this;
@@ -301,22 +286,20 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_speed_categories.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategoryList
+     * @return ShippingSpeedCategoryList
      */
-    public function getShippingSpeedCategories()
-    {
+    public function getShippingSpeedCategories() {
         return $this->container['shipping_speed_categories'];
     }
 
     /**
      * Sets shipping_speed_categories.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategoryList $shipping_speed_categories shipping_speed_categories
+     * @param ShippingSpeedCategoryList $shipping_speed_categories shipping_speed_categories
      *
      * @return $this
      */
-    public function setShippingSpeedCategories($shipping_speed_categories)
-    {
+    public function setShippingSpeedCategories($shipping_speed_categories) {
         $this->container['shipping_speed_categories'] = $shipping_speed_categories;
 
         return $this;
@@ -327,8 +310,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIncludeCodFulfillmentPreview()
-    {
+    public function getIncludeCodFulfillmentPreview() {
         return $this->container['include_cod_fulfillment_preview'];
     }
 
@@ -339,8 +321,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIncludeCodFulfillmentPreview($include_cod_fulfillment_preview)
-    {
+    public function setIncludeCodFulfillmentPreview($include_cod_fulfillment_preview) {
         $this->container['include_cod_fulfillment_preview'] = $include_cod_fulfillment_preview;
 
         return $this;
@@ -351,8 +332,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIncludeDeliveryWindows()
-    {
+    public function getIncludeDeliveryWindows() {
         return $this->container['include_delivery_windows'];
     }
 
@@ -363,8 +343,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIncludeDeliveryWindows($include_delivery_windows)
-    {
+    public function setIncludeDeliveryWindows($include_delivery_windows) {
         $this->container['include_delivery_windows'] = $include_delivery_windows;
 
         return $this;
@@ -373,22 +352,20 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
     /**
      * Gets feature_constraints.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[]
+     * @return FeatureSettings[]
      */
-    public function getFeatureConstraints()
-    {
+    public function getFeatureConstraints() {
         return $this->container['feature_constraints'];
     }
 
     /**
      * Sets feature_constraints.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
      *
      * @return $this
      */
-    public function setFeatureConstraints($feature_constraints)
-    {
+    public function setFeatureConstraints($feature_constraints) {
         $this->container['feature_constraints'] = $feature_constraints;
 
         return $this;
@@ -401,8 +378,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -413,21 +389,19 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -442,8 +416,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -452,8 +425,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PointsGrantedDetail Class Doc Comment.
  *
-
  * @description The number of Amazon Points offered with the purchase of an item, and their monetary value.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PointsGrantedDetail implements ModelInterface, ArrayAccess
-{
+class PointsGrantedDetail implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'points_number' => 'int',
-'points_monetary_value' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',    ];
+        'points_number'         => 'int',
+        'points_monetary_value' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'points_number' => null,
-'points_monetary_value' => null,    ];
+        'points_number'         => null,
+        'points_monetary_value' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'points_number' => 'PointsNumber',
-'points_monetary_value' => 'PointsMonetaryValue',    ];
+        'points_number'         => 'PointsNumber',
+        'points_monetary_value' => 'PointsMonetaryValue',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'points_number' => 'setPointsNumber',
-'points_monetary_value' => 'setPointsMonetaryValue',    ];
+        'points_number'         => 'setPointsNumber',
+        'points_monetary_value' => 'setPointsMonetaryValue',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'points_number' => 'getPointsNumber',
-'points_monetary_value' => 'getPointsMonetaryValue',    ];
+        'points_number'         => 'getPointsNumber',
+        'points_monetary_value' => 'getPointsMonetaryValue',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['points_number'] = isset($data['points_number']) ? $data['points_number'] : null;
         $this->container['points_monetary_value'] = isset($data['points_monetary_value']) ? $data['points_monetary_value'] : null;
     }
@@ -171,8 +162,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +174,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +183,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPointsNumber()
-    {
+    public function getPointsNumber() {
         return $this->container['points_number'];
     }
 
@@ -206,8 +194,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPointsNumber($points_number)
-    {
+    public function setPointsNumber($points_number) {
         $this->container['points_number'] = $points_number;
 
         return $this;
@@ -216,22 +203,20 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
     /**
      * Gets points_monetary_value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getPointsMonetaryValue()
-    {
+    public function getPointsMonetaryValue() {
         return $this->container['points_monetary_value'];
     }
 
     /**
      * Sets points_monetary_value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $points_monetary_value points_monetary_value
+     * @param Money $points_monetary_value points_monetary_value
      *
      * @return $this
      */
-    public function setPointsMonetaryValue($points_monetary_value)
-    {
+    public function setPointsMonetaryValue($points_monetary_value) {
         $this->container['points_monetary_value'] = $points_monetary_value;
 
         return $this;
@@ -244,8 +229,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

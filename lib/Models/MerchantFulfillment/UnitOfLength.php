@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * UnitOfLength Class Doc Comment.
  *
-
  * @description The unit of length.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class UnitOfLength
-{
+class UnitOfLength {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class UnitOfLength
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::INCHES,
-self::CENTIMETERS,        ];
+            self::CENTIMETERS,];
     }
 }

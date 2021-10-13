@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Item Class Doc Comment.
  *
-
  * @description An Amazon order item identifier and a quantity.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Item implements ModelInterface, ArrayAccess
-{
+class Item implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,13 @@ class Item implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'order_item_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\OrderItemId',
-'quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemQuantity',
-'item_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight',
-'item_description' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemDescription',
-'transparency_code_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TransparencyCodeList',
-'item_level_seller_inputs_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInputsList',    ];
+        'order_item_id'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\OrderItemId',
+        'quantity'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemQuantity',
+        'item_weight'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight',
+        'item_description'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemDescription',
+        'transparency_code_list'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TransparencyCodeList',
+        'item_level_seller_inputs_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInputsList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +58,20 @@ class Item implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'order_item_id' => null,
-'quantity' => null,
-'item_weight' => null,
-'item_description' => null,
-'transparency_code_list' => null,
-'item_level_seller_inputs_list' => null,    ];
+        'order_item_id'                 => null,
+        'quantity'                      => null,
+        'item_weight'                   => null,
+        'item_description'              => null,
+        'transparency_code_list'        => null,
+        'item_level_seller_inputs_list' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +80,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +91,12 @@ class Item implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'order_item_id' => 'OrderItemId',
-'quantity' => 'Quantity',
-'item_weight' => 'ItemWeight',
-'item_description' => 'ItemDescription',
-'transparency_code_list' => 'TransparencyCodeList',
-'item_level_seller_inputs_list' => 'ItemLevelSellerInputsList',    ];
+        'order_item_id'                 => 'OrderItemId',
+        'quantity'                      => 'Quantity',
+        'item_weight'                   => 'ItemWeight',
+        'item_description'              => 'ItemDescription',
+        'transparency_code_list'        => 'TransparencyCodeList',
+        'item_level_seller_inputs_list' => 'ItemLevelSellerInputsList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +104,12 @@ class Item implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'order_item_id' => 'setOrderItemId',
-'quantity' => 'setQuantity',
-'item_weight' => 'setItemWeight',
-'item_description' => 'setItemDescription',
-'transparency_code_list' => 'setTransparencyCodeList',
-'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList',    ];
+        'order_item_id'                 => 'setOrderItemId',
+        'quantity'                      => 'setQuantity',
+        'item_weight'                   => 'setItemWeight',
+        'item_description'              => 'setItemDescription',
+        'transparency_code_list'        => 'setTransparencyCodeList',
+        'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +117,12 @@ class Item implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'order_item_id' => 'getOrderItemId',
-'quantity' => 'getQuantity',
-'item_weight' => 'getItemWeight',
-'item_description' => 'getItemDescription',
-'transparency_code_list' => 'getTransparencyCodeList',
-'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList',    ];
+        'order_item_id'                 => 'getOrderItemId',
+        'quantity'                      => 'getQuantity',
+        'item_weight'                   => 'getItemWeight',
+        'item_description'              => 'getItemDescription',
+        'transparency_code_list'        => 'getTransparencyCodeList',
+        'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +130,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +139,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +148,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +157,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +174,7 @@ class Item implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['order_item_id'] = isset($data['order_item_id']) ? $data['order_item_id'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['item_weight'] = isset($data['item_weight']) ? $data['item_weight'] : null;
@@ -195,8 +188,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['order_item_id']) {
@@ -215,30 +207,27 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets order_item_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\OrderItemId
+     * @return OrderItemId
      */
-    public function getOrderItemId()
-    {
+    public function getOrderItemId() {
         return $this->container['order_item_id'];
     }
 
     /**
      * Sets order_item_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\OrderItemId $order_item_id order_item_id
+     * @param OrderItemId $order_item_id order_item_id
      *
      * @return $this
      */
-    public function setOrderItemId($order_item_id)
-    {
+    public function setOrderItemId($order_item_id) {
         $this->container['order_item_id'] = $order_item_id;
 
         return $this;
@@ -247,22 +236,20 @@ class Item implements ModelInterface, ArrayAccess
     /**
      * Gets quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemQuantity
+     * @return ItemQuantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
     /**
      * Sets quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemQuantity $quantity quantity
+     * @param ItemQuantity $quantity quantity
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -271,22 +258,20 @@ class Item implements ModelInterface, ArrayAccess
     /**
      * Gets item_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight
+     * @return Weight
      */
-    public function getItemWeight()
-    {
+    public function getItemWeight() {
         return $this->container['item_weight'];
     }
 
     /**
      * Sets item_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight $item_weight item_weight
+     * @param Weight $item_weight item_weight
      *
      * @return $this
      */
-    public function setItemWeight($item_weight)
-    {
+    public function setItemWeight($item_weight) {
         $this->container['item_weight'] = $item_weight;
 
         return $this;
@@ -295,22 +280,20 @@ class Item implements ModelInterface, ArrayAccess
     /**
      * Gets item_description.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemDescription
+     * @return ItemDescription
      */
-    public function getItemDescription()
-    {
+    public function getItemDescription() {
         return $this->container['item_description'];
     }
 
     /**
      * Sets item_description.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemDescription $item_description item_description
+     * @param ItemDescription $item_description item_description
      *
      * @return $this
      */
-    public function setItemDescription($item_description)
-    {
+    public function setItemDescription($item_description) {
         $this->container['item_description'] = $item_description;
 
         return $this;
@@ -319,22 +302,20 @@ class Item implements ModelInterface, ArrayAccess
     /**
      * Gets transparency_code_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TransparencyCodeList
+     * @return TransparencyCodeList
      */
-    public function getTransparencyCodeList()
-    {
+    public function getTransparencyCodeList() {
         return $this->container['transparency_code_list'];
     }
 
     /**
      * Sets transparency_code_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TransparencyCodeList $transparency_code_list transparency_code_list
+     * @param TransparencyCodeList $transparency_code_list transparency_code_list
      *
      * @return $this
      */
-    public function setTransparencyCodeList($transparency_code_list)
-    {
+    public function setTransparencyCodeList($transparency_code_list) {
         $this->container['transparency_code_list'] = $transparency_code_list;
 
         return $this;
@@ -343,22 +324,20 @@ class Item implements ModelInterface, ArrayAccess
     /**
      * Gets item_level_seller_inputs_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInputsList
+     * @return AdditionalSellerInputsList
      */
-    public function getItemLevelSellerInputsList()
-    {
+    public function getItemLevelSellerInputsList() {
         return $this->container['item_level_seller_inputs_list'];
     }
 
     /**
      * Sets item_level_seller_inputs_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalSellerInputsList $item_level_seller_inputs_list item_level_seller_inputs_list
+     * @param AdditionalSellerInputsList $item_level_seller_inputs_list item_level_seller_inputs_list
      *
      * @return $this
      */
-    public function setItemLevelSellerInputsList($item_level_seller_inputs_list)
-    {
+    public function setItemLevelSellerInputsList($item_level_seller_inputs_list) {
         $this->container['item_level_seller_inputs_list'] = $item_level_seller_inputs_list;
 
         return $this;
@@ -371,8 +350,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -383,21 +361,19 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -412,8 +388,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -422,8 +397,7 @@ class Item implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

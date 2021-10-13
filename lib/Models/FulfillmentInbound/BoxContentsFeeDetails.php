@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * BoxContentsFeeDetails Class Doc Comment.
  *
-
  * @description The manual processing fee per unit and total fee for a shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
-{
+class BoxContentsFeeDetails implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'total_units' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
-'fee_per_unit' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount',
-'total_fee' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount',    ];
+        'total_units'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
+        'fee_per_unit' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount',
+        'total_fee'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +55,17 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'total_units' => null,
-'fee_per_unit' => null,
-'total_fee' => null,    ];
+        'total_units'  => null,
+        'fee_per_unit' => null,
+        'total_fee'    => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +74,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +85,9 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_units' => 'TotalUnits',
-'fee_per_unit' => 'FeePerUnit',
-'total_fee' => 'TotalFee',    ];
+        'total_units'  => 'TotalUnits',
+        'fee_per_unit' => 'FeePerUnit',
+        'total_fee'    => 'TotalFee',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +95,9 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_units' => 'setTotalUnits',
-'fee_per_unit' => 'setFeePerUnit',
-'total_fee' => 'setTotalFee',    ];
+        'total_units'  => 'setTotalUnits',
+        'fee_per_unit' => 'setFeePerUnit',
+        'total_fee'    => 'setTotalFee',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +105,9 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_units' => 'getTotalUnits',
-'fee_per_unit' => 'getFeePerUnit',
-'total_fee' => 'getTotalFee',    ];
+        'total_units'  => 'getTotalUnits',
+        'fee_per_unit' => 'getFeePerUnit',
+        'total_fee'    => 'getTotalFee',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +115,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +124,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +133,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +142,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +159,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['total_units'] = isset($data['total_units']) ? $data['total_units'] : null;
         $this->container['fee_per_unit'] = isset($data['fee_per_unit']) ? $data['fee_per_unit'] : null;
         $this->container['total_fee'] = isset($data['total_fee']) ? $data['total_fee'] : null;
@@ -177,8 +170,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,30 +182,27 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_units.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity
+     * @return Quantity
      */
-    public function getTotalUnits()
-    {
+    public function getTotalUnits() {
         return $this->container['total_units'];
     }
 
     /**
      * Sets total_units.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity $total_units total_units
+     * @param Quantity $total_units total_units
      *
      * @return $this
      */
-    public function setTotalUnits($total_units)
-    {
+    public function setTotalUnits($total_units) {
         $this->container['total_units'] = $total_units;
 
         return $this;
@@ -222,22 +211,20 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
     /**
      * Gets fee_per_unit.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount
+     * @return Amount
      */
-    public function getFeePerUnit()
-    {
+    public function getFeePerUnit() {
         return $this->container['fee_per_unit'];
     }
 
     /**
      * Sets fee_per_unit.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount $fee_per_unit fee_per_unit
+     * @param Amount $fee_per_unit fee_per_unit
      *
      * @return $this
      */
-    public function setFeePerUnit($fee_per_unit)
-    {
+    public function setFeePerUnit($fee_per_unit) {
         $this->container['fee_per_unit'] = $fee_per_unit;
 
         return $this;
@@ -246,22 +233,20 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
     /**
      * Gets total_fee.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount
+     * @return Amount
      */
-    public function getTotalFee()
-    {
+    public function getTotalFee() {
         return $this->container['total_fee'];
     }
 
     /**
      * Sets total_fee.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount $total_fee total_fee
+     * @param Amount $total_fee total_fee
      *
      * @return $this
      */
-    public function setTotalFee($total_fee)
-    {
+    public function setTotalFee($total_fee) {
         $this->container['total_fee'] = $total_fee;
 
         return $this;
@@ -274,8 +259,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +270,19 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +297,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +306,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

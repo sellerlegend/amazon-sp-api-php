@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * InvalidItemReasonCode Class Doc Comment.
  *
-
  * @description A code for why the item is invalid for return.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InvalidItemReasonCode
-{
+class InvalidItemReasonCode {
     /**
      * Possible values of this enum.
      */
@@ -40,12 +38,11 @@ class InvalidItemReasonCode
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::INVALID_VALUES,
-self::DUPLICATE_REQUEST,
-self::NO_COMPLETED_SHIP_ITEMS,
-self::NO_RETURNABLE_QUANTITY,        ];
+            self::DUPLICATE_REQUEST,
+            self::NO_COMPLETED_SHIP_ITEMS,
+            self::NO_RETURNABLE_QUANTITY,];
     }
 }

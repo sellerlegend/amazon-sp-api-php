@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ResearchingQuantityEntry Class Doc Comment.
  *
-
  * @description The misplaced or warehouse damaged inventory that is actively being confirmed at our fulfillment centers.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
-{
+class ResearchingQuantityEntry implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,8 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'quantity' => 'int',    ];
+        'name'     => 'string',
+        'quantity' => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'quantity' => null,    ];
+        'name'     => null,
+        'quantity' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-'quantity' => 'quantity',    ];
+        'name'     => 'name',
+        'quantity' => 'quantity',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'quantity' => 'setQuantity',    ];
+        'name'     => 'setName',
+        'quantity' => 'setQuantity',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'quantity' => 'getQuantity',    ];
+        'name'     => 'getName',
+        'quantity' => 'getQuantity',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -156,12 +149,11 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getNameAllowableValues()
-    {
+    public function getNameAllowableValues() {
         return [
             self::NAME_RESEARCHING_QUANTITY_IN_SHORT_TERM,
-self::NAME_RESEARCHING_QUANTITY_IN_MID_TERM,
-self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
+            self::NAME_RESEARCHING_QUANTITY_IN_MID_TERM,
+            self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,];
     }
 
     /**
@@ -177,8 +169,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
     }
@@ -188,8 +179,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['name']) {
@@ -216,8 +206,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -226,8 +215,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -238,11 +226,10 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $allowedValues = $this->getNameAllowableValues();
         if (!in_array($name, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'name', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'name', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['name'] = $name;
 
@@ -254,8 +241,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return int
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
@@ -266,8 +252,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -280,8 +265,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -292,21 +276,19 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -321,8 +303,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -331,8 +312,7 @@ self::NAME_RESEARCHING_QUANTITY_IN_LONG_TERM,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

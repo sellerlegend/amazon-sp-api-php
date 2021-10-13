@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TrackingEvent Class Doc Comment.
  *
-
  * @description Information for tracking package deliveries.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TrackingEvent implements ModelInterface, ArrayAccess
-{
+class TrackingEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'event_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'event_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress',
-'event_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\EventCode',
-'event_description' => 'string',    ];
+        'event_date'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'event_address'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress',
+        'event_code'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\EventCode',
+        'event_description' => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'event_date' => null,
-'event_address' => null,
-'event_code' => null,
-'event_description' => null,    ];
+        'event_date'        => null,
+        'event_address'     => null,
+        'event_code'        => null,
+        'event_description' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'event_date' => 'eventDate',
-'event_address' => 'eventAddress',
-'event_code' => 'eventCode',
-'event_description' => 'eventDescription',    ];
+        'event_date'        => 'eventDate',
+        'event_address'     => 'eventAddress',
+        'event_code'        => 'eventCode',
+        'event_description' => 'eventDescription',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'event_date' => 'setEventDate',
-'event_address' => 'setEventAddress',
-'event_code' => 'setEventCode',
-'event_description' => 'setEventDescription',    ];
+        'event_date'        => 'setEventDate',
+        'event_address'     => 'setEventAddress',
+        'event_code'        => 'setEventCode',
+        'event_description' => 'setEventDescription',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'event_date' => 'getEventDate',
-'event_address' => 'getEventAddress',
-'event_code' => 'getEventCode',
-'event_description' => 'getEventDescription',    ];
+        'event_date'        => 'getEventDate',
+        'event_address'     => 'getEventAddress',
+        'event_code'        => 'getEventCode',
+        'event_description' => 'getEventDescription',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['event_date'] = isset($data['event_date']) ? $data['event_date'] : null;
         $this->container['event_address'] = isset($data['event_address']) ? $data['event_address'] : null;
         $this->container['event_code'] = isset($data['event_code']) ? $data['event_code'] : null;
@@ -183,8 +175,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['event_date']) {
@@ -209,30 +200,27 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets event_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEventDate()
-    {
+    public function getEventDate() {
         return $this->container['event_date'];
     }
 
     /**
      * Sets event_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $event_date event_date
+     * @param Timestamp $event_date event_date
      *
      * @return $this
      */
-    public function setEventDate($event_date)
-    {
+    public function setEventDate($event_date) {
         $this->container['event_date'] = $event_date;
 
         return $this;
@@ -241,22 +229,20 @@ class TrackingEvent implements ModelInterface, ArrayAccess
     /**
      * Gets event_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress
+     * @return TrackingAddress
      */
-    public function getEventAddress()
-    {
+    public function getEventAddress() {
         return $this->container['event_address'];
     }
 
     /**
      * Sets event_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress $event_address event_address
+     * @param TrackingAddress $event_address event_address
      *
      * @return $this
      */
-    public function setEventAddress($event_address)
-    {
+    public function setEventAddress($event_address) {
         $this->container['event_address'] = $event_address;
 
         return $this;
@@ -265,22 +251,20 @@ class TrackingEvent implements ModelInterface, ArrayAccess
     /**
      * Gets event_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\EventCode
+     * @return EventCode
      */
-    public function getEventCode()
-    {
+    public function getEventCode() {
         return $this->container['event_code'];
     }
 
     /**
      * Sets event_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\EventCode $event_code event_code
+     * @param EventCode $event_code event_code
      *
      * @return $this
      */
-    public function setEventCode($event_code)
-    {
+    public function setEventCode($event_code) {
         $this->container['event_code'] = $event_code;
 
         return $this;
@@ -291,8 +275,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEventDescription()
-    {
+    public function getEventDescription() {
         return $this->container['event_description'];
     }
 
@@ -303,8 +286,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEventDescription($event_description)
-    {
+    public function setEventDescription($event_description) {
         $this->container['event_description'] = $event_description;
 
         return $this;
@@ -317,8 +299,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -329,21 +310,19 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -358,8 +337,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -368,8 +346,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

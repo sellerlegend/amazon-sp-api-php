@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ASINInboundGuidance Class Doc Comment.
  *
-
  * @description Reasons why a given ASIN is not recommended for shipment to Amazon&#x27;s fulfillment network.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ASINInboundGuidance implements ModelInterface, ArrayAccess
-{
+class ASINInboundGuidance implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'inbound_guidance' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance',
-'guidance_reason_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList',    ];
+        'asin'                 => 'string',
+        'inbound_guidance'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance',
+        'guidance_reason_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +55,17 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'inbound_guidance' => null,
-'guidance_reason_list' => null,    ];
+        'asin'                 => null,
+        'inbound_guidance'     => null,
+        'guidance_reason_list' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +74,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +85,9 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'ASIN',
-'inbound_guidance' => 'InboundGuidance',
-'guidance_reason_list' => 'GuidanceReasonList',    ];
+        'asin'                 => 'ASIN',
+        'inbound_guidance'     => 'InboundGuidance',
+        'guidance_reason_list' => 'GuidanceReasonList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +95,9 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'inbound_guidance' => 'setInboundGuidance',
-'guidance_reason_list' => 'setGuidanceReasonList',    ];
+        'asin'                 => 'setAsin',
+        'inbound_guidance'     => 'setInboundGuidance',
+        'guidance_reason_list' => 'setGuidanceReasonList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +105,9 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'inbound_guidance' => 'getInboundGuidance',
-'guidance_reason_list' => 'getGuidanceReasonList',    ];
+        'asin'                 => 'getAsin',
+        'inbound_guidance'     => 'getInboundGuidance',
+        'guidance_reason_list' => 'getGuidanceReasonList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +115,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +124,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +133,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +142,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +159,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['inbound_guidance'] = isset($data['inbound_guidance']) ? $data['inbound_guidance'] : null;
         $this->container['guidance_reason_list'] = isset($data['guidance_reason_list']) ? $data['guidance_reason_list'] : null;
@@ -177,8 +170,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['asin']) {
@@ -197,8 +189,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -207,8 +198,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -219,8 +209,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -229,22 +218,20 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
     /**
      * Gets inbound_guidance.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance
+     * @return InboundGuidance
      */
-    public function getInboundGuidance()
-    {
+    public function getInboundGuidance() {
         return $this->container['inbound_guidance'];
     }
 
     /**
      * Sets inbound_guidance.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance $inbound_guidance inbound_guidance
+     * @param InboundGuidance $inbound_guidance inbound_guidance
      *
      * @return $this
      */
-    public function setInboundGuidance($inbound_guidance)
-    {
+    public function setInboundGuidance($inbound_guidance) {
         $this->container['inbound_guidance'] = $inbound_guidance;
 
         return $this;
@@ -253,22 +240,20 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
     /**
      * Gets guidance_reason_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList
+     * @return GuidanceReasonList
      */
-    public function getGuidanceReasonList()
-    {
+    public function getGuidanceReasonList() {
         return $this->container['guidance_reason_list'];
     }
 
     /**
      * Sets guidance_reason_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList $guidance_reason_list guidance_reason_list
+     * @param GuidanceReasonList $guidance_reason_list guidance_reason_list
      *
      * @return $this
      */
-    public function setGuidanceReasonList($guidance_reason_list)
-    {
+    public function setGuidanceReasonList($guidance_reason_list) {
         $this->container['guidance_reason_list'] = $guidance_reason_list;
 
         return $this;
@@ -281,8 +266,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -293,21 +277,19 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -322,8 +304,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -332,8 +313,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

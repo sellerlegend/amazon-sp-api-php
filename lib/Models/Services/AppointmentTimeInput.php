@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AppointmentTimeInput Class Doc Comment.
  *
-
  * @description The input appointment time details.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AppointmentTimeInput implements ModelInterface, ArrayAccess
-{
+class AppointmentTimeInput implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,8 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'start_time' => '\DateTime',
-'duration_in_minutes' => 'int',    ];
+        'start_time'          => '\DateTime',
+        'duration_in_minutes' => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'start_time' => 'date-time',
-'duration_in_minutes' => null,    ];
+        'start_time'          => 'date-time',
+        'duration_in_minutes' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_time' => 'startTime',
-'duration_in_minutes' => 'durationInMinutes',    ];
+        'start_time'          => 'startTime',
+        'duration_in_minutes' => 'durationInMinutes',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'start_time' => 'setStartTime',
-'duration_in_minutes' => 'setDurationInMinutes',    ];
+        'start_time'          => 'setStartTime',
+        'duration_in_minutes' => 'setDurationInMinutes',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'start_time' => 'getStartTime',
-'duration_in_minutes' => 'getDurationInMinutes',    ];
+        'start_time'          => 'getStartTime',
+        'duration_in_minutes' => 'getDurationInMinutes',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['start_time'] = isset($data['start_time']) ? $data['start_time'] : null;
         $this->container['duration_in_minutes'] = isset($data['duration_in_minutes']) ? $data['duration_in_minutes'] : null;
     }
@@ -171,8 +163,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['start_time']) {
@@ -188,30 +179,27 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getStartTime()
-    {
+    public function getStartTime() {
         return $this->container['start_time'];
     }
 
     /**
      * Sets start_time.
      *
-     * @param \DateTime $start_time the date, time in UTC for the start time of an appointment in ISO 8601 format
+     * @param DateTime $start_time the date, time in UTC for the start time of an appointment in ISO 8601 format
      *
      * @return $this
      */
-    public function setStartTime($start_time)
-    {
+    public function setStartTime($start_time) {
         $this->container['start_time'] = $start_time;
 
         return $this;
@@ -222,8 +210,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getDurationInMinutes()
-    {
+    public function getDurationInMinutes() {
         return $this->container['duration_in_minutes'];
     }
 
@@ -234,8 +221,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDurationInMinutes($duration_in_minutes)
-    {
+    public function setDurationInMinutes($duration_in_minutes) {
         $this->container['duration_in_minutes'] = $duration_in_minutes;
 
         return $this;
@@ -248,8 +234,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +245,19 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +272,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +281,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

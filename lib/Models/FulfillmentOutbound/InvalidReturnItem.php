@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InvalidReturnItem Class Doc Comment.
  *
-
  * @description An item that is invalid for return.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InvalidReturnItem implements ModelInterface, ArrayAccess
-{
+class InvalidReturnItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_return_item_id' => 'string',
-'seller_fulfillment_order_item_id' => 'string',
-'invalid_item_reason' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReason',    ];
+        'seller_return_item_id'            => 'string',
+        'seller_fulfillment_order_item_id' => 'string',
+        'invalid_item_reason'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReason',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_return_item_id' => null,
-'seller_fulfillment_order_item_id' => null,
-'invalid_item_reason' => null,    ];
+        'seller_return_item_id'            => null,
+        'seller_fulfillment_order_item_id' => null,
+        'invalid_item_reason'              => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_return_item_id' => 'sellerReturnItemId',
-'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
-'invalid_item_reason' => 'invalidItemReason',    ];
+        'seller_return_item_id'            => 'sellerReturnItemId',
+        'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
+        'invalid_item_reason'              => 'invalidItemReason',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_return_item_id' => 'setSellerReturnItemId',
-'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-'invalid_item_reason' => 'setInvalidItemReason',    ];
+        'seller_return_item_id'            => 'setSellerReturnItemId',
+        'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
+        'invalid_item_reason'              => 'setInvalidItemReason',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_return_item_id' => 'getSellerReturnItemId',
-'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-'invalid_item_reason' => 'getInvalidItemReason',    ];
+        'seller_return_item_id'            => 'getSellerReturnItemId',
+        'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
+        'invalid_item_reason'              => 'getInvalidItemReason',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_return_item_id'] = isset($data['seller_return_item_id']) ? $data['seller_return_item_id'] : null;
         $this->container['seller_fulfillment_order_item_id'] = isset($data['seller_fulfillment_order_item_id']) ? $data['seller_fulfillment_order_item_id'] : null;
         $this->container['invalid_item_reason'] = isset($data['invalid_item_reason']) ? $data['invalid_item_reason'] : null;
@@ -177,8 +168,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_return_item_id']) {
@@ -200,8 +190,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -210,8 +199,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerReturnItemId()
-    {
+    public function getSellerReturnItemId() {
         return $this->container['seller_return_item_id'];
     }
 
@@ -222,8 +210,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerReturnItemId($seller_return_item_id)
-    {
+    public function setSellerReturnItemId($seller_return_item_id) {
         $this->container['seller_return_item_id'] = $seller_return_item_id;
 
         return $this;
@@ -234,8 +221,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerFulfillmentOrderItemId()
-    {
+    public function getSellerFulfillmentOrderItemId() {
         return $this->container['seller_fulfillment_order_item_id'];
     }
 
@@ -246,8 +232,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
-    {
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id) {
         $this->container['seller_fulfillment_order_item_id'] = $seller_fulfillment_order_item_id;
 
         return $this;
@@ -256,22 +241,20 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
     /**
      * Gets invalid_item_reason.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReason
+     * @return InvalidItemReason
      */
-    public function getInvalidItemReason()
-    {
+    public function getInvalidItemReason() {
         return $this->container['invalid_item_reason'];
     }
 
     /**
      * Sets invalid_item_reason.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReason $invalid_item_reason invalid_item_reason
+     * @param InvalidItemReason $invalid_item_reason invalid_item_reason
      *
      * @return $this
      */
-    public function setInvalidItemReason($invalid_item_reason)
-    {
+    public function setInvalidItemReason($invalid_item_reason) {
         $this->container['invalid_item_reason'] = $invalid_item_reason;
 
         return $this;
@@ -284,8 +267,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +278,19 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +305,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +314,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

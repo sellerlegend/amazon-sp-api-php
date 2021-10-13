@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Feature Class Doc Comment.
  *
-
  * @description A Multi-Channel Fulfillment feature.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Feature implements ModelInterface, ArrayAccess
-{
+class Feature implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class Feature implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'feature_name' => 'string',
-'feature_description' => 'string',
-'seller_eligible' => 'bool',    ];
+        'feature_name'        => 'string',
+        'feature_description' => 'string',
+        'seller_eligible'     => 'bool',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class Feature implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'feature_name' => null,
-'feature_description' => null,
-'seller_eligible' => null,    ];
+        'feature_name'        => null,
+        'feature_description' => null,
+        'seller_eligible'     => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class Feature implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'feature_name' => 'featureName',
-'feature_description' => 'featureDescription',
-'seller_eligible' => 'sellerEligible',    ];
+        'feature_name'        => 'featureName',
+        'feature_description' => 'featureDescription',
+        'seller_eligible'     => 'sellerEligible',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class Feature implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'feature_name' => 'setFeatureName',
-'feature_description' => 'setFeatureDescription',
-'seller_eligible' => 'setSellerEligible',    ];
+        'feature_name'        => 'setFeatureName',
+        'feature_description' => 'setFeatureDescription',
+        'seller_eligible'     => 'setSellerEligible',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class Feature implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'feature_name' => 'getFeatureName',
-'feature_description' => 'getFeatureDescription',
-'seller_eligible' => 'getSellerEligible',    ];
+        'feature_name'        => 'getFeatureName',
+        'feature_description' => 'getFeatureDescription',
+        'seller_eligible'     => 'getSellerEligible',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class Feature implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['feature_name'] = isset($data['feature_name']) ? $data['feature_name'] : null;
         $this->container['feature_description'] = isset($data['feature_description']) ? $data['feature_description'] : null;
         $this->container['seller_eligible'] = isset($data['seller_eligible']) ? $data['seller_eligible'] : null;
@@ -177,8 +168,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['feature_name']) {
@@ -197,8 +187,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -207,8 +196,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeatureName()
-    {
+    public function getFeatureName() {
         return $this->container['feature_name'];
     }
 
@@ -219,8 +207,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeatureName($feature_name)
-    {
+    public function setFeatureName($feature_name) {
         $this->container['feature_name'] = $feature_name;
 
         return $this;
@@ -231,8 +218,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeatureDescription()
-    {
+    public function getFeatureDescription() {
         return $this->container['feature_description'];
     }
 
@@ -243,8 +229,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeatureDescription($feature_description)
-    {
+    public function setFeatureDescription($feature_description) {
         $this->container['feature_description'] = $feature_description;
 
         return $this;
@@ -255,8 +240,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getSellerEligible()
-    {
+    public function getSellerEligible() {
         return $this->container['seller_eligible'];
     }
 
@@ -267,8 +251,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerEligible($seller_eligible)
-    {
+    public function setSellerEligible($seller_eligible) {
         $this->container['seller_eligible'] = $seller_eligible;
 
         return $this;
@@ -281,8 +264,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -293,21 +275,19 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -322,8 +302,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -332,8 +311,7 @@ class Feature implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

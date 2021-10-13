@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ProductInfoDetail Class Doc Comment.
  *
-
  * @description Product information on the number of items.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ProductInfoDetail implements ModelInterface, ArrayAccess
-{
+class ProductInfoDetail implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'number_of_items' => 'int',    ];
+        'number_of_items' => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +52,14 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'number_of_items' => null,    ];
+        'number_of_items' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +68,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +79,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'number_of_items' => 'NumberOfItems',    ];
+        'number_of_items' => 'NumberOfItems',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +87,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'number_of_items' => 'setNumberOfItems',    ];
+        'number_of_items' => 'setNumberOfItems',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +95,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'number_of_items' => 'getNumberOfItems',    ];
+        'number_of_items' => 'getNumberOfItems',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +103,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +112,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +121,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +130,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +147,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['number_of_items'] = isset($data['number_of_items']) ? $data['number_of_items'] : null;
     }
 
@@ -165,8 +156,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -178,8 +168,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -188,8 +177,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getNumberOfItems()
-    {
+    public function getNumberOfItems() {
         return $this->container['number_of_items'];
     }
 
@@ -200,8 +188,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNumberOfItems($number_of_items)
-    {
+    public function setNumberOfItems($number_of_items) {
         $this->container['number_of_items'] = $number_of_items;
 
         return $this;
@@ -214,8 +201,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -226,21 +212,19 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -255,8 +239,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -265,8 +248,7 @@ class ProductInfoDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PartneredSmallParcelPackageOutput Class Doc Comment.
  *
-
  * @description Dimension, weight, and shipping information for the package.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
-{
+class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,12 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Dimensions',
-'weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight',
-'carrier_name' => 'string',
-'tracking_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TrackingId',
-'package_status' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PackageStatus',    ];
+        'dimensions'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Dimensions',
+        'weight'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight',
+        'carrier_name'   => 'string',
+        'tracking_id'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TrackingId',
+        'package_status' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PackageStatus'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +57,19 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'dimensions' => null,
-'weight' => null,
-'carrier_name' => null,
-'tracking_id' => null,
-'package_status' => null,    ];
+        'dimensions'     => null,
+        'weight'         => null,
+        'carrier_name'   => null,
+        'tracking_id'    => null,
+        'package_status' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +78,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +89,11 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'dimensions' => 'Dimensions',
-'weight' => 'Weight',
-'carrier_name' => 'CarrierName',
-'tracking_id' => 'TrackingId',
-'package_status' => 'PackageStatus',    ];
+        'dimensions'     => 'Dimensions',
+        'weight'         => 'Weight',
+        'carrier_name'   => 'CarrierName',
+        'tracking_id'    => 'TrackingId',
+        'package_status' => 'PackageStatus',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +101,11 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'dimensions' => 'setDimensions',
-'weight' => 'setWeight',
-'carrier_name' => 'setCarrierName',
-'tracking_id' => 'setTrackingId',
-'package_status' => 'setPackageStatus',    ];
+        'dimensions'     => 'setDimensions',
+        'weight'         => 'setWeight',
+        'carrier_name'   => 'setCarrierName',
+        'tracking_id'    => 'setTrackingId',
+        'package_status' => 'setPackageStatus',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +113,11 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'dimensions' => 'getDimensions',
-'weight' => 'getWeight',
-'carrier_name' => 'getCarrierName',
-'tracking_id' => 'getTrackingId',
-'package_status' => 'getPackageStatus',    ];
+        'dimensions'     => 'getDimensions',
+        'weight'         => 'getWeight',
+        'carrier_name'   => 'getCarrierName',
+        'tracking_id'    => 'getTrackingId',
+        'package_status' => 'getPackageStatus',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +125,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +134,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +143,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +152,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +169,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
         $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
         $this->container['carrier_name'] = isset($data['carrier_name']) ? $data['carrier_name'] : null;
@@ -189,8 +182,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['dimensions']) {
@@ -218,30 +210,27 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Dimensions
+     * @return Dimensions
      */
-    public function getDimensions()
-    {
+    public function getDimensions() {
         return $this->container['dimensions'];
     }
 
     /**
      * Sets dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Dimensions $dimensions dimensions
+     * @param Dimensions $dimensions dimensions
      *
      * @return $this
      */
-    public function setDimensions($dimensions)
-    {
+    public function setDimensions($dimensions) {
         $this->container['dimensions'] = $dimensions;
 
         return $this;
@@ -250,22 +239,20 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
     /**
      * Gets weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight
+     * @return Weight
      */
-    public function getWeight()
-    {
+    public function getWeight() {
         return $this->container['weight'];
     }
 
     /**
      * Sets weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight $weight weight
+     * @param Weight $weight weight
      *
      * @return $this
      */
-    public function setWeight($weight)
-    {
+    public function setWeight($weight) {
         $this->container['weight'] = $weight;
 
         return $this;
@@ -276,8 +263,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierName()
-    {
+    public function getCarrierName() {
         return $this->container['carrier_name'];
     }
 
@@ -288,8 +274,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierName($carrier_name)
-    {
+    public function setCarrierName($carrier_name) {
         $this->container['carrier_name'] = $carrier_name;
 
         return $this;
@@ -298,22 +283,20 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
     /**
      * Gets tracking_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TrackingId
+     * @return TrackingId
      */
-    public function getTrackingId()
-    {
+    public function getTrackingId() {
         return $this->container['tracking_id'];
     }
 
     /**
      * Sets tracking_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TrackingId $tracking_id tracking_id
+     * @param TrackingId $tracking_id tracking_id
      *
      * @return $this
      */
-    public function setTrackingId($tracking_id)
-    {
+    public function setTrackingId($tracking_id) {
         $this->container['tracking_id'] = $tracking_id;
 
         return $this;
@@ -322,22 +305,20 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
     /**
      * Gets package_status.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PackageStatus
+     * @return PackageStatus
      */
-    public function getPackageStatus()
-    {
+    public function getPackageStatus() {
         return $this->container['package_status'];
     }
 
     /**
      * Sets package_status.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PackageStatus $package_status package_status
+     * @param PackageStatus $package_status package_status
      *
      * @return $this
      */
-    public function setPackageStatus($package_status)
-    {
+    public function setPackageStatus($package_status) {
         $this->container['package_status'] = $package_status;
 
         return $this;
@@ -350,8 +331,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -362,21 +342,19 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -391,8 +369,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -401,8 +378,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

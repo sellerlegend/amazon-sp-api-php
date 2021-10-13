@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * RelationshipType Class Doc Comment.
  *
-
  * @description Specific variations of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class RelationshipType extends Categories implements ModelInterface, ArrayAccess
-{
+class RelationshipType extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,28 +44,28 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'color' => 'string',
-'edition' => 'string',
-'flavor' => 'string',
-'gem_type' => 'string[]',
-'golf_club_flex' => 'string',
-'hand_orientation' => 'string',
-'hardware_platform' => 'string',
-'material_type' => 'string[]',
-'metal_type' => 'string',
-'model' => 'string',
-'operating_system' => 'string[]',
-'product_type_subcategory' => 'string',
-'ring_size' => 'string',
-'shaft_material' => 'string',
-'scent' => 'string',
-'size' => 'string',
-'size_per_pearl' => 'string',
-'golf_club_loft' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'total_diamond_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'total_gem_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
-'package_quantity' => 'int',
-'item_dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType',    ];
+        'color'                    => 'string',
+        'edition'                  => 'string',
+        'flavor'                   => 'string',
+        'gem_type'                 => 'string[]',
+        'golf_club_flex'           => 'string',
+        'hand_orientation'         => 'string',
+        'hardware_platform'        => 'string',
+        'material_type'            => 'string[]',
+        'metal_type'               => 'string',
+        'model'                    => 'string',
+        'operating_system'         => 'string[]',
+        'product_type_subcategory' => 'string',
+        'ring_size'                => 'string',
+        'shaft_material'           => 'string',
+        'scent'                    => 'string',
+        'size'                     => 'string',
+        'size_per_pearl'           => 'string',
+        'golf_club_loft'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'total_diamond_weight'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'total_gem_weight'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits',
+        'package_quantity'         => 'int',
+        'item_dimensions'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\DimensionType',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,36 +73,35 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'color' => null,
-'edition' => null,
-'flavor' => null,
-'gem_type' => null,
-'golf_club_flex' => null,
-'hand_orientation' => null,
-'hardware_platform' => null,
-'material_type' => null,
-'metal_type' => null,
-'model' => null,
-'operating_system' => null,
-'product_type_subcategory' => null,
-'ring_size' => null,
-'shaft_material' => null,
-'scent' => null,
-'size' => null,
-'size_per_pearl' => null,
-'golf_club_loft' => null,
-'total_diamond_weight' => null,
-'total_gem_weight' => null,
-'package_quantity' => null,
-'item_dimensions' => null,    ];
+        'color'                    => null,
+        'edition'                  => null,
+        'flavor'                   => null,
+        'gem_type'                 => null,
+        'golf_club_flex'           => null,
+        'hand_orientation'         => null,
+        'hardware_platform'        => null,
+        'material_type'            => null,
+        'metal_type'               => null,
+        'model'                    => null,
+        'operating_system'         => null,
+        'product_type_subcategory' => null,
+        'ring_size'                => null,
+        'shaft_material'           => null,
+        'scent'                    => null,
+        'size'                     => null,
+        'size_per_pearl'           => null,
+        'golf_club_loft'           => null,
+        'total_diamond_weight'     => null,
+        'total_gem_weight'         => null,
+        'package_quantity'         => null,
+        'item_dimensions'          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -113,8 +110,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -125,28 +121,28 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'color' => 'Color',
-'edition' => 'Edition',
-'flavor' => 'Flavor',
-'gem_type' => 'GemType',
-'golf_club_flex' => 'GolfClubFlex',
-'hand_orientation' => 'HandOrientation',
-'hardware_platform' => 'HardwarePlatform',
-'material_type' => 'MaterialType',
-'metal_type' => 'MetalType',
-'model' => 'Model',
-'operating_system' => 'OperatingSystem',
-'product_type_subcategory' => 'ProductTypeSubcategory',
-'ring_size' => 'RingSize',
-'shaft_material' => 'ShaftMaterial',
-'scent' => 'Scent',
-'size' => 'Size',
-'size_per_pearl' => 'SizePerPearl',
-'golf_club_loft' => 'GolfClubLoft',
-'total_diamond_weight' => 'TotalDiamondWeight',
-'total_gem_weight' => 'TotalGemWeight',
-'package_quantity' => 'PackageQuantity',
-'item_dimensions' => 'ItemDimensions',    ];
+        'color'                    => 'Color',
+        'edition'                  => 'Edition',
+        'flavor'                   => 'Flavor',
+        'gem_type'                 => 'GemType',
+        'golf_club_flex'           => 'GolfClubFlex',
+        'hand_orientation'         => 'HandOrientation',
+        'hardware_platform'        => 'HardwarePlatform',
+        'material_type'            => 'MaterialType',
+        'metal_type'               => 'MetalType',
+        'model'                    => 'Model',
+        'operating_system'         => 'OperatingSystem',
+        'product_type_subcategory' => 'ProductTypeSubcategory',
+        'ring_size'                => 'RingSize',
+        'shaft_material'           => 'ShaftMaterial',
+        'scent'                    => 'Scent',
+        'size'                     => 'Size',
+        'size_per_pearl'           => 'SizePerPearl',
+        'golf_club_loft'           => 'GolfClubLoft',
+        'total_diamond_weight'     => 'TotalDiamondWeight',
+        'total_gem_weight'         => 'TotalGemWeight',
+        'package_quantity'         => 'PackageQuantity',
+        'item_dimensions'          => 'ItemDimensions',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -154,28 +150,28 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'color' => 'setColor',
-'edition' => 'setEdition',
-'flavor' => 'setFlavor',
-'gem_type' => 'setGemType',
-'golf_club_flex' => 'setGolfClubFlex',
-'hand_orientation' => 'setHandOrientation',
-'hardware_platform' => 'setHardwarePlatform',
-'material_type' => 'setMaterialType',
-'metal_type' => 'setMetalType',
-'model' => 'setModel',
-'operating_system' => 'setOperatingSystem',
-'product_type_subcategory' => 'setProductTypeSubcategory',
-'ring_size' => 'setRingSize',
-'shaft_material' => 'setShaftMaterial',
-'scent' => 'setScent',
-'size' => 'setSize',
-'size_per_pearl' => 'setSizePerPearl',
-'golf_club_loft' => 'setGolfClubLoft',
-'total_diamond_weight' => 'setTotalDiamondWeight',
-'total_gem_weight' => 'setTotalGemWeight',
-'package_quantity' => 'setPackageQuantity',
-'item_dimensions' => 'setItemDimensions',    ];
+        'color'                    => 'setColor',
+        'edition'                  => 'setEdition',
+        'flavor'                   => 'setFlavor',
+        'gem_type'                 => 'setGemType',
+        'golf_club_flex'           => 'setGolfClubFlex',
+        'hand_orientation'         => 'setHandOrientation',
+        'hardware_platform'        => 'setHardwarePlatform',
+        'material_type'            => 'setMaterialType',
+        'metal_type'               => 'setMetalType',
+        'model'                    => 'setModel',
+        'operating_system'         => 'setOperatingSystem',
+        'product_type_subcategory' => 'setProductTypeSubcategory',
+        'ring_size'                => 'setRingSize',
+        'shaft_material'           => 'setShaftMaterial',
+        'scent'                    => 'setScent',
+        'size'                     => 'setSize',
+        'size_per_pearl'           => 'setSizePerPearl',
+        'golf_club_loft'           => 'setGolfClubLoft',
+        'total_diamond_weight'     => 'setTotalDiamondWeight',
+        'total_gem_weight'         => 'setTotalGemWeight',
+        'package_quantity'         => 'setPackageQuantity',
+        'item_dimensions'          => 'setItemDimensions',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -183,28 +179,28 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'color' => 'getColor',
-'edition' => 'getEdition',
-'flavor' => 'getFlavor',
-'gem_type' => 'getGemType',
-'golf_club_flex' => 'getGolfClubFlex',
-'hand_orientation' => 'getHandOrientation',
-'hardware_platform' => 'getHardwarePlatform',
-'material_type' => 'getMaterialType',
-'metal_type' => 'getMetalType',
-'model' => 'getModel',
-'operating_system' => 'getOperatingSystem',
-'product_type_subcategory' => 'getProductTypeSubcategory',
-'ring_size' => 'getRingSize',
-'shaft_material' => 'getShaftMaterial',
-'scent' => 'getScent',
-'size' => 'getSize',
-'size_per_pearl' => 'getSizePerPearl',
-'golf_club_loft' => 'getGolfClubLoft',
-'total_diamond_weight' => 'getTotalDiamondWeight',
-'total_gem_weight' => 'getTotalGemWeight',
-'package_quantity' => 'getPackageQuantity',
-'item_dimensions' => 'getItemDimensions',    ];
+        'color'                    => 'getColor',
+        'edition'                  => 'getEdition',
+        'flavor'                   => 'getFlavor',
+        'gem_type'                 => 'getGemType',
+        'golf_club_flex'           => 'getGolfClubFlex',
+        'hand_orientation'         => 'getHandOrientation',
+        'hardware_platform'        => 'getHardwarePlatform',
+        'material_type'            => 'getMaterialType',
+        'metal_type'               => 'getMetalType',
+        'model'                    => 'getModel',
+        'operating_system'         => 'getOperatingSystem',
+        'product_type_subcategory' => 'getProductTypeSubcategory',
+        'ring_size'                => 'getRingSize',
+        'shaft_material'           => 'getShaftMaterial',
+        'scent'                    => 'getScent',
+        'size'                     => 'getSize',
+        'size_per_pearl'           => 'getSizePerPearl',
+        'golf_club_loft'           => 'getGolfClubLoft',
+        'total_diamond_weight'     => 'getTotalDiamondWeight',
+        'total_gem_weight'         => 'getTotalGemWeight',
+        'package_quantity'         => 'getPackageQuantity',
+        'item_dimensions'          => 'getItemDimensions',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -212,8 +208,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -222,8 +217,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -232,8 +226,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -242,8 +235,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -260,8 +252,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['edition'] = isset($data['edition']) ? $data['edition'] : null;
         $this->container['flavor'] = isset($data['flavor']) ? $data['flavor'] : null;
@@ -291,8 +282,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -304,8 +294,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -314,8 +303,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getColor()
-    {
+    public function getColor() {
         return $this->container['color'];
     }
 
@@ -326,8 +314,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setColor($color)
-    {
+    public function setColor($color) {
         $this->container['color'] = $color;
 
         return $this;
@@ -338,8 +325,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEdition()
-    {
+    public function getEdition() {
         return $this->container['edition'];
     }
 
@@ -350,8 +336,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEdition($edition)
-    {
+    public function setEdition($edition) {
         $this->container['edition'] = $edition;
 
         return $this;
@@ -362,8 +347,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFlavor()
-    {
+    public function getFlavor() {
         return $this->container['flavor'];
     }
 
@@ -374,8 +358,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFlavor($flavor)
-    {
+    public function setFlavor($flavor) {
         $this->container['flavor'] = $flavor;
 
         return $this;
@@ -386,8 +369,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getGemType()
-    {
+    public function getGemType() {
         return $this->container['gem_type'];
     }
 
@@ -398,8 +380,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGemType($gem_type)
-    {
+    public function setGemType($gem_type) {
         $this->container['gem_type'] = $gem_type;
 
         return $this;
@@ -410,8 +391,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGolfClubFlex()
-    {
+    public function getGolfClubFlex() {
         return $this->container['golf_club_flex'];
     }
 
@@ -422,8 +402,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGolfClubFlex($golf_club_flex)
-    {
+    public function setGolfClubFlex($golf_club_flex) {
         $this->container['golf_club_flex'] = $golf_club_flex;
 
         return $this;
@@ -434,8 +413,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHandOrientation()
-    {
+    public function getHandOrientation() {
         return $this->container['hand_orientation'];
     }
 
@@ -446,8 +424,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHandOrientation($hand_orientation)
-    {
+    public function setHandOrientation($hand_orientation) {
         $this->container['hand_orientation'] = $hand_orientation;
 
         return $this;
@@ -458,8 +435,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getHardwarePlatform()
-    {
+    public function getHardwarePlatform() {
         return $this->container['hardware_platform'];
     }
 
@@ -470,8 +446,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHardwarePlatform($hardware_platform)
-    {
+    public function setHardwarePlatform($hardware_platform) {
         $this->container['hardware_platform'] = $hardware_platform;
 
         return $this;
@@ -482,8 +457,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getMaterialType()
-    {
+    public function getMaterialType() {
         return $this->container['material_type'];
     }
 
@@ -494,8 +468,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMaterialType($material_type)
-    {
+    public function setMaterialType($material_type) {
         $this->container['material_type'] = $material_type;
 
         return $this;
@@ -506,8 +479,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMetalType()
-    {
+    public function getMetalType() {
         return $this->container['metal_type'];
     }
 
@@ -518,8 +490,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMetalType($metal_type)
-    {
+    public function setMetalType($metal_type) {
         $this->container['metal_type'] = $metal_type;
 
         return $this;
@@ -530,8 +501,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModel()
-    {
+    public function getModel() {
         return $this->container['model'];
     }
 
@@ -542,8 +512,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setModel($model)
-    {
+    public function setModel($model) {
         $this->container['model'] = $model;
 
         return $this;
@@ -554,8 +523,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getOperatingSystem()
-    {
+    public function getOperatingSystem() {
         return $this->container['operating_system'];
     }
 
@@ -566,8 +534,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOperatingSystem($operating_system)
-    {
+    public function setOperatingSystem($operating_system) {
         $this->container['operating_system'] = $operating_system;
 
         return $this;
@@ -578,8 +545,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProductTypeSubcategory()
-    {
+    public function getProductTypeSubcategory() {
         return $this->container['product_type_subcategory'];
     }
 
@@ -590,8 +556,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProductTypeSubcategory($product_type_subcategory)
-    {
+    public function setProductTypeSubcategory($product_type_subcategory) {
         $this->container['product_type_subcategory'] = $product_type_subcategory;
 
         return $this;
@@ -602,8 +567,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRingSize()
-    {
+    public function getRingSize() {
         return $this->container['ring_size'];
     }
 
@@ -614,8 +578,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRingSize($ring_size)
-    {
+    public function setRingSize($ring_size) {
         $this->container['ring_size'] = $ring_size;
 
         return $this;
@@ -626,8 +589,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShaftMaterial()
-    {
+    public function getShaftMaterial() {
         return $this->container['shaft_material'];
     }
 
@@ -638,8 +600,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShaftMaterial($shaft_material)
-    {
+    public function setShaftMaterial($shaft_material) {
         $this->container['shaft_material'] = $shaft_material;
 
         return $this;
@@ -650,8 +611,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getScent()
-    {
+    public function getScent() {
         return $this->container['scent'];
     }
 
@@ -662,8 +622,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setScent($scent)
-    {
+    public function setScent($scent) {
         $this->container['scent'] = $scent;
 
         return $this;
@@ -674,8 +633,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSize()
-    {
+    public function getSize() {
         return $this->container['size'];
     }
 
@@ -686,8 +644,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSize($size)
-    {
+    public function setSize($size) {
         $this->container['size'] = $size;
 
         return $this;
@@ -698,8 +655,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSizePerPearl()
-    {
+    public function getSizePerPearl() {
         return $this->container['size_per_pearl'];
     }
 
@@ -710,8 +666,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSizePerPearl($size_per_pearl)
-    {
+    public function setSizePerPearl($size_per_pearl) {
         $this->container['size_per_pearl'] = $size_per_pearl;
 
         return $this;
@@ -720,22 +675,20 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets golf_club_loft.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getGolfClubLoft()
-    {
+    public function getGolfClubLoft() {
         return $this->container['golf_club_loft'];
     }
 
     /**
      * Sets golf_club_loft.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $golf_club_loft golf_club_loft
+     * @param DecimalWithUnits $golf_club_loft golf_club_loft
      *
      * @return $this
      */
-    public function setGolfClubLoft($golf_club_loft)
-    {
+    public function setGolfClubLoft($golf_club_loft) {
         $this->container['golf_club_loft'] = $golf_club_loft;
 
         return $this;
@@ -744,22 +697,20 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets total_diamond_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getTotalDiamondWeight()
-    {
+    public function getTotalDiamondWeight() {
         return $this->container['total_diamond_weight'];
     }
 
     /**
      * Sets total_diamond_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $total_diamond_weight total_diamond_weight
+     * @param DecimalWithUnits $total_diamond_weight total_diamond_weight
      *
      * @return $this
      */
-    public function setTotalDiamondWeight($total_diamond_weight)
-    {
+    public function setTotalDiamondWeight($total_diamond_weight) {
         $this->container['total_diamond_weight'] = $total_diamond_weight;
 
         return $this;
@@ -768,22 +719,20 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets total_gem_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits
+     * @return DecimalWithUnits
      */
-    public function getTotalGemWeight()
-    {
+    public function getTotalGemWeight() {
         return $this->container['total_gem_weight'];
     }
 
     /**
      * Sets total_gem_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DecimalWithUnits $total_gem_weight total_gem_weight
+     * @param DecimalWithUnits $total_gem_weight total_gem_weight
      *
      * @return $this
      */
-    public function setTotalGemWeight($total_gem_weight)
-    {
+    public function setTotalGemWeight($total_gem_weight) {
         $this->container['total_gem_weight'] = $total_gem_weight;
 
         return $this;
@@ -794,8 +743,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPackageQuantity()
-    {
+    public function getPackageQuantity() {
         return $this->container['package_quantity'];
     }
 
@@ -806,8 +754,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPackageQuantity($package_quantity)
-    {
+    public function setPackageQuantity($package_quantity) {
         $this->container['package_quantity'] = $package_quantity;
 
         return $this;
@@ -816,22 +763,20 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets item_dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType
+     * @return DimensionType
      */
-    public function getItemDimensions()
-    {
+    public function getItemDimensions() {
         return $this->container['item_dimensions'];
     }
 
     /**
      * Sets item_dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\DimensionType $item_dimensions item_dimensions
+     * @param DimensionType $item_dimensions item_dimensions
      *
      * @return $this
      */
-    public function setItemDimensions($item_dimensions)
-    {
+    public function setItemDimensions($item_dimensions) {
         $this->container['item_dimensions'] = $item_dimensions;
 
         return $this;
@@ -844,8 +789,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -856,21 +800,19 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -885,8 +827,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -895,8 +836,7 @@ class RelationshipType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

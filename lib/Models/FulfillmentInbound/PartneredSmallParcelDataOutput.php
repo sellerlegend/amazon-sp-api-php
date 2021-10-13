@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PartneredSmallParcelDataOutput Class Doc Comment.
  *
-
  * @description Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
-{
+class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,9 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'package_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelPackageOutputList',
-'partnered_estimate' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredEstimate',    ];
+        'package_list'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelPackageOutputList',
+        'partnered_estimate' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredEstimate'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,16 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'package_list' => null,
-'partnered_estimate' => null,    ];
+        'package_list'       => null,
+        'partnered_estimate' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +83,8 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'package_list' => 'PackageList',
-'partnered_estimate' => 'PartneredEstimate',    ];
+        'package_list'       => 'PackageList',
+        'partnered_estimate' => 'PartneredEstimate',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +92,8 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'package_list' => 'setPackageList',
-'partnered_estimate' => 'setPartneredEstimate',    ];
+        'package_list'       => 'setPackageList',
+        'partnered_estimate' => 'setPartneredEstimate',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +101,8 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'package_list' => 'getPackageList',
-'partnered_estimate' => 'getPartneredEstimate',    ];
+        'package_list'       => 'getPackageList',
+        'partnered_estimate' => 'getPartneredEstimate',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +154,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['package_list'] = isset($data['package_list']) ? $data['package_list'] : null;
         $this->container['partnered_estimate'] = isset($data['partnered_estimate']) ? $data['partnered_estimate'] : null;
     }
@@ -171,8 +164,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['package_list']) {
@@ -188,30 +180,27 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets package_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelPackageOutputList
+     * @return PartneredSmallParcelPackageOutputList
      */
-    public function getPackageList()
-    {
+    public function getPackageList() {
         return $this->container['package_list'];
     }
 
     /**
      * Sets package_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelPackageOutputList $package_list package_list
+     * @param PartneredSmallParcelPackageOutputList $package_list package_list
      *
      * @return $this
      */
-    public function setPackageList($package_list)
-    {
+    public function setPackageList($package_list) {
         $this->container['package_list'] = $package_list;
 
         return $this;
@@ -220,22 +209,20 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
     /**
      * Gets partnered_estimate.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredEstimate
+     * @return PartneredEstimate
      */
-    public function getPartneredEstimate()
-    {
+    public function getPartneredEstimate() {
         return $this->container['partnered_estimate'];
     }
 
     /**
      * Sets partnered_estimate.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredEstimate $partnered_estimate partnered_estimate
+     * @param PartneredEstimate $partnered_estimate partnered_estimate
      *
      * @return $this
      */
-    public function setPartneredEstimate($partnered_estimate)
-    {
+    public function setPartneredEstimate($partnered_estimate) {
         $this->container['partnered_estimate'] = $partnered_estimate;
 
         return $this;
@@ -248,8 +235,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +246,19 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +273,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +282,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

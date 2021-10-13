@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ListFinancialEventGroupsPayload Class Doc Comment.
  *
-
  * @description The payload for the listFinancialEventGroups operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
-{
+class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'next_token' => 'string',
-'financial_event_group_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FinancialEventGroupList',    ];
+        'next_token'                 => 'string',
+        'financial_event_group_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FinancialEventGroupList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'next_token' => null,
-'financial_event_group_list' => null,    ];
+        'next_token'                 => null,
+        'financial_event_group_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'next_token' => 'NextToken',
-'financial_event_group_list' => 'FinancialEventGroupList',    ];
+        'next_token'                 => 'NextToken',
+        'financial_event_group_list' => 'FinancialEventGroupList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'next_token' => 'setNextToken',
-'financial_event_group_list' => 'setFinancialEventGroupList',    ];
+        'next_token'                 => 'setNextToken',
+        'financial_event_group_list' => 'setFinancialEventGroupList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'next_token' => 'getNextToken',
-'financial_event_group_list' => 'getFinancialEventGroupList',    ];
+        'next_token'                 => 'getNextToken',
+        'financial_event_group_list' => 'getFinancialEventGroupList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
         $this->container['financial_event_group_list'] = isset($data['financial_event_group_list']) ? $data['financial_event_group_list'] : null;
     }
@@ -171,8 +162,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +174,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +183,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -206,8 +194,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -216,22 +203,20 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
     /**
      * Gets financial_event_group_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FinancialEventGroupList
+     * @return FinancialEventGroupList
      */
-    public function getFinancialEventGroupList()
-    {
+    public function getFinancialEventGroupList() {
         return $this->container['financial_event_group_list'];
     }
 
     /**
      * Sets financial_event_group_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FinancialEventGroupList $financial_event_group_list financial_event_group_list
+     * @param FinancialEventGroupList $financial_event_group_list financial_event_group_list
      *
      * @return $this
      */
-    public function setFinancialEventGroupList($financial_event_group_list)
-    {
+    public function setFinancialEventGroupList($financial_event_group_list) {
         $this->container['financial_event_group_list'] = $financial_event_group_list;
 
         return $this;
@@ -244,8 +229,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

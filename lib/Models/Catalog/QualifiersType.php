@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * QualifiersType Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class QualifiersType extends Categories implements ModelInterface, ArrayAccess
-{
+class QualifiersType extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,12 +42,12 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'item_condition' => 'string',
-'item_subcondition' => 'string',
-'fulfillment_channel' => 'string',
-'ships_domestically' => 'string',
-'shipping_time' => '\ClouSale\AmazonSellingPartnerAPI\Models\Catalog\ShippingTimeType',
-'seller_positive_feedback_rating' => 'string',    ];
+        'item_condition'                  => 'string',
+        'item_subcondition'               => 'string',
+        'fulfillment_channel'             => 'string',
+        'ships_domestically'              => 'string',
+        'shipping_time'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\Catalog\ShippingTimeType',
+        'seller_positive_feedback_rating' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,20 +55,19 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'item_condition' => null,
-'item_subcondition' => null,
-'fulfillment_channel' => null,
-'ships_domestically' => null,
-'shipping_time' => null,
-'seller_positive_feedback_rating' => null,    ];
+        'item_condition'                  => null,
+        'item_subcondition'               => null,
+        'fulfillment_channel'             => null,
+        'ships_domestically'              => null,
+        'shipping_time'                   => null,
+        'seller_positive_feedback_rating' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -78,8 +76,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,12 +87,12 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item_condition' => 'ItemCondition',
-'item_subcondition' => 'ItemSubcondition',
-'fulfillment_channel' => 'FulfillmentChannel',
-'ships_domestically' => 'ShipsDomestically',
-'shipping_time' => 'ShippingTime',
-'seller_positive_feedback_rating' => 'SellerPositiveFeedbackRating',    ];
+        'item_condition'                  => 'ItemCondition',
+        'item_subcondition'               => 'ItemSubcondition',
+        'fulfillment_channel'             => 'FulfillmentChannel',
+        'ships_domestically'              => 'ShipsDomestically',
+        'shipping_time'                   => 'ShippingTime',
+        'seller_positive_feedback_rating' => 'SellerPositiveFeedbackRating',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,12 +100,12 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item_condition' => 'setItemCondition',
-'item_subcondition' => 'setItemSubcondition',
-'fulfillment_channel' => 'setFulfillmentChannel',
-'ships_domestically' => 'setShipsDomestically',
-'shipping_time' => 'setShippingTime',
-'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',    ];
+        'item_condition'                  => 'setItemCondition',
+        'item_subcondition'               => 'setItemSubcondition',
+        'fulfillment_channel'             => 'setFulfillmentChannel',
+        'ships_domestically'              => 'setShipsDomestically',
+        'shipping_time'                   => 'setShippingTime',
+        'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -116,12 +113,12 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item_condition' => 'getItemCondition',
-'item_subcondition' => 'getItemSubcondition',
-'fulfillment_channel' => 'getFulfillmentChannel',
-'ships_domestically' => 'getShipsDomestically',
-'shipping_time' => 'getShippingTime',
-'seller_positive_feedback_rating' => 'getSellerPositiveFeedbackRating',    ];
+        'item_condition'                  => 'getItemCondition',
+        'item_subcondition'               => 'getItemSubcondition',
+        'fulfillment_channel'             => 'getFulfillmentChannel',
+        'ships_domestically'              => 'getShipsDomestically',
+        'shipping_time'                   => 'getShippingTime',
+        'seller_positive_feedback_rating' => 'getSellerPositiveFeedbackRating',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -129,8 +126,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -139,8 +135,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -149,8 +144,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -159,8 +153,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -177,8 +170,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['item_condition'] = isset($data['item_condition']) ? $data['item_condition'] : null;
         $this->container['item_subcondition'] = isset($data['item_subcondition']) ? $data['item_subcondition'] : null;
         $this->container['fulfillment_channel'] = isset($data['fulfillment_channel']) ? $data['fulfillment_channel'] : null;
@@ -192,8 +184,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['item_condition']) {
@@ -224,8 +215,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -234,8 +224,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItemCondition()
-    {
+    public function getItemCondition() {
         return $this->container['item_condition'];
     }
 
@@ -246,8 +235,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItemCondition($item_condition)
-    {
+    public function setItemCondition($item_condition) {
         $this->container['item_condition'] = $item_condition;
 
         return $this;
@@ -258,8 +246,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItemSubcondition()
-    {
+    public function getItemSubcondition() {
         return $this->container['item_subcondition'];
     }
 
@@ -270,8 +257,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItemSubcondition($item_subcondition)
-    {
+    public function setItemSubcondition($item_subcondition) {
         $this->container['item_subcondition'] = $item_subcondition;
 
         return $this;
@@ -282,8 +268,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFulfillmentChannel()
-    {
+    public function getFulfillmentChannel() {
         return $this->container['fulfillment_channel'];
     }
 
@@ -294,8 +279,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFulfillmentChannel($fulfillment_channel)
-    {
+    public function setFulfillmentChannel($fulfillment_channel) {
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
         return $this;
@@ -306,8 +290,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShipsDomestically()
-    {
+    public function getShipsDomestically() {
         return $this->container['ships_domestically'];
     }
 
@@ -318,8 +301,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShipsDomestically($ships_domestically)
-    {
+    public function setShipsDomestically($ships_domestically) {
         $this->container['ships_domestically'] = $ships_domestically;
 
         return $this;
@@ -328,22 +310,20 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_time.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\ShippingTimeType
+     * @return ShippingTimeType
      */
-    public function getShippingTime()
-    {
+    public function getShippingTime() {
         return $this->container['shipping_time'];
     }
 
     /**
      * Sets shipping_time.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Catalog\ShippingTimeType $shipping_time shipping_time
+     * @param ShippingTimeType $shipping_time shipping_time
      *
      * @return $this
      */
-    public function setShippingTime($shipping_time)
-    {
+    public function setShippingTime($shipping_time) {
         $this->container['shipping_time'] = $shipping_time;
 
         return $this;
@@ -354,8 +334,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerPositiveFeedbackRating()
-    {
+    public function getSellerPositiveFeedbackRating() {
         return $this->container['seller_positive_feedback_rating'];
     }
 
@@ -366,8 +345,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerPositiveFeedbackRating($seller_positive_feedback_rating)
-    {
+    public function setSellerPositiveFeedbackRating($seller_positive_feedback_rating) {
         $this->container['seller_positive_feedback_rating'] = $seller_positive_feedback_rating;
 
         return $this;
@@ -380,8 +358,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -392,21 +369,19 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -421,8 +396,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -431,8 +405,7 @@ class QualifiersType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Event Class Doc Comment.
  *
-
  * @description An event of a shipment
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Event implements ModelInterface, ArrayAccess
-{
+class Event implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +45,9 @@ class Event implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'event_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\EventCode',
-'event_time' => '\DateTime',
-'location' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Location',    ];
+        'event_code' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\EventCode',
+        'event_time' => '\DateTime',
+        'location'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Location',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +56,15 @@ class Event implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'event_code' => null,
-'event_time' => 'date-time',
-'location' => null,    ];
+        'event_time' => 'date-time',
+        'location'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +85,8 @@ class Event implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'event_code' => 'eventCode',
-'event_time' => 'eventTime',
-'location' => 'location',    ];
+        'event_time' => 'eventTime',
+        'location'   => 'location',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +95,8 @@ class Event implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'event_code' => 'setEventCode',
-'event_time' => 'setEventTime',
-'location' => 'setLocation',    ];
+        'event_time' => 'setEventTime',
+        'location'   => 'setLocation',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +105,8 @@ class Event implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'event_code' => 'getEventCode',
-'event_time' => 'getEventTime',
-'location' => 'getLocation',    ];
+        'event_time' => 'getEventTime',
+        'location'   => 'getLocation',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class Event implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['event_code'] = isset($data['event_code']) ? $data['event_code'] : null;
         $this->container['event_time'] = isset($data['event_time']) ? $data['event_time'] : null;
         $this->container['location'] = isset($data['location']) ? $data['location'] : null;
@@ -177,8 +169,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['event_code']) {
@@ -197,30 +188,27 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets event_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\EventCode
+     * @return EventCode
      */
-    public function getEventCode()
-    {
+    public function getEventCode() {
         return $this->container['event_code'];
     }
 
     /**
      * Sets event_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\EventCode $event_code event_code
+     * @param EventCode $event_code event_code
      *
      * @return $this
      */
-    public function setEventCode($event_code)
-    {
+    public function setEventCode($event_code) {
         $this->container['event_code'] = $event_code;
 
         return $this;
@@ -229,22 +217,20 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets event_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEventTime()
-    {
+    public function getEventTime() {
         return $this->container['event_time'];
     }
 
     /**
      * Sets event_time.
      *
-     * @param \DateTime $event_time the date and time of an event for a shipment
+     * @param DateTime $event_time the date and time of an event for a shipment
      *
      * @return $this
      */
-    public function setEventTime($event_time)
-    {
+    public function setEventTime($event_time) {
         $this->container['event_time'] = $event_time;
 
         return $this;
@@ -253,22 +239,20 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets location.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Location
+     * @return Location
      */
-    public function getLocation()
-    {
+    public function getLocation() {
         return $this->container['location'];
     }
 
     /**
      * Sets location.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Location $location location
+     * @param Location $location location
      *
      * @return $this
      */
-    public function setLocation($location)
-    {
+    public function setLocation($location) {
         $this->container['location'] = $location;
 
         return $this;
@@ -281,8 +265,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -293,21 +276,19 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -322,8 +303,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -332,8 +312,7 @@ class Event implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

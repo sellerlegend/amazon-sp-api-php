@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AvailableCarrierWillPickUpOption Class Doc Comment.
  *
-
  * @description Indicates whether the carrier will pick up the package, and what fee is charged, if any.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
-{
+class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,9 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'carrier_will_pick_up_option' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption',
-'charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount',    ];
+        'carrier_will_pick_up_option' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption',
+        'charge'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,15 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'carrier_will_pick_up_option' => null,
-'charge' => null,    ];
+        'charge'                      => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +84,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'carrier_will_pick_up_option' => 'CarrierWillPickUpOption',
-'charge' => 'Charge',    ];
+        'charge'                      => 'Charge',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +93,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'carrier_will_pick_up_option' => 'setCarrierWillPickUpOption',
-'charge' => 'setCharge',    ];
+        'charge'                      => 'setCharge',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +102,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'carrier_will_pick_up_option' => 'getCarrierWillPickUpOption',
-'charge' => 'getCharge',    ];
+        'charge'                      => 'getCharge',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +154,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['carrier_will_pick_up_option'] = isset($data['carrier_will_pick_up_option']) ? $data['carrier_will_pick_up_option'] : null;
         $this->container['charge'] = isset($data['charge']) ? $data['charge'] : null;
     }
@@ -171,8 +164,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['carrier_will_pick_up_option']) {
@@ -191,30 +183,27 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets carrier_will_pick_up_option.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption
+     * @return CarrierWillPickUpOption
      */
-    public function getCarrierWillPickUpOption()
-    {
+    public function getCarrierWillPickUpOption() {
         return $this->container['carrier_will_pick_up_option'];
     }
 
     /**
      * Sets carrier_will_pick_up_option.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
+     * @param CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
      *
      * @return $this
      */
-    public function setCarrierWillPickUpOption($carrier_will_pick_up_option)
-    {
+    public function setCarrierWillPickUpOption($carrier_will_pick_up_option) {
         $this->container['carrier_will_pick_up_option'] = $carrier_will_pick_up_option;
 
         return $this;
@@ -223,22 +212,20 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
     /**
      * Gets charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount
+     * @return CurrencyAmount
      */
-    public function getCharge()
-    {
+    public function getCharge() {
         return $this->container['charge'];
     }
 
     /**
      * Sets charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount $charge charge
+     * @param CurrencyAmount $charge charge
      *
      * @return $this
      */
-    public function setCharge($charge)
-    {
+    public function setCharge($charge) {
         $this->container['charge'] = $charge;
 
         return $this;
@@ -251,8 +238,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +249,19 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +276,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +285,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

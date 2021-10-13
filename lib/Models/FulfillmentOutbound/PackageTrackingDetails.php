@@ -15,19 +15,18 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PackageTrackingDetails Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PackageTrackingDetails implements ModelInterface, ArrayAccess
-{
+class PackageTrackingDetails implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,20 +42,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'package_number' => 'int',
-'tracking_number' => 'string',
-'customer_tracking_link' => 'string',
-'carrier_code' => 'string',
-'carrier_phone_number' => 'string',
-'carrier_url' => 'string',
-'ship_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'estimated_arrival_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'ship_to_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress',
-'current_status' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CurrentStatus',
-'current_status_description' => 'string',
-'signed_for_by' => 'string',
-'additional_location_info' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\AdditionalLocationInfo',
-'tracking_events' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingEventList',    ];
+        'package_number'             => 'int',
+        'tracking_number'            => 'string',
+        'customer_tracking_link'     => 'string',
+        'carrier_code'               => 'string',
+        'carrier_phone_number'       => 'string',
+        'carrier_url'                => 'string',
+        'ship_date'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'estimated_arrival_date'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'ship_to_address'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress',
+        'current_status'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CurrentStatus',
+        'current_status_description' => 'string',
+        'signed_for_by'              => 'string',
+        'additional_location_info'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\AdditionalLocationInfo',
+        'tracking_events'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingEventList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -64,28 +63,27 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'package_number' => 'int32',
-'tracking_number' => null,
-'customer_tracking_link' => null,
-'carrier_code' => null,
-'carrier_phone_number' => null,
-'carrier_url' => null,
-'ship_date' => null,
-'estimated_arrival_date' => null,
-'ship_to_address' => null,
-'current_status' => null,
-'current_status_description' => null,
-'signed_for_by' => null,
-'additional_location_info' => null,
-'tracking_events' => null,    ];
+        'package_number'             => 'int32',
+        'tracking_number'            => null,
+        'customer_tracking_link'     => null,
+        'carrier_code'               => null,
+        'carrier_phone_number'       => null,
+        'carrier_url'                => null,
+        'ship_date'                  => null,
+        'estimated_arrival_date'     => null,
+        'ship_to_address'            => null,
+        'current_status'             => null,
+        'current_status_description' => null,
+        'signed_for_by'              => null,
+        'additional_location_info'   => null,
+        'tracking_events'            => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -94,8 +92,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -106,20 +103,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'package_number' => 'packageNumber',
-'tracking_number' => 'trackingNumber',
-'customer_tracking_link' => 'customerTrackingLink',
-'carrier_code' => 'carrierCode',
-'carrier_phone_number' => 'carrierPhoneNumber',
-'carrier_url' => 'carrierURL',
-'ship_date' => 'shipDate',
-'estimated_arrival_date' => 'estimatedArrivalDate',
-'ship_to_address' => 'shipToAddress',
-'current_status' => 'currentStatus',
-'current_status_description' => 'currentStatusDescription',
-'signed_for_by' => 'signedForBy',
-'additional_location_info' => 'additionalLocationInfo',
-'tracking_events' => 'trackingEvents',    ];
+        'package_number'             => 'packageNumber',
+        'tracking_number'            => 'trackingNumber',
+        'customer_tracking_link'     => 'customerTrackingLink',
+        'carrier_code'               => 'carrierCode',
+        'carrier_phone_number'       => 'carrierPhoneNumber',
+        'carrier_url'                => 'carrierURL',
+        'ship_date'                  => 'shipDate',
+        'estimated_arrival_date'     => 'estimatedArrivalDate',
+        'ship_to_address'            => 'shipToAddress',
+        'current_status'             => 'currentStatus',
+        'current_status_description' => 'currentStatusDescription',
+        'signed_for_by'              => 'signedForBy',
+        'additional_location_info'   => 'additionalLocationInfo',
+        'tracking_events'            => 'trackingEvents',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -127,20 +124,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'package_number' => 'setPackageNumber',
-'tracking_number' => 'setTrackingNumber',
-'customer_tracking_link' => 'setCustomerTrackingLink',
-'carrier_code' => 'setCarrierCode',
-'carrier_phone_number' => 'setCarrierPhoneNumber',
-'carrier_url' => 'setCarrierUrl',
-'ship_date' => 'setShipDate',
-'estimated_arrival_date' => 'setEstimatedArrivalDate',
-'ship_to_address' => 'setShipToAddress',
-'current_status' => 'setCurrentStatus',
-'current_status_description' => 'setCurrentStatusDescription',
-'signed_for_by' => 'setSignedForBy',
-'additional_location_info' => 'setAdditionalLocationInfo',
-'tracking_events' => 'setTrackingEvents',    ];
+        'package_number'             => 'setPackageNumber',
+        'tracking_number'            => 'setTrackingNumber',
+        'customer_tracking_link'     => 'setCustomerTrackingLink',
+        'carrier_code'               => 'setCarrierCode',
+        'carrier_phone_number'       => 'setCarrierPhoneNumber',
+        'carrier_url'                => 'setCarrierUrl',
+        'ship_date'                  => 'setShipDate',
+        'estimated_arrival_date'     => 'setEstimatedArrivalDate',
+        'ship_to_address'            => 'setShipToAddress',
+        'current_status'             => 'setCurrentStatus',
+        'current_status_description' => 'setCurrentStatusDescription',
+        'signed_for_by'              => 'setSignedForBy',
+        'additional_location_info'   => 'setAdditionalLocationInfo',
+        'tracking_events'            => 'setTrackingEvents',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -148,20 +145,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'package_number' => 'getPackageNumber',
-'tracking_number' => 'getTrackingNumber',
-'customer_tracking_link' => 'getCustomerTrackingLink',
-'carrier_code' => 'getCarrierCode',
-'carrier_phone_number' => 'getCarrierPhoneNumber',
-'carrier_url' => 'getCarrierUrl',
-'ship_date' => 'getShipDate',
-'estimated_arrival_date' => 'getEstimatedArrivalDate',
-'ship_to_address' => 'getShipToAddress',
-'current_status' => 'getCurrentStatus',
-'current_status_description' => 'getCurrentStatusDescription',
-'signed_for_by' => 'getSignedForBy',
-'additional_location_info' => 'getAdditionalLocationInfo',
-'tracking_events' => 'getTrackingEvents',    ];
+        'package_number'             => 'getPackageNumber',
+        'tracking_number'            => 'getTrackingNumber',
+        'customer_tracking_link'     => 'getCustomerTrackingLink',
+        'carrier_code'               => 'getCarrierCode',
+        'carrier_phone_number'       => 'getCarrierPhoneNumber',
+        'carrier_url'                => 'getCarrierUrl',
+        'ship_date'                  => 'getShipDate',
+        'estimated_arrival_date'     => 'getEstimatedArrivalDate',
+        'ship_to_address'            => 'getShipToAddress',
+        'current_status'             => 'getCurrentStatus',
+        'current_status_description' => 'getCurrentStatusDescription',
+        'signed_for_by'              => 'getSignedForBy',
+        'additional_location_info'   => 'getAdditionalLocationInfo',
+        'tracking_events'            => 'getTrackingEvents',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,8 +166,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -179,8 +175,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -189,8 +184,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -199,8 +193,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -217,8 +210,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['package_number'] = isset($data['package_number']) ? $data['package_number'] : null;
         $this->container['tracking_number'] = isset($data['tracking_number']) ? $data['tracking_number'] : null;
         $this->container['customer_tracking_link'] = isset($data['customer_tracking_link']) ? $data['customer_tracking_link'] : null;
@@ -240,8 +232,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['package_number']) {
@@ -257,8 +248,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -267,8 +257,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPackageNumber()
-    {
+    public function getPackageNumber() {
         return $this->container['package_number'];
     }
 
@@ -279,8 +268,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPackageNumber($package_number)
-    {
+    public function setPackageNumber($package_number) {
         $this->container['package_number'] = $package_number;
 
         return $this;
@@ -291,8 +279,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrackingNumber()
-    {
+    public function getTrackingNumber() {
         return $this->container['tracking_number'];
     }
 
@@ -303,8 +290,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrackingNumber($tracking_number)
-    {
+    public function setTrackingNumber($tracking_number) {
         $this->container['tracking_number'] = $tracking_number;
 
         return $this;
@@ -315,8 +301,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCustomerTrackingLink()
-    {
+    public function getCustomerTrackingLink() {
         return $this->container['customer_tracking_link'];
     }
 
@@ -327,8 +312,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCustomerTrackingLink($customer_tracking_link)
-    {
+    public function setCustomerTrackingLink($customer_tracking_link) {
         $this->container['customer_tracking_link'] = $customer_tracking_link;
 
         return $this;
@@ -339,8 +323,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierCode()
-    {
+    public function getCarrierCode() {
         return $this->container['carrier_code'];
     }
 
@@ -351,8 +334,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierCode($carrier_code)
-    {
+    public function setCarrierCode($carrier_code) {
         $this->container['carrier_code'] = $carrier_code;
 
         return $this;
@@ -363,8 +345,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierPhoneNumber()
-    {
+    public function getCarrierPhoneNumber() {
         return $this->container['carrier_phone_number'];
     }
 
@@ -375,8 +356,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierPhoneNumber($carrier_phone_number)
-    {
+    public function setCarrierPhoneNumber($carrier_phone_number) {
         $this->container['carrier_phone_number'] = $carrier_phone_number;
 
         return $this;
@@ -387,8 +367,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierUrl()
-    {
+    public function getCarrierUrl() {
         return $this->container['carrier_url'];
     }
 
@@ -399,8 +378,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierUrl($carrier_url)
-    {
+    public function setCarrierUrl($carrier_url) {
         $this->container['carrier_url'] = $carrier_url;
 
         return $this;
@@ -409,22 +387,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
     /**
      * Gets ship_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getShipDate()
-    {
+    public function getShipDate() {
         return $this->container['ship_date'];
     }
 
     /**
      * Sets ship_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $ship_date ship_date
+     * @param Timestamp $ship_date ship_date
      *
      * @return $this
      */
-    public function setShipDate($ship_date)
-    {
+    public function setShipDate($ship_date) {
         $this->container['ship_date'] = $ship_date;
 
         return $this;
@@ -433,22 +409,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
     /**
      * Gets estimated_arrival_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEstimatedArrivalDate()
-    {
+    public function getEstimatedArrivalDate() {
         return $this->container['estimated_arrival_date'];
     }
 
     /**
      * Sets estimated_arrival_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $estimated_arrival_date estimated_arrival_date
+     * @param Timestamp $estimated_arrival_date estimated_arrival_date
      *
      * @return $this
      */
-    public function setEstimatedArrivalDate($estimated_arrival_date)
-    {
+    public function setEstimatedArrivalDate($estimated_arrival_date) {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
         return $this;
@@ -457,22 +431,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
     /**
      * Gets ship_to_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress
+     * @return TrackingAddress
      */
-    public function getShipToAddress()
-    {
+    public function getShipToAddress() {
         return $this->container['ship_to_address'];
     }
 
     /**
      * Sets ship_to_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingAddress $ship_to_address ship_to_address
+     * @param TrackingAddress $ship_to_address ship_to_address
      *
      * @return $this
      */
-    public function setShipToAddress($ship_to_address)
-    {
+    public function setShipToAddress($ship_to_address) {
         $this->container['ship_to_address'] = $ship_to_address;
 
         return $this;
@@ -481,22 +453,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
     /**
      * Gets current_status.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CurrentStatus
+     * @return CurrentStatus
      */
-    public function getCurrentStatus()
-    {
+    public function getCurrentStatus() {
         return $this->container['current_status'];
     }
 
     /**
      * Sets current_status.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CurrentStatus $current_status current_status
+     * @param CurrentStatus $current_status current_status
      *
      * @return $this
      */
-    public function setCurrentStatus($current_status)
-    {
+    public function setCurrentStatus($current_status) {
         $this->container['current_status'] = $current_status;
 
         return $this;
@@ -507,8 +477,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrentStatusDescription()
-    {
+    public function getCurrentStatusDescription() {
         return $this->container['current_status_description'];
     }
 
@@ -519,8 +488,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrentStatusDescription($current_status_description)
-    {
+    public function setCurrentStatusDescription($current_status_description) {
         $this->container['current_status_description'] = $current_status_description;
 
         return $this;
@@ -531,8 +499,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSignedForBy()
-    {
+    public function getSignedForBy() {
         return $this->container['signed_for_by'];
     }
 
@@ -543,8 +510,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSignedForBy($signed_for_by)
-    {
+    public function setSignedForBy($signed_for_by) {
         $this->container['signed_for_by'] = $signed_for_by;
 
         return $this;
@@ -553,22 +519,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
     /**
      * Gets additional_location_info.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\AdditionalLocationInfo
+     * @return AdditionalLocationInfo
      */
-    public function getAdditionalLocationInfo()
-    {
+    public function getAdditionalLocationInfo() {
         return $this->container['additional_location_info'];
     }
 
     /**
      * Sets additional_location_info.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\AdditionalLocationInfo $additional_location_info additional_location_info
+     * @param AdditionalLocationInfo $additional_location_info additional_location_info
      *
      * @return $this
      */
-    public function setAdditionalLocationInfo($additional_location_info)
-    {
+    public function setAdditionalLocationInfo($additional_location_info) {
         $this->container['additional_location_info'] = $additional_location_info;
 
         return $this;
@@ -577,22 +541,20 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
     /**
      * Gets tracking_events.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingEventList
+     * @return TrackingEventList
      */
-    public function getTrackingEvents()
-    {
+    public function getTrackingEvents() {
         return $this->container['tracking_events'];
     }
 
     /**
      * Sets tracking_events.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\TrackingEventList $tracking_events tracking_events
+     * @param TrackingEventList $tracking_events tracking_events
      *
      * @return $this
      */
-    public function setTrackingEvents($tracking_events)
-    {
+    public function setTrackingEvents($tracking_events) {
         $this->container['tracking_events'] = $tracking_events;
 
         return $this;
@@ -605,8 +567,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -617,21 +578,19 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -646,8 +605,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -656,8 +614,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

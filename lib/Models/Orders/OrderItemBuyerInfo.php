@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OrderItemBuyerInfo Class Doc Comment.
  *
-
  * @description A single order item&#x27;s buyer information.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
-{
+class OrderItemBuyerInfo implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,12 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'order_item_id' => 'string',
-'buyer_customized_info' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail',
-'gift_wrap_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'gift_wrap_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money',
-'gift_message_text' => 'string',
-'gift_wrap_level' => 'string',    ];
+        'order_item_id'         => 'string',
+        'buyer_customized_info' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail',
+        'gift_wrap_price'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'gift_wrap_tax'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'gift_message_text'     => 'string',
+        'gift_wrap_level'       => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +57,19 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'order_item_id' => null,
-'buyer_customized_info' => null,
-'gift_wrap_price' => null,
-'gift_wrap_tax' => null,
-'gift_message_text' => null,
-'gift_wrap_level' => null,    ];
+        'order_item_id'         => null,
+        'buyer_customized_info' => null,
+        'gift_wrap_price'       => null,
+        'gift_wrap_tax'         => null,
+        'gift_message_text'     => null,
+        'gift_wrap_level'       => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +78,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +89,12 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'order_item_id' => 'OrderItemId',
-'buyer_customized_info' => 'BuyerCustomizedInfo',
-'gift_wrap_price' => 'GiftWrapPrice',
-'gift_wrap_tax' => 'GiftWrapTax',
-'gift_message_text' => 'GiftMessageText',
-'gift_wrap_level' => 'GiftWrapLevel',    ];
+        'order_item_id'         => 'OrderItemId',
+        'buyer_customized_info' => 'BuyerCustomizedInfo',
+        'gift_wrap_price'       => 'GiftWrapPrice',
+        'gift_wrap_tax'         => 'GiftWrapTax',
+        'gift_message_text'     => 'GiftMessageText',
+        'gift_wrap_level'       => 'GiftWrapLevel',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +102,12 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'order_item_id' => 'setOrderItemId',
-'buyer_customized_info' => 'setBuyerCustomizedInfo',
-'gift_wrap_price' => 'setGiftWrapPrice',
-'gift_wrap_tax' => 'setGiftWrapTax',
-'gift_message_text' => 'setGiftMessageText',
-'gift_wrap_level' => 'setGiftWrapLevel',    ];
+        'order_item_id'         => 'setOrderItemId',
+        'buyer_customized_info' => 'setBuyerCustomizedInfo',
+        'gift_wrap_price'       => 'setGiftWrapPrice',
+        'gift_wrap_tax'         => 'setGiftWrapTax',
+        'gift_message_text'     => 'setGiftMessageText',
+        'gift_wrap_level'       => 'setGiftWrapLevel',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +115,12 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'order_item_id' => 'getOrderItemId',
-'buyer_customized_info' => 'getBuyerCustomizedInfo',
-'gift_wrap_price' => 'getGiftWrapPrice',
-'gift_wrap_tax' => 'getGiftWrapTax',
-'gift_message_text' => 'getGiftMessageText',
-'gift_wrap_level' => 'getGiftWrapLevel',    ];
+        'order_item_id'         => 'getOrderItemId',
+        'buyer_customized_info' => 'getBuyerCustomizedInfo',
+        'gift_wrap_price'       => 'getGiftWrapPrice',
+        'gift_wrap_tax'         => 'getGiftWrapTax',
+        'gift_message_text'     => 'getGiftMessageText',
+        'gift_wrap_level'       => 'getGiftWrapLevel',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +128,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +137,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +146,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +155,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +172,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['order_item_id'] = isset($data['order_item_id']) ? $data['order_item_id'] : null;
         $this->container['buyer_customized_info'] = isset($data['buyer_customized_info']) ? $data['buyer_customized_info'] : null;
         $this->container['gift_wrap_price'] = isset($data['gift_wrap_price']) ? $data['gift_wrap_price'] : null;
@@ -195,8 +186,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['order_item_id']) {
@@ -212,8 +202,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -222,8 +211,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrderItemId()
-    {
+    public function getOrderItemId() {
         return $this->container['order_item_id'];
     }
 
@@ -234,8 +222,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderItemId($order_item_id)
-    {
+    public function setOrderItemId($order_item_id) {
         $this->container['order_item_id'] = $order_item_id;
 
         return $this;
@@ -244,22 +231,20 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
     /**
      * Gets buyer_customized_info.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail
+     * @return BuyerCustomizedInfoDetail
      */
-    public function getBuyerCustomizedInfo()
-    {
+    public function getBuyerCustomizedInfo() {
         return $this->container['buyer_customized_info'];
     }
 
     /**
      * Sets buyer_customized_info.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
+     * @param BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
      *
      * @return $this
      */
-    public function setBuyerCustomizedInfo($buyer_customized_info)
-    {
+    public function setBuyerCustomizedInfo($buyer_customized_info) {
         $this->container['buyer_customized_info'] = $buyer_customized_info;
 
         return $this;
@@ -268,22 +253,20 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
     /**
      * Gets gift_wrap_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getGiftWrapPrice()
-    {
+    public function getGiftWrapPrice() {
         return $this->container['gift_wrap_price'];
     }
 
     /**
      * Sets gift_wrap_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $gift_wrap_price gift_wrap_price
+     * @param Money $gift_wrap_price gift_wrap_price
      *
      * @return $this
      */
-    public function setGiftWrapPrice($gift_wrap_price)
-    {
+    public function setGiftWrapPrice($gift_wrap_price) {
         $this->container['gift_wrap_price'] = $gift_wrap_price;
 
         return $this;
@@ -292,22 +275,20 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
     /**
      * Gets gift_wrap_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money
+     * @return Money
      */
-    public function getGiftWrapTax()
-    {
+    public function getGiftWrapTax() {
         return $this->container['gift_wrap_tax'];
     }
 
     /**
      * Sets gift_wrap_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Money $gift_wrap_tax gift_wrap_tax
+     * @param Money $gift_wrap_tax gift_wrap_tax
      *
      * @return $this
      */
-    public function setGiftWrapTax($gift_wrap_tax)
-    {
+    public function setGiftWrapTax($gift_wrap_tax) {
         $this->container['gift_wrap_tax'] = $gift_wrap_tax;
 
         return $this;
@@ -318,8 +299,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGiftMessageText()
-    {
+    public function getGiftMessageText() {
         return $this->container['gift_message_text'];
     }
 
@@ -330,8 +310,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGiftMessageText($gift_message_text)
-    {
+    public function setGiftMessageText($gift_message_text) {
         $this->container['gift_message_text'] = $gift_message_text;
 
         return $this;
@@ -342,8 +321,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getGiftWrapLevel()
-    {
+    public function getGiftWrapLevel() {
         return $this->container['gift_wrap_level'];
     }
 
@@ -354,8 +332,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setGiftWrapLevel($gift_wrap_level)
-    {
+    public function setGiftWrapLevel($gift_wrap_level) {
         $this->container['gift_wrap_level'] = $gift_wrap_level;
 
         return $this;
@@ -368,8 +345,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -380,21 +356,19 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -409,8 +383,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -419,8 +392,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

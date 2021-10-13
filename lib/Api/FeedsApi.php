@@ -13,28 +13,34 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedDocumentResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedDocumentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeedsApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeedsApi
-{
+class FeedsApi {
     use SellingPartnerApiRequest;
 
     /**
@@ -52,8 +58,7 @@ class FeedsApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -62,8 +67,7 @@ class FeedsApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
@@ -72,14 +76,13 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CancelFeedResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse
+     * @throws InvalidArgumentException
      */
-    public function cancelFeed($feed_id)
-    {
-        list($response) = $this->cancelFeedWithHttpInfo($feed_id);
+    public function cancelFeed($feed_id) {
+        [$response] = $this->cancelFeedWithHttpInfo($feed_id);
 
         return $response;
     }
@@ -89,14 +92,13 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function cancelFeedWithHttpInfo($feed_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse';
+    public function cancelFeedWithHttpInfo($feed_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CancelFeedResponse';
         $request = $this->cancelFeedRequest($feed_id);
 
         return $this->sendRequest($request, CancelFeedResponse::class);
@@ -107,12 +109,11 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelFeedAsync($feed_id)
-    {
+    public function cancelFeedAsync($feed_id) {
         return $this->cancelFeedAsyncWithHttpInfo($feed_id)
             ->then(
                 function ($response) {
@@ -126,12 +127,11 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelFeedAsyncWithHttpInfo($feed_id)
-    {
+    public function cancelFeedAsyncWithHttpInfo($feed_id) {
         $request = $this->cancelFeedRequest($feed_id);
 
         return $this->sendRequestAsync($request, CancelFeedResponse::class);
@@ -142,15 +142,14 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cancelFeedRequest($feed_id)
-    {
+    protected function cancelFeedRequest($feed_id) {
         // verify the required parameter 'feed_id' is set
         if (null === $feed_id || (is_array($feed_id) && 0 === count($feed_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $feed_id when calling cancelFeed');
+            throw new InvalidArgumentException('Missing the required parameter $feed_id when calling cancelFeed');
         }
 
         $resourcePath = '/feeds/2020-09-04/feeds/{feedId}';
@@ -163,7 +162,7 @@ class FeedsApi
         // path params
         if (null !== $feed_id) {
             $resourcePath = str_replace(
-                '{'.'feedId'.'}',
+                '{' . 'feedId' . '}',
                 ObjectSerializer::toPathValue($feed_id),
                 $resourcePath
             );
@@ -175,16 +174,15 @@ class FeedsApi
     /**
      * Operation createFeed.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification $body body (required)
+     * @param CreateFeedSpecification $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CreateFeedResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse
+     * @throws InvalidArgumentException
      */
-    public function createFeed($body)
-    {
-        list($response) = $this->createFeedWithHttpInfo($body);
+    public function createFeed($body) {
+        [$response] = $this->createFeedWithHttpInfo($body);
 
         return $response;
     }
@@ -192,16 +190,15 @@ class FeedsApi
     /**
      * Operation createFeedWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification $body (required)
+     * @param CreateFeedSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createFeedWithHttpInfo($body)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse';
+    public function createFeedWithHttpInfo($body) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedResponse';
         $request = $this->createFeedRequest($body);
 
         return $this->sendRequest($request, CreateFeedResponse::class);
@@ -210,14 +207,13 @@ class FeedsApi
     /**
      * Operation createFeedAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification $body (required)
+     * @param CreateFeedSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFeedAsync($body)
-    {
+    public function createFeedAsync($body) {
         return $this->createFeedAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -229,14 +225,13 @@ class FeedsApi
     /**
      * Operation createFeedAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification $body (required)
+     * @param CreateFeedSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFeedAsyncWithHttpInfo($body)
-    {
+    public function createFeedAsyncWithHttpInfo($body) {
         $request = $this->createFeedRequest($body);
 
         return $this->sendRequestAsync($request, CreateFeedResponse::class);
@@ -245,17 +240,16 @@ class FeedsApi
     /**
      * Create request for operation 'createFeed'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedSpecification $body (required)
+     * @param CreateFeedSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createFeedRequest($body)
-    {
+    protected function createFeedRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createFeed');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling createFeed');
         }
 
         $resourcePath = '/feeds/2020-09-04/feeds';
@@ -271,16 +265,15 @@ class FeedsApi
     /**
      * Operation createFeedDocument.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification $body body (required)
+     * @param CreateFeedDocumentSpecification $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CreateFeedDocumentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentResponse
+     * @throws InvalidArgumentException
      */
-    public function createFeedDocument($body)
-    {
-        list($response) = $this->createFeedDocumentWithHttpInfo($body);
+    public function createFeedDocument($body) {
+        [$response] = $this->createFeedDocumentWithHttpInfo($body);
 
         return $response;
     }
@@ -288,15 +281,14 @@ class FeedsApi
     /**
      * Operation createFeedDocumentWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param CreateFeedDocumentSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createFeedDocumentWithHttpInfo($body)
-    {
+    public function createFeedDocumentWithHttpInfo($body) {
         $request = $this->createFeedDocumentRequest($body);
 
         return $this->sendRequest($request, CreateFeedDocumentResponse::class);
@@ -305,14 +297,13 @@ class FeedsApi
     /**
      * Operation createFeedDocumentAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param CreateFeedDocumentSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFeedDocumentAsync($body)
-    {
+    public function createFeedDocumentAsync($body) {
         return $this->createFeedDocumentAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -324,14 +315,13 @@ class FeedsApi
     /**
      * Operation createFeedDocumentAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param CreateFeedDocumentSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFeedDocumentAsyncWithHttpInfo($body)
-    {
+    public function createFeedDocumentAsyncWithHttpInfo($body) {
         $request = $this->createFeedDocumentRequest($body);
 
         return $this->sendRequestAsync($request, CreateFeedDocumentResponse::class);
@@ -340,17 +330,16 @@ class FeedsApi
     /**
      * Create request for operation 'createFeedDocument'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param CreateFeedDocumentSpecification $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createFeedDocumentRequest($body)
-    {
+    protected function createFeedDocumentRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createFeedDocument');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling createFeedDocument');
         }
 
         $resourcePath = '/feeds/2020-09-04/documents';
@@ -368,14 +357,13 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetFeedResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse
+     * @throws InvalidArgumentException
      */
-    public function getFeed($feed_id)
-    {
-        list($response) = $this->getFeedWithHttpInfo($feed_id);
+    public function getFeed($feed_id) {
+        [$response] = $this->getFeedWithHttpInfo($feed_id);
 
         return $response;
     }
@@ -385,14 +373,13 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getFeedWithHttpInfo($feed_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse';
+    public function getFeedWithHttpInfo($feed_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse';
         $request = $this->getFeedRequest($feed_id);
 
         return $this->sendRequest($request, GetFeedResponse::class);
@@ -403,12 +390,11 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeedAsync($feed_id)
-    {
+    public function getFeedAsync($feed_id) {
         return $this->getFeedAsyncWithHttpInfo($feed_id)
             ->then(
                 function ($response) {
@@ -422,13 +408,12 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeedAsyncWithHttpInfo($feed_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse';
+    public function getFeedAsyncWithHttpInfo($feed_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedResponse';
         $request = $this->getFeedRequest($feed_id);
 
         return $this->sendRequestAsync($request, GetFeedResponse::class);
@@ -439,15 +424,14 @@ class FeedsApi
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFeedRequest($feed_id)
-    {
+    protected function getFeedRequest($feed_id) {
         // verify the required parameter 'feed_id' is set
         if (null === $feed_id || (is_array($feed_id) && 0 === count($feed_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $feed_id when calling getFeed');
+            throw new InvalidArgumentException('Missing the required parameter $feed_id when calling getFeed');
         }
 
         $resourcePath = '/feeds/2020-09-04/feeds/{feedId}';
@@ -460,7 +444,7 @@ class FeedsApi
         // path params
         if (null !== $feed_id) {
             $resourcePath = str_replace(
-                '{'.'feedId'.'}',
+                '{' . 'feedId' . '}',
                 ObjectSerializer::toPathValue($feed_id),
                 $resourcePath
             );
@@ -474,14 +458,13 @@ class FeedsApi
      *
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetFeedDocumentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedDocumentResponse
+     * @throws InvalidArgumentException
      */
-    public function getFeedDocument($feed_document_id)
-    {
-        list($response) = $this->getFeedDocumentWithHttpInfo($feed_document_id);
+    public function getFeedDocument($feed_document_id) {
+        [$response] = $this->getFeedDocumentWithHttpInfo($feed_document_id);
 
         return $response;
     }
@@ -491,13 +474,12 @@ class FeedsApi
      *
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getFeedDocumentWithHttpInfo($feed_document_id)
-    {
+    public function getFeedDocumentWithHttpInfo($feed_document_id) {
         $request = $this->getFeedDocumentRequest($feed_document_id);
 
         return $this->sendRequest($request, GetFeedDocumentResponse::class);
@@ -508,12 +490,11 @@ class FeedsApi
      *
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeedDocumentAsync($feed_document_id)
-    {
+    public function getFeedDocumentAsync($feed_document_id) {
         return $this->getFeedDocumentAsyncWithHttpInfo($feed_document_id)
             ->then(
                 function ($response) {
@@ -527,12 +508,11 @@ class FeedsApi
      *
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeedDocumentAsyncWithHttpInfo($feed_document_id)
-    {
+    public function getFeedDocumentAsyncWithHttpInfo($feed_document_id) {
         $request = $this->getFeedDocumentRequest($feed_document_id);
 
         return $this->sendRequestAsync($request, GetFeedDocumentResponse::class);
@@ -543,15 +523,14 @@ class FeedsApi
      *
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFeedDocumentRequest($feed_document_id)
-    {
+    protected function getFeedDocumentRequest($feed_document_id) {
         // verify the required parameter 'feed_document_id' is set
         if (null === $feed_document_id || (is_array($feed_document_id) && 0 === count($feed_document_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $feed_document_id when calling getFeedDocument');
+            throw new InvalidArgumentException('Missing the required parameter $feed_document_id when calling getFeedDocument');
         }
 
         $resourcePath = '/feeds/2020-09-04/documents/{feedDocumentId}';
@@ -564,7 +543,7 @@ class FeedsApi
         // path params
         if (null !== $feed_document_id) {
             $resourcePath = str_replace(
-                '{'.'feedDocumentId'.'}',
+                '{' . 'feedDocumentId' . '}',
                 ObjectSerializer::toPathValue($feed_document_id),
                 $resourcePath
             );
@@ -576,22 +555,21 @@ class FeedsApi
     /**
      * Operation getFeeds.
      *
-     * @param string[]  $feed_types          A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
-     * @param string[]  $marketplace_ids     A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int       $page_size           The maximum number of feeds to return in a single call. (optional, default to 10)
-     * @param string[]  $processing_statuses A list of processing statuses used to filter feeds. (optional)
-     * @param \DateTime $created_since       The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $created_until       The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
+     * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
+     * @param string[] $processing_statuses A list of processing statuses used to filter feeds. (optional)
+     * @param DateTime $created_since The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
+     * @param DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return GetFeedsResponse
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse
      */
-    public function getFeeds($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
-    {
-        list($response) = $this->getFeedsWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
+    public function getFeeds($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) {
+        [$response] = $this->getFeedsWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
 
         return $response;
     }
@@ -599,21 +577,20 @@ class FeedsApi
     /**
      * Operation getFeedsWithHttpInfo.
      *
-     * @param string[]  $feed_types          A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
-     * @param string[]  $marketplace_ids     A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int       $page_size           The maximum number of feeds to return in a single call. (optional, default to 10)
-     * @param string[]  $processing_statuses A list of processing statuses used to filter feeds. (optional)
-     * @param \DateTime $created_since       The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $created_until       The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
+     * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
+     * @param string[] $processing_statuses A list of processing statuses used to filter feeds. (optional)
+     * @param DateTime $created_since The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
+     * @param DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFeedsWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
-    {
+    public function getFeedsWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) {
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
 
         return $this->sendRequest($request, GetFeedsResponse::class);
@@ -622,20 +599,19 @@ class FeedsApi
     /**
      * Operation getFeedsAsync.
      *
-     * @param string[]  $feed_types          A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
-     * @param string[]  $marketplace_ids     A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int       $page_size           The maximum number of feeds to return in a single call. (optional, default to 10)
-     * @param string[]  $processing_statuses A list of processing statuses used to filter feeds. (optional)
-     * @param \DateTime $created_since       The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $created_until       The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
+     * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
+     * @param string[] $processing_statuses A list of processing statuses used to filter feeds. (optional)
+     * @param DateTime $created_since The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
+     * @param DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeedsAsync($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
-    {
+    public function getFeedsAsync($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) {
         return $this->getFeedsAsyncWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token)
             ->then(
                 function ($response) {
@@ -647,21 +623,20 @@ class FeedsApi
     /**
      * Operation getFeedsAsyncWithHttpInfo.
      *
-     * @param string[]  $feed_types          A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
-     * @param string[]  $marketplace_ids     A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int       $page_size           The maximum number of feeds to return in a single call. (optional, default to 10)
-     * @param string[]  $processing_statuses A list of processing statuses used to filter feeds. (optional)
-     * @param \DateTime $created_since       The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $created_until       The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
+     * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
+     * @param string[] $processing_statuses A list of processing statuses used to filter feeds. (optional)
+     * @param DateTime $created_since The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
+     * @param DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeedsAsyncWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse';
+    public function getFeedsAsyncWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\GetFeedsResponse';
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
 
         return $this->sendRequestAsync($request, GetFeedsResponse::class);
@@ -670,20 +645,19 @@ class FeedsApi
     /**
      * Create request for operation 'getFeeds'.
      *
-     * @param string[]  $feed_types          A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
-     * @param string[]  $marketplace_ids     A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int       $page_size           The maximum number of feeds to return in a single call. (optional, default to 10)
-     * @param string[]  $processing_statuses A list of processing statuses used to filter feeds. (optional)
-     * @param \DateTime $created_since       The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $created_until       The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
+     * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
+     * @param string[] $processing_statuses A list of processing statuses used to filter feeds. (optional)
+     * @param DateTime $created_since The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. (optional)
+     * @param DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFeedsRequest($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
-    {
+    protected function getFeedsRequest($feed_types = null, $marketplace_ids = null, $page_size = '10', $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) {
         $resourcePath = '/feeds/2020-09-04/feeds';
         $formParams = [];
         $queryParams = [];

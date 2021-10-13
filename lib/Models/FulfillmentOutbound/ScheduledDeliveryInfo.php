@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ScheduledDeliveryInfo Class Doc Comment.
  *
-
  * @description Delivery information for a scheduled delivery.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
-{
+class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'delivery_time_zone' => 'string',
-'delivery_windows' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindowList',    ];
+        'delivery_windows'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindowList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'delivery_time_zone' => null,
-'delivery_windows' => null,    ];
+        'delivery_windows'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'delivery_time_zone' => 'deliveryTimeZone',
-'delivery_windows' => 'deliveryWindows',    ];
+        'delivery_windows'   => 'deliveryWindows',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'delivery_time_zone' => 'setDeliveryTimeZone',
-'delivery_windows' => 'setDeliveryWindows',    ];
+        'delivery_windows'   => 'setDeliveryWindows',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'delivery_time_zone' => 'getDeliveryTimeZone',
-'delivery_windows' => 'getDeliveryWindows',    ];
+        'delivery_windows'   => 'getDeliveryWindows',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['delivery_time_zone'] = isset($data['delivery_time_zone']) ? $data['delivery_time_zone'] : null;
         $this->container['delivery_windows'] = isset($data['delivery_windows']) ? $data['delivery_windows'] : null;
     }
@@ -171,8 +162,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['delivery_time_zone']) {
@@ -191,8 +181,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -201,8 +190,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDeliveryTimeZone()
-    {
+    public function getDeliveryTimeZone() {
         return $this->container['delivery_time_zone'];
     }
 
@@ -213,8 +201,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDeliveryTimeZone($delivery_time_zone)
-    {
+    public function setDeliveryTimeZone($delivery_time_zone) {
         $this->container['delivery_time_zone'] = $delivery_time_zone;
 
         return $this;
@@ -223,22 +210,20 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_windows.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindowList
+     * @return DeliveryWindowList
      */
-    public function getDeliveryWindows()
-    {
+    public function getDeliveryWindows() {
         return $this->container['delivery_windows'];
     }
 
     /**
      * Sets delivery_windows.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindowList $delivery_windows delivery_windows
+     * @param DeliveryWindowList $delivery_windows delivery_windows
      *
      * @return $this
      */
-    public function setDeliveryWindows($delivery_windows)
-    {
+    public function setDeliveryWindows($delivery_windows) {
         $this->container['delivery_windows'] = $delivery_windows;
 
         return $this;
@@ -251,8 +236,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

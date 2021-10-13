@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * FulfillmentPolicy Class Doc Comment.
  *
-
  * @description The FulfillmentPolicy value specified when you submitted the createFulfillmentOrder operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentPolicy
-{
+class FulfillmentPolicy {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class FulfillmentPolicy
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::FILL_OR_KILL,
-self::FILL_ALL,
-self::FILL_ALL_AVAILABLE,        ];
+            self::FILL_ALL,
+            self::FILL_ALL_AVAILABLE,];
     }
 }

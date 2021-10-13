@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * BarcodeInstruction Class Doc Comment.
  *
-
  * @description Labeling requirements for the item. For more information about FBA labeling requirements, see the Seller Central Help for your marketplace.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class BarcodeInstruction
-{
+class BarcodeInstruction {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class BarcodeInstruction
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::REQUIRES_FNSKU_LABEL,
-self::CAN_USE_ORIGINAL_BARCODE,
-self::MUST_PROVIDE_SELLER_SKU,        ];
+            self::CAN_USE_ORIGINAL_BARCODE,
+            self::MUST_PROVIDE_SELLER_SKU,];
     }
 }

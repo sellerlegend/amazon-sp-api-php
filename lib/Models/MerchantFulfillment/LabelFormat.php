@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * LabelFormat Class Doc Comment.
  *
-
  * @description The label format.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LabelFormat
-{
+class LabelFormat {
     /**
      * Possible values of this enum.
      */
@@ -41,13 +39,12 @@ class LabelFormat
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::PDF,
-self::PNG,
-self::ZPL203,
-self::ZPL300,
-self::SHIPPING_SERVICE_DEFAULT,        ];
+            self::PNG,
+            self::ZPL203,
+            self::ZPL300,
+            self::SHIPPING_SERVICE_DEFAULT,];
     }
 }

@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ASINIdentifier Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ASINIdentifier implements ModelInterface, ArrayAccess
-{
+class ASINIdentifier implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -44,7 +43,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'marketplace_id' => 'string',
-'asin' => 'string',    ];
+        'asin'           => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -53,15 +52,14 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'marketplace_id' => null,
-'asin' => null,    ];
+        'asin'           => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -70,8 +68,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +80,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'marketplace_id' => 'MarketplaceId',
-'asin' => 'ASIN',    ];
+        'asin'           => 'ASIN',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -92,7 +89,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
-'asin' => 'setAsin',    ];
+        'asin'           => 'setAsin',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -101,7 +98,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-'asin' => 'getAsin',    ];
+        'asin'           => 'getAsin',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -109,8 +106,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -119,8 +115,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -129,8 +124,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -139,8 +133,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,8 +150,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
     }
@@ -168,8 +160,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['marketplace_id']) {
@@ -188,8 +179,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -198,8 +188,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -210,8 +199,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -222,8 +210,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -234,8 +221,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -248,8 +234,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +245,19 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +272,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +281,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

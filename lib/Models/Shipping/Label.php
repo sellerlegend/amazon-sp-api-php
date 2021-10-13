@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Label Class Doc Comment.
  *
-
  * @description The label details of the container.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Label implements ModelInterface, ArrayAccess
-{
+class Label implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class Label implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'label_stream' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelStream',
-'label_specification' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelSpecification',    ];
+        'label_stream'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\LabelStream',
+        'label_specification' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\LabelSpecification',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class Label implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'label_stream' => null,
-'label_specification' => null,    ];
+        'label_stream'        => null,
+        'label_specification' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class Label implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'label_stream' => 'labelStream',
-'label_specification' => 'labelSpecification',    ];
+        'label_stream'        => 'labelStream',
+        'label_specification' => 'labelSpecification',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class Label implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'label_stream' => 'setLabelStream',
-'label_specification' => 'setLabelSpecification',    ];
+        'label_stream'        => 'setLabelStream',
+        'label_specification' => 'setLabelSpecification',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class Label implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'label_stream' => 'getLabelStream',
-'label_specification' => 'getLabelSpecification',    ];
+        'label_stream'        => 'getLabelStream',
+        'label_specification' => 'getLabelSpecification',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class Label implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['label_stream'] = isset($data['label_stream']) ? $data['label_stream'] : null;
         $this->container['label_specification'] = isset($data['label_specification']) ? $data['label_specification'] : null;
     }
@@ -171,8 +162,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +174,27 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets label_stream.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelStream
+     * @return LabelStream
      */
-    public function getLabelStream()
-    {
+    public function getLabelStream() {
         return $this->container['label_stream'];
     }
 
     /**
      * Sets label_stream.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelStream $label_stream label_stream
+     * @param LabelStream $label_stream label_stream
      *
      * @return $this
      */
-    public function setLabelStream($label_stream)
-    {
+    public function setLabelStream($label_stream) {
         $this->container['label_stream'] = $label_stream;
 
         return $this;
@@ -216,22 +203,20 @@ class Label implements ModelInterface, ArrayAccess
     /**
      * Gets label_specification.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelSpecification
+     * @return LabelSpecification
      */
-    public function getLabelSpecification()
-    {
+    public function getLabelSpecification() {
         return $this->container['label_specification'];
     }
 
     /**
      * Sets label_specification.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelSpecification $label_specification label_specification
+     * @param LabelSpecification $label_specification label_specification
      *
      * @return $this
      */
-    public function setLabelSpecification($label_specification)
-    {
+    public function setLabelSpecification($label_specification) {
         $this->container['label_specification'] = $label_specification;
 
         return $this;
@@ -244,8 +229,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class Label implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

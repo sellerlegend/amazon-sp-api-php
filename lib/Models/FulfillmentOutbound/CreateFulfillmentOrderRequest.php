@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFulfillmentOrderRequest Class Doc Comment.
  *
-
  * @description The request body schema for the createFulfillmentOrder operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
-{
+class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,21 +44,22 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'marketplace_id' => 'string',
-'seller_fulfillment_order_id' => 'string',
-'displayable_order_id' => 'string',
-'displayable_order_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'displayable_order_comment' => 'string',
-'shipping_speed_category' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategory',
-'delivery_window' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindow',
-'destination_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address',
-'fulfillment_action' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentAction',
-'fulfillment_policy' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPolicy',
-'cod_settings' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CODSettings',
-'ship_from_country_code' => 'string',
-'notification_emails' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\NotificationEmailList',
-'feature_constraints' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[]',
-'items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateFulfillmentOrderItemList',    ];
+        'marketplace_id'              => 'string',
+        'seller_fulfillment_order_id' => 'string',
+        'displayable_order_id'        => 'string',
+        'displayable_order_date'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'displayable_order_comment'   => 'string',
+        'shipping_speed_category'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategory',
+        'delivery_window'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindow',
+        'destination_address'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address',
+        'fulfillment_action'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentAction',
+        'fulfillment_policy'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPolicy',
+        'cod_settings'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CODSettings',
+        'ship_from_country_code'      => 'string',
+        'notification_emails'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\NotificationEmailList',
+        'feature_constraints'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[]',
+        'items'                       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateFulfillmentOrderItemList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -68,29 +67,29 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'marketplace_id' => null,
-'seller_fulfillment_order_id' => null,
-'displayable_order_id' => null,
-'displayable_order_date' => null,
-'displayable_order_comment' => null,
-'shipping_speed_category' => null,
-'delivery_window' => null,
-'destination_address' => null,
-'fulfillment_action' => null,
-'fulfillment_policy' => null,
-'cod_settings' => null,
-'ship_from_country_code' => null,
-'notification_emails' => null,
-'feature_constraints' => null,
-'items' => null,    ];
+        'marketplace_id'              => null,
+        'seller_fulfillment_order_id' => null,
+        'displayable_order_id'        => null,
+        'displayable_order_date'      => null,
+        'displayable_order_comment'   => null,
+        'shipping_speed_category'     => null,
+        'delivery_window'             => null,
+        'destination_address'         => null,
+        'fulfillment_action'          => null,
+        'fulfillment_policy'          => null,
+        'cod_settings'                => null,
+        'ship_from_country_code'      => null,
+        'notification_emails'         => null,
+        'feature_constraints'         => null,
+        'items'                       => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -99,8 +98,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -111,21 +109,21 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplace_id' => 'marketplaceId',
-'seller_fulfillment_order_id' => 'sellerFulfillmentOrderId',
-'displayable_order_id' => 'displayableOrderId',
-'displayable_order_date' => 'displayableOrderDate',
-'displayable_order_comment' => 'displayableOrderComment',
-'shipping_speed_category' => 'shippingSpeedCategory',
-'delivery_window' => 'deliveryWindow',
-'destination_address' => 'destinationAddress',
-'fulfillment_action' => 'fulfillmentAction',
-'fulfillment_policy' => 'fulfillmentPolicy',
-'cod_settings' => 'codSettings',
-'ship_from_country_code' => 'shipFromCountryCode',
-'notification_emails' => 'notificationEmails',
-'feature_constraints' => 'featureConstraints',
-'items' => 'items',    ];
+        'marketplace_id'              => 'marketplaceId',
+        'seller_fulfillment_order_id' => 'sellerFulfillmentOrderId',
+        'displayable_order_id'        => 'displayableOrderId',
+        'displayable_order_date'      => 'displayableOrderDate',
+        'displayable_order_comment'   => 'displayableOrderComment',
+        'shipping_speed_category'     => 'shippingSpeedCategory',
+        'delivery_window'             => 'deliveryWindow',
+        'destination_address'         => 'destinationAddress',
+        'fulfillment_action'          => 'fulfillmentAction',
+        'fulfillment_policy'          => 'fulfillmentPolicy',
+        'cod_settings'                => 'codSettings',
+        'ship_from_country_code'      => 'shipFromCountryCode',
+        'notification_emails'         => 'notificationEmails',
+        'feature_constraints'         => 'featureConstraints',
+        'items'                       => 'items',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -133,21 +131,21 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
-'displayable_order_id' => 'setDisplayableOrderId',
-'displayable_order_date' => 'setDisplayableOrderDate',
-'displayable_order_comment' => 'setDisplayableOrderComment',
-'shipping_speed_category' => 'setShippingSpeedCategory',
-'delivery_window' => 'setDeliveryWindow',
-'destination_address' => 'setDestinationAddress',
-'fulfillment_action' => 'setFulfillmentAction',
-'fulfillment_policy' => 'setFulfillmentPolicy',
-'cod_settings' => 'setCodSettings',
-'ship_from_country_code' => 'setShipFromCountryCode',
-'notification_emails' => 'setNotificationEmails',
-'feature_constraints' => 'setFeatureConstraints',
-'items' => 'setItems',    ];
+        'marketplace_id'              => 'setMarketplaceId',
+        'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
+        'displayable_order_id'        => 'setDisplayableOrderId',
+        'displayable_order_date'      => 'setDisplayableOrderDate',
+        'displayable_order_comment'   => 'setDisplayableOrderComment',
+        'shipping_speed_category'     => 'setShippingSpeedCategory',
+        'delivery_window'             => 'setDeliveryWindow',
+        'destination_address'         => 'setDestinationAddress',
+        'fulfillment_action'          => 'setFulfillmentAction',
+        'fulfillment_policy'          => 'setFulfillmentPolicy',
+        'cod_settings'                => 'setCodSettings',
+        'ship_from_country_code'      => 'setShipFromCountryCode',
+        'notification_emails'         => 'setNotificationEmails',
+        'feature_constraints'         => 'setFeatureConstraints',
+        'items'                       => 'setItems',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -155,21 +153,21 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'marketplace_id' => 'getMarketplaceId',
-'seller_fulfillment_order_id' => 'getSellerFulfillmentOrderId',
-'displayable_order_id' => 'getDisplayableOrderId',
-'displayable_order_date' => 'getDisplayableOrderDate',
-'displayable_order_comment' => 'getDisplayableOrderComment',
-'shipping_speed_category' => 'getShippingSpeedCategory',
-'delivery_window' => 'getDeliveryWindow',
-'destination_address' => 'getDestinationAddress',
-'fulfillment_action' => 'getFulfillmentAction',
-'fulfillment_policy' => 'getFulfillmentPolicy',
-'cod_settings' => 'getCodSettings',
-'ship_from_country_code' => 'getShipFromCountryCode',
-'notification_emails' => 'getNotificationEmails',
-'feature_constraints' => 'getFeatureConstraints',
-'items' => 'getItems',    ];
+        'marketplace_id'              => 'getMarketplaceId',
+        'seller_fulfillment_order_id' => 'getSellerFulfillmentOrderId',
+        'displayable_order_id'        => 'getDisplayableOrderId',
+        'displayable_order_date'      => 'getDisplayableOrderDate',
+        'displayable_order_comment'   => 'getDisplayableOrderComment',
+        'shipping_speed_category'     => 'getShippingSpeedCategory',
+        'delivery_window'             => 'getDeliveryWindow',
+        'destination_address'         => 'getDestinationAddress',
+        'fulfillment_action'          => 'getFulfillmentAction',
+        'fulfillment_policy'          => 'getFulfillmentPolicy',
+        'cod_settings'                => 'getCodSettings',
+        'ship_from_country_code'      => 'getShipFromCountryCode',
+        'notification_emails'         => 'getNotificationEmails',
+        'feature_constraints'         => 'getFeatureConstraints',
+        'items'                       => 'getItems',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -177,8 +175,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -187,8 +184,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -197,8 +193,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -207,8 +202,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -225,8 +219,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['seller_fulfillment_order_id'] = isset($data['seller_fulfillment_order_id']) ? $data['seller_fulfillment_order_id'] : null;
         $this->container['displayable_order_id'] = isset($data['displayable_order_id']) ? $data['displayable_order_id'] : null;
@@ -249,8 +242,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_fulfillment_order_id']) {
@@ -284,8 +276,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -294,8 +285,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -306,8 +296,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -318,8 +307,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerFulfillmentOrderId()
-    {
+    public function getSellerFulfillmentOrderId() {
         return $this->container['seller_fulfillment_order_id'];
     }
 
@@ -330,8 +318,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerFulfillmentOrderId($seller_fulfillment_order_id)
-    {
+    public function setSellerFulfillmentOrderId($seller_fulfillment_order_id) {
         $this->container['seller_fulfillment_order_id'] = $seller_fulfillment_order_id;
 
         return $this;
@@ -342,8 +329,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDisplayableOrderId()
-    {
+    public function getDisplayableOrderId() {
         return $this->container['displayable_order_id'];
     }
 
@@ -354,8 +340,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDisplayableOrderId($displayable_order_id)
-    {
+    public function setDisplayableOrderId($displayable_order_id) {
         $this->container['displayable_order_id'] = $displayable_order_id;
 
         return $this;
@@ -364,22 +349,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets displayable_order_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getDisplayableOrderDate()
-    {
+    public function getDisplayableOrderDate() {
         return $this->container['displayable_order_date'];
     }
 
     /**
      * Sets displayable_order_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $displayable_order_date displayable_order_date
+     * @param Timestamp $displayable_order_date displayable_order_date
      *
      * @return $this
      */
-    public function setDisplayableOrderDate($displayable_order_date)
-    {
+    public function setDisplayableOrderDate($displayable_order_date) {
         $this->container['displayable_order_date'] = $displayable_order_date;
 
         return $this;
@@ -390,8 +373,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDisplayableOrderComment()
-    {
+    public function getDisplayableOrderComment() {
         return $this->container['displayable_order_comment'];
     }
 
@@ -402,8 +384,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDisplayableOrderComment($displayable_order_comment)
-    {
+    public function setDisplayableOrderComment($displayable_order_comment) {
         $this->container['displayable_order_comment'] = $displayable_order_comment;
 
         return $this;
@@ -412,22 +393,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_speed_category.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategory
+     * @return ShippingSpeedCategory
      */
-    public function getShippingSpeedCategory()
-    {
+    public function getShippingSpeedCategory() {
         return $this->container['shipping_speed_category'];
     }
 
     /**
      * Sets shipping_speed_category.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     * @param ShippingSpeedCategory $shipping_speed_category shipping_speed_category
      *
      * @return $this
      */
-    public function setShippingSpeedCategory($shipping_speed_category)
-    {
+    public function setShippingSpeedCategory($shipping_speed_category) {
         $this->container['shipping_speed_category'] = $shipping_speed_category;
 
         return $this;
@@ -436,22 +415,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets delivery_window.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindow
+     * @return DeliveryWindow
      */
-    public function getDeliveryWindow()
-    {
+    public function getDeliveryWindow() {
         return $this->container['delivery_window'];
     }
 
     /**
      * Sets delivery_window.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\DeliveryWindow $delivery_window delivery_window
+     * @param DeliveryWindow $delivery_window delivery_window
      *
      * @return $this
      */
-    public function setDeliveryWindow($delivery_window)
-    {
+    public function setDeliveryWindow($delivery_window) {
         $this->container['delivery_window'] = $delivery_window;
 
         return $this;
@@ -460,22 +437,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets destination_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address
+     * @return Address
      */
-    public function getDestinationAddress()
-    {
+    public function getDestinationAddress() {
         return $this->container['destination_address'];
     }
 
     /**
      * Sets destination_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Address $destination_address destination_address
+     * @param Address $destination_address destination_address
      *
      * @return $this
      */
-    public function setDestinationAddress($destination_address)
-    {
+    public function setDestinationAddress($destination_address) {
         $this->container['destination_address'] = $destination_address;
 
         return $this;
@@ -484,22 +459,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets fulfillment_action.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentAction
+     * @return FulfillmentAction
      */
-    public function getFulfillmentAction()
-    {
+    public function getFulfillmentAction() {
         return $this->container['fulfillment_action'];
     }
 
     /**
      * Sets fulfillment_action.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentAction $fulfillment_action fulfillment_action
+     * @param FulfillmentAction $fulfillment_action fulfillment_action
      *
      * @return $this
      */
-    public function setFulfillmentAction($fulfillment_action)
-    {
+    public function setFulfillmentAction($fulfillment_action) {
         $this->container['fulfillment_action'] = $fulfillment_action;
 
         return $this;
@@ -508,22 +481,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets fulfillment_policy.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPolicy
+     * @return FulfillmentPolicy
      */
-    public function getFulfillmentPolicy()
-    {
+    public function getFulfillmentPolicy() {
         return $this->container['fulfillment_policy'];
     }
 
     /**
      * Sets fulfillment_policy.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPolicy $fulfillment_policy fulfillment_policy
+     * @param FulfillmentPolicy $fulfillment_policy fulfillment_policy
      *
      * @return $this
      */
-    public function setFulfillmentPolicy($fulfillment_policy)
-    {
+    public function setFulfillmentPolicy($fulfillment_policy) {
         $this->container['fulfillment_policy'] = $fulfillment_policy;
 
         return $this;
@@ -532,22 +503,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets cod_settings.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CODSettings
+     * @return CODSettings
      */
-    public function getCodSettings()
-    {
+    public function getCodSettings() {
         return $this->container['cod_settings'];
     }
 
     /**
      * Sets cod_settings.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CODSettings $cod_settings cod_settings
+     * @param CODSettings $cod_settings cod_settings
      *
      * @return $this
      */
-    public function setCodSettings($cod_settings)
-    {
+    public function setCodSettings($cod_settings) {
         $this->container['cod_settings'] = $cod_settings;
 
         return $this;
@@ -558,8 +527,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShipFromCountryCode()
-    {
+    public function getShipFromCountryCode() {
         return $this->container['ship_from_country_code'];
     }
 
@@ -570,8 +538,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShipFromCountryCode($ship_from_country_code)
-    {
+    public function setShipFromCountryCode($ship_from_country_code) {
         $this->container['ship_from_country_code'] = $ship_from_country_code;
 
         return $this;
@@ -580,22 +547,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets notification_emails.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\NotificationEmailList
+     * @return NotificationEmailList
      */
-    public function getNotificationEmails()
-    {
+    public function getNotificationEmails() {
         return $this->container['notification_emails'];
     }
 
     /**
      * Sets notification_emails.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\NotificationEmailList $notification_emails notification_emails
+     * @param NotificationEmailList $notification_emails notification_emails
      *
      * @return $this
      */
-    public function setNotificationEmails($notification_emails)
-    {
+    public function setNotificationEmails($notification_emails) {
         $this->container['notification_emails'] = $notification_emails;
 
         return $this;
@@ -604,22 +569,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets feature_constraints.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[]
+     * @return FeatureSettings[]
      */
-    public function getFeatureConstraints()
-    {
+    public function getFeatureConstraints() {
         return $this->container['feature_constraints'];
     }
 
     /**
      * Sets feature_constraints.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
      *
      * @return $this
      */
-    public function setFeatureConstraints($feature_constraints)
-    {
+    public function setFeatureConstraints($feature_constraints) {
         $this->container['feature_constraints'] = $feature_constraints;
 
         return $this;
@@ -628,22 +591,20 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
     /**
      * Gets items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateFulfillmentOrderItemList
+     * @return CreateFulfillmentOrderItemList
      */
-    public function getItems()
-    {
+    public function getItems() {
         return $this->container['items'];
     }
 
     /**
      * Sets items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateFulfillmentOrderItemList $items items
+     * @param CreateFulfillmentOrderItemList $items items
      *
      * @return $this
      */
-    public function setItems($items)
-    {
+    public function setItems($items) {
         $this->container['items'] = $items;
 
         return $this;
@@ -656,8 +617,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -668,21 +628,19 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -697,8 +655,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -707,8 +664,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

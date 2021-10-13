@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ImagingServicesFeeEvent Class Doc Comment.
  *
-
  * @description A fee event related to Amazon Imaging services.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
-{
+class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,9 +46,9 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'imaging_request_billing_item_id' => 'string',
-'asin' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'fee_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',    ];
+        'asin'                            => 'string',
+        'posted_date'                     => '\DateTime',
+        'fee_list'                        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,17 +57,16 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'imaging_request_billing_item_id' => null,
-'asin' => null,
-'posted_date' => null,
-'fee_list' => null,    ];
+        'asin'                            => null,
+        'posted_date'                     => null,
+        'fee_list'                        => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,9 +87,9 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'imaging_request_billing_item_id' => 'ImagingRequestBillingItemID',
-'asin' => 'ASIN',
-'posted_date' => 'PostedDate',
-'fee_list' => 'FeeList',    ];
+        'asin'                            => 'ASIN',
+        'posted_date'                     => 'PostedDate',
+        'fee_list'                        => 'FeeList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,9 +98,9 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'imaging_request_billing_item_id' => 'setImagingRequestBillingItemId',
-'asin' => 'setAsin',
-'posted_date' => 'setPostedDate',
-'fee_list' => 'setFeeList',    ];
+        'asin'                            => 'setAsin',
+        'posted_date'                     => 'setPostedDate',
+        'fee_list'                        => 'setFeeList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,9 +109,9 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'imaging_request_billing_item_id' => 'getImagingRequestBillingItemId',
-'asin' => 'getAsin',
-'posted_date' => 'getPostedDate',
-'fee_list' => 'getFeeList',    ];
+        'asin'                            => 'getAsin',
+        'posted_date'                     => 'getPostedDate',
+        'fee_list'                        => 'getFeeList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['imaging_request_billing_item_id'] = isset($data['imaging_request_billing_item_id']) ? $data['imaging_request_billing_item_id'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
@@ -183,8 +175,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +187,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +196,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getImagingRequestBillingItemId()
-    {
+    public function getImagingRequestBillingItemId() {
         return $this->container['imaging_request_billing_item_id'];
     }
 
@@ -218,8 +207,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setImagingRequestBillingItemId($imaging_request_billing_item_id)
-    {
+    public function setImagingRequestBillingItemId($imaging_request_billing_item_id) {
         $this->container['imaging_request_billing_item_id'] = $imaging_request_billing_item_id;
 
         return $this;
@@ -230,8 +218,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -242,8 +229,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -252,22 +238,20 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -276,22 +260,20 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets fee_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList
+     * @return FeeComponentList
      */
-    public function getFeeList()
-    {
+    public function getFeeList() {
         return $this->container['fee_list'];
     }
 
     /**
      * Sets fee_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\FeeComponentList $fee_list fee_list
+     * @param FeeComponentList $fee_list fee_list
      *
      * @return $this
      */
-    public function setFeeList($fee_list)
-    {
+    public function setFeeList($fee_list) {
         $this->container['fee_list'] = $fee_list;
 
         return $this;
@@ -304,8 +286,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +297,19 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +324,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +333,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

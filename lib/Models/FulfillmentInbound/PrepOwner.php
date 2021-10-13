@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * PrepOwner Class Doc Comment.
  *
-
  * @description Indicates who will prepare the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PrepOwner
-{
+class PrepOwner {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class PrepOwner
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::AMAZON,
-self::SELLER,        ];
+            self::SELLER,];
     }
 }

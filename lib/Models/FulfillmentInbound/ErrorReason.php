@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * ErrorReason Class Doc Comment.
  *
-
  * @description The reason that the ASIN is invalid.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ErrorReason
-{
+class ErrorReason {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class ErrorReason
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::DOES_NOT_EXIST,
-self::INVALID_ASIN,        ];
+            self::INVALID_ASIN,];
     }
 }

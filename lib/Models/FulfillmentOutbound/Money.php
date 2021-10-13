@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Money Class Doc Comment.
  *
-
  * @description An amount of money, including units in the form of currency.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Money implements ModelInterface, ArrayAccess
-{
+class Money implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class Money implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'currency_code' => 'string',
-'value' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Decimal',    ];
+        'value'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Decimal',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class Money implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'currency_code' => null,
-'value' => null,    ];
+        'value'         => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class Money implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'currency_code' => 'currencyCode',
-'value' => 'value',    ];
+        'value'         => 'value',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class Money implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'currency_code' => 'setCurrencyCode',
-'value' => 'setValue',    ];
+        'value'         => 'setValue',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class Money implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'currency_code' => 'getCurrencyCode',
-'value' => 'getValue',    ];
+        'value'         => 'getValue',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class Money implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
@@ -171,8 +162,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['currency_code']) {
@@ -191,8 +181,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -201,8 +190,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCurrencyCode()
-    {
+    public function getCurrencyCode() {
         return $this->container['currency_code'];
     }
 
@@ -213,8 +201,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCurrencyCode($currency_code)
-    {
+    public function setCurrencyCode($currency_code) {
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -223,22 +210,20 @@ class Money implements ModelInterface, ArrayAccess
     /**
      * Gets value.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Decimal
+     * @return Decimal
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->container['value'];
     }
 
     /**
      * Sets value.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Decimal $value value
+     * @param Decimal $value value
      *
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->container['value'] = $value;
 
         return $this;
@@ -251,8 +236,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class Money implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

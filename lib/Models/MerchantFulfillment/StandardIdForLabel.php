@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * StandardIdForLabel Class Doc Comment.
  *
-
  * @description The type of standard identifier to print on the label.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class StandardIdForLabel
-{
+class StandardIdForLabel {
     /**
      * Possible values of this enum.
      */
@@ -37,9 +35,8 @@ class StandardIdForLabel
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
-            self::AMAZON_ORDER_ID,        ];
+            self::AMAZON_ORDER_ID,];
     }
 }

@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * GuidanceReason Class Doc Comment.
  *
-
  * @description A reason for the current inbound guidance for an item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GuidanceReason
-{
+class GuidanceReason {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class GuidanceReason
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SLOW_MOVING_ASIN,
-self::NO_APPLICABLE_GUIDANCE,        ];
+            self::NO_APPLICABLE_GUIDANCE,];
     }
 }

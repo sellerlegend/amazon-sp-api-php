@@ -13,25 +13,29 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibility;
-use ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment;
-use ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviews;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibility;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviewRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviews;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SmallAndLightApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SmallAndLightApi
-{
+class SmallAndLightApi {
     use SellingPartnerApiRequest;
 
     /**
@@ -49,8 +53,7 @@ class SmallAndLightApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -59,40 +62,37 @@ class SmallAndLightApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
     /**
      * Operation deleteSmallAndLightEnrollmentBySellerSKU.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     *
      * @return void
+     * @throws ApiException on non-2xx response
+     *
+     * @throws InvalidArgumentException
      */
-    public function deleteSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
-    {
+    public function deleteSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids) {
         $this->deleteSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
     }
 
     /**
      * Operation deleteSmallAndLightEnrollmentBySellerSKUWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     *
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
+     *
+     * @throws InvalidArgumentException
      */
-    public function deleteSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function deleteSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids) {
         $returnType = '';
         $request = $this->deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
 
@@ -102,15 +102,14 @@ class SmallAndLightApi
     /**
      * Operation deleteSmallAndLightEnrollmentBySellerSKUAsync.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
-    {
+    public function deleteSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids) {
         return $this->deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
             ->then(
                 function ($response) {
@@ -122,15 +121,14 @@ class SmallAndLightApi
     /**
      * Operation deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids) {
         $request = $this->deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequestAsync($request, SmallAndLightEnrollment::class);
@@ -139,22 +137,21 @@ class SmallAndLightApi
     /**
      * Create request for operation 'deleteSmallAndLightEnrollmentBySellerSKU'.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids)
-    {
+    protected function deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids) {
         // verify the required parameter 'seller_sku' is set
         if (null === $seller_sku || (is_array($seller_sku) && 0 === count($seller_sku))) {
-            throw new \InvalidArgumentException('Missing the required parameter $seller_sku when calling deleteSmallAndLightEnrollmentBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $seller_sku when calling deleteSmallAndLightEnrollmentBySellerSKU');
         }
         // verify the required parameter 'marketplace_ids' is set
         if (null === $marketplace_ids || (is_array($marketplace_ids) && 0 === count($marketplace_ids))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_ids when calling deleteSmallAndLightEnrollmentBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_ids when calling deleteSmallAndLightEnrollmentBySellerSKU');
         }
 
         $resourcePath = '/fba/smallAndLight/v1/enrollments/{sellerSKU}';
@@ -175,7 +172,7 @@ class SmallAndLightApi
         // path params
         if (null !== $seller_sku) {
             $resourcePath = str_replace(
-                '{'.'sellerSKU'.'}',
+                '{' . 'sellerSKU' . '}',
                 ObjectSerializer::toPathValue($seller_sku),
                 $resourcePath
             );
@@ -187,17 +184,16 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEligibilityBySellerSKU.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return SmallAndLightEligibility
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibility
+     * @throws InvalidArgumentException
      */
-    public function getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids)
-    {
-        list($response) = $this->getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
+    public function getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids) {
+        [$response] = $this->getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
 
         return $response;
     }
@@ -205,16 +201,15 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEligibilityBySellerSKUWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibility, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibility, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids) {
         $request = $this->getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequest($request, SmallAndLightEligibility::class);
@@ -223,15 +218,14 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEligibilityBySellerSKUAsync.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmallAndLightEligibilityBySellerSKUAsync($seller_sku, $marketplace_ids)
-    {
+    public function getSmallAndLightEligibilityBySellerSKUAsync($seller_sku, $marketplace_ids) {
         return $this->getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
             ->then(
                 function ($response) {
@@ -243,15 +237,14 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids) {
         $request = $this->getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequestAsync($request, SmallAndLightEligibility::class);
@@ -260,22 +253,21 @@ class SmallAndLightApi
     /**
      * Create request for operation 'getSmallAndLightEligibilityBySellerSKU'.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids)
-    {
+    protected function getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids) {
         // verify the required parameter 'seller_sku' is set
         if (null === $seller_sku || (is_array($seller_sku) && 0 === count($seller_sku))) {
-            throw new \InvalidArgumentException('Missing the required parameter $seller_sku when calling getSmallAndLightEligibilityBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $seller_sku when calling getSmallAndLightEligibilityBySellerSKU');
         }
         // verify the required parameter 'marketplace_ids' is set
         if (null === $marketplace_ids || (is_array($marketplace_ids) && 0 === count($marketplace_ids))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_ids when calling getSmallAndLightEligibilityBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_ids when calling getSmallAndLightEligibilityBySellerSKU');
         }
 
         $resourcePath = '/fba/smallAndLight/v1/eligibilities/{sellerSKU}';
@@ -296,7 +288,7 @@ class SmallAndLightApi
         // path params
         if (null !== $seller_sku) {
             $resourcePath = str_replace(
-                '{'.'sellerSKU'.'}',
+                '{' . 'sellerSKU' . '}',
                 ObjectSerializer::toPathValue($seller_sku),
                 $resourcePath
             );
@@ -308,17 +300,16 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEnrollmentBySellerSKU.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return SmallAndLightEnrollment
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment
+     * @throws InvalidArgumentException
      */
-    public function getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
-    {
-        list($response) = $this->getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
+    public function getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids) {
+        [$response] = $this->getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
 
         return $response;
     }
@@ -326,16 +317,15 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEnrollmentBySellerSKUWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids) {
         $request = $this->getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequest($request, SmallAndLightEnrollment::class);
@@ -344,15 +334,14 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEnrollmentBySellerSKUAsync.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
-    {
+    public function getSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids) {
         return $this->getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
             ->then(
                 function ($response) {
@@ -364,16 +353,15 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment';
+    public function getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment';
         $request = $this->getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequestAsync($request, SmallAndLightEnrollment::class);
@@ -382,22 +370,21 @@ class SmallAndLightApi
     /**
      * Create request for operation 'getSmallAndLightEnrollmentBySellerSKU'.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids)
-    {
+    protected function getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids) {
         // verify the required parameter 'seller_sku' is set
         if (null === $seller_sku || (is_array($seller_sku) && 0 === count($seller_sku))) {
-            throw new \InvalidArgumentException('Missing the required parameter $seller_sku when calling getSmallAndLightEnrollmentBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $seller_sku when calling getSmallAndLightEnrollmentBySellerSKU');
         }
         // verify the required parameter 'marketplace_ids' is set
         if (null === $marketplace_ids || (is_array($marketplace_ids) && 0 === count($marketplace_ids))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_ids when calling getSmallAndLightEnrollmentBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_ids when calling getSmallAndLightEnrollmentBySellerSKU');
         }
 
         $resourcePath = '/fba/smallAndLight/v1/enrollments/{sellerSKU}';
@@ -418,7 +405,7 @@ class SmallAndLightApi
         // path params
         if (null !== $seller_sku) {
             $resourcePath = str_replace(
-                '{'.'sellerSKU'.'}',
+                '{' . 'sellerSKU' . '}',
                 ObjectSerializer::toPathValue($seller_sku),
                 $resourcePath
             );
@@ -430,16 +417,15 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightFeePreview.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviewRequest $body body (required)
+     * @param SmallAndLightFeePreviewRequest $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return SmallAndLightFeePreviews
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviews
+     * @throws InvalidArgumentException
      */
-    public function getSmallAndLightFeePreview($body)
-    {
-        list($response) = $this->getSmallAndLightFeePreviewWithHttpInfo($body);
+    public function getSmallAndLightFeePreview($body) {
+        [$response] = $this->getSmallAndLightFeePreviewWithHttpInfo($body);
 
         return $response;
     }
@@ -447,15 +433,14 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightFeePreviewWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviewRequest $body (required)
+     * @param SmallAndLightFeePreviewRequest $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviews, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviews, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getSmallAndLightFeePreviewWithHttpInfo($body)
-    {
+    public function getSmallAndLightFeePreviewWithHttpInfo($body) {
         $request = $this->getSmallAndLightFeePreviewRequest($body);
 
         return $this->sendRequest($request, SmallAndLightFeePreviews::class);
@@ -464,14 +449,13 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightFeePreviewAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviewRequest $body (required)
+     * @param SmallAndLightFeePreviewRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmallAndLightFeePreviewAsync($body)
-    {
+    public function getSmallAndLightFeePreviewAsync($body) {
         return $this->getSmallAndLightFeePreviewAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -483,14 +467,13 @@ class SmallAndLightApi
     /**
      * Operation getSmallAndLightFeePreviewAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviewRequest $body (required)
+     * @param SmallAndLightFeePreviewRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSmallAndLightFeePreviewAsyncWithHttpInfo($body)
-    {
+    public function getSmallAndLightFeePreviewAsyncWithHttpInfo($body) {
         $request = $this->getSmallAndLightFeePreviewRequest($body);
 
         return $this->sendRequestAsync($request, SmallAndLightFeePreviews::class);
@@ -499,17 +482,16 @@ class SmallAndLightApi
     /**
      * Create request for operation 'getSmallAndLightFeePreview'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightFeePreviewRequest $body (required)
+     * @param SmallAndLightFeePreviewRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSmallAndLightFeePreviewRequest($body)
-    {
+    protected function getSmallAndLightFeePreviewRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling getSmallAndLightFeePreview');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling getSmallAndLightFeePreview');
         }
 
         $resourcePath = '/fba/smallAndLight/v1/feePreviews';
@@ -525,17 +507,16 @@ class SmallAndLightApi
     /**
      * Operation putSmallAndLightEnrollmentBySellerSKU.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return SmallAndLightEnrollment
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment
+     * @throws InvalidArgumentException
      */
-    public function putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
-    {
-        list($response) = $this->putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
+    public function putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids) {
+        [$response] = $this->putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
 
         return $response;
     }
@@ -543,16 +524,15 @@ class SmallAndLightApi
     /**
      * Operation putSmallAndLightEnrollmentBySellerSKUWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEnrollment, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids) {
         $request = $this->putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequest($request, SmallAndLightEnrollment::class);
@@ -561,15 +541,14 @@ class SmallAndLightApi
     /**
      * Operation putSmallAndLightEnrollmentBySellerSKUAsync.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
-    {
+    public function putSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids) {
         return $this->putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
             ->then(
                 function ($response) {
@@ -581,15 +560,14 @@ class SmallAndLightApi
     /**
      * Operation putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-    {
+    public function putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids) {
         $request = $this->putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
 
         return $this->sendRequestAsync($request, SmallAndLightEnrollment::class);
@@ -598,22 +576,21 @@ class SmallAndLightApi
     /**
      * Create request for operation 'putSmallAndLightEnrollmentBySellerSKU'.
      *
-     * @param string   $seller_sku      The seller SKU that identifies the item. (required)
+     * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids)
-    {
+    protected function putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids) {
         // verify the required parameter 'seller_sku' is set
         if (null === $seller_sku || (is_array($seller_sku) && 0 === count($seller_sku))) {
-            throw new \InvalidArgumentException('Missing the required parameter $seller_sku when calling putSmallAndLightEnrollmentBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $seller_sku when calling putSmallAndLightEnrollmentBySellerSKU');
         }
         // verify the required parameter 'marketplace_ids' is set
         if (null === $marketplace_ids || (is_array($marketplace_ids) && 0 === count($marketplace_ids))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_ids when calling putSmallAndLightEnrollmentBySellerSKU');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_ids when calling putSmallAndLightEnrollmentBySellerSKU');
         }
 
         $resourcePath = '/fba/smallAndLight/v1/enrollments/{sellerSKU}';
@@ -634,7 +611,7 @@ class SmallAndLightApi
         // path params
         if (null !== $seller_sku) {
             $resourcePath = str_replace(
-                '{'.'sellerSKU'.'}',
+                '{' . 'sellerSKU' . '}',
                 ObjectSerializer::toPathValue($seller_sku),
                 $resourcePath
             );

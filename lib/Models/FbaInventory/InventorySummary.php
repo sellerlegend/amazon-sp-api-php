@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InventorySummary Class Doc Comment.
  *
-
  * @description Inventory summary for a specific item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InventorySummary implements ModelInterface, ArrayAccess
-{
+class InventorySummary implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,14 +45,14 @@ class InventorySummary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'fn_sku' => 'string',
-'seller_sku' => 'string',
-'condition' => 'string',
-'inventory_details' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\InventoryDetails',
-'last_updated_time' => '\DateTime',
-'product_name' => 'string',
-'total_quantity' => 'int',    ];
+        'asin'              => 'string',
+        'fn_sku'            => 'string',
+        'seller_sku'        => 'string',
+        'condition'         => 'string',
+        'inventory_details' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory\InventoryDetails',
+        'last_updated_time' => '\DateTime',
+        'product_name'      => 'string',
+        'total_quantity'    => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -61,22 +60,21 @@ class InventorySummary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'fn_sku' => null,
-'seller_sku' => null,
-'condition' => null,
-'inventory_details' => null,
-'last_updated_time' => 'date-time',
-'product_name' => null,
-'total_quantity' => null,    ];
+        'asin'              => null,
+        'fn_sku'            => null,
+        'seller_sku'        => null,
+        'condition'         => null,
+        'inventory_details' => null,
+        'last_updated_time' => 'date-time',
+        'product_name'      => null,
+        'total_quantity'    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -85,8 +83,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -97,14 +94,14 @@ class InventorySummary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'asin',
-'fn_sku' => 'fnSku',
-'seller_sku' => 'sellerSku',
-'condition' => 'condition',
-'inventory_details' => 'inventoryDetails',
-'last_updated_time' => 'lastUpdatedTime',
-'product_name' => 'productName',
-'total_quantity' => 'totalQuantity',    ];
+        'asin'              => 'asin',
+        'fn_sku'            => 'fnSku',
+        'seller_sku'        => 'sellerSku',
+        'condition'         => 'condition',
+        'inventory_details' => 'inventoryDetails',
+        'last_updated_time' => 'lastUpdatedTime',
+        'product_name'      => 'productName',
+        'total_quantity'    => 'totalQuantity',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -112,14 +109,14 @@ class InventorySummary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'fn_sku' => 'setFnSku',
-'seller_sku' => 'setSellerSku',
-'condition' => 'setCondition',
-'inventory_details' => 'setInventoryDetails',
-'last_updated_time' => 'setLastUpdatedTime',
-'product_name' => 'setProductName',
-'total_quantity' => 'setTotalQuantity',    ];
+        'asin'              => 'setAsin',
+        'fn_sku'            => 'setFnSku',
+        'seller_sku'        => 'setSellerSku',
+        'condition'         => 'setCondition',
+        'inventory_details' => 'setInventoryDetails',
+        'last_updated_time' => 'setLastUpdatedTime',
+        'product_name'      => 'setProductName',
+        'total_quantity'    => 'setTotalQuantity',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -127,14 +124,14 @@ class InventorySummary implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'fn_sku' => 'getFnSku',
-'seller_sku' => 'getSellerSku',
-'condition' => 'getCondition',
-'inventory_details' => 'getInventoryDetails',
-'last_updated_time' => 'getLastUpdatedTime',
-'product_name' => 'getProductName',
-'total_quantity' => 'getTotalQuantity',    ];
+        'asin'              => 'getAsin',
+        'fn_sku'            => 'getFnSku',
+        'seller_sku'        => 'getSellerSku',
+        'condition'         => 'getCondition',
+        'inventory_details' => 'getInventoryDetails',
+        'last_updated_time' => 'getLastUpdatedTime',
+        'product_name'      => 'getProductName',
+        'total_quantity'    => 'getTotalQuantity',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -142,8 +139,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -152,8 +148,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -162,8 +157,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -172,8 +166,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -190,8 +183,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['fn_sku'] = isset($data['fn_sku']) ? $data['fn_sku'] : null;
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
@@ -207,8 +199,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -220,8 +211,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -230,8 +220,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -242,8 +231,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -254,8 +242,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFnSku()
-    {
+    public function getFnSku() {
         return $this->container['fn_sku'];
     }
 
@@ -266,8 +253,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFnSku($fn_sku)
-    {
+    public function setFnSku($fn_sku) {
         $this->container['fn_sku'] = $fn_sku;
 
         return $this;
@@ -278,8 +264,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -290,8 +275,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -302,8 +286,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->container['condition'];
     }
 
@@ -314,8 +297,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->container['condition'] = $condition;
 
         return $this;
@@ -324,22 +306,20 @@ class InventorySummary implements ModelInterface, ArrayAccess
     /**
      * Gets inventory_details.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\InventoryDetails
+     * @return InventoryDetails
      */
-    public function getInventoryDetails()
-    {
+    public function getInventoryDetails() {
         return $this->container['inventory_details'];
     }
 
     /**
      * Sets inventory_details.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\InventoryDetails $inventory_details inventory_details
+     * @param InventoryDetails $inventory_details inventory_details
      *
      * @return $this
      */
-    public function setInventoryDetails($inventory_details)
-    {
+    public function setInventoryDetails($inventory_details) {
         $this->container['inventory_details'] = $inventory_details;
 
         return $this;
@@ -348,22 +328,20 @@ class InventorySummary implements ModelInterface, ArrayAccess
     /**
      * Gets last_updated_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getLastUpdatedTime()
-    {
+    public function getLastUpdatedTime() {
         return $this->container['last_updated_time'];
     }
 
     /**
      * Sets last_updated_time.
      *
-     * @param \DateTime $last_updated_time the date and time that any quantity was last updated
+     * @param DateTime $last_updated_time the date and time that any quantity was last updated
      *
      * @return $this
      */
-    public function setLastUpdatedTime($last_updated_time)
-    {
+    public function setLastUpdatedTime($last_updated_time) {
         $this->container['last_updated_time'] = $last_updated_time;
 
         return $this;
@@ -374,8 +352,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProductName()
-    {
+    public function getProductName() {
         return $this->container['product_name'];
     }
 
@@ -386,8 +363,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProductName($product_name)
-    {
+    public function setProductName($product_name) {
         $this->container['product_name'] = $product_name;
 
         return $this;
@@ -398,8 +374,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getTotalQuantity()
-    {
+    public function getTotalQuantity() {
         return $this->container['total_quantity'];
     }
 
@@ -410,8 +385,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTotalQuantity($total_quantity)
-    {
+    public function setTotalQuantity($total_quantity) {
         $this->container['total_quantity'] = $total_quantity;
 
         return $this;
@@ -424,8 +398,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -436,21 +409,19 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -465,8 +436,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -475,8 +445,7 @@ class InventorySummary implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

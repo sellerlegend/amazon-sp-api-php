@@ -13,24 +13,27 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\Sellers\GetMarketplaceParticipationsResponse;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Sellers\GetMarketplaceParticipationsResponse;
 
 /**
  * SellersApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SellersApi
-{
+class SellersApi {
     use SellingPartnerApiRequest;
+
     /**
      * @var ClientInterface
      */
@@ -46,8 +49,7 @@ class SellersApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -56,22 +58,20 @@ class SellersApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
     /**
      * Operation getMarketplaceParticipations.
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return GetMarketplaceParticipationsResponse
+     * @throws InvalidArgumentException
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Sellers\GetMarketplaceParticipationsResponse
+     * @throws ApiException on non-2xx response
      */
-    public function getMarketplaceParticipations()
-    {
-        list($response) = $this->getMarketplaceParticipationsWithHttpInfo();
+    public function getMarketplaceParticipations() {
+        [$response] = $this->getMarketplaceParticipationsWithHttpInfo();
 
         return $response;
     }
@@ -79,13 +79,12 @@ class SellersApi
     /**
      * Operation getMarketplaceParticipationsWithHttpInfo.
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Sellers\GetMarketplaceParticipationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Sellers\GetMarketplaceParticipationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      */
-    public function getMarketplaceParticipationsWithHttpInfo()
-    {
+    public function getMarketplaceParticipationsWithHttpInfo() {
         $request = $this->getMarketplaceParticipationsRequest();
 
         return $this->sendRequest($request, GetMarketplaceParticipationsResponse::class);
@@ -94,12 +93,11 @@ class SellersApi
     /**
      * Operation getMarketplaceParticipationsAsync.
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMarketplaceParticipationsAsync()
-    {
+    public function getMarketplaceParticipationsAsync() {
         return $this->getMarketplaceParticipationsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
@@ -111,12 +109,11 @@ class SellersApi
     /**
      * Operation getMarketplaceParticipationsAsyncWithHttpInfo.
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMarketplaceParticipationsAsyncWithHttpInfo()
-    {
+    public function getMarketplaceParticipationsAsyncWithHttpInfo() {
         $request = $this->getMarketplaceParticipationsRequest();
 
         return $this->sendRequest($request, GetMarketplaceParticipationsResponse::class);
@@ -125,12 +122,11 @@ class SellersApi
     /**
      * Create request for operation 'getMarketplaceParticipations'.
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMarketplaceParticipationsRequest()
-    {
+    protected function getMarketplaceParticipationsRequest() {
         $resourcePath = '/sellers/v1/marketplaceParticipations';
         $formParams = [];
         $queryParams = [];

@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * SellerFreightClass Class Doc Comment.
  *
-
  * @description The freight class of the shipment. For information about determining the freight class, contact the carrier.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SellerFreightClass
-{
+class SellerFreightClass {
     /**
      * Possible values of this enum.
      */
@@ -54,26 +52,25 @@ class SellerFreightClass
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::_50,
-self::_55,
-self::_60,
-self::_65,
-self::_70,
-self::_775,
-self::_85,
-self::_925,
-self::_100,
-self::_110,
-self::_125,
-self::_150,
-self::_175,
-self::_200,
-self::_250,
-self::_300,
-self::_400,
-self::_500,        ];
+            self::_55,
+            self::_60,
+            self::_65,
+            self::_70,
+            self::_775,
+            self::_85,
+            self::_925,
+            self::_100,
+            self::_110,
+            self::_125,
+            self::_150,
+            self::_175,
+            self::_200,
+            self::_250,
+            self::_300,
+            self::_400,
+            self::_500,];
     }
 }

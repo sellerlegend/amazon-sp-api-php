@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Error Class Doc Comment.
  *
-
  * @description Error response returned when the request is unsuccessful.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Error implements ModelInterface, ArrayAccess
-{
+class Error implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +45,10 @@ class Error implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'code' => 'string',
-'message' => 'string',
-'details' => 'string',
-'error_level' => 'string',    ];
+        'code'        => 'string',
+        'message'     => 'string',
+        'details'     => 'string',
+        'error_level' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class Error implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'code' => null,
-'message' => null,
-'details' => null,
-'error_level' => null,    ];
+        'code'        => null,
+        'message'     => null,
+        'details'     => null,
+        'error_level' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class Error implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class Error implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-'message' => 'message',
-'details' => 'details',
-'error_level' => 'errorLevel',    ];
+        'code'        => 'code',
+        'message'     => 'message',
+        'details'     => 'details',
+        'error_level' => 'errorLevel',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class Error implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-'message' => 'setMessage',
-'details' => 'setDetails',
-'error_level' => 'setErrorLevel',    ];
+        'code'        => 'setCode',
+        'message'     => 'setMessage',
+        'details'     => 'setDetails',
+        'error_level' => 'setErrorLevel',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class Error implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-'message' => 'getMessage',
-'details' => 'getDetails',
-'error_level' => 'getErrorLevel',    ];
+        'code'        => 'getCode',
+        'message'     => 'getMessage',
+        'details'     => 'getDetails',
+        'error_level' => 'getErrorLevel',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class Error implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class Error implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class Error implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class Error implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,11 +158,10 @@ class Error implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getErrorLevelAllowableValues()
-    {
+    public function getErrorLevelAllowableValues() {
         return [
             self::ERROR_LEVEL_ERROR,
-self::ERROR_LEVEL_WARNING,        ];
+            self::ERROR_LEVEL_WARNING,];
     }
 
     /**
@@ -185,8 +177,7 @@ self::ERROR_LEVEL_WARNING,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
@@ -198,8 +189,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['code']) {
@@ -225,8 +215,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -235,8 +224,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return string
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->container['code'];
     }
 
@@ -247,8 +235,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->container['code'] = $code;
 
         return $this;
@@ -259,8 +246,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return string
      */
-    public function getMessage()
-    {
+    public function getMessage() {
         return $this->container['message'];
     }
 
@@ -271,8 +257,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return $this
      */
-    public function setMessage($message)
-    {
+    public function setMessage($message) {
         $this->container['message'] = $message;
 
         return $this;
@@ -283,8 +268,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return string
      */
-    public function getDetails()
-    {
+    public function getDetails() {
         return $this->container['details'];
     }
 
@@ -295,8 +279,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return $this
      */
-    public function setDetails($details)
-    {
+    public function setDetails($details) {
         $this->container['details'] = $details;
 
         return $this;
@@ -307,8 +290,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return string
      */
-    public function getErrorLevel()
-    {
+    public function getErrorLevel() {
         return $this->container['error_level'];
     }
 
@@ -319,11 +301,10 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return $this
      */
-    public function setErrorLevel($error_level)
-    {
+    public function setErrorLevel($error_level) {
         $allowedValues = $this->getErrorLevelAllowableValues();
         if (!is_null($error_level) && !in_array($error_level, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'error_level', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'error_level', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['error_level'] = $error_level;
 
@@ -337,8 +318,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -349,21 +329,19 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -378,8 +356,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -388,8 +365,7 @@ self::ERROR_LEVEL_WARNING,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

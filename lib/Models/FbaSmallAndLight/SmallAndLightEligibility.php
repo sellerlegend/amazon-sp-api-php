@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SmallAndLightEligibility Class Doc Comment.
  *
-
  * @description The Small and Light eligibility status of the item indicated by the specified seller SKU.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SmallAndLightEligibility implements ModelInterface, ArrayAccess
-{
+class SmallAndLightEligibility implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'marketplace_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MarketplaceId',
-'seller_sku' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SellerSKU',
-'status' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibilityStatus',    ];
+        'marketplace_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MarketplaceId',
+        'seller_sku'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SellerSKU',
+        'status'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibilityStatus'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +56,15 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'marketplace_id' => null,
-'seller_sku' => null,
-'status' => null,    ];
+        'seller_sku'     => null,
+        'status'         => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +85,8 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
-'seller_sku' => 'sellerSKU',
-'status' => 'status',    ];
+        'seller_sku'     => 'sellerSKU',
+        'status'         => 'status',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +95,8 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
-'seller_sku' => 'setSellerSku',
-'status' => 'setStatus',    ];
+        'seller_sku'     => 'setSellerSku',
+        'status'         => 'setStatus',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +105,8 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-'seller_sku' => 'getSellerSku',
-'status' => 'getStatus',    ];
+        'seller_sku'     => 'getSellerSku',
+        'status'         => 'getStatus',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
@@ -177,8 +169,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['marketplace_id']) {
@@ -200,30 +191,27 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MarketplaceId
+     * @return MarketplaceId
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
     /**
      * Sets marketplace_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\MarketplaceId $marketplace_id marketplace_id
+     * @param MarketplaceId $marketplace_id marketplace_id
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -232,22 +220,20 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
     /**
      * Gets seller_sku.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SellerSKU
+     * @return SellerSKU
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
     /**
      * Sets seller_sku.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SellerSKU $seller_sku seller_sku
+     * @param SellerSKU $seller_sku seller_sku
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -256,22 +242,20 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
     /**
      * Gets status.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibilityStatus
+     * @return SmallAndLightEligibilityStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->container['status'];
     }
 
     /**
      * Sets status.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight\SmallAndLightEligibilityStatus $status status
+     * @param SmallAndLightEligibilityStatus $status status
      *
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->container['status'] = $status;
 
         return $this;
@@ -284,8 +268,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +279,19 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +306,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +315,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

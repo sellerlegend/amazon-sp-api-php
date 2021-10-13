@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OfferType Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OfferType implements ModelInterface, ArrayAccess
-{
+class OfferType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,12 +42,12 @@ class OfferType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'buying_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType',
-'regular_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'fulfillment_channel' => 'string',
-'item_condition' => 'string',
-'item_sub_condition' => 'string',
-'seller_sku' => 'string',    ];
+        'buying_price'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType',
+        'regular_price'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'fulfillment_channel' => 'string',
+        'item_condition'      => 'string',
+        'item_sub_condition'  => 'string',
+        'seller_sku'          => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,20 +55,19 @@ class OfferType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'buying_price' => null,
-'regular_price' => null,
-'fulfillment_channel' => null,
-'item_condition' => null,
-'item_sub_condition' => null,
-'seller_sku' => null,    ];
+        'buying_price'        => null,
+        'regular_price'       => null,
+        'fulfillment_channel' => null,
+        'item_condition'      => null,
+        'item_sub_condition'  => null,
+        'seller_sku'          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -78,8 +76,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,12 +87,12 @@ class OfferType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'buying_price' => 'BuyingPrice',
-'regular_price' => 'RegularPrice',
-'fulfillment_channel' => 'FulfillmentChannel',
-'item_condition' => 'ItemCondition',
-'item_sub_condition' => 'ItemSubCondition',
-'seller_sku' => 'SellerSKU',    ];
+        'buying_price'        => 'BuyingPrice',
+        'regular_price'       => 'RegularPrice',
+        'fulfillment_channel' => 'FulfillmentChannel',
+        'item_condition'      => 'ItemCondition',
+        'item_sub_condition'  => 'ItemSubCondition',
+        'seller_sku'          => 'SellerSKU',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,12 +100,12 @@ class OfferType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'buying_price' => 'setBuyingPrice',
-'regular_price' => 'setRegularPrice',
-'fulfillment_channel' => 'setFulfillmentChannel',
-'item_condition' => 'setItemCondition',
-'item_sub_condition' => 'setItemSubCondition',
-'seller_sku' => 'setSellerSku',    ];
+        'buying_price'        => 'setBuyingPrice',
+        'regular_price'       => 'setRegularPrice',
+        'fulfillment_channel' => 'setFulfillmentChannel',
+        'item_condition'      => 'setItemCondition',
+        'item_sub_condition'  => 'setItemSubCondition',
+        'seller_sku'          => 'setSellerSku',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -116,12 +113,12 @@ class OfferType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'buying_price' => 'getBuyingPrice',
-'regular_price' => 'getRegularPrice',
-'fulfillment_channel' => 'getFulfillmentChannel',
-'item_condition' => 'getItemCondition',
-'item_sub_condition' => 'getItemSubCondition',
-'seller_sku' => 'getSellerSku',    ];
+        'buying_price'        => 'getBuyingPrice',
+        'regular_price'       => 'getRegularPrice',
+        'fulfillment_channel' => 'getFulfillmentChannel',
+        'item_condition'      => 'getItemCondition',
+        'item_sub_condition'  => 'getItemSubCondition',
+        'seller_sku'          => 'getSellerSku',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -129,8 +126,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -139,8 +135,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -149,8 +144,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -159,8 +153,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -177,8 +170,7 @@ class OfferType implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['buying_price'] = isset($data['buying_price']) ? $data['buying_price'] : null;
         $this->container['regular_price'] = isset($data['regular_price']) ? $data['regular_price'] : null;
         $this->container['fulfillment_channel'] = isset($data['fulfillment_channel']) ? $data['fulfillment_channel'] : null;
@@ -192,8 +184,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['buying_price']) {
@@ -224,30 +215,27 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets buying_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType
+     * @return PriceType
      */
-    public function getBuyingPrice()
-    {
+    public function getBuyingPrice() {
         return $this->container['buying_price'];
     }
 
     /**
      * Sets buying_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\PriceType $buying_price buying_price
+     * @param PriceType $buying_price buying_price
      *
      * @return $this
      */
-    public function setBuyingPrice($buying_price)
-    {
+    public function setBuyingPrice($buying_price) {
         $this->container['buying_price'] = $buying_price;
 
         return $this;
@@ -256,22 +244,20 @@ class OfferType implements ModelInterface, ArrayAccess
     /**
      * Gets regular_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getRegularPrice()
-    {
+    public function getRegularPrice() {
         return $this->container['regular_price'];
     }
 
     /**
      * Sets regular_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $regular_price regular_price
+     * @param MoneyType $regular_price regular_price
      *
      * @return $this
      */
-    public function setRegularPrice($regular_price)
-    {
+    public function setRegularPrice($regular_price) {
         $this->container['regular_price'] = $regular_price;
 
         return $this;
@@ -282,8 +268,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFulfillmentChannel()
-    {
+    public function getFulfillmentChannel() {
         return $this->container['fulfillment_channel'];
     }
 
@@ -294,8 +279,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFulfillmentChannel($fulfillment_channel)
-    {
+    public function setFulfillmentChannel($fulfillment_channel) {
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
         return $this;
@@ -306,8 +290,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItemCondition()
-    {
+    public function getItemCondition() {
         return $this->container['item_condition'];
     }
 
@@ -318,8 +301,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItemCondition($item_condition)
-    {
+    public function setItemCondition($item_condition) {
         $this->container['item_condition'] = $item_condition;
 
         return $this;
@@ -330,8 +312,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getItemSubCondition()
-    {
+    public function getItemSubCondition() {
         return $this->container['item_sub_condition'];
     }
 
@@ -342,8 +323,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setItemSubCondition($item_sub_condition)
-    {
+    public function setItemSubCondition($item_sub_condition) {
         $this->container['item_sub_condition'] = $item_sub_condition;
 
         return $this;
@@ -354,8 +334,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -366,8 +345,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -380,8 +358,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -392,21 +369,19 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -421,8 +396,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -431,8 +405,7 @@ class OfferType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

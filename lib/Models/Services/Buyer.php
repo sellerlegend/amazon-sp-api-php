@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Buyer Class Doc Comment.
  *
-
  * @description Information about the buyer.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Buyer implements ModelInterface, ArrayAccess
-{
+class Buyer implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class Buyer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'buyer_id' => 'string',
-'name' => 'string',
-'phone' => 'string',
-'is_prime_member' => 'bool',    ];
+        'buyer_id'        => 'string',
+        'name'            => 'string',
+        'phone'           => 'string',
+        'is_prime_member' => 'bool',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class Buyer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'buyer_id' => null,
-'name' => null,
-'phone' => null,
-'is_prime_member' => null,    ];
+        'buyer_id'        => null,
+        'name'            => null,
+        'phone'           => null,
+        'is_prime_member' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class Buyer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'buyer_id' => 'buyerId',
-'name' => 'name',
-'phone' => 'phone',
-'is_prime_member' => 'isPrimeMember',    ];
+        'buyer_id'        => 'buyerId',
+        'name'            => 'name',
+        'phone'           => 'phone',
+        'is_prime_member' => 'isPrimeMember',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class Buyer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'buyer_id' => 'setBuyerId',
-'name' => 'setName',
-'phone' => 'setPhone',
-'is_prime_member' => 'setIsPrimeMember',    ];
+        'buyer_id'        => 'setBuyerId',
+        'name'            => 'setName',
+        'phone'           => 'setPhone',
+        'is_prime_member' => 'setIsPrimeMember',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class Buyer implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'buyer_id' => 'getBuyerId',
-'name' => 'getName',
-'phone' => 'getPhone',
-'is_prime_member' => 'getIsPrimeMember',    ];
+        'buyer_id'        => 'getBuyerId',
+        'name'            => 'getName',
+        'phone'           => 'getPhone',
+        'is_prime_member' => 'getIsPrimeMember',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class Buyer implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['buyer_id'] = isset($data['buyer_id']) ? $data['buyer_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
@@ -183,8 +174,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +186,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +195,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getBuyerId()
-    {
+    public function getBuyerId() {
         return $this->container['buyer_id'];
     }
 
@@ -218,8 +206,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setBuyerId($buyer_id)
-    {
+    public function setBuyerId($buyer_id) {
         $this->container['buyer_id'] = $buyer_id;
 
         return $this;
@@ -230,8 +217,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -242,8 +228,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -254,8 +239,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
-    {
+    public function getPhone() {
         return $this->container['phone'];
     }
 
@@ -266,8 +250,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
-    {
+    public function setPhone($phone) {
         $this->container['phone'] = $phone;
 
         return $this;
@@ -278,8 +261,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsPrimeMember()
-    {
+    public function getIsPrimeMember() {
         return $this->container['is_prime_member'];
     }
 
@@ -290,8 +272,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsPrimeMember($is_prime_member)
-    {
+    public function setIsPrimeMember($is_prime_member) {
         $this->container['is_prime_member'] = $is_prime_member;
 
         return $this;
@@ -304,8 +285,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +296,19 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +323,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +332,7 @@ class Buyer implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

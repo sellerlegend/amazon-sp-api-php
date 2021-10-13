@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * CurrentStatus Class Doc Comment.
  *
-
  * @description The current delivery status of the package.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CurrentStatus
-{
+class CurrentStatus {
     /**
      * Possible values of this enum.
      */
@@ -44,16 +42,15 @@ class CurrentStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::IN_TRANSIT,
-self::DELIVERED,
-self::RETURNING,
-self::RETURNED,
-self::UNDELIVERABLE,
-self::DELAYED,
-self::AVAILABLE_FOR_PICKUP,
-self::CUSTOMER_ACTION,        ];
+            self::DELIVERED,
+            self::RETURNING,
+            self::RETURNED,
+            self::UNDELIVERABLE,
+            self::DELAYED,
+            self::AVAILABLE_FOR_PICKUP,
+            self::CUSTOMER_ACTION,];
     }
 }

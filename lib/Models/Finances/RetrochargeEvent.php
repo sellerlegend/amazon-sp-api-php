@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * RetrochargeEvent Class Doc Comment.
  *
-
  * @description A retrocharge or retrocharge reversal.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class RetrochargeEvent implements ModelInterface, ArrayAccess
-{
+class RetrochargeEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +45,13 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'retrocharge_event_type' => 'string',
-'amazon_order_id' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'base_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'shipping_tax' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'marketplace_name' => 'string',
-'retrocharge_tax_withheld_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList',    ];
+        'retrocharge_event_type'        => 'string',
+        'amazon_order_id'               => 'string',
+        'posted_date'                   => '\DateTime',
+        'base_tax'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'shipping_tax'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'marketplace_name'              => 'string',
+        'retrocharge_tax_withheld_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +59,20 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'retrocharge_event_type' => null,
-'amazon_order_id' => null,
-'posted_date' => null,
-'base_tax' => null,
-'shipping_tax' => null,
-'marketplace_name' => null,
-'retrocharge_tax_withheld_list' => null,    ];
+        'retrocharge_event_type'        => null,
+        'amazon_order_id'               => null,
+        'posted_date'                   => null,
+        'base_tax'                      => null,
+        'shipping_tax'                  => null,
+        'marketplace_name'              => null,
+        'retrocharge_tax_withheld_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +81,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +92,13 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'retrocharge_event_type' => 'RetrochargeEventType',
-'amazon_order_id' => 'AmazonOrderId',
-'posted_date' => 'PostedDate',
-'base_tax' => 'BaseTax',
-'shipping_tax' => 'ShippingTax',
-'marketplace_name' => 'MarketplaceName',
-'retrocharge_tax_withheld_list' => 'RetrochargeTaxWithheldList',    ];
+        'retrocharge_event_type'        => 'RetrochargeEventType',
+        'amazon_order_id'               => 'AmazonOrderId',
+        'posted_date'                   => 'PostedDate',
+        'base_tax'                      => 'BaseTax',
+        'shipping_tax'                  => 'ShippingTax',
+        'marketplace_name'              => 'MarketplaceName',
+        'retrocharge_tax_withheld_list' => 'RetrochargeTaxWithheldList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +106,13 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'retrocharge_event_type' => 'setRetrochargeEventType',
-'amazon_order_id' => 'setAmazonOrderId',
-'posted_date' => 'setPostedDate',
-'base_tax' => 'setBaseTax',
-'shipping_tax' => 'setShippingTax',
-'marketplace_name' => 'setMarketplaceName',
-'retrocharge_tax_withheld_list' => 'setRetrochargeTaxWithheldList',    ];
+        'retrocharge_event_type'        => 'setRetrochargeEventType',
+        'amazon_order_id'               => 'setAmazonOrderId',
+        'posted_date'                   => 'setPostedDate',
+        'base_tax'                      => 'setBaseTax',
+        'shipping_tax'                  => 'setShippingTax',
+        'marketplace_name'              => 'setMarketplaceName',
+        'retrocharge_tax_withheld_list' => 'setRetrochargeTaxWithheldList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +120,13 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'retrocharge_event_type' => 'getRetrochargeEventType',
-'amazon_order_id' => 'getAmazonOrderId',
-'posted_date' => 'getPostedDate',
-'base_tax' => 'getBaseTax',
-'shipping_tax' => 'getShippingTax',
-'marketplace_name' => 'getMarketplaceName',
-'retrocharge_tax_withheld_list' => 'getRetrochargeTaxWithheldList',    ];
+        'retrocharge_event_type'        => 'getRetrochargeEventType',
+        'amazon_order_id'               => 'getAmazonOrderId',
+        'posted_date'                   => 'getPostedDate',
+        'base_tax'                      => 'getBaseTax',
+        'shipping_tax'                  => 'getShippingTax',
+        'marketplace_name'              => 'getMarketplaceName',
+        'retrocharge_tax_withheld_list' => 'getRetrochargeTaxWithheldList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +134,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +143,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +152,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +161,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +178,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['retrocharge_event_type'] = isset($data['retrocharge_event_type']) ? $data['retrocharge_event_type'] : null;
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
@@ -201,8 +193,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -214,8 +205,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -224,8 +214,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRetrochargeEventType()
-    {
+    public function getRetrochargeEventType() {
         return $this->container['retrocharge_event_type'];
     }
 
@@ -236,8 +225,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRetrochargeEventType($retrocharge_event_type)
-    {
+    public function setRetrochargeEventType($retrocharge_event_type) {
         $this->container['retrocharge_event_type'] = $retrocharge_event_type;
 
         return $this;
@@ -248,8 +236,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -260,8 +247,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -270,22 +256,20 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -294,22 +278,20 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets base_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getBaseTax()
-    {
+    public function getBaseTax() {
         return $this->container['base_tax'];
     }
 
     /**
      * Sets base_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $base_tax base_tax
+     * @param Currency $base_tax base_tax
      *
      * @return $this
      */
-    public function setBaseTax($base_tax)
-    {
+    public function setBaseTax($base_tax) {
         $this->container['base_tax'] = $base_tax;
 
         return $this;
@@ -318,22 +300,20 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_tax.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getShippingTax()
-    {
+    public function getShippingTax() {
         return $this->container['shipping_tax'];
     }
 
     /**
      * Sets shipping_tax.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $shipping_tax shipping_tax
+     * @param Currency $shipping_tax shipping_tax
      *
      * @return $this
      */
-    public function setShippingTax($shipping_tax)
-    {
+    public function setShippingTax($shipping_tax) {
         $this->container['shipping_tax'] = $shipping_tax;
 
         return $this;
@@ -344,8 +324,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceName()
-    {
+    public function getMarketplaceName() {
         return $this->container['marketplace_name'];
     }
 
@@ -356,8 +335,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceName($marketplace_name)
-    {
+    public function setMarketplaceName($marketplace_name) {
         $this->container['marketplace_name'] = $marketplace_name;
 
         return $this;
@@ -366,22 +344,20 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
     /**
      * Gets retrocharge_tax_withheld_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList
+     * @return TaxWithheldComponentList
      */
-    public function getRetrochargeTaxWithheldList()
-    {
+    public function getRetrochargeTaxWithheldList() {
         return $this->container['retrocharge_tax_withheld_list'];
     }
 
     /**
      * Sets retrocharge_tax_withheld_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\TaxWithheldComponentList $retrocharge_tax_withheld_list retrocharge_tax_withheld_list
+     * @param TaxWithheldComponentList $retrocharge_tax_withheld_list retrocharge_tax_withheld_list
      *
      * @return $this
      */
-    public function setRetrochargeTaxWithheldList($retrocharge_tax_withheld_list)
-    {
+    public function setRetrochargeTaxWithheldList($retrocharge_tax_withheld_list) {
         $this->container['retrocharge_tax_withheld_list'] = $retrocharge_tax_withheld_list;
 
         return $this;
@@ -394,8 +370,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -406,21 +381,19 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -435,8 +408,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -445,8 +417,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

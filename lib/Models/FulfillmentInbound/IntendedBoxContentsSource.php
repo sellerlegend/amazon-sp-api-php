@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * IntendedBoxContentsSource Class Doc Comment.
  *
-
  * @description How the seller intends to provide box contents information for a shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class IntendedBoxContentsSource
-{
+class IntendedBoxContentsSource {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class IntendedBoxContentsSource
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::NONE,
-self::FEED,
-self::_2_D_BARCODE,        ];
+            self::FEED,
+            self::_2_D_BARCODE,];
     }
 }

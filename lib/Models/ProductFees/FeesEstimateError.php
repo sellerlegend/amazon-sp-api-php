@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductFees;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeesEstimateError Class Doc Comment.
  *
-
  * @description An unexpected error occurred during this operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeesEstimateError implements ModelInterface, ArrayAccess
-{
+class FeesEstimateError implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'type' => 'string',
-'code' => 'string',
-'message' => 'string',
-'detail' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateErrorDetail',    ];
+        'type'    => 'string',
+        'code'    => 'string',
+        'message' => 'string',
+        'detail'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateErrorDetail',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'type' => null,
-'code' => null,
-'message' => null,
-'detail' => null,    ];
+        'type'    => null,
+        'code'    => null,
+        'message' => null,
+        'detail'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'Type',
-'code' => 'Code',
-'message' => 'Message',
-'detail' => 'Detail',    ];
+        'type'    => 'Type',
+        'code'    => 'Code',
+        'message' => 'Message',
+        'detail'  => 'Detail',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-'code' => 'setCode',
-'message' => 'setMessage',
-'detail' => 'setDetail',    ];
+        'type'    => 'setType',
+        'code'    => 'setCode',
+        'message' => 'setMessage',
+        'detail'  => 'setDetail',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-'code' => 'getCode',
-'message' => 'getMessage',
-'detail' => 'getDetail',    ];
+        'type'    => 'getType',
+        'code'    => 'getCode',
+        'message' => 'getMessage',
+        'detail'  => 'getDetail',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
@@ -183,8 +174,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['type']) {
@@ -209,8 +199,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -219,8 +208,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->container['type'];
     }
 
@@ -231,8 +219,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->container['type'] = $type;
 
         return $this;
@@ -243,8 +230,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->container['code'];
     }
 
@@ -255,8 +241,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->container['code'] = $code;
 
         return $this;
@@ -267,8 +252,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMessage()
-    {
+    public function getMessage() {
         return $this->container['message'];
     }
 
@@ -279,8 +263,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessage($message)
-    {
+    public function setMessage($message) {
         $this->container['message'] = $message;
 
         return $this;
@@ -289,22 +272,20 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
     /**
      * Gets detail.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateErrorDetail
+     * @return FeesEstimateErrorDetail
      */
-    public function getDetail()
-    {
+    public function getDetail() {
         return $this->container['detail'];
     }
 
     /**
      * Sets detail.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateErrorDetail $detail detail
+     * @param FeesEstimateErrorDetail $detail detail
      *
      * @return $this
      */
-    public function setDetail($detail)
-    {
+    public function setDetail($detail) {
         $this->container['detail'] = $detail;
 
         return $this;
@@ -317,8 +298,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -329,21 +309,19 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -358,8 +336,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -368,8 +345,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

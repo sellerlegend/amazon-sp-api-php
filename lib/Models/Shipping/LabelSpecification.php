@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * LabelSpecification Class Doc Comment.
  *
-
  * @description The label specification info.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LabelSpecification implements ModelInterface, ArrayAccess
-{
+class LabelSpecification implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'label_format' => 'string',
-'label_stock_size' => 'string',    ];
+        'label_format'     => 'string',
+        'label_stock_size' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'label_format' => null,
-'label_stock_size' => null,    ];
+        'label_format'     => null,
+        'label_stock_size' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'label_format' => 'labelFormat',
-'label_stock_size' => 'labelStockSize',    ];
+        'label_format'     => 'labelFormat',
+        'label_stock_size' => 'labelStockSize',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'label_format' => 'setLabelFormat',
-'label_stock_size' => 'setLabelStockSize',    ];
+        'label_format'     => 'setLabelFormat',
+        'label_stock_size' => 'setLabelStockSize',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'label_format' => 'getLabelFormat',
-'label_stock_size' => 'getLabelStockSize',    ];
+        'label_format'     => 'getLabelFormat',
+        'label_stock_size' => 'getLabelStockSize',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,10 +148,9 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getLabelFormatAllowableValues()
-    {
+    public function getLabelFormatAllowableValues() {
         return [
-            self::LABEL_FORMAT_PNG,        ];
+            self::LABEL_FORMAT_PNG,];
     }
 
     /**
@@ -166,10 +158,9 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getLabelStockSizeAllowableValues()
-    {
+    public function getLabelStockSizeAllowableValues() {
         return [
-            self::LABEL_STOCK_SIZE__4X6,        ];
+            self::LABEL_STOCK_SIZE__4X6,];
     }
 
     /**
@@ -185,8 +176,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['label_format'] = isset($data['label_format']) ? $data['label_format'] : null;
         $this->container['label_stock_size'] = isset($data['label_stock_size']) ? $data['label_stock_size'] : null;
     }
@@ -196,8 +186,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['label_format']) {
@@ -231,8 +220,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -241,8 +229,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabelFormat()
-    {
+    public function getLabelFormat() {
         return $this->container['label_format'];
     }
 
@@ -253,11 +240,10 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabelFormat($label_format)
-    {
+    public function setLabelFormat($label_format) {
         $allowedValues = $this->getLabelFormatAllowableValues();
         if (!in_array($label_format, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'label_format', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'label_format', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['label_format'] = $label_format;
 
@@ -269,8 +255,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLabelStockSize()
-    {
+    public function getLabelStockSize() {
         return $this->container['label_stock_size'];
     }
 
@@ -281,11 +266,10 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLabelStockSize($label_stock_size)
-    {
+    public function setLabelStockSize($label_stock_size) {
         $allowedValues = $this->getLabelStockSizeAllowableValues();
         if (!in_array($label_stock_size, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'label_stock_size', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'label_stock_size', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['label_stock_size'] = $label_stock_size;
 
@@ -299,8 +283,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -311,21 +294,19 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -340,8 +321,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -350,8 +330,7 @@ class LabelSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

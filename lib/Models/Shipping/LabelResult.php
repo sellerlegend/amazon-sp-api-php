@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * LabelResult Class Doc Comment.
  *
-
  * @description Label details including label stream, format, size.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LabelResult implements ModelInterface, ArrayAccess
-{
+class LabelResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class LabelResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'container_reference_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId',
-'tracking_id' => 'string',
-'label' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Label',    ];
+        'container_reference_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId',
+        'tracking_id'            => 'string',
+        'label'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Label',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +55,15 @@ class LabelResult implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'container_reference_id' => null,
-'tracking_id' => null,
-'label' => null,    ];
+        'tracking_id'            => null,
+        'label'                  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +84,8 @@ class LabelResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'container_reference_id' => 'containerReferenceId',
-'tracking_id' => 'trackingId',
-'label' => 'label',    ];
+        'tracking_id'            => 'trackingId',
+        'label'                  => 'label',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +94,8 @@ class LabelResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'container_reference_id' => 'setContainerReferenceId',
-'tracking_id' => 'setTrackingId',
-'label' => 'setLabel',    ];
+        'tracking_id'            => 'setTrackingId',
+        'label'                  => 'setLabel',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +104,8 @@ class LabelResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'container_reference_id' => 'getContainerReferenceId',
-'tracking_id' => 'getTrackingId',
-'label' => 'getLabel',    ];
+        'tracking_id'            => 'getTrackingId',
+        'label'                  => 'getLabel',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['container_reference_id'] = isset($data['container_reference_id']) ? $data['container_reference_id'] : null;
         $this->container['tracking_id'] = isset($data['tracking_id']) ? $data['tracking_id'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
@@ -177,8 +168,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,30 +180,27 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets container_reference_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId
+     * @return ContainerReferenceId
      */
-    public function getContainerReferenceId()
-    {
+    public function getContainerReferenceId() {
         return $this->container['container_reference_id'];
     }
 
     /**
      * Sets container_reference_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerReferenceId $container_reference_id container_reference_id
+     * @param ContainerReferenceId $container_reference_id container_reference_id
      *
      * @return $this
      */
-    public function setContainerReferenceId($container_reference_id)
-    {
+    public function setContainerReferenceId($container_reference_id) {
         $this->container['container_reference_id'] = $container_reference_id;
 
         return $this;
@@ -224,8 +211,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTrackingId()
-    {
+    public function getTrackingId() {
         return $this->container['tracking_id'];
     }
 
@@ -236,8 +222,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTrackingId($tracking_id)
-    {
+    public function setTrackingId($tracking_id) {
         $this->container['tracking_id'] = $tracking_id;
 
         return $this;
@@ -246,22 +231,20 @@ class LabelResult implements ModelInterface, ArrayAccess
     /**
      * Gets label.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Label
+     * @return Label
      */
-    public function getLabel()
-    {
+    public function getLabel() {
         return $this->container['label'];
     }
 
     /**
      * Sets label.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Label $label label
+     * @param Label $label label
      *
      * @return $this
      */
-    public function setLabel($label)
-    {
+    public function setLabel($label) {
         $this->container['label'] = $label;
 
         return $this;
@@ -274,8 +257,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class LabelResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

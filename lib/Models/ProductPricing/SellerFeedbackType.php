@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SellerFeedbackType Class Doc Comment.
  *
-
  * @description Information about the seller&#x27;s feedback, including the percentage of positive feedback, and the total number of ratings received.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SellerFeedbackType implements ModelInterface, ArrayAccess
-{
+class SellerFeedbackType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'seller_positive_feedback_rating' => 'double',
-'feedback_count' => 'int',    ];
+        'feedback_count'                  => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'seller_positive_feedback_rating' => 'double',
-'feedback_count' => 'int64',    ];
+        'feedback_count'                  => 'int64',];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'seller_positive_feedback_rating' => 'SellerPositiveFeedbackRating',
-'feedback_count' => 'FeedbackCount',    ];
+        'feedback_count'                  => 'FeedbackCount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',
-'feedback_count' => 'setFeedbackCount',    ];
+        'feedback_count'                  => 'setFeedbackCount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'seller_positive_feedback_rating' => 'getSellerPositiveFeedbackRating',
-'feedback_count' => 'getFeedbackCount',    ];
+        'feedback_count'                  => 'getFeedbackCount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_positive_feedback_rating'] = isset($data['seller_positive_feedback_rating']) ? $data['seller_positive_feedback_rating'] : null;
         $this->container['feedback_count'] = isset($data['feedback_count']) ? $data['feedback_count'] : null;
     }
@@ -171,8 +162,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['feedback_count']) {
@@ -188,8 +178,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -198,8 +187,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getSellerPositiveFeedbackRating()
-    {
+    public function getSellerPositiveFeedbackRating() {
         return $this->container['seller_positive_feedback_rating'];
     }
 
@@ -210,8 +198,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerPositiveFeedbackRating($seller_positive_feedback_rating)
-    {
+    public function setSellerPositiveFeedbackRating($seller_positive_feedback_rating) {
         $this->container['seller_positive_feedback_rating'] = $seller_positive_feedback_rating;
 
         return $this;
@@ -222,8 +209,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getFeedbackCount()
-    {
+    public function getFeedbackCount() {
         return $this->container['feedback_count'];
     }
 
@@ -234,8 +220,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeedbackCount($feedback_count)
-    {
+    public function setFeedbackCount($feedback_count) {
         $this->container['feedback_count'] = $feedback_count;
 
         return $this;
@@ -248,8 +233,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +244,19 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +271,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +280,7 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

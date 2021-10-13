@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FileContents Class Doc Comment.
  *
-
  * @description The document data and checksum.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FileContents implements ModelInterface, ArrayAccess
-{
+class FileContents implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class FileContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'contents' => 'string',
-'file_type' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\FileType',
-'checksum' => 'string',    ];
+        'contents'  => 'string',
+        'file_type' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\FileType',
+        'checksum'  => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class FileContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'contents' => null,
-'file_type' => null,
-'checksum' => null,    ];
+        'contents'  => null,
+        'file_type' => null,
+        'checksum'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class FileContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'contents' => 'Contents',
-'file_type' => 'FileType',
-'checksum' => 'Checksum',    ];
+        'contents'  => 'Contents',
+        'file_type' => 'FileType',
+        'checksum'  => 'Checksum',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class FileContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'contents' => 'setContents',
-'file_type' => 'setFileType',
-'checksum' => 'setChecksum',    ];
+        'contents'  => 'setContents',
+        'file_type' => 'setFileType',
+        'checksum'  => 'setChecksum',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class FileContents implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'contents' => 'getContents',
-'file_type' => 'getFileType',
-'checksum' => 'getChecksum',    ];
+        'contents'  => 'getContents',
+        'file_type' => 'getFileType',
+        'checksum'  => 'getChecksum',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class FileContents implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['contents'] = isset($data['contents']) ? $data['contents'] : null;
         $this->container['file_type'] = isset($data['file_type']) ? $data['file_type'] : null;
         $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
@@ -177,8 +168,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['contents']) {
@@ -200,8 +190,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -210,8 +199,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getContents()
-    {
+    public function getContents() {
         return $this->container['contents'];
     }
 
@@ -222,8 +210,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContents($contents)
-    {
+    public function setContents($contents) {
         $this->container['contents'] = $contents;
 
         return $this;
@@ -232,22 +219,20 @@ class FileContents implements ModelInterface, ArrayAccess
     /**
      * Gets file_type.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\FileType
+     * @return FileType
      */
-    public function getFileType()
-    {
+    public function getFileType() {
         return $this->container['file_type'];
     }
 
     /**
      * Sets file_type.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\FileType $file_type file_type
+     * @param FileType $file_type file_type
      *
      * @return $this
      */
-    public function setFileType($file_type)
-    {
+    public function setFileType($file_type) {
         $this->container['file_type'] = $file_type;
 
         return $this;
@@ -258,8 +243,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getChecksum()
-    {
+    public function getChecksum() {
         return $this->container['checksum'];
     }
 
@@ -270,8 +254,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setChecksum($checksum)
-    {
+    public function setChecksum($checksum) {
         $this->container['checksum'] = $checksum;
 
         return $this;
@@ -284,8 +267,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +278,19 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +305,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +314,7 @@ class FileContents implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

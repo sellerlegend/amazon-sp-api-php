@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InvalidASIN Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InvalidASIN implements ModelInterface, ArrayAccess
-{
+class InvalidASIN implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,8 +42,9 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'error_reason' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason',    ];
+        'asin'         => 'string',
+        'error_reason' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -52,16 +52,16 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'error_reason' => null,    ];
+        'asin'         => null,
+        'error_reason' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -70,8 +70,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -82,8 +81,8 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'ASIN',
-'error_reason' => 'ErrorReason',    ];
+        'asin'         => 'ASIN',
+        'error_reason' => 'ErrorReason',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,8 +90,8 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'error_reason' => 'setErrorReason',    ];
+        'asin'         => 'setAsin',
+        'error_reason' => 'setErrorReason',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -100,8 +99,8 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'error_reason' => 'getErrorReason',    ];
+        'asin'         => 'getAsin',
+        'error_reason' => 'getErrorReason',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -109,8 +108,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -119,8 +117,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -129,8 +126,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -139,8 +135,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,8 +152,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['error_reason'] = isset($data['error_reason']) ? $data['error_reason'] : null;
     }
@@ -168,8 +162,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -181,8 +174,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -191,8 +183,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -203,8 +194,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -213,22 +203,20 @@ class InvalidASIN implements ModelInterface, ArrayAccess
     /**
      * Gets error_reason.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason
+     * @return ErrorReason
      */
-    public function getErrorReason()
-    {
+    public function getErrorReason() {
         return $this->container['error_reason'];
     }
 
     /**
      * Sets error_reason.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason $error_reason error_reason
+     * @param ErrorReason $error_reason error_reason
      *
      * @return $this
      */
-    public function setErrorReason($error_reason)
-    {
+    public function setErrorReason($error_reason) {
         $this->container['error_reason'] = $error_reason;
 
         return $this;
@@ -241,8 +229,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -253,21 +240,19 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -282,8 +267,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -292,8 +276,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

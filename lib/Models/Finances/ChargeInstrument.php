@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ChargeInstrument Class Doc Comment.
  *
-
  * @description A payment instrument.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ChargeInstrument implements ModelInterface, ArrayAccess
-{
+class ChargeInstrument implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,8 +45,9 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'description' => 'string',
-'tail' => 'string',
-'amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'tail'        => 'string',
+        'amount'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +56,15 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'description' => null,
-'tail' => null,
-'amount' => null,    ];
+        'tail'        => null,
+        'amount'      => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +85,8 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'description' => 'Description',
-'tail' => 'Tail',
-'amount' => 'Amount',    ];
+        'tail'        => 'Tail',
+        'amount'      => 'Amount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +95,8 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'description' => 'setDescription',
-'tail' => 'setTail',
-'amount' => 'setAmount',    ];
+        'tail'        => 'setTail',
+        'amount'      => 'setAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +105,8 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'description' => 'getDescription',
-'tail' => 'getTail',
-'amount' => 'getAmount',    ];
+        'tail'        => 'getTail',
+        'amount'      => 'getAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['tail'] = isset($data['tail']) ? $data['tail'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
@@ -177,8 +169,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,8 +181,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -200,8 +190,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->container['description'];
     }
 
@@ -212,8 +201,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->container['description'] = $description;
 
         return $this;
@@ -224,8 +212,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTail()
-    {
+    public function getTail() {
         return $this->container['tail'];
     }
 
@@ -236,8 +223,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTail($tail)
-    {
+    public function setTail($tail) {
         $this->container['tail'] = $tail;
 
         return $this;
@@ -246,22 +232,20 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
     /**
      * Gets amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getAmount()
-    {
+    public function getAmount() {
         return $this->container['amount'];
     }
 
     /**
      * Sets amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $amount amount
+     * @param Currency $amount amount
      *
      * @return $this
      */
-    public function setAmount($amount)
-    {
+    public function setAmount($amount) {
         $this->container['amount'] = $amount;
 
         return $this;
@@ -274,8 +258,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +269,19 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +296,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +305,7 @@ class ChargeInstrument implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

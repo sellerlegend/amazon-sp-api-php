@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InvalidSKU Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InvalidSKU implements ModelInterface, ArrayAccess
-{
+class InvalidSKU implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,8 +42,9 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'error_reason' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason',    ];
+        'seller_sku'   => 'string',
+        'error_reason' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -52,16 +52,15 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'error_reason' => null,    ];
+        'seller_sku'   => null,
+        'error_reason' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -70,8 +69,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -82,8 +80,8 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'SellerSKU',
-'error_reason' => 'ErrorReason',    ];
+        'seller_sku'   => 'SellerSKU',
+        'error_reason' => 'ErrorReason',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,8 +89,8 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'error_reason' => 'setErrorReason',    ];
+        'seller_sku'   => 'setSellerSku',
+        'error_reason' => 'setErrorReason',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -100,8 +98,8 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'error_reason' => 'getErrorReason',    ];
+        'seller_sku'   => 'getSellerSku',
+        'error_reason' => 'getErrorReason',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -109,8 +107,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -119,8 +116,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -129,8 +125,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -139,8 +134,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,8 +151,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['error_reason'] = isset($data['error_reason']) ? $data['error_reason'] : null;
     }
@@ -168,8 +161,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -181,8 +173,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -191,8 +182,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -203,8 +193,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -213,22 +202,20 @@ class InvalidSKU implements ModelInterface, ArrayAccess
     /**
      * Gets error_reason.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason
+     * @return ErrorReason
      */
-    public function getErrorReason()
-    {
+    public function getErrorReason() {
         return $this->container['error_reason'];
     }
 
     /**
      * Sets error_reason.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ErrorReason $error_reason error_reason
+     * @param ErrorReason $error_reason error_reason
      *
      * @return $this
      */
-    public function setErrorReason($error_reason)
-    {
+    public function setErrorReason($error_reason) {
         $this->container['error_reason'] = $error_reason;
 
         return $this;
@@ -241,8 +228,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -253,21 +239,19 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -282,8 +266,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -292,8 +275,7 @@ class InvalidSKU implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

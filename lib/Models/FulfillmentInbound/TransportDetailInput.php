@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TransportDetailInput Class Doc Comment.
  *
-
  * @description Information required to create an Amazon-partnered carrier shipping estimate, or to alert the Amazon fulfillment center to the arrival of an inbound shipment by a non-Amazon-partnered carrier.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TransportDetailInput implements ModelInterface, ArrayAccess
-{
+class TransportDetailInput implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'partnered_small_parcel_data' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelDataInput',
-'non_partnered_small_parcel_data' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredSmallParcelDataInput',
-'partnered_ltl_data' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredLtlDataInput',
-'non_partnered_ltl_data' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredLtlDataInput',    ];
+        'partnered_small_parcel_data'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelDataInput',
+        'non_partnered_small_parcel_data' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredSmallParcelDataInput',
+        'partnered_ltl_data'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredLtlDataInput',
+        'non_partnered_ltl_data'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredLtlDataInput'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,18 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'partnered_small_parcel_data' => null,
-'non_partnered_small_parcel_data' => null,
-'partnered_ltl_data' => null,
-'non_partnered_ltl_data' => null,    ];
+        'partnered_small_parcel_data'     => null,
+        'non_partnered_small_parcel_data' => null,
+        'partnered_ltl_data'              => null,
+        'non_partnered_ltl_data'          => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +76,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +87,10 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'partnered_small_parcel_data' => 'PartneredSmallParcelData',
-'non_partnered_small_parcel_data' => 'NonPartneredSmallParcelData',
-'partnered_ltl_data' => 'PartneredLtlData',
-'non_partnered_ltl_data' => 'NonPartneredLtlData',    ];
+        'partnered_small_parcel_data'     => 'PartneredSmallParcelData',
+        'non_partnered_small_parcel_data' => 'NonPartneredSmallParcelData',
+        'partnered_ltl_data'              => 'PartneredLtlData',
+        'non_partnered_ltl_data'          => 'NonPartneredLtlData',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +98,10 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'partnered_small_parcel_data' => 'setPartneredSmallParcelData',
-'non_partnered_small_parcel_data' => 'setNonPartneredSmallParcelData',
-'partnered_ltl_data' => 'setPartneredLtlData',
-'non_partnered_ltl_data' => 'setNonPartneredLtlData',    ];
+        'partnered_small_parcel_data'     => 'setPartneredSmallParcelData',
+        'non_partnered_small_parcel_data' => 'setNonPartneredSmallParcelData',
+        'partnered_ltl_data'              => 'setPartneredLtlData',
+        'non_partnered_ltl_data'          => 'setNonPartneredLtlData',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +109,10 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'partnered_small_parcel_data' => 'getPartneredSmallParcelData',
-'non_partnered_small_parcel_data' => 'getNonPartneredSmallParcelData',
-'partnered_ltl_data' => 'getPartneredLtlData',
-'non_partnered_ltl_data' => 'getNonPartneredLtlData',    ];
+        'partnered_small_parcel_data'     => 'getPartneredSmallParcelData',
+        'non_partnered_small_parcel_data' => 'getNonPartneredSmallParcelData',
+        'partnered_ltl_data'              => 'getPartneredLtlData',
+        'non_partnered_ltl_data'          => 'getNonPartneredLtlData',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +120,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +129,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +138,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +147,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +164,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['partnered_small_parcel_data'] = isset($data['partnered_small_parcel_data']) ? $data['partnered_small_parcel_data'] : null;
         $this->container['non_partnered_small_parcel_data'] = isset($data['non_partnered_small_parcel_data']) ? $data['non_partnered_small_parcel_data'] : null;
         $this->container['partnered_ltl_data'] = isset($data['partnered_ltl_data']) ? $data['partnered_ltl_data'] : null;
@@ -183,8 +176,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,30 +188,27 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets partnered_small_parcel_data.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelDataInput
+     * @return PartneredSmallParcelDataInput
      */
-    public function getPartneredSmallParcelData()
-    {
+    public function getPartneredSmallParcelData() {
         return $this->container['partnered_small_parcel_data'];
     }
 
     /**
      * Sets partnered_small_parcel_data.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredSmallParcelDataInput $partnered_small_parcel_data partnered_small_parcel_data
+     * @param PartneredSmallParcelDataInput $partnered_small_parcel_data partnered_small_parcel_data
      *
      * @return $this
      */
-    public function setPartneredSmallParcelData($partnered_small_parcel_data)
-    {
+    public function setPartneredSmallParcelData($partnered_small_parcel_data) {
         $this->container['partnered_small_parcel_data'] = $partnered_small_parcel_data;
 
         return $this;
@@ -228,22 +217,20 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
     /**
      * Gets non_partnered_small_parcel_data.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredSmallParcelDataInput
+     * @return NonPartneredSmallParcelDataInput
      */
-    public function getNonPartneredSmallParcelData()
-    {
+    public function getNonPartneredSmallParcelData() {
         return $this->container['non_partnered_small_parcel_data'];
     }
 
     /**
      * Sets non_partnered_small_parcel_data.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredSmallParcelDataInput $non_partnered_small_parcel_data non_partnered_small_parcel_data
+     * @param NonPartneredSmallParcelDataInput $non_partnered_small_parcel_data non_partnered_small_parcel_data
      *
      * @return $this
      */
-    public function setNonPartneredSmallParcelData($non_partnered_small_parcel_data)
-    {
+    public function setNonPartneredSmallParcelData($non_partnered_small_parcel_data) {
         $this->container['non_partnered_small_parcel_data'] = $non_partnered_small_parcel_data;
 
         return $this;
@@ -252,22 +239,20 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
     /**
      * Gets partnered_ltl_data.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredLtlDataInput
+     * @return PartneredLtlDataInput
      */
-    public function getPartneredLtlData()
-    {
+    public function getPartneredLtlData() {
         return $this->container['partnered_ltl_data'];
     }
 
     /**
      * Sets partnered_ltl_data.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredLtlDataInput $partnered_ltl_data partnered_ltl_data
+     * @param PartneredLtlDataInput $partnered_ltl_data partnered_ltl_data
      *
      * @return $this
      */
-    public function setPartneredLtlData($partnered_ltl_data)
-    {
+    public function setPartneredLtlData($partnered_ltl_data) {
         $this->container['partnered_ltl_data'] = $partnered_ltl_data;
 
         return $this;
@@ -276,22 +261,20 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
     /**
      * Gets non_partnered_ltl_data.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredLtlDataInput
+     * @return NonPartneredLtlDataInput
      */
-    public function getNonPartneredLtlData()
-    {
+    public function getNonPartneredLtlData() {
         return $this->container['non_partnered_ltl_data'];
     }
 
     /**
      * Sets non_partnered_ltl_data.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\NonPartneredLtlDataInput $non_partnered_ltl_data non_partnered_ltl_data
+     * @param NonPartneredLtlDataInput $non_partnered_ltl_data non_partnered_ltl_data
      *
      * @return $this
      */
-    public function setNonPartneredLtlData($non_partnered_ltl_data)
-    {
+    public function setNonPartneredLtlData($non_partnered_ltl_data) {
         $this->container['non_partnered_ltl_data'] = $non_partnered_ltl_data;
 
         return $this;
@@ -304,8 +287,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +298,19 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +325,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +334,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

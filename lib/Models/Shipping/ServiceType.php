@@ -15,18 +15,16 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 /**
  * ServiceType Class Doc Comment.
  *
-
  * @description The type of shipping service that will be used for the service offering.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ServiceType
-{
+class ServiceType {
     /**
      * Possible values of this enum.
      */
@@ -39,11 +37,10 @@ class ServiceType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::GROUND,
-self::STANDARD,
-self::PREMIUM,        ];
+            self::STANDARD,
+            self::PREMIUM,];
     }
 }

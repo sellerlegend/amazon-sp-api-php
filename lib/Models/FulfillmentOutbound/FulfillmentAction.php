@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * FulfillmentAction Class Doc Comment.
  *
-
  * @description Specifies whether the fulfillment order should ship now or have an order hold put on it.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentAction
-{
+class FulfillmentAction {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class FulfillmentAction
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SHIP,
-self::HOLD,        ];
+            self::HOLD,];
     }
 }

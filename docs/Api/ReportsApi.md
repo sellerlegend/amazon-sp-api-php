@@ -4,22 +4,25 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelReport**](ReportsApi.md#cancelreport) | **DELETE** /reports/2020-09-04/reports/{reportId} | 
-[**cancelReportSchedule**](ReportsApi.md#cancelreportschedule) | **DELETE** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**createReport**](ReportsApi.md#createreport) | **POST** /reports/2020-09-04/reports | 
-[**createReportSchedule**](ReportsApi.md#createreportschedule) | **POST** /reports/2020-09-04/schedules | 
-[**getReport**](ReportsApi.md#getreport) | **GET** /reports/2020-09-04/reports/{reportId} | 
-[**getReportDocument**](ReportsApi.md#getreportdocument) | **GET** /reports/2020-09-04/documents/{reportDocumentId} | 
-[**getReportSchedule**](ReportsApi.md#getreportschedule) | **GET** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**getReportSchedules**](ReportsApi.md#getreportschedules) | **GET** /reports/2020-09-04/schedules | 
-[**getReports**](ReportsApi.md#getreports) | **GET** /reports/2020-09-04/reports | 
+[**cancelReport**](ReportsApi.md#cancelreport) | **DELETE** /reports/2020-09-04/reports/{reportId} |
+[**cancelReportSchedule**](ReportsApi.md#cancelreportschedule) | **
+DELETE** /reports/2020-09-04/schedules/{reportScheduleId} |
+[**createReport**](ReportsApi.md#createreport) | **POST** /reports/2020-09-04/reports |
+[**createReportSchedule**](ReportsApi.md#createreportschedule) | **POST** /reports/2020-09-04/schedules |
+[**getReport**](ReportsApi.md#getreport) | **GET** /reports/2020-09-04/reports/{reportId} |
+[**getReportDocument**](ReportsApi.md#getreportdocument) | **GET** /reports/2020-09-04/documents/{reportDocumentId} |
+[**getReportSchedule**](ReportsApi.md#getreportschedule) | **GET** /reports/2020-09-04/schedules/{reportScheduleId} |
+[**getReportSchedules**](ReportsApi.md#getreportschedules) | **GET** /reports/2020-09-04/schedules |
+[**getReports**](ReportsApi.md#getreports) | **GET** /reports/2020-09-04/reports |
 
 # **cancelReport**
+
 > \Swagger\Client\Models\CancelReportResponse cancelReport($report_id)
 
 
 
-Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  
+Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are
+returned in subsequent calls to the getReport and getReports operations.
 
 **Usage Plan:**
 
@@ -28,6 +31,7 @@ Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE
 | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -59,7 +63,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **string**| The identifier for the report. This identifier is unique only in combination with a seller ID. |
+**report_id** | **
+string**| The identifier for the report. This identifier is unique only in combination with a seller ID. |
 
 ### Return type
 
@@ -71,17 +76,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelReportSchedule**
+
 > \Swagger\Client\Models\CancelReportScheduleResponse cancelReportSchedule($report_schedule_id)
 
 
 
-Cancels the report schedule that you specify.  
+Cancels the report schedule that you specify.
 
 **Usage Plan:**
 
@@ -90,6 +96,7 @@ Cancels the report schedule that you specify.
 | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -121,7 +128,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_schedule_id** | **string**| The identifier for the report schedule. This identifier is unique only in combination with a seller ID. |
+**report_schedule_id** | **
+string**| The identifier for the report schedule. This identifier is unique only in combination with a seller ID. |
 
 ### Return type
 
@@ -133,17 +141,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createReport**
+
 > \Swagger\Client\Models\CreateReportResponse createReport($body)
 
 
 
-Creates a report.  
+Creates a report.
 
 **Usage Plan:**
 
@@ -152,6 +161,7 @@ Creates a report.
 | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -183,7 +193,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\CreateReportSpecification**](../Model/CreateReportSpecification.md)|  |
+**body** | [**\Swagger\Client\Models\CreateReportSpecification**](../Model/CreateReportSpecification.md)|  |
 
 ### Return type
 
@@ -195,17 +205,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createReportSchedule**
+
 > \Swagger\Client\Models\CreateReportScheduleResponse createReportSchedule($body)
 
 
 
-Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  
+Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be
+cancelled and replaced with this one.
 
 **Usage Plan:**
 
@@ -214,6 +226,7 @@ Creates a report schedule. If a report schedule with the same report type and ma
 | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -245,7 +258,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\CreateReportScheduleSpecification**](../Model/CreateReportScheduleSpecification.md)|  |
+**body** | [**
+\Swagger\Client\Models\CreateReportScheduleSpecification**](../Model/CreateReportScheduleSpecification.md)|  |
 
 ### Return type
 
@@ -257,17 +271,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getReport**
+
 > \Swagger\Client\Models\GetReportResponse getReport($report_id)
 
 
 
-Returns report details (including the reportDocumentId, if available) for the report that you specify.  
+Returns report details (including the reportDocumentId, if available) for the report that you specify.
 
 **Usage Plan:**
 
@@ -276,6 +291,7 @@ Returns report details (including the reportDocumentId, if available) for the re
 | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -307,7 +323,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **string**| The identifier for the report. This identifier is unique only in combination with a seller ID. |
+**report_id** | **
+string**| The identifier for the report. This identifier is unique only in combination with a seller ID. |
 
 ### Return type
 
@@ -319,17 +336,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getReportDocument**
+
 > \Swagger\Client\Models\GetReportDocumentResponse getReportDocument($report_document_id)
 
 
 
-Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  
+Returns the information required for retrieving a report document's contents. This includes a presigned URL for the
+report document as well as the information required to decrypt the document's contents.
 
 **Usage Plan:**
 
@@ -338,6 +357,7 @@ Returns the information required for retrieving a report document's contents. Th
 | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -369,7 +389,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_document_id** | **string**| The identifier for the report document. |
+**report_document_id** | **string**| The identifier for the report document. |
 
 ### Return type
 
@@ -381,17 +401,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getReportSchedule**
+
 > \Swagger\Client\Models\GetReportScheduleResponse getReportSchedule($report_schedule_id)
 
 
 
-Returns report schedule details for the report schedule that you specify.  
+Returns report schedule details for the report schedule that you specify.
 
 **Usage Plan:**
 
@@ -400,6 +421,7 @@ Returns report schedule details for the report schedule that you specify.
 | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -431,7 +453,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_schedule_id** | **string**| The identifier for the report schedule. This identifier is unique only in combination with a seller ID. |
+**report_schedule_id** | **
+string**| The identifier for the report schedule. This identifier is unique only in combination with a seller ID. |
 
 ### Return type
 
@@ -443,17 +466,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getReportSchedules**
+
 > \Swagger\Client\Models\GetReportSchedulesResponse getReportSchedules($report_types)
 
 
 
-Returns report schedule details that match the filters that you specify.  
+Returns report schedule details that match the filters that you specify.
 
 **Usage Plan:**
 
@@ -462,6 +486,7 @@ Returns report schedule details that match the filters that you specify.
 | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -493,7 +518,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_types** | [**string[]**](../Model/string.md)| A list of report types used to filter report schedules. |
+**report_types** | [**string[]**](../Model/string.md)| A list of report types used to filter report schedules. |
 
 ### Return type
 
@@ -505,17 +530,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getReports**
+
 > \Swagger\Client\Models\GetReportsResponse getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token)
 
 
 
-Returns report details for the reports that match the filters that you specify.  
+Returns report details for the reports that match the filters that you specify.
 
 **Usage Plan:**
 
@@ -524,6 +550,7 @@ Returns report details for the reports that match the filters that you specify.
 | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -561,13 +588,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_types** | [**string[]**](../Model/string.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional]
- **processing_statuses** | [**string[]**](../Model/string.md)| A list of processing statuses used to filter reports. | [optional]
- **marketplace_ids** | [**string[]**](../Model/string.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
- **page_size** | **int**| The maximum number of reports to return in a single call. | [optional] [default to 10]
- **created_since** | **\DateTime**| The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. | [optional]
- **created_until** | **\DateTime**| The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. | [optional]
- **next_token** | **string**| A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. | [optional]
+**report_types** | [**
+string[]**](../Model/string.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional]
+**processing_statuses** | [**
+string[]**](../Model/string.md)| A list of processing statuses used to filter reports. | [optional]
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
+**page_size** | **int**| The maximum number of reports to return in a single call. | [optional] [default to 10]
+**created_since** | **
+\DateTime**| The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. | [optional]
+**created_until** | **
+\DateTime**| The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. | [optional]
+**next_token** | **
+string**| A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. | [optional]
 
 ### Return type
 
@@ -579,8 +612,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

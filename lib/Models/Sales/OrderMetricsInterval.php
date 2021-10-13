@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Sales;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Sales;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OrderMetricsInterval Class Doc Comment.
  *
-
  * @description Contains order metrics.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OrderMetricsInterval implements ModelInterface, ArrayAccess
-{
+class OrderMetricsInterval implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,12 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'interval' => 'string',
-'unit_count' => 'int',
-'order_item_count' => 'int',
-'order_count' => 'int',
-'average_unit_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\Sales\Money',
-'total_sales' => '\ClouSale\AmazonSellingPartnerAPI\Models\Sales\Money',    ];
+        'interval'           => 'string',
+        'unit_count'         => 'int',
+        'order_item_count'   => 'int',
+        'order_count'        => 'int',
+        'average_unit_price' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Sales\Money',
+        'total_sales'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Sales\Money',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +57,19 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'interval' => null,
-'unit_count' => null,
-'order_item_count' => null,
-'order_count' => null,
-'average_unit_price' => null,
-'total_sales' => null,    ];
+        'interval'           => null,
+        'unit_count'         => null,
+        'order_item_count'   => null,
+        'order_count'        => null,
+        'average_unit_price' => null,
+        'total_sales'        => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +78,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +89,12 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'interval' => 'interval',
-'unit_count' => 'unitCount',
-'order_item_count' => 'orderItemCount',
-'order_count' => 'orderCount',
-'average_unit_price' => 'averageUnitPrice',
-'total_sales' => 'totalSales',    ];
+        'interval'           => 'interval',
+        'unit_count'         => 'unitCount',
+        'order_item_count'   => 'orderItemCount',
+        'order_count'        => 'orderCount',
+        'average_unit_price' => 'averageUnitPrice',
+        'total_sales'        => 'totalSales',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +102,12 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'interval' => 'setInterval',
-'unit_count' => 'setUnitCount',
-'order_item_count' => 'setOrderItemCount',
-'order_count' => 'setOrderCount',
-'average_unit_price' => 'setAverageUnitPrice',
-'total_sales' => 'setTotalSales',    ];
+        'interval'           => 'setInterval',
+        'unit_count'         => 'setUnitCount',
+        'order_item_count'   => 'setOrderItemCount',
+        'order_count'        => 'setOrderCount',
+        'average_unit_price' => 'setAverageUnitPrice',
+        'total_sales'        => 'setTotalSales',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +115,12 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'interval' => 'getInterval',
-'unit_count' => 'getUnitCount',
-'order_item_count' => 'getOrderItemCount',
-'order_count' => 'getOrderCount',
-'average_unit_price' => 'getAverageUnitPrice',
-'total_sales' => 'getTotalSales',    ];
+        'interval'           => 'getInterval',
+        'unit_count'         => 'getUnitCount',
+        'order_item_count'   => 'getOrderItemCount',
+        'order_count'        => 'getOrderCount',
+        'average_unit_price' => 'getAverageUnitPrice',
+        'total_sales'        => 'getTotalSales',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +128,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +137,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +146,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +155,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +172,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
         $this->container['unit_count'] = isset($data['unit_count']) ? $data['unit_count'] : null;
         $this->container['order_item_count'] = isset($data['order_item_count']) ? $data['order_item_count'] : null;
@@ -195,8 +186,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['interval']) {
@@ -227,8 +217,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -237,8 +226,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getInterval()
-    {
+    public function getInterval() {
         return $this->container['interval'];
     }
 
@@ -249,8 +237,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInterval($interval)
-    {
+    public function setInterval($interval) {
         $this->container['interval'] = $interval;
 
         return $this;
@@ -261,8 +248,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getUnitCount()
-    {
+    public function getUnitCount() {
         return $this->container['unit_count'];
     }
 
@@ -273,8 +259,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUnitCount($unit_count)
-    {
+    public function setUnitCount($unit_count) {
         $this->container['unit_count'] = $unit_count;
 
         return $this;
@@ -285,8 +270,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getOrderItemCount()
-    {
+    public function getOrderItemCount() {
         return $this->container['order_item_count'];
     }
 
@@ -297,8 +281,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderItemCount($order_item_count)
-    {
+    public function setOrderItemCount($order_item_count) {
         $this->container['order_item_count'] = $order_item_count;
 
         return $this;
@@ -309,8 +292,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getOrderCount()
-    {
+    public function getOrderCount() {
         return $this->container['order_count'];
     }
 
@@ -321,8 +303,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderCount($order_count)
-    {
+    public function setOrderCount($order_count) {
         $this->container['order_count'] = $order_count;
 
         return $this;
@@ -331,22 +312,20 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
     /**
      * Gets average_unit_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Sales\Money
+     * @return Money
      */
-    public function getAverageUnitPrice()
-    {
+    public function getAverageUnitPrice() {
         return $this->container['average_unit_price'];
     }
 
     /**
      * Sets average_unit_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Sales\Money $average_unit_price average_unit_price
+     * @param Money $average_unit_price average_unit_price
      *
      * @return $this
      */
-    public function setAverageUnitPrice($average_unit_price)
-    {
+    public function setAverageUnitPrice($average_unit_price) {
         $this->container['average_unit_price'] = $average_unit_price;
 
         return $this;
@@ -355,22 +334,20 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
     /**
      * Gets total_sales.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Sales\Money
+     * @return Money
      */
-    public function getTotalSales()
-    {
+    public function getTotalSales() {
         return $this->container['total_sales'];
     }
 
     /**
      * Sets total_sales.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Sales\Money $total_sales total_sales
+     * @param Money $total_sales total_sales
      *
      * @return $this
      */
-    public function setTotalSales($total_sales)
-    {
+    public function setTotalSales($total_sales) {
         $this->container['total_sales'] = $total_sales;
 
         return $this;
@@ -383,8 +360,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -395,21 +371,19 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -424,8 +398,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -434,8 +407,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

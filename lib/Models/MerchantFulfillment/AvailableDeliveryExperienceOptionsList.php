@@ -15,23 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\IterableType;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\IterableType;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AvailableDeliveryExperienceOptionsList Class Doc Comment.
  *
-
  * @description List of available delivery experience options.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAccess, IterableType
-{
+class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAccess, IterableType {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $swaggerTypes = [
-            ];
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,15 +53,14 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $swaggerFormats = [
-            ];
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -72,8 +69,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -84,7 +80,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-            ];
+    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -92,7 +88,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-            ];
+    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -100,7 +96,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-            ];
+    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -108,8 +104,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -118,8 +113,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -128,8 +122,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -138,8 +131,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -156,8 +148,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
     }
 
     /**
@@ -165,8 +156,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
@@ -178,8 +168,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -190,8 +179,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -202,21 +190,19 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -231,8 +217,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -241,8 +226,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
@@ -253,8 +237,7 @@ class AvailableDeliveryExperienceOptionsList implements ModelInterface, ArrayAcc
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
-    public function getSubClass()
-    {
+    public function getSubClass() {
         return AvailableDeliveryExperienceOption::class;
     }
 }

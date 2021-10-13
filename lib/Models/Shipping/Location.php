@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Location Class Doc Comment.
  *
-
  * @description The location where the person, business or institution is located.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Location implements ModelInterface, ArrayAccess
-{
+class Location implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class Location implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'state_or_region' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\StateOrRegion',
-'city' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\City',
-'country_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CountryCode',
-'postal_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PostalCode',    ];
+        'state_or_region' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\StateOrRegion',
+        'city'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\City',
+        'country_code'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\CountryCode',
+        'postal_code'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PostalCode'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,17 +57,17 @@ class Location implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'state_or_region' => null,
-'city' => null,
-'country_code' => null,
-'postal_code' => null,    ];
+        'city'            => null,
+        'country_code'    => null,
+        'postal_code'     => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +76,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,9 +88,9 @@ class Location implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'state_or_region' => 'stateOrRegion',
-'city' => 'city',
-'country_code' => 'countryCode',
-'postal_code' => 'postalCode',    ];
+        'city'            => 'city',
+        'country_code'    => 'countryCode',
+        'postal_code'     => 'postalCode',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,9 +99,9 @@ class Location implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'state_or_region' => 'setStateOrRegion',
-'city' => 'setCity',
-'country_code' => 'setCountryCode',
-'postal_code' => 'setPostalCode',    ];
+        'city'            => 'setCity',
+        'country_code'    => 'setCountryCode',
+        'postal_code'     => 'setPostalCode',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,9 +110,9 @@ class Location implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'state_or_region' => 'getStateOrRegion',
-'city' => 'getCity',
-'country_code' => 'getCountryCode',
-'postal_code' => 'getPostalCode',    ];
+        'city'            => 'getCity',
+        'country_code'    => 'getCountryCode',
+        'postal_code'     => 'getPostalCode',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +120,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +129,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +138,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +147,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +164,7 @@ class Location implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['state_or_region'] = isset($data['state_or_region']) ? $data['state_or_region'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
@@ -183,8 +176,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,30 +188,27 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets state_or_region.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\StateOrRegion
+     * @return StateOrRegion
      */
-    public function getStateOrRegion()
-    {
+    public function getStateOrRegion() {
         return $this->container['state_or_region'];
     }
 
     /**
      * Sets state_or_region.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\StateOrRegion $state_or_region state_or_region
+     * @param StateOrRegion $state_or_region state_or_region
      *
      * @return $this
      */
-    public function setStateOrRegion($state_or_region)
-    {
+    public function setStateOrRegion($state_or_region) {
         $this->container['state_or_region'] = $state_or_region;
 
         return $this;
@@ -228,22 +217,20 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Gets city.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\City
+     * @return City
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->container['city'];
     }
 
     /**
      * Sets city.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\City $city city
+     * @param City $city city
      *
      * @return $this
      */
-    public function setCity($city)
-    {
+    public function setCity($city) {
         $this->container['city'] = $city;
 
         return $this;
@@ -252,22 +239,20 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Gets country_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CountryCode
+     * @return CountryCode
      */
-    public function getCountryCode()
-    {
+    public function getCountryCode() {
         return $this->container['country_code'];
     }
 
     /**
      * Sets country_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CountryCode $country_code country_code
+     * @param CountryCode $country_code country_code
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
-    {
+    public function setCountryCode($country_code) {
         $this->container['country_code'] = $country_code;
 
         return $this;
@@ -276,22 +261,20 @@ class Location implements ModelInterface, ArrayAccess
     /**
      * Gets postal_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PostalCode
+     * @return PostalCode
      */
-    public function getPostalCode()
-    {
+    public function getPostalCode() {
         return $this->container['postal_code'];
     }
 
     /**
      * Sets postal_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PostalCode $postal_code postal_code
+     * @param PostalCode $postal_code postal_code
      *
      * @return $this
      */
-    public function setPostalCode($postal_code)
-    {
+    public function setPostalCode($postal_code) {
         $this->container['postal_code'] = $postal_code;
 
         return $this;
@@ -304,8 +287,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +298,19 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +325,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +334,7 @@ class Location implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

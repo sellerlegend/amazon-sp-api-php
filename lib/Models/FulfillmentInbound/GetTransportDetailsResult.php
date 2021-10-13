@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetTransportDetailsResult Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetTransportDetailsResult implements ModelInterface, ArrayAccess
-{
+class GetTransportDetailsResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,7 +42,8 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'transport_content' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TransportContent',    ];
+        'transport_content' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TransportContent'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -51,15 +51,15 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'transport_content' => null,    ];
+        'transport_content' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -68,8 +68,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -80,7 +79,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transport_content' => 'TransportContent',    ];
+        'transport_content' => 'TransportContent',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -88,7 +87,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transport_content' => 'setTransportContent',    ];
+        'transport_content' => 'setTransportContent',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -96,7 +95,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transport_content' => 'getTransportContent',    ];
+        'transport_content' => 'getTransportContent',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -104,8 +103,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -114,8 +112,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -124,8 +121,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -134,8 +130,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -152,8 +147,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['transport_content'] = isset($data['transport_content']) ? $data['transport_content'] : null;
     }
 
@@ -162,8 +156,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -175,30 +168,27 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets transport_content.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TransportContent
+     * @return TransportContent
      */
-    public function getTransportContent()
-    {
+    public function getTransportContent() {
         return $this->container['transport_content'];
     }
 
     /**
      * Sets transport_content.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TransportContent $transport_content transport_content
+     * @param TransportContent $transport_content transport_content
      *
      * @return $this
      */
-    public function setTransportContent($transport_content)
-    {
+    public function setTransportContent($transport_content) {
         $this->container['transport_content'] = $transport_content;
 
         return $this;
@@ -211,8 +201,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -223,21 +212,19 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -252,8 +239,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -262,8 +248,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

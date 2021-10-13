@@ -13,32 +13,36 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\ExceptionThrower;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DeleteDestinationResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DeleteSubscriptionByIdResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionByIdResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionResponse;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\ExceptionThrower;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\DeleteDestinationResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\DeleteSubscriptionByIdResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionByIdResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionResponse;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * NotificationsApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class NotificationsApi
-{
+class NotificationsApi {
     use SellingPartnerApiRequest;
 
     /**
@@ -56,8 +60,7 @@ class NotificationsApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -66,24 +69,22 @@ class NotificationsApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
     /**
      * Operation createDestination.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationRequest $body body (required)
+     * @param CreateDestinationRequest $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CreateDestinationResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationResponse
+     * @throws InvalidArgumentException
      */
-    public function createDestination($body)
-    {
-        list($response) = $this->createDestinationWithHttpInfo($body);
+    public function createDestination($body) {
+        [$response] = $this->createDestinationWithHttpInfo($body);
 
         return $response;
     }
@@ -91,15 +92,14 @@ class NotificationsApi
     /**
      * Operation createDestinationWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationRequest $body (required)
+     * @param CreateDestinationRequest $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createDestinationWithHttpInfo($body)
-    {
+    public function createDestinationWithHttpInfo($body) {
         $request = $this->createDestinationRequest($body);
 
         return $this->sendRequest($request, CreateDestinationResponse::class);
@@ -108,14 +108,13 @@ class NotificationsApi
     /**
      * Operation createDestinationAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationRequest $body (required)
+     * @param CreateDestinationRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDestinationAsync($body)
-    {
+    public function createDestinationAsync($body) {
         return $this->createDestinationAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -127,14 +126,13 @@ class NotificationsApi
     /**
      * Operation createDestinationAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationRequest $body (required)
+     * @param CreateDestinationRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createDestinationAsyncWithHttpInfo($body)
-    {
+    public function createDestinationAsyncWithHttpInfo($body) {
         $request = $this->createDestinationRequest($body);
 
         return $this->sendRequestAsync($request, CreateDestinationResponse::class);
@@ -143,16 +141,15 @@ class NotificationsApi
     /**
      * Create request for operation 'createDestination'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateDestinationRequest $body (required)
+     * @param CreateDestinationRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createDestinationRequest($body)
-    {
+    protected function createDestinationRequest($body) {
         // verify the required parameter 'body' is set
-        ExceptionThrower::throwIf(\InvalidArgumentException::class, null === $body || (is_array($body) && 0 === count($body)), 'Missing the required parameter $body when calling createDestination');
+        ExceptionThrower::throwIf(InvalidArgumentException::class, null === $body || (is_array($body) && 0 === count($body)), 'Missing the required parameter $body when calling createDestination');
 
         $resourcePath = '/notifications/v1/destinations';
         $formParams = [];
@@ -167,17 +164,16 @@ class NotificationsApi
     /**
      * Operation createSubscription.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionRequest $body              body (required)
-     * @param string                                                                           $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param CreateSubscriptionRequest $body body (required)
+     * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CreateSubscriptionResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionResponse
+     * @throws InvalidArgumentException
      */
-    public function createSubscription($body, $notification_type)
-    {
-        list($response) = $this->createSubscriptionWithHttpInfo($body, $notification_type);
+    public function createSubscription($body, $notification_type) {
+        [$response] = $this->createSubscriptionWithHttpInfo($body, $notification_type);
 
         return $response;
     }
@@ -185,16 +181,15 @@ class NotificationsApi
     /**
      * Operation createSubscriptionWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionRequest $body              (required)
-     * @param string                                                                           $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param CreateSubscriptionRequest $body (required)
+     * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createSubscriptionWithHttpInfo($body, $notification_type)
-    {
+    public function createSubscriptionWithHttpInfo($body, $notification_type) {
         $request = $this->createSubscriptionRequest($body, $notification_type);
 
         return $this->sendRequest($request, CreateSubscriptionResponse::class);
@@ -203,15 +198,14 @@ class NotificationsApi
     /**
      * Operation createSubscriptionAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionRequest $body              (required)
-     * @param string                                                                           $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param CreateSubscriptionRequest $body (required)
+     * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSubscriptionAsync($body, $notification_type)
-    {
+    public function createSubscriptionAsync($body, $notification_type) {
         return $this->createSubscriptionAsyncWithHttpInfo($body, $notification_type)
             ->then(
                 function ($response) {
@@ -223,15 +217,14 @@ class NotificationsApi
     /**
      * Operation createSubscriptionAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionRequest $body              (required)
-     * @param string                                                                           $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param CreateSubscriptionRequest $body (required)
+     * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSubscriptionAsyncWithHttpInfo($body, $notification_type)
-    {
+    public function createSubscriptionAsyncWithHttpInfo($body, $notification_type) {
         $request = $this->createSubscriptionRequest($body, $notification_type);
 
         return $this->sendRequestAsync($request, CreateSubscriptionResponse::class);
@@ -240,17 +233,16 @@ class NotificationsApi
     /**
      * Create request for operation 'createSubscription'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\CreateSubscriptionRequest $body              (required)
-     * @param string                                                                           $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param CreateSubscriptionRequest $body (required)
+     * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createSubscriptionRequest($body, $notification_type)
-    {
-        ExceptionThrower::throwIf(\InvalidArgumentException::class, null === $body || (is_array($body) && 0 === count($body)), 'Missing the required parameter $body when calling createSubscription');
-        ExceptionThrower::throwIf(\InvalidArgumentException::class, null === $notification_type || (is_array($notification_type) && 0 === count($notification_type)), 'Missing the required parameter $notification_type when calling createSubscription');
+    protected function createSubscriptionRequest($body, $notification_type) {
+        ExceptionThrower::throwIf(InvalidArgumentException::class, null === $body || (is_array($body) && 0 === count($body)), 'Missing the required parameter $body when calling createSubscription');
+        ExceptionThrower::throwIf(InvalidArgumentException::class, null === $notification_type || (is_array($notification_type) && 0 === count($notification_type)), 'Missing the required parameter $notification_type when calling createSubscription');
 
         $resourcePath = '/notifications/v1/subscriptions/{notificationType}';
         $formParams = [];
@@ -262,7 +254,7 @@ class NotificationsApi
         // path params
         if (null !== $notification_type) {
             $resourcePath = str_replace(
-                '{'.'notificationType'.'}',
+                '{' . 'notificationType' . '}',
                 ObjectSerializer::toPathValue($notification_type),
                 $resourcePath
             );
@@ -276,14 +268,13 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return DeleteDestinationResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DeleteDestinationResponse
+     * @throws InvalidArgumentException
      */
-    public function deleteDestination($destination_id)
-    {
-        list($response) = $this->deleteDestinationWithHttpInfo($destination_id);
+    public function deleteDestination($destination_id) {
+        [$response] = $this->deleteDestinationWithHttpInfo($destination_id);
 
         return $response;
     }
@@ -293,13 +284,12 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\DeleteDestinationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DeleteDestinationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function deleteDestinationWithHttpInfo($destination_id)
-    {
+    public function deleteDestinationWithHttpInfo($destination_id) {
         $request = $this->deleteDestinationRequest($destination_id);
 
         return $this->sendRequest($request, DeleteDestinationResponse::class);
@@ -310,12 +300,11 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDestinationAsync($destination_id)
-    {
+    public function deleteDestinationAsync($destination_id) {
         return $this->deleteDestinationAsyncWithHttpInfo($destination_id)
             ->then(
                 function ($response) {
@@ -329,12 +318,11 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDestinationAsyncWithHttpInfo($destination_id)
-    {
+    public function deleteDestinationAsyncWithHttpInfo($destination_id) {
         $request = $this->deleteDestinationRequest($destination_id);
 
         return $this->sendRequestAsync($request, DeleteDestinationResponse::class);
@@ -345,15 +333,14 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteDestinationRequest($destination_id)
-    {
+    protected function deleteDestinationRequest($destination_id) {
         // verify the required parameter 'destination_id' is set
         if (null === $destination_id || (is_array($destination_id) && 0 === count($destination_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $destination_id when calling deleteDestination');
+            throw new InvalidArgumentException('Missing the required parameter $destination_id when calling deleteDestination');
         }
 
         $resourcePath = '/notifications/v1/destinations/{destinationId}';
@@ -366,7 +353,7 @@ class NotificationsApi
         // path params
         if (null !== $destination_id) {
             $resourcePath = str_replace(
-                '{'.'destinationId'.'}',
+                '{' . 'destinationId' . '}',
                 ObjectSerializer::toPathValue($destination_id),
                 $resourcePath
             );
@@ -378,17 +365,16 @@ class NotificationsApi
     /**
      * Operation deleteSubscriptionById.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to delete. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return DeleteSubscriptionByIdResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DeleteSubscriptionByIdResponse
+     * @throws InvalidArgumentException
      */
-    public function deleteSubscriptionById($subscription_id, $notification_type)
-    {
-        list($response) = $this->deleteSubscriptionByIdWithHttpInfo($subscription_id, $notification_type);
+    public function deleteSubscriptionById($subscription_id, $notification_type) {
+        [$response] = $this->deleteSubscriptionByIdWithHttpInfo($subscription_id, $notification_type);
 
         return $response;
     }
@@ -396,16 +382,15 @@ class NotificationsApi
     /**
      * Operation deleteSubscriptionByIdWithHttpInfo.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to delete. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\DeleteSubscriptionByIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DeleteSubscriptionByIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function deleteSubscriptionByIdWithHttpInfo($subscription_id, $notification_type)
-    {
+    public function deleteSubscriptionByIdWithHttpInfo($subscription_id, $notification_type) {
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
 
         return $this->sendRequest($request, DeleteSubscriptionByIdResponse::class);
@@ -414,15 +399,14 @@ class NotificationsApi
     /**
      * Operation deleteSubscriptionByIdAsync.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to delete. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSubscriptionByIdAsync($subscription_id, $notification_type)
-    {
+    public function deleteSubscriptionByIdAsync($subscription_id, $notification_type) {
         return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
             ->then(
                 function ($response) {
@@ -434,15 +418,14 @@ class NotificationsApi
     /**
      * Operation deleteSubscriptionByIdAsyncWithHttpInfo.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to delete. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
-    {
+    public function deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type) {
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
 
         return $this->sendRequestAsync($request, DeleteSubscriptionByIdResponse::class);
@@ -451,22 +434,21 @@ class NotificationsApi
     /**
      * Create request for operation 'deleteSubscriptionById'.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to delete. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteSubscriptionByIdRequest($subscription_id, $notification_type)
-    {
+    protected function deleteSubscriptionByIdRequest($subscription_id, $notification_type) {
         // verify the required parameter 'subscription_id' is set
         if (null === $subscription_id || (is_array($subscription_id) && 0 === count($subscription_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $subscription_id when calling deleteSubscriptionById');
+            throw new InvalidArgumentException('Missing the required parameter $subscription_id when calling deleteSubscriptionById');
         }
         // verify the required parameter 'notification_type' is set
         if (null === $notification_type || (is_array($notification_type) && 0 === count($notification_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $notification_type when calling deleteSubscriptionById');
+            throw new InvalidArgumentException('Missing the required parameter $notification_type when calling deleteSubscriptionById');
         }
 
         $resourcePath = '/notifications/v1/subscriptions/{notificationType}/{subscriptionId}';
@@ -479,7 +461,7 @@ class NotificationsApi
         // path params
         if (null !== $subscription_id) {
             $resourcePath = str_replace(
-                '{'.'subscriptionId'.'}',
+                '{' . 'subscriptionId' . '}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
@@ -487,7 +469,7 @@ class NotificationsApi
         // path params
         if (null !== $notification_type) {
             $resourcePath = str_replace(
-                '{'.'notificationType'.'}',
+                '{' . 'notificationType' . '}',
                 ObjectSerializer::toPathValue($notification_type),
                 $resourcePath
             );
@@ -501,14 +483,13 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetDestinationResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationResponse
+     * @throws InvalidArgumentException
      */
-    public function getDestination($destination_id)
-    {
-        list($response) = $this->getDestinationWithHttpInfo($destination_id);
+    public function getDestination($destination_id) {
+        [$response] = $this->getDestinationWithHttpInfo($destination_id);
 
         return $response;
     }
@@ -518,13 +499,12 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getDestinationWithHttpInfo($destination_id)
-    {
+    public function getDestinationWithHttpInfo($destination_id) {
         $request = $this->getDestinationRequest($destination_id);
 
         return $this->sendRequest($request, GetDestinationResponse::class);
@@ -535,12 +515,11 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDestinationAsync($destination_id)
-    {
+    public function getDestinationAsync($destination_id) {
         return $this->getDestinationAsyncWithHttpInfo($destination_id)
             ->then(
                 function ($response) {
@@ -554,12 +533,11 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDestinationAsyncWithHttpInfo($destination_id)
-    {
+    public function getDestinationAsyncWithHttpInfo($destination_id) {
         $request = $this->getDestinationRequest($destination_id);
 
         return $this->sendRequestAsync($request, GetDestinationResponse::class);
@@ -570,15 +548,14 @@ class NotificationsApi
      *
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDestinationRequest($destination_id)
-    {
+    protected function getDestinationRequest($destination_id) {
         // verify the required parameter 'destination_id' is set
         if (null === $destination_id || (is_array($destination_id) && 0 === count($destination_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $destination_id when calling getDestination');
+            throw new InvalidArgumentException('Missing the required parameter $destination_id when calling getDestination');
         }
 
         $resourcePath = '/notifications/v1/destinations/{destinationId}';
@@ -591,7 +568,7 @@ class NotificationsApi
         // path params
         if (null !== $destination_id) {
             $resourcePath = str_replace(
-                '{'.'destinationId'.'}',
+                '{' . 'destinationId' . '}',
                 ObjectSerializer::toPathValue($destination_id),
                 $resourcePath
             );
@@ -603,14 +580,13 @@ class NotificationsApi
     /**
      * Operation getDestinations.
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetDestinationsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationsResponse
+     * @throws InvalidArgumentException
      */
-    public function getDestinations()
-    {
-        list($response) = $this->getDestinationsWithHttpInfo();
+    public function getDestinations() {
+        [$response] = $this->getDestinationsWithHttpInfo();
 
         return $response;
     }
@@ -618,13 +594,12 @@ class NotificationsApi
     /**
      * Operation getDestinationsWithHttpInfo.
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetDestinationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getDestinationsWithHttpInfo()
-    {
+    public function getDestinationsWithHttpInfo() {
         $request = $this->getDestinationsRequest();
 
         return $this->sendRequest($request, GetDestinationsResponse::class);
@@ -633,12 +608,11 @@ class NotificationsApi
     /**
      * Operation getDestinationsAsync.
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDestinationsAsync()
-    {
+    public function getDestinationsAsync() {
         return $this->getDestinationsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
@@ -650,12 +624,11 @@ class NotificationsApi
     /**
      * Operation getDestinationsAsyncWithHttpInfo.
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDestinationsAsyncWithHttpInfo()
-    {
+    public function getDestinationsAsyncWithHttpInfo() {
         $request = $this->getDestinationsRequest();
 
         return $this->sendRequestAsync($request, GetDestinationsResponse::class);
@@ -664,12 +637,11 @@ class NotificationsApi
     /**
      * Create request for operation 'getDestinations'.
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDestinationsRequest()
-    {
+    protected function getDestinationsRequest() {
         $resourcePath = '/notifications/v1/destinations';
         $formParams = [];
         $queryParams = [];
@@ -685,14 +657,13 @@ class NotificationsApi
      *
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetSubscriptionResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionResponse
+     * @throws InvalidArgumentException
      */
-    public function getSubscription($notification_type)
-    {
-        list($response) = $this->getSubscriptionWithHttpInfo($notification_type);
+    public function getSubscription($notification_type) {
+        [$response] = $this->getSubscriptionWithHttpInfo($notification_type);
 
         return $response;
     }
@@ -702,13 +673,12 @@ class NotificationsApi
      *
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getSubscriptionWithHttpInfo($notification_type)
-    {
+    public function getSubscriptionWithHttpInfo($notification_type) {
         $request = $this->getSubscriptionRequest($notification_type);
 
         return $this->sendRequest($request, GetSubscriptionResponse::class);
@@ -719,12 +689,11 @@ class NotificationsApi
      *
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionAsync($notification_type)
-    {
+    public function getSubscriptionAsync($notification_type) {
         return $this->getSubscriptionAsyncWithHttpInfo($notification_type)
             ->then(
                 function ($response) {
@@ -738,12 +707,11 @@ class NotificationsApi
      *
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionAsyncWithHttpInfo($notification_type)
-    {
+    public function getSubscriptionAsyncWithHttpInfo($notification_type) {
         $request = $this->getSubscriptionRequest($notification_type);
 
         return $this->sendRequestAsync($request, GetSubscriptionResponse::class);
@@ -754,15 +722,14 @@ class NotificationsApi
      *
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSubscriptionRequest($notification_type)
-    {
+    protected function getSubscriptionRequest($notification_type) {
         // verify the required parameter 'notification_type' is set
         if (null === $notification_type || (is_array($notification_type) && 0 === count($notification_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $notification_type when calling getSubscription');
+            throw new InvalidArgumentException('Missing the required parameter $notification_type when calling getSubscription');
         }
 
         $resourcePath = '/notifications/v1/subscriptions/{notificationType}';
@@ -775,7 +742,7 @@ class NotificationsApi
         // path params
         if (null !== $notification_type) {
             $resourcePath = str_replace(
-                '{'.'notificationType'.'}',
+                '{' . 'notificationType' . '}',
                 ObjectSerializer::toPathValue($notification_type),
                 $resourcePath
             );
@@ -787,17 +754,16 @@ class NotificationsApi
     /**
      * Operation getSubscriptionById.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to get. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetSubscriptionByIdResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionByIdResponse
+     * @throws InvalidArgumentException
      */
-    public function getSubscriptionById($subscription_id, $notification_type)
-    {
-        list($response) = $this->getSubscriptionByIdWithHttpInfo($subscription_id, $notification_type);
+    public function getSubscriptionById($subscription_id, $notification_type) {
+        [$response] = $this->getSubscriptionByIdWithHttpInfo($subscription_id, $notification_type);
 
         return $response;
     }
@@ -805,16 +771,15 @@ class NotificationsApi
     /**
      * Operation getSubscriptionByIdWithHttpInfo.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to get. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionByIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\GetSubscriptionByIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getSubscriptionByIdWithHttpInfo($subscription_id, $notification_type)
-    {
+    public function getSubscriptionByIdWithHttpInfo($subscription_id, $notification_type) {
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
 
         return $this->sendRequest($request, GetSubscriptionByIdResponse::class);
@@ -823,15 +788,14 @@ class NotificationsApi
     /**
      * Operation getSubscriptionByIdAsync.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to get. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionByIdAsync($subscription_id, $notification_type)
-    {
+    public function getSubscriptionByIdAsync($subscription_id, $notification_type) {
         return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
             ->then(
                 function ($response) {
@@ -843,15 +807,14 @@ class NotificationsApi
     /**
      * Operation getSubscriptionByIdAsyncWithHttpInfo.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to get. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
-    {
+    public function getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type) {
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
 
         return $this->sendRequestAsync($request, GetSubscriptionByIdResponse::class);
@@ -860,22 +823,21 @@ class NotificationsApi
     /**
      * Create request for operation 'getSubscriptionById'.
      *
-     * @param string $subscription_id   The identifier for the subscription that you want to get. (required)
+     * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSubscriptionByIdRequest($subscription_id, $notification_type)
-    {
+    protected function getSubscriptionByIdRequest($subscription_id, $notification_type) {
         // verify the required parameter 'subscription_id' is set
         if (null === $subscription_id || (is_array($subscription_id) && 0 === count($subscription_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $subscription_id when calling getSubscriptionById');
+            throw new InvalidArgumentException('Missing the required parameter $subscription_id when calling getSubscriptionById');
         }
         // verify the required parameter 'notification_type' is set
         if (null === $notification_type || (is_array($notification_type) && 0 === count($notification_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $notification_type when calling getSubscriptionById');
+            throw new InvalidArgumentException('Missing the required parameter $notification_type when calling getSubscriptionById');
         }
 
         $resourcePath = '/notifications/v1/subscriptions/{notificationType}/{subscriptionId}';
@@ -888,7 +850,7 @@ class NotificationsApi
         // path params
         if (null !== $subscription_id) {
             $resourcePath = str_replace(
-                '{'.'subscriptionId'.'}',
+                '{' . 'subscriptionId' . '}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
@@ -896,7 +858,7 @@ class NotificationsApi
         // path params
         if (null !== $notification_type) {
             $resourcePath = str_replace(
-                '{'.'notificationType'.'}',
+                '{' . 'notificationType' . '}',
                 ObjectSerializer::toPathValue($notification_type),
                 $resourcePath
             );

@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FinancialEventGroup Class Doc Comment.
  *
-
  * @description Information related to a financial event group.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FinancialEventGroup implements ModelInterface, ArrayAccess
-{
+class FinancialEventGroup implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,17 +45,17 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'financial_event_group_id' => 'string',
-'processing_status' => 'string',
-'fund_transfer_status' => 'string',
-'original_total' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'converted_total' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'fund_transfer_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'trace_id' => 'string',
-'account_tail' => 'string',
-'beginning_balance' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'financial_event_group_start' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'financial_event_group_end' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',    ];
+        'financial_event_group_id'    => 'string',
+        'processing_status'           => 'string',
+        'fund_transfer_status'        => 'string',
+        'original_total'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'converted_total'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'fund_transfer_date'          => '\DateTime',
+        'trace_id'                    => 'string',
+        'account_tail'                => 'string',
+        'beginning_balance'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'financial_event_group_start' => '\DateTime',
+        'financial_event_group_end'   => '\DateTime',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -64,25 +63,24 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'financial_event_group_id' => null,
-'processing_status' => null,
-'fund_transfer_status' => null,
-'original_total' => null,
-'converted_total' => null,
-'fund_transfer_date' => null,
-'trace_id' => null,
-'account_tail' => null,
-'beginning_balance' => null,
-'financial_event_group_start' => null,
-'financial_event_group_end' => null,    ];
+        'financial_event_group_id'    => null,
+        'processing_status'           => null,
+        'fund_transfer_status'        => null,
+        'original_total'              => null,
+        'converted_total'             => null,
+        'fund_transfer_date'          => null,
+        'trace_id'                    => null,
+        'account_tail'                => null,
+        'beginning_balance'           => null,
+        'financial_event_group_start' => null,
+        'financial_event_group_end'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -91,8 +89,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -103,17 +100,17 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'financial_event_group_id' => 'FinancialEventGroupId',
-'processing_status' => 'ProcessingStatus',
-'fund_transfer_status' => 'FundTransferStatus',
-'original_total' => 'OriginalTotal',
-'converted_total' => 'ConvertedTotal',
-'fund_transfer_date' => 'FundTransferDate',
-'trace_id' => 'TraceId',
-'account_tail' => 'AccountTail',
-'beginning_balance' => 'BeginningBalance',
-'financial_event_group_start' => 'FinancialEventGroupStart',
-'financial_event_group_end' => 'FinancialEventGroupEnd',    ];
+        'financial_event_group_id'    => 'FinancialEventGroupId',
+        'processing_status'           => 'ProcessingStatus',
+        'fund_transfer_status'        => 'FundTransferStatus',
+        'original_total'              => 'OriginalTotal',
+        'converted_total'             => 'ConvertedTotal',
+        'fund_transfer_date'          => 'FundTransferDate',
+        'trace_id'                    => 'TraceId',
+        'account_tail'                => 'AccountTail',
+        'beginning_balance'           => 'BeginningBalance',
+        'financial_event_group_start' => 'FinancialEventGroupStart',
+        'financial_event_group_end'   => 'FinancialEventGroupEnd',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -121,17 +118,17 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'financial_event_group_id' => 'setFinancialEventGroupId',
-'processing_status' => 'setProcessingStatus',
-'fund_transfer_status' => 'setFundTransferStatus',
-'original_total' => 'setOriginalTotal',
-'converted_total' => 'setConvertedTotal',
-'fund_transfer_date' => 'setFundTransferDate',
-'trace_id' => 'setTraceId',
-'account_tail' => 'setAccountTail',
-'beginning_balance' => 'setBeginningBalance',
-'financial_event_group_start' => 'setFinancialEventGroupStart',
-'financial_event_group_end' => 'setFinancialEventGroupEnd',    ];
+        'financial_event_group_id'    => 'setFinancialEventGroupId',
+        'processing_status'           => 'setProcessingStatus',
+        'fund_transfer_status'        => 'setFundTransferStatus',
+        'original_total'              => 'setOriginalTotal',
+        'converted_total'             => 'setConvertedTotal',
+        'fund_transfer_date'          => 'setFundTransferDate',
+        'trace_id'                    => 'setTraceId',
+        'account_tail'                => 'setAccountTail',
+        'beginning_balance'           => 'setBeginningBalance',
+        'financial_event_group_start' => 'setFinancialEventGroupStart',
+        'financial_event_group_end'   => 'setFinancialEventGroupEnd',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -139,17 +136,17 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'financial_event_group_id' => 'getFinancialEventGroupId',
-'processing_status' => 'getProcessingStatus',
-'fund_transfer_status' => 'getFundTransferStatus',
-'original_total' => 'getOriginalTotal',
-'converted_total' => 'getConvertedTotal',
-'fund_transfer_date' => 'getFundTransferDate',
-'trace_id' => 'getTraceId',
-'account_tail' => 'getAccountTail',
-'beginning_balance' => 'getBeginningBalance',
-'financial_event_group_start' => 'getFinancialEventGroupStart',
-'financial_event_group_end' => 'getFinancialEventGroupEnd',    ];
+        'financial_event_group_id'    => 'getFinancialEventGroupId',
+        'processing_status'           => 'getProcessingStatus',
+        'fund_transfer_status'        => 'getFundTransferStatus',
+        'original_total'              => 'getOriginalTotal',
+        'converted_total'             => 'getConvertedTotal',
+        'fund_transfer_date'          => 'getFundTransferDate',
+        'trace_id'                    => 'getTraceId',
+        'account_tail'                => 'getAccountTail',
+        'beginning_balance'           => 'getBeginningBalance',
+        'financial_event_group_start' => 'getFinancialEventGroupStart',
+        'financial_event_group_end'   => 'getFinancialEventGroupEnd',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -157,8 +154,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -167,8 +163,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -177,8 +172,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -187,8 +181,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -205,8 +198,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['financial_event_group_id'] = isset($data['financial_event_group_id']) ? $data['financial_event_group_id'] : null;
         $this->container['processing_status'] = isset($data['processing_status']) ? $data['processing_status'] : null;
         $this->container['fund_transfer_status'] = isset($data['fund_transfer_status']) ? $data['fund_transfer_status'] : null;
@@ -225,8 +217,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -238,8 +229,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -248,8 +238,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFinancialEventGroupId()
-    {
+    public function getFinancialEventGroupId() {
         return $this->container['financial_event_group_id'];
     }
 
@@ -260,8 +249,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFinancialEventGroupId($financial_event_group_id)
-    {
+    public function setFinancialEventGroupId($financial_event_group_id) {
         $this->container['financial_event_group_id'] = $financial_event_group_id;
 
         return $this;
@@ -272,8 +260,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProcessingStatus()
-    {
+    public function getProcessingStatus() {
         return $this->container['processing_status'];
     }
 
@@ -284,8 +271,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProcessingStatus($processing_status)
-    {
+    public function setProcessingStatus($processing_status) {
         $this->container['processing_status'] = $processing_status;
 
         return $this;
@@ -296,8 +282,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFundTransferStatus()
-    {
+    public function getFundTransferStatus() {
         return $this->container['fund_transfer_status'];
     }
 
@@ -308,8 +293,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFundTransferStatus($fund_transfer_status)
-    {
+    public function setFundTransferStatus($fund_transfer_status) {
         $this->container['fund_transfer_status'] = $fund_transfer_status;
 
         return $this;
@@ -318,22 +302,20 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
     /**
      * Gets original_total.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getOriginalTotal()
-    {
+    public function getOriginalTotal() {
         return $this->container['original_total'];
     }
 
     /**
      * Sets original_total.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $original_total original_total
+     * @param Currency $original_total original_total
      *
      * @return $this
      */
-    public function setOriginalTotal($original_total)
-    {
+    public function setOriginalTotal($original_total) {
         $this->container['original_total'] = $original_total;
 
         return $this;
@@ -342,22 +324,20 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
     /**
      * Gets converted_total.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getConvertedTotal()
-    {
+    public function getConvertedTotal() {
         return $this->container['converted_total'];
     }
 
     /**
      * Sets converted_total.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $converted_total converted_total
+     * @param Currency $converted_total converted_total
      *
      * @return $this
      */
-    public function setConvertedTotal($converted_total)
-    {
+    public function setConvertedTotal($converted_total) {
         $this->container['converted_total'] = $converted_total;
 
         return $this;
@@ -366,22 +346,20 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
     /**
      * Gets fund_transfer_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getFundTransferDate()
-    {
+    public function getFundTransferDate() {
         return $this->container['fund_transfer_date'];
     }
 
     /**
      * Sets fund_transfer_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $fund_transfer_date fund_transfer_date
+     * @param DateTime $fund_transfer_date fund_transfer_date
      *
      * @return $this
      */
-    public function setFundTransferDate($fund_transfer_date)
-    {
+    public function setFundTransferDate($fund_transfer_date) {
         $this->container['fund_transfer_date'] = $fund_transfer_date;
 
         return $this;
@@ -392,8 +370,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTraceId()
-    {
+    public function getTraceId() {
         return $this->container['trace_id'];
     }
 
@@ -404,8 +381,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTraceId($trace_id)
-    {
+    public function setTraceId($trace_id) {
         $this->container['trace_id'] = $trace_id;
 
         return $this;
@@ -416,8 +392,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAccountTail()
-    {
+    public function getAccountTail() {
         return $this->container['account_tail'];
     }
 
@@ -428,8 +403,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAccountTail($account_tail)
-    {
+    public function setAccountTail($account_tail) {
         $this->container['account_tail'] = $account_tail;
 
         return $this;
@@ -438,22 +412,20 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
     /**
      * Gets beginning_balance.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getBeginningBalance()
-    {
+    public function getBeginningBalance() {
         return $this->container['beginning_balance'];
     }
 
     /**
      * Sets beginning_balance.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $beginning_balance beginning_balance
+     * @param Currency $beginning_balance beginning_balance
      *
      * @return $this
      */
-    public function setBeginningBalance($beginning_balance)
-    {
+    public function setBeginningBalance($beginning_balance) {
         $this->container['beginning_balance'] = $beginning_balance;
 
         return $this;
@@ -462,22 +434,20 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
     /**
      * Gets financial_event_group_start.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getFinancialEventGroupStart()
-    {
+    public function getFinancialEventGroupStart() {
         return $this->container['financial_event_group_start'];
     }
 
     /**
      * Sets financial_event_group_start.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $financial_event_group_start financial_event_group_start
+     * @param DateTime $financial_event_group_start financial_event_group_start
      *
      * @return $this
      */
-    public function setFinancialEventGroupStart($financial_event_group_start)
-    {
+    public function setFinancialEventGroupStart($financial_event_group_start) {
         $this->container['financial_event_group_start'] = $financial_event_group_start;
 
         return $this;
@@ -486,22 +456,20 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
     /**
      * Gets financial_event_group_end.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getFinancialEventGroupEnd()
-    {
+    public function getFinancialEventGroupEnd() {
         return $this->container['financial_event_group_end'];
     }
 
     /**
      * Sets financial_event_group_end.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $financial_event_group_end financial_event_group_end
+     * @param DateTime $financial_event_group_end financial_event_group_end
      *
      * @return $this
      */
-    public function setFinancialEventGroupEnd($financial_event_group_end)
-    {
+    public function setFinancialEventGroupEnd($financial_event_group_end) {
         $this->container['financial_event_group_end'] = $financial_event_group_end;
 
         return $this;
@@ -514,8 +482,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -526,21 +493,19 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -555,8 +520,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -565,8 +529,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

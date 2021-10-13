@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * NetworkComminglingTransactionEvent Class Doc Comment.
  *
-
  * @description A network commingling transaction event.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
-{
+class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,14 +45,14 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'transaction_type' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'net_co_transaction_id' => 'string',
-'swap_reason' => 'string',
-'asin' => 'string',
-'marketplace_id' => 'string',
-'tax_exclusive_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'tax_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'transaction_type'      => 'string',
+        'posted_date'           => '\DateTime',
+        'net_co_transaction_id' => 'string',
+        'swap_reason'           => 'string',
+        'asin'                  => 'string',
+        'marketplace_id'        => 'string',
+        'tax_exclusive_amount'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'tax_amount'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -61,22 +60,21 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'transaction_type' => null,
-'posted_date' => null,
-'net_co_transaction_id' => null,
-'swap_reason' => null,
-'asin' => null,
-'marketplace_id' => null,
-'tax_exclusive_amount' => null,
-'tax_amount' => null,    ];
+        'transaction_type'      => null,
+        'posted_date'           => null,
+        'net_co_transaction_id' => null,
+        'swap_reason'           => null,
+        'asin'                  => null,
+        'marketplace_id'        => null,
+        'tax_exclusive_amount'  => null,
+        'tax_amount'            => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -85,8 +83,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -97,14 +94,14 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transaction_type' => 'TransactionType',
-'posted_date' => 'PostedDate',
-'net_co_transaction_id' => 'NetCoTransactionID',
-'swap_reason' => 'SwapReason',
-'asin' => 'ASIN',
-'marketplace_id' => 'MarketplaceId',
-'tax_exclusive_amount' => 'TaxExclusiveAmount',
-'tax_amount' => 'TaxAmount',    ];
+        'transaction_type'      => 'TransactionType',
+        'posted_date'           => 'PostedDate',
+        'net_co_transaction_id' => 'NetCoTransactionID',
+        'swap_reason'           => 'SwapReason',
+        'asin'                  => 'ASIN',
+        'marketplace_id'        => 'MarketplaceId',
+        'tax_exclusive_amount'  => 'TaxExclusiveAmount',
+        'tax_amount'            => 'TaxAmount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -112,14 +109,14 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transaction_type' => 'setTransactionType',
-'posted_date' => 'setPostedDate',
-'net_co_transaction_id' => 'setNetCoTransactionId',
-'swap_reason' => 'setSwapReason',
-'asin' => 'setAsin',
-'marketplace_id' => 'setMarketplaceId',
-'tax_exclusive_amount' => 'setTaxExclusiveAmount',
-'tax_amount' => 'setTaxAmount',    ];
+        'transaction_type'      => 'setTransactionType',
+        'posted_date'           => 'setPostedDate',
+        'net_co_transaction_id' => 'setNetCoTransactionId',
+        'swap_reason'           => 'setSwapReason',
+        'asin'                  => 'setAsin',
+        'marketplace_id'        => 'setMarketplaceId',
+        'tax_exclusive_amount'  => 'setTaxExclusiveAmount',
+        'tax_amount'            => 'setTaxAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -127,14 +124,14 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transaction_type' => 'getTransactionType',
-'posted_date' => 'getPostedDate',
-'net_co_transaction_id' => 'getNetCoTransactionId',
-'swap_reason' => 'getSwapReason',
-'asin' => 'getAsin',
-'marketplace_id' => 'getMarketplaceId',
-'tax_exclusive_amount' => 'getTaxExclusiveAmount',
-'tax_amount' => 'getTaxAmount',    ];
+        'transaction_type'      => 'getTransactionType',
+        'posted_date'           => 'getPostedDate',
+        'net_co_transaction_id' => 'getNetCoTransactionId',
+        'swap_reason'           => 'getSwapReason',
+        'asin'                  => 'getAsin',
+        'marketplace_id'        => 'getMarketplaceId',
+        'tax_exclusive_amount'  => 'getTaxExclusiveAmount',
+        'tax_amount'            => 'getTaxAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -142,8 +139,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -152,8 +148,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -162,8 +157,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -172,8 +166,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -190,8 +183,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['transaction_type'] = isset($data['transaction_type']) ? $data['transaction_type'] : null;
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
         $this->container['net_co_transaction_id'] = isset($data['net_co_transaction_id']) ? $data['net_co_transaction_id'] : null;
@@ -207,8 +199,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -220,8 +211,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -230,8 +220,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTransactionType()
-    {
+    public function getTransactionType() {
         return $this->container['transaction_type'];
     }
 
@@ -242,8 +231,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTransactionType($transaction_type)
-    {
+    public function setTransactionType($transaction_type) {
         $this->container['transaction_type'] = $transaction_type;
 
         return $this;
@@ -252,22 +240,20 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -278,8 +264,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNetCoTransactionId()
-    {
+    public function getNetCoTransactionId() {
         return $this->container['net_co_transaction_id'];
     }
 
@@ -290,8 +275,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNetCoTransactionId($net_co_transaction_id)
-    {
+    public function setNetCoTransactionId($net_co_transaction_id) {
         $this->container['net_co_transaction_id'] = $net_co_transaction_id;
 
         return $this;
@@ -302,8 +286,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSwapReason()
-    {
+    public function getSwapReason() {
         return $this->container['swap_reason'];
     }
 
@@ -314,8 +297,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSwapReason($swap_reason)
-    {
+    public function setSwapReason($swap_reason) {
         $this->container['swap_reason'] = $swap_reason;
 
         return $this;
@@ -326,8 +308,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -338,8 +319,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -350,8 +330,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -362,8 +341,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -372,22 +350,20 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets tax_exclusive_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTaxExclusiveAmount()
-    {
+    public function getTaxExclusiveAmount() {
         return $this->container['tax_exclusive_amount'];
     }
 
     /**
      * Sets tax_exclusive_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $tax_exclusive_amount tax_exclusive_amount
+     * @param Currency $tax_exclusive_amount tax_exclusive_amount
      *
      * @return $this
      */
-    public function setTaxExclusiveAmount($tax_exclusive_amount)
-    {
+    public function setTaxExclusiveAmount($tax_exclusive_amount) {
         $this->container['tax_exclusive_amount'] = $tax_exclusive_amount;
 
         return $this;
@@ -396,22 +372,20 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
     /**
      * Gets tax_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTaxAmount()
-    {
+    public function getTaxAmount() {
         return $this->container['tax_amount'];
     }
 
     /**
      * Sets tax_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $tax_amount tax_amount
+     * @param Currency $tax_amount tax_amount
      *
      * @return $this
      */
-    public function setTaxAmount($tax_amount)
-    {
+    public function setTaxAmount($tax_amount) {
         $this->container['tax_amount'] = $tax_amount;
 
         return $this;
@@ -424,8 +398,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -436,21 +409,19 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -465,8 +436,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -475,8 +445,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

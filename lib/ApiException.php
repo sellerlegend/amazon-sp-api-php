@@ -13,7 +13,7 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI;
+namespace SellerLegend\AmazonSellingPartnerAPI;
 
 use Exception;
 
@@ -22,8 +22,7 @@ use Exception;
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ApiException extends Exception
-{
+class ApiException extends Exception {
     /**
      * The HTTP body of the server response either as Json or string.
      *
@@ -48,13 +47,12 @@ class ApiException extends Exception
     /**
      * Constructor.
      *
-     * @param string        $message         Error message
-     * @param int           $code            HTTP status code
+     * @param string $message Error message
+     * @param int $code HTTP status code
      * @param string[]|null $responseHeaders HTTP response header
-     * @param mixed         $responseBody    HTTP decoded body of the server response either as \stdClass or string
+     * @param mixed $responseBody HTTP decoded body of the server response either as \stdClass or string
      */
-    public function __construct($message = '', $code = 0, $responseHeaders = [], $responseBody = null)
-    {
+    public function __construct($message = '', $code = 0, $responseHeaders = [], $responseBody = null) {
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
@@ -65,8 +63,7 @@ class ApiException extends Exception
      *
      * @return string[]|null HTTP response header
      */
-    public function getResponseHeaders()
-    {
+    public function getResponseHeaders() {
         return $this->responseHeaders;
     }
 
@@ -75,8 +72,7 @@ class ApiException extends Exception
      *
      * @return mixed HTTP body of the server response either as \stdClass or string
      */
-    public function getResponseBody()
-    {
+    public function getResponseBody() {
         return $this->responseBody;
     }
 
@@ -87,8 +83,7 @@ class ApiException extends Exception
      *
      * @return void
      */
-    public function setResponseObject($obj)
-    {
+    public function setResponseObject($obj) {
         $this->responseObject = $obj;
     }
 
@@ -97,8 +92,7 @@ class ApiException extends Exception
      *
      * @return mixed the deserialized response object
      */
-    public function getResponseObject()
-    {
+    public function getResponseObject() {
         return $this->responseObject;
     }
 }

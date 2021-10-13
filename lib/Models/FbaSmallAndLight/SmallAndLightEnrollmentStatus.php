@@ -15,18 +15,16 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
 
 /**
  * SmallAndLightEnrollmentStatus Class Doc Comment.
  *
-
  * @description The Small and Light enrollment status of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SmallAndLightEnrollmentStatus
-{
+class SmallAndLightEnrollmentStatus {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class SmallAndLightEnrollmentStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::ENROLLED,
-self::NOT_ENROLLED,        ];
+            self::NOT_ENROLLED,];
     }
 }

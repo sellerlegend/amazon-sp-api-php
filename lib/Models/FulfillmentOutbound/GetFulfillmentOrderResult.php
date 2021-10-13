@@ -15,19 +15,18 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetFulfillmentOrderResult Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
-{
+class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,11 +42,11 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'fulfillment_order' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrder',
-'fulfillment_order_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrderItemList',
-'fulfillment_shipments' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentList',
-'return_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList',
-'return_authorizations' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList',    ];
+        'fulfillment_order'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrder',
+        'fulfillment_order_items' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrderItemList',
+        'fulfillment_shipments'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentList',
+        'return_items'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList',
+        'return_authorizations'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,19 +54,18 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'fulfillment_order' => null,
-'fulfillment_order_items' => null,
-'fulfillment_shipments' => null,
-'return_items' => null,
-'return_authorizations' => null,    ];
+        'fulfillment_order'       => null,
+        'fulfillment_order_items' => null,
+        'fulfillment_shipments'   => null,
+        'return_items'            => null,
+        'return_authorizations'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -76,8 +74,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,11 +85,11 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fulfillment_order' => 'fulfillmentOrder',
-'fulfillment_order_items' => 'fulfillmentOrderItems',
-'fulfillment_shipments' => 'fulfillmentShipments',
-'return_items' => 'returnItems',
-'return_authorizations' => 'returnAuthorizations',    ];
+        'fulfillment_order'       => 'fulfillmentOrder',
+        'fulfillment_order_items' => 'fulfillmentOrderItems',
+        'fulfillment_shipments'   => 'fulfillmentShipments',
+        'return_items'            => 'returnItems',
+        'return_authorizations'   => 'returnAuthorizations',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,11 +97,11 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fulfillment_order' => 'setFulfillmentOrder',
-'fulfillment_order_items' => 'setFulfillmentOrderItems',
-'fulfillment_shipments' => 'setFulfillmentShipments',
-'return_items' => 'setReturnItems',
-'return_authorizations' => 'setReturnAuthorizations',    ];
+        'fulfillment_order'       => 'setFulfillmentOrder',
+        'fulfillment_order_items' => 'setFulfillmentOrderItems',
+        'fulfillment_shipments'   => 'setFulfillmentShipments',
+        'return_items'            => 'setReturnItems',
+        'return_authorizations'   => 'setReturnAuthorizations',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,11 +109,11 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fulfillment_order' => 'getFulfillmentOrder',
-'fulfillment_order_items' => 'getFulfillmentOrderItems',
-'fulfillment_shipments' => 'getFulfillmentShipments',
-'return_items' => 'getReturnItems',
-'return_authorizations' => 'getReturnAuthorizations',    ];
+        'fulfillment_order'       => 'getFulfillmentOrder',
+        'fulfillment_order_items' => 'getFulfillmentOrderItems',
+        'fulfillment_shipments'   => 'getFulfillmentShipments',
+        'return_items'            => 'getReturnItems',
+        'return_authorizations'   => 'getReturnAuthorizations',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -124,8 +121,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -134,8 +130,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -144,8 +139,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -154,8 +148,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -172,8 +165,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['fulfillment_order'] = isset($data['fulfillment_order']) ? $data['fulfillment_order'] : null;
         $this->container['fulfillment_order_items'] = isset($data['fulfillment_order_items']) ? $data['fulfillment_order_items'] : null;
         $this->container['fulfillment_shipments'] = isset($data['fulfillment_shipments']) ? $data['fulfillment_shipments'] : null;
@@ -186,8 +178,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['fulfillment_order']) {
@@ -212,30 +203,27 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets fulfillment_order.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrder
+     * @return FulfillmentOrder
      */
-    public function getFulfillmentOrder()
-    {
+    public function getFulfillmentOrder() {
         return $this->container['fulfillment_order'];
     }
 
     /**
      * Sets fulfillment_order.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrder $fulfillment_order fulfillment_order
+     * @param FulfillmentOrder $fulfillment_order fulfillment_order
      *
      * @return $this
      */
-    public function setFulfillmentOrder($fulfillment_order)
-    {
+    public function setFulfillmentOrder($fulfillment_order) {
         $this->container['fulfillment_order'] = $fulfillment_order;
 
         return $this;
@@ -244,22 +232,20 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
     /**
      * Gets fulfillment_order_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrderItemList
+     * @return FulfillmentOrderItemList
      */
-    public function getFulfillmentOrderItems()
-    {
+    public function getFulfillmentOrderItems() {
         return $this->container['fulfillment_order_items'];
     }
 
     /**
      * Sets fulfillment_order_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentOrderItemList $fulfillment_order_items fulfillment_order_items
+     * @param FulfillmentOrderItemList $fulfillment_order_items fulfillment_order_items
      *
      * @return $this
      */
-    public function setFulfillmentOrderItems($fulfillment_order_items)
-    {
+    public function setFulfillmentOrderItems($fulfillment_order_items) {
         $this->container['fulfillment_order_items'] = $fulfillment_order_items;
 
         return $this;
@@ -268,22 +254,20 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
     /**
      * Gets fulfillment_shipments.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentList
+     * @return FulfillmentShipmentList
      */
-    public function getFulfillmentShipments()
-    {
+    public function getFulfillmentShipments() {
         return $this->container['fulfillment_shipments'];
     }
 
     /**
      * Sets fulfillment_shipments.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentList $fulfillment_shipments fulfillment_shipments
+     * @param FulfillmentShipmentList $fulfillment_shipments fulfillment_shipments
      *
      * @return $this
      */
-    public function setFulfillmentShipments($fulfillment_shipments)
-    {
+    public function setFulfillmentShipments($fulfillment_shipments) {
         $this->container['fulfillment_shipments'] = $fulfillment_shipments;
 
         return $this;
@@ -292,22 +276,20 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
     /**
      * Gets return_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList
+     * @return ReturnItemList
      */
-    public function getReturnItems()
-    {
+    public function getReturnItems() {
         return $this->container['return_items'];
     }
 
     /**
      * Sets return_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemList $return_items return_items
+     * @param ReturnItemList $return_items return_items
      *
      * @return $this
      */
-    public function setReturnItems($return_items)
-    {
+    public function setReturnItems($return_items) {
         $this->container['return_items'] = $return_items;
 
         return $this;
@@ -316,22 +298,20 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
     /**
      * Gets return_authorizations.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList
+     * @return ReturnAuthorizationList
      */
-    public function getReturnAuthorizations()
-    {
+    public function getReturnAuthorizations() {
         return $this->container['return_authorizations'];
     }
 
     /**
      * Sets return_authorizations.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnAuthorizationList $return_authorizations return_authorizations
+     * @param ReturnAuthorizationList $return_authorizations return_authorizations
      *
      * @return $this
      */
-    public function setReturnAuthorizations($return_authorizations)
-    {
+    public function setReturnAuthorizations($return_authorizations) {
         $this->container['return_authorizations'] = $return_authorizations;
 
         return $this;
@@ -344,8 +324,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -356,21 +335,19 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -385,8 +362,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -395,8 +371,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

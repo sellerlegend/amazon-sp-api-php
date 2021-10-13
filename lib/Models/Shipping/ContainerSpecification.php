@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ContainerSpecification Class Doc Comment.
  *
-
  * @description Container specification for checking the service rate.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ContainerSpecification implements ModelInterface, ArrayAccess
-{
+class ContainerSpecification implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Dimensions',
-'weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight',    ];
+        'dimensions' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Dimensions',
+        'weight'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Weight',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'dimensions' => null,
-'weight' => null,    ];
+        'weight'     => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'dimensions' => 'dimensions',
-'weight' => 'weight',    ];
+        'weight'     => 'weight',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'dimensions' => 'setDimensions',
-'weight' => 'setWeight',    ];
+        'weight'     => 'setWeight',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'dimensions' => 'getDimensions',
-'weight' => 'getWeight',    ];
+        'weight'     => 'getWeight',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
         $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
     }
@@ -171,8 +162,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['dimensions']) {
@@ -191,30 +181,27 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Dimensions
+     * @return Dimensions
      */
-    public function getDimensions()
-    {
+    public function getDimensions() {
         return $this->container['dimensions'];
     }
 
     /**
      * Sets dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Dimensions $dimensions dimensions
+     * @param Dimensions $dimensions dimensions
      *
      * @return $this
      */
-    public function setDimensions($dimensions)
-    {
+    public function setDimensions($dimensions) {
         $this->container['dimensions'] = $dimensions;
 
         return $this;
@@ -223,22 +210,20 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
     /**
      * Gets weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight
+     * @return Weight
      */
-    public function getWeight()
-    {
+    public function getWeight() {
         return $this->container['weight'];
     }
 
     /**
      * Sets weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight $weight weight
+     * @param Weight $weight weight
      *
      * @return $this
      */
-    public function setWeight($weight)
-    {
+    public function setWeight($weight) {
         $this->container['weight'] = $weight;
 
         return $this;
@@ -251,8 +236,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

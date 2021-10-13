@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AssociatedItem Class Doc Comment.
  *
-
  * @description Information about an item associated with the service job.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AssociatedItem implements ModelInterface, ArrayAccess
-{
+class AssociatedItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +45,13 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'title' => 'string',
-'quantity' => 'int',
-'order_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\OrderId',
-'item_status' => 'string',
-'brand_name' => 'string',
-'item_delivery' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\ItemDelivery',    ];
+        'asin'          => 'string',
+        'title'         => 'string',
+        'quantity'      => 'int',
+        'order_id'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\OrderId',
+        'item_status'   => 'string',
+        'brand_name'    => 'string',
+        'item_delivery' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\ItemDelivery',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +59,20 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'title' => null,
-'quantity' => null,
-'order_id' => null,
-'item_status' => null,
-'brand_name' => null,
-'item_delivery' => null,    ];
+        'asin'          => null,
+        'title'         => null,
+        'quantity'      => null,
+        'order_id'      => null,
+        'item_status'   => null,
+        'brand_name'    => null,
+        'item_delivery' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +81,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +92,13 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'asin',
-'title' => 'title',
-'quantity' => 'quantity',
-'order_id' => 'orderId',
-'item_status' => 'itemStatus',
-'brand_name' => 'brandName',
-'item_delivery' => 'itemDelivery',    ];
+        'asin'          => 'asin',
+        'title'         => 'title',
+        'quantity'      => 'quantity',
+        'order_id'      => 'orderId',
+        'item_status'   => 'itemStatus',
+        'brand_name'    => 'brandName',
+        'item_delivery' => 'itemDelivery',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +106,13 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'title' => 'setTitle',
-'quantity' => 'setQuantity',
-'order_id' => 'setOrderId',
-'item_status' => 'setItemStatus',
-'brand_name' => 'setBrandName',
-'item_delivery' => 'setItemDelivery',    ];
+        'asin'          => 'setAsin',
+        'title'         => 'setTitle',
+        'quantity'      => 'setQuantity',
+        'order_id'      => 'setOrderId',
+        'item_status'   => 'setItemStatus',
+        'brand_name'    => 'setBrandName',
+        'item_delivery' => 'setItemDelivery',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +120,13 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'title' => 'getTitle',
-'quantity' => 'getQuantity',
-'order_id' => 'getOrderId',
-'item_status' => 'getItemStatus',
-'brand_name' => 'getBrandName',
-'item_delivery' => 'getItemDelivery',    ];
+        'asin'          => 'getAsin',
+        'title'         => 'getTitle',
+        'quantity'      => 'getQuantity',
+        'order_id'      => 'getOrderId',
+        'item_status'   => 'getItemStatus',
+        'brand_name'    => 'getBrandName',
+        'item_delivery' => 'getItemDelivery',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +134,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +143,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +152,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +161,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -182,13 +175,12 @@ class AssociatedItem implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getItemStatusAllowableValues()
-    {
+    public function getItemStatusAllowableValues() {
         return [
             self::ITEM_STATUS_ACTIVE,
-self::ITEM_STATUS_CANCELLED,
-self::ITEM_STATUS_SHIPPED,
-self::ITEM_STATUS_DELIVERED,        ];
+            self::ITEM_STATUS_CANCELLED,
+            self::ITEM_STATUS_SHIPPED,
+            self::ITEM_STATUS_DELIVERED,];
     }
 
     /**
@@ -204,8 +196,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
@@ -220,8 +211,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getItemStatusAllowableValues();
@@ -241,8 +231,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -251,8 +240,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -263,8 +251,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -275,8 +262,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->container['title'];
     }
 
@@ -287,8 +273,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->container['title'] = $title;
 
         return $this;
@@ -299,8 +284,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return int
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
@@ -311,8 +295,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -321,22 +304,20 @@ self::ITEM_STATUS_DELIVERED,        ];
     /**
      * Gets order_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\OrderId
+     * @return OrderId
      */
-    public function getOrderId()
-    {
+    public function getOrderId() {
         return $this->container['order_id'];
     }
 
     /**
      * Sets order_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\OrderId $order_id order_id
+     * @param OrderId $order_id order_id
      *
      * @return $this
      */
-    public function setOrderId($order_id)
-    {
+    public function setOrderId($order_id) {
         $this->container['order_id'] = $order_id;
 
         return $this;
@@ -347,8 +328,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return string
      */
-    public function getItemStatus()
-    {
+    public function getItemStatus() {
         return $this->container['item_status'];
     }
 
@@ -359,11 +339,10 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return $this
      */
-    public function setItemStatus($item_status)
-    {
+    public function setItemStatus($item_status) {
         $allowedValues = $this->getItemStatusAllowableValues();
         if (!is_null($item_status) && !in_array($item_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'item_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'item_status', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['item_status'] = $item_status;
 
@@ -375,8 +354,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return string
      */
-    public function getBrandName()
-    {
+    public function getBrandName() {
         return $this->container['brand_name'];
     }
 
@@ -387,8 +365,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return $this
      */
-    public function setBrandName($brand_name)
-    {
+    public function setBrandName($brand_name) {
         $this->container['brand_name'] = $brand_name;
 
         return $this;
@@ -397,22 +374,20 @@ self::ITEM_STATUS_DELIVERED,        ];
     /**
      * Gets item_delivery.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\ItemDelivery
+     * @return ItemDelivery
      */
-    public function getItemDelivery()
-    {
+    public function getItemDelivery() {
         return $this->container['item_delivery'];
     }
 
     /**
      * Sets item_delivery.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\ItemDelivery $item_delivery item_delivery
+     * @param ItemDelivery $item_delivery item_delivery
      *
      * @return $this
      */
-    public function setItemDelivery($item_delivery)
-    {
+    public function setItemDelivery($item_delivery) {
         $this->container['item_delivery'] = $item_delivery;
 
         return $this;
@@ -425,8 +400,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -437,21 +411,19 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -466,8 +438,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -476,8 +447,7 @@ self::ITEM_STATUS_DELIVERED,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

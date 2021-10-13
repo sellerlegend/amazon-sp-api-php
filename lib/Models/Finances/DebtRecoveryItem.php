@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * DebtRecoveryItem Class Doc Comment.
  *
-
  * @description An item of a debt payment or debt adjustment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class DebtRecoveryItem implements ModelInterface, ArrayAccess
-{
+class DebtRecoveryItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +45,10 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'recovery_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'original_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'group_begin_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'group_end_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',    ];
+        'recovery_amount'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'original_amount'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'group_begin_date' => '\DateTime',
+        'group_end_date'   => '\DateTime',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'recovery_amount' => null,
-'original_amount' => null,
-'group_begin_date' => null,
-'group_end_date' => null,    ];
+        'recovery_amount'  => null,
+        'original_amount'  => null,
+        'group_begin_date' => null,
+        'group_end_date'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'recovery_amount' => 'RecoveryAmount',
-'original_amount' => 'OriginalAmount',
-'group_begin_date' => 'GroupBeginDate',
-'group_end_date' => 'GroupEndDate',    ];
+        'recovery_amount'  => 'RecoveryAmount',
+        'original_amount'  => 'OriginalAmount',
+        'group_begin_date' => 'GroupBeginDate',
+        'group_end_date'   => 'GroupEndDate',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'recovery_amount' => 'setRecoveryAmount',
-'original_amount' => 'setOriginalAmount',
-'group_begin_date' => 'setGroupBeginDate',
-'group_end_date' => 'setGroupEndDate',    ];
+        'recovery_amount'  => 'setRecoveryAmount',
+        'original_amount'  => 'setOriginalAmount',
+        'group_begin_date' => 'setGroupBeginDate',
+        'group_end_date'   => 'setGroupEndDate',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'recovery_amount' => 'getRecoveryAmount',
-'original_amount' => 'getOriginalAmount',
-'group_begin_date' => 'getGroupBeginDate',
-'group_end_date' => 'getGroupEndDate',    ];
+        'recovery_amount'  => 'getRecoveryAmount',
+        'original_amount'  => 'getOriginalAmount',
+        'group_begin_date' => 'getGroupBeginDate',
+        'group_end_date'   => 'getGroupEndDate',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['recovery_amount'] = isset($data['recovery_amount']) ? $data['recovery_amount'] : null;
         $this->container['original_amount'] = isset($data['original_amount']) ? $data['original_amount'] : null;
         $this->container['group_begin_date'] = isset($data['group_begin_date']) ? $data['group_begin_date'] : null;
@@ -183,8 +175,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,30 +187,27 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets recovery_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getRecoveryAmount()
-    {
+    public function getRecoveryAmount() {
         return $this->container['recovery_amount'];
     }
 
     /**
      * Sets recovery_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $recovery_amount recovery_amount
+     * @param Currency $recovery_amount recovery_amount
      *
      * @return $this
      */
-    public function setRecoveryAmount($recovery_amount)
-    {
+    public function setRecoveryAmount($recovery_amount) {
         $this->container['recovery_amount'] = $recovery_amount;
 
         return $this;
@@ -228,22 +216,20 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
     /**
      * Gets original_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getOriginalAmount()
-    {
+    public function getOriginalAmount() {
         return $this->container['original_amount'];
     }
 
     /**
      * Sets original_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $original_amount original_amount
+     * @param Currency $original_amount original_amount
      *
      * @return $this
      */
-    public function setOriginalAmount($original_amount)
-    {
+    public function setOriginalAmount($original_amount) {
         $this->container['original_amount'] = $original_amount;
 
         return $this;
@@ -252,22 +238,20 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
     /**
      * Gets group_begin_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getGroupBeginDate()
-    {
+    public function getGroupBeginDate() {
         return $this->container['group_begin_date'];
     }
 
     /**
      * Sets group_begin_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $group_begin_date group_begin_date
+     * @param DateTime $group_begin_date group_begin_date
      *
      * @return $this
      */
-    public function setGroupBeginDate($group_begin_date)
-    {
+    public function setGroupBeginDate($group_begin_date) {
         $this->container['group_begin_date'] = $group_begin_date;
 
         return $this;
@@ -276,22 +260,20 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
     /**
      * Gets group_end_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getGroupEndDate()
-    {
+    public function getGroupEndDate() {
         return $this->container['group_end_date'];
     }
 
     /**
      * Sets group_end_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $group_end_date group_end_date
+     * @param DateTime $group_end_date group_end_date
      *
      * @return $this
      */
-    public function setGroupEndDate($group_end_date)
-    {
+    public function setGroupEndDate($group_end_date) {
         $this->container['group_end_date'] = $group_end_date;
 
         return $this;
@@ -304,8 +286,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +297,19 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +324,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +333,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

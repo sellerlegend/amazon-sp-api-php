@@ -15,18 +15,16 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaSmallAndLight;
 
 /**
  * SmallAndLightEligibilityStatus Class Doc Comment.
  *
-
  * @description The Small and Light eligibility status of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SmallAndLightEligibilityStatus
-{
+class SmallAndLightEligibilityStatus {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class SmallAndLightEligibilityStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::ELIGIBLE,
-self::NOT_ELIGIBLE,        ];
+            self::NOT_ELIGIBLE,];
     }
 }

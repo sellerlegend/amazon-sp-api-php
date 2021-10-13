@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SAFETReimbursementItem Class Doc Comment.
  *
-
  * @description An item from a SAFE-T claim reimbursement.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SAFETReimbursementItem implements ModelInterface, ArrayAccess
-{
+class SAFETReimbursementItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'item_charge_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
-'product_description' => 'string',
-'quantity' => 'string',    ];
+        'item_charge_list'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList',
+        'product_description' => 'string',
+        'quantity'            => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'item_charge_list' => null,
-'product_description' => null,
-'quantity' => null,    ];
+        'item_charge_list'    => null,
+        'product_description' => null,
+        'quantity'            => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'item_charge_list' => 'itemChargeList',
-'product_description' => 'productDescription',
-'quantity' => 'quantity',    ];
+        'item_charge_list'    => 'itemChargeList',
+        'product_description' => 'productDescription',
+        'quantity'            => 'quantity',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'item_charge_list' => 'setItemChargeList',
-'product_description' => 'setProductDescription',
-'quantity' => 'setQuantity',    ];
+        'item_charge_list'    => 'setItemChargeList',
+        'product_description' => 'setProductDescription',
+        'quantity'            => 'setQuantity',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'item_charge_list' => 'getItemChargeList',
-'product_description' => 'getProductDescription',
-'quantity' => 'getQuantity',    ];
+        'item_charge_list'    => 'getItemChargeList',
+        'product_description' => 'getProductDescription',
+        'quantity'            => 'getQuantity',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['item_charge_list'] = isset($data['item_charge_list']) ? $data['item_charge_list'] : null;
         $this->container['product_description'] = isset($data['product_description']) ? $data['product_description'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
@@ -177,8 +168,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,30 +180,27 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets item_charge_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList
+     * @return ChargeComponentList
      */
-    public function getItemChargeList()
-    {
+    public function getItemChargeList() {
         return $this->container['item_charge_list'];
     }
 
     /**
      * Sets item_charge_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeComponentList $item_charge_list item_charge_list
+     * @param ChargeComponentList $item_charge_list item_charge_list
      *
      * @return $this
      */
-    public function setItemChargeList($item_charge_list)
-    {
+    public function setItemChargeList($item_charge_list) {
         $this->container['item_charge_list'] = $item_charge_list;
 
         return $this;
@@ -224,8 +211,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProductDescription()
-    {
+    public function getProductDescription() {
         return $this->container['product_description'];
     }
 
@@ -236,8 +222,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProductDescription($product_description)
-    {
+    public function setProductDescription($product_description) {
         $this->container['product_description'] = $product_description;
 
         return $this;
@@ -248,8 +233,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
@@ -260,8 +244,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -274,8 +257,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

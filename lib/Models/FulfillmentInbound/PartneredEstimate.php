@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PartneredEstimate Class Doc Comment.
  *
-
  * @description The estimated shipping cost for a shipment using an Amazon-partnered carrier.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PartneredEstimate implements ModelInterface, ArrayAccess
-{
+class PartneredEstimate implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount',
-'confirm_deadline' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType',
-'void_deadline' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType',    ];
+        'amount'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount',
+        'confirm_deadline' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType',
+        'void_deadline'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amount' => null,
-'confirm_deadline' => null,
-'void_deadline' => null,    ];
+        'amount'           => null,
+        'confirm_deadline' => null,
+        'void_deadline'    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'Amount',
-'confirm_deadline' => 'ConfirmDeadline',
-'void_deadline' => 'VoidDeadline',    ];
+        'amount'           => 'Amount',
+        'confirm_deadline' => 'ConfirmDeadline',
+        'void_deadline'    => 'VoidDeadline',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-'confirm_deadline' => 'setConfirmDeadline',
-'void_deadline' => 'setVoidDeadline',    ];
+        'amount'           => 'setAmount',
+        'confirm_deadline' => 'setConfirmDeadline',
+        'void_deadline'    => 'setVoidDeadline',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-'confirm_deadline' => 'getConfirmDeadline',
-'void_deadline' => 'getVoidDeadline',    ];
+        'amount'           => 'getAmount',
+        'confirm_deadline' => 'getConfirmDeadline',
+        'void_deadline'    => 'getVoidDeadline',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['confirm_deadline'] = isset($data['confirm_deadline']) ? $data['confirm_deadline'] : null;
         $this->container['void_deadline'] = isset($data['void_deadline']) ? $data['void_deadline'] : null;
@@ -177,8 +168,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['amount']) {
@@ -194,30 +184,27 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount
+     * @return Amount
      */
-    public function getAmount()
-    {
+    public function getAmount() {
         return $this->container['amount'];
     }
 
     /**
      * Sets amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount $amount amount
+     * @param Amount $amount amount
      *
      * @return $this
      */
-    public function setAmount($amount)
-    {
+    public function setAmount($amount) {
         $this->container['amount'] = $amount;
 
         return $this;
@@ -226,22 +213,20 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
     /**
      * Gets confirm_deadline.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType
+     * @return TimeStampStringType
      */
-    public function getConfirmDeadline()
-    {
+    public function getConfirmDeadline() {
         return $this->container['confirm_deadline'];
     }
 
     /**
      * Sets confirm_deadline.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType $confirm_deadline confirm_deadline
+     * @param TimeStampStringType $confirm_deadline confirm_deadline
      *
      * @return $this
      */
-    public function setConfirmDeadline($confirm_deadline)
-    {
+    public function setConfirmDeadline($confirm_deadline) {
         $this->container['confirm_deadline'] = $confirm_deadline;
 
         return $this;
@@ -250,22 +235,20 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
     /**
      * Gets void_deadline.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType
+     * @return TimeStampStringType
      */
-    public function getVoidDeadline()
-    {
+    public function getVoidDeadline() {
         return $this->container['void_deadline'];
     }
 
     /**
      * Sets void_deadline.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TimeStampStringType $void_deadline void_deadline
+     * @param TimeStampStringType $void_deadline void_deadline
      *
      * @return $this
      */
-    public function setVoidDeadline($void_deadline)
-    {
+    public function setVoidDeadline($void_deadline) {
         $this->container['void_deadline'] = $void_deadline;
 
         return $this;
@@ -278,8 +261,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -290,21 +272,19 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -319,8 +299,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -329,8 +308,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

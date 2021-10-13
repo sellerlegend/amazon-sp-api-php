@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OfferDetail Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OfferDetail implements ModelInterface, ArrayAccess
-{
+class OfferDetail implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,17 +42,17 @@ class OfferDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'my_offer' => 'bool',
-'sub_condition' => 'string',
-'seller_feedback_rating' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\SellerFeedbackType',
-'shipping_time' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\DetailedShippingTimeType',
-'listing_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'points' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Points',
-'shipping' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'ships_from' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ShipsFromType',
-'is_fulfilled_by_amazon' => 'bool',
-'is_buy_box_winner' => 'bool',
-'is_featured_merchant' => 'bool',    ];
+        'my_offer'               => 'bool',
+        'sub_condition'          => 'string',
+        'seller_feedback_rating' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\SellerFeedbackType',
+        'shipping_time'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\DetailedShippingTimeType',
+        'listing_price'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'points'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\Points',
+        'shipping'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'ships_from'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\ShipsFromType',
+        'is_fulfilled_by_amazon' => 'bool',
+        'is_buy_box_winner'      => 'bool',
+        'is_featured_merchant'   => 'bool',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -61,25 +60,24 @@ class OfferDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'my_offer' => null,
-'sub_condition' => null,
-'seller_feedback_rating' => null,
-'shipping_time' => null,
-'listing_price' => null,
-'points' => null,
-'shipping' => null,
-'ships_from' => null,
-'is_fulfilled_by_amazon' => null,
-'is_buy_box_winner' => null,
-'is_featured_merchant' => null,    ];
+        'my_offer'               => null,
+        'sub_condition'          => null,
+        'seller_feedback_rating' => null,
+        'shipping_time'          => null,
+        'listing_price'          => null,
+        'points'                 => null,
+        'shipping'               => null,
+        'ships_from'             => null,
+        'is_fulfilled_by_amazon' => null,
+        'is_buy_box_winner'      => null,
+        'is_featured_merchant'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -88,8 +86,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -100,17 +97,17 @@ class OfferDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'my_offer' => 'MyOffer',
-'sub_condition' => 'SubCondition',
-'seller_feedback_rating' => 'SellerFeedbackRating',
-'shipping_time' => 'ShippingTime',
-'listing_price' => 'ListingPrice',
-'points' => 'Points',
-'shipping' => 'Shipping',
-'ships_from' => 'ShipsFrom',
-'is_fulfilled_by_amazon' => 'IsFulfilledByAmazon',
-'is_buy_box_winner' => 'IsBuyBoxWinner',
-'is_featured_merchant' => 'IsFeaturedMerchant',    ];
+        'my_offer'               => 'MyOffer',
+        'sub_condition'          => 'SubCondition',
+        'seller_feedback_rating' => 'SellerFeedbackRating',
+        'shipping_time'          => 'ShippingTime',
+        'listing_price'          => 'ListingPrice',
+        'points'                 => 'Points',
+        'shipping'               => 'Shipping',
+        'ships_from'             => 'ShipsFrom',
+        'is_fulfilled_by_amazon' => 'IsFulfilledByAmazon',
+        'is_buy_box_winner'      => 'IsBuyBoxWinner',
+        'is_featured_merchant'   => 'IsFeaturedMerchant',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -118,17 +115,17 @@ class OfferDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'my_offer' => 'setMyOffer',
-'sub_condition' => 'setSubCondition',
-'seller_feedback_rating' => 'setSellerFeedbackRating',
-'shipping_time' => 'setShippingTime',
-'listing_price' => 'setListingPrice',
-'points' => 'setPoints',
-'shipping' => 'setShipping',
-'ships_from' => 'setShipsFrom',
-'is_fulfilled_by_amazon' => 'setIsFulfilledByAmazon',
-'is_buy_box_winner' => 'setIsBuyBoxWinner',
-'is_featured_merchant' => 'setIsFeaturedMerchant',    ];
+        'my_offer'               => 'setMyOffer',
+        'sub_condition'          => 'setSubCondition',
+        'seller_feedback_rating' => 'setSellerFeedbackRating',
+        'shipping_time'          => 'setShippingTime',
+        'listing_price'          => 'setListingPrice',
+        'points'                 => 'setPoints',
+        'shipping'               => 'setShipping',
+        'ships_from'             => 'setShipsFrom',
+        'is_fulfilled_by_amazon' => 'setIsFulfilledByAmazon',
+        'is_buy_box_winner'      => 'setIsBuyBoxWinner',
+        'is_featured_merchant'   => 'setIsFeaturedMerchant',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -136,17 +133,17 @@ class OfferDetail implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'my_offer' => 'getMyOffer',
-'sub_condition' => 'getSubCondition',
-'seller_feedback_rating' => 'getSellerFeedbackRating',
-'shipping_time' => 'getShippingTime',
-'listing_price' => 'getListingPrice',
-'points' => 'getPoints',
-'shipping' => 'getShipping',
-'ships_from' => 'getShipsFrom',
-'is_fulfilled_by_amazon' => 'getIsFulfilledByAmazon',
-'is_buy_box_winner' => 'getIsBuyBoxWinner',
-'is_featured_merchant' => 'getIsFeaturedMerchant',    ];
+        'my_offer'               => 'getMyOffer',
+        'sub_condition'          => 'getSubCondition',
+        'seller_feedback_rating' => 'getSellerFeedbackRating',
+        'shipping_time'          => 'getShippingTime',
+        'listing_price'          => 'getListingPrice',
+        'points'                 => 'getPoints',
+        'shipping'               => 'getShipping',
+        'ships_from'             => 'getShipsFrom',
+        'is_fulfilled_by_amazon' => 'getIsFulfilledByAmazon',
+        'is_buy_box_winner'      => 'getIsBuyBoxWinner',
+        'is_featured_merchant'   => 'getIsFeaturedMerchant',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -154,8 +151,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -164,8 +160,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -174,8 +169,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -184,8 +178,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -202,8 +195,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['my_offer'] = isset($data['my_offer']) ? $data['my_offer'] : null;
         $this->container['sub_condition'] = isset($data['sub_condition']) ? $data['sub_condition'] : null;
         $this->container['seller_feedback_rating'] = isset($data['seller_feedback_rating']) ? $data['seller_feedback_rating'] : null;
@@ -222,8 +214,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['sub_condition']) {
@@ -251,8 +242,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -261,8 +251,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getMyOffer()
-    {
+    public function getMyOffer() {
         return $this->container['my_offer'];
     }
 
@@ -273,8 +262,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMyOffer($my_offer)
-    {
+    public function setMyOffer($my_offer) {
         $this->container['my_offer'] = $my_offer;
 
         return $this;
@@ -285,8 +273,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubCondition()
-    {
+    public function getSubCondition() {
         return $this->container['sub_condition'];
     }
 
@@ -297,8 +284,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubCondition($sub_condition)
-    {
+    public function setSubCondition($sub_condition) {
         $this->container['sub_condition'] = $sub_condition;
 
         return $this;
@@ -307,22 +293,20 @@ class OfferDetail implements ModelInterface, ArrayAccess
     /**
      * Gets seller_feedback_rating.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\SellerFeedbackType
+     * @return SellerFeedbackType
      */
-    public function getSellerFeedbackRating()
-    {
+    public function getSellerFeedbackRating() {
         return $this->container['seller_feedback_rating'];
     }
 
     /**
      * Sets seller_feedback_rating.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\SellerFeedbackType $seller_feedback_rating seller_feedback_rating
+     * @param SellerFeedbackType $seller_feedback_rating seller_feedback_rating
      *
      * @return $this
      */
-    public function setSellerFeedbackRating($seller_feedback_rating)
-    {
+    public function setSellerFeedbackRating($seller_feedback_rating) {
         $this->container['seller_feedback_rating'] = $seller_feedback_rating;
 
         return $this;
@@ -331,22 +315,20 @@ class OfferDetail implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_time.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\DetailedShippingTimeType
+     * @return DetailedShippingTimeType
      */
-    public function getShippingTime()
-    {
+    public function getShippingTime() {
         return $this->container['shipping_time'];
     }
 
     /**
      * Sets shipping_time.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\DetailedShippingTimeType $shipping_time shipping_time
+     * @param DetailedShippingTimeType $shipping_time shipping_time
      *
      * @return $this
      */
-    public function setShippingTime($shipping_time)
-    {
+    public function setShippingTime($shipping_time) {
         $this->container['shipping_time'] = $shipping_time;
 
         return $this;
@@ -355,22 +337,20 @@ class OfferDetail implements ModelInterface, ArrayAccess
     /**
      * Gets listing_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getListingPrice()
-    {
+    public function getListingPrice() {
         return $this->container['listing_price'];
     }
 
     /**
      * Sets listing_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $listing_price listing_price
+     * @param MoneyType $listing_price listing_price
      *
      * @return $this
      */
-    public function setListingPrice($listing_price)
-    {
+    public function setListingPrice($listing_price) {
         $this->container['listing_price'] = $listing_price;
 
         return $this;
@@ -379,22 +359,20 @@ class OfferDetail implements ModelInterface, ArrayAccess
     /**
      * Gets points.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Points
+     * @return Points
      */
-    public function getPoints()
-    {
+    public function getPoints() {
         return $this->container['points'];
     }
 
     /**
      * Sets points.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Points $points points
+     * @param Points $points points
      *
      * @return $this
      */
-    public function setPoints($points)
-    {
+    public function setPoints($points) {
         $this->container['points'] = $points;
 
         return $this;
@@ -403,22 +381,20 @@ class OfferDetail implements ModelInterface, ArrayAccess
     /**
      * Gets shipping.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getShipping()
-    {
+    public function getShipping() {
         return $this->container['shipping'];
     }
 
     /**
      * Sets shipping.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $shipping shipping
+     * @param MoneyType $shipping shipping
      *
      * @return $this
      */
-    public function setShipping($shipping)
-    {
+    public function setShipping($shipping) {
         $this->container['shipping'] = $shipping;
 
         return $this;
@@ -427,22 +403,20 @@ class OfferDetail implements ModelInterface, ArrayAccess
     /**
      * Gets ships_from.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ShipsFromType
+     * @return ShipsFromType
      */
-    public function getShipsFrom()
-    {
+    public function getShipsFrom() {
         return $this->container['ships_from'];
     }
 
     /**
      * Sets ships_from.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ShipsFromType $ships_from ships_from
+     * @param ShipsFromType $ships_from ships_from
      *
      * @return $this
      */
-    public function setShipsFrom($ships_from)
-    {
+    public function setShipsFrom($ships_from) {
         $this->container['ships_from'] = $ships_from;
 
         return $this;
@@ -453,8 +427,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsFulfilledByAmazon()
-    {
+    public function getIsFulfilledByAmazon() {
         return $this->container['is_fulfilled_by_amazon'];
     }
 
@@ -465,8 +438,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsFulfilledByAmazon($is_fulfilled_by_amazon)
-    {
+    public function setIsFulfilledByAmazon($is_fulfilled_by_amazon) {
         $this->container['is_fulfilled_by_amazon'] = $is_fulfilled_by_amazon;
 
         return $this;
@@ -477,8 +449,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsBuyBoxWinner()
-    {
+    public function getIsBuyBoxWinner() {
         return $this->container['is_buy_box_winner'];
     }
 
@@ -489,8 +460,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsBuyBoxWinner($is_buy_box_winner)
-    {
+    public function setIsBuyBoxWinner($is_buy_box_winner) {
         $this->container['is_buy_box_winner'] = $is_buy_box_winner;
 
         return $this;
@@ -501,8 +471,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsFeaturedMerchant()
-    {
+    public function getIsFeaturedMerchant() {
         return $this->container['is_featured_merchant'];
     }
 
@@ -513,8 +482,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsFeaturedMerchant($is_featured_merchant)
-    {
+    public function setIsFeaturedMerchant($is_featured_merchant) {
         $this->container['is_featured_merchant'] = $is_featured_merchant;
 
         return $this;
@@ -527,8 +495,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -539,21 +506,19 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -568,8 +533,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -578,8 +542,7 @@ class OfferDetail implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

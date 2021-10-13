@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * HazmatType Class Doc Comment.
  *
-
  * @description Hazardous materials options for a package. Consult the terms and conditions for each carrier for more information on hazardous materials.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class HazmatType
-{
+class HazmatType {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class HazmatType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::NONE,
-self::LQ_HAZMAT,        ];
+            self::LQ_HAZMAT,];
     }
 }

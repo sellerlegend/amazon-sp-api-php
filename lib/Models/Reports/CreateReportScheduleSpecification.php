@@ -15,19 +15,20 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Reports;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Reports;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateReportScheduleSpecification Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
-{
+class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,11 +44,11 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'report_type' => 'string',
-'marketplace_ids' => 'string[]',
-'report_options' => '\ClouSale\AmazonSellingPartnerAPI\Models\Reports\ReportOptions',
-'period' => 'string',
-'next_report_creation_time' => '\DateTime',    ];
+        'report_type'               => 'string',
+        'marketplace_ids'           => 'string[]',
+        'report_options'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Reports\ReportOptions',
+        'period'                    => 'string',
+        'next_report_creation_time' => '\DateTime',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,19 +56,18 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'report_type' => null,
-'marketplace_ids' => null,
-'report_options' => null,
-'period' => null,
-'next_report_creation_time' => 'date-time',    ];
+        'report_type'               => null,
+        'marketplace_ids'           => null,
+        'report_options'            => null,
+        'period'                    => null,
+        'next_report_creation_time' => 'date-time',];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -76,8 +76,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,11 +87,11 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'report_type' => 'reportType',
-'marketplace_ids' => 'marketplaceIds',
-'report_options' => 'reportOptions',
-'period' => 'period',
-'next_report_creation_time' => 'nextReportCreationTime',    ];
+        'report_type'               => 'reportType',
+        'marketplace_ids'           => 'marketplaceIds',
+        'report_options'            => 'reportOptions',
+        'period'                    => 'period',
+        'next_report_creation_time' => 'nextReportCreationTime',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,11 +99,11 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'report_type' => 'setReportType',
-'marketplace_ids' => 'setMarketplaceIds',
-'report_options' => 'setReportOptions',
-'period' => 'setPeriod',
-'next_report_creation_time' => 'setNextReportCreationTime',    ];
+        'report_type'               => 'setReportType',
+        'marketplace_ids'           => 'setMarketplaceIds',
+        'report_options'            => 'setReportOptions',
+        'period'                    => 'setPeriod',
+        'next_report_creation_time' => 'setNextReportCreationTime',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,11 +111,11 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'report_type' => 'getReportType',
-'marketplace_ids' => 'getMarketplaceIds',
-'report_options' => 'getReportOptions',
-'period' => 'getPeriod',
-'next_report_creation_time' => 'getNextReportCreationTime',    ];
+        'report_type'               => 'getReportType',
+        'marketplace_ids'           => 'getMarketplaceIds',
+        'report_options'            => 'getReportOptions',
+        'period'                    => 'getPeriod',
+        'next_report_creation_time' => 'getNextReportCreationTime',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -124,8 +123,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -134,8 +132,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -144,8 +141,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -154,8 +150,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -183,27 +178,26 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getPeriodAllowableValues()
-    {
+    public function getPeriodAllowableValues() {
         return [
             self::PERIOD_PT5_M,
-self::PERIOD_PT15_M,
-self::PERIOD_PT30_M,
-self::PERIOD_PT1_H,
-self::PERIOD_PT2_H,
-self::PERIOD_PT4_H,
-self::PERIOD_PT8_H,
-self::PERIOD_PT12_H,
-self::PERIOD_P1_D,
-self::PERIOD_P2_D,
-self::PERIOD_P3_D,
-self::PERIOD_PT84_H,
-self::PERIOD_P7_D,
-self::PERIOD_P14_D,
-self::PERIOD_P15_D,
-self::PERIOD_P18_D,
-self::PERIOD_P30_D,
-self::PERIOD_P1_M,        ];
+            self::PERIOD_PT15_M,
+            self::PERIOD_PT30_M,
+            self::PERIOD_PT1_H,
+            self::PERIOD_PT2_H,
+            self::PERIOD_PT4_H,
+            self::PERIOD_PT8_H,
+            self::PERIOD_PT12_H,
+            self::PERIOD_P1_D,
+            self::PERIOD_P2_D,
+            self::PERIOD_P3_D,
+            self::PERIOD_PT84_H,
+            self::PERIOD_P7_D,
+            self::PERIOD_P14_D,
+            self::PERIOD_P15_D,
+            self::PERIOD_P18_D,
+            self::PERIOD_P30_D,
+            self::PERIOD_P1_M,];
     }
 
     /**
@@ -219,8 +213,7 @@ self::PERIOD_P1_M,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['report_type'] = isset($data['report_type']) ? $data['report_type'] : null;
         $this->container['marketplace_ids'] = isset($data['marketplace_ids']) ? $data['marketplace_ids'] : null;
         $this->container['report_options'] = isset($data['report_options']) ? $data['report_options'] : null;
@@ -233,8 +226,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['report_type']) {
@@ -263,8 +255,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -273,8 +264,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return string
      */
-    public function getReportType()
-    {
+    public function getReportType() {
         return $this->container['report_type'];
     }
 
@@ -285,8 +275,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return $this
      */
-    public function setReportType($report_type)
-    {
+    public function setReportType($report_type) {
         $this->container['report_type'] = $report_type;
 
         return $this;
@@ -297,8 +286,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return string[]
      */
-    public function getMarketplaceIds()
-    {
+    public function getMarketplaceIds() {
         return $this->container['marketplace_ids'];
     }
 
@@ -309,8 +297,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return $this
      */
-    public function setMarketplaceIds($marketplace_ids)
-    {
+    public function setMarketplaceIds($marketplace_ids) {
         $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;
@@ -319,22 +306,20 @@ self::PERIOD_P1_M,        ];
     /**
      * Gets report_options.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Reports\ReportOptions
+     * @return ReportOptions
      */
-    public function getReportOptions()
-    {
+    public function getReportOptions() {
         return $this->container['report_options'];
     }
 
     /**
      * Sets report_options.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Reports\ReportOptions $report_options report_options
+     * @param ReportOptions $report_options report_options
      *
      * @return $this
      */
-    public function setReportOptions($report_options)
-    {
+    public function setReportOptions($report_options) {
         $this->container['report_options'] = $report_options;
 
         return $this;
@@ -345,8 +330,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return string
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->container['period'];
     }
 
@@ -357,11 +341,10 @@ self::PERIOD_P1_M,        ];
      *
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $allowedValues = $this->getPeriodAllowableValues();
         if (!in_array($period, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'period', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'period', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['period'] = $period;
 
@@ -371,22 +354,20 @@ self::PERIOD_P1_M,        ];
     /**
      * Gets next_report_creation_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getNextReportCreationTime()
-    {
+    public function getNextReportCreationTime() {
         return $this->container['next_report_creation_time'];
     }
 
     /**
      * Sets next_report_creation_time.
      *
-     * @param \DateTime $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
+     * @param DateTime $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
      *
      * @return $this
      */
-    public function setNextReportCreationTime($next_report_creation_time)
-    {
+    public function setNextReportCreationTime($next_report_creation_time) {
         $this->container['next_report_creation_time'] = $next_report_creation_time;
 
         return $this;
@@ -399,8 +380,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -411,21 +391,19 @@ self::PERIOD_P1_M,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -440,8 +418,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -450,8 +427,7 @@ self::PERIOD_P1_M,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

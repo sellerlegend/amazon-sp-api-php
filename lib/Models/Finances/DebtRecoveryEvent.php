@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * DebtRecoveryEvent Class Doc Comment.
  *
-
  * @description A debt payment or debt adjustment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class DebtRecoveryEvent implements ModelInterface, ArrayAccess
-{
+class DebtRecoveryEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'debt_recovery_type' => 'string',
-'recovery_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'over_payment_credit' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'debt_recovery_item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\DebtRecoveryItemList',
-'charge_instrument_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeInstrumentList',    ];
+        'debt_recovery_type'      => 'string',
+        'recovery_amount'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'over_payment_credit'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'debt_recovery_item_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\DebtRecoveryItemList',
+        'charge_instrument_list'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\ChargeInstrumentList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'debt_recovery_type' => null,
-'recovery_amount' => null,
-'over_payment_credit' => null,
-'debt_recovery_item_list' => null,
-'charge_instrument_list' => null,    ];
+        'debt_recovery_type'      => null,
+        'recovery_amount'         => null,
+        'over_payment_credit'     => null,
+        'debt_recovery_item_list' => null,
+        'charge_instrument_list'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'debt_recovery_type' => 'DebtRecoveryType',
-'recovery_amount' => 'RecoveryAmount',
-'over_payment_credit' => 'OverPaymentCredit',
-'debt_recovery_item_list' => 'DebtRecoveryItemList',
-'charge_instrument_list' => 'ChargeInstrumentList',    ];
+        'debt_recovery_type'      => 'DebtRecoveryType',
+        'recovery_amount'         => 'RecoveryAmount',
+        'over_payment_credit'     => 'OverPaymentCredit',
+        'debt_recovery_item_list' => 'DebtRecoveryItemList',
+        'charge_instrument_list'  => 'ChargeInstrumentList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'debt_recovery_type' => 'setDebtRecoveryType',
-'recovery_amount' => 'setRecoveryAmount',
-'over_payment_credit' => 'setOverPaymentCredit',
-'debt_recovery_item_list' => 'setDebtRecoveryItemList',
-'charge_instrument_list' => 'setChargeInstrumentList',    ];
+        'debt_recovery_type'      => 'setDebtRecoveryType',
+        'recovery_amount'         => 'setRecoveryAmount',
+        'over_payment_credit'     => 'setOverPaymentCredit',
+        'debt_recovery_item_list' => 'setDebtRecoveryItemList',
+        'charge_instrument_list'  => 'setChargeInstrumentList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'debt_recovery_type' => 'getDebtRecoveryType',
-'recovery_amount' => 'getRecoveryAmount',
-'over_payment_credit' => 'getOverPaymentCredit',
-'debt_recovery_item_list' => 'getDebtRecoveryItemList',
-'charge_instrument_list' => 'getChargeInstrumentList',    ];
+        'debt_recovery_type'      => 'getDebtRecoveryType',
+        'recovery_amount'         => 'getRecoveryAmount',
+        'over_payment_credit'     => 'getOverPaymentCredit',
+        'debt_recovery_item_list' => 'getDebtRecoveryItemList',
+        'charge_instrument_list'  => 'getChargeInstrumentList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['debt_recovery_type'] = isset($data['debt_recovery_type']) ? $data['debt_recovery_type'] : null;
         $this->container['recovery_amount'] = isset($data['recovery_amount']) ? $data['recovery_amount'] : null;
         $this->container['over_payment_credit'] = isset($data['over_payment_credit']) ? $data['over_payment_credit'] : null;
@@ -189,8 +180,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -202,8 +192,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -212,8 +201,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDebtRecoveryType()
-    {
+    public function getDebtRecoveryType() {
         return $this->container['debt_recovery_type'];
     }
 
@@ -224,8 +212,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDebtRecoveryType($debt_recovery_type)
-    {
+    public function setDebtRecoveryType($debt_recovery_type) {
         $this->container['debt_recovery_type'] = $debt_recovery_type;
 
         return $this;
@@ -234,22 +221,20 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
     /**
      * Gets recovery_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getRecoveryAmount()
-    {
+    public function getRecoveryAmount() {
         return $this->container['recovery_amount'];
     }
 
     /**
      * Sets recovery_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $recovery_amount recovery_amount
+     * @param Currency $recovery_amount recovery_amount
      *
      * @return $this
      */
-    public function setRecoveryAmount($recovery_amount)
-    {
+    public function setRecoveryAmount($recovery_amount) {
         $this->container['recovery_amount'] = $recovery_amount;
 
         return $this;
@@ -258,22 +243,20 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
     /**
      * Gets over_payment_credit.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getOverPaymentCredit()
-    {
+    public function getOverPaymentCredit() {
         return $this->container['over_payment_credit'];
     }
 
     /**
      * Sets over_payment_credit.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $over_payment_credit over_payment_credit
+     * @param Currency $over_payment_credit over_payment_credit
      *
      * @return $this
      */
-    public function setOverPaymentCredit($over_payment_credit)
-    {
+    public function setOverPaymentCredit($over_payment_credit) {
         $this->container['over_payment_credit'] = $over_payment_credit;
 
         return $this;
@@ -282,22 +265,20 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
     /**
      * Gets debt_recovery_item_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DebtRecoveryItemList
+     * @return DebtRecoveryItemList
      */
-    public function getDebtRecoveryItemList()
-    {
+    public function getDebtRecoveryItemList() {
         return $this->container['debt_recovery_item_list'];
     }
 
     /**
      * Sets debt_recovery_item_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DebtRecoveryItemList $debt_recovery_item_list debt_recovery_item_list
+     * @param DebtRecoveryItemList $debt_recovery_item_list debt_recovery_item_list
      *
      * @return $this
      */
-    public function setDebtRecoveryItemList($debt_recovery_item_list)
-    {
+    public function setDebtRecoveryItemList($debt_recovery_item_list) {
         $this->container['debt_recovery_item_list'] = $debt_recovery_item_list;
 
         return $this;
@@ -306,22 +287,20 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
     /**
      * Gets charge_instrument_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeInstrumentList
+     * @return ChargeInstrumentList
      */
-    public function getChargeInstrumentList()
-    {
+    public function getChargeInstrumentList() {
         return $this->container['charge_instrument_list'];
     }
 
     /**
      * Sets charge_instrument_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\ChargeInstrumentList $charge_instrument_list charge_instrument_list
+     * @param ChargeInstrumentList $charge_instrument_list charge_instrument_list
      *
      * @return $this
      */
-    public function setChargeInstrumentList($charge_instrument_list)
-    {
+    public function setChargeInstrumentList($charge_instrument_list) {
         $this->container['charge_instrument_list'] = $charge_instrument_list;
 
         return $this;
@@ -334,8 +313,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -346,21 +324,19 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -375,8 +351,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -385,8 +360,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ItemDeliveryPromise Class Doc Comment.
  *
-
  * @description Promised delivery information for the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ItemDeliveryPromise implements ModelInterface, ArrayAccess
-{
+class ItemDeliveryPromise implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +46,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'start_time' => '\DateTime',
-'end_time' => '\DateTime',    ];
+        'end_time'   => '\DateTime',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,14 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'start_time' => 'date-time',
-'end_time' => 'date-time',    ];
+        'end_time'   => 'date-time',];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +83,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'start_time' => 'startTime',
-'end_time' => 'endTime',    ];
+        'end_time'   => 'endTime',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +92,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'start_time' => 'setStartTime',
-'end_time' => 'setEndTime',    ];
+        'end_time'   => 'setEndTime',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +101,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'start_time' => 'getStartTime',
-'end_time' => 'getEndTime',    ];
+        'end_time'   => 'getEndTime',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['start_time'] = isset($data['start_time']) ? $data['start_time'] : null;
         $this->container['end_time'] = isset($data['end_time']) ? $data['end_time'] : null;
     }
@@ -171,8 +163,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +175,27 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getStartTime()
-    {
+    public function getStartTime() {
         return $this->container['start_time'];
     }
 
     /**
      * Sets start_time.
      *
-     * @param \DateTime $start_time the date and time of the start of the promised delivery window, in ISO 8601 format
+     * @param DateTime $start_time the date and time of the start of the promised delivery window, in ISO 8601 format
      *
      * @return $this
      */
-    public function setStartTime($start_time)
-    {
+    public function setStartTime($start_time) {
         $this->container['start_time'] = $start_time;
 
         return $this;
@@ -216,22 +204,20 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
     /**
      * Gets end_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEndTime()
-    {
+    public function getEndTime() {
         return $this->container['end_time'];
     }
 
     /**
      * Sets end_time.
      *
-     * @param \DateTime $end_time the date and time of the end of the promised delivery window, in ISO 8601 format
+     * @param DateTime $end_time the date and time of the end of the promised delivery window, in ISO 8601 format
      *
      * @return $this
      */
-    public function setEndTime($end_time)
-    {
+    public function setEndTime($end_time) {
         $this->container['end_time'] = $end_time;
 
         return $this;
@@ -244,8 +230,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +241,19 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +268,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +277,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

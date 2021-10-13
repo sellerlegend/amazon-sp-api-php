@@ -13,35 +13,44 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetLabelsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPrepInstructionsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetTransportDetailsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\VoidTransportResponse;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\EstimateTransportResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetInboundGuidanceResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetLabelsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPrepInstructionsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetTransportDetailsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\VoidTransportResponse;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FbaInboundApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FbaInboundApi
-{
+class FbaInboundApi {
     use SellingPartnerApiRequest;
 
     /**
@@ -59,8 +68,7 @@ class FbaInboundApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -69,26 +77,24 @@ class FbaInboundApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
     /**
      * Operation confirmPreorder.
      *
-     * @param string    $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \DateTime $need_by_date   Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
-     * @param string    $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param DateTime $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return ConfirmPreorderResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse
+     * @throws InvalidArgumentException
      */
-    public function confirmPreorder($shipment_id, $need_by_date, $marketplace_id)
-    {
-        list($response) = $this->confirmPreorderWithHttpInfo($shipment_id, $need_by_date, $marketplace_id);
+    public function confirmPreorder($shipment_id, $need_by_date, $marketplace_id) {
+        [$response] = $this->confirmPreorderWithHttpInfo($shipment_id, $need_by_date, $marketplace_id);
 
         return $response;
     }
@@ -96,17 +102,16 @@ class FbaInboundApi
     /**
      * Operation confirmPreorderWithHttpInfo.
      *
-     * @param string    $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \DateTime $need_by_date   Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
-     * @param string    $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param DateTime $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function confirmPreorderWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
-    {
+    public function confirmPreorderWithHttpInfo($shipment_id, $need_by_date, $marketplace_id) {
         $request = $this->confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id);
 
         return $this->sendRequest($request, ConfirmPreorderResponse::class);
@@ -115,16 +120,15 @@ class FbaInboundApi
     /**
      * Operation confirmPreorderAsync.
      *
-     * @param string    $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \DateTime $need_by_date   Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
-     * @param string    $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param DateTime $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function confirmPreorderAsync($shipment_id, $need_by_date, $marketplace_id)
-    {
+    public function confirmPreorderAsync($shipment_id, $need_by_date, $marketplace_id) {
         return $this->confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
             ->then(
                 function ($response) {
@@ -136,17 +140,16 @@ class FbaInboundApi
     /**
      * Operation confirmPreorderAsyncWithHttpInfo.
      *
-     * @param string    $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \DateTime $need_by_date   Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
-     * @param string    $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param DateTime $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse';
+    public function confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmPreorderResponse';
         $request = $this->confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id);
 
         return $this->sendRequestAsync($request, ConfirmPreorderResponse::class);
@@ -155,27 +158,26 @@ class FbaInboundApi
     /**
      * Create request for operation 'confirmPreorder'.
      *
-     * @param string    $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \DateTime $need_by_date   Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
-     * @param string    $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param DateTime $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id)
-    {
+    protected function confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling confirmPreorder');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling confirmPreorder');
         }
         // verify the required parameter 'need_by_date' is set
         if (null === $need_by_date || (is_array($need_by_date) && 0 === count($need_by_date))) {
-            throw new \InvalidArgumentException('Missing the required parameter $need_by_date when calling confirmPreorder');
+            throw new InvalidArgumentException('Missing the required parameter $need_by_date when calling confirmPreorder');
         }
         // verify the required parameter 'marketplace_id' is set
         if (null === $marketplace_id || (is_array($marketplace_id) && 0 === count($marketplace_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_id when calling confirmPreorder');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_id when calling confirmPreorder');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/preorder/confirm';
@@ -197,7 +199,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -211,14 +213,13 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return ConfirmTransportResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse
+     * @throws InvalidArgumentException
      */
-    public function confirmTransport($shipment_id)
-    {
-        list($response) = $this->confirmTransportWithHttpInfo($shipment_id);
+    public function confirmTransport($shipment_id) {
+        [$response] = $this->confirmTransportWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -228,13 +229,12 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function confirmTransportWithHttpInfo($shipment_id)
-    {
+    public function confirmTransportWithHttpInfo($shipment_id) {
         $request = $this->confirmTransportRequest($shipment_id);
 
         return $this->sendRequest($request, ConfirmTransportResponse::class);
@@ -245,12 +245,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function confirmTransportAsync($shipment_id)
-    {
+    public function confirmTransportAsync($shipment_id) {
         return $this->confirmTransportAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -264,13 +263,12 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function confirmTransportAsyncWithHttpInfo($shipment_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse';
+    public function confirmTransportAsyncWithHttpInfo($shipment_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ConfirmTransportResponse';
         $request = $this->confirmTransportRequest($shipment_id);
 
         return $this->sendRequestAsync($request, ConfirmTransportResponse::class);
@@ -281,15 +279,14 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function confirmTransportRequest($shipment_id)
-    {
+    protected function confirmTransportRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling confirmTransport');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling confirmTransport');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/transport/confirm';
@@ -302,7 +299,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -314,17 +311,16 @@ class FbaInboundApi
     /**
      * Operation createInboundShipment.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        body (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return InboundShipmentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse
+     * @throws InvalidArgumentException
      */
-    public function createInboundShipment($body, $shipment_id)
-    {
-        list($response) = $this->createInboundShipmentWithHttpInfo($body, $shipment_id);
+    public function createInboundShipment($body, $shipment_id) {
+        [$response] = $this->createInboundShipmentWithHttpInfo($body, $shipment_id);
 
         return $response;
     }
@@ -332,17 +328,16 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createInboundShipmentWithHttpInfo($body, $shipment_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse';
+    public function createInboundShipmentWithHttpInfo($body, $shipment_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse';
         $request = $this->createInboundShipmentRequest($body, $shipment_id);
 
         return $this->sendRequest($request, InboundShipmentResponse::class);
@@ -351,15 +346,14 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInboundShipmentAsync($body, $shipment_id)
-    {
+    public function createInboundShipmentAsync($body, $shipment_id) {
         return $this->createInboundShipmentAsyncWithHttpInfo($body, $shipment_id)
             ->then(
                 function ($response) {
@@ -371,16 +365,15 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInboundShipmentAsyncWithHttpInfo($body, $shipment_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse';
+    public function createInboundShipmentAsyncWithHttpInfo($body, $shipment_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse';
         $request = $this->createInboundShipmentRequest($body, $shipment_id);
 
         return $this->sendRequestAsync($request, InboundShipmentResponse::class);
@@ -389,22 +382,21 @@ class FbaInboundApi
     /**
      * Create request for operation 'createInboundShipment'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createInboundShipmentRequest($body, $shipment_id)
-    {
+    protected function createInboundShipmentRequest($body, $shipment_id) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createInboundShipment');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling createInboundShipment');
         }
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling createInboundShipment');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling createInboundShipment');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}';
@@ -417,7 +409,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -429,16 +421,15 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlan.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanRequest $body body (required)
+     * @param CreateInboundShipmentPlanRequest $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CreateInboundShipmentPlanResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanResponse
+     * @throws InvalidArgumentException
      */
-    public function createInboundShipmentPlan($body)
-    {
-        list($response) = $this->createInboundShipmentPlanWithHttpInfo($body);
+    public function createInboundShipmentPlan($body) {
+        [$response] = $this->createInboundShipmentPlanWithHttpInfo($body);
 
         return $response;
     }
@@ -446,15 +437,14 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlanWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanRequest $body (required)
+     * @param CreateInboundShipmentPlanRequest $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createInboundShipmentPlanWithHttpInfo($body)
-    {
+    public function createInboundShipmentPlanWithHttpInfo($body) {
         $request = $this->createInboundShipmentPlanRequest($body);
 
         return $this->sendRequest($request, CreateInboundShipmentPlanResponse::class);
@@ -463,14 +453,13 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlanAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanRequest $body (required)
+     * @param CreateInboundShipmentPlanRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInboundShipmentPlanAsync($body)
-    {
+    public function createInboundShipmentPlanAsync($body) {
         return $this->createInboundShipmentPlanAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -482,14 +471,13 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlanAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanRequest $body (required)
+     * @param CreateInboundShipmentPlanRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInboundShipmentPlanAsyncWithHttpInfo($body)
-    {
+    public function createInboundShipmentPlanAsyncWithHttpInfo($body) {
         $request = $this->createInboundShipmentPlanRequest($body);
 
         return $this->sendRequestAsync($request, CreateInboundShipmentPlanResponse::class);
@@ -498,17 +486,16 @@ class FbaInboundApi
     /**
      * Create request for operation 'createInboundShipmentPlan'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\CreateInboundShipmentPlanRequest $body (required)
+     * @param CreateInboundShipmentPlanRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createInboundShipmentPlanRequest($body)
-    {
+    protected function createInboundShipmentPlanRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createInboundShipmentPlan');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling createInboundShipmentPlan');
         }
 
         $resourcePath = '/fba/inbound/v0/plans';
@@ -526,14 +513,13 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return EstimateTransportResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\EstimateTransportResponse
+     * @throws InvalidArgumentException
      */
-    public function estimateTransport($shipment_id)
-    {
-        list($response) = $this->estimateTransportWithHttpInfo($shipment_id);
+    public function estimateTransport($shipment_id) {
+        [$response] = $this->estimateTransportWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -543,14 +529,13 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\EstimateTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\EstimateTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function estimateTransportWithHttpInfo($shipment_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\EstimateTransportResponse';
+    public function estimateTransportWithHttpInfo($shipment_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\EstimateTransportResponse';
         $request = $this->estimateTransportRequest($shipment_id);
 
         return $this->sendRequest($request, EstimateTransportResponse::class);
@@ -561,12 +546,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function estimateTransportAsync($shipment_id)
-    {
+    public function estimateTransportAsync($shipment_id) {
         return $this->estimateTransportAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -580,12 +564,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function estimateTransportAsyncWithHttpInfo($shipment_id)
-    {
+    public function estimateTransportAsyncWithHttpInfo($shipment_id) {
         $request = $this->estimateTransportRequest($shipment_id);
 
         return $this->sendRequestAsync($request, EstimateTransportResponse::class);
@@ -596,15 +579,14 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function estimateTransportRequest($shipment_id)
-    {
+    protected function estimateTransportRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling estimateTransport');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling estimateTransport');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/transport/estimate';
@@ -617,7 +599,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -631,14 +613,13 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetBillOfLadingResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse
+     * @throws InvalidArgumentException
      */
-    public function getBillOfLading($shipment_id)
-    {
-        list($response) = $this->getBillOfLadingWithHttpInfo($shipment_id);
+    public function getBillOfLading($shipment_id) {
+        [$response] = $this->getBillOfLadingWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -648,13 +629,12 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getBillOfLadingWithHttpInfo($shipment_id)
-    {
+    public function getBillOfLadingWithHttpInfo($shipment_id) {
         $request = $this->getBillOfLadingRequest($shipment_id);
 
         return $this->sendRequest($request, GetBillOfLadingResponse::class);
@@ -665,12 +645,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBillOfLadingAsync($shipment_id)
-    {
+    public function getBillOfLadingAsync($shipment_id) {
         return $this->getBillOfLadingAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -684,13 +663,12 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBillOfLadingAsyncWithHttpInfo($shipment_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse';
+    public function getBillOfLadingAsyncWithHttpInfo($shipment_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetBillOfLadingResponse';
         $request = $this->getBillOfLadingRequest($shipment_id);
 
         return $this->sendRequestAsync($request, GetBillOfLadingResponse::class);
@@ -701,15 +679,14 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getBillOfLadingRequest($shipment_id)
-    {
+    protected function getBillOfLadingRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling getBillOfLading');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling getBillOfLading');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/billOfLading';
@@ -722,7 +699,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -734,18 +711,17 @@ class FbaInboundApi
     /**
      * Operation getInboundGuidance.
      *
-     * @param string   $marketplace_id  A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param string[] $asin_list       A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetInboundGuidanceResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetInboundGuidanceResponse
+     * @throws InvalidArgumentException
      */
-    public function getInboundGuidance($marketplace_id, $seller_sku_list = null, $asin_list = null)
-    {
-        list($response) = $this->getInboundGuidanceWithHttpInfo($marketplace_id, $seller_sku_list, $asin_list);
+    public function getInboundGuidance($marketplace_id, $seller_sku_list = null, $asin_list = null) {
+        [$response] = $this->getInboundGuidanceWithHttpInfo($marketplace_id, $seller_sku_list, $asin_list);
 
         return $response;
     }
@@ -753,17 +729,16 @@ class FbaInboundApi
     /**
      * Operation getInboundGuidanceWithHttpInfo.
      *
-     * @param string   $marketplace_id  A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param string[] $asin_list       A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetInboundGuidanceResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetInboundGuidanceResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getInboundGuidanceWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null)
-    {
+    public function getInboundGuidanceWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null) {
         $request = $this->getInboundGuidanceRequest($marketplace_id, $seller_sku_list, $asin_list);
 
         return $this->sendRequest($request, GetInboundGuidanceResponse::class);
@@ -772,16 +747,15 @@ class FbaInboundApi
     /**
      * Operation getInboundGuidanceAsync.
      *
-     * @param string   $marketplace_id  A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param string[] $asin_list       A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundGuidanceAsync($marketplace_id, $seller_sku_list = null, $asin_list = null)
-    {
+    public function getInboundGuidanceAsync($marketplace_id, $seller_sku_list = null, $asin_list = null) {
         return $this->getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list, $asin_list)
             ->then(
                 function ($response) {
@@ -793,16 +767,15 @@ class FbaInboundApi
     /**
      * Operation getInboundGuidanceAsyncWithHttpInfo.
      *
-     * @param string   $marketplace_id  A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param string[] $asin_list       A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null)
-    {
+    public function getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null) {
         $request = $this->getInboundGuidanceRequest($marketplace_id, $seller_sku_list, $asin_list);
 
         return $this->sendRequestAsync($request, GetInboundGuidanceResponse::class);
@@ -811,19 +784,18 @@ class FbaInboundApi
     /**
      * Create request for operation 'getInboundGuidance'.
      *
-     * @param string   $marketplace_id  A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param string[] $asin_list       A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#x27;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getInboundGuidanceRequest($marketplace_id, $seller_sku_list = null, $asin_list = null)
-    {
+    protected function getInboundGuidanceRequest($marketplace_id, $seller_sku_list = null, $asin_list = null) {
         // verify the required parameter 'marketplace_id' is set
         if (null === $marketplace_id || (is_array($marketplace_id) && 0 === count($marketplace_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_id when calling getInboundGuidance');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_id when calling getInboundGuidance');
         }
 
         $resourcePath = '/fba/inbound/v0/itemsGuidance';
@@ -858,21 +830,20 @@ class FbaInboundApi
     /**
      * Operation getLabels.
      *
-     * @param string   $shipment_id             A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param string   $page_type               The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
-     * @param string   $label_type              The type of labels requested. (required)
-     * @param int      $number_of_packages      The number of packages in the shipment. (optional)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
+     * @param string $label_type The type of labels requested. (required)
+     * @param int $number_of_packages The number of packages in the shipment. (optional)
      * @param string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param int      $number_of_pallets       The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetLabelsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetLabelsResponse
+     * @throws InvalidArgumentException
      */
-    public function getLabels($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
-    {
-        list($response) = $this->getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
+    public function getLabels($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null) {
+        [$response] = $this->getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
 
         return $response;
     }
@@ -880,20 +851,19 @@ class FbaInboundApi
     /**
      * Operation getLabelsWithHttpInfo.
      *
-     * @param string   $shipment_id             A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param string   $page_type               The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
-     * @param string   $label_type              The type of labels requested. (required)
-     * @param int      $number_of_packages      The number of packages in the shipment. (optional)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
+     * @param string $label_type The type of labels requested. (required)
+     * @param int $number_of_packages The number of packages in the shipment. (optional)
      * @param string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param int      $number_of_pallets       The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetLabelsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetLabelsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
-    {
+    public function getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null) {
         $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
 
         return $this->sendRequest($request, GetLabelsResponse::class);
@@ -902,19 +872,18 @@ class FbaInboundApi
     /**
      * Operation getLabelsAsync.
      *
-     * @param string   $shipment_id             A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param string   $page_type               The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
-     * @param string   $label_type              The type of labels requested. (required)
-     * @param int      $number_of_packages      The number of packages in the shipment. (optional)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
+     * @param string $label_type The type of labels requested. (required)
+     * @param int $number_of_packages The number of packages in the shipment. (optional)
      * @param string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param int      $number_of_pallets       The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLabelsAsync($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
-    {
+    public function getLabelsAsync($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null) {
         return $this->getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets)
             ->then(
                 function ($response) {
@@ -926,19 +895,18 @@ class FbaInboundApi
     /**
      * Operation getLabelsAsyncWithHttpInfo.
      *
-     * @param string   $shipment_id             A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param string   $page_type               The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
-     * @param string   $label_type              The type of labels requested. (required)
-     * @param int      $number_of_packages      The number of packages in the shipment. (optional)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
+     * @param string $label_type The type of labels requested. (required)
+     * @param int $number_of_packages The number of packages in the shipment. (optional)
      * @param string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param int      $number_of_pallets       The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
-    {
+    public function getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null) {
         $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
 
         return $this->sendRequestAsync($request, GetLabelsResponse::class);
@@ -947,30 +915,29 @@ class FbaInboundApi
     /**
      * Create request for operation 'getLabels'.
      *
-     * @param string   $shipment_id             A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param string   $page_type               The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
-     * @param string   $label_type              The type of labels requested. (required)
-     * @param int      $number_of_packages      The number of packages in the shipment. (optional)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
+     * @param string $label_type The type of labels requested. (required)
+     * @param int $number_of_packages The number of packages in the shipment. (optional)
      * @param string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param int      $number_of_pallets       The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
-    {
+    protected function getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling getLabels');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling getLabels');
         }
         // verify the required parameter 'page_type' is set
         if (null === $page_type || (is_array($page_type) && 0 === count($page_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $page_type when calling getLabels');
+            throw new InvalidArgumentException('Missing the required parameter $page_type when calling getLabels');
         }
         // verify the required parameter 'label_type' is set
         if (null === $label_type || (is_array($label_type) && 0 === count($label_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $label_type when calling getLabels');
+            throw new InvalidArgumentException('Missing the required parameter $label_type when calling getLabels');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/labels';
@@ -1007,7 +974,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -1019,17 +986,16 @@ class FbaInboundApi
     /**
      * Operation getPreorderInfo.
      *
-     * @param string $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetPreorderInfoResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse
+     * @throws InvalidArgumentException
      */
-    public function getPreorderInfo($shipment_id, $marketplace_id)
-    {
-        list($response) = $this->getPreorderInfoWithHttpInfo($shipment_id, $marketplace_id);
+    public function getPreorderInfo($shipment_id, $marketplace_id) {
+        [$response] = $this->getPreorderInfoWithHttpInfo($shipment_id, $marketplace_id);
 
         return $response;
     }
@@ -1037,16 +1003,15 @@ class FbaInboundApi
     /**
      * Operation getPreorderInfoWithHttpInfo.
      *
-     * @param string $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getPreorderInfoWithHttpInfo($shipment_id, $marketplace_id)
-    {
+    public function getPreorderInfoWithHttpInfo($shipment_id, $marketplace_id) {
         $request = $this->getPreorderInfoRequest($shipment_id, $marketplace_id);
 
         return $this->sendRequest($request, GetPreorderInfoResponse::class);
@@ -1055,15 +1020,14 @@ class FbaInboundApi
     /**
      * Operation getPreorderInfoAsync.
      *
-     * @param string $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPreorderInfoAsync($shipment_id, $marketplace_id)
-    {
+    public function getPreorderInfoAsync($shipment_id, $marketplace_id) {
         return $this->getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id)
             ->then(
                 function ($response) {
@@ -1075,16 +1039,15 @@ class FbaInboundApi
     /**
      * Operation getPreorderInfoAsyncWithHttpInfo.
      *
-     * @param string $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id)
-    {
-        $returnType = '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse';
+    public function getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPreorderInfoResponse';
         $request = $this->getPreorderInfoRequest($shipment_id, $marketplace_id);
 
         return $this->sendRequestAsync($request, GetPreorderInfoResponse::class);
@@ -1093,22 +1056,21 @@ class FbaInboundApi
     /**
      * Create request for operation 'getPreorderInfo'.
      *
-     * @param string $shipment_id    A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPreorderInfoRequest($shipment_id, $marketplace_id)
-    {
+    protected function getPreorderInfoRequest($shipment_id, $marketplace_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling getPreorderInfo');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling getPreorderInfo');
         }
         // verify the required parameter 'marketplace_id' is set
         if (null === $marketplace_id || (is_array($marketplace_id) && 0 === count($marketplace_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_id when calling getPreorderInfo');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_id when calling getPreorderInfo');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/preorder';
@@ -1126,7 +1088,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -1138,18 +1100,17 @@ class FbaInboundApi
     /**
      * Operation getPrepInstructions.
      *
-     * @param string   $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param string[] $seller_sku_list      A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param string[] $asin_list            A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
+     * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetPrepInstructionsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPrepInstructionsResponse
+     * @throws InvalidArgumentException
      */
-    public function getPrepInstructions($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
-    {
-        list($response) = $this->getPrepInstructionsWithHttpInfo($ship_to_country_code, $seller_sku_list, $asin_list);
+    public function getPrepInstructions($ship_to_country_code, $seller_sku_list = null, $asin_list = null) {
+        [$response] = $this->getPrepInstructionsWithHttpInfo($ship_to_country_code, $seller_sku_list, $asin_list);
 
         return $response;
     }
@@ -1157,17 +1118,16 @@ class FbaInboundApi
     /**
      * Operation getPrepInstructionsWithHttpInfo.
      *
-     * @param string   $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param string[] $seller_sku_list      A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param string[] $asin_list            A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
+     * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPrepInstructionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetPrepInstructionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getPrepInstructionsWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
-    {
+    public function getPrepInstructionsWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null) {
         $request = $this->getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list, $asin_list);
 
         return $this->sendRequest($request, GetPrepInstructionsResponse::class);
@@ -1176,16 +1136,15 @@ class FbaInboundApi
     /**
      * Operation getPrepInstructionsAsync.
      *
-     * @param string   $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param string[] $seller_sku_list      A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param string[] $asin_list            A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
+     * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPrepInstructionsAsync($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
-    {
+    public function getPrepInstructionsAsync($ship_to_country_code, $seller_sku_list = null, $asin_list = null) {
         return $this->getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list, $asin_list)
             ->then(
                 function ($response) {
@@ -1197,16 +1156,15 @@ class FbaInboundApi
     /**
      * Operation getPrepInstructionsAsyncWithHttpInfo.
      *
-     * @param string   $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param string[] $seller_sku_list      A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param string[] $asin_list            A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
+     * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
-    {
+    public function getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null) {
         $request = $this->getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list, $asin_list);
 
         return $this->sendRequestAsync($request, GetPrepInstructionsResponse::class);
@@ -1215,19 +1173,18 @@ class FbaInboundApi
     /**
      * Create request for operation 'getPrepInstructions'.
      *
-     * @param string   $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param string[] $seller_sku_list      A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param string[] $asin_list            A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
+     * @param string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#x27;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#x27;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#x27;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
-    {
+    protected function getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list = null, $asin_list = null) {
         // verify the required parameter 'ship_to_country_code' is set
         if (null === $ship_to_country_code || (is_array($ship_to_country_code) && 0 === count($ship_to_country_code))) {
-            throw new \InvalidArgumentException('Missing the required parameter $ship_to_country_code when calling getPrepInstructions');
+            throw new InvalidArgumentException('Missing the required parameter $ship_to_country_code when calling getPrepInstructions');
         }
 
         $resourcePath = '/fba/inbound/v0/prepInstructions';
@@ -1262,20 +1219,19 @@ class FbaInboundApi
     /**
      * Operation getShipmentItems.
      *
-     * @param string    $query_type          Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
-     * @param string    $marketplace_id      A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param \DateTime $last_updated_after  A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetShipmentItemsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse
+     * @throws InvalidArgumentException
      */
-    public function getShipmentItems($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
-        list($response) = $this->getShipmentItemsWithHttpInfo($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
+    public function getShipmentItems($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
+        [$response] = $this->getShipmentItemsWithHttpInfo($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
 
         return $response;
     }
@@ -1283,19 +1239,18 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsWithHttpInfo.
      *
-     * @param string    $query_type          Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
-     * @param string    $marketplace_id      A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param \DateTime $last_updated_after  A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getShipmentItemsWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    public function getShipmentItemsWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         $request = $this->getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
 
         return $this->sendRequest($request, GetShipmentItemsResponse::class);
@@ -1304,18 +1259,17 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsAsync.
      *
-     * @param string    $query_type          Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
-     * @param string    $marketplace_id      A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param \DateTime $last_updated_after  A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentItemsAsync($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    public function getShipmentItemsAsync($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         return $this->getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token)
             ->then(
                 function ($response) {
@@ -1327,18 +1281,17 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsAsyncWithHttpInfo.
      *
-     * @param string    $query_type          Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
-     * @param string    $marketplace_id      A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param \DateTime $last_updated_after  A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    public function getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         $request = $this->getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
 
         return $this->sendRequestAsync($request, GetShipmentItemsResponse::class);
@@ -1347,25 +1300,24 @@ class FbaInboundApi
     /**
      * Create request for operation 'getShipmentItems'.
      *
-     * @param string    $query_type          Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
-     * @param string    $marketplace_id      A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param \DateTime $last_updated_after  A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token          A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    protected function getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         // verify the required parameter 'query_type' is set
         if (null === $query_type || (is_array($query_type) && 0 === count($query_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $query_type when calling getShipmentItems');
+            throw new InvalidArgumentException('Missing the required parameter $query_type when calling getShipmentItems');
         }
         // verify the required parameter 'marketplace_id' is set
         if (null === $marketplace_id || (is_array($marketplace_id) && 0 === count($marketplace_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_id when calling getShipmentItems');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_id when calling getShipmentItems');
         }
 
         $resourcePath = '/fba/inbound/v0/shipmentItems';
@@ -1402,17 +1354,16 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsByShipmentId.
      *
-     * @param string $shipment_id    A shipment identifier used for selecting items in a specific inbound shipment. (required)
+     * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetShipmentItemsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse
+     * @throws InvalidArgumentException
      */
-    public function getShipmentItemsByShipmentId($shipment_id, $marketplace_id)
-    {
-        list($response) = $this->getShipmentItemsByShipmentIdWithHttpInfo($shipment_id, $marketplace_id);
+    public function getShipmentItemsByShipmentId($shipment_id, $marketplace_id) {
+        [$response] = $this->getShipmentItemsByShipmentIdWithHttpInfo($shipment_id, $marketplace_id);
 
         return $response;
     }
@@ -1420,16 +1371,15 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsByShipmentIdWithHttpInfo.
      *
-     * @param string $shipment_id    A shipment identifier used for selecting items in a specific inbound shipment. (required)
+     * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getShipmentItemsByShipmentIdWithHttpInfo($shipment_id, $marketplace_id)
-    {
+    public function getShipmentItemsByShipmentIdWithHttpInfo($shipment_id, $marketplace_id) {
         $request = $this->getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id);
 
         return $this->sendRequest($request, GetShipmentItemsResponse::class);
@@ -1438,15 +1388,14 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsByShipmentIdAsync.
      *
-     * @param string $shipment_id    A shipment identifier used for selecting items in a specific inbound shipment. (required)
+     * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentItemsByShipmentIdAsync($shipment_id, $marketplace_id)
-    {
+    public function getShipmentItemsByShipmentIdAsync($shipment_id, $marketplace_id) {
         return $this->getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id)
             ->then(
                 function ($response) {
@@ -1458,15 +1407,14 @@ class FbaInboundApi
     /**
      * Operation getShipmentItemsByShipmentIdAsyncWithHttpInfo.
      *
-     * @param string $shipment_id    A shipment identifier used for selecting items in a specific inbound shipment. (required)
+     * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id)
-    {
+    public function getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id) {
         $request = $this->getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id);
 
         return $this->sendRequestAsync($request, GetShipmentItemsResponse::class);
@@ -1475,22 +1423,21 @@ class FbaInboundApi
     /**
      * Create request for operation 'getShipmentItemsByShipmentId'.
      *
-     * @param string $shipment_id    A shipment identifier used for selecting items in a specific inbound shipment. (required)
+     * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id)
-    {
+    protected function getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling getShipmentItemsByShipmentId');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling getShipmentItemsByShipmentId');
         }
         // verify the required parameter 'marketplace_id' is set
         if (null === $marketplace_id || (is_array($marketplace_id) && 0 === count($marketplace_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_id when calling getShipmentItemsByShipmentId');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_id when calling getShipmentItemsByShipmentId');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/items';
@@ -1508,7 +1455,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -1520,22 +1467,21 @@ class FbaInboundApi
     /**
      * Operation getShipments.
      *
-     * @param string    $query_type           Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
-     * @param string    $marketplace_id       A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param string[]  $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param string[]  $shipment_id_list     A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param \DateTime $last_updated_after   A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before  A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token           A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return GetShipmentsResponse
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse
      */
-    public function getShipments($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
-        list($response) = $this->getShipmentsWithHttpInfo($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
+    public function getShipments($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
+        [$response] = $this->getShipmentsWithHttpInfo($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
 
         return $response;
     }
@@ -1543,21 +1489,20 @@ class FbaInboundApi
     /**
      * Operation getShipmentsWithHttpInfo.
      *
-     * @param string    $query_type           Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
-     * @param string    $marketplace_id       A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param string[]  $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param string[]  $shipment_id_list     A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param \DateTime $last_updated_after   A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before  A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token           A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getShipmentsWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    public function getShipmentsWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         $request = $this->getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
 
         return $this->sendRequest($request, GetShipmentsResponse::class);
@@ -1566,20 +1511,19 @@ class FbaInboundApi
     /**
      * Operation getShipmentsAsync.
      *
-     * @param string    $query_type           Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
-     * @param string    $marketplace_id       A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param string[]  $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param string[]  $shipment_id_list     A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param \DateTime $last_updated_after   A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before  A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token           A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentsAsync($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    public function getShipmentsAsync($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         return $this->getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token)
             ->then(
                 function ($response) {
@@ -1591,20 +1535,19 @@ class FbaInboundApi
     /**
      * Operation getShipmentsAsyncWithHttpInfo.
      *
-     * @param string    $query_type           Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
-     * @param string    $marketplace_id       A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param string[]  $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param string[]  $shipment_id_list     A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param \DateTime $last_updated_after   A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before  A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token           A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    public function getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         $request = $this->getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
 
         return $this->sendRequestAsync($request, GetShipmentsResponse::class);
@@ -1613,27 +1556,26 @@ class FbaInboundApi
     /**
      * Create request for operation 'getShipments'.
      *
-     * @param string    $query_type           Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
-     * @param string    $marketplace_id       A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param string[]  $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param string[]  $shipment_id_list     A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param \DateTime $last_updated_after   A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param \DateTime $last_updated_before  A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param string    $next_token           A string token returned in the response to your previous request. (optional)
+     * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
+     * @param string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param DateTime $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param DateTime $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
-    {
+    protected function getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) {
         // verify the required parameter 'query_type' is set
         if (null === $query_type || (is_array($query_type) && 0 === count($query_type))) {
-            throw new \InvalidArgumentException('Missing the required parameter $query_type when calling getShipments');
+            throw new InvalidArgumentException('Missing the required parameter $query_type when calling getShipments');
         }
         // verify the required parameter 'marketplace_id' is set
         if (null === $marketplace_id || (is_array($marketplace_id) && 0 === count($marketplace_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $marketplace_id when calling getShipments');
+            throw new InvalidArgumentException('Missing the required parameter $marketplace_id when calling getShipments');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments';
@@ -1686,14 +1628,13 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetTransportDetailsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetTransportDetailsResponse
+     * @throws InvalidArgumentException
      */
-    public function getTransportDetails($shipment_id)
-    {
-        list($response) = $this->getTransportDetailsWithHttpInfo($shipment_id);
+    public function getTransportDetails($shipment_id) {
+        [$response] = $this->getTransportDetailsWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -1703,13 +1644,12 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getTransportDetailsWithHttpInfo($shipment_id)
-    {
+    public function getTransportDetailsWithHttpInfo($shipment_id) {
         $request = $this->getTransportDetailsRequest($shipment_id);
 
         return $this->sendRequest($request, GetTransportDetailsResponse::class);
@@ -1720,12 +1660,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransportDetailsAsync($shipment_id)
-    {
+    public function getTransportDetailsAsync($shipment_id) {
         return $this->getTransportDetailsAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -1739,12 +1678,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransportDetailsAsyncWithHttpInfo($shipment_id)
-    {
+    public function getTransportDetailsAsyncWithHttpInfo($shipment_id) {
         $request = $this->getTransportDetailsRequest($shipment_id);
 
         return $this->sendRequestAsync($request, GetTransportDetailsResponse::class);
@@ -1755,15 +1693,14 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransportDetailsRequest($shipment_id)
-    {
+    protected function getTransportDetailsRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling getTransportDetails');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling getTransportDetails');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/transport';
@@ -1776,7 +1713,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -1788,17 +1725,16 @@ class FbaInboundApi
     /**
      * Operation putTransportDetails.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsRequest $body        body (required)
-     * @param string                                                                                 $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param PutTransportDetailsRequest $body body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return PutTransportDetailsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsResponse
+     * @throws InvalidArgumentException
      */
-    public function putTransportDetails($body, $shipment_id)
-    {
-        list($response) = $this->putTransportDetailsWithHttpInfo($body, $shipment_id);
+    public function putTransportDetails($body, $shipment_id) {
+        [$response] = $this->putTransportDetailsWithHttpInfo($body, $shipment_id);
 
         return $response;
     }
@@ -1806,16 +1742,15 @@ class FbaInboundApi
     /**
      * Operation putTransportDetailsWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsRequest $body        (required)
-     * @param string                                                                                 $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param PutTransportDetailsRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function putTransportDetailsWithHttpInfo($body, $shipment_id)
-    {
+    public function putTransportDetailsWithHttpInfo($body, $shipment_id) {
         $request = $this->putTransportDetailsRequest($body, $shipment_id);
 
         return $this->sendRequest($request, PutTransportDetailsResponse::class);
@@ -1824,15 +1759,14 @@ class FbaInboundApi
     /**
      * Operation putTransportDetailsAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsRequest $body        (required)
-     * @param string                                                                                 $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param PutTransportDetailsRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putTransportDetailsAsync($body, $shipment_id)
-    {
+    public function putTransportDetailsAsync($body, $shipment_id) {
         return $this->putTransportDetailsAsyncWithHttpInfo($body, $shipment_id)
             ->then(
                 function ($response) {
@@ -1844,15 +1778,14 @@ class FbaInboundApi
     /**
      * Operation putTransportDetailsAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsRequest $body        (required)
-     * @param string                                                                                 $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param PutTransportDetailsRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putTransportDetailsAsyncWithHttpInfo($body, $shipment_id)
-    {
+    public function putTransportDetailsAsyncWithHttpInfo($body, $shipment_id) {
         $request = $this->putTransportDetailsRequest($body, $shipment_id);
 
         return $this->sendRequestAsync($request, PutTransportDetailsResponse::class);
@@ -1861,22 +1794,21 @@ class FbaInboundApi
     /**
      * Create request for operation 'putTransportDetails'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PutTransportDetailsRequest $body        (required)
-     * @param string                                                                                 $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param PutTransportDetailsRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putTransportDetailsRequest($body, $shipment_id)
-    {
+    protected function putTransportDetailsRequest($body, $shipment_id) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling putTransportDetails');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling putTransportDetails');
         }
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling putTransportDetails');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling putTransportDetails');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/transport';
@@ -1889,7 +1821,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -1901,17 +1833,16 @@ class FbaInboundApi
     /**
      * Operation updateInboundShipment.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        body (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return InboundShipmentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse
+     * @throws InvalidArgumentException
      */
-    public function updateInboundShipment($body, $shipment_id)
-    {
-        list($response) = $this->updateInboundShipmentWithHttpInfo($body, $shipment_id);
+    public function updateInboundShipment($body, $shipment_id) {
+        [$response] = $this->updateInboundShipmentWithHttpInfo($body, $shipment_id);
 
         return $response;
     }
@@ -1919,16 +1850,15 @@ class FbaInboundApi
     /**
      * Operation updateInboundShipmentWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function updateInboundShipmentWithHttpInfo($body, $shipment_id)
-    {
+    public function updateInboundShipmentWithHttpInfo($body, $shipment_id) {
         $request = $this->updateInboundShipmentRequest($body, $shipment_id);
 
         return $this->sendRequest($request, InboundShipmentResponse::class);
@@ -1937,15 +1867,14 @@ class FbaInboundApi
     /**
      * Operation updateInboundShipmentAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateInboundShipmentAsync($body, $shipment_id)
-    {
+    public function updateInboundShipmentAsync($body, $shipment_id) {
         return $this->updateInboundShipmentAsyncWithHttpInfo($body, $shipment_id)
             ->then(
                 function ($response) {
@@ -1957,15 +1886,14 @@ class FbaInboundApi
     /**
      * Operation updateInboundShipmentAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateInboundShipmentAsyncWithHttpInfo($body, $shipment_id)
-    {
+    public function updateInboundShipmentAsyncWithHttpInfo($body, $shipment_id) {
         $request = $this->updateInboundShipmentRequest($body, $shipment_id);
 
         return $this->sendRequestAsync($request, InboundShipmentResponse::class);
@@ -1974,22 +1902,21 @@ class FbaInboundApi
     /**
      * Create request for operation 'updateInboundShipment'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentRequest $body        (required)
-     * @param string                                                                             $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
+     * @param InboundShipmentRequest $body (required)
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateInboundShipmentRequest($body, $shipment_id)
-    {
+    protected function updateInboundShipmentRequest($body, $shipment_id) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateInboundShipment');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling updateInboundShipment');
         }
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling updateInboundShipment');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling updateInboundShipment');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}';
@@ -2002,7 +1929,7 @@ class FbaInboundApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -2016,14 +1943,13 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return VoidTransportResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\VoidTransportResponse
+     * @throws InvalidArgumentException
      */
-    public function voidTransport($shipment_id)
-    {
-        list($response) = $this->voidTransportWithHttpInfo($shipment_id);
+    public function voidTransport($shipment_id) {
+        [$response] = $this->voidTransportWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -2033,13 +1959,12 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\VoidTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\VoidTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function voidTransportWithHttpInfo($shipment_id)
-    {
+    public function voidTransportWithHttpInfo($shipment_id) {
         $request = $this->voidTransportRequest($shipment_id);
 
         return $this->sendRequest($request, VoidTransportResponse::class);
@@ -2050,12 +1975,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function voidTransportAsync($shipment_id)
-    {
+    public function voidTransportAsync($shipment_id) {
         return $this->voidTransportAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -2069,12 +1993,11 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function voidTransportAsyncWithHttpInfo($shipment_id)
-    {
+    public function voidTransportAsyncWithHttpInfo($shipment_id) {
         $request = $this->voidTransportRequest($shipment_id);
 
         return $this->sendRequestAsync($request, VoidTransportResponse::class);
@@ -2085,15 +2008,14 @@ class FbaInboundApi
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function voidTransportRequest($shipment_id)
-    {
+    protected function voidTransportRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling voidTransport');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling voidTransport');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/transport/void';
@@ -2105,7 +2027,7 @@ class FbaInboundApi
 
         // path params
         $resourcePath = str_replace(
-            '{'.'shipmentId'.'}',
+            '{' . 'shipmentId' . '}',
             ObjectSerializer::toPathValue($shipment_id),
             $resourcePath
         );

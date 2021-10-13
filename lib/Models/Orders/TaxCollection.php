@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TaxCollection Class Doc Comment.
  *
-
  * @description Information about withheld taxes.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TaxCollection implements ModelInterface, ArrayAccess
-{
+class TaxCollection implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,8 @@ class TaxCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'model' => 'string',
-'responsible_party' => 'string',    ];
+        'model'             => 'string',
+        'responsible_party' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class TaxCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'model' => null,
-'responsible_party' => null,    ];
+        'model'             => null,
+        'responsible_party' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class TaxCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'model' => 'Model',
-'responsible_party' => 'ResponsibleParty',    ];
+        'model'             => 'Model',
+        'responsible_party' => 'ResponsibleParty',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class TaxCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'model' => 'setModel',
-'responsible_party' => 'setResponsibleParty',    ];
+        'model'             => 'setModel',
+        'responsible_party' => 'setResponsibleParty',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class TaxCollection implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'model' => 'getModel',
-'responsible_party' => 'getResponsibleParty',    ];
+        'model'             => 'getModel',
+        'responsible_party' => 'getResponsibleParty',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,10 +148,9 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getModelAllowableValues()
-    {
+    public function getModelAllowableValues() {
         return [
-            self::MODEL_MARKETPLACE_FACILITATOR,        ];
+            self::MODEL_MARKETPLACE_FACILITATOR,];
     }
 
     /**
@@ -166,10 +158,9 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getResponsiblePartyAllowableValues()
-    {
+    public function getResponsiblePartyAllowableValues() {
         return [
-            self::RESPONSIBLE_PARTY_AMAZON_SERVICES_INC,        ];
+            self::RESPONSIBLE_PARTY_AMAZON_SERVICES_INC,];
     }
 
     /**
@@ -185,8 +176,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['model'] = isset($data['model']) ? $data['model'] : null;
         $this->container['responsible_party'] = isset($data['responsible_party']) ? $data['responsible_party'] : null;
     }
@@ -196,8 +186,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getModelAllowableValues();
@@ -225,8 +214,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -235,8 +223,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModel()
-    {
+    public function getModel() {
         return $this->container['model'];
     }
 
@@ -247,11 +234,10 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setModel($model)
-    {
+    public function setModel($model) {
         $allowedValues = $this->getModelAllowableValues();
         if (!is_null($model) && !in_array($model, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'model', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'model', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['model'] = $model;
 
@@ -263,8 +249,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getResponsibleParty()
-    {
+    public function getResponsibleParty() {
         return $this->container['responsible_party'];
     }
 
@@ -275,11 +260,10 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setResponsibleParty($responsible_party)
-    {
+    public function setResponsibleParty($responsible_party) {
         $allowedValues = $this->getResponsiblePartyAllowableValues();
         if (!is_null($responsible_party) && !in_array($responsible_party, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'responsible_party', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'responsible_party', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['responsible_party'] = $responsible_party;
 
@@ -293,8 +277,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -305,21 +288,19 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -334,8 +315,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -344,8 +324,7 @@ class TaxCollection implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

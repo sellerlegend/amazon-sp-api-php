@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PurchaseLabelsResult Class Doc Comment.
  *
-
  * @description The payload schema for the purchaseLabels operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PurchaseLabelsResult implements ModelInterface, ArrayAccess
-{
+class PurchaseLabelsResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipment_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId',
-'client_reference_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId',
-'accepted_rate' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate',
-'label_results' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelResultList',    ];
+        'shipment_id'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId',
+        'client_reference_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId',
+        'accepted_rate'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate',
+        'label_results'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\LabelResultList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'shipment_id' => null,
-'client_reference_id' => null,
-'accepted_rate' => null,
-'label_results' => null,    ];
+        'shipment_id'         => null,
+        'client_reference_id' => null,
+        'accepted_rate'       => null,
+        'label_results'       => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shipment_id' => 'shipmentId',
-'client_reference_id' => 'clientReferenceId',
-'accepted_rate' => 'acceptedRate',
-'label_results' => 'labelResults',    ];
+        'shipment_id'         => 'shipmentId',
+        'client_reference_id' => 'clientReferenceId',
+        'accepted_rate'       => 'acceptedRate',
+        'label_results'       => 'labelResults',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
-'client_reference_id' => 'setClientReferenceId',
-'accepted_rate' => 'setAcceptedRate',
-'label_results' => 'setLabelResults',    ];
+        'shipment_id'         => 'setShipmentId',
+        'client_reference_id' => 'setClientReferenceId',
+        'accepted_rate'       => 'setAcceptedRate',
+        'label_results'       => 'setLabelResults',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shipment_id' => 'getShipmentId',
-'client_reference_id' => 'getClientReferenceId',
-'accepted_rate' => 'getAcceptedRate',
-'label_results' => 'getLabelResults',    ];
+        'shipment_id'         => 'getShipmentId',
+        'client_reference_id' => 'getClientReferenceId',
+        'accepted_rate'       => 'getAcceptedRate',
+        'label_results'       => 'getLabelResults',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipment_id'] = isset($data['shipment_id']) ? $data['shipment_id'] : null;
         $this->container['client_reference_id'] = isset($data['client_reference_id']) ? $data['client_reference_id'] : null;
         $this->container['accepted_rate'] = isset($data['accepted_rate']) ? $data['accepted_rate'] : null;
@@ -183,8 +174,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['shipment_id']) {
@@ -206,30 +196,27 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId
+     * @return ShipmentId
      */
-    public function getShipmentId()
-    {
+    public function getShipmentId() {
         return $this->container['shipment_id'];
     }
 
     /**
      * Sets shipment_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShipmentId $shipment_id shipment_id
+     * @param ShipmentId $shipment_id shipment_id
      *
      * @return $this
      */
-    public function setShipmentId($shipment_id)
-    {
+    public function setShipmentId($shipment_id) {
         $this->container['shipment_id'] = $shipment_id;
 
         return $this;
@@ -238,22 +225,20 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
     /**
      * Gets client_reference_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId
+     * @return ClientReferenceId
      */
-    public function getClientReferenceId()
-    {
+    public function getClientReferenceId() {
         return $this->container['client_reference_id'];
     }
 
     /**
      * Sets client_reference_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ClientReferenceId $client_reference_id client_reference_id
+     * @param ClientReferenceId $client_reference_id client_reference_id
      *
      * @return $this
      */
-    public function setClientReferenceId($client_reference_id)
-    {
+    public function setClientReferenceId($client_reference_id) {
         $this->container['client_reference_id'] = $client_reference_id;
 
         return $this;
@@ -262,22 +247,20 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
     /**
      * Gets accepted_rate.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate
+     * @return AcceptedRate
      */
-    public function getAcceptedRate()
-    {
+    public function getAcceptedRate() {
         return $this->container['accepted_rate'];
     }
 
     /**
      * Sets accepted_rate.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\AcceptedRate $accepted_rate accepted_rate
+     * @param AcceptedRate $accepted_rate accepted_rate
      *
      * @return $this
      */
-    public function setAcceptedRate($accepted_rate)
-    {
+    public function setAcceptedRate($accepted_rate) {
         $this->container['accepted_rate'] = $accepted_rate;
 
         return $this;
@@ -286,22 +269,20 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
     /**
      * Gets label_results.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelResultList
+     * @return LabelResultList
      */
-    public function getLabelResults()
-    {
+    public function getLabelResults() {
         return $this->container['label_results'];
     }
 
     /**
      * Sets label_results.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\LabelResultList $label_results label_results
+     * @param LabelResultList $label_results label_results
      *
      * @return $this
      */
-    public function setLabelResults($label_results)
-    {
+    public function setLabelResults($label_results) {
         $this->container['label_results'] = $label_results;
 
         return $this;
@@ -314,8 +295,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -326,21 +306,19 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -355,8 +333,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -365,8 +342,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

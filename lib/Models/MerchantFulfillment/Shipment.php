@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Shipment Class Doc Comment.
  *
-
  * @description The details of a shipment, including the shipment status.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Shipment implements ModelInterface, ArrayAccess
-{
+class Shipment implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,21 +44,21 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipment_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentId',
-'amazon_order_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId',
-'seller_order_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\SellerOrderId',
-'item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemList',
-'ship_from_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
-'ship_to_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
-'package_dimensions' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimensions',
-'weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight',
-'insurance' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount',
-'shipping_service' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingService',
-'label' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Label',
-'status' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentStatus',
-'tracking_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TrackingId',
-'created_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp',
-'last_updated_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp',    ];
+        'shipment_id'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentId',
+        'amazon_order_id'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId',
+        'seller_order_id'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\SellerOrderId',
+        'item_list'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemList',
+        'ship_from_address'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
+        'ship_to_address'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
+        'package_dimensions' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimensions',
+        'weight'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight',
+        'insurance'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount',
+        'shipping_service'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingService',
+        'label'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Label',
+        'status'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentStatus',
+        'tracking_id'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TrackingId',
+        'created_date'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp',
+        'last_updated_date'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -68,29 +66,28 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'shipment_id' => null,
-'amazon_order_id' => null,
-'seller_order_id' => null,
-'item_list' => null,
-'ship_from_address' => null,
-'ship_to_address' => null,
-'package_dimensions' => null,
-'weight' => null,
-'insurance' => null,
-'shipping_service' => null,
-'label' => null,
-'status' => null,
-'tracking_id' => null,
-'created_date' => null,
-'last_updated_date' => null,    ];
+        'shipment_id'        => null,
+        'amazon_order_id'    => null,
+        'seller_order_id'    => null,
+        'item_list'          => null,
+        'ship_from_address'  => null,
+        'ship_to_address'    => null,
+        'package_dimensions' => null,
+        'weight'             => null,
+        'insurance'          => null,
+        'shipping_service'   => null,
+        'label'              => null,
+        'status'             => null,
+        'tracking_id'        => null,
+        'created_date'       => null,
+        'last_updated_date'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -99,8 +96,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -111,21 +107,21 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shipment_id' => 'ShipmentId',
-'amazon_order_id' => 'AmazonOrderId',
-'seller_order_id' => 'SellerOrderId',
-'item_list' => 'ItemList',
-'ship_from_address' => 'ShipFromAddress',
-'ship_to_address' => 'ShipToAddress',
-'package_dimensions' => 'PackageDimensions',
-'weight' => 'Weight',
-'insurance' => 'Insurance',
-'shipping_service' => 'ShippingService',
-'label' => 'Label',
-'status' => 'Status',
-'tracking_id' => 'TrackingId',
-'created_date' => 'CreatedDate',
-'last_updated_date' => 'LastUpdatedDate',    ];
+        'shipment_id'        => 'ShipmentId',
+        'amazon_order_id'    => 'AmazonOrderId',
+        'seller_order_id'    => 'SellerOrderId',
+        'item_list'          => 'ItemList',
+        'ship_from_address'  => 'ShipFromAddress',
+        'ship_to_address'    => 'ShipToAddress',
+        'package_dimensions' => 'PackageDimensions',
+        'weight'             => 'Weight',
+        'insurance'          => 'Insurance',
+        'shipping_service'   => 'ShippingService',
+        'label'              => 'Label',
+        'status'             => 'Status',
+        'tracking_id'        => 'TrackingId',
+        'created_date'       => 'CreatedDate',
+        'last_updated_date'  => 'LastUpdatedDate',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -133,21 +129,21 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
-'amazon_order_id' => 'setAmazonOrderId',
-'seller_order_id' => 'setSellerOrderId',
-'item_list' => 'setItemList',
-'ship_from_address' => 'setShipFromAddress',
-'ship_to_address' => 'setShipToAddress',
-'package_dimensions' => 'setPackageDimensions',
-'weight' => 'setWeight',
-'insurance' => 'setInsurance',
-'shipping_service' => 'setShippingService',
-'label' => 'setLabel',
-'status' => 'setStatus',
-'tracking_id' => 'setTrackingId',
-'created_date' => 'setCreatedDate',
-'last_updated_date' => 'setLastUpdatedDate',    ];
+        'shipment_id'        => 'setShipmentId',
+        'amazon_order_id'    => 'setAmazonOrderId',
+        'seller_order_id'    => 'setSellerOrderId',
+        'item_list'          => 'setItemList',
+        'ship_from_address'  => 'setShipFromAddress',
+        'ship_to_address'    => 'setShipToAddress',
+        'package_dimensions' => 'setPackageDimensions',
+        'weight'             => 'setWeight',
+        'insurance'          => 'setInsurance',
+        'shipping_service'   => 'setShippingService',
+        'label'              => 'setLabel',
+        'status'             => 'setStatus',
+        'tracking_id'        => 'setTrackingId',
+        'created_date'       => 'setCreatedDate',
+        'last_updated_date'  => 'setLastUpdatedDate',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -155,21 +151,21 @@ class Shipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shipment_id' => 'getShipmentId',
-'amazon_order_id' => 'getAmazonOrderId',
-'seller_order_id' => 'getSellerOrderId',
-'item_list' => 'getItemList',
-'ship_from_address' => 'getShipFromAddress',
-'ship_to_address' => 'getShipToAddress',
-'package_dimensions' => 'getPackageDimensions',
-'weight' => 'getWeight',
-'insurance' => 'getInsurance',
-'shipping_service' => 'getShippingService',
-'label' => 'getLabel',
-'status' => 'getStatus',
-'tracking_id' => 'getTrackingId',
-'created_date' => 'getCreatedDate',
-'last_updated_date' => 'getLastUpdatedDate',    ];
+        'shipment_id'        => 'getShipmentId',
+        'amazon_order_id'    => 'getAmazonOrderId',
+        'seller_order_id'    => 'getSellerOrderId',
+        'item_list'          => 'getItemList',
+        'ship_from_address'  => 'getShipFromAddress',
+        'ship_to_address'    => 'getShipToAddress',
+        'package_dimensions' => 'getPackageDimensions',
+        'weight'             => 'getWeight',
+        'insurance'          => 'getInsurance',
+        'shipping_service'   => 'getShippingService',
+        'label'              => 'getLabel',
+        'status'             => 'getStatus',
+        'tracking_id'        => 'getTrackingId',
+        'created_date'       => 'getCreatedDate',
+        'last_updated_date'  => 'getLastUpdatedDate',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -177,8 +173,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -187,8 +182,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -197,8 +191,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -207,8 +200,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -225,8 +217,7 @@ class Shipment implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipment_id'] = isset($data['shipment_id']) ? $data['shipment_id'] : null;
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
@@ -249,8 +240,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['shipment_id']) {
@@ -299,30 +289,27 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentId
+     * @return ShipmentId
      */
-    public function getShipmentId()
-    {
+    public function getShipmentId() {
         return $this->container['shipment_id'];
     }
 
     /**
      * Sets shipment_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentId $shipment_id shipment_id
+     * @param ShipmentId $shipment_id shipment_id
      *
      * @return $this
      */
-    public function setShipmentId($shipment_id)
-    {
+    public function setShipmentId($shipment_id) {
         $this->container['shipment_id'] = $shipment_id;
 
         return $this;
@@ -331,22 +318,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets amazon_order_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId
+     * @return AmazonOrderId
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
     /**
      * Sets amazon_order_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AmazonOrderId $amazon_order_id amazon_order_id
+     * @param AmazonOrderId $amazon_order_id amazon_order_id
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -355,22 +340,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets seller_order_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\SellerOrderId
+     * @return SellerOrderId
      */
-    public function getSellerOrderId()
-    {
+    public function getSellerOrderId() {
         return $this->container['seller_order_id'];
     }
 
     /**
      * Sets seller_order_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\SellerOrderId $seller_order_id seller_order_id
+     * @param SellerOrderId $seller_order_id seller_order_id
      *
      * @return $this
      */
-    public function setSellerOrderId($seller_order_id)
-    {
+    public function setSellerOrderId($seller_order_id) {
         $this->container['seller_order_id'] = $seller_order_id;
 
         return $this;
@@ -379,22 +362,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets item_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemList
+     * @return ItemList
      */
-    public function getItemList()
-    {
+    public function getItemList() {
         return $this->container['item_list'];
     }
 
     /**
      * Sets item_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ItemList $item_list item_list
+     * @param ItemList $item_list item_list
      *
      * @return $this
      */
-    public function setItemList($item_list)
-    {
+    public function setItemList($item_list) {
         $this->container['item_list'] = $item_list;
 
         return $this;
@@ -403,22 +384,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets ship_from_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address
+     * @return Address
      */
-    public function getShipFromAddress()
-    {
+    public function getShipFromAddress() {
         return $this->container['ship_from_address'];
     }
 
     /**
      * Sets ship_from_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address $ship_from_address ship_from_address
+     * @param Address $ship_from_address ship_from_address
      *
      * @return $this
      */
-    public function setShipFromAddress($ship_from_address)
-    {
+    public function setShipFromAddress($ship_from_address) {
         $this->container['ship_from_address'] = $ship_from_address;
 
         return $this;
@@ -427,22 +406,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets ship_to_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address
+     * @return Address
      */
-    public function getShipToAddress()
-    {
+    public function getShipToAddress() {
         return $this->container['ship_to_address'];
     }
 
     /**
      * Sets ship_to_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address $ship_to_address ship_to_address
+     * @param Address $ship_to_address ship_to_address
      *
      * @return $this
      */
-    public function setShipToAddress($ship_to_address)
-    {
+    public function setShipToAddress($ship_to_address) {
         $this->container['ship_to_address'] = $ship_to_address;
 
         return $this;
@@ -451,22 +428,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets package_dimensions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimensions
+     * @return PackageDimensions
      */
-    public function getPackageDimensions()
-    {
+    public function getPackageDimensions() {
         return $this->container['package_dimensions'];
     }
 
     /**
      * Sets package_dimensions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\PackageDimensions $package_dimensions package_dimensions
+     * @param PackageDimensions $package_dimensions package_dimensions
      *
      * @return $this
      */
-    public function setPackageDimensions($package_dimensions)
-    {
+    public function setPackageDimensions($package_dimensions) {
         $this->container['package_dimensions'] = $package_dimensions;
 
         return $this;
@@ -475,22 +450,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight
+     * @return Weight
      */
-    public function getWeight()
-    {
+    public function getWeight() {
         return $this->container['weight'];
     }
 
     /**
      * Sets weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight $weight weight
+     * @param Weight $weight weight
      *
      * @return $this
      */
-    public function setWeight($weight)
-    {
+    public function setWeight($weight) {
         $this->container['weight'] = $weight;
 
         return $this;
@@ -499,22 +472,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets insurance.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount
+     * @return CurrencyAmount
      */
-    public function getInsurance()
-    {
+    public function getInsurance() {
         return $this->container['insurance'];
     }
 
     /**
      * Sets insurance.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount $insurance insurance
+     * @param CurrencyAmount $insurance insurance
      *
      * @return $this
      */
-    public function setInsurance($insurance)
-    {
+    public function setInsurance($insurance) {
         $this->container['insurance'] = $insurance;
 
         return $this;
@@ -523,22 +494,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_service.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingService
+     * @return ShippingService
      */
-    public function getShippingService()
-    {
+    public function getShippingService() {
         return $this->container['shipping_service'];
     }
 
     /**
      * Sets shipping_service.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingService $shipping_service shipping_service
+     * @param ShippingService $shipping_service shipping_service
      *
      * @return $this
      */
-    public function setShippingService($shipping_service)
-    {
+    public function setShippingService($shipping_service) {
         $this->container['shipping_service'] = $shipping_service;
 
         return $this;
@@ -547,22 +516,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets label.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Label
+     * @return Label
      */
-    public function getLabel()
-    {
+    public function getLabel() {
         return $this->container['label'];
     }
 
     /**
      * Sets label.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Label $label label
+     * @param Label $label label
      *
      * @return $this
      */
-    public function setLabel($label)
-    {
+    public function setLabel($label) {
         $this->container['label'] = $label;
 
         return $this;
@@ -571,22 +538,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets status.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentStatus
+     * @return ShipmentStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->container['status'];
     }
 
     /**
      * Sets status.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShipmentStatus $status status
+     * @param ShipmentStatus $status status
      *
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->container['status'] = $status;
 
         return $this;
@@ -595,22 +560,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets tracking_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TrackingId
+     * @return TrackingId
      */
-    public function getTrackingId()
-    {
+    public function getTrackingId() {
         return $this->container['tracking_id'];
     }
 
     /**
      * Sets tracking_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\TrackingId $tracking_id tracking_id
+     * @param TrackingId $tracking_id tracking_id
      *
      * @return $this
      */
-    public function setTrackingId($tracking_id)
-    {
+    public function setTrackingId($tracking_id) {
         $this->container['tracking_id'] = $tracking_id;
 
         return $this;
@@ -619,22 +582,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets created_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp
+     * @return Timestamp
      */
-    public function getCreatedDate()
-    {
+    public function getCreatedDate() {
         return $this->container['created_date'];
     }
 
     /**
      * Sets created_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp $created_date created_date
+     * @param Timestamp $created_date created_date
      *
      * @return $this
      */
-    public function setCreatedDate($created_date)
-    {
+    public function setCreatedDate($created_date) {
         $this->container['created_date'] = $created_date;
 
         return $this;
@@ -643,22 +604,20 @@ class Shipment implements ModelInterface, ArrayAccess
     /**
      * Gets last_updated_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp
+     * @return Timestamp
      */
-    public function getLastUpdatedDate()
-    {
+    public function getLastUpdatedDate() {
         return $this->container['last_updated_date'];
     }
 
     /**
      * Sets last_updated_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp $last_updated_date last_updated_date
+     * @param Timestamp $last_updated_date last_updated_date
      *
      * @return $this
      */
-    public function setLastUpdatedDate($last_updated_date)
-    {
+    public function setLastUpdatedDate($last_updated_date) {
         $this->container['last_updated_date'] = $last_updated_date;
 
         return $this;
@@ -671,8 +630,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -683,21 +641,19 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -712,8 +668,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -722,8 +677,7 @@ class Shipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

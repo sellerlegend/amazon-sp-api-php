@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * RemovalShipmentEvent Class Doc Comment.
  *
-
  * @description A removal shipment event for a removal order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class RemovalShipmentEvent implements ModelInterface, ArrayAccess
-{
+class RemovalShipmentEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +45,10 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'order_id' => 'string',
-'transaction_type' => 'string',
-'removal_shipment_item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemList',    ];
+        'posted_date'                => '\DateTime',
+        'order_id'                   => 'string',
+        'transaction_type'           => 'string',
+        'removal_shipment_item_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'posted_date' => null,
-'order_id' => null,
-'transaction_type' => null,
-'removal_shipment_item_list' => null,    ];
+        'posted_date'                => null,
+        'order_id'                   => null,
+        'transaction_type'           => null,
+        'removal_shipment_item_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'posted_date' => 'PostedDate',
-'order_id' => 'OrderId',
-'transaction_type' => 'TransactionType',
-'removal_shipment_item_list' => 'RemovalShipmentItemList',    ];
+        'posted_date'                => 'PostedDate',
+        'order_id'                   => 'OrderId',
+        'transaction_type'           => 'TransactionType',
+        'removal_shipment_item_list' => 'RemovalShipmentItemList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
-'order_id' => 'setOrderId',
-'transaction_type' => 'setTransactionType',
-'removal_shipment_item_list' => 'setRemovalShipmentItemList',    ];
+        'posted_date'                => 'setPostedDate',
+        'order_id'                   => 'setOrderId',
+        'transaction_type'           => 'setTransactionType',
+        'removal_shipment_item_list' => 'setRemovalShipmentItemList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'posted_date' => 'getPostedDate',
-'order_id' => 'getOrderId',
-'transaction_type' => 'getTransactionType',
-'removal_shipment_item_list' => 'getRemovalShipmentItemList',    ];
+        'posted_date'                => 'getPostedDate',
+        'order_id'                   => 'getOrderId',
+        'transaction_type'           => 'getTransactionType',
+        'removal_shipment_item_list' => 'getRemovalShipmentItemList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
         $this->container['transaction_type'] = isset($data['transaction_type']) ? $data['transaction_type'] : null;
@@ -183,8 +175,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,30 +187,27 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -230,8 +218,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getOrderId()
-    {
+    public function getOrderId() {
         return $this->container['order_id'];
     }
 
@@ -242,8 +229,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setOrderId($order_id)
-    {
+    public function setOrderId($order_id) {
         $this->container['order_id'] = $order_id;
 
         return $this;
@@ -254,8 +240,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getTransactionType()
-    {
+    public function getTransactionType() {
         return $this->container['transaction_type'];
     }
 
@@ -266,8 +251,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTransactionType($transaction_type)
-    {
+    public function setTransactionType($transaction_type) {
         $this->container['transaction_type'] = $transaction_type;
 
         return $this;
@@ -276,22 +260,20 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets removal_shipment_item_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemList
+     * @return RemovalShipmentItemList
      */
-    public function getRemovalShipmentItemList()
-    {
+    public function getRemovalShipmentItemList() {
         return $this->container['removal_shipment_item_list'];
     }
 
     /**
      * Sets removal_shipment_item_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemList $removal_shipment_item_list removal_shipment_item_list
+     * @param RemovalShipmentItemList $removal_shipment_item_list removal_shipment_item_list
      *
      * @return $this
      */
-    public function setRemovalShipmentItemList($removal_shipment_item_list)
-    {
+    public function setRemovalShipmentItemList($removal_shipment_item_list) {
         $this->container['removal_shipment_item_list'] = $removal_shipment_item_list;
 
         return $this;
@@ -304,8 +286,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +297,19 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +324,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +333,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

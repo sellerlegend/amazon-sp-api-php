@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OrderAddress Class Doc Comment.
  *
-
  * @description The shipping address for the order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OrderAddress implements ModelInterface, ArrayAccess
-{
+class OrderAddress implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class OrderAddress implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amazon_order_id' => 'string',
-'shipping_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address',    ];
+        'amazon_order_id'  => 'string',
+        'shipping_address' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Address',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class OrderAddress implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amazon_order_id' => null,
-'shipping_address' => null,    ];
+        'amazon_order_id'  => null,
+        'shipping_address' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class OrderAddress implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'AmazonOrderId',
-'shipping_address' => 'ShippingAddress',    ];
+        'amazon_order_id'  => 'AmazonOrderId',
+        'shipping_address' => 'ShippingAddress',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class OrderAddress implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
-'shipping_address' => 'setShippingAddress',    ];
+        'amazon_order_id'  => 'setAmazonOrderId',
+        'shipping_address' => 'setShippingAddress',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class OrderAddress implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
-'shipping_address' => 'getShippingAddress',    ];
+        'amazon_order_id'  => 'getAmazonOrderId',
+        'shipping_address' => 'getShippingAddress',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
     }
@@ -171,8 +162,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['amazon_order_id']) {
@@ -188,8 +178,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -198,8 +187,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonOrderId()
-    {
+    public function getAmazonOrderId() {
         return $this->container['amazon_order_id'];
     }
 
@@ -210,8 +198,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonOrderId($amazon_order_id)
-    {
+    public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
@@ -220,22 +207,20 @@ class OrderAddress implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address
+     * @return Address
      */
-    public function getShippingAddress()
-    {
+    public function getShippingAddress() {
         return $this->container['shipping_address'];
     }
 
     /**
      * Sets shipping_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\Address $shipping_address shipping_address
+     * @param Address $shipping_address shipping_address
      *
      * @return $this
      */
-    public function setShippingAddress($shipping_address)
-    {
+    public function setShippingAddress($shipping_address) {
         $this->container['shipping_address'] = $shipping_address;
 
         return $this;
@@ -248,8 +233,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +244,19 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +271,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +280,7 @@ class OrderAddress implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

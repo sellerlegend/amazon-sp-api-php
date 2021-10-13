@@ -4,14 +4,17 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getMarketplaceParticipations**](SellersApi.md#getmarketplaceparticipations) | **GET** /sellers/v1/marketplaceParticipations | 
+[**getMarketplaceParticipations**](SellersApi.md#getmarketplaceparticipations) | **
+GET** /sellers/v1/marketplaceParticipations |
 
 # **getMarketplaceParticipations**
+
 > \Swagger\Client\Models\GetMarketplaceParticipationsResponse getMarketplaceParticipations()
 
 
 
-Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.  
+Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's
+participation in those marketplaces.
 
 **Usage Plan:**
 
@@ -20,6 +23,7 @@ Returns a list of marketplaces that the seller submitting the request can sell i
 | .016 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -47,6 +51,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -59,8 +64,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, payload
+- **Content-Type**: Not defined
+- **Accept**: application/json, payload
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

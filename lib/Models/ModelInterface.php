@@ -15,15 +15,14 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models;
 
 /**
  * Interface abstracting model access.
  *
  * @author  Swagger Codegen team
  */
-interface ModelInterface
-{
+interface ModelInterface {
     /**
      * The original name of the model.
      *

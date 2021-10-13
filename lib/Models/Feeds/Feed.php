@@ -15,19 +15,20 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Feed Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Feed implements ModelInterface, ArrayAccess
-{
+class Feed implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,14 +44,14 @@ class Feed implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'feed_id' => 'string',
-'feed_type' => 'string',
-'marketplace_ids' => 'string[]',
-'created_time' => '\DateTime',
-'processing_status' => 'string',
-'processing_start_time' => '\DateTime',
-'processing_end_time' => '\DateTime',
-'result_feed_document_id' => 'string',    ];
+        'feed_id'                 => 'string',
+        'feed_type'               => 'string',
+        'marketplace_ids'         => 'string[]',
+        'created_time'            => '\DateTime',
+        'processing_status'       => 'string',
+        'processing_start_time'   => '\DateTime',
+        'processing_end_time'     => '\DateTime',
+        'result_feed_document_id' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,22 +59,21 @@ class Feed implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'feed_id' => null,
-'feed_type' => null,
-'marketplace_ids' => null,
-'created_time' => 'date-time',
-'processing_status' => null,
-'processing_start_time' => 'date-time',
-'processing_end_time' => 'date-time',
-'result_feed_document_id' => null,    ];
+        'feed_id'                 => null,
+        'feed_type'               => null,
+        'marketplace_ids'         => null,
+        'created_time'            => 'date-time',
+        'processing_status'       => null,
+        'processing_start_time'   => 'date-time',
+        'processing_end_time'     => 'date-time',
+        'result_feed_document_id' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -82,8 +82,7 @@ class Feed implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -94,14 +93,14 @@ class Feed implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'feed_id' => 'feedId',
-'feed_type' => 'feedType',
-'marketplace_ids' => 'marketplaceIds',
-'created_time' => 'createdTime',
-'processing_status' => 'processingStatus',
-'processing_start_time' => 'processingStartTime',
-'processing_end_time' => 'processingEndTime',
-'result_feed_document_id' => 'resultFeedDocumentId',    ];
+        'feed_id'                 => 'feedId',
+        'feed_type'               => 'feedType',
+        'marketplace_ids'         => 'marketplaceIds',
+        'created_time'            => 'createdTime',
+        'processing_status'       => 'processingStatus',
+        'processing_start_time'   => 'processingStartTime',
+        'processing_end_time'     => 'processingEndTime',
+        'result_feed_document_id' => 'resultFeedDocumentId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,14 +108,14 @@ class Feed implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'feed_id' => 'setFeedId',
-'feed_type' => 'setFeedType',
-'marketplace_ids' => 'setMarketplaceIds',
-'created_time' => 'setCreatedTime',
-'processing_status' => 'setProcessingStatus',
-'processing_start_time' => 'setProcessingStartTime',
-'processing_end_time' => 'setProcessingEndTime',
-'result_feed_document_id' => 'setResultFeedDocumentId',    ];
+        'feed_id'                 => 'setFeedId',
+        'feed_type'               => 'setFeedType',
+        'marketplace_ids'         => 'setMarketplaceIds',
+        'created_time'            => 'setCreatedTime',
+        'processing_status'       => 'setProcessingStatus',
+        'processing_start_time'   => 'setProcessingStartTime',
+        'processing_end_time'     => 'setProcessingEndTime',
+        'result_feed_document_id' => 'setResultFeedDocumentId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -124,14 +123,14 @@ class Feed implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'feed_id' => 'getFeedId',
-'feed_type' => 'getFeedType',
-'marketplace_ids' => 'getMarketplaceIds',
-'created_time' => 'getCreatedTime',
-'processing_status' => 'getProcessingStatus',
-'processing_start_time' => 'getProcessingStartTime',
-'processing_end_time' => 'getProcessingEndTime',
-'result_feed_document_id' => 'getResultFeedDocumentId',    ];
+        'feed_id'                 => 'getFeedId',
+        'feed_type'               => 'getFeedType',
+        'marketplace_ids'         => 'getMarketplaceIds',
+        'created_time'            => 'getCreatedTime',
+        'processing_status'       => 'getProcessingStatus',
+        'processing_start_time'   => 'getProcessingStartTime',
+        'processing_end_time'     => 'getProcessingEndTime',
+        'result_feed_document_id' => 'getResultFeedDocumentId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -139,8 +138,7 @@ class Feed implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -149,8 +147,7 @@ class Feed implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -159,8 +156,7 @@ class Feed implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -169,8 +165,7 @@ class Feed implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,14 +180,13 @@ class Feed implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getProcessingStatusAllowableValues()
-    {
+    public function getProcessingStatusAllowableValues() {
         return [
             self::PROCESSING_STATUS_CANCELLED,
-self::PROCESSING_STATUS_DONE,
-self::PROCESSING_STATUS_FATAL,
-self::PROCESSING_STATUS_IN_PROGRESS,
-self::PROCESSING_STATUS_IN_QUEUE,        ];
+            self::PROCESSING_STATUS_DONE,
+            self::PROCESSING_STATUS_FATAL,
+            self::PROCESSING_STATUS_IN_PROGRESS,
+            self::PROCESSING_STATUS_IN_QUEUE,];
     }
 
     /**
@@ -208,8 +202,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['feed_id'] = isset($data['feed_id']) ? $data['feed_id'] : null;
         $this->container['feed_type'] = isset($data['feed_type']) ? $data['feed_type'] : null;
         $this->container['marketplace_ids'] = isset($data['marketplace_ids']) ? $data['marketplace_ids'] : null;
@@ -225,8 +218,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['feed_id']) {
@@ -258,8 +250,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -268,8 +259,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return string
      */
-    public function getFeedId()
-    {
+    public function getFeedId() {
         return $this->container['feed_id'];
     }
 
@@ -280,8 +270,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return $this
      */
-    public function setFeedId($feed_id)
-    {
+    public function setFeedId($feed_id) {
         $this->container['feed_id'] = $feed_id;
 
         return $this;
@@ -292,8 +281,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return string
      */
-    public function getFeedType()
-    {
+    public function getFeedType() {
         return $this->container['feed_type'];
     }
 
@@ -304,8 +292,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return $this
      */
-    public function setFeedType($feed_type)
-    {
+    public function setFeedType($feed_type) {
         $this->container['feed_type'] = $feed_type;
 
         return $this;
@@ -316,8 +303,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return string[]
      */
-    public function getMarketplaceIds()
-    {
+    public function getMarketplaceIds() {
         return $this->container['marketplace_ids'];
     }
 
@@ -328,8 +314,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return $this
      */
-    public function setMarketplaceIds($marketplace_ids)
-    {
+    public function setMarketplaceIds($marketplace_ids) {
         $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;
@@ -338,22 +323,20 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
     /**
      * Gets created_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getCreatedTime()
-    {
+    public function getCreatedTime() {
         return $this->container['created_time'];
     }
 
     /**
      * Sets created_time.
      *
-     * @param \DateTime $created_time the date and time when the feed was created, in ISO 8601 date time format
+     * @param DateTime $created_time the date and time when the feed was created, in ISO 8601 date time format
      *
      * @return $this
      */
-    public function setCreatedTime($created_time)
-    {
+    public function setCreatedTime($created_time) {
         $this->container['created_time'] = $created_time;
 
         return $this;
@@ -364,8 +347,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return string
      */
-    public function getProcessingStatus()
-    {
+    public function getProcessingStatus() {
         return $this->container['processing_status'];
     }
 
@@ -376,11 +358,10 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return $this
      */
-    public function setProcessingStatus($processing_status)
-    {
+    public function setProcessingStatus($processing_status) {
         $allowedValues = $this->getProcessingStatusAllowableValues();
         if (!in_array($processing_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'processing_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'processing_status', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['processing_status'] = $processing_status;
 
@@ -390,22 +371,20 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
     /**
      * Gets processing_start_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getProcessingStartTime()
-    {
+    public function getProcessingStartTime() {
         return $this->container['processing_start_time'];
     }
 
     /**
      * Sets processing_start_time.
      *
-     * @param \DateTime $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
+     * @param DateTime $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
      *
      * @return $this
      */
-    public function setProcessingStartTime($processing_start_time)
-    {
+    public function setProcessingStartTime($processing_start_time) {
         $this->container['processing_start_time'] = $processing_start_time;
 
         return $this;
@@ -414,22 +393,20 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
     /**
      * Gets processing_end_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getProcessingEndTime()
-    {
+    public function getProcessingEndTime() {
         return $this->container['processing_end_time'];
     }
 
     /**
      * Sets processing_end_time.
      *
-     * @param \DateTime $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
+     * @param DateTime $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
      *
      * @return $this
      */
-    public function setProcessingEndTime($processing_end_time)
-    {
+    public function setProcessingEndTime($processing_end_time) {
         $this->container['processing_end_time'] = $processing_end_time;
 
         return $this;
@@ -440,8 +417,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return string
      */
-    public function getResultFeedDocumentId()
-    {
+    public function getResultFeedDocumentId() {
         return $this->container['result_feed_document_id'];
     }
 
@@ -452,8 +428,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return $this
      */
-    public function setResultFeedDocumentId($result_feed_document_id)
-    {
+    public function setResultFeedDocumentId($result_feed_document_id) {
         $this->container['result_feed_document_id'] = $result_feed_document_id;
 
         return $this;
@@ -466,8 +441,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -478,21 +452,19 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -507,8 +479,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -517,8 +488,7 @@ self::PROCESSING_STATUS_IN_QUEUE,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

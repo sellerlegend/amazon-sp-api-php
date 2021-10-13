@@ -15,19 +15,18 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFeedDocumentSpecification Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
-{
+class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,7 +42,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'content_type' => 'string',    ];
+        'content_type' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -51,15 +50,14 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'content_type' => null,    ];
+        'content_type' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -68,8 +66,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -80,7 +77,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_type' => 'contentType',    ];
+        'content_type' => 'contentType',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -88,7 +85,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_type' => 'setContentType',    ];
+        'content_type' => 'setContentType',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -96,7 +93,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_type' => 'getContentType',    ];
+        'content_type' => 'getContentType',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -104,8 +101,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -114,8 +110,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -124,8 +119,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -134,8 +128,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -152,8 +145,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
     }
 
@@ -162,8 +154,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['content_type']) {
@@ -179,8 +170,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -189,8 +179,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getContentType()
-    {
+    public function getContentType() {
         return $this->container['content_type'];
     }
 
@@ -201,8 +190,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setContentType($content_type)
-    {
+    public function setContentType($content_type) {
         $this->container['content_type'] = $content_type;
 
         return $this;
@@ -215,8 +203,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -227,21 +214,19 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -256,8 +241,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -266,8 +250,7 @@ class CreateFeedDocumentSpecification implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

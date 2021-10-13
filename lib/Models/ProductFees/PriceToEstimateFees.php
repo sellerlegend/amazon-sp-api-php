@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductFees;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * PriceToEstimateFees Class Doc Comment.
  *
-
  * @description Price information for an item, used to estimate fees.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PriceToEstimateFees implements ModelInterface, ArrayAccess
-{
+class PriceToEstimateFees implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'listing_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
-'shipping' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
-'points' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\Points',    ];
+        'listing_price' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
+        'shipping'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
+        'points'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\Points'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +56,15 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'listing_price' => null,
-'shipping' => null,
-'points' => null,    ];
+        'shipping'      => null,
+        'points'        => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +85,8 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'listing_price' => 'ListingPrice',
-'shipping' => 'Shipping',
-'points' => 'Points',    ];
+        'shipping'      => 'Shipping',
+        'points'        => 'Points',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +95,8 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'listing_price' => 'setListingPrice',
-'shipping' => 'setShipping',
-'points' => 'setPoints',    ];
+        'shipping'      => 'setShipping',
+        'points'        => 'setPoints',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +105,8 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'listing_price' => 'getListingPrice',
-'shipping' => 'getShipping',
-'points' => 'getPoints',    ];
+        'shipping'      => 'getShipping',
+        'points'        => 'getPoints',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['listing_price'] = isset($data['listing_price']) ? $data['listing_price'] : null;
         $this->container['shipping'] = isset($data['shipping']) ? $data['shipping'] : null;
         $this->container['points'] = isset($data['points']) ? $data['points'] : null;
@@ -177,8 +169,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['listing_price']) {
@@ -194,30 +185,27 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets listing_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType
+     * @return MoneyType
      */
-    public function getListingPrice()
-    {
+    public function getListingPrice() {
         return $this->container['listing_price'];
     }
 
     /**
      * Sets listing_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType $listing_price listing_price
+     * @param MoneyType $listing_price listing_price
      *
      * @return $this
      */
-    public function setListingPrice($listing_price)
-    {
+    public function setListingPrice($listing_price) {
         $this->container['listing_price'] = $listing_price;
 
         return $this;
@@ -226,22 +214,20 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
     /**
      * Gets shipping.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType
+     * @return MoneyType
      */
-    public function getShipping()
-    {
+    public function getShipping() {
         return $this->container['shipping'];
     }
 
     /**
      * Sets shipping.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType $shipping shipping
+     * @param MoneyType $shipping shipping
      *
      * @return $this
      */
-    public function setShipping($shipping)
-    {
+    public function setShipping($shipping) {
         $this->container['shipping'] = $shipping;
 
         return $this;
@@ -250,22 +236,20 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
     /**
      * Gets points.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\Points
+     * @return Points
      */
-    public function getPoints()
-    {
+    public function getPoints() {
         return $this->container['points'];
     }
 
     /**
      * Sets points.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductFees\Points $points points
+     * @param Points $points points
      *
      * @return $this
      */
-    public function setPoints($points)
-    {
+    public function setPoints($points) {
         $this->container['points'] = $points;
 
         return $this;
@@ -278,8 +262,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -290,21 +273,19 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -319,8 +300,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -329,8 +309,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

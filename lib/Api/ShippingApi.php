@@ -13,32 +13,40 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Api;
+namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
-use ClouSale\AmazonSellingPartnerAPI\Configuration;
-use ClouSale\AmazonSellingPartnerAPI\HeaderSelector;
-use ClouSale\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
-use ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CancelShipmentResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetAccountResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetTrackingInformationResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentResponse;
-use ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelResponse;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\Configuration;
+use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
+use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GetShipmentsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\CancelShipmentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetAccountResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetRatesRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetRatesResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetShipmentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetTrackingInformationResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelResponse;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ShippingApi Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ShippingApi
-{
+class ShippingApi {
     use SellingPartnerApiRequest;
 
     /**
@@ -56,8 +64,7 @@ class ShippingApi
      */
     protected $headerSelector;
 
-    public function __construct(Configuration $config)
-    {
+    public function __construct(Configuration $config) {
         $this->client = new Client();
         $this->config = $config;
         $this->headerSelector = new HeaderSelector();
@@ -66,8 +73,7 @@ class ShippingApi
     /**
      * @return Configuration
      */
-    public function getConfig()
-    {
+    public function getConfig() {
         return $this->config;
     }
 
@@ -76,14 +82,13 @@ class ShippingApi
      *
      * @param string $shipment_id shipment_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CancelShipmentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CancelShipmentResponse
+     * @throws InvalidArgumentException
      */
-    public function cancelShipment($shipment_id)
-    {
-        list($response) = $this->cancelShipmentWithHttpInfo($shipment_id);
+    public function cancelShipment($shipment_id) {
+        [$response] = $this->cancelShipmentWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -93,13 +98,12 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\CancelShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CancelShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function cancelShipmentWithHttpInfo($shipment_id)
-    {
+    public function cancelShipmentWithHttpInfo($shipment_id) {
         $request = $this->cancelShipmentRequest($shipment_id);
 
         return $this->sendRequest($request, CancelShipmentResponse::class);
@@ -110,12 +114,11 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelShipmentAsync($shipment_id)
-    {
+    public function cancelShipmentAsync($shipment_id) {
         return $this->cancelShipmentAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -129,12 +132,11 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancelShipmentAsyncWithHttpInfo($shipment_id)
-    {
+    public function cancelShipmentAsyncWithHttpInfo($shipment_id) {
         $request = $this->cancelShipmentRequest($shipment_id);
 
         return $this->sendRequestAsync($request, CancelShipmentResponse::class);
@@ -145,15 +147,14 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cancelShipmentRequest($shipment_id)
-    {
+    protected function cancelShipmentRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling cancelShipment');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling cancelShipment');
         }
 
         $resourcePath = '/shipping/v1/shipments/{shipmentId}/cancel';
@@ -166,7 +167,7 @@ class ShippingApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -178,16 +179,15 @@ class ShippingApi
     /**
      * Operation createShipment.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentRequest $body body (required)
+     * @param CreateShipmentRequest $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return CreateShipmentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentResponse
+     * @throws InvalidArgumentException
      */
-    public function createShipment($body)
-    {
-        list($response) = $this->createShipmentWithHttpInfo($body);
+    public function createShipment($body) {
+        [$response] = $this->createShipmentWithHttpInfo($body);
 
         return $response;
     }
@@ -195,15 +195,14 @@ class ShippingApi
     /**
      * Operation createShipmentWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentRequest $body (required)
+     * @param CreateShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function createShipmentWithHttpInfo($body)
-    {
+    public function createShipmentWithHttpInfo($body) {
         $request = $this->createShipmentRequest($body);
 
         return $this->sendRequest($request, CreateShipmentResponse::class);
@@ -212,14 +211,13 @@ class ShippingApi
     /**
      * Operation createShipmentAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentRequest $body (required)
+     * @param CreateShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createShipmentAsync($body)
-    {
+    public function createShipmentAsync($body) {
         return $this->createShipmentAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -231,14 +229,13 @@ class ShippingApi
     /**
      * Operation createShipmentAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentRequest $body (required)
+     * @param CreateShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createShipmentAsyncWithHttpInfo($body)
-    {
+    public function createShipmentAsyncWithHttpInfo($body) {
         $request = $this->createShipmentRequest($body);
 
         return $this->sendRequestAsync($request, CreateShipmentResponse::class);
@@ -247,17 +244,16 @@ class ShippingApi
     /**
      * Create request for operation 'createShipment'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\CreateShipmentRequest $body (required)
+     * @param CreateShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createShipmentRequest($body)
-    {
+    protected function createShipmentRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createShipment');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling createShipment');
         }
 
         $resourcePath = '/shipping/v1/shipments';
@@ -273,14 +269,13 @@ class ShippingApi
     /**
      * Operation getAccount.
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetAccountResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetAccountResponse
+     * @throws InvalidArgumentException
      */
-    public function getAccount()
-    {
-        list($response) = $this->getAccountWithHttpInfo();
+    public function getAccount() {
+        [$response] = $this->getAccountWithHttpInfo();
 
         return $response;
     }
@@ -288,13 +283,12 @@ class ShippingApi
     /**
      * Operation getAccountWithHttpInfo.
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetAccountResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetAccountResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getAccountWithHttpInfo()
-    {
+    public function getAccountWithHttpInfo() {
         $request = $this->getAccountRequest();
 
         return $this->sendRequest($request, GetAccountResponse::class);
@@ -303,12 +297,11 @@ class ShippingApi
     /**
      * Operation getAccountAsync.
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountAsync()
-    {
+    public function getAccountAsync() {
         return $this->getAccountAsyncWithHttpInfo()
             ->then(
                 function ($response) {
@@ -320,12 +313,11 @@ class ShippingApi
     /**
      * Operation getAccountAsyncWithHttpInfo.
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountAsyncWithHttpInfo()
-    {
+    public function getAccountAsyncWithHttpInfo() {
         $request = $this->getAccountRequest();
 
         return $this->sendRequestAsync($request, GetAccountResponse::class);
@@ -334,12 +326,11 @@ class ShippingApi
     /**
      * Create request for operation 'getAccount'.
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAccountRequest()
-    {
+    protected function getAccountRequest() {
         $resourcePath = '/shipping/v1/account';
         $formParams = [];
         $queryParams = [];
@@ -353,16 +344,15 @@ class ShippingApi
     /**
      * Operation getRates.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesRequest $body body (required)
+     * @param GetRatesRequest $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetRatesResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesResponse
+     * @throws InvalidArgumentException
      */
-    public function getRates($body)
-    {
-        list($response) = $this->getRatesWithHttpInfo($body);
+    public function getRates($body) {
+        [$response] = $this->getRatesWithHttpInfo($body);
 
         return $response;
     }
@@ -370,15 +360,14 @@ class ShippingApi
     /**
      * Operation getRatesWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesRequest $body (required)
+     * @param GetRatesRequest $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetRatesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getRatesWithHttpInfo($body)
-    {
+    public function getRatesWithHttpInfo($body) {
         $request = $this->getRatesRequest($body);
 
         return $this->sendRequest($request, GetRatesResponse::class);
@@ -387,14 +376,13 @@ class ShippingApi
     /**
      * Operation getRatesAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesRequest $body (required)
+     * @param GetRatesRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatesAsync($body)
-    {
+    public function getRatesAsync($body) {
         return $this->getRatesAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -406,14 +394,13 @@ class ShippingApi
     /**
      * Operation getRatesAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesRequest $body (required)
+     * @param GetRatesRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRatesAsyncWithHttpInfo($body)
-    {
+    public function getRatesAsyncWithHttpInfo($body) {
         $request = $this->getRatesRequest($body);
 
         return $this->sendRequestAsync($request, GetRatesResponse::class);
@@ -422,17 +409,16 @@ class ShippingApi
     /**
      * Create request for operation 'getRates'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetRatesRequest $body (required)
+     * @param GetRatesRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getRatesRequest($body)
-    {
+    protected function getRatesRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling getRates');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling getRates');
         }
 
         $resourcePath = '/shipping/v1/rates';
@@ -450,14 +436,13 @@ class ShippingApi
      *
      * @param string $shipment_id shipment_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetShipmentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetShipmentResponse
+     * @throws InvalidArgumentException
      */
-    public function getShipment($shipment_id)
-    {
-        list($response) = $this->getShipmentWithHttpInfo($shipment_id);
+    public function getShipment($shipment_id) {
+        [$response] = $this->getShipmentWithHttpInfo($shipment_id);
 
         return $response;
     }
@@ -467,13 +452,12 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getShipmentWithHttpInfo($shipment_id)
-    {
+    public function getShipmentWithHttpInfo($shipment_id) {
         $request = $this->getShipmentRequest($shipment_id);
 
         return $this->sendRequest($request, GetShipmentsResponse::class);
@@ -484,12 +468,11 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentAsync($shipment_id)
-    {
+    public function getShipmentAsync($shipment_id) {
         return $this->getShipmentAsyncWithHttpInfo($shipment_id)
             ->then(
                 function ($response) {
@@ -503,12 +486,11 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getShipmentAsyncWithHttpInfo($shipment_id)
-    {
+    public function getShipmentAsyncWithHttpInfo($shipment_id) {
         $request = $this->getShipmentRequest($shipment_id);
 
         return $this->sendRequestAsync($request, GetShipmentsResponse::class);
@@ -519,15 +501,14 @@ class ShippingApi
      *
      * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getShipmentRequest($shipment_id)
-    {
+    protected function getShipmentRequest($shipment_id) {
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling getShipment');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling getShipment');
         }
 
         $resourcePath = '/shipping/v1/shipments/{shipmentId}';
@@ -540,7 +521,7 @@ class ShippingApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -554,14 +535,13 @@ class ShippingApi
      *
      * @param string $tracking_id tracking_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return GetTrackingInformationResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetTrackingInformationResponse
+     * @throws InvalidArgumentException
      */
-    public function getTrackingInformation($tracking_id)
-    {
-        list($response) = $this->getTrackingInformationWithHttpInfo($tracking_id);
+    public function getTrackingInformation($tracking_id) {
+        [$response] = $this->getTrackingInformationWithHttpInfo($tracking_id);
 
         return $response;
     }
@@ -571,13 +551,12 @@ class ShippingApi
      *
      * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\GetTrackingInformationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\GetTrackingInformationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function getTrackingInformationWithHttpInfo($tracking_id)
-    {
+    public function getTrackingInformationWithHttpInfo($tracking_id) {
         $request = $this->getTrackingInformationRequest($tracking_id);
 
         return $this->sendRequest($request, GetTrackingInformationResponse::class);
@@ -588,12 +567,11 @@ class ShippingApi
      *
      * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTrackingInformationAsync($tracking_id)
-    {
+    public function getTrackingInformationAsync($tracking_id) {
         return $this->getTrackingInformationAsyncWithHttpInfo($tracking_id)
             ->then(
                 function ($response) {
@@ -607,12 +585,11 @@ class ShippingApi
      *
      * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTrackingInformationAsyncWithHttpInfo($tracking_id)
-    {
+    public function getTrackingInformationAsyncWithHttpInfo($tracking_id) {
         $request = $this->getTrackingInformationRequest($tracking_id);
 
         return $this->sendRequestAsync($request, GetTrackingInformationResponse::class);
@@ -623,15 +600,14 @@ class ShippingApi
      *
      * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTrackingInformationRequest($tracking_id)
-    {
+    protected function getTrackingInformationRequest($tracking_id) {
         // verify the required parameter 'tracking_id' is set
         if (null === $tracking_id || (is_array($tracking_id) && 0 === count($tracking_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $tracking_id when calling getTrackingInformation');
+            throw new InvalidArgumentException('Missing the required parameter $tracking_id when calling getTrackingInformation');
         }
 
         $resourcePath = '/shipping/v1/tracking/{trackingId}';
@@ -644,7 +620,7 @@ class ShippingApi
         // path params
         if (null !== $tracking_id) {
             $resourcePath = str_replace(
-                '{'.'trackingId'.'}',
+                '{' . 'trackingId' . '}',
                 ObjectSerializer::toPathValue($tracking_id),
                 $resourcePath
             );
@@ -656,17 +632,16 @@ class ShippingApi
     /**
      * Operation purchaseLabels.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsRequest $body        body (required)
-     * @param string                                                                  $shipment_id shipment_id (required)
+     * @param PurchaseLabelsRequest $body body (required)
+     * @param string $shipment_id shipment_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return PurchaseLabelsResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsResponse
+     * @throws InvalidArgumentException
      */
-    public function purchaseLabels($body, $shipment_id)
-    {
-        list($response) = $this->purchaseLabelsWithHttpInfo($body, $shipment_id);
+    public function purchaseLabels($body, $shipment_id) {
+        [$response] = $this->purchaseLabelsWithHttpInfo($body, $shipment_id);
 
         return $response;
     }
@@ -674,16 +649,15 @@ class ShippingApi
     /**
      * Operation purchaseLabelsWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsRequest $body        (required)
-     * @param string                                                                  $shipment_id (required)
+     * @param PurchaseLabelsRequest $body (required)
+     * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function purchaseLabelsWithHttpInfo($body, $shipment_id)
-    {
+    public function purchaseLabelsWithHttpInfo($body, $shipment_id) {
         $request = $this->purchaseLabelsRequest($body, $shipment_id);
 
         return $this->sendRequest($request, PurchaseLabelsResponse::class);
@@ -692,15 +666,14 @@ class ShippingApi
     /**
      * Operation purchaseLabelsAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsRequest $body        (required)
-     * @param string                                                                  $shipment_id (required)
+     * @param PurchaseLabelsRequest $body (required)
+     * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function purchaseLabelsAsync($body, $shipment_id)
-    {
+    public function purchaseLabelsAsync($body, $shipment_id) {
         return $this->purchaseLabelsAsyncWithHttpInfo($body, $shipment_id)
             ->then(
                 function ($response) {
@@ -712,15 +685,14 @@ class ShippingApi
     /**
      * Operation purchaseLabelsAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsRequest $body        (required)
-     * @param string                                                                  $shipment_id (required)
+     * @param PurchaseLabelsRequest $body (required)
+     * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function purchaseLabelsAsyncWithHttpInfo($body, $shipment_id)
-    {
+    public function purchaseLabelsAsyncWithHttpInfo($body, $shipment_id) {
         $request = $this->purchaseLabelsRequest($body, $shipment_id);
 
         return $this->sendRequestAsync($request, PurchaseLabelsResponse::class);
@@ -729,22 +701,21 @@ class ShippingApi
     /**
      * Create request for operation 'purchaseLabels'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseLabelsRequest $body        (required)
-     * @param string                                                                  $shipment_id (required)
+     * @param PurchaseLabelsRequest $body (required)
+     * @param string $shipment_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function purchaseLabelsRequest($body, $shipment_id)
-    {
+    protected function purchaseLabelsRequest($body, $shipment_id) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling purchaseLabels');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling purchaseLabels');
         }
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling purchaseLabels');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling purchaseLabels');
         }
 
         $resourcePath = '/shipping/v1/shipments/{shipmentId}/purchaseLabels';
@@ -757,7 +728,7 @@ class ShippingApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -769,16 +740,15 @@ class ShippingApi
     /**
      * Operation purchaseShipment.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentRequest $body body (required)
+     * @param PurchaseShipmentRequest $body body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return PurchaseShipmentResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentResponse
+     * @throws InvalidArgumentException
      */
-    public function purchaseShipment($body)
-    {
-        list($response) = $this->purchaseShipmentWithHttpInfo($body);
+    public function purchaseShipment($body) {
+        [$response] = $this->purchaseShipmentWithHttpInfo($body);
 
         return $response;
     }
@@ -786,15 +756,14 @@ class ShippingApi
     /**
      * Operation purchaseShipmentWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentRequest $body (required)
+     * @param PurchaseShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function purchaseShipmentWithHttpInfo($body)
-    {
+    public function purchaseShipmentWithHttpInfo($body) {
         $request = $this->purchaseShipmentRequest($body);
 
         return $this->sendRequest($request, PurchaseShipmentResponse::class);
@@ -803,14 +772,13 @@ class ShippingApi
     /**
      * Operation purchaseShipmentAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentRequest $body (required)
+     * @param PurchaseShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function purchaseShipmentAsync($body)
-    {
+    public function purchaseShipmentAsync($body) {
         return $this->purchaseShipmentAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
@@ -822,14 +790,13 @@ class ShippingApi
     /**
      * Operation purchaseShipmentAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentRequest $body (required)
+     * @param PurchaseShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function purchaseShipmentAsyncWithHttpInfo($body)
-    {
+    public function purchaseShipmentAsyncWithHttpInfo($body) {
         $request = $this->purchaseShipmentRequest($body);
 
         return $this->sendRequestAsync($request, PurchaseShipmentResponse::class);
@@ -838,17 +805,16 @@ class ShippingApi
     /**
      * Create request for operation 'purchaseShipment'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\PurchaseShipmentRequest $body (required)
+     * @param PurchaseShipmentRequest $body (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function purchaseShipmentRequest($body)
-    {
+    protected function purchaseShipmentRequest($body) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling purchaseShipment');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling purchaseShipment');
         }
 
         $resourcePath = '/shipping/v1/purchaseShipment';
@@ -864,18 +830,17 @@ class ShippingApi
     /**
      * Operation retrieveShippingLabel.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelRequest $body        body (required)
-     * @param string                                                                         $shipment_id shipment_id (required)
-     * @param string                                                                         $tracking_id tracking_id (required)
+     * @param RetrieveShippingLabelRequest $body body (required)
+     * @param string $shipment_id shipment_id (required)
+     * @param string $tracking_id tracking_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return RetrieveShippingLabelResponse
+     * @throws ApiException on non-2xx response
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelResponse
+     * @throws InvalidArgumentException
      */
-    public function retrieveShippingLabel($body, $shipment_id, $tracking_id)
-    {
-        list($response) = $this->retrieveShippingLabelWithHttpInfo($body, $shipment_id, $tracking_id);
+    public function retrieveShippingLabel($body, $shipment_id, $tracking_id) {
+        [$response] = $this->retrieveShippingLabelWithHttpInfo($body, $shipment_id, $tracking_id);
 
         return $response;
     }
@@ -883,17 +848,16 @@ class ShippingApi
     /**
      * Operation retrieveShippingLabelWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelRequest $body        (required)
-     * @param string                                                                         $shipment_id (required)
-     * @param string                                                                         $tracking_id (required)
+     * @param RetrieveShippingLabelRequest $body (required)
+     * @param string $shipment_id (required)
+     * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
-     * @throws \ClouSale\AmazonSellingPartnerAPI\ApiException on non-2xx response
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws ApiException on non-2xx response
      *
-     * @return array of \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
      */
-    public function retrieveShippingLabelWithHttpInfo($body, $shipment_id, $tracking_id)
-    {
+    public function retrieveShippingLabelWithHttpInfo($body, $shipment_id, $tracking_id) {
         $request = $this->retrieveShippingLabelRequest($body, $shipment_id, $tracking_id);
 
         return $this->sendRequest($request, RetrieveShippingLabelResponse::class);
@@ -902,18 +866,17 @@ class ShippingApi
     /**
      * Operation retrieveShippingLabelAsync.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelRequest $body        (required)
-     * @param string                                                                         $shipment_id (required)
-     * @param string                                                                         $tracking_id (required)
+     * @param RetrieveShippingLabelRequest $body (required)
+     * @param string $shipment_id (required)
+     * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function retrieveShippingLabelAsync($body, $shipment_id, $tracking_id)
-    {
+    public function retrieveShippingLabelAsync($body, $shipment_id, $tracking_id) {
         return $this->retrieveShippingLabelAsyncWithHttpInfo($body, $shipment_id, $tracking_id)
-            ->then(
+            ->SellerLegend(
                 function ($response) {
                     return $response[0];
                 }
@@ -923,16 +886,15 @@ class ShippingApi
     /**
      * Operation retrieveShippingLabelAsyncWithHttpInfo.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelRequest $body        (required)
-     * @param string                                                                         $shipment_id (required)
-     * @param string                                                                         $tracking_id (required)
+     * @param RetrieveShippingLabelRequest $body (required)
+     * @param string $shipment_id (required)
+     * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function retrieveShippingLabelAsyncWithHttpInfo($body, $shipment_id, $tracking_id)
-    {
+    public function retrieveShippingLabelAsyncWithHttpInfo($body, $shipment_id, $tracking_id) {
         $request = $this->retrieveShippingLabelRequest($body, $shipment_id, $tracking_id);
 
         return $this->sendRequestAsync($request, RetrieveShippingLabelResponse::class);
@@ -941,27 +903,26 @@ class ShippingApi
     /**
      * Create request for operation 'retrieveShippingLabel'.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\RetrieveShippingLabelRequest $body        (required)
-     * @param string                                                                         $shipment_id (required)
-     * @param string                                                                         $tracking_id (required)
+     * @param RetrieveShippingLabelRequest $body (required)
+     * @param string $shipment_id (required)
+     * @param string $tracking_id (required)
      *
-     * @throws \InvalidArgumentException
+     * @return Request
+     * @throws InvalidArgumentException
      *
-     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function retrieveShippingLabelRequest($body, $shipment_id, $tracking_id)
-    {
+    protected function retrieveShippingLabelRequest($body, $shipment_id, $tracking_id) {
         // verify the required parameter 'body' is set
         if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling retrieveShippingLabel');
+            throw new InvalidArgumentException('Missing the required parameter $body when calling retrieveShippingLabel');
         }
         // verify the required parameter 'shipment_id' is set
         if (null === $shipment_id || (is_array($shipment_id) && 0 === count($shipment_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $shipment_id when calling retrieveShippingLabel');
+            throw new InvalidArgumentException('Missing the required parameter $shipment_id when calling retrieveShippingLabel');
         }
         // verify the required parameter 'tracking_id' is set
         if (null === $tracking_id || (is_array($tracking_id) && 0 === count($tracking_id))) {
-            throw new \InvalidArgumentException('Missing the required parameter $tracking_id when calling retrieveShippingLabel');
+            throw new InvalidArgumentException('Missing the required parameter $tracking_id when calling retrieveShippingLabel');
         }
 
         $resourcePath = '/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label';
@@ -974,7 +935,7 @@ class ShippingApi
         // path params
         if (null !== $shipment_id) {
             $resourcePath = str_replace(
-                '{'.'shipmentId'.'}',
+                '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
@@ -982,7 +943,7 @@ class ShippingApi
         // path params
         if (null !== $tracking_id) {
             $resourcePath = str_replace(
-                '{'.'trackingId'.'}',
+                '{' . 'trackingId' . '}',
                 ObjectSerializer::toPathValue($tracking_id),
                 $resourcePath
             );

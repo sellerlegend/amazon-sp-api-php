@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Dimensions Class Doc Comment.
  *
-
  * @description A set of measurements for a three-dimensional object.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Dimensions implements ModelInterface, ArrayAccess
-{
+class Dimensions implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,9 +46,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'length' => 'float',
-'width' => 'float',
-'height' => 'float',
-'unit' => 'string',    ];
+        'width'  => 'float',
+        'height' => 'float',
+        'unit'   => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,17 +57,16 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'length' => null,
-'width' => null,
-'height' => null,
-'unit' => null,    ];
+        'width'  => null,
+        'height' => null,
+        'unit'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,9 +87,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'length' => 'length',
-'width' => 'width',
-'height' => 'height',
-'unit' => 'unit',    ];
+        'width'  => 'width',
+        'height' => 'height',
+        'unit'   => 'unit',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,9 +98,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'length' => 'setLength',
-'width' => 'setWidth',
-'height' => 'setHeight',
-'unit' => 'setUnit',    ];
+        'width'  => 'setWidth',
+        'height' => 'setHeight',
+        'unit'   => 'setUnit',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,9 +109,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'length' => 'getLength',
-'width' => 'getWidth',
-'height' => 'getHeight',
-'unit' => 'getUnit',    ];
+        'width'  => 'getWidth',
+        'height' => 'getHeight',
+        'unit'   => 'getUnit',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,11 +158,10 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getUnitAllowableValues()
-    {
+    public function getUnitAllowableValues() {
         return [
             self::UNIT_IN,
-self::UNIT_CM,        ];
+            self::UNIT_CM,];
     }
 
     /**
@@ -185,8 +177,7 @@ self::UNIT_CM,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
@@ -198,8 +189,7 @@ self::UNIT_CM,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['length']) {
@@ -231,8 +221,7 @@ self::UNIT_CM,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -241,8 +230,7 @@ self::UNIT_CM,        ];
      *
      * @return float
      */
-    public function getLength()
-    {
+    public function getLength() {
         return $this->container['length'];
     }
 
@@ -253,8 +241,7 @@ self::UNIT_CM,        ];
      *
      * @return $this
      */
-    public function setLength($length)
-    {
+    public function setLength($length) {
         $this->container['length'] = $length;
 
         return $this;
@@ -265,8 +252,7 @@ self::UNIT_CM,        ];
      *
      * @return float
      */
-    public function getWidth()
-    {
+    public function getWidth() {
         return $this->container['width'];
     }
 
@@ -277,8 +263,7 @@ self::UNIT_CM,        ];
      *
      * @return $this
      */
-    public function setWidth($width)
-    {
+    public function setWidth($width) {
         $this->container['width'] = $width;
 
         return $this;
@@ -289,8 +274,7 @@ self::UNIT_CM,        ];
      *
      * @return float
      */
-    public function getHeight()
-    {
+    public function getHeight() {
         return $this->container['height'];
     }
 
@@ -301,8 +285,7 @@ self::UNIT_CM,        ];
      *
      * @return $this
      */
-    public function setHeight($height)
-    {
+    public function setHeight($height) {
         $this->container['height'] = $height;
 
         return $this;
@@ -313,8 +296,7 @@ self::UNIT_CM,        ];
      *
      * @return string
      */
-    public function getUnit()
-    {
+    public function getUnit() {
         return $this->container['unit'];
     }
 
@@ -325,11 +307,10 @@ self::UNIT_CM,        ];
      *
      * @return $this
      */
-    public function setUnit($unit)
-    {
+    public function setUnit($unit) {
         $allowedValues = $this->getUnitAllowableValues();
         if (!in_array($unit, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'unit', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'unit', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['unit'] = $unit;
 
@@ -343,8 +324,7 @@ self::UNIT_CM,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -355,21 +335,19 @@ self::UNIT_CM,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -384,8 +362,7 @@ self::UNIT_CM,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -394,8 +371,7 @@ self::UNIT_CM,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

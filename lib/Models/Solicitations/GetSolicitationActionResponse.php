@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Solicitations;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetSolicitationActionResponse Class Doc Comment.
  *
-
  * @description Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
-{
+class GetSolicitationActionResponse implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        '_links' => '\ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseLinks',
-'_embedded' => '\ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseEmbedded',
-'payload' => '\ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\SolicitationsAction',
-'errors' => '\ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\ErrorList',    ];
+        '_links'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseLinks',
+        '_embedded' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseEmbedded',
+        'payload'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations\SolicitationsAction',
+        'errors'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations\ErrorList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        '_links' => null,
-'_embedded' => null,
-'payload' => null,
-'errors' => null,    ];
+        '_links'    => null,
+        '_embedded' => null,
+        'payload'   => null,
+        'errors'    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        '_links' => '_links',
-'_embedded' => '_embedded',
-'payload' => 'payload',
-'errors' => 'errors',    ];
+        '_links'    => '_links',
+        '_embedded' => '_embedded',
+        'payload'   => 'payload',
+        'errors'    => 'errors',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        '_links' => 'setLinks',
-'_embedded' => 'setEmbedded',
-'payload' => 'setPayload',
-'errors' => 'setErrors',    ];
+        '_links'    => 'setLinks',
+        '_embedded' => 'setEmbedded',
+        'payload'   => 'setPayload',
+        'errors'    => 'setErrors',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        '_links' => 'getLinks',
-'_embedded' => 'getEmbedded',
-'payload' => 'getPayload',
-'errors' => 'getErrors',    ];
+        '_links'    => 'getLinks',
+        '_embedded' => 'getEmbedded',
+        'payload'   => 'getPayload',
+        'errors'    => 'getErrors',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['_links'] = isset($data['_links']) ? $data['_links'] : null;
         $this->container['_embedded'] = isset($data['_embedded']) ? $data['_embedded'] : null;
         $this->container['payload'] = isset($data['payload']) ? $data['payload'] : null;
@@ -183,8 +174,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,30 +186,27 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets _links.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseLinks
+     * @return GetSolicitationActionResponseLinks
      */
-    public function getLinks()
-    {
+    public function getLinks() {
         return $this->container['_links'];
     }
 
     /**
      * Sets _links.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseLinks $_links _links
+     * @param GetSolicitationActionResponseLinks $_links _links
      *
      * @return $this
      */
-    public function setLinks($_links)
-    {
+    public function setLinks($_links) {
         $this->container['_links'] = $_links;
 
         return $this;
@@ -228,22 +215,20 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
     /**
      * Gets _embedded.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseEmbedded
+     * @return GetSolicitationActionResponseEmbedded
      */
-    public function getEmbedded()
-    {
+    public function getEmbedded() {
         return $this->container['_embedded'];
     }
 
     /**
      * Sets _embedded.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\GetSolicitationActionResponseEmbedded $_embedded _embedded
+     * @param GetSolicitationActionResponseEmbedded $_embedded _embedded
      *
      * @return $this
      */
-    public function setEmbedded($_embedded)
-    {
+    public function setEmbedded($_embedded) {
         $this->container['_embedded'] = $_embedded;
 
         return $this;
@@ -252,22 +237,20 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
     /**
      * Gets payload.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\SolicitationsAction
+     * @return SolicitationsAction
      */
-    public function getPayload()
-    {
+    public function getPayload() {
         return $this->container['payload'];
     }
 
     /**
      * Sets payload.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\SolicitationsAction $payload payload
+     * @param SolicitationsAction $payload payload
      *
      * @return $this
      */
-    public function setPayload($payload)
-    {
+    public function setPayload($payload) {
         $this->container['payload'] = $payload;
 
         return $this;
@@ -276,22 +259,20 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
     /**
      * Gets errors.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\ErrorList
+     * @return ErrorList
      */
-    public function getErrors()
-    {
+    public function getErrors() {
         return $this->container['errors'];
     }
 
     /**
      * Sets errors.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\ErrorList $errors errors
+     * @param ErrorList $errors errors
      *
      * @return $this
      */
-    public function setErrors($errors)
-    {
+    public function setErrors($errors) {
         $this->container['errors'] = $errors;
 
         return $this;
@@ -304,8 +285,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +296,19 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +323,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +332,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

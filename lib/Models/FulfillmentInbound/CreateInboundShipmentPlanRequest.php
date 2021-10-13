@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateInboundShipmentPlanRequest Class Doc Comment.
  *
-
  * @description The request schema for the createInboundShipmentPlan operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
-{
+class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,12 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'ship_from_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address',
-'label_prep_preference' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference',
-'ship_to_country_code' => 'string',
-'ship_to_country_subdivision_code' => 'string',
-'inbound_shipment_plan_request_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanRequestItemList',    ];
+        'ship_from_address'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address',
+        'label_prep_preference'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference',
+        'ship_to_country_code'                => 'string',
+        'ship_to_country_subdivision_code'    => 'string',
+        'inbound_shipment_plan_request_items' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanRequestItemList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +57,19 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'ship_from_address' => null,
-'label_prep_preference' => null,
-'ship_to_country_code' => null,
-'ship_to_country_subdivision_code' => null,
-'inbound_shipment_plan_request_items' => null,    ];
+        'ship_from_address'                   => null,
+        'label_prep_preference'               => null,
+        'ship_to_country_code'                => null,
+        'ship_to_country_subdivision_code'    => null,
+        'inbound_shipment_plan_request_items' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +78,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +89,11 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'ship_from_address' => 'ShipFromAddress',
-'label_prep_preference' => 'LabelPrepPreference',
-'ship_to_country_code' => 'ShipToCountryCode',
-'ship_to_country_subdivision_code' => 'ShipToCountrySubdivisionCode',
-'inbound_shipment_plan_request_items' => 'InboundShipmentPlanRequestItems',    ];
+        'ship_from_address'                   => 'ShipFromAddress',
+        'label_prep_preference'               => 'LabelPrepPreference',
+        'ship_to_country_code'                => 'ShipToCountryCode',
+        'ship_to_country_subdivision_code'    => 'ShipToCountrySubdivisionCode',
+        'inbound_shipment_plan_request_items' => 'InboundShipmentPlanRequestItems',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +101,11 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'ship_from_address' => 'setShipFromAddress',
-'label_prep_preference' => 'setLabelPrepPreference',
-'ship_to_country_code' => 'setShipToCountryCode',
-'ship_to_country_subdivision_code' => 'setShipToCountrySubdivisionCode',
-'inbound_shipment_plan_request_items' => 'setInboundShipmentPlanRequestItems',    ];
+        'ship_from_address'                   => 'setShipFromAddress',
+        'label_prep_preference'               => 'setLabelPrepPreference',
+        'ship_to_country_code'                => 'setShipToCountryCode',
+        'ship_to_country_subdivision_code'    => 'setShipToCountrySubdivisionCode',
+        'inbound_shipment_plan_request_items' => 'setInboundShipmentPlanRequestItems',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +113,11 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'ship_from_address' => 'getShipFromAddress',
-'label_prep_preference' => 'getLabelPrepPreference',
-'ship_to_country_code' => 'getShipToCountryCode',
-'ship_to_country_subdivision_code' => 'getShipToCountrySubdivisionCode',
-'inbound_shipment_plan_request_items' => 'getInboundShipmentPlanRequestItems',    ];
+        'ship_from_address'                   => 'getShipFromAddress',
+        'label_prep_preference'               => 'getLabelPrepPreference',
+        'ship_to_country_code'                => 'getShipToCountryCode',
+        'ship_to_country_subdivision_code'    => 'getShipToCountrySubdivisionCode',
+        'inbound_shipment_plan_request_items' => 'getInboundShipmentPlanRequestItems',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +125,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +134,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +143,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +152,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +169,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['ship_from_address'] = isset($data['ship_from_address']) ? $data['ship_from_address'] : null;
         $this->container['label_prep_preference'] = isset($data['label_prep_preference']) ? $data['label_prep_preference'] : null;
         $this->container['ship_to_country_code'] = isset($data['ship_to_country_code']) ? $data['ship_to_country_code'] : null;
@@ -189,8 +182,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['ship_from_address']) {
@@ -212,30 +204,27 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets ship_from_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address
+     * @return Address
      */
-    public function getShipFromAddress()
-    {
+    public function getShipFromAddress() {
         return $this->container['ship_from_address'];
     }
 
     /**
      * Sets ship_from_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address $ship_from_address ship_from_address
+     * @param Address $ship_from_address ship_from_address
      *
      * @return $this
      */
-    public function setShipFromAddress($ship_from_address)
-    {
+    public function setShipFromAddress($ship_from_address) {
         $this->container['ship_from_address'] = $ship_from_address;
 
         return $this;
@@ -244,22 +233,20 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
     /**
      * Gets label_prep_preference.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference
+     * @return LabelPrepPreference
      */
-    public function getLabelPrepPreference()
-    {
+    public function getLabelPrepPreference() {
         return $this->container['label_prep_preference'];
     }
 
     /**
      * Sets label_prep_preference.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference $label_prep_preference label_prep_preference
+     * @param LabelPrepPreference $label_prep_preference label_prep_preference
      *
      * @return $this
      */
-    public function setLabelPrepPreference($label_prep_preference)
-    {
+    public function setLabelPrepPreference($label_prep_preference) {
         $this->container['label_prep_preference'] = $label_prep_preference;
 
         return $this;
@@ -270,8 +257,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShipToCountryCode()
-    {
+    public function getShipToCountryCode() {
         return $this->container['ship_to_country_code'];
     }
 
@@ -282,8 +268,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShipToCountryCode($ship_to_country_code)
-    {
+    public function setShipToCountryCode($ship_to_country_code) {
         $this->container['ship_to_country_code'] = $ship_to_country_code;
 
         return $this;
@@ -294,8 +279,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShipToCountrySubdivisionCode()
-    {
+    public function getShipToCountrySubdivisionCode() {
         return $this->container['ship_to_country_subdivision_code'];
     }
 
@@ -306,8 +290,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShipToCountrySubdivisionCode($ship_to_country_subdivision_code)
-    {
+    public function setShipToCountrySubdivisionCode($ship_to_country_subdivision_code) {
         $this->container['ship_to_country_subdivision_code'] = $ship_to_country_subdivision_code;
 
         return $this;
@@ -316,22 +299,20 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
     /**
      * Gets inbound_shipment_plan_request_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanRequestItemList
+     * @return InboundShipmentPlanRequestItemList
      */
-    public function getInboundShipmentPlanRequestItems()
-    {
+    public function getInboundShipmentPlanRequestItems() {
         return $this->container['inbound_shipment_plan_request_items'];
     }
 
     /**
      * Sets inbound_shipment_plan_request_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanRequestItemList $inbound_shipment_plan_request_items inbound_shipment_plan_request_items
+     * @param InboundShipmentPlanRequestItemList $inbound_shipment_plan_request_items inbound_shipment_plan_request_items
      *
      * @return $this
      */
-    public function setInboundShipmentPlanRequestItems($inbound_shipment_plan_request_items)
-    {
+    public function setInboundShipmentPlanRequestItems($inbound_shipment_plan_request_items) {
         $this->container['inbound_shipment_plan_request_items'] = $inbound_shipment_plan_request_items;
 
         return $this;
@@ -344,8 +325,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -356,21 +336,19 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -385,8 +363,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -395,8 +372,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

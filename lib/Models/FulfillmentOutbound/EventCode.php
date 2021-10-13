@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * EventCode Class Doc Comment.
  *
-
  * @description The event code for the delivery event.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class EventCode
-{
+class EventCode {
     /**
      * Possible values of this enum.
      */
@@ -69,41 +67,40 @@ class EventCode
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::_101,
-self::_102,
-self::_201,
-self::_202,
-self::_203,
-self::_204,
-self::_205,
-self::_206,
-self::_301,
-self::_302,
-self::_304,
-self::_306,
-self::_307,
-self::_308,
-self::_309,
-self::_401,
-self::_402,
-self::_403,
-self::_404,
-self::_405,
-self::_406,
-self::_407,
-self::_408,
-self::_409,
-self::_411,
-self::_412,
-self::_413,
-self::_414,
-self::_415,
-self::_416,
-self::_417,
-self::_418,
-self::_419,        ];
+            self::_102,
+            self::_201,
+            self::_202,
+            self::_203,
+            self::_204,
+            self::_205,
+            self::_206,
+            self::_301,
+            self::_302,
+            self::_304,
+            self::_306,
+            self::_307,
+            self::_308,
+            self::_309,
+            self::_401,
+            self::_402,
+            self::_403,
+            self::_404,
+            self::_405,
+            self::_406,
+            self::_407,
+            self::_408,
+            self::_409,
+            self::_411,
+            self::_412,
+            self::_413,
+            self::_414,
+            self::_415,
+            self::_416,
+            self::_417,
+            self::_418,
+            self::_419,];
     }
 }

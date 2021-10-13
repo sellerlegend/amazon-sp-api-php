@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Warning Class Doc Comment.
  *
-
  * @description Warning returned when the request is successful but execution have some important callouts on basis of which API clients should take defined actions.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Warning implements ModelInterface, ArrayAccess
-{
+class Warning implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class Warning implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'code' => 'string',
-'message' => 'string',
-'details' => 'string',    ];
+        'code'    => 'string',
+        'message' => 'string',
+        'details' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class Warning implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'code' => null,
-'message' => null,
-'details' => null,    ];
+        'code'    => null,
+        'message' => null,
+        'details' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class Warning implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-'message' => 'message',
-'details' => 'details',    ];
+        'code'    => 'code',
+        'message' => 'message',
+        'details' => 'details',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class Warning implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-'message' => 'setMessage',
-'details' => 'setDetails',    ];
+        'code'    => 'setCode',
+        'message' => 'setMessage',
+        'details' => 'setDetails',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class Warning implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-'message' => 'getMessage',
-'details' => 'getDetails',    ];
+        'code'    => 'getCode',
+        'message' => 'getMessage',
+        'details' => 'getDetails',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class Warning implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
@@ -177,8 +168,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['code']) {
@@ -197,8 +187,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -207,8 +196,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->container['code'];
     }
 
@@ -219,8 +207,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->container['code'] = $code;
 
         return $this;
@@ -231,8 +218,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMessage()
-    {
+    public function getMessage() {
         return $this->container['message'];
     }
 
@@ -243,8 +229,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMessage($message)
-    {
+    public function setMessage($message) {
         $this->container['message'] = $message;
 
         return $this;
@@ -255,8 +240,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDetails()
-    {
+    public function getDetails() {
         return $this->container['details'];
     }
 
@@ -267,8 +251,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDetails($details)
-    {
+    public function setDetails($details) {
         $this->container['details'] = $details;
 
         return $this;
@@ -281,8 +264,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -293,21 +275,19 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -322,8 +302,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -332,8 +311,7 @@ class Warning implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

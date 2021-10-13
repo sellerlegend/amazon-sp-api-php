@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InboundShipmentRequest Class Doc Comment.
  *
-
  * @description The request schema for an inbound shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InboundShipmentRequest implements ModelInterface, ArrayAccess
-{
+class InboundShipmentRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,10 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'inbound_shipment_header' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentHeader',
-'inbound_shipment_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList',
-'marketplace_id' => 'string',    ];
+        'inbound_shipment_header' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentHeader',
+        'inbound_shipment_items'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList',
+        'marketplace_id'          => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +56,15 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'inbound_shipment_header' => null,
-'inbound_shipment_items' => null,
-'marketplace_id' => null,    ];
+        'inbound_shipment_items'  => null,
+        'marketplace_id'          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +73,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +85,8 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'inbound_shipment_header' => 'InboundShipmentHeader',
-'inbound_shipment_items' => 'InboundShipmentItems',
-'marketplace_id' => 'MarketplaceId',    ];
+        'inbound_shipment_items'  => 'InboundShipmentItems',
+        'marketplace_id'          => 'MarketplaceId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +95,8 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'inbound_shipment_header' => 'setInboundShipmentHeader',
-'inbound_shipment_items' => 'setInboundShipmentItems',
-'marketplace_id' => 'setMarketplaceId',    ];
+        'inbound_shipment_items'  => 'setInboundShipmentItems',
+        'marketplace_id'          => 'setMarketplaceId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +105,8 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'inbound_shipment_header' => 'getInboundShipmentHeader',
-'inbound_shipment_items' => 'getInboundShipmentItems',
-'marketplace_id' => 'getMarketplaceId',    ];
+        'inbound_shipment_items'  => 'getInboundShipmentItems',
+        'marketplace_id'          => 'getMarketplaceId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +114,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +123,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +132,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +141,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +158,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['inbound_shipment_header'] = isset($data['inbound_shipment_header']) ? $data['inbound_shipment_header'] : null;
         $this->container['inbound_shipment_items'] = isset($data['inbound_shipment_items']) ? $data['inbound_shipment_items'] : null;
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
@@ -177,8 +169,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['inbound_shipment_header']) {
@@ -200,30 +191,27 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets inbound_shipment_header.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentHeader
+     * @return InboundShipmentHeader
      */
-    public function getInboundShipmentHeader()
-    {
+    public function getInboundShipmentHeader() {
         return $this->container['inbound_shipment_header'];
     }
 
     /**
      * Sets inbound_shipment_header.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentHeader $inbound_shipment_header inbound_shipment_header
+     * @param InboundShipmentHeader $inbound_shipment_header inbound_shipment_header
      *
      * @return $this
      */
-    public function setInboundShipmentHeader($inbound_shipment_header)
-    {
+    public function setInboundShipmentHeader($inbound_shipment_header) {
         $this->container['inbound_shipment_header'] = $inbound_shipment_header;
 
         return $this;
@@ -232,22 +220,20 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Gets inbound_shipment_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList
+     * @return InboundShipmentItemList
      */
-    public function getInboundShipmentItems()
-    {
+    public function getInboundShipmentItems() {
         return $this->container['inbound_shipment_items'];
     }
 
     /**
      * Sets inbound_shipment_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentItemList $inbound_shipment_items inbound_shipment_items
+     * @param InboundShipmentItemList $inbound_shipment_items inbound_shipment_items
      *
      * @return $this
      */
-    public function setInboundShipmentItems($inbound_shipment_items)
-    {
+    public function setInboundShipmentItems($inbound_shipment_items) {
         $this->container['inbound_shipment_items'] = $inbound_shipment_items;
 
         return $this;
@@ -258,8 +244,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -270,8 +255,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -284,8 +268,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +279,19 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +306,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +315,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

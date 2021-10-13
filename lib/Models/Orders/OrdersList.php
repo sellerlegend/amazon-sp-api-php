@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OrdersList Class Doc Comment.
  *
-
  * @description A list of orders along with additional information to make subsequent API calls.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OrdersList implements ModelInterface, ArrayAccess
-{
+class OrdersList implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class OrdersList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'orders' => '\ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderList',
-'next_token' => 'string',
-'last_updated_before' => 'string',
-'created_before' => 'string',    ];
+        'orders'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderList',
+        'next_token'          => 'string',
+        'last_updated_before' => 'string',
+        'created_before'      => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class OrdersList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'orders' => null,
-'next_token' => null,
-'last_updated_before' => null,
-'created_before' => null,    ];
+        'orders'              => null,
+        'next_token'          => null,
+        'last_updated_before' => null,
+        'created_before'      => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class OrdersList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'orders' => 'Orders',
-'next_token' => 'NextToken',
-'last_updated_before' => 'LastUpdatedBefore',
-'created_before' => 'CreatedBefore',    ];
+        'orders'              => 'Orders',
+        'next_token'          => 'NextToken',
+        'last_updated_before' => 'LastUpdatedBefore',
+        'created_before'      => 'CreatedBefore',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class OrdersList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'orders' => 'setOrders',
-'next_token' => 'setNextToken',
-'last_updated_before' => 'setLastUpdatedBefore',
-'created_before' => 'setCreatedBefore',    ];
+        'orders'              => 'setOrders',
+        'next_token'          => 'setNextToken',
+        'last_updated_before' => 'setLastUpdatedBefore',
+        'created_before'      => 'setCreatedBefore',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class OrdersList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'orders' => 'getOrders',
-'next_token' => 'getNextToken',
-'last_updated_before' => 'getLastUpdatedBefore',
-'created_before' => 'getCreatedBefore',    ];
+        'orders'              => 'getOrders',
+        'next_token'          => 'getNextToken',
+        'last_updated_before' => 'getLastUpdatedBefore',
+        'created_before'      => 'getCreatedBefore',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['orders'] = isset($data['orders']) ? $data['orders'] : null;
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
         $this->container['last_updated_before'] = isset($data['last_updated_before']) ? $data['last_updated_before'] : null;
@@ -183,8 +174,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['orders']) {
@@ -200,30 +190,27 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets orders.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderList
+     * @return OrderList
      */
-    public function getOrders()
-    {
+    public function getOrders() {
         return $this->container['orders'];
     }
 
     /**
      * Sets orders.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Orders\OrderList $orders orders
+     * @param OrderList $orders orders
      *
      * @return $this
      */
-    public function setOrders($orders)
-    {
+    public function setOrders($orders) {
         $this->container['orders'] = $orders;
 
         return $this;
@@ -234,8 +221,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -246,8 +232,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -258,8 +243,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getLastUpdatedBefore()
-    {
+    public function getLastUpdatedBefore() {
         return $this->container['last_updated_before'];
     }
 
@@ -270,8 +254,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setLastUpdatedBefore($last_updated_before)
-    {
+    public function setLastUpdatedBefore($last_updated_before) {
         $this->container['last_updated_before'] = $last_updated_before;
 
         return $this;
@@ -282,8 +265,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCreatedBefore()
-    {
+    public function getCreatedBefore() {
         return $this->container['created_before'];
     }
 
@@ -294,8 +276,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCreatedBefore($created_before)
-    {
+    public function setCreatedBefore($created_before) {
         $this->container['created_before'] = $created_before;
 
         return $this;
@@ -308,8 +289,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -320,21 +300,19 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -349,8 +327,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -359,8 +336,7 @@ class OrdersList implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -4,18 +4,25 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#deletesmallandlightenrollmentbysellersku) | **DELETE** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
-[**getSmallAndLightEligibilityBySellerSKU**](SmallAndLightApi.md#getsmallandlighteligibilitybysellersku) | **GET** /fba/smallAndLight/v1/eligibilities/{sellerSKU} | 
-[**getSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#getsmallandlightenrollmentbysellersku) | **GET** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
-[**getSmallAndLightFeePreview**](SmallAndLightApi.md#getsmallandlightfeepreview) | **POST** /fba/smallAndLight/v1/feePreviews | 
-[**putSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#putsmallandlightenrollmentbysellersku) | **PUT** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
+[**deleteSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#deletesmallandlightenrollmentbysellersku) | **
+DELETE** /fba/smallAndLight/v1/enrollments/{sellerSKU} |
+[**getSmallAndLightEligibilityBySellerSKU**](SmallAndLightApi.md#getsmallandlighteligibilitybysellersku) | **
+GET** /fba/smallAndLight/v1/eligibilities/{sellerSKU} |
+[**getSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#getsmallandlightenrollmentbysellersku) | **
+GET** /fba/smallAndLight/v1/enrollments/{sellerSKU} |
+[**getSmallAndLightFeePreview**](SmallAndLightApi.md#getsmallandlightfeepreview) | **
+POST** /fba/smallAndLight/v1/feePreviews |
+[**putSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#putsmallandlightenrollmentbysellersku) | **
+PUT** /fba/smallAndLight/v1/enrollments/{sellerSKU} |
 
 # **deleteSmallAndLightEnrollmentBySellerSKU**
+
 > deleteSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
 
 
 
-Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  
+Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If
+the item is not eligible for disenrollment, the ineligibility reasons are returned.
 
 **Usage Plan:**
 
@@ -24,6 +31,7 @@ Removes the item indicated by the specified seller SKU from the Small and Light 
 | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -55,8 +63,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. |
+**seller_sku** | **string**| The seller SKU that identifies the item. |
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. |
 
 ### Return type
 
@@ -68,17 +77,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmallAndLightEligibilityBySellerSKU**
+
 > \Swagger\Client\Models\SmallAndLightEligibility getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids)
 
 
 
-Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  
+Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the
+specified marketplace. If the item is not eligible, the ineligibility reasons are returned.
 
 **Usage Plan:**
 
@@ -87,6 +98,7 @@ Returns the Small and Light program eligibility status of the item indicated by 
 | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -119,8 +131,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. |
+**seller_sku** | **string**| The seller SKU that identifies the item. |
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. |
 
 ### Return type
 
@@ -132,17 +145,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmallAndLightEnrollmentBySellerSKU**
+
 > \Swagger\Client\Models\SmallAndLightEnrollment getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
 
 
 
-Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  
+Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified
+marketplace.
 
 **Usage Plan:**
 
@@ -151,6 +166,7 @@ Returns the Small and Light enrollment status for the item indicated by the spec
 | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -183,8 +199,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. |
+**seller_sku** | **string**| The seller SKU that identifies the item. |
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. |
 
 ### Return type
 
@@ -196,17 +213,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSmallAndLightFeePreview**
+
 > \Swagger\Client\Models\SmallAndLightFeePreviews getSmallAndLightFeePreview($body)
 
 
 
-Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  
+Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to
+retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will
+mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.
 
 **Usage Plan:**
 
@@ -215,6 +235,7 @@ Returns the Small and Light fee estimates for the specified items. You must incl
 | 1 | 3 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -246,7 +267,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightFeePreviewRequest.md)|  |
+**body** | [**\Swagger\Client\Models\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightFeePreviewRequest.md)|  |
 
 ### Return type
 
@@ -258,17 +279,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putSmallAndLightEnrollmentBySellerSKU**
+
 > \Swagger\Client\Models\SmallAndLightEnrollment putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
 
 
 
-Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  
+Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If
+the item is not eligible, the ineligibility reasons are returned.
 
 **Usage Plan:**
 
@@ -277,6 +300,7 @@ Enrolls the item indicated by the specified seller SKU in the Small and Light pr
 | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -309,8 +333,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace in which to enroll the item. Note: Accepts a single marketplace only. |
+**seller_sku** | **string**| The seller SKU that identifies the item. |
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| The marketplace in which to enroll the item. Note: Accepts a single marketplace only. |
 
 ### Return type
 
@@ -322,8 +347,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

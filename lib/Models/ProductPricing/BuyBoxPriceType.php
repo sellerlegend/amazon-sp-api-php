@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * BuyBoxPriceType Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class BuyBoxPriceType implements ModelInterface, ArrayAccess
-{
+class BuyBoxPriceType implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,11 +42,12 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'condition' => 'string',
-'landed_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'listing_price' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'shipping' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
-'points' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Points',    ];
+        'condition'     => 'string',
+        'landed_price'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'listing_price' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'shipping'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType',
+        'points'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\Points'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,19 +55,18 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'condition' => null,
-'landed_price' => null,
-'listing_price' => null,
-'shipping' => null,
-'points' => null,    ];
+        'condition'     => null,
+        'landed_price'  => null,
+        'listing_price' => null,
+        'shipping'      => null,
+        'points'        => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -76,8 +75,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,11 +86,11 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'condition' => 'condition',
-'landed_price' => 'LandedPrice',
-'listing_price' => 'ListingPrice',
-'shipping' => 'Shipping',
-'points' => 'Points',    ];
+        'condition'     => 'condition',
+        'landed_price'  => 'LandedPrice',
+        'listing_price' => 'ListingPrice',
+        'shipping'      => 'Shipping',
+        'points'        => 'Points',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,11 +98,11 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'condition' => 'setCondition',
-'landed_price' => 'setLandedPrice',
-'listing_price' => 'setListingPrice',
-'shipping' => 'setShipping',
-'points' => 'setPoints',    ];
+        'condition'     => 'setCondition',
+        'landed_price'  => 'setLandedPrice',
+        'listing_price' => 'setListingPrice',
+        'shipping'      => 'setShipping',
+        'points'        => 'setPoints',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,11 +110,11 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'condition' => 'getCondition',
-'landed_price' => 'getLandedPrice',
-'listing_price' => 'getListingPrice',
-'shipping' => 'getShipping',
-'points' => 'getPoints',    ];
+        'condition'     => 'getCondition',
+        'landed_price'  => 'getLandedPrice',
+        'listing_price' => 'getListingPrice',
+        'shipping'      => 'getShipping',
+        'points'        => 'getPoints',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -124,8 +122,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -134,8 +131,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -144,8 +140,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -154,8 +149,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -172,8 +166,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
         $this->container['landed_price'] = isset($data['landed_price']) ? $data['landed_price'] : null;
         $this->container['listing_price'] = isset($data['listing_price']) ? $data['listing_price'] : null;
@@ -186,8 +179,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['condition']) {
@@ -212,8 +204,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -222,8 +213,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->container['condition'];
     }
 
@@ -234,8 +224,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->container['condition'] = $condition;
 
         return $this;
@@ -244,22 +233,20 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
     /**
      * Gets landed_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getLandedPrice()
-    {
+    public function getLandedPrice() {
         return $this->container['landed_price'];
     }
 
     /**
      * Sets landed_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $landed_price landed_price
+     * @param MoneyType $landed_price landed_price
      *
      * @return $this
      */
-    public function setLandedPrice($landed_price)
-    {
+    public function setLandedPrice($landed_price) {
         $this->container['landed_price'] = $landed_price;
 
         return $this;
@@ -268,22 +255,20 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
     /**
      * Gets listing_price.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getListingPrice()
-    {
+    public function getListingPrice() {
         return $this->container['listing_price'];
     }
 
     /**
      * Sets listing_price.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $listing_price listing_price
+     * @param MoneyType $listing_price listing_price
      *
      * @return $this
      */
-    public function setListingPrice($listing_price)
-    {
+    public function setListingPrice($listing_price) {
         $this->container['listing_price'] = $listing_price;
 
         return $this;
@@ -292,22 +277,20 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
     /**
      * Gets shipping.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType
+     * @return MoneyType
      */
-    public function getShipping()
-    {
+    public function getShipping() {
         return $this->container['shipping'];
     }
 
     /**
      * Sets shipping.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\MoneyType $shipping shipping
+     * @param MoneyType $shipping shipping
      *
      * @return $this
      */
-    public function setShipping($shipping)
-    {
+    public function setShipping($shipping) {
         $this->container['shipping'] = $shipping;
 
         return $this;
@@ -316,22 +299,20 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
     /**
      * Gets points.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Points
+     * @return Points
      */
-    public function getPoints()
-    {
+    public function getPoints() {
         return $this->container['points'];
     }
 
     /**
      * Sets points.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Points $points points
+     * @param Points $points points
      *
      * @return $this
      */
-    public function setPoints($points)
-    {
+    public function setPoints($points) {
         $this->container['points'] = $points;
 
         return $this;
@@ -344,8 +325,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -356,21 +336,19 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -385,8 +363,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -395,8 +372,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

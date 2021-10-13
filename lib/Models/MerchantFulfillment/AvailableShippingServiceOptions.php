@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AvailableShippingServiceOptions Class Doc Comment.
  *
-
  * @description The available shipping service options.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
-{
+class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'available_carrier_will_pick_up_options' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableCarrierWillPickUpOptionsList',
-'available_delivery_experience_options' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableDeliveryExperienceOptionsList',    ];
+        'available_carrier_will_pick_up_options' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableCarrierWillPickUpOptionsList',
+        'available_delivery_experience_options'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableDeliveryExperienceOptionsList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'available_carrier_will_pick_up_options' => null,
-'available_delivery_experience_options' => null,    ];
+        'available_delivery_experience_options'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'available_carrier_will_pick_up_options' => 'AvailableCarrierWillPickUpOptions',
-'available_delivery_experience_options' => 'AvailableDeliveryExperienceOptions',    ];
+        'available_delivery_experience_options'  => 'AvailableDeliveryExperienceOptions',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'available_carrier_will_pick_up_options' => 'setAvailableCarrierWillPickUpOptions',
-'available_delivery_experience_options' => 'setAvailableDeliveryExperienceOptions',    ];
+        'available_delivery_experience_options'  => 'setAvailableDeliveryExperienceOptions',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'available_carrier_will_pick_up_options' => 'getAvailableCarrierWillPickUpOptions',
-'available_delivery_experience_options' => 'getAvailableDeliveryExperienceOptions',    ];
+        'available_delivery_experience_options'  => 'getAvailableDeliveryExperienceOptions',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['available_carrier_will_pick_up_options'] = isset($data['available_carrier_will_pick_up_options']) ? $data['available_carrier_will_pick_up_options'] : null;
         $this->container['available_delivery_experience_options'] = isset($data['available_delivery_experience_options']) ? $data['available_delivery_experience_options'] : null;
     }
@@ -171,8 +162,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['available_carrier_will_pick_up_options']) {
@@ -191,30 +181,27 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets available_carrier_will_pick_up_options.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableCarrierWillPickUpOptionsList
+     * @return AvailableCarrierWillPickUpOptionsList
      */
-    public function getAvailableCarrierWillPickUpOptions()
-    {
+    public function getAvailableCarrierWillPickUpOptions() {
         return $this->container['available_carrier_will_pick_up_options'];
     }
 
     /**
      * Sets available_carrier_will_pick_up_options.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableCarrierWillPickUpOptionsList $available_carrier_will_pick_up_options available_carrier_will_pick_up_options
+     * @param AvailableCarrierWillPickUpOptionsList $available_carrier_will_pick_up_options available_carrier_will_pick_up_options
      *
      * @return $this
      */
-    public function setAvailableCarrierWillPickUpOptions($available_carrier_will_pick_up_options)
-    {
+    public function setAvailableCarrierWillPickUpOptions($available_carrier_will_pick_up_options) {
         $this->container['available_carrier_will_pick_up_options'] = $available_carrier_will_pick_up_options;
 
         return $this;
@@ -223,22 +210,20 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
     /**
      * Gets available_delivery_experience_options.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableDeliveryExperienceOptionsList
+     * @return AvailableDeliveryExperienceOptionsList
      */
-    public function getAvailableDeliveryExperienceOptions()
-    {
+    public function getAvailableDeliveryExperienceOptions() {
         return $this->container['available_delivery_experience_options'];
     }
 
     /**
      * Sets available_delivery_experience_options.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AvailableDeliveryExperienceOptionsList $available_delivery_experience_options available_delivery_experience_options
+     * @param AvailableDeliveryExperienceOptionsList $available_delivery_experience_options available_delivery_experience_options
      *
      * @return $this
      */
-    public function setAvailableDeliveryExperienceOptions($available_delivery_experience_options)
-    {
+    public function setAvailableDeliveryExperienceOptions($available_delivery_experience_options) {
         $this->container['available_delivery_experience_options'] = $available_delivery_experience_options;
 
         return $this;
@@ -251,8 +236,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class AvailableShippingServiceOptions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

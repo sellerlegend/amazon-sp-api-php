@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AdditionalSellerInput Class Doc Comment.
  *
-
  * @description Additional information required to purchase shipping.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AdditionalSellerInput implements ModelInterface, ArrayAccess
-{
+class AdditionalSellerInput implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,15 +44,16 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'data_type' => 'string',
-'value_as_string' => 'string',
-'value_as_boolean' => 'bool',
-'value_as_integer' => 'int',
-'value_as_timestamp' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp',
-'value_as_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
-'value_as_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight',
-'value_as_dimension' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Length',
-'value_as_currency' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount',    ];
+        'data_type'          => 'string',
+        'value_as_string'    => 'string',
+        'value_as_boolean'   => 'bool',
+        'value_as_integer'   => 'int',
+        'value_as_timestamp' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp',
+        'value_as_address'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address',
+        'value_as_weight'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight',
+        'value_as_dimension' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Length',
+        'value_as_currency'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -62,23 +61,23 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'data_type' => null,
-'value_as_string' => null,
-'value_as_boolean' => null,
-'value_as_integer' => null,
-'value_as_timestamp' => null,
-'value_as_address' => null,
-'value_as_weight' => null,
-'value_as_dimension' => null,
-'value_as_currency' => null,    ];
+        'data_type'          => null,
+        'value_as_string'    => null,
+        'value_as_boolean'   => null,
+        'value_as_integer'   => null,
+        'value_as_timestamp' => null,
+        'value_as_address'   => null,
+        'value_as_weight'    => null,
+        'value_as_dimension' => null,
+        'value_as_currency'  => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -87,8 +86,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -99,15 +97,15 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data_type' => 'DataType',
-'value_as_string' => 'ValueAsString',
-'value_as_boolean' => 'ValueAsBoolean',
-'value_as_integer' => 'ValueAsInteger',
-'value_as_timestamp' => 'ValueAsTimestamp',
-'value_as_address' => 'ValueAsAddress',
-'value_as_weight' => 'ValueAsWeight',
-'value_as_dimension' => 'ValueAsDimension',
-'value_as_currency' => 'ValueAsCurrency',    ];
+        'data_type'          => 'DataType',
+        'value_as_string'    => 'ValueAsString',
+        'value_as_boolean'   => 'ValueAsBoolean',
+        'value_as_integer'   => 'ValueAsInteger',
+        'value_as_timestamp' => 'ValueAsTimestamp',
+        'value_as_address'   => 'ValueAsAddress',
+        'value_as_weight'    => 'ValueAsWeight',
+        'value_as_dimension' => 'ValueAsDimension',
+        'value_as_currency'  => 'ValueAsCurrency',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -115,15 +113,15 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data_type' => 'setDataType',
-'value_as_string' => 'setValueAsString',
-'value_as_boolean' => 'setValueAsBoolean',
-'value_as_integer' => 'setValueAsInteger',
-'value_as_timestamp' => 'setValueAsTimestamp',
-'value_as_address' => 'setValueAsAddress',
-'value_as_weight' => 'setValueAsWeight',
-'value_as_dimension' => 'setValueAsDimension',
-'value_as_currency' => 'setValueAsCurrency',    ];
+        'data_type'          => 'setDataType',
+        'value_as_string'    => 'setValueAsString',
+        'value_as_boolean'   => 'setValueAsBoolean',
+        'value_as_integer'   => 'setValueAsInteger',
+        'value_as_timestamp' => 'setValueAsTimestamp',
+        'value_as_address'   => 'setValueAsAddress',
+        'value_as_weight'    => 'setValueAsWeight',
+        'value_as_dimension' => 'setValueAsDimension',
+        'value_as_currency'  => 'setValueAsCurrency',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -131,15 +129,15 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data_type' => 'getDataType',
-'value_as_string' => 'getValueAsString',
-'value_as_boolean' => 'getValueAsBoolean',
-'value_as_integer' => 'getValueAsInteger',
-'value_as_timestamp' => 'getValueAsTimestamp',
-'value_as_address' => 'getValueAsAddress',
-'value_as_weight' => 'getValueAsWeight',
-'value_as_dimension' => 'getValueAsDimension',
-'value_as_currency' => 'getValueAsCurrency',    ];
+        'data_type'          => 'getDataType',
+        'value_as_string'    => 'getValueAsString',
+        'value_as_boolean'   => 'getValueAsBoolean',
+        'value_as_integer'   => 'getValueAsInteger',
+        'value_as_timestamp' => 'getValueAsTimestamp',
+        'value_as_address'   => 'getValueAsAddress',
+        'value_as_weight'    => 'getValueAsWeight',
+        'value_as_dimension' => 'getValueAsDimension',
+        'value_as_currency'  => 'getValueAsCurrency',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -147,8 +145,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -157,8 +154,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -167,8 +163,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -177,8 +172,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -195,8 +189,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
         $this->container['value_as_string'] = isset($data['value_as_string']) ? $data['value_as_string'] : null;
         $this->container['value_as_boolean'] = isset($data['value_as_boolean']) ? $data['value_as_boolean'] : null;
@@ -213,8 +206,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -226,8 +218,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -236,8 +227,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDataType()
-    {
+    public function getDataType() {
         return $this->container['data_type'];
     }
 
@@ -248,8 +238,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDataType($data_type)
-    {
+    public function setDataType($data_type) {
         $this->container['data_type'] = $data_type;
 
         return $this;
@@ -260,8 +249,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getValueAsString()
-    {
+    public function getValueAsString() {
         return $this->container['value_as_string'];
     }
 
@@ -272,8 +260,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValueAsString($value_as_string)
-    {
+    public function setValueAsString($value_as_string) {
         $this->container['value_as_string'] = $value_as_string;
 
         return $this;
@@ -284,8 +271,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getValueAsBoolean()
-    {
+    public function getValueAsBoolean() {
         return $this->container['value_as_boolean'];
     }
 
@@ -296,8 +282,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValueAsBoolean($value_as_boolean)
-    {
+    public function setValueAsBoolean($value_as_boolean) {
         $this->container['value_as_boolean'] = $value_as_boolean;
 
         return $this;
@@ -308,8 +293,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getValueAsInteger()
-    {
+    public function getValueAsInteger() {
         return $this->container['value_as_integer'];
     }
 
@@ -320,8 +304,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValueAsInteger($value_as_integer)
-    {
+    public function setValueAsInteger($value_as_integer) {
         $this->container['value_as_integer'] = $value_as_integer;
 
         return $this;
@@ -330,22 +313,20 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
     /**
      * Gets value_as_timestamp.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp
+     * @return Timestamp
      */
-    public function getValueAsTimestamp()
-    {
+    public function getValueAsTimestamp() {
         return $this->container['value_as_timestamp'];
     }
 
     /**
      * Sets value_as_timestamp.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Timestamp $value_as_timestamp value_as_timestamp
+     * @param Timestamp $value_as_timestamp value_as_timestamp
      *
      * @return $this
      */
-    public function setValueAsTimestamp($value_as_timestamp)
-    {
+    public function setValueAsTimestamp($value_as_timestamp) {
         $this->container['value_as_timestamp'] = $value_as_timestamp;
 
         return $this;
@@ -354,22 +335,20 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
     /**
      * Gets value_as_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address
+     * @return Address
      */
-    public function getValueAsAddress()
-    {
+    public function getValueAsAddress() {
         return $this->container['value_as_address'];
     }
 
     /**
      * Sets value_as_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Address $value_as_address value_as_address
+     * @param Address $value_as_address value_as_address
      *
      * @return $this
      */
-    public function setValueAsAddress($value_as_address)
-    {
+    public function setValueAsAddress($value_as_address) {
         $this->container['value_as_address'] = $value_as_address;
 
         return $this;
@@ -378,22 +357,20 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
     /**
      * Gets value_as_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight
+     * @return Weight
      */
-    public function getValueAsWeight()
-    {
+    public function getValueAsWeight() {
         return $this->container['value_as_weight'];
     }
 
     /**
      * Sets value_as_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Weight $value_as_weight value_as_weight
+     * @param Weight $value_as_weight value_as_weight
      *
      * @return $this
      */
-    public function setValueAsWeight($value_as_weight)
-    {
+    public function setValueAsWeight($value_as_weight) {
         $this->container['value_as_weight'] = $value_as_weight;
 
         return $this;
@@ -402,22 +379,20 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
     /**
      * Gets value_as_dimension.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Length
+     * @return Length
      */
-    public function getValueAsDimension()
-    {
+    public function getValueAsDimension() {
         return $this->container['value_as_dimension'];
     }
 
     /**
      * Sets value_as_dimension.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\Length $value_as_dimension value_as_dimension
+     * @param Length $value_as_dimension value_as_dimension
      *
      * @return $this
      */
-    public function setValueAsDimension($value_as_dimension)
-    {
+    public function setValueAsDimension($value_as_dimension) {
         $this->container['value_as_dimension'] = $value_as_dimension;
 
         return $this;
@@ -426,22 +401,20 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
     /**
      * Gets value_as_currency.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount
+     * @return CurrencyAmount
      */
-    public function getValueAsCurrency()
-    {
+    public function getValueAsCurrency() {
         return $this->container['value_as_currency'];
     }
 
     /**
      * Sets value_as_currency.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount $value_as_currency value_as_currency
+     * @param CurrencyAmount $value_as_currency value_as_currency
      *
      * @return $this
      */
-    public function setValueAsCurrency($value_as_currency)
-    {
+    public function setValueAsCurrency($value_as_currency) {
         $this->container['value_as_currency'] = $value_as_currency;
 
         return $this;
@@ -454,8 +427,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -466,21 +438,19 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -495,8 +465,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -505,8 +474,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

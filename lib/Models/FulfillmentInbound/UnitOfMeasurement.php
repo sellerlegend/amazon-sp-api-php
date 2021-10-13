@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * UnitOfMeasurement Class Doc Comment.
  *
-
  * @description Indicates the unit of measurement.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class UnitOfMeasurement
-{
+class UnitOfMeasurement {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class UnitOfMeasurement
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::INCHES,
-self::CENTIMETERS,        ];
+            self::CENTIMETERS,];
     }
 }

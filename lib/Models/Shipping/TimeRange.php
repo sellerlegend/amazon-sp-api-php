@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TimeRange Class Doc Comment.
  *
-
  * @description The time range.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TimeRange implements ModelInterface, ArrayAccess
-{
+class TimeRange implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +46,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'start' => '\DateTime',
-'end' => '\DateTime',    ];
+        'end'   => '\DateTime',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,14 @@ class TimeRange implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'start' => 'date-time',
-'end' => 'date-time',    ];
+        'end'   => 'date-time',];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +83,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'start' => 'start',
-'end' => 'end',    ];
+        'end'   => 'end',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +92,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'start' => 'setStart',
-'end' => 'setEnd',    ];
+        'end'   => 'setEnd',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +101,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'start' => 'getStart',
-'end' => 'getEnd',    ];
+        'end'   => 'getEnd',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['start'] = isset($data['start']) ? $data['start'] : null;
         $this->container['end'] = isset($data['end']) ? $data['end'] : null;
     }
@@ -171,8 +163,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +175,27 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getStart()
-    {
+    public function getStart() {
         return $this->container['start'];
     }
 
     /**
      * Sets start.
      *
-     * @param \DateTime $start The start date and time. This defaults to the current date and time.
+     * @param DateTime $start The start date and time. This defaults to the current date and time.
      *
      * @return $this
      */
-    public function setStart($start)
-    {
+    public function setStart($start) {
         $this->container['start'] = $start;
 
         return $this;
@@ -216,22 +204,20 @@ class TimeRange implements ModelInterface, ArrayAccess
     /**
      * Gets end.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEnd()
-    {
+    public function getEnd() {
         return $this->container['end'];
     }
 
     /**
      * Sets end.
      *
-     * @param \DateTime $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
+     * @param DateTime $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
      *
      * @return $this
      */
-    public function setEnd($end)
-    {
+    public function setEnd($end) {
         $this->container['end'] = $end;
 
         return $this;
@@ -244,8 +230,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +241,19 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +268,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +277,7 @@ class TimeRange implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

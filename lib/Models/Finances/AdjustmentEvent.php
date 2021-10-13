@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AdjustmentEvent Class Doc Comment.
  *
-
  * @description An adjustment to the seller&#x27;s account.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AdjustmentEvent implements ModelInterface, ArrayAccess
-{
+class AdjustmentEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +45,10 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'adjustment_type' => 'string',
-'posted_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\\DateTime',
-'adjustment_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'adjustment_item_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\AdjustmentItemList',    ];
+        'adjustment_type'      => 'string',
+        'posted_date'          => '\DateTime',
+        'adjustment_amount'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'adjustment_item_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\AdjustmentItemList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'adjustment_type' => null,
-'posted_date' => null,
-'adjustment_amount' => null,
-'adjustment_item_list' => null,    ];
+        'adjustment_type'      => null,
+        'posted_date'          => null,
+        'adjustment_amount'    => null,
+        'adjustment_item_list' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'adjustment_type' => 'AdjustmentType',
-'posted_date' => 'PostedDate',
-'adjustment_amount' => 'AdjustmentAmount',
-'adjustment_item_list' => 'AdjustmentItemList',    ];
+        'adjustment_type'      => 'AdjustmentType',
+        'posted_date'          => 'PostedDate',
+        'adjustment_amount'    => 'AdjustmentAmount',
+        'adjustment_item_list' => 'AdjustmentItemList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'adjustment_type' => 'setAdjustmentType',
-'posted_date' => 'setPostedDate',
-'adjustment_amount' => 'setAdjustmentAmount',
-'adjustment_item_list' => 'setAdjustmentItemList',    ];
+        'adjustment_type'      => 'setAdjustmentType',
+        'posted_date'          => 'setPostedDate',
+        'adjustment_amount'    => 'setAdjustmentAmount',
+        'adjustment_item_list' => 'setAdjustmentItemList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'adjustment_type' => 'getAdjustmentType',
-'posted_date' => 'getPostedDate',
-'adjustment_amount' => 'getAdjustmentAmount',
-'adjustment_item_list' => 'getAdjustmentItemList',    ];
+        'adjustment_type'      => 'getAdjustmentType',
+        'posted_date'          => 'getPostedDate',
+        'adjustment_amount'    => 'getAdjustmentAmount',
+        'adjustment_item_list' => 'getAdjustmentItemList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['adjustment_type'] = isset($data['adjustment_type']) ? $data['adjustment_type'] : null;
         $this->container['posted_date'] = isset($data['posted_date']) ? $data['posted_date'] : null;
         $this->container['adjustment_amount'] = isset($data['adjustment_amount']) ? $data['adjustment_amount'] : null;
@@ -183,8 +175,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +187,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +196,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAdjustmentType()
-    {
+    public function getAdjustmentType() {
         return $this->container['adjustment_type'];
     }
 
@@ -218,8 +207,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
-    {
+    public function setAdjustmentType($adjustment_type) {
         $this->container['adjustment_type'] = $adjustment_type;
 
         return $this;
@@ -228,22 +216,20 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets posted_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime
+     * @return DateTime
      */
-    public function getPostedDate()
-    {
+    public function getPostedDate() {
         return $this->container['posted_date'];
     }
 
     /**
      * Sets posted_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\DateTime $posted_date posted_date
+     * @param DateTime $posted_date posted_date
      *
      * @return $this
      */
-    public function setPostedDate($posted_date)
-    {
+    public function setPostedDate($posted_date) {
         $this->container['posted_date'] = $posted_date;
 
         return $this;
@@ -252,22 +238,20 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets adjustment_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getAdjustmentAmount()
-    {
+    public function getAdjustmentAmount() {
         return $this->container['adjustment_amount'];
     }
 
     /**
      * Sets adjustment_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $adjustment_amount adjustment_amount
+     * @param Currency $adjustment_amount adjustment_amount
      *
      * @return $this
      */
-    public function setAdjustmentAmount($adjustment_amount)
-    {
+    public function setAdjustmentAmount($adjustment_amount) {
         $this->container['adjustment_amount'] = $adjustment_amount;
 
         return $this;
@@ -276,22 +260,20 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
     /**
      * Gets adjustment_item_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\AdjustmentItemList
+     * @return AdjustmentItemList
      */
-    public function getAdjustmentItemList()
-    {
+    public function getAdjustmentItemList() {
         return $this->container['adjustment_item_list'];
     }
 
     /**
      * Sets adjustment_item_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\AdjustmentItemList $adjustment_item_list adjustment_item_list
+     * @param AdjustmentItemList $adjustment_item_list adjustment_item_list
      *
      * @return $this
      */
-    public function setAdjustmentItemList($adjustment_item_list)
-    {
+    public function setAdjustmentItemList($adjustment_item_list) {
         $this->container['adjustment_item_list'] = $adjustment_item_list;
 
         return $this;
@@ -304,8 +286,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +297,19 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +324,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +333,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

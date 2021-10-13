@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AdjustmentItem Class Doc Comment.
  *
-
  * @description An item in an adjustment to the seller&#x27;s account.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AdjustmentItem implements ModelInterface, ArrayAccess
-{
+class AdjustmentItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,14 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'quantity' => 'string',
-'per_unit_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'total_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'seller_sku' => 'string',
-'fn_sku' => 'string',
-'product_description' => 'string',
-'asin' => 'string',    ];
+        'quantity'            => 'string',
+        'per_unit_amount'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'total_amount'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'seller_sku'          => 'string',
+        'fn_sku'              => 'string',
+        'product_description' => 'string',
+        'asin'                => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +59,20 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'quantity' => null,
-'per_unit_amount' => null,
-'total_amount' => null,
-'seller_sku' => null,
-'fn_sku' => null,
-'product_description' => null,
-'asin' => null,    ];
+        'quantity'            => null,
+        'per_unit_amount'     => null,
+        'total_amount'        => null,
+        'seller_sku'          => null,
+        'fn_sku'              => null,
+        'product_description' => null,
+        'asin'                => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +81,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +92,13 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'quantity' => 'Quantity',
-'per_unit_amount' => 'PerUnitAmount',
-'total_amount' => 'TotalAmount',
-'seller_sku' => 'SellerSKU',
-'fn_sku' => 'FnSKU',
-'product_description' => 'ProductDescription',
-'asin' => 'ASIN',    ];
+        'quantity'            => 'Quantity',
+        'per_unit_amount'     => 'PerUnitAmount',
+        'total_amount'        => 'TotalAmount',
+        'seller_sku'          => 'SellerSKU',
+        'fn_sku'              => 'FnSKU',
+        'product_description' => 'ProductDescription',
+        'asin'                => 'ASIN',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +106,13 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'quantity' => 'setQuantity',
-'per_unit_amount' => 'setPerUnitAmount',
-'total_amount' => 'setTotalAmount',
-'seller_sku' => 'setSellerSku',
-'fn_sku' => 'setFnSku',
-'product_description' => 'setProductDescription',
-'asin' => 'setAsin',    ];
+        'quantity'            => 'setQuantity',
+        'per_unit_amount'     => 'setPerUnitAmount',
+        'total_amount'        => 'setTotalAmount',
+        'seller_sku'          => 'setSellerSku',
+        'fn_sku'              => 'setFnSku',
+        'product_description' => 'setProductDescription',
+        'asin'                => 'setAsin',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +120,13 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'quantity' => 'getQuantity',
-'per_unit_amount' => 'getPerUnitAmount',
-'total_amount' => 'getTotalAmount',
-'seller_sku' => 'getSellerSku',
-'fn_sku' => 'getFnSku',
-'product_description' => 'getProductDescription',
-'asin' => 'getAsin',    ];
+        'quantity'            => 'getQuantity',
+        'per_unit_amount'     => 'getPerUnitAmount',
+        'total_amount'        => 'getTotalAmount',
+        'seller_sku'          => 'getSellerSku',
+        'fn_sku'              => 'getFnSku',
+        'product_description' => 'getProductDescription',
+        'asin'                => 'getAsin',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +134,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +143,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +152,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +161,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +178,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['per_unit_amount'] = isset($data['per_unit_amount']) ? $data['per_unit_amount'] : null;
         $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
@@ -201,8 +193,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -214,8 +205,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -224,8 +214,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
@@ -236,8 +225,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -246,22 +234,20 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets per_unit_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getPerUnitAmount()
-    {
+    public function getPerUnitAmount() {
         return $this->container['per_unit_amount'];
     }
 
     /**
      * Sets per_unit_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $per_unit_amount per_unit_amount
+     * @param Currency $per_unit_amount per_unit_amount
      *
      * @return $this
      */
-    public function setPerUnitAmount($per_unit_amount)
-    {
+    public function setPerUnitAmount($per_unit_amount) {
         $this->container['per_unit_amount'] = $per_unit_amount;
 
         return $this;
@@ -270,22 +256,20 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets total_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getTotalAmount()
-    {
+    public function getTotalAmount() {
         return $this->container['total_amount'];
     }
 
     /**
      * Sets total_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $total_amount total_amount
+     * @param Currency $total_amount total_amount
      *
      * @return $this
      */
-    public function setTotalAmount($total_amount)
-    {
+    public function setTotalAmount($total_amount) {
         $this->container['total_amount'] = $total_amount;
 
         return $this;
@@ -296,8 +280,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -308,8 +291,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -320,8 +302,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFnSku()
-    {
+    public function getFnSku() {
         return $this->container['fn_sku'];
     }
 
@@ -332,8 +313,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFnSku($fn_sku)
-    {
+    public function setFnSku($fn_sku) {
         $this->container['fn_sku'] = $fn_sku;
 
         return $this;
@@ -344,8 +324,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getProductDescription()
-    {
+    public function getProductDescription() {
         return $this->container['product_description'];
     }
 
@@ -356,8 +335,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setProductDescription($product_description)
-    {
+    public function setProductDescription($product_description) {
         $this->container['product_description'] = $product_description;
 
         return $this;
@@ -368,8 +346,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -380,8 +357,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -394,8 +370,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -406,21 +381,19 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -435,8 +408,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -445,8 +417,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

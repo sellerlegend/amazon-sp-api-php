@@ -13,15 +13,16 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI;
+namespace SellerLegend\AmazonSellingPartnerAPI;
+
+use InvalidArgumentException;
 
 /**
  * Configuration Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Configuration
-{
+class Configuration {
     private static $defaultConfiguration;
 
     /**
@@ -95,8 +96,7 @@ class Configuration
     /**
      * Constructor.
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->tempFolderPath = sys_get_temp_dir();
     }
 
@@ -104,14 +104,13 @@ class Configuration
      * Sets API key.
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
+     * @param string $key API key or token
      *
      * @return $this
      *
      * @deprecated use setSecurityToken(), setAccessKey(), setSecretKey() instead
      */
-    public function setApiKey(string $apiKeyIdentifier, string $key): self
-    {
+    public function setApiKey(string $apiKeyIdentifier, string $key): self {
         $this->apiKeys[$apiKeyIdentifier] = $key;
         if ('accessKey' == $apiKeyIdentifier) {
             $this->setAccessKey($key);
@@ -138,8 +137,7 @@ class Configuration
      *
      * @deprecated
      */
-    public function getApiKey($apiKeyIdentifier): ?string
-    {
+    public function getApiKey($apiKeyIdentifier): ?string {
         return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
     }
 
@@ -147,12 +145,11 @@ class Configuration
      * Sets the prefix for API key (e.g. Bearer).
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
+     * @param string $prefix API key prefix, e.g. Bearer
      *
      * @return $this
      */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
-    {
+    public function setApiKeyPrefix($apiKeyIdentifier, $prefix) {
         $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
 
         return $this;
@@ -167,8 +164,7 @@ class Configuration
      *
      * @deprecated
      */
-    public function getApiKeyPrefix($apiKeyIdentifier)
-    {
+    public function getApiKeyPrefix($apiKeyIdentifier) {
         return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
     }
 
@@ -179,8 +175,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setAccessToken($accessToken)
-    {
+    public function setAccessToken($accessToken) {
         $this->accessToken = $accessToken;
 
         return $this;
@@ -191,8 +186,7 @@ class Configuration
      *
      * @return string Access token for OAuth
      */
-    public function getAccessToken()
-    {
+    public function getAccessToken() {
         return $this->accessToken;
     }
 
@@ -203,8 +197,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setHost($host)
-    {
+    public function setHost($host) {
         $this->host = $host;
 
         return $this;
@@ -215,8 +208,7 @@ class Configuration
      *
      * @return string Host
      */
-    public function getHost()
-    {
+    public function getHost() {
         return $this->host;
     }
 
@@ -225,14 +217,13 @@ class Configuration
      *
      * @param string $userAgent the user agent of the api client
      *
-     * @throws \InvalidArgumentException
-     *
      * @return $this
+     * @throws InvalidArgumentException
+     *
      */
-    public function setUserAgent($userAgent)
-    {
+    public function setUserAgent($userAgent) {
         if (!is_string($userAgent)) {
-            throw new \InvalidArgumentException('User-agent must be a string.');
+            throw new InvalidArgumentException('User-agent must be a string.');
         }
 
         $this->userAgent = $userAgent;
@@ -245,8 +236,7 @@ class Configuration
      *
      * @return string user agent
      */
-    public function getUserAgent()
-    {
+    public function getUserAgent() {
         return $this->userAgent;
     }
 
@@ -257,8 +247,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebug($debug)
-    {
+    public function setDebug($debug) {
         $this->debug = $debug;
 
         return $this;
@@ -269,8 +258,7 @@ class Configuration
      *
      * @return bool
      */
-    public function getDebug()
-    {
+    public function getDebug() {
         return $this->debug;
     }
 
@@ -281,8 +269,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebugFile($debugFile)
-    {
+    public function setDebugFile($debugFile) {
         $this->debugFile = $debugFile;
 
         return $this;
@@ -293,8 +280,7 @@ class Configuration
      *
      * @return string
      */
-    public function getDebugFile()
-    {
+    public function getDebugFile() {
         return $this->debugFile;
     }
 
@@ -305,8 +291,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setTempFolderPath($tempFolderPath)
-    {
+    public function setTempFolderPath($tempFolderPath) {
         $this->tempFolderPath = $tempFolderPath;
 
         return $this;
@@ -317,8 +302,7 @@ class Configuration
      *
      * @return string Temp folder path
      */
-    public function getTempFolderPath()
-    {
+    public function getTempFolderPath() {
         return $this->tempFolderPath;
     }
 
@@ -327,8 +311,7 @@ class Configuration
      *
      * @return Configuration
      */
-    public static function getDefaultConfiguration()
-    {
+    public static function getDefaultConfiguration() {
         if (null === self::$defaultConfiguration) {
             self::$defaultConfiguration = new Configuration();
         }
@@ -343,8 +326,7 @@ class Configuration
      *
      * @return void
      */
-    public static function setDefaultConfiguration(Configuration $config)
-    {
+    public static function setDefaultConfiguration(Configuration $config) {
         self::$defaultConfiguration = $config;
     }
 
@@ -353,13 +335,12 @@ class Configuration
      *
      * @return string The report for debugging
      */
-    public static function toDebugReport()
-    {
-        $report = 'PHP SDK (ClouSale\AmazonSellingPartnerAPI) Debug Report:'.PHP_EOL;
-        $report .= '    OS: '.php_uname().PHP_EOL;
-        $report .= '    PHP Version: '.PHP_VERSION.PHP_EOL;
-        $report .= '    OpenAPI Spec Version: v1'.PHP_EOL;
-        $report .= '    Temp Folder Path: '.self::getDefaultConfiguration()->getTempFolderPath().PHP_EOL;
+    public static function toDebugReport() {
+        $report = 'PHP SDK (SellerLegend\AmazonSellingPartnerAPI) Debug Report:' . PHP_EOL;
+        $report .= '    OS: ' . php_uname() . PHP_EOL;
+        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: v1' . PHP_EOL;
+        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
     }
@@ -371,8 +352,7 @@ class Configuration
      *
      * @return string API key with the prefix
      */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
+    public function getApiKeyWithPrefix($apiKeyIdentifier) {
         $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
         $apiKey = $this->getApiKey($apiKeyIdentifier);
 
@@ -383,49 +363,41 @@ class Configuration
         if (null === $prefix) {
             $keyWithPrefix = $apiKey;
         } else {
-            $keyWithPrefix = $prefix.' '.$apiKey;
+            $keyWithPrefix = $prefix . ' ' . $apiKey;
         }
 
         return $keyWithPrefix;
     }
 
-    public function getSecurityToken(): ?string
-    {
+    public function getSecurityToken(): ?string {
         return $this->securityToken;
     }
 
-    public function setSecurityToken(?string $securityToken): void
-    {
+    public function setSecurityToken(?string $securityToken): void {
         $this->securityToken = $securityToken;
     }
 
-    public function getAccessKey(): ?string
-    {
+    public function getAccessKey(): ?string {
         return $this->accessKey;
     }
 
-    public function setAccessKey(?string $accessKey): void
-    {
+    public function setAccessKey(?string $accessKey): void {
         $this->accessKey = $accessKey;
     }
 
-    public function getSecretKey(): ?string
-    {
+    public function getSecretKey(): ?string {
         return $this->secretKey;
     }
 
-    public function setSecretKey(?string $secretKey): void
-    {
+    public function setSecretKey(?string $secretKey): void {
         $this->secretKey = $secretKey;
     }
 
-    public function getRegion(): ?string
-    {
+    public function getRegion(): ?string {
         return $this->region;
     }
 
-    public function setRegion(?string $region): void
-    {
+    public function setRegion(?string $region): void {
         $this->region = $region;
     }
 }

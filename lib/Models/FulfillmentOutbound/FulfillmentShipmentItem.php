@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FulfillmentShipmentItem Class Doc Comment.
  *
-
  * @description Item information for a shipment in a fulfillment order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
-{
+class FulfillmentShipmentItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,11 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'seller_fulfillment_order_item_id' => 'string',
-'quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity',
-'package_number' => 'int',
-'serial_number' => 'string',    ];
+        'seller_sku'                       => 'string',
+        'seller_fulfillment_order_item_id' => 'string',
+        'quantity'                         => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity',
+        'package_number'                   => 'int',
+        'serial_number'                    => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +56,18 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'seller_fulfillment_order_item_id' => null,
-'quantity' => null,
-'package_number' => 'int32',
-'serial_number' => null,    ];
+        'seller_sku'                       => null,
+        'seller_fulfillment_order_item_id' => null,
+        'quantity'                         => null,
+        'package_number'                   => 'int32',
+        'serial_number'                    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +76,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +87,11 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'sellerSku',
-'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
-'quantity' => 'quantity',
-'package_number' => 'packageNumber',
-'serial_number' => 'serialNumber',    ];
+        'seller_sku'                       => 'sellerSku',
+        'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
+        'quantity'                         => 'quantity',
+        'package_number'                   => 'packageNumber',
+        'serial_number'                    => 'serialNumber',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +99,11 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-'quantity' => 'setQuantity',
-'package_number' => 'setPackageNumber',
-'serial_number' => 'setSerialNumber',    ];
+        'seller_sku'                       => 'setSellerSku',
+        'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
+        'quantity'                         => 'setQuantity',
+        'package_number'                   => 'setPackageNumber',
+        'serial_number'                    => 'setSerialNumber',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +111,11 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-'quantity' => 'getQuantity',
-'package_number' => 'getPackageNumber',
-'serial_number' => 'getSerialNumber',    ];
+        'seller_sku'                       => 'getSellerSku',
+        'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
+        'quantity'                         => 'getQuantity',
+        'package_number'                   => 'getPackageNumber',
+        'serial_number'                    => 'getSerialNumber',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +123,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +132,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +141,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +150,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +167,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['seller_fulfillment_order_item_id'] = isset($data['seller_fulfillment_order_item_id']) ? $data['seller_fulfillment_order_item_id'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
@@ -189,8 +180,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_sku']) {
@@ -212,8 +202,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -222,8 +211,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -234,8 +222,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -246,8 +233,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerFulfillmentOrderItemId()
-    {
+    public function getSellerFulfillmentOrderItemId() {
         return $this->container['seller_fulfillment_order_item_id'];
     }
 
@@ -258,8 +244,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
-    {
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id) {
         $this->container['seller_fulfillment_order_item_id'] = $seller_fulfillment_order_item_id;
 
         return $this;
@@ -268,22 +253,20 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
     /**
      * Gets quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity
+     * @return Quantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->container['quantity'];
     }
 
     /**
      * Sets quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Quantity $quantity quantity
+     * @param Quantity $quantity quantity
      *
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -294,8 +277,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPackageNumber()
-    {
+    public function getPackageNumber() {
         return $this->container['package_number'];
     }
 
@@ -306,8 +288,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPackageNumber($package_number)
-    {
+    public function setPackageNumber($package_number) {
         $this->container['package_number'] = $package_number;
 
         return $this;
@@ -318,8 +299,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSerialNumber()
-    {
+    public function getSerialNumber() {
         return $this->container['serial_number'];
     }
 
@@ -330,8 +310,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSerialNumber($serial_number)
-    {
+    public function setSerialNumber($serial_number) {
         $this->container['serial_number'] = $serial_number;
 
         return $this;
@@ -344,8 +323,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -356,21 +334,19 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -385,8 +361,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -395,8 +370,7 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

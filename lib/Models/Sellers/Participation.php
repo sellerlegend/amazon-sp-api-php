@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Sellers;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Sellers;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Participation Class Doc Comment.
  *
-
  * @description Detailed information that is specific to a seller in a Marketplace.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Participation implements ModelInterface, ArrayAccess
-{
+class Participation implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class Participation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_participating' => 'bool',
-'has_suspended_listings' => 'bool',    ];
+        'is_participating'       => 'bool',
+        'has_suspended_listings' => 'bool',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class Participation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_participating' => null,
-'has_suspended_listings' => null,    ];
+        'is_participating'       => null,
+        'has_suspended_listings' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class Participation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_participating' => 'isParticipating',
-'has_suspended_listings' => 'hasSuspendedListings',    ];
+        'is_participating'       => 'isParticipating',
+        'has_suspended_listings' => 'hasSuspendedListings',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class Participation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_participating' => 'setIsParticipating',
-'has_suspended_listings' => 'setHasSuspendedListings',    ];
+        'is_participating'       => 'setIsParticipating',
+        'has_suspended_listings' => 'setHasSuspendedListings',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class Participation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_participating' => 'getIsParticipating',
-'has_suspended_listings' => 'getHasSuspendedListings',    ];
+        'is_participating'       => 'getIsParticipating',
+        'has_suspended_listings' => 'getHasSuspendedListings',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class Participation implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['is_participating'] = isset($data['is_participating']) ? $data['is_participating'] : null;
         $this->container['has_suspended_listings'] = isset($data['has_suspended_listings']) ? $data['has_suspended_listings'] : null;
     }
@@ -171,8 +162,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['is_participating']) {
@@ -191,8 +181,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -201,8 +190,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsParticipating()
-    {
+    public function getIsParticipating() {
         return $this->container['is_participating'];
     }
 
@@ -213,8 +201,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsParticipating($is_participating)
-    {
+    public function setIsParticipating($is_participating) {
         $this->container['is_participating'] = $is_participating;
 
         return $this;
@@ -225,8 +212,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getHasSuspendedListings()
-    {
+    public function getHasSuspendedListings() {
         return $this->container['has_suspended_listings'];
     }
 
@@ -237,8 +223,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setHasSuspendedListings($has_suspended_listings)
-    {
+    public function setHasSuspendedListings($has_suspended_listings) {
         $this->container['has_suspended_listings'] = $has_suspended_listings;
 
         return $this;
@@ -251,8 +236,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class Participation implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

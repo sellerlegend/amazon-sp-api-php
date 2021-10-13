@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ServiceRate Class Doc Comment.
  *
-
  * @description The specific rate for a shipping service, or null if no service available.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ServiceRate implements ModelInterface, ArrayAccess
-{
+class ServiceRate implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class ServiceRate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'total_charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Currency',
-'billable_weight' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight',
-'service_type' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ServiceType',
-'promise' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShippingPromiseSet',    ];
+        'total_charge'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Currency',
+        'billable_weight' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Weight',
+        'service_type'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ServiceType',
+        'promise'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ShippingPromiseSet',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class ServiceRate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'total_charge' => null,
-'billable_weight' => null,
-'service_type' => null,
-'promise' => null,    ];
+        'total_charge'    => null,
+        'billable_weight' => null,
+        'service_type'    => null,
+        'promise'         => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class ServiceRate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_charge' => 'totalCharge',
-'billable_weight' => 'billableWeight',
-'service_type' => 'serviceType',
-'promise' => 'promise',    ];
+        'total_charge'    => 'totalCharge',
+        'billable_weight' => 'billableWeight',
+        'service_type'    => 'serviceType',
+        'promise'         => 'promise',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class ServiceRate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_charge' => 'setTotalCharge',
-'billable_weight' => 'setBillableWeight',
-'service_type' => 'setServiceType',
-'promise' => 'setPromise',    ];
+        'total_charge'    => 'setTotalCharge',
+        'billable_weight' => 'setBillableWeight',
+        'service_type'    => 'setServiceType',
+        'promise'         => 'setPromise',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class ServiceRate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_charge' => 'getTotalCharge',
-'billable_weight' => 'getBillableWeight',
-'service_type' => 'getServiceType',
-'promise' => 'getPromise',    ];
+        'total_charge'    => 'getTotalCharge',
+        'billable_weight' => 'getBillableWeight',
+        'service_type'    => 'getServiceType',
+        'promise'         => 'getPromise',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['total_charge'] = isset($data['total_charge']) ? $data['total_charge'] : null;
         $this->container['billable_weight'] = isset($data['billable_weight']) ? $data['billable_weight'] : null;
         $this->container['service_type'] = isset($data['service_type']) ? $data['service_type'] : null;
@@ -183,8 +174,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['total_charge']) {
@@ -209,30 +199,27 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Currency
+     * @return Currency
      */
-    public function getTotalCharge()
-    {
+    public function getTotalCharge() {
         return $this->container['total_charge'];
     }
 
     /**
      * Sets total_charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Currency $total_charge total_charge
+     * @param Currency $total_charge total_charge
      *
      * @return $this
      */
-    public function setTotalCharge($total_charge)
-    {
+    public function setTotalCharge($total_charge) {
         $this->container['total_charge'] = $total_charge;
 
         return $this;
@@ -241,22 +228,20 @@ class ServiceRate implements ModelInterface, ArrayAccess
     /**
      * Gets billable_weight.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight
+     * @return Weight
      */
-    public function getBillableWeight()
-    {
+    public function getBillableWeight() {
         return $this->container['billable_weight'];
     }
 
     /**
      * Sets billable_weight.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Weight $billable_weight billable_weight
+     * @param Weight $billable_weight billable_weight
      *
      * @return $this
      */
-    public function setBillableWeight($billable_weight)
-    {
+    public function setBillableWeight($billable_weight) {
         $this->container['billable_weight'] = $billable_weight;
 
         return $this;
@@ -265,22 +250,20 @@ class ServiceRate implements ModelInterface, ArrayAccess
     /**
      * Gets service_type.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ServiceType
+     * @return ServiceType
      */
-    public function getServiceType()
-    {
+    public function getServiceType() {
         return $this->container['service_type'];
     }
 
     /**
      * Sets service_type.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ServiceType $service_type service_type
+     * @param ServiceType $service_type service_type
      *
      * @return $this
      */
-    public function setServiceType($service_type)
-    {
+    public function setServiceType($service_type) {
         $this->container['service_type'] = $service_type;
 
         return $this;
@@ -289,22 +272,20 @@ class ServiceRate implements ModelInterface, ArrayAccess
     /**
      * Gets promise.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShippingPromiseSet
+     * @return ShippingPromiseSet
      */
-    public function getPromise()
-    {
+    public function getPromise() {
         return $this->container['promise'];
     }
 
     /**
      * Sets promise.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ShippingPromiseSet $promise promise
+     * @param ShippingPromiseSet $promise promise
      *
      * @return $this
      */
-    public function setPromise($promise)
-    {
+    public function setPromise($promise) {
         $this->container['promise'] = $promise;
 
         return $this;
@@ -317,8 +298,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -329,21 +309,19 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -358,8 +336,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -368,8 +345,7 @@ class ServiceRate implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

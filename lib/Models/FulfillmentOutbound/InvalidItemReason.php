@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InvalidItemReason Class Doc Comment.
  *
-
  * @description The reason that the item is invalid for return.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InvalidItemReason implements ModelInterface, ArrayAccess
-{
+class InvalidItemReason implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'invalid_item_reason_code' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReasonCode',
-'description' => 'string',    ];
+        'invalid_item_reason_code' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReasonCode',
+        'description'              => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'invalid_item_reason_code' => null,
-'description' => null,    ];
+        'description'              => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'invalid_item_reason_code' => 'invalidItemReasonCode',
-'description' => 'description',    ];
+        'description'              => 'description',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'invalid_item_reason_code' => 'setInvalidItemReasonCode',
-'description' => 'setDescription',    ];
+        'description'              => 'setDescription',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'invalid_item_reason_code' => 'getInvalidItemReasonCode',
-'description' => 'getDescription',    ];
+        'description'              => 'getDescription',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['invalid_item_reason_code'] = isset($data['invalid_item_reason_code']) ? $data['invalid_item_reason_code'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
@@ -171,8 +162,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['invalid_item_reason_code']) {
@@ -191,30 +181,27 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets invalid_item_reason_code.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReasonCode
+     * @return InvalidItemReasonCode
      */
-    public function getInvalidItemReasonCode()
-    {
+    public function getInvalidItemReasonCode() {
         return $this->container['invalid_item_reason_code'];
     }
 
     /**
      * Sets invalid_item_reason_code.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\InvalidItemReasonCode $invalid_item_reason_code invalid_item_reason_code
+     * @param InvalidItemReasonCode $invalid_item_reason_code invalid_item_reason_code
      *
      * @return $this
      */
-    public function setInvalidItemReasonCode($invalid_item_reason_code)
-    {
+    public function setInvalidItemReasonCode($invalid_item_reason_code) {
         $this->container['invalid_item_reason_code'] = $invalid_item_reason_code;
 
         return $this;
@@ -225,8 +212,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->container['description'];
     }
 
@@ -237,8 +223,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->container['description'] = $description;
 
         return $this;
@@ -251,8 +236,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

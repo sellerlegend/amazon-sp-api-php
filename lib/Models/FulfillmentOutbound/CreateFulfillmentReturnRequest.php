@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFulfillmentReturnRequest Class Doc Comment.
  *
-
  * @description The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
-{
+class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,8 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateReturnItemList',    ];
+        'items' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateReturnItemList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +53,15 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'items' => null,    ];
+        'items' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +70,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +81,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'items' => 'items',    ];
+        'items' => 'items',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +89,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'items' => 'setItems',    ];
+        'items' => 'setItems',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +97,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'items' => 'getItems',    ];
+        'items' => 'getItems',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +105,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +114,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +123,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +132,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +149,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['items'] = isset($data['items']) ? $data['items'] : null;
     }
 
@@ -165,8 +158,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['items']) {
@@ -182,30 +174,27 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateReturnItemList
+     * @return CreateReturnItemList
      */
-    public function getItems()
-    {
+    public function getItems() {
         return $this->container['items'];
     }
 
     /**
      * Sets items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\CreateReturnItemList $items items
+     * @param CreateReturnItemList $items items
      *
      * @return $this
      */
-    public function setItems($items)
-    {
+    public function setItems($items) {
         $this->container['items'] = $items;
 
         return $this;
@@ -218,8 +207,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -230,21 +218,19 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -259,8 +245,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -269,8 +254,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

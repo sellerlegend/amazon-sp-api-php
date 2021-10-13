@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * LabelFormatOption Class Doc Comment.
  *
-
  * @description The label format details and whether to include a packing slip.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LabelFormatOption implements ModelInterface, ArrayAccess
-{
+class LabelFormatOption implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'include_packing_slip_with_label' => 'bool',
-'label_format' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\LabelFormat',    ];
+        'label_format'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\LabelFormat',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'include_packing_slip_with_label' => null,
-'label_format' => null,    ];
+        'label_format'                    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'include_packing_slip_with_label' => 'IncludePackingSlipWithLabel',
-'label_format' => 'LabelFormat',    ];
+        'label_format'                    => 'LabelFormat',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
-'label_format' => 'setLabelFormat',    ];
+        'label_format'                    => 'setLabelFormat',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'include_packing_slip_with_label' => 'getIncludePackingSlipWithLabel',
-'label_format' => 'getLabelFormat',    ];
+        'label_format'                    => 'getLabelFormat',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['include_packing_slip_with_label'] = isset($data['include_packing_slip_with_label']) ? $data['include_packing_slip_with_label'] : null;
         $this->container['label_format'] = isset($data['label_format']) ? $data['label_format'] : null;
     }
@@ -171,8 +162,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +174,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +183,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIncludePackingSlipWithLabel()
-    {
+    public function getIncludePackingSlipWithLabel() {
         return $this->container['include_packing_slip_with_label'];
     }
 
@@ -206,8 +194,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIncludePackingSlipWithLabel($include_packing_slip_with_label)
-    {
+    public function setIncludePackingSlipWithLabel($include_packing_slip_with_label) {
         $this->container['include_packing_slip_with_label'] = $include_packing_slip_with_label;
 
         return $this;
@@ -216,22 +203,20 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
     /**
      * Gets label_format.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\LabelFormat
+     * @return LabelFormat
      */
-    public function getLabelFormat()
-    {
+    public function getLabelFormat() {
         return $this->container['label_format'];
     }
 
     /**
      * Sets label_format.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\LabelFormat $label_format label_format
+     * @param LabelFormat $label_format label_format
      *
      * @return $this
      */
-    public function setLabelFormat($label_format)
-    {
+    public function setLabelFormat($label_format) {
         $this->container['label_format'] = $label_format;
 
         return $this;
@@ -244,8 +229,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

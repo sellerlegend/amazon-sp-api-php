@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ReturnItem Class Doc Comment.
  *
-
  * @description An item that Amazon accepted for return.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ReturnItem implements ModelInterface, ArrayAccess
-{
+class ReturnItem implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,17 +44,17 @@ class ReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_return_item_id' => 'string',
-'seller_fulfillment_order_item_id' => 'string',
-'amazon_shipment_id' => 'string',
-'seller_return_reason_code' => 'string',
-'return_comment' => 'string',
-'amazon_return_reason_code' => 'string',
-'status' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentReturnItemStatus',
-'status_changed_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'return_authorization_id' => 'string',
-'return_received_condition' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemDisposition',
-'fulfillment_center_id' => 'string',    ];
+        'seller_return_item_id'            => 'string',
+        'seller_fulfillment_order_item_id' => 'string',
+        'amazon_shipment_id'               => 'string',
+        'seller_return_reason_code'        => 'string',
+        'return_comment'                   => 'string',
+        'amazon_return_reason_code'        => 'string',
+        'status'                           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentReturnItemStatus',
+        'status_changed_date'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'return_authorization_id'          => 'string',
+        'return_received_condition'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemDisposition',
+        'fulfillment_center_id'            => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -64,25 +62,24 @@ class ReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_return_item_id' => null,
-'seller_fulfillment_order_item_id' => null,
-'amazon_shipment_id' => null,
-'seller_return_reason_code' => null,
-'return_comment' => null,
-'amazon_return_reason_code' => null,
-'status' => null,
-'status_changed_date' => null,
-'return_authorization_id' => null,
-'return_received_condition' => null,
-'fulfillment_center_id' => null,    ];
+        'seller_return_item_id'            => null,
+        'seller_fulfillment_order_item_id' => null,
+        'amazon_shipment_id'               => null,
+        'seller_return_reason_code'        => null,
+        'return_comment'                   => null,
+        'amazon_return_reason_code'        => null,
+        'status'                           => null,
+        'status_changed_date'              => null,
+        'return_authorization_id'          => null,
+        'return_received_condition'        => null,
+        'fulfillment_center_id'            => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -91,8 +88,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -103,17 +99,17 @@ class ReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_return_item_id' => 'sellerReturnItemId',
-'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
-'amazon_shipment_id' => 'amazonShipmentId',
-'seller_return_reason_code' => 'sellerReturnReasonCode',
-'return_comment' => 'returnComment',
-'amazon_return_reason_code' => 'amazonReturnReasonCode',
-'status' => 'status',
-'status_changed_date' => 'statusChangedDate',
-'return_authorization_id' => 'returnAuthorizationId',
-'return_received_condition' => 'returnReceivedCondition',
-'fulfillment_center_id' => 'fulfillmentCenterId',    ];
+        'seller_return_item_id'            => 'sellerReturnItemId',
+        'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
+        'amazon_shipment_id'               => 'amazonShipmentId',
+        'seller_return_reason_code'        => 'sellerReturnReasonCode',
+        'return_comment'                   => 'returnComment',
+        'amazon_return_reason_code'        => 'amazonReturnReasonCode',
+        'status'                           => 'status',
+        'status_changed_date'              => 'statusChangedDate',
+        'return_authorization_id'          => 'returnAuthorizationId',
+        'return_received_condition'        => 'returnReceivedCondition',
+        'fulfillment_center_id'            => 'fulfillmentCenterId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -121,17 +117,17 @@ class ReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_return_item_id' => 'setSellerReturnItemId',
-'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-'amazon_shipment_id' => 'setAmazonShipmentId',
-'seller_return_reason_code' => 'setSellerReturnReasonCode',
-'return_comment' => 'setReturnComment',
-'amazon_return_reason_code' => 'setAmazonReturnReasonCode',
-'status' => 'setStatus',
-'status_changed_date' => 'setStatusChangedDate',
-'return_authorization_id' => 'setReturnAuthorizationId',
-'return_received_condition' => 'setReturnReceivedCondition',
-'fulfillment_center_id' => 'setFulfillmentCenterId',    ];
+        'seller_return_item_id'            => 'setSellerReturnItemId',
+        'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
+        'amazon_shipment_id'               => 'setAmazonShipmentId',
+        'seller_return_reason_code'        => 'setSellerReturnReasonCode',
+        'return_comment'                   => 'setReturnComment',
+        'amazon_return_reason_code'        => 'setAmazonReturnReasonCode',
+        'status'                           => 'setStatus',
+        'status_changed_date'              => 'setStatusChangedDate',
+        'return_authorization_id'          => 'setReturnAuthorizationId',
+        'return_received_condition'        => 'setReturnReceivedCondition',
+        'fulfillment_center_id'            => 'setFulfillmentCenterId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -139,17 +135,17 @@ class ReturnItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_return_item_id' => 'getSellerReturnItemId',
-'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-'amazon_shipment_id' => 'getAmazonShipmentId',
-'seller_return_reason_code' => 'getSellerReturnReasonCode',
-'return_comment' => 'getReturnComment',
-'amazon_return_reason_code' => 'getAmazonReturnReasonCode',
-'status' => 'getStatus',
-'status_changed_date' => 'getStatusChangedDate',
-'return_authorization_id' => 'getReturnAuthorizationId',
-'return_received_condition' => 'getReturnReceivedCondition',
-'fulfillment_center_id' => 'getFulfillmentCenterId',    ];
+        'seller_return_item_id'            => 'getSellerReturnItemId',
+        'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
+        'amazon_shipment_id'               => 'getAmazonShipmentId',
+        'seller_return_reason_code'        => 'getSellerReturnReasonCode',
+        'return_comment'                   => 'getReturnComment',
+        'amazon_return_reason_code'        => 'getAmazonReturnReasonCode',
+        'status'                           => 'getStatus',
+        'status_changed_date'              => 'getStatusChangedDate',
+        'return_authorization_id'          => 'getReturnAuthorizationId',
+        'return_received_condition'        => 'getReturnReceivedCondition',
+        'fulfillment_center_id'            => 'getFulfillmentCenterId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -157,8 +153,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -167,8 +162,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -177,8 +171,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -187,8 +180,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -205,8 +197,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_return_item_id'] = isset($data['seller_return_item_id']) ? $data['seller_return_item_id'] : null;
         $this->container['seller_fulfillment_order_item_id'] = isset($data['seller_fulfillment_order_item_id']) ? $data['seller_fulfillment_order_item_id'] : null;
         $this->container['amazon_shipment_id'] = isset($data['amazon_shipment_id']) ? $data['amazon_shipment_id'] : null;
@@ -225,8 +216,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_return_item_id']) {
@@ -257,8 +247,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -267,8 +256,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerReturnItemId()
-    {
+    public function getSellerReturnItemId() {
         return $this->container['seller_return_item_id'];
     }
 
@@ -279,8 +267,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerReturnItemId($seller_return_item_id)
-    {
+    public function setSellerReturnItemId($seller_return_item_id) {
         $this->container['seller_return_item_id'] = $seller_return_item_id;
 
         return $this;
@@ -291,8 +278,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerFulfillmentOrderItemId()
-    {
+    public function getSellerFulfillmentOrderItemId() {
         return $this->container['seller_fulfillment_order_item_id'];
     }
 
@@ -303,8 +289,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
-    {
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id) {
         $this->container['seller_fulfillment_order_item_id'] = $seller_fulfillment_order_item_id;
 
         return $this;
@@ -315,8 +300,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonShipmentId()
-    {
+    public function getAmazonShipmentId() {
         return $this->container['amazon_shipment_id'];
     }
 
@@ -327,8 +311,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonShipmentId($amazon_shipment_id)
-    {
+    public function setAmazonShipmentId($amazon_shipment_id) {
         $this->container['amazon_shipment_id'] = $amazon_shipment_id;
 
         return $this;
@@ -339,8 +322,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerReturnReasonCode()
-    {
+    public function getSellerReturnReasonCode() {
         return $this->container['seller_return_reason_code'];
     }
 
@@ -351,8 +333,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerReturnReasonCode($seller_return_reason_code)
-    {
+    public function setSellerReturnReasonCode($seller_return_reason_code) {
         $this->container['seller_return_reason_code'] = $seller_return_reason_code;
 
         return $this;
@@ -363,8 +344,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReturnComment()
-    {
+    public function getReturnComment() {
         return $this->container['return_comment'];
     }
 
@@ -375,8 +355,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReturnComment($return_comment)
-    {
+    public function setReturnComment($return_comment) {
         $this->container['return_comment'] = $return_comment;
 
         return $this;
@@ -387,8 +366,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAmazonReturnReasonCode()
-    {
+    public function getAmazonReturnReasonCode() {
         return $this->container['amazon_return_reason_code'];
     }
 
@@ -399,8 +377,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAmazonReturnReasonCode($amazon_return_reason_code)
-    {
+    public function setAmazonReturnReasonCode($amazon_return_reason_code) {
         $this->container['amazon_return_reason_code'] = $amazon_return_reason_code;
 
         return $this;
@@ -409,22 +386,20 @@ class ReturnItem implements ModelInterface, ArrayAccess
     /**
      * Gets status.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentReturnItemStatus
+     * @return FulfillmentReturnItemStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->container['status'];
     }
 
     /**
      * Sets status.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentReturnItemStatus $status status
+     * @param FulfillmentReturnItemStatus $status status
      *
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->container['status'] = $status;
 
         return $this;
@@ -433,22 +408,20 @@ class ReturnItem implements ModelInterface, ArrayAccess
     /**
      * Gets status_changed_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getStatusChangedDate()
-    {
+    public function getStatusChangedDate() {
         return $this->container['status_changed_date'];
     }
 
     /**
      * Sets status_changed_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $status_changed_date status_changed_date
+     * @param Timestamp $status_changed_date status_changed_date
      *
      * @return $this
      */
-    public function setStatusChangedDate($status_changed_date)
-    {
+    public function setStatusChangedDate($status_changed_date) {
         $this->container['status_changed_date'] = $status_changed_date;
 
         return $this;
@@ -459,8 +432,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getReturnAuthorizationId()
-    {
+    public function getReturnAuthorizationId() {
         return $this->container['return_authorization_id'];
     }
 
@@ -471,8 +443,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setReturnAuthorizationId($return_authorization_id)
-    {
+    public function setReturnAuthorizationId($return_authorization_id) {
         $this->container['return_authorization_id'] = $return_authorization_id;
 
         return $this;
@@ -481,22 +452,20 @@ class ReturnItem implements ModelInterface, ArrayAccess
     /**
      * Gets return_received_condition.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemDisposition
+     * @return ReturnItemDisposition
      */
-    public function getReturnReceivedCondition()
-    {
+    public function getReturnReceivedCondition() {
         return $this->container['return_received_condition'];
     }
 
     /**
      * Sets return_received_condition.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\ReturnItemDisposition $return_received_condition return_received_condition
+     * @param ReturnItemDisposition $return_received_condition return_received_condition
      *
      * @return $this
      */
-    public function setReturnReceivedCondition($return_received_condition)
-    {
+    public function setReturnReceivedCondition($return_received_condition) {
         $this->container['return_received_condition'] = $return_received_condition;
 
         return $this;
@@ -507,8 +476,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFulfillmentCenterId()
-    {
+    public function getFulfillmentCenterId() {
         return $this->container['fulfillment_center_id'];
     }
 
@@ -519,8 +487,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFulfillmentCenterId($fulfillment_center_id)
-    {
+    public function setFulfillmentCenterId($fulfillment_center_id) {
         $this->container['fulfillment_center_id'] = $fulfillment_center_id;
 
         return $this;
@@ -533,8 +500,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -545,21 +511,19 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -574,8 +538,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -584,8 +547,7 @@ class ReturnItem implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Contact Class Doc Comment.
  *
-
  * @description Contact information for the person in the seller&#x27;s organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Contact implements ModelInterface, ArrayAccess
-{
+class Contact implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'phone' => 'string',
-'email' => 'string',
-'fax' => 'string',    ];
+        'name'  => 'string',
+        'phone' => 'string',
+        'email' => 'string',
+        'fax'   => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'phone' => null,
-'email' => null,
-'fax' => null,    ];
+        'name'  => null,
+        'phone' => null,
+        'email' => null,
+        'fax'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-'phone' => 'Phone',
-'email' => 'Email',
-'fax' => 'Fax',    ];
+        'name'  => 'Name',
+        'phone' => 'Phone',
+        'email' => 'Email',
+        'fax'   => 'Fax',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'phone' => 'setPhone',
-'email' => 'setEmail',
-'fax' => 'setFax',    ];
+        'name'  => 'setName',
+        'phone' => 'setPhone',
+        'email' => 'setEmail',
+        'fax'   => 'setFax',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class Contact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'phone' => 'getPhone',
-'email' => 'getEmail',
-'fax' => 'getFax',    ];
+        'name'  => 'getName',
+        'phone' => 'getPhone',
+        'email' => 'getEmail',
+        'fax'   => 'getFax',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class Contact implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -183,8 +174,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['name']) {
@@ -206,8 +196,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -216,8 +205,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -228,8 +216,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -240,8 +227,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPhone()
-    {
+    public function getPhone() {
         return $this->container['phone'];
     }
 
@@ -252,8 +238,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPhone($phone)
-    {
+    public function setPhone($phone) {
         $this->container['phone'] = $phone;
 
         return $this;
@@ -264,8 +249,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->container['email'];
     }
 
@@ -276,8 +260,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->container['email'] = $email;
 
         return $this;
@@ -288,8 +271,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFax()
-    {
+    public function getFax() {
         return $this->container['fax'];
     }
 
@@ -300,8 +282,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFax($fax)
-    {
+    public function setFax($fax) {
         $this->container['fax'] = $fax;
 
         return $this;
@@ -314,8 +295,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -326,21 +306,19 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -355,8 +333,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -365,8 +342,7 @@ class Contact implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

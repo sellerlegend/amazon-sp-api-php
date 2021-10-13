@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Constraint Class Doc Comment.
  *
-
  * @description A validation constraint.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Constraint implements ModelInterface, ArrayAccess
-{
+class Constraint implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,7 @@ class Constraint implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'validation_reg_ex' => 'string',
-'validation_string' => 'string',    ];
+        'validation_string' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class Constraint implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'validation_reg_ex' => null,
-'validation_string' => null,    ];
+        'validation_string' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class Constraint implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'validation_reg_ex' => 'ValidationRegEx',
-'validation_string' => 'ValidationString',    ];
+        'validation_string' => 'ValidationString',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class Constraint implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'validation_reg_ex' => 'setValidationRegEx',
-'validation_string' => 'setValidationString',    ];
+        'validation_string' => 'setValidationString',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class Constraint implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'validation_reg_ex' => 'getValidationRegEx',
-'validation_string' => 'getValidationString',    ];
+        'validation_string' => 'getValidationString',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class Constraint implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['validation_reg_ex'] = isset($data['validation_reg_ex']) ? $data['validation_reg_ex'] : null;
         $this->container['validation_string'] = isset($data['validation_string']) ? $data['validation_string'] : null;
     }
@@ -171,8 +162,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['validation_string']) {
@@ -188,8 +178,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -198,8 +187,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getValidationRegEx()
-    {
+    public function getValidationRegEx() {
         return $this->container['validation_reg_ex'];
     }
 
@@ -210,8 +198,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValidationRegEx($validation_reg_ex)
-    {
+    public function setValidationRegEx($validation_reg_ex) {
         $this->container['validation_reg_ex'] = $validation_reg_ex;
 
         return $this;
@@ -222,8 +209,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getValidationString()
-    {
+    public function getValidationString() {
         return $this->container['validation_string'];
     }
 
@@ -234,8 +220,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValidationString($validation_string)
-    {
+    public function setValidationString($validation_string) {
         $this->container['validation_string'] = $validation_string;
 
         return $this;
@@ -248,8 +233,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +244,19 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +271,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +280,7 @@ class Constraint implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,22 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Poa Class Doc Comment.
  *
-
  * @description Proof of Appointment (POA) details.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Poa implements ModelInterface, ArrayAccess
-{
+class Poa implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +46,11 @@ class Poa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'appointment_time' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTime',
-'technicians' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\Technician[]',
-'uploading_technician' => 'string',
-'upload_time' => '\DateTime',
-'poa_type' => 'string',    ];
+        'appointment_time'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\AppointmentTime',
+        'technicians'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\Technician[]',
+        'uploading_technician' => 'string',
+        'upload_time'          => '\DateTime',
+        'poa_type'             => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +58,18 @@ class Poa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'appointment_time' => null,
-'technicians' => null,
-'uploading_technician' => null,
-'upload_time' => 'date-time',
-'poa_type' => null,    ];
+        'appointment_time'     => null,
+        'technicians'          => null,
+        'uploading_technician' => null,
+        'upload_time'          => 'date-time',
+        'poa_type'             => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +78,7 @@ class Poa implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +89,11 @@ class Poa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'appointment_time' => 'appointmentTime',
-'technicians' => 'technicians',
-'uploading_technician' => 'uploadingTechnician',
-'upload_time' => 'uploadTime',
-'poa_type' => 'poaType',    ];
+        'appointment_time'     => 'appointmentTime',
+        'technicians'          => 'technicians',
+        'uploading_technician' => 'uploadingTechnician',
+        'upload_time'          => 'uploadTime',
+        'poa_type'             => 'poaType',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +101,11 @@ class Poa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'appointment_time' => 'setAppointmentTime',
-'technicians' => 'setTechnicians',
-'uploading_technician' => 'setUploadingTechnician',
-'upload_time' => 'setUploadTime',
-'poa_type' => 'setPoaType',    ];
+        'appointment_time'     => 'setAppointmentTime',
+        'technicians'          => 'setTechnicians',
+        'uploading_technician' => 'setUploadingTechnician',
+        'upload_time'          => 'setUploadTime',
+        'poa_type'             => 'setPoaType',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +113,11 @@ class Poa implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'appointment_time' => 'getAppointmentTime',
-'technicians' => 'getTechnicians',
-'uploading_technician' => 'getUploadingTechnician',
-'upload_time' => 'getUploadTime',
-'poa_type' => 'getPoaType',    ];
+        'appointment_time'     => 'getAppointmentTime',
+        'technicians'          => 'getTechnicians',
+        'uploading_technician' => 'getUploadingTechnician',
+        'upload_time'          => 'getUploadTime',
+        'poa_type'             => 'getPoaType',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +125,7 @@ class Poa implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +134,7 @@ class Poa implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +143,7 @@ class Poa implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +152,7 @@ class Poa implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -172,13 +166,12 @@ class Poa implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getPoaTypeAllowableValues()
-    {
+    public function getPoaTypeAllowableValues() {
         return [
             self::POA_TYPE_NO_SIGNATURE_DUMMY_POS,
-self::POA_TYPE_CUSTOMER_SIGNATURE,
-self::POA_TYPE_DUMMY_RECEIPT,
-self::POA_TYPE_POA_RECEIPT,        ];
+            self::POA_TYPE_CUSTOMER_SIGNATURE,
+            self::POA_TYPE_DUMMY_RECEIPT,
+            self::POA_TYPE_POA_RECEIPT,];
     }
 
     /**
@@ -194,8 +187,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['appointment_time'] = isset($data['appointment_time']) ? $data['appointment_time'] : null;
         $this->container['technicians'] = isset($data['technicians']) ? $data['technicians'] : null;
         $this->container['uploading_technician'] = isset($data['uploading_technician']) ? $data['uploading_technician'] : null;
@@ -208,8 +200,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getPoaTypeAllowableValues();
@@ -229,30 +220,27 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets appointment_time.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTime
+     * @return AppointmentTime
      */
-    public function getAppointmentTime()
-    {
+    public function getAppointmentTime() {
         return $this->container['appointment_time'];
     }
 
     /**
      * Sets appointment_time.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTime $appointment_time appointment_time
+     * @param AppointmentTime $appointment_time appointment_time
      *
      * @return $this
      */
-    public function setAppointmentTime($appointment_time)
-    {
+    public function setAppointmentTime($appointment_time) {
         $this->container['appointment_time'] = $appointment_time;
 
         return $this;
@@ -261,22 +249,20 @@ self::POA_TYPE_POA_RECEIPT,        ];
     /**
      * Gets technicians.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\Technician[]
+     * @return Technician[]
      */
-    public function getTechnicians()
-    {
+    public function getTechnicians() {
         return $this->container['technicians'];
     }
 
     /**
      * Sets technicians.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\Technician[] $technicians a list of technicians
+     * @param Technician[] $technicians a list of technicians
      *
      * @return $this
      */
-    public function setTechnicians($technicians)
-    {
+    public function setTechnicians($technicians) {
         $this->container['technicians'] = $technicians;
 
         return $this;
@@ -287,8 +273,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return string
      */
-    public function getUploadingTechnician()
-    {
+    public function getUploadingTechnician() {
         return $this->container['uploading_technician'];
     }
 
@@ -299,8 +284,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return $this
      */
-    public function setUploadingTechnician($uploading_technician)
-    {
+    public function setUploadingTechnician($uploading_technician) {
         $this->container['uploading_technician'] = $uploading_technician;
 
         return $this;
@@ -309,22 +293,20 @@ self::POA_TYPE_POA_RECEIPT,        ];
     /**
      * Gets upload_time.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getUploadTime()
-    {
+    public function getUploadTime() {
         return $this->container['upload_time'];
     }
 
     /**
      * Sets upload_time.
      *
-     * @param \DateTime $upload_time the date and time when the POA was uploaded, in ISO 8601 format
+     * @param DateTime $upload_time the date and time when the POA was uploaded, in ISO 8601 format
      *
      * @return $this
      */
-    public function setUploadTime($upload_time)
-    {
+    public function setUploadTime($upload_time) {
         $this->container['upload_time'] = $upload_time;
 
         return $this;
@@ -335,8 +317,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return string
      */
-    public function getPoaType()
-    {
+    public function getPoaType() {
         return $this->container['poa_type'];
     }
 
@@ -347,11 +328,10 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return $this
      */
-    public function setPoaType($poa_type)
-    {
+    public function setPoaType($poa_type) {
         $allowedValues = $this->getPoaTypeAllowableValues();
         if (!is_null($poa_type) && !in_array($poa_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'poa_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'poa_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['poa_type'] = $poa_type;
 
@@ -365,8 +345,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -377,21 +356,19 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -406,8 +383,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -416,8 +392,7 @@ self::POA_TYPE_POA_RECEIPT,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

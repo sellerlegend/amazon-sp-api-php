@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AddAppointmentRequest Class Doc Comment.
  *
-
  * @description Input for add appointment operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AddAppointmentRequest implements ModelInterface, ArrayAccess
-{
+class AddAppointmentRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,7 +44,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'appointment_time' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTimeInput',    ];
+        'appointment_time' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\AppointmentTimeInput',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -54,15 +52,14 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'appointment_time' => null,    ];
+        'appointment_time' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -71,8 +68,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -83,7 +79,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'appointment_time' => 'appointmentTime',    ];
+        'appointment_time' => 'appointmentTime',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,7 +87,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'appointment_time' => 'setAppointmentTime',    ];
+        'appointment_time' => 'setAppointmentTime',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -99,7 +95,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'appointment_time' => 'getAppointmentTime',    ];
+        'appointment_time' => 'getAppointmentTime',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,8 +103,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -117,8 +112,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -127,8 +121,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -137,8 +130,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,8 +147,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['appointment_time'] = isset($data['appointment_time']) ? $data['appointment_time'] : null;
     }
 
@@ -165,8 +156,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['appointment_time']) {
@@ -182,30 +172,27 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets appointment_time.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTimeInput
+     * @return AppointmentTimeInput
      */
-    public function getAppointmentTime()
-    {
+    public function getAppointmentTime() {
         return $this->container['appointment_time'];
     }
 
     /**
      * Sets appointment_time.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTimeInput $appointment_time appointment_time
+     * @param AppointmentTimeInput $appointment_time appointment_time
      *
      * @return $this
      */
-    public function setAppointmentTime($appointment_time)
-    {
+    public function setAppointmentTime($appointment_time) {
         $this->container['appointment_time'] = $appointment_time;
 
         return $this;
@@ -218,8 +205,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -230,21 +216,19 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -259,8 +243,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -269,8 +252,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

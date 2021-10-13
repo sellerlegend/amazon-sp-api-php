@@ -15,19 +15,18 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFeedResult Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFeedResult implements ModelInterface, ArrayAccess
-{
+class CreateFeedResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,7 +42,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'feed_id' => 'string',    ];
+        'feed_id' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -51,15 +50,14 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'feed_id' => null,    ];
+        'feed_id' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -68,8 +66,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -80,7 +77,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'feed_id' => 'feedId',    ];
+        'feed_id' => 'feedId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -88,7 +85,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'feed_id' => 'setFeedId',    ];
+        'feed_id' => 'setFeedId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -96,7 +93,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'feed_id' => 'getFeedId',    ];
+        'feed_id' => 'getFeedId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -104,8 +101,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -114,8 +110,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -124,8 +119,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -134,8 +128,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -152,8 +145,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['feed_id'] = isset($data['feed_id']) ? $data['feed_id'] : null;
     }
 
@@ -162,8 +154,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['feed_id']) {
@@ -179,8 +170,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -189,8 +179,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeedId()
-    {
+    public function getFeedId() {
         return $this->container['feed_id'];
     }
 
@@ -201,8 +190,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeedId($feed_id)
-    {
+    public function setFeedId($feed_id) {
         $this->container['feed_id'] = $feed_id;
 
         return $this;
@@ -215,8 +203,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -227,21 +214,19 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -256,8 +241,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -266,8 +250,7 @@ class CreateFeedResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

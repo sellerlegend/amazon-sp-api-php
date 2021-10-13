@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use DateTime;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetRatesRequest Class Doc Comment.
  *
-
  * @description The payload schema for the getRates operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetRatesRequest implements ModelInterface, ArrayAccess
-{
+class GetRatesRequest implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +45,12 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'ship_to' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address',
-'ship_from' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address',
-'service_types' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ServiceTypeList',
-'ship_date' => '\DateTime',
-'container_specifications' => '\ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerSpecificationList',    ];
+        'ship_to'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Address',
+        'ship_from'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\Address',
+        'service_types'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ServiceTypeList',
+        'ship_date'                => '\DateTime',
+        'container_specifications' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Shipping\ContainerSpecificationList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +58,18 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'ship_to' => null,
-'ship_from' => null,
-'service_types' => null,
-'ship_date' => 'date-time',
-'container_specifications' => null,    ];
+        'ship_to'                  => null,
+        'ship_from'                => null,
+        'service_types'            => null,
+        'ship_date'                => 'date-time',
+        'container_specifications' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +78,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +89,11 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'ship_to' => 'shipTo',
-'ship_from' => 'shipFrom',
-'service_types' => 'serviceTypes',
-'ship_date' => 'shipDate',
-'container_specifications' => 'containerSpecifications',    ];
+        'ship_to'                  => 'shipTo',
+        'ship_from'                => 'shipFrom',
+        'service_types'            => 'serviceTypes',
+        'ship_date'                => 'shipDate',
+        'container_specifications' => 'containerSpecifications',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +101,11 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'ship_to' => 'setShipTo',
-'ship_from' => 'setShipFrom',
-'service_types' => 'setServiceTypes',
-'ship_date' => 'setShipDate',
-'container_specifications' => 'setContainerSpecifications',    ];
+        'ship_to'                  => 'setShipTo',
+        'ship_from'                => 'setShipFrom',
+        'service_types'            => 'setServiceTypes',
+        'ship_date'                => 'setShipDate',
+        'container_specifications' => 'setContainerSpecifications',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +113,11 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'ship_to' => 'getShipTo',
-'ship_from' => 'getShipFrom',
-'service_types' => 'getServiceTypes',
-'ship_date' => 'getShipDate',
-'container_specifications' => 'getContainerSpecifications',    ];
+        'ship_to'                  => 'getShipTo',
+        'ship_from'                => 'getShipFrom',
+        'service_types'            => 'getServiceTypes',
+        'ship_date'                => 'getShipDate',
+        'container_specifications' => 'getContainerSpecifications',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +125,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +134,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +143,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +152,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +169,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['ship_to'] = isset($data['ship_to']) ? $data['ship_to'] : null;
         $this->container['ship_from'] = isset($data['ship_from']) ? $data['ship_from'] : null;
         $this->container['service_types'] = isset($data['service_types']) ? $data['service_types'] : null;
@@ -189,8 +182,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['ship_to']) {
@@ -215,30 +207,27 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets ship_to.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address
+     * @return Address
      */
-    public function getShipTo()
-    {
+    public function getShipTo() {
         return $this->container['ship_to'];
     }
 
     /**
      * Sets ship_to.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address $ship_to ship_to
+     * @param Address $ship_to ship_to
      *
      * @return $this
      */
-    public function setShipTo($ship_to)
-    {
+    public function setShipTo($ship_to) {
         $this->container['ship_to'] = $ship_to;
 
         return $this;
@@ -247,22 +236,20 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
     /**
      * Gets ship_from.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address
+     * @return Address
      */
-    public function getShipFrom()
-    {
+    public function getShipFrom() {
         return $this->container['ship_from'];
     }
 
     /**
      * Sets ship_from.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\Address $ship_from ship_from
+     * @param Address $ship_from ship_from
      *
      * @return $this
      */
-    public function setShipFrom($ship_from)
-    {
+    public function setShipFrom($ship_from) {
         $this->container['ship_from'] = $ship_from;
 
         return $this;
@@ -271,22 +258,20 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
     /**
      * Gets service_types.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ServiceTypeList
+     * @return ServiceTypeList
      */
-    public function getServiceTypes()
-    {
+    public function getServiceTypes() {
         return $this->container['service_types'];
     }
 
     /**
      * Sets service_types.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ServiceTypeList $service_types service_types
+     * @param ServiceTypeList $service_types service_types
      *
      * @return $this
      */
-    public function setServiceTypes($service_types)
-    {
+    public function setServiceTypes($service_types) {
         $this->container['service_types'] = $service_types;
 
         return $this;
@@ -295,22 +280,20 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
     /**
      * Gets ship_date.
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getShipDate()
-    {
+    public function getShipDate() {
         return $this->container['ship_date'];
     }
 
     /**
      * Sets ship_date.
      *
-     * @param \DateTime $ship_date The start date and time. This defaults to the current date and time.
+     * @param DateTime $ship_date The start date and time. This defaults to the current date and time.
      *
      * @return $this
      */
-    public function setShipDate($ship_date)
-    {
+    public function setShipDate($ship_date) {
         $this->container['ship_date'] = $ship_date;
 
         return $this;
@@ -319,22 +302,20 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
     /**
      * Gets container_specifications.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerSpecificationList
+     * @return ContainerSpecificationList
      */
-    public function getContainerSpecifications()
-    {
+    public function getContainerSpecifications() {
         return $this->container['container_specifications'];
     }
 
     /**
      * Sets container_specifications.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Shipping\ContainerSpecificationList $container_specifications container_specifications
+     * @param ContainerSpecificationList $container_specifications container_specifications
      *
      * @return $this
      */
-    public function setContainerSpecifications($container_specifications)
-    {
+    public function setContainerSpecifications($container_specifications) {
         $this->container['container_specifications'] = $container_specifications;
 
         return $this;
@@ -347,8 +328,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -359,21 +339,19 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -388,8 +366,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -398,8 +375,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

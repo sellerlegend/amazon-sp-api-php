@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetFeatureInventoryResult Class Doc Comment.
  *
-
  * @description The payload for the getEligibileInventory operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
-{
+class GetFeatureInventoryResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,9 +45,9 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'marketplace_id' => 'string',
-'feature_name' => 'string',
-'next_token' => 'string',
-'feature_skus' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku[]',    ];
+        'feature_name'   => 'string',
+        'next_token'     => 'string',
+        'feature_skus'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,17 +56,16 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'marketplace_id' => null,
-'feature_name' => null,
-'next_token' => null,
-'feature_skus' => null,    ];
+        'feature_name'   => null,
+        'next_token'     => null,
+        'feature_skus'   => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,9 +86,9 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
-'feature_name' => 'featureName',
-'next_token' => 'nextToken',
-'feature_skus' => 'featureSkus',    ];
+        'feature_name'   => 'featureName',
+        'next_token'     => 'nextToken',
+        'feature_skus'   => 'featureSkus',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,9 +97,9 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
-'feature_name' => 'setFeatureName',
-'next_token' => 'setNextToken',
-'feature_skus' => 'setFeatureSkus',    ];
+        'feature_name'   => 'setFeatureName',
+        'next_token'     => 'setNextToken',
+        'feature_skus'   => 'setFeatureSkus',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,9 +108,9 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-'feature_name' => 'getFeatureName',
-'next_token' => 'getNextToken',
-'feature_skus' => 'getFeatureSkus',    ];
+        'feature_name'   => 'getFeatureName',
+        'next_token'     => 'getNextToken',
+        'feature_skus'   => 'getFeatureSkus',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['feature_name'] = isset($data['feature_name']) ? $data['feature_name'] : null;
         $this->container['next_token'] = isset($data['next_token']) ? $data['next_token'] : null;
@@ -183,8 +174,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['marketplace_id']) {
@@ -203,8 +193,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -213,8 +202,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -225,8 +213,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -237,8 +224,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeatureName()
-    {
+    public function getFeatureName() {
         return $this->container['feature_name'];
     }
 
@@ -249,8 +235,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeatureName($feature_name)
-    {
+    public function setFeatureName($feature_name) {
         $this->container['feature_name'] = $feature_name;
 
         return $this;
@@ -261,8 +246,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getNextToken()
-    {
+    public function getNextToken() {
         return $this->container['next_token'];
     }
 
@@ -273,8 +257,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setNextToken($next_token)
-    {
+    public function setNextToken($next_token) {
         $this->container['next_token'] = $next_token;
 
         return $this;
@@ -283,22 +266,20 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
     /**
      * Gets feature_skus.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku[]
+     * @return FeatureSku[]
      */
-    public function getFeatureSkus()
-    {
+    public function getFeatureSkus() {
         return $this->container['feature_skus'];
     }
 
     /**
      * Sets feature_skus.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FeatureSku[] $feature_skus an array of SKUs eligible for this feature and the quantity available
+     * @param FeatureSku[] $feature_skus an array of SKUs eligible for this feature and the quantity available
      *
      * @return $this
      */
-    public function setFeatureSkus($feature_skus)
-    {
+    public function setFeatureSkus($feature_skus) {
         $this->container['feature_skus'] = $feature_skus;
 
         return $this;
@@ -311,8 +292,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -323,21 +303,19 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -352,8 +330,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -362,8 +339,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

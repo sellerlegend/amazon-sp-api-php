@@ -15,22 +15,21 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeatureSettings Class Doc Comment.
  *
-
  * @description Settings to apply to an order that includes the specified fulfillment feature.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeatureSettings implements ModelInterface, ArrayAccess
-{
+class FeatureSettings implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'feature_name' => 'string',
-'feature_fulfillment_policy' => 'string',    ];
+        'feature_name'               => 'string',
+        'feature_fulfillment_policy' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'feature_name' => null,
-'feature_fulfillment_policy' => null,    ];
+        'feature_name'               => null,
+        'feature_fulfillment_policy' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'feature_name' => 'featureName',
-'feature_fulfillment_policy' => 'featureFulfillmentPolicy',    ];
+        'feature_name'               => 'featureName',
+        'feature_fulfillment_policy' => 'featureFulfillmentPolicy',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'feature_name' => 'setFeatureName',
-'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy',    ];
+        'feature_name'               => 'setFeatureName',
+        'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'feature_name' => 'getFeatureName',
-'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy',    ];
+        'feature_name'               => 'getFeatureName',
+        'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -155,11 +148,10 @@ class FeatureSettings implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getFeatureFulfillmentPolicyAllowableValues()
-    {
+    public function getFeatureFulfillmentPolicyAllowableValues() {
         return [
             self::FEATURE_FULFILLMENT_POLICY_REQUIRED,
-self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
+            self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,];
     }
 
     /**
@@ -175,8 +167,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['feature_name'] = isset($data['feature_name']) ? $data['feature_name'] : null;
         $this->container['feature_fulfillment_policy'] = isset($data['feature_fulfillment_policy']) ? $data['feature_fulfillment_policy'] : null;
     }
@@ -186,8 +177,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
@@ -207,8 +197,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -217,8 +206,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return string
      */
-    public function getFeatureName()
-    {
+    public function getFeatureName() {
         return $this->container['feature_name'];
     }
 
@@ -229,8 +217,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return $this
      */
-    public function setFeatureName($feature_name)
-    {
+    public function setFeatureName($feature_name) {
         $this->container['feature_name'] = $feature_name;
 
         return $this;
@@ -241,8 +228,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return string
      */
-    public function getFeatureFulfillmentPolicy()
-    {
+    public function getFeatureFulfillmentPolicy() {
         return $this->container['feature_fulfillment_policy'];
     }
 
@@ -253,11 +239,10 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return $this
      */
-    public function setFeatureFulfillmentPolicy($feature_fulfillment_policy)
-    {
+    public function setFeatureFulfillmentPolicy($feature_fulfillment_policy) {
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
         if (!is_null($feature_fulfillment_policy) && !in_array($feature_fulfillment_policy, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'feature_fulfillment_policy', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'feature_fulfillment_policy', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['feature_fulfillment_policy'] = $feature_fulfillment_policy;
 
@@ -271,8 +256,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -283,21 +267,19 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -312,8 +294,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -322,8 +303,7 @@ self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

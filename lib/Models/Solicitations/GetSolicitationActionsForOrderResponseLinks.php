@@ -15,19 +15,18 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Solicitations;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetSolicitationActionsForOrderResponseLinks Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, ArrayAccess
-{
+class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,8 +42,8 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'self' => '\ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject',
-'actions' => '\ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject[]',    ];
+        'self'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject',
+        'actions' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject[]',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -52,16 +51,15 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'self' => null,
-'actions' => null,    ];
+        'self'    => null,
+        'actions' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -70,8 +68,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -82,8 +79,8 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'self' => 'self',
-'actions' => 'actions',    ];
+        'self'    => 'self',
+        'actions' => 'actions',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,8 +88,8 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'self' => 'setSelf',
-'actions' => 'setActions',    ];
+        'self'    => 'setSelf',
+        'actions' => 'setActions',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -100,8 +97,8 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'self' => 'getSelf',
-'actions' => 'getActions',    ];
+        'self'    => 'getSelf',
+        'actions' => 'getActions',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -109,8 +106,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -119,8 +115,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -129,8 +124,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -139,8 +133,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,8 +150,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['self'] = isset($data['self']) ? $data['self'] : null;
         $this->container['actions'] = isset($data['actions']) ? $data['actions'] : null;
     }
@@ -168,8 +160,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['self']) {
@@ -188,30 +179,27 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets self.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject
+     * @return LinkObject
      */
-    public function getSelf()
-    {
+    public function getSelf() {
         return $this->container['self'];
     }
 
     /**
      * Sets self.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject $self self
+     * @param LinkObject $self self
      *
      * @return $this
      */
-    public function setSelf($self)
-    {
+    public function setSelf($self) {
         $this->container['self'] = $self;
 
         return $this;
@@ -220,22 +208,20 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
     /**
      * Gets actions.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject[]
+     * @return LinkObject[]
      */
-    public function getActions()
-    {
+    public function getActions() {
         return $this->container['actions'];
     }
 
     /**
      * Sets actions.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Solicitations\LinkObject[] $actions eligible actions for the specified amazonOrderId
+     * @param LinkObject[] $actions eligible actions for the specified amazonOrderId
      *
      * @return $this
      */
-    public function setActions($actions)
-    {
+    public function setActions($actions) {
         $this->container['actions'] = $actions;
 
         return $this;
@@ -248,8 +234,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +245,19 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +272,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +281,7 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

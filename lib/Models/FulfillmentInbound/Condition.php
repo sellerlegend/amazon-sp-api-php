@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * Condition Class Doc Comment.
  *
-
  * @description The condition of the item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Condition
-{
+class Condition {
     /**
      * Possible values of this enum.
      */
@@ -54,26 +52,25 @@ class Condition
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::NEW_ITEM,
-self::NEW_WITH_WARRANTY,
-self::NEW_OEM,
-self::NEW_OPEN_BOX,
-self::USED_LIKE_NEW,
-self::USED_VERY_GOOD,
-self::USED_GOOD,
-self::USED_ACCEPTABLE,
-self::USED_POOR,
-self::USED_REFURBISHED,
-self::COLLECTIBLE_LIKE_NEW,
-self::COLLECTIBLE_VERY_GOOD,
-self::COLLECTIBLE_GOOD,
-self::COLLECTIBLE_ACCEPTABLE,
-self::COLLECTIBLE_POOR,
-self::REFURBISHED_WITH_WARRANTY,
-self::REFURBISHED,
-self::CLUB,        ];
+            self::NEW_WITH_WARRANTY,
+            self::NEW_OEM,
+            self::NEW_OPEN_BOX,
+            self::USED_LIKE_NEW,
+            self::USED_VERY_GOOD,
+            self::USED_GOOD,
+            self::USED_ACCEPTABLE,
+            self::USED_POOR,
+            self::USED_REFURBISHED,
+            self::COLLECTIBLE_LIKE_NEW,
+            self::COLLECTIBLE_VERY_GOOD,
+            self::COLLECTIBLE_GOOD,
+            self::COLLECTIBLE_ACCEPTABLE,
+            self::COLLECTIBLE_POOR,
+            self::REFURBISHED_WITH_WARRANTY,
+            self::REFURBISHED,
+            self::CLUB,];
     }
 }

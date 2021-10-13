@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 /**
  * PackageStatus Class Doc Comment.
  *
-
  * @description The shipment status of the package.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class PackageStatus
-{
+class PackageStatus {
     /**
      * Possible values of this enum.
      */
@@ -43,15 +41,14 @@ class PackageStatus
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::SHIPPED,
-self::IN_TRANSIT,
-self::DELIVERED,
-self::CHECKED_IN,
-self::RECEIVING,
-self::CLOSED,
-self::DELETED,        ];
+            self::IN_TRANSIT,
+            self::DELIVERED,
+            self::CHECKED_IN,
+            self::RECEIVING,
+            self::CLOSED,
+            self::DELETED,];
     }
 }

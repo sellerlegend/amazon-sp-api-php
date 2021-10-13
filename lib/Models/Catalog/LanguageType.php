@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * LanguageType Class Doc Comment.
  *
-
  * @description The language type attribute of an item.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LanguageType extends Categories implements ModelInterface, ArrayAccess
-{
+class LanguageType extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'type' => 'string',
-'audio_format' => 'string',    ];
+        'name'         => 'string',
+        'type'         => 'string',
+        'audio_format' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'type' => null,
-'audio_format' => null,    ];
+        'name'         => null,
+        'type'         => null,
+        'audio_format' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-'type' => 'Type',
-'audio_format' => 'AudioFormat',    ];
+        'name'         => 'Name',
+        'type'         => 'Type',
+        'audio_format' => 'AudioFormat',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'type' => 'setType',
-'audio_format' => 'setAudioFormat',    ];
+        'name'         => 'setName',
+        'type'         => 'setType',
+        'audio_format' => 'setAudioFormat',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'type' => 'getType',
-'audio_format' => 'getAudioFormat',    ];
+        'name'         => 'getName',
+        'type'         => 'getType',
+        'audio_format' => 'getAudioFormat',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['audio_format'] = isset($data['audio_format']) ? $data['audio_format'] : null;
@@ -177,8 +168,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -190,8 +180,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -200,8 +189,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -212,8 +200,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -224,8 +211,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->container['type'];
     }
 
@@ -236,8 +222,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->container['type'] = $type;
 
         return $this;
@@ -248,8 +233,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAudioFormat()
-    {
+    public function getAudioFormat() {
         return $this->container['audio_format'];
     }
 
@@ -260,8 +244,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAudioFormat($audio_format)
-    {
+    public function setAudioFormat($audio_format) {
         $this->container['audio_format'] = $audio_format;
 
         return $this;
@@ -274,8 +257,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -286,21 +268,19 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -315,8 +295,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -325,8 +304,7 @@ class LanguageType extends Categories implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

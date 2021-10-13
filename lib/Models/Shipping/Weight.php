@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Shipping;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Shipping;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Weight Class Doc Comment.
  *
-
  * @description The weight.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Weight implements ModelInterface, ArrayAccess
-{
+class Weight implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +45,8 @@ class Weight implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'unit' => 'string',
-'value' => 'float',    ];
+        'unit'  => 'string',
+        'value' => 'float',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class Weight implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'unit' => null,
-'value' => null,    ];
+        'unit'  => null,
+        'value' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class Weight implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class Weight implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'unit' => 'unit',
-'value' => 'value',    ];
+        'unit'  => 'unit',
+        'value' => 'value',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class Weight implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'unit' => 'setUnit',
-'value' => 'setValue',    ];
+        'unit'  => 'setUnit',
+        'value' => 'setValue',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class Weight implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'unit' => 'getUnit',
-'value' => 'getValue',    ];
+        'unit'  => 'getUnit',
+        'value' => 'getValue',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class Weight implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class Weight implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class Weight implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class Weight implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,13 +150,12 @@ class Weight implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getUnitAllowableValues()
-    {
+    public function getUnitAllowableValues() {
         return [
             self::UNIT_G,
-self::UNIT_KG,
-self::UNIT_OZ,
-self::UNIT_LB,        ];
+            self::UNIT_KG,
+            self::UNIT_OZ,
+            self::UNIT_LB,];
     }
 
     /**
@@ -179,8 +171,7 @@ self::UNIT_LB,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
@@ -190,8 +181,7 @@ self::UNIT_LB,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['unit']) {
@@ -218,8 +208,7 @@ self::UNIT_LB,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -228,8 +217,7 @@ self::UNIT_LB,        ];
      *
      * @return string
      */
-    public function getUnit()
-    {
+    public function getUnit() {
         return $this->container['unit'];
     }
 
@@ -240,11 +228,10 @@ self::UNIT_LB,        ];
      *
      * @return $this
      */
-    public function setUnit($unit)
-    {
+    public function setUnit($unit) {
         $allowedValues = $this->getUnitAllowableValues();
         if (!in_array($unit, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'unit', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'unit', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['unit'] = $unit;
 
@@ -256,8 +243,7 @@ self::UNIT_LB,        ];
      *
      * @return float
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->container['value'];
     }
 
@@ -268,8 +254,7 @@ self::UNIT_LB,        ];
      *
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->container['value'] = $value;
 
         return $this;
@@ -282,8 +267,7 @@ self::UNIT_LB,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -294,21 +278,19 @@ self::UNIT_LB,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -323,8 +305,7 @@ self::UNIT_LB,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -333,8 +314,7 @@ self::UNIT_LB,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

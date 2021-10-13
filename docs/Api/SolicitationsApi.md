@@ -4,15 +4,22 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createProductReviewAndSellerFeedbackSolicitation**](SolicitationsApi.md#createproductreviewandsellerfeedbacksolicitation) | **POST** /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback | 
-[**getSolicitationActionsForOrder**](SolicitationsApi.md#getsolicitationactionsfororder) | **GET** /solicitations/v1/orders/{amazonOrderId} | 
+
+[**
+createProductReviewAndSellerFeedbackSolicitation**](SolicitationsApi.md#createproductreviewandsellerfeedbacksolicitation)
+| **
+POST** /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback |
+[**getSolicitationActionsForOrder**](SolicitationsApi.md#getsolicitationactionsfororder) | **
+GET** /solicitations/v1/orders/{amazonOrderId} |
 
 # **createProductReviewAndSellerFeedbackSolicitation**
+
 > \Swagger\Client\Models\CreateProductReviewAndSellerFeedbackSolicitationResponse createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_ids)
 
 
 
-Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.  
+Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one
+productReviewAndSellerFeedback or free form proactive message per order.
 
 **Usage Plan:**
 
@@ -21,6 +28,7 @@ Sends a solicitation to a buyer asking for seller feedback and a product review 
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -53,12 +61,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a solicitation is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+**amazon_order_id** | **
+string**| An Amazon order identifier. This specifies the order for which a solicitation is sent. |
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
-[**\Swagger\Client\Models\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
+[**
+\Swagger\Client\Models\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
 
 ### Authorization
 
@@ -66,17 +77,21 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSolicitationActionsForOrder**
+
 > \Swagger\Client\Models\GetSolicitationActionsForOrderResponse getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids)
 
 
 
-Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.  
+Returns a list of solicitation types that are available for an order that you specify. A solicitation type is
+represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to
+call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation
+type is available.
 
 **Usage Plan:**
 
@@ -85,6 +100,7 @@ Returns a list of solicitation types that are available for an order that you sp
 | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -117,8 +133,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+**amazon_order_id** | **
+string**| An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. |
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
@@ -130,8 +148,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

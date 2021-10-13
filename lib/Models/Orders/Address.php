@@ -15,22 +15,21 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Orders;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Address Class Doc Comment.
  *
-
  * @description The shipping address for the order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Address implements ModelInterface, ArrayAccess
-{
+class Address implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,19 +45,19 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'address_line1' => 'string',
-'address_line2' => 'string',
-'address_line3' => 'string',
-'city' => 'string',
-'county' => 'string',
-'district' => 'string',
-'state_or_region' => 'string',
-'municipality' => 'string',
-'postal_code' => 'string',
-'country_code' => 'string',
-'phone' => 'string',
-'address_type' => 'string',    ];
+        'name'            => 'string',
+        'address_line1'   => 'string',
+        'address_line2'   => 'string',
+        'address_line3'   => 'string',
+        'city'            => 'string',
+        'county'          => 'string',
+        'district'        => 'string',
+        'state_or_region' => 'string',
+        'municipality'    => 'string',
+        'postal_code'     => 'string',
+        'country_code'    => 'string',
+        'phone'           => 'string',
+        'address_type'    => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -66,27 +65,26 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'address_line1' => null,
-'address_line2' => null,
-'address_line3' => null,
-'city' => null,
-'county' => null,
-'district' => null,
-'state_or_region' => null,
-'municipality' => null,
-'postal_code' => null,
-'country_code' => null,
-'phone' => null,
-'address_type' => null,    ];
+        'name'            => null,
+        'address_line1'   => null,
+        'address_line2'   => null,
+        'address_line3'   => null,
+        'city'            => null,
+        'county'          => null,
+        'district'        => null,
+        'state_or_region' => null,
+        'municipality'    => null,
+        'postal_code'     => null,
+        'country_code'    => null,
+        'phone'           => null,
+        'address_type'    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -95,8 +93,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -107,19 +104,19 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-'address_line1' => 'AddressLine1',
-'address_line2' => 'AddressLine2',
-'address_line3' => 'AddressLine3',
-'city' => 'City',
-'county' => 'County',
-'district' => 'District',
-'state_or_region' => 'StateOrRegion',
-'municipality' => 'Municipality',
-'postal_code' => 'PostalCode',
-'country_code' => 'CountryCode',
-'phone' => 'Phone',
-'address_type' => 'AddressType',    ];
+        'name'            => 'Name',
+        'address_line1'   => 'AddressLine1',
+        'address_line2'   => 'AddressLine2',
+        'address_line3'   => 'AddressLine3',
+        'city'            => 'City',
+        'county'          => 'County',
+        'district'        => 'District',
+        'state_or_region' => 'StateOrRegion',
+        'municipality'    => 'Municipality',
+        'postal_code'     => 'PostalCode',
+        'country_code'    => 'CountryCode',
+        'phone'           => 'Phone',
+        'address_type'    => 'AddressType',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -127,19 +124,19 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'address_line1' => 'setAddressLine1',
-'address_line2' => 'setAddressLine2',
-'address_line3' => 'setAddressLine3',
-'city' => 'setCity',
-'county' => 'setCounty',
-'district' => 'setDistrict',
-'state_or_region' => 'setStateOrRegion',
-'municipality' => 'setMunicipality',
-'postal_code' => 'setPostalCode',
-'country_code' => 'setCountryCode',
-'phone' => 'setPhone',
-'address_type' => 'setAddressType',    ];
+        'name'            => 'setName',
+        'address_line1'   => 'setAddressLine1',
+        'address_line2'   => 'setAddressLine2',
+        'address_line3'   => 'setAddressLine3',
+        'city'            => 'setCity',
+        'county'          => 'setCounty',
+        'district'        => 'setDistrict',
+        'state_or_region' => 'setStateOrRegion',
+        'municipality'    => 'setMunicipality',
+        'postal_code'     => 'setPostalCode',
+        'country_code'    => 'setCountryCode',
+        'phone'           => 'setPhone',
+        'address_type'    => 'setAddressType',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -147,19 +144,19 @@ class Address implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'address_line1' => 'getAddressLine1',
-'address_line2' => 'getAddressLine2',
-'address_line3' => 'getAddressLine3',
-'city' => 'getCity',
-'county' => 'getCounty',
-'district' => 'getDistrict',
-'state_or_region' => 'getStateOrRegion',
-'municipality' => 'getMunicipality',
-'postal_code' => 'getPostalCode',
-'country_code' => 'getCountryCode',
-'phone' => 'getPhone',
-'address_type' => 'getAddressType',    ];
+        'name'            => 'getName',
+        'address_line1'   => 'getAddressLine1',
+        'address_line2'   => 'getAddressLine2',
+        'address_line3'   => 'getAddressLine3',
+        'city'            => 'getCity',
+        'county'          => 'getCounty',
+        'district'        => 'getDistrict',
+        'state_or_region' => 'getStateOrRegion',
+        'municipality'    => 'getMunicipality',
+        'postal_code'     => 'getPostalCode',
+        'country_code'    => 'getCountryCode',
+        'phone'           => 'getPhone',
+        'address_type'    => 'getAddressType',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -167,8 +164,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -177,8 +173,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -187,8 +182,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -197,8 +191,7 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -210,11 +203,10 @@ class Address implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAddressTypeAllowableValues()
-    {
+    public function getAddressTypeAllowableValues() {
         return [
             self::ADDRESS_TYPE_RESIDENTIAL,
-self::ADDRESS_TYPE_COMMERCIAL,        ];
+            self::ADDRESS_TYPE_COMMERCIAL,];
     }
 
     /**
@@ -230,8 +222,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
         $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
@@ -252,8 +243,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['name']) {
@@ -276,8 +266,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -286,8 +275,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -298,8 +286,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -310,8 +297,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getAddressLine1()
-    {
+    public function getAddressLine1() {
         return $this->container['address_line1'];
     }
 
@@ -322,8 +308,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setAddressLine1($address_line1)
-    {
+    public function setAddressLine1($address_line1) {
         $this->container['address_line1'] = $address_line1;
 
         return $this;
@@ -334,8 +319,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getAddressLine2()
-    {
+    public function getAddressLine2() {
         return $this->container['address_line2'];
     }
 
@@ -346,8 +330,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setAddressLine2($address_line2)
-    {
+    public function setAddressLine2($address_line2) {
         $this->container['address_line2'] = $address_line2;
 
         return $this;
@@ -358,8 +341,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getAddressLine3()
-    {
+    public function getAddressLine3() {
         return $this->container['address_line3'];
     }
 
@@ -370,8 +352,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setAddressLine3($address_line3)
-    {
+    public function setAddressLine3($address_line3) {
         $this->container['address_line3'] = $address_line3;
 
         return $this;
@@ -382,8 +363,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->container['city'];
     }
 
@@ -394,8 +374,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setCity($city)
-    {
+    public function setCity($city) {
         $this->container['city'] = $city;
 
         return $this;
@@ -406,8 +385,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getCounty()
-    {
+    public function getCounty() {
         return $this->container['county'];
     }
 
@@ -418,8 +396,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setCounty($county)
-    {
+    public function setCounty($county) {
         $this->container['county'] = $county;
 
         return $this;
@@ -430,8 +407,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getDistrict()
-    {
+    public function getDistrict() {
         return $this->container['district'];
     }
 
@@ -442,8 +418,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setDistrict($district)
-    {
+    public function setDistrict($district) {
         $this->container['district'] = $district;
 
         return $this;
@@ -454,8 +429,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getStateOrRegion()
-    {
+    public function getStateOrRegion() {
         return $this->container['state_or_region'];
     }
 
@@ -466,8 +440,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setStateOrRegion($state_or_region)
-    {
+    public function setStateOrRegion($state_or_region) {
         $this->container['state_or_region'] = $state_or_region;
 
         return $this;
@@ -478,8 +451,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getMunicipality()
-    {
+    public function getMunicipality() {
         return $this->container['municipality'];
     }
 
@@ -490,8 +462,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setMunicipality($municipality)
-    {
+    public function setMunicipality($municipality) {
         $this->container['municipality'] = $municipality;
 
         return $this;
@@ -502,8 +473,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getPostalCode()
-    {
+    public function getPostalCode() {
         return $this->container['postal_code'];
     }
 
@@ -514,8 +484,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setPostalCode($postal_code)
-    {
+    public function setPostalCode($postal_code) {
         $this->container['postal_code'] = $postal_code;
 
         return $this;
@@ -526,8 +495,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getCountryCode()
-    {
+    public function getCountryCode() {
         return $this->container['country_code'];
     }
 
@@ -538,8 +506,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
-    {
+    public function setCountryCode($country_code) {
         $this->container['country_code'] = $country_code;
 
         return $this;
@@ -550,8 +517,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getPhone()
-    {
+    public function getPhone() {
         return $this->container['phone'];
     }
 
@@ -562,8 +528,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setPhone($phone)
-    {
+    public function setPhone($phone) {
         $this->container['phone'] = $phone;
 
         return $this;
@@ -574,8 +539,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function getAddressType()
-    {
+    public function getAddressType() {
         return $this->container['address_type'];
     }
 
@@ -586,11 +550,10 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return $this
      */
-    public function setAddressType($address_type)
-    {
+    public function setAddressType($address_type) {
         $allowedValues = $this->getAddressTypeAllowableValues();
         if (!is_null($address_type) && !in_array($address_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'address_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'address_type', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['address_type'] = $address_type;
 
@@ -604,8 +567,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -616,21 +578,19 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -645,8 +605,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -655,8 +614,7 @@ self::ADDRESS_TYPE_COMMERCIAL,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

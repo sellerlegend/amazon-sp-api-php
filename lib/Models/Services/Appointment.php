@@ -15,22 +15,21 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Services;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Services;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Appointment Class Doc Comment.
  *
-
  * @description The details of an appointment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Appointment implements ModelInterface, ArrayAccess
-{
+class Appointment implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +45,12 @@ class Appointment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'appointment_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentId',
-'appointment_status' => 'string',
-'appointment_time' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTime',
-'assigned_technicians' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\Technician[]',
-'rescheduled_appointment_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentId',
-'poa' => '\ClouSale\AmazonSellingPartnerAPI\Models\Services\Poa',    ];
+        'appointment_id'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\AppointmentId',
+        'appointment_status'         => 'string',
+        'appointment_time'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\AppointmentTime',
+        'assigned_technicians'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\Technician[]',
+        'rescheduled_appointment_id' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\AppointmentId',
+        'poa'                        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Services\Poa',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +58,19 @@ class Appointment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'appointment_id' => null,
-'appointment_status' => null,
-'appointment_time' => null,
-'assigned_technicians' => null,
-'rescheduled_appointment_id' => null,
-'poa' => null,    ];
+        'appointment_id'             => null,
+        'appointment_status'         => null,
+        'appointment_time'           => null,
+        'assigned_technicians'       => null,
+        'rescheduled_appointment_id' => null,
+        'poa'                        => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +79,7 @@ class Appointment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +90,12 @@ class Appointment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'appointment_id' => 'appointmentId',
-'appointment_status' => 'appointmentStatus',
-'appointment_time' => 'appointmentTime',
-'assigned_technicians' => 'assignedTechnicians',
-'rescheduled_appointment_id' => 'rescheduledAppointmentId',
-'poa' => 'poa',    ];
+        'appointment_id'             => 'appointmentId',
+        'appointment_status'         => 'appointmentStatus',
+        'appointment_time'           => 'appointmentTime',
+        'assigned_technicians'       => 'assignedTechnicians',
+        'rescheduled_appointment_id' => 'rescheduledAppointmentId',
+        'poa'                        => 'poa',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +103,12 @@ class Appointment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'appointment_id' => 'setAppointmentId',
-'appointment_status' => 'setAppointmentStatus',
-'appointment_time' => 'setAppointmentTime',
-'assigned_technicians' => 'setAssignedTechnicians',
-'rescheduled_appointment_id' => 'setRescheduledAppointmentId',
-'poa' => 'setPoa',    ];
+        'appointment_id'             => 'setAppointmentId',
+        'appointment_status'         => 'setAppointmentStatus',
+        'appointment_time'           => 'setAppointmentTime',
+        'assigned_technicians'       => 'setAssignedTechnicians',
+        'rescheduled_appointment_id' => 'setRescheduledAppointmentId',
+        'poa'                        => 'setPoa',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +116,12 @@ class Appointment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'appointment_id' => 'getAppointmentId',
-'appointment_status' => 'getAppointmentStatus',
-'appointment_time' => 'getAppointmentTime',
-'assigned_technicians' => 'getAssignedTechnicians',
-'rescheduled_appointment_id' => 'getRescheduledAppointmentId',
-'poa' => 'getPoa',    ];
+        'appointment_id'             => 'getAppointmentId',
+        'appointment_status'         => 'getAppointmentStatus',
+        'appointment_time'           => 'getAppointmentTime',
+        'assigned_technicians'       => 'getAssignedTechnicians',
+        'rescheduled_appointment_id' => 'getRescheduledAppointmentId',
+        'poa'                        => 'getPoa',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +129,7 @@ class Appointment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +138,7 @@ class Appointment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +147,7 @@ class Appointment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +156,7 @@ class Appointment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -176,12 +169,11 @@ class Appointment implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getAppointmentStatusAllowableValues()
-    {
+    public function getAppointmentStatusAllowableValues() {
         return [
             self::APPOINTMENT_STATUS_ACTIVE,
-self::APPOINTMENT_STATUS_CANCELLED,
-self::APPOINTMENT_STATUS_COMPLETED,        ];
+            self::APPOINTMENT_STATUS_CANCELLED,
+            self::APPOINTMENT_STATUS_COMPLETED,];
     }
 
     /**
@@ -197,8 +189,7 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['appointment_id'] = isset($data['appointment_id']) ? $data['appointment_id'] : null;
         $this->container['appointment_status'] = isset($data['appointment_status']) ? $data['appointment_status'] : null;
         $this->container['appointment_time'] = isset($data['appointment_time']) ? $data['appointment_time'] : null;
@@ -212,8 +203,7 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         $allowedValues = $this->getAppointmentStatusAllowableValues();
@@ -233,30 +223,27 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets appointment_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentId
+     * @return AppointmentId
      */
-    public function getAppointmentId()
-    {
+    public function getAppointmentId() {
         return $this->container['appointment_id'];
     }
 
     /**
      * Sets appointment_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentId $appointment_id appointment_id
+     * @param AppointmentId $appointment_id appointment_id
      *
      * @return $this
      */
-    public function setAppointmentId($appointment_id)
-    {
+    public function setAppointmentId($appointment_id) {
         $this->container['appointment_id'] = $appointment_id;
 
         return $this;
@@ -267,8 +254,7 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return string
      */
-    public function getAppointmentStatus()
-    {
+    public function getAppointmentStatus() {
         return $this->container['appointment_status'];
     }
 
@@ -279,11 +265,10 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return $this
      */
-    public function setAppointmentStatus($appointment_status)
-    {
+    public function setAppointmentStatus($appointment_status) {
         $allowedValues = $this->getAppointmentStatusAllowableValues();
         if (!is_null($appointment_status) && !in_array($appointment_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'appointment_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'appointment_status', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['appointment_status'] = $appointment_status;
 
@@ -293,22 +278,20 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
     /**
      * Gets appointment_time.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTime
+     * @return AppointmentTime
      */
-    public function getAppointmentTime()
-    {
+    public function getAppointmentTime() {
         return $this->container['appointment_time'];
     }
 
     /**
      * Sets appointment_time.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentTime $appointment_time appointment_time
+     * @param AppointmentTime $appointment_time appointment_time
      *
      * @return $this
      */
-    public function setAppointmentTime($appointment_time)
-    {
+    public function setAppointmentTime($appointment_time) {
         $this->container['appointment_time'] = $appointment_time;
 
         return $this;
@@ -317,22 +300,20 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
     /**
      * Gets assigned_technicians.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\Technician[]
+     * @return Technician[]
      */
-    public function getAssignedTechnicians()
-    {
+    public function getAssignedTechnicians() {
         return $this->container['assigned_technicians'];
     }
 
     /**
      * Sets assigned_technicians.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\Technician[] $assigned_technicians a list of technicians assigned to the service job
+     * @param Technician[] $assigned_technicians a list of technicians assigned to the service job
      *
      * @return $this
      */
-    public function setAssignedTechnicians($assigned_technicians)
-    {
+    public function setAssignedTechnicians($assigned_technicians) {
         $this->container['assigned_technicians'] = $assigned_technicians;
 
         return $this;
@@ -341,22 +322,20 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
     /**
      * Gets rescheduled_appointment_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentId
+     * @return AppointmentId
      */
-    public function getRescheduledAppointmentId()
-    {
+    public function getRescheduledAppointmentId() {
         return $this->container['rescheduled_appointment_id'];
     }
 
     /**
      * Sets rescheduled_appointment_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\AppointmentId $rescheduled_appointment_id rescheduled_appointment_id
+     * @param AppointmentId $rescheduled_appointment_id rescheduled_appointment_id
      *
      * @return $this
      */
-    public function setRescheduledAppointmentId($rescheduled_appointment_id)
-    {
+    public function setRescheduledAppointmentId($rescheduled_appointment_id) {
         $this->container['rescheduled_appointment_id'] = $rescheduled_appointment_id;
 
         return $this;
@@ -365,22 +344,20 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
     /**
      * Gets poa.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Services\Poa
+     * @return Poa
      */
-    public function getPoa()
-    {
+    public function getPoa() {
         return $this->container['poa'];
     }
 
     /**
      * Sets poa.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Services\Poa $poa poa
+     * @param Poa $poa poa
      *
      * @return $this
      */
-    public function setPoa($poa)
-    {
+    public function setPoa($poa) {
         $this->container['poa'] = $poa;
 
         return $this;
@@ -393,8 +370,7 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -405,21 +381,19 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -434,8 +408,7 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -444,8 +417,7 @@ self::APPOINTMENT_STATUS_COMPLETED,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

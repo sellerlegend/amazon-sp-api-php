@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InboundShipmentHeader Class Doc Comment.
  *
-
  * @description Inbound shipment information used to create and update inbound shipments.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InboundShipmentHeader implements ModelInterface, ArrayAccess
-{
+class InboundShipmentHeader implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,13 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'shipment_name' => 'string',
-'ship_from_address' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address',
-'destination_fulfillment_center_id' => 'string',
-'are_cases_required' => 'bool',
-'shipment_status' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentStatus',
-'label_prep_preference' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference',
-'intended_box_contents_source' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\IntendedBoxContentsSource',    ];
+        'shipment_name'                     => 'string',
+        'ship_from_address'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address',
+        'destination_fulfillment_center_id' => 'string',
+        'are_cases_required'                => 'bool',
+        'shipment_status'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentStatus',
+        'label_prep_preference'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference',
+        'intended_box_contents_source'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\IntendedBoxContentsSource',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +58,20 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'shipment_name' => null,
-'ship_from_address' => null,
-'destination_fulfillment_center_id' => null,
-'are_cases_required' => null,
-'shipment_status' => null,
-'label_prep_preference' => null,
-'intended_box_contents_source' => null,    ];
+        'shipment_name'                     => null,
+        'ship_from_address'                 => null,
+        'destination_fulfillment_center_id' => null,
+        'are_cases_required'                => null,
+        'shipment_status'                   => null,
+        'label_prep_preference'             => null,
+        'intended_box_contents_source'      => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +80,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +91,13 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shipment_name' => 'ShipmentName',
-'ship_from_address' => 'ShipFromAddress',
-'destination_fulfillment_center_id' => 'DestinationFulfillmentCenterId',
-'are_cases_required' => 'AreCasesRequired',
-'shipment_status' => 'ShipmentStatus',
-'label_prep_preference' => 'LabelPrepPreference',
-'intended_box_contents_source' => 'IntendedBoxContentsSource',    ];
+        'shipment_name'                     => 'ShipmentName',
+        'ship_from_address'                 => 'ShipFromAddress',
+        'destination_fulfillment_center_id' => 'DestinationFulfillmentCenterId',
+        'are_cases_required'                => 'AreCasesRequired',
+        'shipment_status'                   => 'ShipmentStatus',
+        'label_prep_preference'             => 'LabelPrepPreference',
+        'intended_box_contents_source'      => 'IntendedBoxContentsSource',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +105,13 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shipment_name' => 'setShipmentName',
-'ship_from_address' => 'setShipFromAddress',
-'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
-'are_cases_required' => 'setAreCasesRequired',
-'shipment_status' => 'setShipmentStatus',
-'label_prep_preference' => 'setLabelPrepPreference',
-'intended_box_contents_source' => 'setIntendedBoxContentsSource',    ];
+        'shipment_name'                     => 'setShipmentName',
+        'ship_from_address'                 => 'setShipFromAddress',
+        'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
+        'are_cases_required'                => 'setAreCasesRequired',
+        'shipment_status'                   => 'setShipmentStatus',
+        'label_prep_preference'             => 'setLabelPrepPreference',
+        'intended_box_contents_source'      => 'setIntendedBoxContentsSource',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +119,13 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shipment_name' => 'getShipmentName',
-'ship_from_address' => 'getShipFromAddress',
-'destination_fulfillment_center_id' => 'getDestinationFulfillmentCenterId',
-'are_cases_required' => 'getAreCasesRequired',
-'shipment_status' => 'getShipmentStatus',
-'label_prep_preference' => 'getLabelPrepPreference',
-'intended_box_contents_source' => 'getIntendedBoxContentsSource',    ];
+        'shipment_name'                     => 'getShipmentName',
+        'ship_from_address'                 => 'getShipFromAddress',
+        'destination_fulfillment_center_id' => 'getDestinationFulfillmentCenterId',
+        'are_cases_required'                => 'getAreCasesRequired',
+        'shipment_status'                   => 'getShipmentStatus',
+        'label_prep_preference'             => 'getLabelPrepPreference',
+        'intended_box_contents_source'      => 'getIntendedBoxContentsSource',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +133,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +142,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +151,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +160,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +177,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['shipment_name'] = isset($data['shipment_name']) ? $data['shipment_name'] : null;
         $this->container['ship_from_address'] = isset($data['ship_from_address']) ? $data['ship_from_address'] : null;
         $this->container['destination_fulfillment_center_id'] = isset($data['destination_fulfillment_center_id']) ? $data['destination_fulfillment_center_id'] : null;
@@ -201,8 +192,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['shipment_name']) {
@@ -230,8 +220,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -240,8 +229,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShipmentName()
-    {
+    public function getShipmentName() {
         return $this->container['shipment_name'];
     }
 
@@ -252,8 +240,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShipmentName($shipment_name)
-    {
+    public function setShipmentName($shipment_name) {
         $this->container['shipment_name'] = $shipment_name;
 
         return $this;
@@ -262,22 +249,20 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
     /**
      * Gets ship_from_address.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address
+     * @return Address
      */
-    public function getShipFromAddress()
-    {
+    public function getShipFromAddress() {
         return $this->container['ship_from_address'];
     }
 
     /**
      * Sets ship_from_address.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address $ship_from_address ship_from_address
+     * @param Address $ship_from_address ship_from_address
      *
      * @return $this
      */
-    public function setShipFromAddress($ship_from_address)
-    {
+    public function setShipFromAddress($ship_from_address) {
         $this->container['ship_from_address'] = $ship_from_address;
 
         return $this;
@@ -288,8 +273,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDestinationFulfillmentCenterId()
-    {
+    public function getDestinationFulfillmentCenterId() {
         return $this->container['destination_fulfillment_center_id'];
     }
 
@@ -300,8 +284,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDestinationFulfillmentCenterId($destination_fulfillment_center_id)
-    {
+    public function setDestinationFulfillmentCenterId($destination_fulfillment_center_id) {
         $this->container['destination_fulfillment_center_id'] = $destination_fulfillment_center_id;
 
         return $this;
@@ -312,8 +295,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getAreCasesRequired()
-    {
+    public function getAreCasesRequired() {
         return $this->container['are_cases_required'];
     }
 
@@ -324,8 +306,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAreCasesRequired($are_cases_required)
-    {
+    public function setAreCasesRequired($are_cases_required) {
         $this->container['are_cases_required'] = $are_cases_required;
 
         return $this;
@@ -334,22 +315,20 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
     /**
      * Gets shipment_status.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentStatus
+     * @return ShipmentStatus
      */
-    public function getShipmentStatus()
-    {
+    public function getShipmentStatus() {
         return $this->container['shipment_status'];
     }
 
     /**
      * Sets shipment_status.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentStatus $shipment_status shipment_status
+     * @param ShipmentStatus $shipment_status shipment_status
      *
      * @return $this
      */
-    public function setShipmentStatus($shipment_status)
-    {
+    public function setShipmentStatus($shipment_status) {
         $this->container['shipment_status'] = $shipment_status;
 
         return $this;
@@ -358,22 +337,20 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
     /**
      * Gets label_prep_preference.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference
+     * @return LabelPrepPreference
      */
-    public function getLabelPrepPreference()
-    {
+    public function getLabelPrepPreference() {
         return $this->container['label_prep_preference'];
     }
 
     /**
      * Sets label_prep_preference.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepPreference $label_prep_preference label_prep_preference
+     * @param LabelPrepPreference $label_prep_preference label_prep_preference
      *
      * @return $this
      */
-    public function setLabelPrepPreference($label_prep_preference)
-    {
+    public function setLabelPrepPreference($label_prep_preference) {
         $this->container['label_prep_preference'] = $label_prep_preference;
 
         return $this;
@@ -382,22 +359,20 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
     /**
      * Gets intended_box_contents_source.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\IntendedBoxContentsSource
+     * @return IntendedBoxContentsSource
      */
-    public function getIntendedBoxContentsSource()
-    {
+    public function getIntendedBoxContentsSource() {
         return $this->container['intended_box_contents_source'];
     }
 
     /**
      * Sets intended_box_contents_source.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\IntendedBoxContentsSource $intended_box_contents_source intended_box_contents_source
+     * @param IntendedBoxContentsSource $intended_box_contents_source intended_box_contents_source
      *
      * @return $this
      */
-    public function setIntendedBoxContentsSource($intended_box_contents_source)
-    {
+    public function setIntendedBoxContentsSource($intended_box_contents_source) {
         $this->container['intended_box_contents_source'] = $intended_box_contents_source;
 
         return $this;
@@ -410,8 +385,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -422,21 +396,19 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -451,8 +423,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -461,8 +432,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

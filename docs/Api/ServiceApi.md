@@ -4,19 +4,27 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addAppointmentForServiceJobByServiceJobId**](ServiceApi.md#addappointmentforservicejobbyservicejobid) | **POST** /service/v1/serviceJobs/{serviceJobId}/appointments | 
-[**cancelServiceJobByServiceJobId**](ServiceApi.md#cancelservicejobbyservicejobid) | **PUT** /service/v1/serviceJobs/{serviceJobId}/cancellations | 
-[**completeServiceJobByServiceJobId**](ServiceApi.md#completeservicejobbyservicejobid) | **PUT** /service/v1/serviceJobs/{serviceJobId}/completions | 
-[**getServiceJobByServiceJobId**](ServiceApi.md#getservicejobbyservicejobid) | **GET** /service/v1/serviceJobs/{serviceJobId} | 
-[**getServiceJobs**](ServiceApi.md#getservicejobs) | **GET** /service/v1/serviceJobs | 
-[**rescheduleAppointmentForServiceJobByServiceJobId**](ServiceApi.md#rescheduleappointmentforservicejobbyservicejobid) | **POST** /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId} | 
+[**addAppointmentForServiceJobByServiceJobId**](ServiceApi.md#addappointmentforservicejobbyservicejobid) | **
+POST** /service/v1/serviceJobs/{serviceJobId}/appointments |
+[**cancelServiceJobByServiceJobId**](ServiceApi.md#cancelservicejobbyservicejobid) | **
+PUT** /service/v1/serviceJobs/{serviceJobId}/cancellations |
+[**completeServiceJobByServiceJobId**](ServiceApi.md#completeservicejobbyservicejobid) | **
+PUT** /service/v1/serviceJobs/{serviceJobId}/completions |
+[**getServiceJobByServiceJobId**](ServiceApi.md#getservicejobbyservicejobid) | **
+GET** /service/v1/serviceJobs/{serviceJobId} |
+[**getServiceJobs**](ServiceApi.md#getservicejobs) | **GET** /service/v1/serviceJobs |
+
+[**
+rescheduleAppointmentForServiceJobByServiceJobId**](ServiceApi.md#rescheduleappointmentforservicejobbyservicejobid) | **
+POST** /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId} |
 
 # **addAppointmentForServiceJobByServiceJobId**
+
 > \Swagger\Client\Models\SetAppointmentResponse addAppointmentForServiceJobByServiceJobId($body, $service_job_id)
 
 
 
-Adds an appointment to the service job indicated by the service job identifier you specify.  
+Adds an appointment to the service job indicated by the service job identifier you specify.
 
 **Usage Plan:**
 
@@ -25,6 +33,7 @@ Adds an appointment to the service job indicated by the service job identifier y
 | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -57,8 +66,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\AddAppointmentRequest**](../Model/AddAppointmentRequest.md)| Add appointment operation input details. |
- **service_job_id** | **string**| An Amazon defined service job identifier. |
+**body** | [**
+\Swagger\Client\Models\AddAppointmentRequest**](../Model/AddAppointmentRequest.md)| Add appointment operation input details. |
+**service_job_id** | **string**| An Amazon defined service job identifier. |
 
 ### Return type
 
@@ -70,17 +80,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelServiceJobByServiceJobId**
+
 > \Swagger\Client\Models\CancelServiceJobByServiceJobIdResponse cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code)
 
 
 
-Cancels the service job indicated by the service job identifier you specify.  
+Cancels the service job indicated by the service job identifier you specify.
 
 **Usage Plan:**
 
@@ -89,6 +100,7 @@ Cancels the service job indicated by the service job identifier you specify.
 | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -121,8 +133,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_job_id** | **string**| An Amazon defined service job identifier. |
- **cancellation_reason_code** | **string**| A cancel reason code that specifies the reason for cancelling a service job. |
+**service_job_id** | **string**| An Amazon defined service job identifier. |
+**cancellation_reason_code** | **
+string**| A cancel reason code that specifies the reason for cancelling a service job. |
 
 ### Return type
 
@@ -134,17 +147,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **completeServiceJobByServiceJobId**
+
 > \Swagger\Client\Models\CompleteServiceJobByServiceJobIdResponse completeServiceJobByServiceJobId($service_job_id)
 
 
 
-Completes the service job indicated by the service job identifier you specify.  
+Completes the service job indicated by the service job identifier you specify.
 
 **Usage Plan:**
 
@@ -153,6 +167,7 @@ Completes the service job indicated by the service job identifier you specify.
 | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -184,11 +199,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_job_id** | **string**| An Amazon defined service job identifier. |
+**service_job_id** | **string**| An Amazon defined service job identifier. |
 
 ### Return type
 
-[**\Swagger\Client\Models\CompleteServiceJobByServiceJobIdResponse**](../Model/CompleteServiceJobByServiceJobIdResponse.md)
+[**
+\Swagger\Client\Models\CompleteServiceJobByServiceJobIdResponse**](../Model/CompleteServiceJobByServiceJobIdResponse.md)
 
 ### Authorization
 
@@ -196,17 +212,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getServiceJobByServiceJobId**
+
 > \Swagger\Client\Models\GetServiceJobByServiceJobIdResponse getServiceJobByServiceJobId($service_job_id)
 
 
 
-Gets service job details for the service job indicated by the service job identifier you specify.  
+Gets service job details for the service job indicated by the service job identifier you specify.
 
 **Usage Plan:**
 
@@ -215,6 +232,7 @@ Gets service job details for the service job indicated by the service job identi
 | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -246,7 +264,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_job_id** | **string**| A service job identifier. |
+**service_job_id** | **string**| A service job identifier. |
 
 ### Return type
 
@@ -258,17 +276,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getServiceJobs**
+
 > \Swagger\Client\Models\GetServiceJobsResponse getServiceJobs($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date)
 
 
 
-Gets service job details for the specified filter query.  
+Gets service job details for the specified filter query.
 
 **Usage Plan:**
 
@@ -277,6 +296,7 @@ Gets service job details for the specified filter query.
 | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -320,19 +340,29 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_ids** | [**string[]**](../Model/string.md)| Used to select jobs that were placed in the specified marketplaces. |
- **service_order_ids** | [**string[]**](../Model/string.md)| List of service order ids for the query you want to perform.Max values supported 20. | [optional]
- **service_job_status** | [**string[]**](../Model/string.md)| A list of one or more job status by which to filter the list of jobs. | [optional]
- **page_token** | **string**| String returned in the response of your previous request. | [optional]
- **page_size** | **int**| A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. | [optional] [default to 20]
- **sort_field** | **string**| Sort fields on which you want to sort the output. | [optional]
- **sort_order** | **string**| sort order for the query you want to perform. | [optional]
- **created_after** | **string**| A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. | [optional]
- **created_before** | **string**| A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. | [optional]
- **last_updated_after** | **string**| A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. | [optional]
- **last_updated_before** | **string**| A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. | [optional]
- **schedule_start_date** | **string**| A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. | [optional]
- **schedule_end_date** | **string**| A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. | [optional]
+**marketplace_ids** | [**
+string[]**](../Model/string.md)| Used to select jobs that were placed in the specified marketplaces. |
+**service_order_ids** | [**
+string[]**](../Model/string.md)| List of service order ids for the query you want to perform.Max values supported 20. | [optional]
+**service_job_status** | [**
+string[]**](../Model/string.md)| A list of one or more job status by which to filter the list of jobs. | [optional]
+**page_token** | **string**| String returned in the response of your previous request. | [optional]
+**page_size** | **
+int**| A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. | [optional] [default to 20]
+**sort_field** | **string**| Sort fields on which you want to sort the output. | [optional]
+**sort_order** | **string**| sort order for the query you want to perform. | [optional]
+**created_after** | **
+string**| A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. | [optional]
+**created_before** | **
+string**| A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. | [optional]
+**last_updated_after** | **
+string**| A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. | [optional]
+**last_updated_before** | **
+string**| A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. | [optional]
+**schedule_start_date** | **
+string**| A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. | [optional]
+**schedule_end_date** | **
+string**| A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. | [optional]
 
 ### Return type
 
@@ -344,17 +374,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **rescheduleAppointmentForServiceJobByServiceJobId**
+
 > \Swagger\Client\Models\SetAppointmentResponse rescheduleAppointmentForServiceJobByServiceJobId($body, $service_job_id, $appointment_id)
 
 
 
-Reschedules an appointment for the service job indicated by the service job identifier you specify.  
+Reschedules an appointment for the service job indicated by the service job identifier you specify.
 
 **Usage Plan:**
 
@@ -363,6 +394,7 @@ Reschedules an appointment for the service job indicated by the service job iden
 | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -396,9 +428,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Models\RescheduleAppointmentRequest**](../Model/RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
- **service_job_id** | **string**| An Amazon defined service job identifier. |
- **appointment_id** | **string**| An existing appointment identifier for the Service Job. |
+**body** | [**
+\Swagger\Client\Models\RescheduleAppointmentRequest**](../Model/RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
+**service_job_id** | **string**| An Amazon defined service job identifier. |
+**appointment_id** | **string**| An existing appointment identifier for the Service Job. |
 
 ### Return type
 
@@ -410,8 +443,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * AvailableDeliveryExperienceOption Class Doc Comment.
  *
-
  * @description The available delivery confirmation options, and the fee charged, if any.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
-{
+class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'delivery_experience_option' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption',
-'charge' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount',    ];
+        'delivery_experience_option' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption',
+        'charge'                     => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +54,14 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'delivery_experience_option' => null,
-'charge' => null,    ];
+        'charge'                     => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +82,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'delivery_experience_option' => 'DeliveryExperienceOption',
-'charge' => 'Charge',    ];
+        'charge'                     => 'Charge',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +91,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'delivery_experience_option' => 'setDeliveryExperienceOption',
-'charge' => 'setCharge',    ];
+        'charge'                     => 'setCharge',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +100,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'delivery_experience_option' => 'getDeliveryExperienceOption',
-'charge' => 'getCharge',    ];
+        'charge'                     => 'getCharge',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['delivery_experience_option'] = isset($data['delivery_experience_option']) ? $data['delivery_experience_option'] : null;
         $this->container['charge'] = isset($data['charge']) ? $data['charge'] : null;
     }
@@ -171,8 +162,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['delivery_experience_option']) {
@@ -191,30 +181,27 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets delivery_experience_option.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption
+     * @return DeliveryExperienceOption
      */
-    public function getDeliveryExperienceOption()
-    {
+    public function getDeliveryExperienceOption() {
         return $this->container['delivery_experience_option'];
     }
 
     /**
      * Sets delivery_experience_option.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\DeliveryExperienceOption $delivery_experience_option delivery_experience_option
+     * @param DeliveryExperienceOption $delivery_experience_option delivery_experience_option
      *
      * @return $this
      */
-    public function setDeliveryExperienceOption($delivery_experience_option)
-    {
+    public function setDeliveryExperienceOption($delivery_experience_option) {
         $this->container['delivery_experience_option'] = $delivery_experience_option;
 
         return $this;
@@ -223,22 +210,20 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
     /**
      * Gets charge.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount
+     * @return CurrencyAmount
      */
-    public function getCharge()
-    {
+    public function getCharge() {
         return $this->container['charge'];
     }
 
     /**
      * Sets charge.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\CurrencyAmount $charge charge
+     * @param CurrencyAmount $charge charge
      *
      * @return $this
      */
-    public function setCharge($charge)
-    {
+    public function setCharge($charge) {
         $this->container['charge'] = $charge;
 
         return $this;
@@ -251,8 +236,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 /**
  * ConditionType Class Doc Comment.
  *
-
  * @description Indicates the condition of the item. Possible values: New, Used, Collectible, Refurbished, Club.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ConditionType
-{
+class ConditionType {
     /**
      * Possible values of this enum.
      */
@@ -41,13 +39,12 @@ class ConditionType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::_NEW,
-self::USED,
-self::COLLECTIBLE,
-self::REFURBISHED,
-self::CLUB,        ];
+            self::USED,
+            self::COLLECTIBLE,
+            self::REFURBISHED,
+            self::CLUB,];
     }
 }

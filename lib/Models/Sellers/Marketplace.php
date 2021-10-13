@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Sellers;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Sellers;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Marketplace Class Doc Comment.
  *
-
  * @description Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Marketplace implements ModelInterface, ArrayAccess
-{
+class Marketplace implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,12 @@ class Marketplace implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'name' => 'string',
-'country_code' => 'string',
-'default_currency_code' => 'string',
-'default_language_code' => 'string',
-'domain_name' => 'string',    ];
+        'id'                    => 'string',
+        'name'                  => 'string',
+        'country_code'          => 'string',
+        'default_currency_code' => 'string',
+        'default_language_code' => 'string',
+        'domain_name'           => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +57,19 @@ class Marketplace implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'id' => null,
-'name' => null,
-'country_code' => null,
-'default_currency_code' => null,
-'default_language_code' => null,
-'domain_name' => null,    ];
+        'id'                    => null,
+        'name'                  => null,
+        'country_code'          => null,
+        'default_currency_code' => null,
+        'default_language_code' => null,
+        'domain_name'           => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +78,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +89,12 @@ class Marketplace implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-'name' => 'name',
-'country_code' => 'countryCode',
-'default_currency_code' => 'defaultCurrencyCode',
-'default_language_code' => 'defaultLanguageCode',
-'domain_name' => 'domainName',    ];
+        'id'                    => 'id',
+        'name'                  => 'name',
+        'country_code'          => 'countryCode',
+        'default_currency_code' => 'defaultCurrencyCode',
+        'default_language_code' => 'defaultLanguageCode',
+        'domain_name'           => 'domainName',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +102,12 @@ class Marketplace implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'name' => 'setName',
-'country_code' => 'setCountryCode',
-'default_currency_code' => 'setDefaultCurrencyCode',
-'default_language_code' => 'setDefaultLanguageCode',
-'domain_name' => 'setDomainName',    ];
+        'id'                    => 'setId',
+        'name'                  => 'setName',
+        'country_code'          => 'setCountryCode',
+        'default_currency_code' => 'setDefaultCurrencyCode',
+        'default_language_code' => 'setDefaultLanguageCode',
+        'domain_name'           => 'setDomainName',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +115,12 @@ class Marketplace implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'name' => 'getName',
-'country_code' => 'getCountryCode',
-'default_currency_code' => 'getDefaultCurrencyCode',
-'default_language_code' => 'getDefaultLanguageCode',
-'domain_name' => 'getDomainName',    ];
+        'id'                    => 'getId',
+        'name'                  => 'getName',
+        'country_code'          => 'getCountryCode',
+        'default_currency_code' => 'getDefaultCurrencyCode',
+        'default_language_code' => 'getDefaultLanguageCode',
+        'domain_name'           => 'getDomainName',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +128,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +137,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +146,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +155,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +172,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
@@ -195,8 +186,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['id']) {
@@ -227,8 +217,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -237,8 +226,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->container['id'];
     }
 
@@ -249,8 +237,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->container['id'] = $id;
 
         return $this;
@@ -261,8 +248,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -273,8 +259,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -285,8 +270,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCountryCode()
-    {
+    public function getCountryCode() {
         return $this->container['country_code'];
     }
 
@@ -297,8 +281,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
-    {
+    public function setCountryCode($country_code) {
         $this->container['country_code'] = $country_code;
 
         return $this;
@@ -309,8 +292,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDefaultCurrencyCode()
-    {
+    public function getDefaultCurrencyCode() {
         return $this->container['default_currency_code'];
     }
 
@@ -321,8 +303,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDefaultCurrencyCode($default_currency_code)
-    {
+    public function setDefaultCurrencyCode($default_currency_code) {
         $this->container['default_currency_code'] = $default_currency_code;
 
         return $this;
@@ -333,8 +314,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDefaultLanguageCode()
-    {
+    public function getDefaultLanguageCode() {
         return $this->container['default_language_code'];
     }
 
@@ -345,8 +325,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDefaultLanguageCode($default_language_code)
-    {
+    public function setDefaultLanguageCode($default_language_code) {
         $this->container['default_language_code'] = $default_language_code;
 
         return $this;
@@ -357,8 +336,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDomainName()
-    {
+    public function getDomainName() {
         return $this->container['domain_name'];
     }
 
@@ -369,8 +347,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDomainName($domain_name)
-    {
+    public function setDomainName($domain_name) {
         $this->container['domain_name'] = $domain_name;
 
         return $this;
@@ -383,8 +360,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -395,21 +371,19 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -424,8 +398,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -434,8 +407,7 @@ class Marketplace implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

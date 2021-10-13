@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ItemLevelFields Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ItemLevelFields implements ModelInterface, ArrayAccess
-{
+class ItemLevelFields implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -43,8 +42,9 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'asin' => 'string',
-'additional_inputs' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList',    ];
+        'asin'              => 'string',
+        'additional_inputs' => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -52,16 +52,16 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'asin' => null,
-'additional_inputs' => null,    ];
+        'asin'              => null,
+        'additional_inputs' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -70,8 +70,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -82,8 +81,8 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'asin' => 'Asin',
-'additional_inputs' => 'AdditionalInputs',    ];
+        'asin'              => 'Asin',
+        'additional_inputs' => 'AdditionalInputs',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -91,8 +90,8 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
-'additional_inputs' => 'setAdditionalInputs',    ];
+        'asin'              => 'setAsin',
+        'additional_inputs' => 'setAdditionalInputs',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -100,8 +99,8 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'asin' => 'getAsin',
-'additional_inputs' => 'getAdditionalInputs',    ];
+        'asin'              => 'getAsin',
+        'additional_inputs' => 'getAdditionalInputs',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -109,8 +108,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -119,8 +117,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -129,8 +126,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -139,8 +135,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -157,8 +152,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['additional_inputs'] = isset($data['additional_inputs']) ? $data['additional_inputs'] : null;
     }
@@ -168,8 +162,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['asin']) {
@@ -188,8 +181,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -198,8 +190,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -210,8 +201,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -220,22 +210,20 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
     /**
      * Gets additional_inputs.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList
+     * @return AdditionalInputsList
      */
-    public function getAdditionalInputs()
-    {
+    public function getAdditionalInputs() {
         return $this->container['additional_inputs'];
     }
 
     /**
      * Sets additional_inputs.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\AdditionalInputsList $additional_inputs additional_inputs
+     * @param AdditionalInputsList $additional_inputs additional_inputs
      *
      * @return $this
      */
-    public function setAdditionalInputs($additional_inputs)
-    {
+    public function setAdditionalInputs($additional_inputs) {
         $this->container['additional_inputs'] = $additional_inputs;
 
         return $this;
@@ -248,8 +236,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -260,21 +247,19 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -289,8 +274,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -299,8 +283,7 @@ class ItemLevelFields implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

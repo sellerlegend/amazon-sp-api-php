@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * ReservedQuantity Class Doc Comment.
  *
-
  * @description The quantity of reserved inventory.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ReservedQuantity implements ModelInterface, ArrayAccess
-{
+class ReservedQuantity implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,10 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'total_reserved_quantity' => 'int',
-'pending_customer_order_quantity' => 'int',
-'pending_transshipment_quantity' => 'int',
-'fc_processing_quantity' => 'int',    ];
+        'total_reserved_quantity'         => 'int',
+        'pending_customer_order_quantity' => 'int',
+        'pending_transshipment_quantity'  => 'int',
+        'fc_processing_quantity'          => 'int',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +55,17 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'total_reserved_quantity' => null,
-'pending_customer_order_quantity' => null,
-'pending_transshipment_quantity' => null,
-'fc_processing_quantity' => null,    ];
+        'total_reserved_quantity'         => null,
+        'pending_customer_order_quantity' => null,
+        'pending_transshipment_quantity'  => null,
+        'fc_processing_quantity'          => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +74,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +85,10 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_reserved_quantity' => 'totalReservedQuantity',
-'pending_customer_order_quantity' => 'pendingCustomerOrderQuantity',
-'pending_transshipment_quantity' => 'pendingTransshipmentQuantity',
-'fc_processing_quantity' => 'fcProcessingQuantity',    ];
+        'total_reserved_quantity'         => 'totalReservedQuantity',
+        'pending_customer_order_quantity' => 'pendingCustomerOrderQuantity',
+        'pending_transshipment_quantity'  => 'pendingTransshipmentQuantity',
+        'fc_processing_quantity'          => 'fcProcessingQuantity',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +96,10 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_reserved_quantity' => 'setTotalReservedQuantity',
-'pending_customer_order_quantity' => 'setPendingCustomerOrderQuantity',
-'pending_transshipment_quantity' => 'setPendingTransshipmentQuantity',
-'fc_processing_quantity' => 'setFcProcessingQuantity',    ];
+        'total_reserved_quantity'         => 'setTotalReservedQuantity',
+        'pending_customer_order_quantity' => 'setPendingCustomerOrderQuantity',
+        'pending_transshipment_quantity'  => 'setPendingTransshipmentQuantity',
+        'fc_processing_quantity'          => 'setFcProcessingQuantity',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +107,10 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_reserved_quantity' => 'getTotalReservedQuantity',
-'pending_customer_order_quantity' => 'getPendingCustomerOrderQuantity',
-'pending_transshipment_quantity' => 'getPendingTransshipmentQuantity',
-'fc_processing_quantity' => 'getFcProcessingQuantity',    ];
+        'total_reserved_quantity'         => 'getTotalReservedQuantity',
+        'pending_customer_order_quantity' => 'getPendingCustomerOrderQuantity',
+        'pending_transshipment_quantity'  => 'getPendingTransshipmentQuantity',
+        'fc_processing_quantity'          => 'getFcProcessingQuantity',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +118,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +127,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +136,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +145,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +162,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['total_reserved_quantity'] = isset($data['total_reserved_quantity']) ? $data['total_reserved_quantity'] : null;
         $this->container['pending_customer_order_quantity'] = isset($data['pending_customer_order_quantity']) ? $data['pending_customer_order_quantity'] : null;
         $this->container['pending_transshipment_quantity'] = isset($data['pending_transshipment_quantity']) ? $data['pending_transshipment_quantity'] : null;
@@ -183,8 +174,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -196,8 +186,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -206,8 +195,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getTotalReservedQuantity()
-    {
+    public function getTotalReservedQuantity() {
         return $this->container['total_reserved_quantity'];
     }
 
@@ -218,8 +206,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setTotalReservedQuantity($total_reserved_quantity)
-    {
+    public function setTotalReservedQuantity($total_reserved_quantity) {
         $this->container['total_reserved_quantity'] = $total_reserved_quantity;
 
         return $this;
@@ -230,8 +217,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPendingCustomerOrderQuantity()
-    {
+    public function getPendingCustomerOrderQuantity() {
         return $this->container['pending_customer_order_quantity'];
     }
 
@@ -242,8 +228,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPendingCustomerOrderQuantity($pending_customer_order_quantity)
-    {
+    public function setPendingCustomerOrderQuantity($pending_customer_order_quantity) {
         $this->container['pending_customer_order_quantity'] = $pending_customer_order_quantity;
 
         return $this;
@@ -254,8 +239,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getPendingTransshipmentQuantity()
-    {
+    public function getPendingTransshipmentQuantity() {
         return $this->container['pending_transshipment_quantity'];
     }
 
@@ -266,8 +250,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPendingTransshipmentQuantity($pending_transshipment_quantity)
-    {
+    public function setPendingTransshipmentQuantity($pending_transshipment_quantity) {
         $this->container['pending_transshipment_quantity'] = $pending_transshipment_quantity;
 
         return $this;
@@ -278,8 +261,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getFcProcessingQuantity()
-    {
+    public function getFcProcessingQuantity() {
         return $this->container['fc_processing_quantity'];
     }
 
@@ -290,8 +272,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFcProcessingQuantity($fc_processing_quantity)
-    {
+    public function setFcProcessingQuantity($fc_processing_quantity) {
         $this->container['fc_processing_quantity'] = $fc_processing_quantity;
 
         return $this;
@@ -304,8 +285,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -316,21 +296,19 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -345,8 +323,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -355,8 +332,7 @@ class ReservedQuantity implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

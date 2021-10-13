@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FulfillmentPreviewShipment Class Doc Comment.
  *
-
  * @description Delivery and item information for a shipment in a fulfillment order preview.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
-{
+class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,12 +44,12 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'earliest_ship_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'latest_ship_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'earliest_arrival_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'latest_arrival_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'shipping_notes' => 'string[]',
-'fulfillment_preview_items' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPreviewItemList',    ];
+        'earliest_ship_date'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'latest_ship_date'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'earliest_arrival_date'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'latest_arrival_date'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'shipping_notes'            => 'string[]',
+        'fulfillment_preview_items' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPreviewItemList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,20 +57,19 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'earliest_ship_date' => null,
-'latest_ship_date' => null,
-'earliest_arrival_date' => null,
-'latest_arrival_date' => null,
-'shipping_notes' => null,
-'fulfillment_preview_items' => null,    ];
+        'earliest_ship_date'        => null,
+        'latest_ship_date'          => null,
+        'earliest_arrival_date'     => null,
+        'latest_arrival_date'       => null,
+        'shipping_notes'            => null,
+        'fulfillment_preview_items' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -81,8 +78,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -93,12 +89,12 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'earliest_ship_date' => 'earliestShipDate',
-'latest_ship_date' => 'latestShipDate',
-'earliest_arrival_date' => 'earliestArrivalDate',
-'latest_arrival_date' => 'latestArrivalDate',
-'shipping_notes' => 'shippingNotes',
-'fulfillment_preview_items' => 'fulfillmentPreviewItems',    ];
+        'earliest_ship_date'        => 'earliestShipDate',
+        'latest_ship_date'          => 'latestShipDate',
+        'earliest_arrival_date'     => 'earliestArrivalDate',
+        'latest_arrival_date'       => 'latestArrivalDate',
+        'shipping_notes'            => 'shippingNotes',
+        'fulfillment_preview_items' => 'fulfillmentPreviewItems',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -106,12 +102,12 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'earliest_ship_date' => 'setEarliestShipDate',
-'latest_ship_date' => 'setLatestShipDate',
-'earliest_arrival_date' => 'setEarliestArrivalDate',
-'latest_arrival_date' => 'setLatestArrivalDate',
-'shipping_notes' => 'setShippingNotes',
-'fulfillment_preview_items' => 'setFulfillmentPreviewItems',    ];
+        'earliest_ship_date'        => 'setEarliestShipDate',
+        'latest_ship_date'          => 'setLatestShipDate',
+        'earliest_arrival_date'     => 'setEarliestArrivalDate',
+        'latest_arrival_date'       => 'setLatestArrivalDate',
+        'shipping_notes'            => 'setShippingNotes',
+        'fulfillment_preview_items' => 'setFulfillmentPreviewItems',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -119,12 +115,12 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'earliest_ship_date' => 'getEarliestShipDate',
-'latest_ship_date' => 'getLatestShipDate',
-'earliest_arrival_date' => 'getEarliestArrivalDate',
-'latest_arrival_date' => 'getLatestArrivalDate',
-'shipping_notes' => 'getShippingNotes',
-'fulfillment_preview_items' => 'getFulfillmentPreviewItems',    ];
+        'earliest_ship_date'        => 'getEarliestShipDate',
+        'latest_ship_date'          => 'getLatestShipDate',
+        'earliest_arrival_date'     => 'getEarliestArrivalDate',
+        'latest_arrival_date'       => 'getLatestArrivalDate',
+        'shipping_notes'            => 'getShippingNotes',
+        'fulfillment_preview_items' => 'getFulfillmentPreviewItems',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -132,8 +128,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -142,8 +137,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -152,8 +146,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -162,8 +155,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -180,8 +172,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['earliest_ship_date'] = isset($data['earliest_ship_date']) ? $data['earliest_ship_date'] : null;
         $this->container['latest_ship_date'] = isset($data['latest_ship_date']) ? $data['latest_ship_date'] : null;
         $this->container['earliest_arrival_date'] = isset($data['earliest_arrival_date']) ? $data['earliest_arrival_date'] : null;
@@ -195,8 +186,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['fulfillment_preview_items']) {
@@ -212,30 +202,27 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets earliest_ship_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEarliestShipDate()
-    {
+    public function getEarliestShipDate() {
         return $this->container['earliest_ship_date'];
     }
 
     /**
      * Sets earliest_ship_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $earliest_ship_date earliest_ship_date
+     * @param Timestamp $earliest_ship_date earliest_ship_date
      *
      * @return $this
      */
-    public function setEarliestShipDate($earliest_ship_date)
-    {
+    public function setEarliestShipDate($earliest_ship_date) {
         $this->container['earliest_ship_date'] = $earliest_ship_date;
 
         return $this;
@@ -244,22 +231,20 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
     /**
      * Gets latest_ship_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getLatestShipDate()
-    {
+    public function getLatestShipDate() {
         return $this->container['latest_ship_date'];
     }
 
     /**
      * Sets latest_ship_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $latest_ship_date latest_ship_date
+     * @param Timestamp $latest_ship_date latest_ship_date
      *
      * @return $this
      */
-    public function setLatestShipDate($latest_ship_date)
-    {
+    public function setLatestShipDate($latest_ship_date) {
         $this->container['latest_ship_date'] = $latest_ship_date;
 
         return $this;
@@ -268,22 +253,20 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
     /**
      * Gets earliest_arrival_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEarliestArrivalDate()
-    {
+    public function getEarliestArrivalDate() {
         return $this->container['earliest_arrival_date'];
     }
 
     /**
      * Sets earliest_arrival_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $earliest_arrival_date earliest_arrival_date
+     * @param Timestamp $earliest_arrival_date earliest_arrival_date
      *
      * @return $this
      */
-    public function setEarliestArrivalDate($earliest_arrival_date)
-    {
+    public function setEarliestArrivalDate($earliest_arrival_date) {
         $this->container['earliest_arrival_date'] = $earliest_arrival_date;
 
         return $this;
@@ -292,22 +275,20 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
     /**
      * Gets latest_arrival_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getLatestArrivalDate()
-    {
+    public function getLatestArrivalDate() {
         return $this->container['latest_arrival_date'];
     }
 
     /**
      * Sets latest_arrival_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $latest_arrival_date latest_arrival_date
+     * @param Timestamp $latest_arrival_date latest_arrival_date
      *
      * @return $this
      */
-    public function setLatestArrivalDate($latest_arrival_date)
-    {
+    public function setLatestArrivalDate($latest_arrival_date) {
         $this->container['latest_arrival_date'] = $latest_arrival_date;
 
         return $this;
@@ -318,8 +299,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getShippingNotes()
-    {
+    public function getShippingNotes() {
         return $this->container['shipping_notes'];
     }
 
@@ -330,8 +310,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShippingNotes($shipping_notes)
-    {
+    public function setShippingNotes($shipping_notes) {
         $this->container['shipping_notes'] = $shipping_notes;
 
         return $this;
@@ -340,22 +319,20 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
     /**
      * Gets fulfillment_preview_items.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPreviewItemList
+     * @return FulfillmentPreviewItemList
      */
-    public function getFulfillmentPreviewItems()
-    {
+    public function getFulfillmentPreviewItems() {
         return $this->container['fulfillment_preview_items'];
     }
 
     /**
      * Sets fulfillment_preview_items.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentPreviewItemList $fulfillment_preview_items fulfillment_preview_items
+     * @param FulfillmentPreviewItemList $fulfillment_preview_items fulfillment_preview_items
      *
      * @return $this
      */
-    public function setFulfillmentPreviewItems($fulfillment_preview_items)
-    {
+    public function setFulfillmentPreviewItems($fulfillment_preview_items) {
         $this->container['fulfillment_preview_items'] = $fulfillment_preview_items;
 
         return $this;
@@ -368,8 +345,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -380,21 +356,19 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -409,8 +383,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -419,8 +392,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * TransportHeader Class Doc Comment.
  *
-
  * @description The shipping identifier, information about whether the shipment is by an Amazon-partnered carrier, and information about whether the shipment is Small Parcel or Less Than Truckload/Full Truckload (LTL/FTL).
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class TransportHeader implements ModelInterface, ArrayAccess
-{
+class TransportHeader implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class TransportHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_id' => 'string',
-'shipment_id' => 'string',
-'is_partnered' => 'bool',
-'shipment_type' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentType',    ];
+        'seller_id'     => 'string',
+        'shipment_id'   => 'string',
+        'is_partnered'  => 'bool',
+        'shipment_type' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentType'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,17 @@ class TransportHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_id' => null,
-'shipment_id' => null,
-'is_partnered' => null,
-'shipment_type' => null,    ];
+        'seller_id'     => null,
+        'shipment_id'   => null,
+        'is_partnered'  => null,
+        'shipment_type' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +75,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +86,10 @@ class TransportHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_id' => 'SellerId',
-'shipment_id' => 'ShipmentId',
-'is_partnered' => 'IsPartnered',
-'shipment_type' => 'ShipmentType',    ];
+        'seller_id'     => 'SellerId',
+        'shipment_id'   => 'ShipmentId',
+        'is_partnered'  => 'IsPartnered',
+        'shipment_type' => 'ShipmentType',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +97,10 @@ class TransportHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_id' => 'setSellerId',
-'shipment_id' => 'setShipmentId',
-'is_partnered' => 'setIsPartnered',
-'shipment_type' => 'setShipmentType',    ];
+        'seller_id'     => 'setSellerId',
+        'shipment_id'   => 'setShipmentId',
+        'is_partnered'  => 'setIsPartnered',
+        'shipment_type' => 'setShipmentType',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +108,10 @@ class TransportHeader implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_id' => 'getSellerId',
-'shipment_id' => 'getShipmentId',
-'is_partnered' => 'getIsPartnered',
-'shipment_type' => 'getShipmentType',    ];
+        'seller_id'     => 'getSellerId',
+        'shipment_id'   => 'getShipmentId',
+        'is_partnered'  => 'getIsPartnered',
+        'shipment_type' => 'getShipmentType',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +119,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +128,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +137,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +146,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +163,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_id'] = isset($data['seller_id']) ? $data['seller_id'] : null;
         $this->container['shipment_id'] = isset($data['shipment_id']) ? $data['shipment_id'] : null;
         $this->container['is_partnered'] = isset($data['is_partnered']) ? $data['is_partnered'] : null;
@@ -183,8 +175,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_id']) {
@@ -209,8 +200,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -219,8 +209,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerId()
-    {
+    public function getSellerId() {
         return $this->container['seller_id'];
     }
 
@@ -231,8 +220,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerId($seller_id)
-    {
+    public function setSellerId($seller_id) {
         $this->container['seller_id'] = $seller_id;
 
         return $this;
@@ -243,8 +231,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShipmentId()
-    {
+    public function getShipmentId() {
         return $this->container['shipment_id'];
     }
 
@@ -255,8 +242,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShipmentId($shipment_id)
-    {
+    public function setShipmentId($shipment_id) {
         $this->container['shipment_id'] = $shipment_id;
 
         return $this;
@@ -267,8 +253,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function getIsPartnered()
-    {
+    public function getIsPartnered() {
         return $this->container['is_partnered'];
     }
 
@@ -279,8 +264,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setIsPartnered($is_partnered)
-    {
+    public function setIsPartnered($is_partnered) {
         $this->container['is_partnered'] = $is_partnered;
 
         return $this;
@@ -289,22 +273,20 @@ class TransportHeader implements ModelInterface, ArrayAccess
     /**
      * Gets shipment_type.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentType
+     * @return ShipmentType
      */
-    public function getShipmentType()
-    {
+    public function getShipmentType() {
         return $this->container['shipment_type'];
     }
 
     /**
      * Sets shipment_type.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentType $shipment_type shipment_type
+     * @param ShipmentType $shipment_type shipment_type
      *
      * @return $this
      */
-    public function setShipmentType($shipment_type)
-    {
+    public function setShipmentType($shipment_type) {
         $this->container['shipment_type'] = $shipment_type;
 
         return $this;
@@ -317,8 +299,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -329,21 +310,19 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -358,8 +337,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -368,8 +346,7 @@ class TransportHeader implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

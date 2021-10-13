@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Notifications;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Notifications;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Destination Class Doc Comment.
  *
-
  * @description Represents a destination created when you call the createDestination operation.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Destination implements ModelInterface, ArrayAccess
-{
+class Destination implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class Destination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'destination_id' => 'string',
-'resource' => '\ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DestinationResource',    ];
+        'name'           => 'string',
+        'destination_id' => 'string',
+        'resource'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Notifications\DestinationResource',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class Destination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-'destination_id' => null,
-'resource' => null,    ];
+        'name'           => null,
+        'destination_id' => null,
+        'resource'       => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class Destination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-'destination_id' => 'destinationId',
-'resource' => 'resource',    ];
+        'name'           => 'name',
+        'destination_id' => 'destinationId',
+        'resource'       => 'resource',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class Destination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'destination_id' => 'setDestinationId',
-'resource' => 'setResource',    ];
+        'name'           => 'setName',
+        'destination_id' => 'setDestinationId',
+        'resource'       => 'setResource',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class Destination implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'destination_id' => 'getDestinationId',
-'resource' => 'getResource',    ];
+        'name'           => 'getName',
+        'destination_id' => 'getDestinationId',
+        'resource'       => 'getResource',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class Destination implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['destination_id'] = isset($data['destination_id']) ? $data['destination_id'] : null;
         $this->container['resource'] = isset($data['resource']) ? $data['resource'] : null;
@@ -177,8 +168,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['name']) {
@@ -200,8 +190,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -210,8 +199,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->container['name'];
     }
 
@@ -222,8 +210,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->container['name'] = $name;
 
         return $this;
@@ -234,8 +221,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDestinationId()
-    {
+    public function getDestinationId() {
         return $this->container['destination_id'];
     }
 
@@ -246,8 +232,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDestinationId($destination_id)
-    {
+    public function setDestinationId($destination_id) {
         $this->container['destination_id'] = $destination_id;
 
         return $this;
@@ -256,22 +241,20 @@ class Destination implements ModelInterface, ArrayAccess
     /**
      * Gets resource.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DestinationResource
+     * @return DestinationResource
      */
-    public function getResource()
-    {
+    public function getResource() {
         return $this->container['resource'];
     }
 
     /**
      * Sets resource.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Notifications\DestinationResource $resource resource
+     * @param DestinationResource $resource resource
      *
      * @return $this
      */
-    public function setResource($resource)
-    {
+    public function setResource($resource) {
         $this->container['resource'] = $resource;
 
         return $this;
@@ -284,8 +267,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +278,19 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +305,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +314,7 @@ class Destination implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

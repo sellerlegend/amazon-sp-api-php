@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * SKUInboundGuidance Class Doc Comment.
  *
-
  * @description Reasons why a given seller SKU is not recommended for shipment to Amazon&#x27;s fulfillment network.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class SKUInboundGuidance implements ModelInterface, ArrayAccess
-{
+class SKUInboundGuidance implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'seller_sku' => 'string',
-'asin' => 'string',
-'inbound_guidance' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance',
-'guidance_reason_list' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList',    ];
+        'seller_sku'           => 'string',
+        'asin'                 => 'string',
+        'inbound_guidance'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance',
+        'guidance_reason_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,18 +56,18 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'seller_sku' => null,
-'asin' => null,
-'inbound_guidance' => null,
-'guidance_reason_list' => null,    ];
+        'seller_sku'           => null,
+        'asin'                 => null,
+        'inbound_guidance'     => null,
+        'guidance_reason_list' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +76,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -89,10 +87,10 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'seller_sku' => 'SellerSKU',
-'asin' => 'ASIN',
-'inbound_guidance' => 'InboundGuidance',
-'guidance_reason_list' => 'GuidanceReasonList',    ];
+        'seller_sku'           => 'SellerSKU',
+        'asin'                 => 'ASIN',
+        'inbound_guidance'     => 'InboundGuidance',
+        'guidance_reason_list' => 'GuidanceReasonList',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -100,10 +98,10 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
-'asin' => 'setAsin',
-'inbound_guidance' => 'setInboundGuidance',
-'guidance_reason_list' => 'setGuidanceReasonList',    ];
+        'seller_sku'           => 'setSellerSku',
+        'asin'                 => 'setAsin',
+        'inbound_guidance'     => 'setInboundGuidance',
+        'guidance_reason_list' => 'setGuidanceReasonList',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -111,10 +109,10 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'seller_sku' => 'getSellerSku',
-'asin' => 'getAsin',
-'inbound_guidance' => 'getInboundGuidance',
-'guidance_reason_list' => 'getGuidanceReasonList',    ];
+        'seller_sku'           => 'getSellerSku',
+        'asin'                 => 'getAsin',
+        'inbound_guidance'     => 'getInboundGuidance',
+        'guidance_reason_list' => 'getGuidanceReasonList',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +120,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +129,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +138,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +147,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +164,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['inbound_guidance'] = isset($data['inbound_guidance']) ? $data['inbound_guidance'] : null;
@@ -183,8 +176,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['seller_sku']) {
@@ -206,8 +198,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -216,8 +207,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSellerSku()
-    {
+    public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
@@ -228,8 +218,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSellerSku($seller_sku)
-    {
+    public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -240,8 +229,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -252,8 +240,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -262,22 +249,20 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
     /**
      * Gets inbound_guidance.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance
+     * @return InboundGuidance
      */
-    public function getInboundGuidance()
-    {
+    public function getInboundGuidance() {
         return $this->container['inbound_guidance'];
     }
 
     /**
      * Sets inbound_guidance.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundGuidance $inbound_guidance inbound_guidance
+     * @param InboundGuidance $inbound_guidance inbound_guidance
      *
      * @return $this
      */
-    public function setInboundGuidance($inbound_guidance)
-    {
+    public function setInboundGuidance($inbound_guidance) {
         $this->container['inbound_guidance'] = $inbound_guidance;
 
         return $this;
@@ -286,22 +271,20 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
     /**
      * Gets guidance_reason_list.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList
+     * @return GuidanceReasonList
      */
-    public function getGuidanceReasonList()
-    {
+    public function getGuidanceReasonList() {
         return $this->container['guidance_reason_list'];
     }
 
     /**
      * Sets guidance_reason_list.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\GuidanceReasonList $guidance_reason_list guidance_reason_list
+     * @param GuidanceReasonList $guidance_reason_list guidance_reason_list
      *
      * @return $this
      */
-    public function setGuidanceReasonList($guidance_reason_list)
-    {
+    public function setGuidanceReasonList($guidance_reason_list) {
         $this->container['guidance_reason_list'] = $guidance_reason_list;
 
         return $this;
@@ -314,8 +297,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -326,21 +308,19 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -355,8 +335,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -365,8 +344,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

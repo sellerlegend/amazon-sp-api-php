@@ -15,22 +15,20 @@
  * OpenAPI spec version: 2020-09-04
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Feeds;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Feeds;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * CreateFeedDocumentResult Class Doc Comment.
  *
-
  * @description Information required to encrypt and upload a feed document&#x27;s contents.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
-{
+class CreateFeedDocumentResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,9 +44,9 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'feed_document_id' => 'string',
-'url' => 'string',
-'encryption_details' => '\ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedDocumentEncryptionDetails',    ];
+        'feed_document_id'   => 'string',
+        'url'                => 'string',
+        'encryption_details' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Feeds\FeedDocumentEncryptionDetails',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,17 +54,16 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'feed_document_id' => null,
-'url' => null,
-'encryption_details' => null,    ];
+        'feed_document_id'   => null,
+        'url'                => null,
+        'encryption_details' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -87,9 +83,9 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'feed_document_id' => 'feedDocumentId',
-'url' => 'url',
-'encryption_details' => 'encryptionDetails',    ];
+        'feed_document_id'   => 'feedDocumentId',
+        'url'                => 'url',
+        'encryption_details' => 'encryptionDetails',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -97,9 +93,9 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'feed_document_id' => 'setFeedDocumentId',
-'url' => 'setUrl',
-'encryption_details' => 'setEncryptionDetails',    ];
+        'feed_document_id'   => 'setFeedDocumentId',
+        'url'                => 'setUrl',
+        'encryption_details' => 'setEncryptionDetails',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -107,9 +103,9 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'feed_document_id' => 'getFeedDocumentId',
-'url' => 'getUrl',
-'encryption_details' => 'getEncryptionDetails',    ];
+        'feed_document_id'   => 'getFeedDocumentId',
+        'url'                => 'getUrl',
+        'encryption_details' => 'getEncryptionDetails',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['feed_document_id'] = isset($data['feed_document_id']) ? $data['feed_document_id'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['encryption_details'] = isset($data['encryption_details']) ? $data['encryption_details'] : null;
@@ -177,8 +168,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['feed_document_id']) {
@@ -200,8 +190,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -210,8 +199,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeedDocumentId()
-    {
+    public function getFeedDocumentId() {
         return $this->container['feed_document_id'];
     }
 
@@ -222,8 +210,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeedDocumentId($feed_document_id)
-    {
+    public function setFeedDocumentId($feed_document_id) {
         $this->container['feed_document_id'] = $feed_document_id;
 
         return $this;
@@ -234,8 +221,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->container['url'];
     }
 
@@ -246,8 +232,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->container['url'] = $url;
 
         return $this;
@@ -256,22 +241,20 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
     /**
      * Gets encryption_details.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedDocumentEncryptionDetails
+     * @return FeedDocumentEncryptionDetails
      */
-    public function getEncryptionDetails()
-    {
+    public function getEncryptionDetails() {
         return $this->container['encryption_details'];
     }
 
     /**
      * Sets encryption_details.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Feeds\FeedDocumentEncryptionDetails $encryption_details encryption_details
+     * @param FeedDocumentEncryptionDetails $encryption_details encryption_details
      *
      * @return $this
      */
-    public function setEncryptionDetails($encryption_details)
-    {
+    public function setEncryptionDetails($encryption_details) {
         $this->container['encryption_details'] = $encryption_details;
 
         return $this;
@@ -284,8 +267,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +278,19 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +305,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +314,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

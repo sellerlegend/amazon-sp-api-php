@@ -15,18 +15,16 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 /**
  * UnitOfWeight Class Doc Comment.
  *
-
  * @description The unit of weight.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class UnitOfWeight
-{
+class UnitOfWeight {
     /**
      * Possible values of this enum.
      */
@@ -38,10 +36,9 @@ class UnitOfWeight
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::OZ,
-self::G,        ];
+            self::G,];
     }
 }

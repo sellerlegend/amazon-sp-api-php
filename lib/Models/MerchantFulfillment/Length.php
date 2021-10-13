@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Length Class Doc Comment.
  *
-
  * @description The length.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Length implements ModelInterface, ArrayAccess
-{
+class Length implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,7 +45,8 @@ class Length implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'value' => 'float',
-'unit' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength',    ];
+        'unit'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -56,15 +55,15 @@ class Length implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'value' => null,
-'unit' => null,    ];
+        'unit'  => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +72,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -86,7 +84,7 @@ class Length implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'value' => 'value',
-'unit' => 'unit',    ];
+        'unit'  => 'unit',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -95,7 +93,7 @@ class Length implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'value' => 'setValue',
-'unit' => 'setUnit',    ];
+        'unit'  => 'setUnit',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -104,7 +102,7 @@ class Length implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'value' => 'getValue',
-'unit' => 'getUnit',    ];
+        'unit'  => 'getUnit',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +110,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +119,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +128,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +137,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +154,7 @@ class Length implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
     }
@@ -171,8 +164,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +176,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +185,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return float
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->container['value'];
     }
 
@@ -206,8 +196,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->container['value'] = $value;
 
         return $this;
@@ -216,22 +205,20 @@ class Length implements ModelInterface, ArrayAccess
     /**
      * Gets unit.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength
+     * @return UnitOfLength
      */
-    public function getUnit()
-    {
+    public function getUnit() {
         return $this->container['unit'];
     }
 
     /**
      * Sets unit.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\UnitOfLength $unit unit
+     * @param UnitOfLength $unit unit
      *
      * @return $this
      */
-    public function setUnit($unit)
-    {
+    public function setUnit($unit) {
         $this->container['unit'] = $unit;
 
         return $this;
@@ -244,8 +231,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +242,19 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +269,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +278,7 @@ class Length implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

@@ -15,22 +15,21 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FulfillmentShipment Class Doc Comment.
  *
-
  * @description Delivery and item information for a shipment in a fulfillment order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FulfillmentShipment implements ModelInterface, ArrayAccess
-{
+class FulfillmentShipment implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,14 +45,14 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'amazon_shipment_id' => 'string',
-'fulfillment_center_id' => 'string',
-'fulfillment_shipment_status' => 'string',
-'shipping_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'estimated_arrival_date' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
-'shipping_notes' => 'string[]',
-'fulfillment_shipment_item' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentItemList',
-'fulfillment_shipment_package' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentPackageList',    ];
+        'amazon_shipment_id'           => 'string',
+        'fulfillment_center_id'        => 'string',
+        'fulfillment_shipment_status'  => 'string',
+        'shipping_date'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'estimated_arrival_date'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp',
+        'shipping_notes'               => 'string[]',
+        'fulfillment_shipment_item'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentItemList',
+        'fulfillment_shipment_package' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentPackageList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -61,22 +60,21 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'amazon_shipment_id' => null,
-'fulfillment_center_id' => null,
-'fulfillment_shipment_status' => null,
-'shipping_date' => null,
-'estimated_arrival_date' => null,
-'shipping_notes' => null,
-'fulfillment_shipment_item' => null,
-'fulfillment_shipment_package' => null,    ];
+        'amazon_shipment_id'           => null,
+        'fulfillment_center_id'        => null,
+        'fulfillment_shipment_status'  => null,
+        'shipping_date'                => null,
+        'estimated_arrival_date'       => null,
+        'shipping_notes'               => null,
+        'fulfillment_shipment_item'    => null,
+        'fulfillment_shipment_package' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -85,8 +83,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -97,14 +94,14 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_shipment_id' => 'amazonShipmentId',
-'fulfillment_center_id' => 'fulfillmentCenterId',
-'fulfillment_shipment_status' => 'fulfillmentShipmentStatus',
-'shipping_date' => 'shippingDate',
-'estimated_arrival_date' => 'estimatedArrivalDate',
-'shipping_notes' => 'shippingNotes',
-'fulfillment_shipment_item' => 'fulfillmentShipmentItem',
-'fulfillment_shipment_package' => 'fulfillmentShipmentPackage',    ];
+        'amazon_shipment_id'           => 'amazonShipmentId',
+        'fulfillment_center_id'        => 'fulfillmentCenterId',
+        'fulfillment_shipment_status'  => 'fulfillmentShipmentStatus',
+        'shipping_date'                => 'shippingDate',
+        'estimated_arrival_date'       => 'estimatedArrivalDate',
+        'shipping_notes'               => 'shippingNotes',
+        'fulfillment_shipment_item'    => 'fulfillmentShipmentItem',
+        'fulfillment_shipment_package' => 'fulfillmentShipmentPackage',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -112,14 +109,14 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amazon_shipment_id' => 'setAmazonShipmentId',
-'fulfillment_center_id' => 'setFulfillmentCenterId',
-'fulfillment_shipment_status' => 'setFulfillmentShipmentStatus',
-'shipping_date' => 'setShippingDate',
-'estimated_arrival_date' => 'setEstimatedArrivalDate',
-'shipping_notes' => 'setShippingNotes',
-'fulfillment_shipment_item' => 'setFulfillmentShipmentItem',
-'fulfillment_shipment_package' => 'setFulfillmentShipmentPackage',    ];
+        'amazon_shipment_id'           => 'setAmazonShipmentId',
+        'fulfillment_center_id'        => 'setFulfillmentCenterId',
+        'fulfillment_shipment_status'  => 'setFulfillmentShipmentStatus',
+        'shipping_date'                => 'setShippingDate',
+        'estimated_arrival_date'       => 'setEstimatedArrivalDate',
+        'shipping_notes'               => 'setShippingNotes',
+        'fulfillment_shipment_item'    => 'setFulfillmentShipmentItem',
+        'fulfillment_shipment_package' => 'setFulfillmentShipmentPackage',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -127,14 +124,14 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amazon_shipment_id' => 'getAmazonShipmentId',
-'fulfillment_center_id' => 'getFulfillmentCenterId',
-'fulfillment_shipment_status' => 'getFulfillmentShipmentStatus',
-'shipping_date' => 'getShippingDate',
-'estimated_arrival_date' => 'getEstimatedArrivalDate',
-'shipping_notes' => 'getShippingNotes',
-'fulfillment_shipment_item' => 'getFulfillmentShipmentItem',
-'fulfillment_shipment_package' => 'getFulfillmentShipmentPackage',    ];
+        'amazon_shipment_id'           => 'getAmazonShipmentId',
+        'fulfillment_center_id'        => 'getFulfillmentCenterId',
+        'fulfillment_shipment_status'  => 'getFulfillmentShipmentStatus',
+        'shipping_date'                => 'getShippingDate',
+        'estimated_arrival_date'       => 'getEstimatedArrivalDate',
+        'shipping_notes'               => 'getShippingNotes',
+        'fulfillment_shipment_item'    => 'getFulfillmentShipmentItem',
+        'fulfillment_shipment_package' => 'getFulfillmentShipmentPackage',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -142,8 +139,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -152,8 +148,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -162,8 +157,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -172,8 +166,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -187,13 +180,12 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getFulfillmentShipmentStatusAllowableValues()
-    {
+    public function getFulfillmentShipmentStatusAllowableValues() {
         return [
             self::FULFILLMENT_SHIPMENT_STATUS_PENDING,
-self::FULFILLMENT_SHIPMENT_STATUS_SHIPPED,
-self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_FULFILLER,
-self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
+            self::FULFILLMENT_SHIPMENT_STATUS_SHIPPED,
+            self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_FULFILLER,
+            self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,];
     }
 
     /**
@@ -209,8 +201,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['amazon_shipment_id'] = isset($data['amazon_shipment_id']) ? $data['amazon_shipment_id'] : null;
         $this->container['fulfillment_center_id'] = isset($data['fulfillment_center_id']) ? $data['fulfillment_center_id'] : null;
         $this->container['fulfillment_shipment_status'] = isset($data['fulfillment_shipment_status']) ? $data['fulfillment_shipment_status'] : null;
@@ -226,8 +217,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['amazon_shipment_id']) {
@@ -260,8 +250,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -270,8 +259,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return string
      */
-    public function getAmazonShipmentId()
-    {
+    public function getAmazonShipmentId() {
         return $this->container['amazon_shipment_id'];
     }
 
@@ -282,8 +270,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return $this
      */
-    public function setAmazonShipmentId($amazon_shipment_id)
-    {
+    public function setAmazonShipmentId($amazon_shipment_id) {
         $this->container['amazon_shipment_id'] = $amazon_shipment_id;
 
         return $this;
@@ -294,8 +281,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return string
      */
-    public function getFulfillmentCenterId()
-    {
+    public function getFulfillmentCenterId() {
         return $this->container['fulfillment_center_id'];
     }
 
@@ -306,8 +292,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return $this
      */
-    public function setFulfillmentCenterId($fulfillment_center_id)
-    {
+    public function setFulfillmentCenterId($fulfillment_center_id) {
         $this->container['fulfillment_center_id'] = $fulfillment_center_id;
 
         return $this;
@@ -318,8 +303,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return string
      */
-    public function getFulfillmentShipmentStatus()
-    {
+    public function getFulfillmentShipmentStatus() {
         return $this->container['fulfillment_shipment_status'];
     }
 
@@ -330,11 +314,10 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return $this
      */
-    public function setFulfillmentShipmentStatus($fulfillment_shipment_status)
-    {
+    public function setFulfillmentShipmentStatus($fulfillment_shipment_status) {
         $allowedValues = $this->getFulfillmentShipmentStatusAllowableValues();
         if (!in_array($fulfillment_shipment_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for 'fulfillment_shipment_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf("Invalid value for 'fulfillment_shipment_status', must be one of '%s'", implode("', '", $allowedValues)));
         }
         $this->container['fulfillment_shipment_status'] = $fulfillment_shipment_status;
 
@@ -344,22 +327,20 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
     /**
      * Gets shipping_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getShippingDate()
-    {
+    public function getShippingDate() {
         return $this->container['shipping_date'];
     }
 
     /**
      * Sets shipping_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $shipping_date shipping_date
+     * @param Timestamp $shipping_date shipping_date
      *
      * @return $this
      */
-    public function setShippingDate($shipping_date)
-    {
+    public function setShippingDate($shipping_date) {
         $this->container['shipping_date'] = $shipping_date;
 
         return $this;
@@ -368,22 +349,20 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
     /**
      * Gets estimated_arrival_date.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp
+     * @return Timestamp
      */
-    public function getEstimatedArrivalDate()
-    {
+    public function getEstimatedArrivalDate() {
         return $this->container['estimated_arrival_date'];
     }
 
     /**
      * Sets estimated_arrival_date.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\Timestamp $estimated_arrival_date estimated_arrival_date
+     * @param Timestamp $estimated_arrival_date estimated_arrival_date
      *
      * @return $this
      */
-    public function setEstimatedArrivalDate($estimated_arrival_date)
-    {
+    public function setEstimatedArrivalDate($estimated_arrival_date) {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
         return $this;
@@ -394,8 +373,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return string[]
      */
-    public function getShippingNotes()
-    {
+    public function getShippingNotes() {
         return $this->container['shipping_notes'];
     }
 
@@ -406,8 +384,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return $this
      */
-    public function setShippingNotes($shipping_notes)
-    {
+    public function setShippingNotes($shipping_notes) {
         $this->container['shipping_notes'] = $shipping_notes;
 
         return $this;
@@ -416,22 +393,20 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
     /**
      * Gets fulfillment_shipment_item.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentItemList
+     * @return FulfillmentShipmentItemList
      */
-    public function getFulfillmentShipmentItem()
-    {
+    public function getFulfillmentShipmentItem() {
         return $this->container['fulfillment_shipment_item'];
     }
 
     /**
      * Sets fulfillment_shipment_item.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentItemList $fulfillment_shipment_item fulfillment_shipment_item
+     * @param FulfillmentShipmentItemList $fulfillment_shipment_item fulfillment_shipment_item
      *
      * @return $this
      */
-    public function setFulfillmentShipmentItem($fulfillment_shipment_item)
-    {
+    public function setFulfillmentShipmentItem($fulfillment_shipment_item) {
         $this->container['fulfillment_shipment_item'] = $fulfillment_shipment_item;
 
         return $this;
@@ -440,22 +415,20 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
     /**
      * Gets fulfillment_shipment_package.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentPackageList
+     * @return FulfillmentShipmentPackageList
      */
-    public function getFulfillmentShipmentPackage()
-    {
+    public function getFulfillmentShipmentPackage() {
         return $this->container['fulfillment_shipment_package'];
     }
 
     /**
      * Sets fulfillment_shipment_package.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound\FulfillmentShipmentPackageList $fulfillment_shipment_package fulfillment_shipment_package
+     * @param FulfillmentShipmentPackageList $fulfillment_shipment_package fulfillment_shipment_package
      *
      * @return $this
      */
-    public function setFulfillmentShipmentPackage($fulfillment_shipment_package)
-    {
+    public function setFulfillmentShipmentPackage($fulfillment_shipment_package) {
         $this->container['fulfillment_shipment_package'] = $fulfillment_shipment_package;
 
         return $this;
@@ -468,8 +441,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -480,21 +452,19 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -509,8 +479,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -519,8 +488,7 @@ self::FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER,        ];
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

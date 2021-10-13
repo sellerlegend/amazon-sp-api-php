@@ -15,18 +15,16 @@
  * OpenAPI spec version: 2020-07-01
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentOutbound;
 
 /**
  * ShippingSpeedCategory Class Doc Comment.
  *
-
  * @description The shipping method used for the fulfillment order.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class ShippingSpeedCategory
-{
+class ShippingSpeedCategory {
     /**
      * Possible values of this enum.
      */
@@ -40,12 +38,11 @@ class ShippingSpeedCategory
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues()
-    {
+    public static function getAllowableEnumValues() {
         return [
             self::STANDARD,
-self::EXPEDITED,
-self::PRIORITY,
-self::SCHEDULED_DELIVERY,        ];
+            self::EXPEDITED,
+            self::PRIORITY,
+            self::SCHEDULED_DELIVERY,];
     }
 }

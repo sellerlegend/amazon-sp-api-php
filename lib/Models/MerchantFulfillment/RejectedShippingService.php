@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * RejectedShippingService Class Doc Comment.
  *
-
  * @description Information about a rejected shipping service
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class RejectedShippingService implements ModelInterface, ArrayAccess
-{
+class RejectedShippingService implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,11 +44,12 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'carrier_name' => 'string',
-'shipping_service_name' => 'string',
-'shipping_service_id' => '\ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier',
-'rejection_reason_code' => 'string',
-'rejection_reason_message' => 'string',    ];
+        'carrier_name'             => 'string',
+        'shipping_service_name'    => 'string',
+        'shipping_service_id'      => '\SellerLegend\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier',
+        'rejection_reason_code'    => 'string',
+        'rejection_reason_message' => 'string'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,19 +57,19 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'carrier_name' => null,
-'shipping_service_name' => null,
-'shipping_service_id' => null,
-'rejection_reason_code' => null,
-'rejection_reason_message' => null,    ];
+        'carrier_name'             => null,
+        'shipping_service_name'    => null,
+        'shipping_service_id'      => null,
+        'rejection_reason_code'    => null,
+        'rejection_reason_message' => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -79,8 +78,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -91,11 +89,11 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'carrier_name' => 'CarrierName',
-'shipping_service_name' => 'ShippingServiceName',
-'shipping_service_id' => 'ShippingServiceId',
-'rejection_reason_code' => 'RejectionReasonCode',
-'rejection_reason_message' => 'RejectionReasonMessage',    ];
+        'carrier_name'             => 'CarrierName',
+        'shipping_service_name'    => 'ShippingServiceName',
+        'shipping_service_id'      => 'ShippingServiceId',
+        'rejection_reason_code'    => 'RejectionReasonCode',
+        'rejection_reason_message' => 'RejectionReasonMessage',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -103,11 +101,11 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'carrier_name' => 'setCarrierName',
-'shipping_service_name' => 'setShippingServiceName',
-'shipping_service_id' => 'setShippingServiceId',
-'rejection_reason_code' => 'setRejectionReasonCode',
-'rejection_reason_message' => 'setRejectionReasonMessage',    ];
+        'carrier_name'             => 'setCarrierName',
+        'shipping_service_name'    => 'setShippingServiceName',
+        'shipping_service_id'      => 'setShippingServiceId',
+        'rejection_reason_code'    => 'setRejectionReasonCode',
+        'rejection_reason_message' => 'setRejectionReasonMessage',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -115,11 +113,11 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'carrier_name' => 'getCarrierName',
-'shipping_service_name' => 'getShippingServiceName',
-'shipping_service_id' => 'getShippingServiceId',
-'rejection_reason_code' => 'getRejectionReasonCode',
-'rejection_reason_message' => 'getRejectionReasonMessage',    ];
+        'carrier_name'             => 'getCarrierName',
+        'shipping_service_name'    => 'getShippingServiceName',
+        'shipping_service_id'      => 'getShippingServiceId',
+        'rejection_reason_code'    => 'getRejectionReasonCode',
+        'rejection_reason_message' => 'getRejectionReasonMessage',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -127,8 +125,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -137,8 +134,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -147,8 +143,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -157,8 +152,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -175,8 +169,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['carrier_name'] = isset($data['carrier_name']) ? $data['carrier_name'] : null;
         $this->container['shipping_service_name'] = isset($data['shipping_service_name']) ? $data['shipping_service_name'] : null;
         $this->container['shipping_service_id'] = isset($data['shipping_service_id']) ? $data['shipping_service_id'] : null;
@@ -189,8 +182,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['carrier_name']) {
@@ -215,8 +207,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -225,8 +216,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getCarrierName()
-    {
+    public function getCarrierName() {
         return $this->container['carrier_name'];
     }
 
@@ -237,8 +227,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setCarrierName($carrier_name)
-    {
+    public function setCarrierName($carrier_name) {
         $this->container['carrier_name'] = $carrier_name;
 
         return $this;
@@ -249,8 +238,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getShippingServiceName()
-    {
+    public function getShippingServiceName() {
         return $this->container['shipping_service_name'];
     }
 
@@ -261,8 +249,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setShippingServiceName($shipping_service_name)
-    {
+    public function setShippingServiceName($shipping_service_name) {
         $this->container['shipping_service_name'] = $shipping_service_name;
 
         return $this;
@@ -271,22 +258,20 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
     /**
      * Gets shipping_service_id.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier
+     * @return ShippingServiceIdentifier
      */
-    public function getShippingServiceId()
-    {
+    public function getShippingServiceId() {
         return $this->container['shipping_service_id'];
     }
 
     /**
      * Sets shipping_service_id.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\MerchantFulfillment\ShippingServiceIdentifier $shipping_service_id shipping_service_id
+     * @param ShippingServiceIdentifier $shipping_service_id shipping_service_id
      *
      * @return $this
      */
-    public function setShippingServiceId($shipping_service_id)
-    {
+    public function setShippingServiceId($shipping_service_id) {
         $this->container['shipping_service_id'] = $shipping_service_id;
 
         return $this;
@@ -297,8 +282,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRejectionReasonCode()
-    {
+    public function getRejectionReasonCode() {
         return $this->container['rejection_reason_code'];
     }
 
@@ -309,8 +293,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRejectionReasonCode($rejection_reason_code)
-    {
+    public function setRejectionReasonCode($rejection_reason_code) {
         $this->container['rejection_reason_code'] = $rejection_reason_code;
 
         return $this;
@@ -321,8 +304,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getRejectionReasonMessage()
-    {
+    public function getRejectionReasonMessage() {
         return $this->container['rejection_reason_message'];
     }
 
@@ -333,8 +315,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setRejectionReasonMessage($rejection_reason_message)
-    {
+    public function setRejectionReasonMessage($rejection_reason_message) {
         $this->container['rejection_reason_message'] = $rejection_reason_message;
 
         return $this;
@@ -347,8 +328,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -359,21 +339,19 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -388,8 +366,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -398,8 +375,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

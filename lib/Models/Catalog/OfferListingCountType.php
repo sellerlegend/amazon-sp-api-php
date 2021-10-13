@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Catalog;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Catalog;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * OfferListingCountType Class Doc Comment.
  *
-
  * @description The number of offer listings with the specified condition.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class OfferListingCountType extends Categories implements ModelInterface, ArrayAccess
-{
+class OfferListingCountType extends Categories implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'count' => 'int',
-'condition' => 'string',    ];
+        'count'     => 'int',
+        'condition' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'count' => 'int32',
-'condition' => null,    ];
+        'count'     => 'int32',
+        'condition' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'count' => 'Count',
-'condition' => 'condition',    ];
+        'count'     => 'Count',
+        'condition' => 'condition',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'count' => 'setCount',
-'condition' => 'setCondition',    ];
+        'count'     => 'setCount',
+        'condition' => 'setCondition',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'count' => 'getCount',
-'condition' => 'getCondition',    ];
+        'count'     => 'getCount',
+        'condition' => 'getCondition',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
     }
@@ -171,8 +162,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['count']) {
@@ -191,8 +181,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -201,8 +190,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return int
      */
-    public function getCount()
-    {
+    public function getCount() {
         return $this->container['count'];
     }
 
@@ -213,8 +201,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return $this
      */
-    public function setCount($count)
-    {
+    public function setCount($count) {
         $this->container['count'] = $count;
 
         return $this;
@@ -225,8 +212,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return string
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->container['condition'];
     }
 
@@ -237,8 +223,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->container['condition'] = $condition;
 
         return $this;
@@ -251,8 +236,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -263,21 +247,19 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -292,8 +274,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -302,8 +283,7 @@ class OfferListingCountType extends Categories implements ModelInterface, ArrayA
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

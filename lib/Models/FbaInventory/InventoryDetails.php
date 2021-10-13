@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * InventoryDetails Class Doc Comment.
  *
-
  * @description Summarized inventory details. This object will not appear if the details parameter in the request is false.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class InventoryDetails implements ModelInterface, ArrayAccess
-{
+class InventoryDetails implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,13 +44,13 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'fulfillable_quantity' => 'int',
-'inbound_working_quantity' => 'int',
-'inbound_shipped_quantity' => 'int',
-'inbound_receiving_quantity' => 'int',
-'reserved_quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\ReservedQuantity',
-'researching_quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\ResearchingQuantity',
-'unfulfillable_quantity' => '\ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\UnfulfillableQuantity',    ];
+        'fulfillable_quantity'       => 'int',
+        'inbound_working_quantity'   => 'int',
+        'inbound_shipped_quantity'   => 'int',
+        'inbound_receiving_quantity' => 'int',
+        'reserved_quantity'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory\ReservedQuantity',
+        'researching_quantity'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory\ResearchingQuantity',
+        'unfulfillable_quantity'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\FbaInventory\UnfulfillableQuantity',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -60,21 +58,20 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'fulfillable_quantity' => null,
-'inbound_working_quantity' => null,
-'inbound_shipped_quantity' => null,
-'inbound_receiving_quantity' => null,
-'reserved_quantity' => null,
-'researching_quantity' => null,
-'unfulfillable_quantity' => null,    ];
+        'fulfillable_quantity'       => null,
+        'inbound_working_quantity'   => null,
+        'inbound_shipped_quantity'   => null,
+        'inbound_receiving_quantity' => null,
+        'reserved_quantity'          => null,
+        'researching_quantity'       => null,
+        'unfulfillable_quantity'     => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -83,8 +80,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +91,13 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fulfillable_quantity' => 'fulfillableQuantity',
-'inbound_working_quantity' => 'inboundWorkingQuantity',
-'inbound_shipped_quantity' => 'inboundShippedQuantity',
-'inbound_receiving_quantity' => 'inboundReceivingQuantity',
-'reserved_quantity' => 'reservedQuantity',
-'researching_quantity' => 'researchingQuantity',
-'unfulfillable_quantity' => 'unfulfillableQuantity',    ];
+        'fulfillable_quantity'       => 'fulfillableQuantity',
+        'inbound_working_quantity'   => 'inboundWorkingQuantity',
+        'inbound_shipped_quantity'   => 'inboundShippedQuantity',
+        'inbound_receiving_quantity' => 'inboundReceivingQuantity',
+        'reserved_quantity'          => 'reservedQuantity',
+        'researching_quantity'       => 'researchingQuantity',
+        'unfulfillable_quantity'     => 'unfulfillableQuantity',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -109,13 +105,13 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fulfillable_quantity' => 'setFulfillableQuantity',
-'inbound_working_quantity' => 'setInboundWorkingQuantity',
-'inbound_shipped_quantity' => 'setInboundShippedQuantity',
-'inbound_receiving_quantity' => 'setInboundReceivingQuantity',
-'reserved_quantity' => 'setReservedQuantity',
-'researching_quantity' => 'setResearchingQuantity',
-'unfulfillable_quantity' => 'setUnfulfillableQuantity',    ];
+        'fulfillable_quantity'       => 'setFulfillableQuantity',
+        'inbound_working_quantity'   => 'setInboundWorkingQuantity',
+        'inbound_shipped_quantity'   => 'setInboundShippedQuantity',
+        'inbound_receiving_quantity' => 'setInboundReceivingQuantity',
+        'reserved_quantity'          => 'setReservedQuantity',
+        'researching_quantity'       => 'setResearchingQuantity',
+        'unfulfillable_quantity'     => 'setUnfulfillableQuantity',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -123,13 +119,13 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fulfillable_quantity' => 'getFulfillableQuantity',
-'inbound_working_quantity' => 'getInboundWorkingQuantity',
-'inbound_shipped_quantity' => 'getInboundShippedQuantity',
-'inbound_receiving_quantity' => 'getInboundReceivingQuantity',
-'reserved_quantity' => 'getReservedQuantity',
-'researching_quantity' => 'getResearchingQuantity',
-'unfulfillable_quantity' => 'getUnfulfillableQuantity',    ];
+        'fulfillable_quantity'       => 'getFulfillableQuantity',
+        'inbound_working_quantity'   => 'getInboundWorkingQuantity',
+        'inbound_shipped_quantity'   => 'getInboundShippedQuantity',
+        'inbound_receiving_quantity' => 'getInboundReceivingQuantity',
+        'reserved_quantity'          => 'getReservedQuantity',
+        'researching_quantity'       => 'getResearchingQuantity',
+        'unfulfillable_quantity'     => 'getUnfulfillableQuantity',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -137,8 +133,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -147,8 +142,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -157,8 +151,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -167,8 +160,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -185,8 +177,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['fulfillable_quantity'] = isset($data['fulfillable_quantity']) ? $data['fulfillable_quantity'] : null;
         $this->container['inbound_working_quantity'] = isset($data['inbound_working_quantity']) ? $data['inbound_working_quantity'] : null;
         $this->container['inbound_shipped_quantity'] = isset($data['inbound_shipped_quantity']) ? $data['inbound_shipped_quantity'] : null;
@@ -201,8 +192,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -214,8 +204,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -224,8 +213,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getFulfillableQuantity()
-    {
+    public function getFulfillableQuantity() {
         return $this->container['fulfillable_quantity'];
     }
 
@@ -236,8 +224,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFulfillableQuantity($fulfillable_quantity)
-    {
+    public function setFulfillableQuantity($fulfillable_quantity) {
         $this->container['fulfillable_quantity'] = $fulfillable_quantity;
 
         return $this;
@@ -248,8 +235,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getInboundWorkingQuantity()
-    {
+    public function getInboundWorkingQuantity() {
         return $this->container['inbound_working_quantity'];
     }
 
@@ -260,8 +246,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInboundWorkingQuantity($inbound_working_quantity)
-    {
+    public function setInboundWorkingQuantity($inbound_working_quantity) {
         $this->container['inbound_working_quantity'] = $inbound_working_quantity;
 
         return $this;
@@ -272,8 +257,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getInboundShippedQuantity()
-    {
+    public function getInboundShippedQuantity() {
         return $this->container['inbound_shipped_quantity'];
     }
 
@@ -284,8 +268,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInboundShippedQuantity($inbound_shipped_quantity)
-    {
+    public function setInboundShippedQuantity($inbound_shipped_quantity) {
         $this->container['inbound_shipped_quantity'] = $inbound_shipped_quantity;
 
         return $this;
@@ -296,8 +279,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return int
      */
-    public function getInboundReceivingQuantity()
-    {
+    public function getInboundReceivingQuantity() {
         return $this->container['inbound_receiving_quantity'];
     }
 
@@ -308,8 +290,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setInboundReceivingQuantity($inbound_receiving_quantity)
-    {
+    public function setInboundReceivingQuantity($inbound_receiving_quantity) {
         $this->container['inbound_receiving_quantity'] = $inbound_receiving_quantity;
 
         return $this;
@@ -318,22 +299,20 @@ class InventoryDetails implements ModelInterface, ArrayAccess
     /**
      * Gets reserved_quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\ReservedQuantity
+     * @return ReservedQuantity
      */
-    public function getReservedQuantity()
-    {
+    public function getReservedQuantity() {
         return $this->container['reserved_quantity'];
     }
 
     /**
      * Sets reserved_quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\ReservedQuantity $reserved_quantity reserved_quantity
+     * @param ReservedQuantity $reserved_quantity reserved_quantity
      *
      * @return $this
      */
-    public function setReservedQuantity($reserved_quantity)
-    {
+    public function setReservedQuantity($reserved_quantity) {
         $this->container['reserved_quantity'] = $reserved_quantity;
 
         return $this;
@@ -342,22 +321,20 @@ class InventoryDetails implements ModelInterface, ArrayAccess
     /**
      * Gets researching_quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\ResearchingQuantity
+     * @return ResearchingQuantity
      */
-    public function getResearchingQuantity()
-    {
+    public function getResearchingQuantity() {
         return $this->container['researching_quantity'];
     }
 
     /**
      * Sets researching_quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\ResearchingQuantity $researching_quantity researching_quantity
+     * @param ResearchingQuantity $researching_quantity researching_quantity
      *
      * @return $this
      */
-    public function setResearchingQuantity($researching_quantity)
-    {
+    public function setResearchingQuantity($researching_quantity) {
         $this->container['researching_quantity'] = $researching_quantity;
 
         return $this;
@@ -366,22 +343,20 @@ class InventoryDetails implements ModelInterface, ArrayAccess
     /**
      * Gets unfulfillable_quantity.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\UnfulfillableQuantity
+     * @return UnfulfillableQuantity
      */
-    public function getUnfulfillableQuantity()
-    {
+    public function getUnfulfillableQuantity() {
         return $this->container['unfulfillable_quantity'];
     }
 
     /**
      * Sets unfulfillable_quantity.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FbaInventory\UnfulfillableQuantity $unfulfillable_quantity unfulfillable_quantity
+     * @param UnfulfillableQuantity $unfulfillable_quantity unfulfillable_quantity
      *
      * @return $this
      */
-    public function setUnfulfillableQuantity($unfulfillable_quantity)
-    {
+    public function setUnfulfillableQuantity($unfulfillable_quantity) {
         $this->container['unfulfillable_quantity'] = $unfulfillable_quantity;
 
         return $this;
@@ -394,8 +369,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -406,21 +380,19 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -435,8 +407,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -445,8 +416,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

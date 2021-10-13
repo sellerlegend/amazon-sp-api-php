@@ -4,17 +4,20 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCompetitivePricing**](ProductPricingApi.md#getcompetitivepricing) | **GET** /products/pricing/v0/competitivePrice | 
-[**getItemOffers**](ProductPricingApi.md#getitemoffers) | **GET** /products/pricing/v0/items/{Asin}/offers | 
-[**getListingOffers**](ProductPricingApi.md#getlistingoffers) | **GET** /products/pricing/v0/listings/{SellerSKU}/offers | 
-[**getPricing**](ProductPricingApi.md#getpricing) | **GET** /products/pricing/v0/price | 
+[**getCompetitivePricing**](ProductPricingApi.md#getcompetitivepricing) | **
+GET** /products/pricing/v0/competitivePrice |
+[**getItemOffers**](ProductPricingApi.md#getitemoffers) | **GET** /products/pricing/v0/items/{Asin}/offers |
+[**getListingOffers**](ProductPricingApi.md#getlistingoffers) | **
+GET** /products/pricing/v0/listings/{SellerSKU}/offers |
+[**getPricing**](ProductPricingApi.md#getpricing) | **GET** /products/pricing/v0/price |
 
 # **getCompetitivePricing**
+
 > \Swagger\Client\Models\GetPricingResponse getCompetitivePricing($marketplace_id, $item_type, $asins, $skus)
 
 
 
-Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.  
+Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.
 
 **Usage Plan:**
 
@@ -23,6 +26,7 @@ Returns competitive pricing information for a seller's offer listings based on s
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -57,10 +61,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
- **item_type** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. |
- **asins** | [**string[]**](../Model/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
- **skus** | [**string[]**](../Model/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
+**marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
+**item_type** | **
+string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. |
+**asins** | [**
+string[]**](../Model/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
+**skus** | [**
+string[]**](../Model/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
 
 ### Return type
 
@@ -72,17 +79,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getItemOffers**
+
 > \Swagger\Client\Models\GetOffersResponse getItemOffers($marketplace_id, $item_condition, $asin)
 
 
 
-Returns the lowest priced offers for a single item based on ASIN.  
+Returns the lowest priced offers for a single item based on ASIN.
 
 **Usage Plan:**
 
@@ -91,6 +99,7 @@ Returns the lowest priced offers for a single item based on ASIN.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -124,9 +133,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
- **item_condition** | **string**| Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. |
- **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. |
+**marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
+**item_condition** | **
+string**| Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. |
+**asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. |
 
 ### Return type
 
@@ -138,17 +148,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getListingOffers**
+
 > \Swagger\Client\Models\GetOffersResponse getListingOffers($marketplace_id, $item_condition, $seller_sku)
 
 
 
-Returns the lowest priced offers for a single SKU listing.  
+Returns the lowest priced offers for a single SKU listing.
 
 **Usage Plan:**
 
@@ -157,6 +168,7 @@ Returns the lowest priced offers for a single SKU listing.
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -190,9 +202,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
- **item_condition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. |
- **seller_sku** | **string**| Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. |
+**marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
+**item_condition** | **
+string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. |
+**seller_sku** | **
+string**| Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. |
 
 ### Return type
 
@@ -204,17 +218,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPricing**
+
 > \Swagger\Client\Models\GetPricingResponse getPricing($marketplace_id, $item_type, $asins, $skus, $item_condition)
 
 
 
-Returns pricing information for a seller's offer listings based on seller SKU or ASIN.  
+Returns pricing information for a seller's offer listings based on seller SKU or ASIN.
 
 **Usage Plan:**
 
@@ -223,6 +238,7 @@ Returns pricing information for a seller's offer listings based on seller SKU or
 | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -258,11 +274,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
- **item_type** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. |
- **asins** | [**string[]**](../Model/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
- **skus** | [**string[]**](../Model/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
- **item_condition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | [optional]
+**marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
+**item_type** | **
+string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. |
+**asins** | [**
+string[]**](../Model/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
+**skus** | [**
+string[]**](../Model/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
+**item_condition** | **
+string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | [optional]
 
 ### Return type
 
@@ -274,8 +294,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * FeeComponent Class Doc Comment.
  *
-
  * @description A fee associated with the event.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class FeeComponent implements ModelInterface, ArrayAccess
-{
+class FeeComponent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,9 @@ class FeeComponent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'fee_type' => 'string',
-'fee_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',    ];
+        'fee_type'   => 'string',
+        'fee_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +54,15 @@ class FeeComponent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'fee_type' => null,
-'fee_amount' => null,    ];
+        'fee_type'   => null,
+        'fee_amount' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +71,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +82,8 @@ class FeeComponent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fee_type' => 'FeeType',
-'fee_amount' => 'FeeAmount',    ];
+        'fee_type'   => 'FeeType',
+        'fee_amount' => 'FeeAmount',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +91,8 @@ class FeeComponent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fee_type' => 'setFeeType',
-'fee_amount' => 'setFeeAmount',    ];
+        'fee_type'   => 'setFeeType',
+        'fee_amount' => 'setFeeAmount',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +100,8 @@ class FeeComponent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fee_type' => 'getFeeType',
-'fee_amount' => 'getFeeAmount',    ];
+        'fee_type'   => 'getFeeType',
+        'fee_amount' => 'getFeeAmount',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +109,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +118,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +127,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +136,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +153,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['fee_type'] = isset($data['fee_type']) ? $data['fee_type'] : null;
         $this->container['fee_amount'] = isset($data['fee_amount']) ? $data['fee_amount'] : null;
     }
@@ -171,8 +163,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,8 +175,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -194,8 +184,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getFeeType()
-    {
+    public function getFeeType() {
         return $this->container['fee_type'];
     }
 
@@ -206,8 +195,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setFeeType($fee_type)
-    {
+    public function setFeeType($fee_type) {
         $this->container['fee_type'] = $fee_type;
 
         return $this;
@@ -216,22 +204,20 @@ class FeeComponent implements ModelInterface, ArrayAccess
     /**
      * Gets fee_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getFeeAmount()
-    {
+    public function getFeeAmount() {
         return $this->container['fee_amount'];
     }
 
     /**
      * Sets fee_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $fee_amount fee_amount
+     * @param Currency $fee_amount fee_amount
      *
      * @return $this
      */
-    public function setFeeAmount($fee_amount)
-    {
+    public function setFeeAmount($fee_amount) {
         $this->container['fee_amount'] = $fee_amount;
 
         return $this;
@@ -244,8 +230,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +241,19 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +268,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +277,7 @@ class FeeComponent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

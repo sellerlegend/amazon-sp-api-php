@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Dimensions Class Doc Comment.
  *
-
  * @description The dimension values and unit of measurement.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Dimensions implements ModelInterface, ArrayAccess
-{
+class Dimensions implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,10 +44,11 @@ class Dimensions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'length' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
-'width' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
-'height' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
-'unit' => '\ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement',    ];
+        'length' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
+        'width'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
+        'height' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
+        'unit'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement'
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -58,17 +57,17 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'length' => null,
-'width' => null,
-'height' => null,
-'unit' => null,    ];
+        'width'  => null,
+        'height' => null,
+        'unit'   => null
+    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -77,8 +76,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -90,9 +88,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'length' => 'Length',
-'width' => 'Width',
-'height' => 'Height',
-'unit' => 'Unit',    ];
+        'width'  => 'Width',
+        'height' => 'Height',
+        'unit'   => 'Unit',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -101,9 +99,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'length' => 'setLength',
-'width' => 'setWidth',
-'height' => 'setHeight',
-'unit' => 'setUnit',    ];
+        'width'  => 'setWidth',
+        'height' => 'setHeight',
+        'unit'   => 'setUnit',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -112,9 +110,9 @@ class Dimensions implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'length' => 'getLength',
-'width' => 'getWidth',
-'height' => 'getHeight',
-'unit' => 'getUnit',    ];
+        'width'  => 'getWidth',
+        'height' => 'getHeight',
+        'unit'   => 'getUnit',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -122,8 +120,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -132,8 +129,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -142,8 +138,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -152,8 +147,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -170,8 +164,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['length'] = isset($data['length']) ? $data['length'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
@@ -183,8 +176,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['length']) {
@@ -209,30 +201,27 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets length.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType
+     * @return BigDecimalType
      */
-    public function getLength()
-    {
+    public function getLength() {
         return $this->container['length'];
     }
 
     /**
      * Sets length.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType $length length
+     * @param BigDecimalType $length length
      *
      * @return $this
      */
-    public function setLength($length)
-    {
+    public function setLength($length) {
         $this->container['length'] = $length;
 
         return $this;
@@ -241,22 +230,20 @@ class Dimensions implements ModelInterface, ArrayAccess
     /**
      * Gets width.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType
+     * @return BigDecimalType
      */
-    public function getWidth()
-    {
+    public function getWidth() {
         return $this->container['width'];
     }
 
     /**
      * Sets width.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType $width width
+     * @param BigDecimalType $width width
      *
      * @return $this
      */
-    public function setWidth($width)
-    {
+    public function setWidth($width) {
         $this->container['width'] = $width;
 
         return $this;
@@ -265,22 +252,20 @@ class Dimensions implements ModelInterface, ArrayAccess
     /**
      * Gets height.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType
+     * @return BigDecimalType
      */
-    public function getHeight()
-    {
+    public function getHeight() {
         return $this->container['height'];
     }
 
     /**
      * Sets height.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType $height height
+     * @param BigDecimalType $height height
      *
      * @return $this
      */
-    public function setHeight($height)
-    {
+    public function setHeight($height) {
         $this->container['height'] = $height;
 
         return $this;
@@ -289,22 +274,20 @@ class Dimensions implements ModelInterface, ArrayAccess
     /**
      * Gets unit.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement
+     * @return UnitOfMeasurement
      */
-    public function getUnit()
-    {
+    public function getUnit() {
         return $this->container['unit'];
     }
 
     /**
      * Sets unit.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement $unit unit
+     * @param UnitOfMeasurement $unit unit
      *
      * @return $this
      */
-    public function setUnit($unit)
-    {
+    public function setUnit($unit) {
         $this->container['unit'] = $unit;
 
         return $this;
@@ -317,8 +300,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -329,21 +311,19 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -358,8 +338,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -368,8 +347,7 @@ class Dimensions implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

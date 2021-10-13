@@ -15,19 +15,18 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * GetOffersResult Class Doc Comment.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class GetOffersResult implements ModelInterface, ArrayAccess
-{
+class GetOffersResult implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -44,13 +43,13 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'marketplace_id' => 'string',
-'asin' => 'string',
-'sku' => 'string',
-'item_condition' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType',
-'status' => 'string',
-'identifier' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ItemIdentifier',
-'summary' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Summary',
-'offers' => '\ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\OfferDetailList',    ];
+        'asin'           => 'string',
+        'sku'            => 'string',
+        'item_condition' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType',
+        'status'         => 'string',
+        'identifier'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\ItemIdentifier',
+        'summary'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\Summary',
+        'offers'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductPricing\OfferDetailList',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -59,21 +58,20 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'marketplace_id' => null,
-'asin' => null,
-'sku' => null,
-'item_condition' => null,
-'status' => null,
-'identifier' => null,
-'summary' => null,
-'offers' => null,    ];
+        'asin'           => null,
+        'sku'            => null,
+        'item_condition' => null,
+        'status'         => null,
+        'identifier'     => null,
+        'summary'        => null,
+        'offers'         => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -82,8 +80,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -95,13 +92,13 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'marketplace_id' => 'MarketplaceID',
-'asin' => 'ASIN',
-'sku' => 'SKU',
-'item_condition' => 'ItemCondition',
-'status' => 'status',
-'identifier' => 'Identifier',
-'summary' => 'Summary',
-'offers' => 'Offers',    ];
+        'asin'           => 'ASIN',
+        'sku'            => 'SKU',
+        'item_condition' => 'ItemCondition',
+        'status'         => 'status',
+        'identifier'     => 'Identifier',
+        'summary'        => 'Summary',
+        'offers'         => 'Offers',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -110,13 +107,13 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
-'asin' => 'setAsin',
-'sku' => 'setSku',
-'item_condition' => 'setItemCondition',
-'status' => 'setStatus',
-'identifier' => 'setIdentifier',
-'summary' => 'setSummary',
-'offers' => 'setOffers',    ];
+        'asin'           => 'setAsin',
+        'sku'            => 'setSku',
+        'item_condition' => 'setItemCondition',
+        'status'         => 'setStatus',
+        'identifier'     => 'setIdentifier',
+        'summary'        => 'setSummary',
+        'offers'         => 'setOffers',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -125,13 +122,13 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-'asin' => 'getAsin',
-'sku' => 'getSku',
-'item_condition' => 'getItemCondition',
-'status' => 'getStatus',
-'identifier' => 'getIdentifier',
-'summary' => 'getSummary',
-'offers' => 'getOffers',    ];
+        'asin'           => 'getAsin',
+        'sku'            => 'getSku',
+        'item_condition' => 'getItemCondition',
+        'status'         => 'getStatus',
+        'identifier'     => 'getIdentifier',
+        'summary'        => 'getSummary',
+        'offers'         => 'getOffers',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -139,8 +136,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -149,8 +145,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -159,8 +154,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -169,8 +163,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -187,8 +180,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
         $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
@@ -204,8 +196,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['marketplace_id']) {
@@ -236,8 +227,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -246,8 +236,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getMarketplaceId()
-    {
+    public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
@@ -258,8 +247,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setMarketplaceId($marketplace_id)
-    {
+    public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -270,8 +258,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getAsin()
-    {
+    public function getAsin() {
         return $this->container['asin'];
     }
 
@@ -282,8 +269,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setAsin($asin)
-    {
+    public function setAsin($asin) {
         $this->container['asin'] = $asin;
 
         return $this;
@@ -294,8 +280,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSku()
-    {
+    public function getSku() {
         return $this->container['sku'];
     }
 
@@ -306,8 +291,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSku($sku)
-    {
+    public function setSku($sku) {
         $this->container['sku'] = $sku;
 
         return $this;
@@ -316,22 +300,20 @@ class GetOffersResult implements ModelInterface, ArrayAccess
     /**
      * Gets item_condition.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType
+     * @return ConditionType
      */
-    public function getItemCondition()
-    {
+    public function getItemCondition() {
         return $this->container['item_condition'];
     }
 
     /**
      * Sets item_condition.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ConditionType $item_condition item_condition
+     * @param ConditionType $item_condition item_condition
      *
      * @return $this
      */
-    public function setItemCondition($item_condition)
-    {
+    public function setItemCondition($item_condition) {
         $this->container['item_condition'] = $item_condition;
 
         return $this;
@@ -342,8 +324,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->container['status'];
     }
 
@@ -354,8 +335,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->container['status'] = $status;
 
         return $this;
@@ -364,22 +344,20 @@ class GetOffersResult implements ModelInterface, ArrayAccess
     /**
      * Gets identifier.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ItemIdentifier
+     * @return ItemIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->container['identifier'];
     }
 
     /**
      * Sets identifier.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\ItemIdentifier $identifier identifier
+     * @param ItemIdentifier $identifier identifier
      *
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->container['identifier'] = $identifier;
 
         return $this;
@@ -388,22 +366,20 @@ class GetOffersResult implements ModelInterface, ArrayAccess
     /**
      * Gets summary.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Summary
+     * @return Summary
      */
-    public function getSummary()
-    {
+    public function getSummary() {
         return $this->container['summary'];
     }
 
     /**
      * Sets summary.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\Summary $summary summary
+     * @param Summary $summary summary
      *
      * @return $this
      */
-    public function setSummary($summary)
-    {
+    public function setSummary($summary) {
         $this->container['summary'] = $summary;
 
         return $this;
@@ -412,22 +388,20 @@ class GetOffersResult implements ModelInterface, ArrayAccess
     /**
      * Gets offers.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\OfferDetailList
+     * @return OfferDetailList
      */
-    public function getOffers()
-    {
+    public function getOffers() {
         return $this->container['offers'];
     }
 
     /**
      * Sets offers.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\ProductPricing\OfferDetailList $offers offers
+     * @param OfferDetailList $offers offers
      *
      * @return $this
      */
-    public function setOffers($offers)
-    {
+    public function setOffers($offers) {
         $this->container['offers'] = $offers;
 
         return $this;
@@ -440,8 +414,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -452,21 +425,19 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -481,8 +452,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -491,8 +461,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

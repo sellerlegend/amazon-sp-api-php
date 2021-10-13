@@ -15,22 +15,20 @@
  * OpenAPI spec version: v1
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Notifications;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Notifications;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * Subscription Class Doc Comment.
  *
-
  * @description Represents a subscription to receive notifications.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class Subscription implements ModelInterface, ArrayAccess
-{
+class Subscription implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -47,8 +45,8 @@ class Subscription implements ModelInterface, ArrayAccess
      */
     protected static $swaggerTypes = [
         'subscription_id' => 'string',
-'payload_version' => 'string',
-'destination_id' => 'string',    ];
+        'payload_version' => 'string',
+        'destination_id'  => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -57,16 +55,15 @@ class Subscription implements ModelInterface, ArrayAccess
      */
     protected static $swaggerFormats = [
         'subscription_id' => null,
-'payload_version' => null,
-'destination_id' => null,    ];
+        'payload_version' => null,
+        'destination_id'  => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -75,8 +72,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -88,8 +84,8 @@ class Subscription implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'subscription_id' => 'subscriptionId',
-'payload_version' => 'payloadVersion',
-'destination_id' => 'destinationId',    ];
+        'payload_version' => 'payloadVersion',
+        'destination_id'  => 'destinationId',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -98,8 +94,8 @@ class Subscription implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'subscription_id' => 'setSubscriptionId',
-'payload_version' => 'setPayloadVersion',
-'destination_id' => 'setDestinationId',    ];
+        'payload_version' => 'setPayloadVersion',
+        'destination_id'  => 'setDestinationId',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -108,8 +104,8 @@ class Subscription implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'subscription_id' => 'getSubscriptionId',
-'payload_version' => 'getPayloadVersion',
-'destination_id' => 'getDestinationId',    ];
+        'payload_version' => 'getPayloadVersion',
+        'destination_id'  => 'getDestinationId',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -117,8 +113,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -127,8 +122,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -137,8 +131,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -147,8 +140,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -165,8 +157,7 @@ class Subscription implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
         $this->container['payload_version'] = isset($data['payload_version']) ? $data['payload_version'] : null;
         $this->container['destination_id'] = isset($data['destination_id']) ? $data['destination_id'] : null;
@@ -177,8 +168,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         if (null === $this->container['subscription_id']) {
@@ -200,8 +190,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
@@ -210,8 +199,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSubscriptionId()
-    {
+    public function getSubscriptionId() {
         return $this->container['subscription_id'];
     }
 
@@ -222,8 +210,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSubscriptionId($subscription_id)
-    {
+    public function setSubscriptionId($subscription_id) {
         $this->container['subscription_id'] = $subscription_id;
 
         return $this;
@@ -234,8 +221,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getPayloadVersion()
-    {
+    public function getPayloadVersion() {
         return $this->container['payload_version'];
     }
 
@@ -246,8 +232,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setPayloadVersion($payload_version)
-    {
+    public function setPayloadVersion($payload_version) {
         $this->container['payload_version'] = $payload_version;
 
         return $this;
@@ -258,8 +243,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getDestinationId()
-    {
+    public function getDestinationId() {
         return $this->container['destination_id'];
     }
 
@@ -270,8 +254,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setDestinationId($destination_id)
-    {
+    public function setDestinationId($destination_id) {
         $this->container['destination_id'] = $destination_id;
 
         return $this;
@@ -284,8 +267,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -296,21 +278,19 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -325,8 +305,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -335,8 +314,7 @@ class Subscription implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),

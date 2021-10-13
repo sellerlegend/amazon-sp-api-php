@@ -15,22 +15,20 @@
  * OpenAPI spec version: v0
  */
 
-namespace ClouSale\AmazonSellingPartnerAPI\Models\Finances;
+namespace SellerLegend\AmazonSellingPartnerAPI\Models\Finances;
 
 use ArrayAccess;
-use ClouSale\AmazonSellingPartnerAPI\Models\ModelInterface;
-use ClouSale\AmazonSellingPartnerAPI\ObjectSerializer;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
  * LoanServicingEvent Class Doc Comment.
  *
-
  * @description A loan advance, loan payment, or loan refund.
  *
  * @author   Stefan Neuhaus / ClouSale
  */
-class LoanServicingEvent implements ModelInterface, ArrayAccess
-{
+class LoanServicingEvent implements ModelInterface, ArrayAccess {
     const DISCRIMINATOR = null;
 
     /**
@@ -46,8 +44,8 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'loan_amount' => '\ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency',
-'source_business_event_type' => 'string',    ];
+        'loan_amount'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'source_business_event_type' => 'string',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -55,16 +53,15 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'loan_amount' => null,
-'source_business_event_type' => null,    ];
+        'loan_amount'                => null,
+        'source_business_event_type' => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @return array
      */
-    public static function swaggerTypes()
-    {
+    public static function swaggerTypes() {
         return self::$swaggerTypes;
     }
 
@@ -73,8 +70,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function swaggerFormats()
-    {
+    public static function swaggerFormats() {
         return self::$swaggerFormats;
     }
 
@@ -85,8 +81,8 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'loan_amount' => 'LoanAmount',
-'source_business_event_type' => 'SourceBusinessEventType',    ];
+        'loan_amount'                => 'LoanAmount',
+        'source_business_event_type' => 'SourceBusinessEventType',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -94,8 +90,8 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'loan_amount' => 'setLoanAmount',
-'source_business_event_type' => 'setSourceBusinessEventType',    ];
+        'loan_amount'                => 'setLoanAmount',
+        'source_business_event_type' => 'setSourceBusinessEventType',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -103,8 +99,8 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'loan_amount' => 'getLoanAmount',
-'source_business_event_type' => 'getSourceBusinessEventType',    ];
+        'loan_amount'                => 'getLoanAmount',
+        'source_business_event_type' => 'getSourceBusinessEventType',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,8 +108,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function attributeMap()
-    {
+    public static function attributeMap() {
         return self::$attributeMap;
     }
 
@@ -122,8 +117,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function setters()
-    {
+    public static function setters() {
         return self::$setters;
     }
 
@@ -132,8 +126,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return array
      */
-    public static function getters()
-    {
+    public static function getters() {
         return self::$getters;
     }
 
@@ -142,8 +135,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getModelName()
-    {
+    public function getModelName() {
         return self::$swaggerModelName;
     }
 
@@ -160,8 +152,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
-    {
+    public function __construct(array $data = null) {
         $this->container['loan_amount'] = isset($data['loan_amount']) ? $data['loan_amount'] : null;
         $this->container['source_business_event_type'] = isset($data['source_business_event_type']) ? $data['source_business_event_type'] : null;
     }
@@ -171,8 +162,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties()
-    {
+    public function listInvalidProperties() {
         $invalidProperties = [];
 
         return $invalidProperties;
@@ -184,30 +174,27 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
-    {
+    public function valid() {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets loan_amount.
      *
-     * @return \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency
+     * @return Currency
      */
-    public function getLoanAmount()
-    {
+    public function getLoanAmount() {
         return $this->container['loan_amount'];
     }
 
     /**
      * Sets loan_amount.
      *
-     * @param \ClouSale\AmazonSellingPartnerAPI\Models\Finances\Currency $loan_amount loan_amount
+     * @param Currency $loan_amount loan_amount
      *
      * @return $this
      */
-    public function setLoanAmount($loan_amount)
-    {
+    public function setLoanAmount($loan_amount) {
         $this->container['loan_amount'] = $loan_amount;
 
         return $this;
@@ -218,8 +205,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function getSourceBusinessEventType()
-    {
+    public function getSourceBusinessEventType() {
         return $this->container['source_business_event_type'];
     }
 
@@ -230,8 +216,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return $this
      */
-    public function setSourceBusinessEventType($source_business_event_type)
-    {
+    public function setSourceBusinessEventType($source_business_event_type) {
         $this->container['source_business_event_type'] = $source_business_event_type;
 
         return $this;
@@ -244,8 +229,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($offset)
-    {
+    public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
 
@@ -256,21 +240,19 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
-    {
+    public function offsetGet($offset) {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int   $offset Offset
-     * @param mixed $value  Value to be set
+     * @param int $offset Offset
+     * @param mixed $value Value to be set
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
-    {
+    public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
         } else {
@@ -285,8 +267,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
-    {
+    public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
@@ -295,8 +276,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
