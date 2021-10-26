@@ -112,3 +112,8 @@ $asin = 'B0002ZFTJA';
 $result = $apiInstance->getCatalogItem($marketplace_id, $asin);
 echo $result->getPayload()->getAttributeSets()[0]->getTitle(); // Never Gonna Give You Up [Vinyl Single]
 ```
+
+##Credits
+- [Clousale](https://github.com/clousale)
+- [clousale/amazon-sp-api-php](https://github.com/clousale/amazon-sp-api-php)
+- [All Contributors](https://github.com/sellerlegend/amazon-sp-api-php/graphs/contributors)

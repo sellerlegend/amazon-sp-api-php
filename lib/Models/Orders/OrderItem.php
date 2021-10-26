@@ -288,6 +288,8 @@ class OrderItem implements ModelInterface, ArrayAccess {
     const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
+    const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
+    const DEEMED_RESELLER_CATEGORY_CA_MBF = 'CA_MBF';
 
     /**
      * Gets allowable values of the enum.
@@ -299,6 +301,8 @@ class OrderItem implements ModelInterface, ArrayAccess {
             self::DEEMED_RESELLER_CATEGORY_IOSS,
             self::DEEMED_RESELLER_CATEGORY_UOSS,
             self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_CA_MBF,
         ];
     }
 
@@ -316,37 +320,37 @@ class OrderItem implements ModelInterface, ArrayAccess {
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['asin'] = isset($data['asin']) ? $data['asin'] : null;
-        $this->container['seller_sku'] = isset($data['seller_sku']) ? $data['seller_sku'] : null;
-        $this->container['order_item_id'] = isset($data['order_item_id']) ? $data['order_item_id'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['quantity_ordered'] = isset($data['quantity_ordered']) ? $data['quantity_ordered'] : null;
-        $this->container['quantity_shipped'] = isset($data['quantity_shipped']) ? $data['quantity_shipped'] : null;
-        $this->container['product_info'] = isset($data['product_info']) ? $data['product_info'] : null;
-        $this->container['points_granted'] = isset($data['points_granted']) ? $data['points_granted'] : null;
-        $this->container['item_price'] = isset($data['item_price']) ? $data['item_price'] : null;
-        $this->container['shipping_price'] = isset($data['shipping_price']) ? $data['shipping_price'] : null;
-        $this->container['item_tax'] = isset($data['item_tax']) ? $data['item_tax'] : null;
-        $this->container['shipping_tax'] = isset($data['shipping_tax']) ? $data['shipping_tax'] : null;
-        $this->container['shipping_discount'] = isset($data['shipping_discount']) ? $data['shipping_discount'] : null;
-        $this->container['shipping_discount_tax'] = isset($data['shipping_discount_tax']) ? $data['shipping_discount_tax'] : null;
-        $this->container['promotion_discount'] = isset($data['promotion_discount']) ? $data['promotion_discount'] : null;
-        $this->container['promotion_discount_tax'] = isset($data['promotion_discount_tax']) ? $data['promotion_discount_tax'] : null;
-        $this->container['promotion_ids'] = isset($data['promotion_ids']) ? $data['promotion_ids'] : null;
-        $this->container['cod_fee'] = isset($data['cod_fee']) ? $data['cod_fee'] : null;
-        $this->container['cod_fee_discount'] = isset($data['cod_fee_discount']) ? $data['cod_fee_discount'] : null;
-        $this->container['is_gift'] = isset($data['is_gift']) ? $data['is_gift'] : null;
-        $this->container['condition_note'] = isset($data['condition_note']) ? $data['condition_note'] : null;
-        $this->container['condition_id'] = isset($data['condition_id']) ? $data['condition_id'] : null;
-        $this->container['condition_subtype_id'] = isset($data['condition_subtype_id']) ? $data['condition_subtype_id'] : null;
-        $this->container['scheduled_delivery_start_date'] = isset($data['scheduled_delivery_start_date']) ? $data['scheduled_delivery_start_date'] : null;
-        $this->container['scheduled_delivery_end_date'] = isset($data['scheduled_delivery_end_date']) ? $data['scheduled_delivery_end_date'] : null;
-        $this->container['price_designation'] = isset($data['price_designation']) ? $data['price_designation'] : null;
-        $this->container['tax_collection'] = isset($data['tax_collection']) ? $data['tax_collection'] : null;
-        $this->container['serial_number_required'] = isset($data['serial_number_required']) ? $data['serial_number_required'] : null;
-        $this->container['is_transparency'] = isset($data['is_transparency']) ? $data['is_transparency'] : null;
-        $this->container['ioss_number'] = isset($data['ioss_number']) ? $data['ioss_number'] : null;
-        $this->container['deemed_reseller_category'] = isset($data['deemed_reseller_category']) ? $data['deemed_reseller_category'] : null;
+        $this->container['asin'] = $data['asin'] ?? null;
+        $this->container['seller_sku'] = $data['seller_sku'] ?? null;
+        $this->container['order_item_id'] = $data['order_item_id'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['quantity_ordered'] = $data['quantity_ordered'] ?? null;
+        $this->container['quantity_shipped'] = $data['quantity_shipped'] ?? null;
+        $this->container['product_info'] = $data['product_info'] ?? null;
+        $this->container['points_granted'] = $data['points_granted'] ?? null;
+        $this->container['item_price'] = $data['item_price'] ?? null;
+        $this->container['shipping_price'] = $data['shipping_price'] ?? null;
+        $this->container['item_tax'] = $data['item_tax'] ?? null;
+        $this->container['shipping_tax'] = $data['shipping_tax'] ?? null;
+        $this->container['shipping_discount'] = $data['shipping_discount'] ?? null;
+        $this->container['shipping_discount_tax'] = $data['shipping_discount_tax'] ?? null;
+        $this->container['promotion_discount'] = $data['promotion_discount'] ?? null;
+        $this->container['promotion_discount_tax'] = $data['promotion_discount_tax'] ?? null;
+        $this->container['promotion_ids'] = $data['promotion_ids'] ?? null;
+        $this->container['cod_fee'] = $data['cod_fee'] ?? null;
+        $this->container['cod_fee_discount'] = $data['cod_fee_discount'] ?? null;
+        $this->container['is_gift'] = $data['is_gift'] ?? null;
+        $this->container['condition_note'] = $data['condition_note'] ?? null;
+        $this->container['condition_id'] = $data['condition_id'] ?? null;
+        $this->container['condition_subtype_id'] = $data['condition_subtype_id'] ?? null;
+        $this->container['scheduled_delivery_start_date'] = $data['scheduled_delivery_start_date'] ?? null;
+        $this->container['scheduled_delivery_end_date'] = $data['scheduled_delivery_end_date'] ?? null;
+        $this->container['price_designation'] = $data['price_designation'] ?? null;
+        $this->container['tax_collection'] = $data['tax_collection'] ?? null;
+        $this->container['serial_number_required'] = $data['serial_number_required'] ?? null;
+        $this->container['is_transparency'] = $data['is_transparency'] ?? null;
+        $this->container['ioss_number'] = $data['ioss_number'] ?? null;
+        $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
     }
 
     /**
