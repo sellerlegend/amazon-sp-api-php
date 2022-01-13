@@ -155,7 +155,7 @@ class OfferDetailList implements ModelInterface, ArrayAccess, IterableType {
      * @return array invalid properties with reasons
      */
     public function listInvalidProperties() {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }

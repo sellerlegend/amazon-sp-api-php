@@ -157,7 +157,7 @@ class TermsAndConditionsNotAcceptedCarrierList implements ModelInterface, ArrayA
      * @return array invalid properties with reasons
      */
     public function listInvalidProperties() {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }

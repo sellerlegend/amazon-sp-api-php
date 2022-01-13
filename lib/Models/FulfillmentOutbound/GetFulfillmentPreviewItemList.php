@@ -157,7 +157,7 @@ class GetFulfillmentPreviewItemList implements ModelInterface, ArrayAccess, Iter
      * @return array invalid properties with reasons
      */
     public function listInvalidProperties() {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
