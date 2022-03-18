@@ -52,6 +52,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'int',
         'quantity_shipped'              => 'int',
         'product_info'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail',
+        'buyer_info'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderItemBuyerInfo',
         'points_granted'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail',
         'item_price'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
         'shipping_price'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
@@ -90,6 +91,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => null,
         'quantity_shipped'              => null,
         'product_info'                  => null,
+        'buyer_info'                    => null,
         'points_granted'                => null,
         'item_price'                    => null,
         'shipping_price'                => null,
@@ -147,6 +149,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'QuantityOrdered',
         'quantity_shipped'              => 'QuantityShipped',
         'product_info'                  => 'ProductInfo',
+        'buyer_info'                    => 'BuyerInfo',
         'points_granted'                => 'PointsGranted',
         'item_price'                    => 'ItemPrice',
         'shipping_price'                => 'ShippingPrice',
@@ -185,6 +188,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'setQuantityOrdered',
         'quantity_shipped'              => 'setQuantityShipped',
         'product_info'                  => 'setProductInfo',
+        'buyer_info'                    => 'setBuyerInfo',
         'points_granted'                => 'setPointsGranted',
         'item_price'                    => 'setItemPrice',
         'shipping_price'                => 'setShippingPrice',
@@ -223,6 +227,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'getQuantityOrdered',
         'quantity_shipped'              => 'getQuantityShipped',
         'product_info'                  => 'getProductInfo',
+        'buyer_info'                    => 'getBuyerInfo',
         'points_granted'                => 'getPointsGranted',
         'item_price'                    => 'getItemPrice',
         'shipping_price'                => 'getShippingPrice',
@@ -327,6 +332,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         $this->container['quantity_ordered'] = $data['quantity_ordered'] ?? null;
         $this->container['quantity_shipped'] = $data['quantity_shipped'] ?? null;
         $this->container['product_info'] = $data['product_info'] ?? null;
+        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['points_granted'] = $data['points_granted'] ?? null;
         $this->container['item_price'] = $data['item_price'] ?? null;
         $this->container['shipping_price'] = $data['shipping_price'] ?? null;
@@ -541,6 +547,28 @@ class OrderItem implements ModelInterface, ArrayAccess {
      */
     public function setProductInfo($product_info) {
         $this->container['product_info'] = $product_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_info.
+     *
+     * @return OrderItemBuyerInfo
+     */
+    public function getBuyerInfo() {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info.
+     *
+     * @param OrderItemBuyerInfo $buyer_info buyer_info
+     *
+     * @return $this
+     */
+    public function setBuyerInfo($buyer_info) {
+        $this->container['buyer_info'] = $buyer_info;
 
         return $this;
     }

@@ -45,6 +45,7 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'buyer_info'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
         'amazon_order_id'                     => 'string',
         'seller_order_id'                     => 'string',
         'purchase_date'                       => 'string',
@@ -87,6 +88,7 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'buyer_info'                          => null,
         'amazon_order_id'                     => null,
         'seller_order_id'                     => null,
         'purchase_date'                       => null,
@@ -148,6 +150,7 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $attributeMap = [
+        'buyer_info'                          => 'BuyerInfo',
         'amazon_order_id'                     => 'AmazonOrderId',
         'seller_order_id'                     => 'SellerOrderId',
         'purchase_date'                       => 'PurchaseDate',
@@ -190,6 +193,7 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $setters = [
+        'buyer_info'                          => 'setBuyerInfo',
         'amazon_order_id'                     => 'setAmazonOrderId',
         'seller_order_id'                     => 'setSellerOrderId',
         'purchase_date'                       => 'setPurchaseDate',
@@ -232,6 +236,7 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $getters = [
+        'buyer_info'                          => 'getBuyerInfo',
         'amazon_order_id'                     => 'getAmazonOrderId',
         'seller_order_id'                     => 'getSellerOrderId',
         'purchase_date'                       => 'getPurchaseDate',
@@ -392,6 +397,7 @@ class Order implements ModelInterface, ArrayAccess {
      *                      initializing the model
      */
     public function __construct(array $data = null) {
+        $this->container['buyer_info'] = isset($data['buyer_info']) ? $data['buyer_info'] : null;
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
         $this->container['purchase_date'] = isset($data['purchase_date']) ? $data['purchase_date'] : null;
@@ -492,6 +498,28 @@ class Order implements ModelInterface, ArrayAccess {
      */
     public function valid() {
         return 0 === count($this->listInvalidProperties());
+    }
+
+    /**
+     * Gets buyer_info.
+     *
+     * @return OrderBuyerInfo
+     */
+    public function getBuyerInfo() {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info.
+     *
+     * @param OrderBuyerInfo $buyer_info buyer_info
+     *
+     * @return $this
+     */
+    public function setBuyerInfo($buyer_info) {
+        $this->container['buyer_info'] = $buyer_info;
+
+        return $this;
     }
 
     /**
