@@ -45,7 +45,6 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'buyer_info'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
         'amazon_order_id'                     => 'string',
         'seller_order_id'                     => 'string',
         'purchase_date'                       => 'string',
@@ -80,7 +79,10 @@ class Order implements ModelInterface, ArrayAccess {
         'is_estimated_ship_date_set'          => 'bool',
         'is_sold_by_ab'                       => 'bool',
         'assigned_ship_from_location_address' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Address',
-        'fulfillment_instruction'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction',];
+        'fulfillment_instruction'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\FulfillmentInstruction',
+        'is_ispu'                             => 'bool',
+        'buyer_info'                          => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
+        'shipping_address'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Address',];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -88,7 +90,6 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'buyer_info'                          => null,
         'amazon_order_id'                     => null,
         'seller_order_id'                     => null,
         'purchase_date'                       => null,
@@ -123,7 +124,10 @@ class Order implements ModelInterface, ArrayAccess {
         'is_estimated_ship_date_set'          => null,
         'is_sold_by_ab'                       => null,
         'assigned_ship_from_location_address' => null,
-        'fulfillment_instruction'             => null,];
+        'fulfillment_instruction'             => null,
+        'is_ispu'                             => null,
+        'buyer_info'                          => null,
+        'shipping_address'                    => null,];
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -150,7 +154,6 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $attributeMap = [
-        'buyer_info'                          => 'BuyerInfo',
         'amazon_order_id'                     => 'AmazonOrderId',
         'seller_order_id'                     => 'SellerOrderId',
         'purchase_date'                       => 'PurchaseDate',
@@ -185,7 +188,10 @@ class Order implements ModelInterface, ArrayAccess {
         'is_estimated_ship_date_set'          => 'IsEstimatedShipDateSet',
         'is_sold_by_ab'                       => 'IsSoldByAB',
         'assigned_ship_from_location_address' => 'AssignedShipFromLocationAddress',
-        'fulfillment_instruction'             => 'FulfillmentInstruction',];
+        'fulfillment_instruction'             => 'FulfillmentInstruction',
+        'is_ispu'                             => 'IsISPU',
+        'buyer_info'                          => 'BuyerInfo',
+        'shipping_address'                    => 'ShippingAddress',];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
@@ -193,7 +199,6 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $setters = [
-        'buyer_info'                          => 'setBuyerInfo',
         'amazon_order_id'                     => 'setAmazonOrderId',
         'seller_order_id'                     => 'setSellerOrderId',
         'purchase_date'                       => 'setPurchaseDate',
@@ -228,7 +233,10 @@ class Order implements ModelInterface, ArrayAccess {
         'is_estimated_ship_date_set'          => 'setIsEstimatedShipDateSet',
         'is_sold_by_ab'                       => 'setIsSoldByAb',
         'assigned_ship_from_location_address' => 'setAssignedShipFromLocationAddress',
-        'fulfillment_instruction'             => 'setFulfillmentInstruction',];
+        'fulfillment_instruction'             => 'setFulfillmentInstruction',
+        'is_ispu'                             => 'setIsISPU',
+        'buyer_info'                          => 'setBuyerInfo',
+        'shipping_address'                    => 'setShippingAddress',];
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
@@ -236,7 +244,6 @@ class Order implements ModelInterface, ArrayAccess {
      * @var string[]
      */
     protected static $getters = [
-        'buyer_info'                          => 'getBuyerInfo',
         'amazon_order_id'                     => 'getAmazonOrderId',
         'seller_order_id'                     => 'getSellerOrderId',
         'purchase_date'                       => 'getPurchaseDate',
@@ -271,7 +278,10 @@ class Order implements ModelInterface, ArrayAccess {
         'is_estimated_ship_date_set'          => 'getIsEstimatedShipDateSet',
         'is_sold_by_ab'                       => 'getIsSoldByAb',
         'assigned_ship_from_location_address' => 'getAssignedShipFromLocationAddress',
-        'fulfillment_instruction'             => 'getFulfillmentInstruction',];
+        'fulfillment_instruction'             => 'getFulfillmentInstruction',
+        'is_ispu'                             => 'getIsISPU',
+        'buyer_info'                          => 'getBuyerInfo',
+        'shipping_address'                    => 'getShippingAddress',];
 
     /**
      * Array of attributes where the key is the local name,
@@ -397,7 +407,6 @@ class Order implements ModelInterface, ArrayAccess {
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['buyer_info'] = isset($data['buyer_info']) ? $data['buyer_info'] : null;
         $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
         $this->container['seller_order_id'] = isset($data['seller_order_id']) ? $data['seller_order_id'] : null;
         $this->container['purchase_date'] = isset($data['purchase_date']) ? $data['purchase_date'] : null;
@@ -433,6 +442,9 @@ class Order implements ModelInterface, ArrayAccess {
         $this->container['is_sold_by_ab'] = isset($data['is_sold_by_ab']) ? $data['is_sold_by_ab'] : null;
         $this->container['assigned_ship_from_location_address'] = isset($data['assigned_ship_from_location_address']) ? $data['assigned_ship_from_location_address'] : null;
         $this->container['fulfillment_instruction'] = isset($data['fulfillment_instruction']) ? $data['fulfillment_instruction'] : null;
+        $this->container['is_ispu'] = isset($data['is_ispu']) ? $data['is_ispu'] : null;
+        $this->container['buyer_info'] = isset($data['buyer_info']) ? $data['buyer_info'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
     }
 
     /**
@@ -498,28 +510,6 @@ class Order implements ModelInterface, ArrayAccess {
      */
     public function valid() {
         return 0 === count($this->listInvalidProperties());
-    }
-
-    /**
-     * Gets buyer_info.
-     *
-     * @return OrderBuyerInfo
-     */
-    public function getBuyerInfo() {
-        return $this->container['buyer_info'];
-    }
-
-    /**
-     * Sets buyer_info.
-     *
-     * @param OrderBuyerInfo $buyer_info buyer_info
-     *
-     * @return $this
-     */
-    public function setBuyerInfo($buyer_info) {
-        $this->container['buyer_info'] = $buyer_info;
-
-        return $this;
     }
 
     /**
@@ -1304,6 +1294,72 @@ class Order implements ModelInterface, ArrayAccess {
      */
     public function setFulfillmentInstruction($fulfillment_instruction) {
         $this->container['fulfillment_instruction'] = $fulfillment_instruction;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_ispu.
+     *
+     * @return bool
+     */
+    public function getIsISPU() {
+        return $this->container['is_ispu'];
+    }
+
+    /**
+     * Sets is_ispu.
+     *
+     * @param bool $is_ispu When true, the order is an ISPU.
+     *
+     * @return $this
+     */
+    public function setIsISPU($is_ispu) {
+        $this->container['is_ispu'] = $is_ispu;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_info.
+     *
+     * @return OrderBuyerInfo
+     */
+    public function getBuyerInfo() {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info.
+     *
+     * @param OrderBuyerInfo $buyer_info buyer_info
+     *
+     * @return $this
+     */
+    public function setBuyerInfo($buyer_info) {
+        $this->container['buyer_info'] = $buyer_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_address.
+     *
+     * @return Address
+     */
+    public function getShippingAddress() {
+        return $this->container['shipping_address'];
+    }
+
+    /**
+     * Sets shipping_address.
+     *
+     * @param Address $shipping_address shipping_address
+     *
+     * @return $this
+     */
+    public function setShippingAddress($shipping_address) {
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }
