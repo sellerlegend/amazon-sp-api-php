@@ -470,32 +470,32 @@ class Order implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getOrderStatusAllowableValues();
         if (!is_null($this->container['order_status']) && !in_array($this->container['order_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'order_status', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'order_status', must be one of '%s'",
+                $this->container['order_status'], implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
         if (!is_null($this->container['fulfillment_channel']) && !in_array($this->container['fulfillment_channel'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'fulfillment_channel', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
+                $this->container['fulfillment_channel'], implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getPaymentMethodAllowableValues();
         if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'payment_method', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'payment_method', must be one of '%s'",
+                $this->container['payment_method'], implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getOrderTypeAllowableValues();
         if (!is_null($this->container['order_type']) && !in_array($this->container['order_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'order_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'order_type', must be one of '%s'",
+                $this->container['order_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -619,7 +619,10 @@ class Order implements ModelInterface, ArrayAccess {
     public function setOrderStatus($order_status) {
         $allowedValues = $this->getOrderStatusAllowableValues();
         if (!in_array($order_status, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'order_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'order_status', must be one of '%s'",
+                $order_status, implode("', '", $allowedValues)
+            ));
         }
         $this->container['order_status'] = $order_status;
 
@@ -645,7 +648,10 @@ class Order implements ModelInterface, ArrayAccess {
     public function setFulfillmentChannel($fulfillment_channel) {
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
         if (!is_null($fulfillment_channel) && !in_array($fulfillment_channel, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'fulfillment_channel', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
+                $fulfillment_channel, implode("', '", $allowedValues)
+            ));
         }
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
@@ -825,7 +831,10 @@ class Order implements ModelInterface, ArrayAccess {
     public function setPaymentMethod($payment_method) {
         $allowedValues = $this->getPaymentMethodAllowableValues();
         if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'payment_method', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'payment_method', must be one of '%s'",
+                $payment_method, implode("', '", $allowedValues)
+            ));
         }
         $this->container['payment_method'] = $payment_method;
 
@@ -961,7 +970,10 @@ class Order implements ModelInterface, ArrayAccess {
     public function setOrderType($order_type) {
         $allowedValues = $this->getOrderTypeAllowableValues();
         if (!is_null($order_type) && !in_array($order_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'order_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'order_type', must be one of '%s'",
+                $order_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['order_type'] = $order_type;
 

@@ -185,8 +185,8 @@ class ServiceLocation implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getServiceLocationTypeAllowableValues();
         if (!is_null($this->container['service_location_type']) && !in_array($this->container['service_location_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'service_location_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'service_location_type', must be one of '%s'",
+                $this->container['service_location_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -222,7 +222,10 @@ class ServiceLocation implements ModelInterface, ArrayAccess {
     public function setServiceLocationType($service_location_type) {
         $allowedValues = $this->getServiceLocationTypeAllowableValues();
         if (!is_null($service_location_type) && !in_array($service_location_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'service_location_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'service_location_type', must be one of '%s'",
+                $service_location_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['service_location_type'] = $service_location_type;
 

@@ -209,8 +209,8 @@ class Appointment implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getAppointmentStatusAllowableValues();
         if (!is_null($this->container['appointment_status']) && !in_array($this->container['appointment_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'appointment_status', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'appointment_status', must be one of '%s'",
+                $this->container['appointment_status'], implode("', '", $allowedValues)
             );
         }
 
@@ -268,7 +268,10 @@ class Appointment implements ModelInterface, ArrayAccess {
     public function setAppointmentStatus($appointment_status) {
         $allowedValues = $this->getAppointmentStatusAllowableValues();
         if (!is_null($appointment_status) && !in_array($appointment_status, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'appointment_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'appointment_status', must be one of '%s'",
+                $appointment_status, implode("', '", $allowedValues)
+            ));
         }
         $this->container['appointment_status'] = $appointment_status;
 

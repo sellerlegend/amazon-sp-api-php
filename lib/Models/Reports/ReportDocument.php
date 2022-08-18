@@ -201,8 +201,8 @@ class ReportDocument implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getCompressionAlgorithmAllowableValues();
         if (!is_null($this->container['compression_algorithm']) && !in_array($this->container['compression_algorithm'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'compression_algorithm', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'compression_algorithm', must be one of '%s'",
+                $this->container['compression_algorithm'], implode("', '", $allowedValues)
             );
         }
 
@@ -304,7 +304,10 @@ class ReportDocument implements ModelInterface, ArrayAccess {
     public function setCompressionAlgorithm($compression_algorithm) {
         $allowedValues = $this->getCompressionAlgorithmAllowableValues();
         if (!is_null($compression_algorithm) && !in_array($compression_algorithm, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'compression_algorithm', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'compression_algorithm', must be one of '%s'",
+                $compression_algorithm, implode("', '", $allowedValues)
+            ));
         }
         $this->container['compression_algorithm'] = $compression_algorithm;
 

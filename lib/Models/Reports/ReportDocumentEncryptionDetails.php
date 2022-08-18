@@ -190,8 +190,8 @@ class ReportDocumentEncryptionDetails implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getStandardAllowableValues();
         if (!is_null($this->container['standard']) && !in_array($this->container['standard'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'standard', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'standard', must be one of '%s'",
+                $this->container['standard'], implode("', '", $allowedValues)
             );
         }
 
@@ -234,7 +234,10 @@ class ReportDocumentEncryptionDetails implements ModelInterface, ArrayAccess {
     public function setStandard($standard) {
         $allowedValues = $this->getStandardAllowableValues();
         if (!in_array($standard, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'standard', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'standard', must be one of '%s'",
+                $standard, implode("', '", $allowedValues)
+            ));
         }
         $this->container['standard'] = $standard;
 

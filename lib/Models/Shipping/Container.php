@@ -207,8 +207,8 @@ class Container implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getContainerTypeAllowableValues();
         if (!is_null($this->container['container_type']) && !in_array($this->container['container_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'container_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'container_type', must be one of '%s'",
+                $this->container['container_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -260,7 +260,10 @@ class Container implements ModelInterface, ArrayAccess {
     public function setContainerType($container_type) {
         $allowedValues = $this->getContainerTypeAllowableValues();
         if (!is_null($container_type) && !in_array($container_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'container_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'container_type', must be one of '%s'",
+                $container_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['container_type'] = $container_type;
 

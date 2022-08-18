@@ -241,8 +241,8 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getPeriodAllowableValues();
         if (!is_null($this->container['period']) && !in_array($this->container['period'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'period', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'period', must be one of '%s'",
+                $this->container['period'], implode("', '", $allowedValues)
             );
         }
 
@@ -344,7 +344,10 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess {
     public function setPeriod($period) {
         $allowedValues = $this->getPeriodAllowableValues();
         if (!in_array($period, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'period', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'period', must be one of '%s'",
+                $period, implode("', '", $allowedValues)
+            ));
         }
         $this->container['period'] = $period;
 

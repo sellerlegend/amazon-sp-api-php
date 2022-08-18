@@ -183,8 +183,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
         if (!is_null($this->container['feature_fulfillment_policy']) && !in_array($this->container['feature_fulfillment_policy'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'feature_fulfillment_policy', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
+                $this->container['feature_fulfillment_policy'], implode("', '", $allowedValues)
             );
         }
 
@@ -242,7 +242,10 @@ class FeatureSettings implements ModelInterface, ArrayAccess {
     public function setFeatureFulfillmentPolicy($feature_fulfillment_policy) {
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
         if (!is_null($feature_fulfillment_policy) && !in_array($feature_fulfillment_policy, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'feature_fulfillment_policy', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
+                $feature_fulfillment_policy, implode("', '", $allowedValues)
+            ));
         }
         $this->container['feature_fulfillment_policy'] = $feature_fulfillment_policy;
 

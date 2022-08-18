@@ -206,8 +206,8 @@ class Poa implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getPoaTypeAllowableValues();
         if (!is_null($this->container['poa_type']) && !in_array($this->container['poa_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'poa_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'poa_type', must be one of '%s'",
+                $this->container['poa_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -331,7 +331,10 @@ class Poa implements ModelInterface, ArrayAccess {
     public function setPoaType($poa_type) {
         $allowedValues = $this->getPoaTypeAllowableValues();
         if (!is_null($poa_type) && !in_array($poa_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'poa_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'poa_type', must be one of '%s'",
+                $poa_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['poa_type'] = $poa_type;
 

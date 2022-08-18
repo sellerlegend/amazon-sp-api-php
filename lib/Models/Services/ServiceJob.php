@@ -260,8 +260,8 @@ class ServiceJob implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getServiceJobStatusAllowableValues();
         if (!is_null($this->container['service_job_status']) && !in_array($this->container['service_job_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'service_job_status', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'service_job_status', must be one of '%s'",
+                $this->container['service_job_status'], implode("', '", $allowedValues)
             );
         }
 
@@ -341,7 +341,10 @@ class ServiceJob implements ModelInterface, ArrayAccess {
     public function setServiceJobStatus($service_job_status) {
         $allowedValues = $this->getServiceJobStatusAllowableValues();
         if (!is_null($service_job_status) && !in_array($service_job_status, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'service_job_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'service_job_status', must be one of '%s'",
+                $service_job_status, implode("', '", $allowedValues)
+            ));
         }
         $this->container['service_job_status'] = $service_job_status;
 

@@ -181,8 +181,8 @@ class Granularity implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getGranularityTypeAllowableValues();
         if (!is_null($this->container['granularity_type']) && !in_array($this->container['granularity_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'granularity_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'granularity_type', must be one of '%s'",
+                $this->container['granularity_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -218,7 +218,10 @@ class Granularity implements ModelInterface, ArrayAccess {
     public function setGranularityType($granularity_type) {
         $allowedValues = $this->getGranularityTypeAllowableValues();
         if (!is_null($granularity_type) && !in_array($granularity_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'granularity_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'granularity_type', must be one of '%s'",
+                $granularity_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['granularity_type'] = $granularity_type;
 

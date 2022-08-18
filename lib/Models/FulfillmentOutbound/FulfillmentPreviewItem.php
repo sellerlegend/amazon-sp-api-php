@@ -210,8 +210,8 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getShippingWeightCalculationMethodAllowableValues();
         if (!is_null($this->container['shipping_weight_calculation_method']) && !in_array($this->container['shipping_weight_calculation_method'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'shipping_weight_calculation_method', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'shipping_weight_calculation_method', must be one of '%s'",
+                $this->container['shipping_weight_calculation_method'], implode("', '", $allowedValues)
             );
         }
 
@@ -335,7 +335,10 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess {
     public function setShippingWeightCalculationMethod($shipping_weight_calculation_method) {
         $allowedValues = $this->getShippingWeightCalculationMethodAllowableValues();
         if (!is_null($shipping_weight_calculation_method) && !in_array($shipping_weight_calculation_method, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'shipping_weight_calculation_method', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'shipping_weight_calculation_method', must be one of '%s'",
+                $shipping_weight_calculation_method, implode("', '", $allowedValues)
+            ));
         }
         $this->container['shipping_weight_calculation_method'] = $shipping_weight_calculation_method;
 

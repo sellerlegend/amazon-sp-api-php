@@ -195,8 +195,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getLabelFormatAllowableValues();
         if (!is_null($this->container['label_format']) && !in_array($this->container['label_format'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'label_format', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'label_format', must be one of '%s'",
+                $this->container['label_format'], implode("', '", $allowedValues)
             );
         }
 
@@ -206,8 +206,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getLabelStockSizeAllowableValues();
         if (!is_null($this->container['label_stock_size']) && !in_array($this->container['label_stock_size'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'label_stock_size', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'label_stock_size', must be one of '%s'",
+                $this->container['label_stock_size'], implode("', '", $allowedValues)
             );
         }
 
@@ -243,7 +243,10 @@ class LabelSpecification implements ModelInterface, ArrayAccess {
     public function setLabelFormat($label_format) {
         $allowedValues = $this->getLabelFormatAllowableValues();
         if (!in_array($label_format, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'label_format', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'label_format', must be one of '%s'",
+                $label_format, implode("', '", $allowedValues)
+            ));
         }
         $this->container['label_format'] = $label_format;
 
@@ -269,7 +272,10 @@ class LabelSpecification implements ModelInterface, ArrayAccess {
     public function setLabelStockSize($label_stock_size) {
         $allowedValues = $this->getLabelStockSizeAllowableValues();
         if (!in_array($label_stock_size, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'label_stock_size', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'label_stock_size', must be one of '%s'",
+                $label_stock_size, implode("', '", $allowedValues)
+            ));
         }
         $this->container['label_stock_size'] = $label_stock_size;
 

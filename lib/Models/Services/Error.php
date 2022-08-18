@@ -201,8 +201,8 @@ class Error implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getErrorLevelAllowableValues();
         if (!is_null($this->container['error_level']) && !in_array($this->container['error_level'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'error_level', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'error_level', must be one of '%s'",
+                $this->container['error_level'], implode("', '", $allowedValues)
             );
         }
 
@@ -304,7 +304,10 @@ class Error implements ModelInterface, ArrayAccess {
     public function setErrorLevel($error_level) {
         $allowedValues = $this->getErrorLevelAllowableValues();
         if (!is_null($error_level) && !in_array($error_level, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'error_level', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'error_level', must be one of '%s'",
+                $error_level, implode("', '", $allowedValues)
+            ));
         }
         $this->container['error_level'] = $error_level;
 

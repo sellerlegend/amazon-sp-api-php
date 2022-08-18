@@ -232,8 +232,8 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getFulfillmentShipmentStatusAllowableValues();
         if (!is_null($this->container['fulfillment_shipment_status']) && !in_array($this->container['fulfillment_shipment_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'fulfillment_shipment_status', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'fulfillment_shipment_status', must be one of '%s'",
+                $this->container['fulfillment_shipment_status'], implode("', '", $allowedValues)
             );
         }
 
@@ -317,7 +317,10 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess {
     public function setFulfillmentShipmentStatus($fulfillment_shipment_status) {
         $allowedValues = $this->getFulfillmentShipmentStatusAllowableValues();
         if (!in_array($fulfillment_shipment_status, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'fulfillment_shipment_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'fulfillment_shipment_status', must be one of '%s'",
+                $fulfillment_shipment_status, implode("', '", $allowedValues)
+            ));
         }
         $this->container['fulfillment_shipment_status'] = $fulfillment_shipment_status;
 

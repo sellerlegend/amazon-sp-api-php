@@ -191,8 +191,8 @@ class FeeLineItem implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getFeeTypeAllowableValues();
         if (!is_null($this->container['fee_type']) && !in_array($this->container['fee_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'fee_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'fee_type', must be one of '%s'",
+                $this->container['fee_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -232,7 +232,10 @@ class FeeLineItem implements ModelInterface, ArrayAccess {
     public function setFeeType($fee_type) {
         $allowedValues = $this->getFeeTypeAllowableValues();
         if (!in_array($fee_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'fee_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'fee_type', must be one of '%s'",
+                $fee_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['fee_type'] = $fee_type;
 

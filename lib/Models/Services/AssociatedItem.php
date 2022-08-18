@@ -217,8 +217,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getItemStatusAllowableValues();
         if (!is_null($this->container['item_status']) && !in_array($this->container['item_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'item_status', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'item_status', must be one of '%s'",
+                $this->container['item_status'], implode("', '", $allowedValues)
             );
         }
 
@@ -342,7 +342,10 @@ class AssociatedItem implements ModelInterface, ArrayAccess {
     public function setItemStatus($item_status) {
         $allowedValues = $this->getItemStatusAllowableValues();
         if (!is_null($item_status) && !in_array($item_status, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'item_status', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'item_status', must be one of '%s'",
+                $item_status, implode("', '", $allowedValues)
+            ));
         }
         $this->container['item_status'] = $item_status;
 

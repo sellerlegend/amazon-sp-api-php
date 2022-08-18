@@ -197,8 +197,8 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
         if (!is_null($this->container['availability_type']) && !in_array($this->container['availability_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'availability_type', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'availability_type', must be one of '%s'",
+                $this->container['availability_type'], implode("', '", $allowedValues)
             );
         }
 
@@ -300,7 +300,10 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess {
     public function setAvailabilityType($availability_type) {
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
         if (!is_null($availability_type) && !in_array($availability_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'availability_type', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'availability_type', must be one of '%s'",
+                $availability_type, implode("', '", $allowedValues)
+            ));
         }
         $this->container['availability_type'] = $availability_type;
 

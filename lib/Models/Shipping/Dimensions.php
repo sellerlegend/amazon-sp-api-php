@@ -207,8 +207,8 @@ class Dimensions implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getUnitAllowableValues();
         if (!is_null($this->container['unit']) && !in_array($this->container['unit'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'unit', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'unit', must be one of '%s'",
+                $this->container['unit'], implode("', '", $allowedValues)
             );
         }
 
@@ -310,7 +310,10 @@ class Dimensions implements ModelInterface, ArrayAccess {
     public function setUnit($unit) {
         $allowedValues = $this->getUnitAllowableValues();
         if (!in_array($unit, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'unit', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'unit', must be one of '%s'",
+                $unit, implode("', '", $allowedValues)
+            ));
         }
         $this->container['unit'] = $unit;
 

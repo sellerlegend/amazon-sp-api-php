@@ -381,8 +381,8 @@ class OrderItem implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
         if (!is_null($this->container['deemed_reseller_category']) && !in_array($this->container['deemed_reseller_category'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'deemed_reseller_category', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
+                $this->container['deemed_reseller_category'], implode("', '", $allowedValues)
             );
         }
 
@@ -1100,7 +1100,10 @@ class OrderItem implements ModelInterface, ArrayAccess {
     public function setDeemedResellerCategory($deemed_reseller_category) {
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
         if (!is_null($deemed_reseller_category) && !in_array($deemed_reseller_category, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'deemed_reseller_category', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
+                $deemed_reseller_category, implode("', '", $allowedValues)
+            ));
         }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
 

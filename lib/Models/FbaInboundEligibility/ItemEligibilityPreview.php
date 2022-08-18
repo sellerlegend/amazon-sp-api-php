@@ -292,8 +292,8 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getProgramAllowableValues();
         if (!is_null($this->container['program']) && !in_array($this->container['program'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'program', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'program', must be one of '%s'",
+                $this->container['program'], implode("', '", $allowedValues)
             );
         }
 
@@ -377,7 +377,10 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess {
     public function setProgram($program) {
         $allowedValues = $this->getProgramAllowableValues();
         if (!in_array($program, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'program', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'program', must be one of '%s'",
+                $program, implode("', '", $allowedValues)
+            ));
         }
         $this->container['program'] = $program;
 
@@ -425,7 +428,10 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess {
     public function setIneligibilityReasonList($ineligibility_reason_list) {
         $allowedValues = $this->getIneligibilityReasonListAllowableValues();
         if (!is_null($ineligibility_reason_list) && array_diff($ineligibility_reason_list, $allowedValues)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'ineligibility_reason_list', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'ineligibility_reason_list', must be one of '%s'",
+                implode("', '", $ineligibility_reason_list), implode("', '", $allowedValues)
+            ));
         }
         $this->container['ineligibility_reason_list'] = $ineligibility_reason_list;
 

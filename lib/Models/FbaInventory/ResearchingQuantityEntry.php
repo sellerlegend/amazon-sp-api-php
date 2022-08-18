@@ -188,8 +188,8 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess {
         $allowedValues = $this->getNameAllowableValues();
         if (!is_null($this->container['name']) && !in_array($this->container['name'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'name', must be one of '%s'",
-                implode("', '", $allowedValues)
+                "invalid value '%s' for 'name', must be one of '%s'",
+                $this->container['name'], implode("', '", $allowedValues)
             );
         }
 
@@ -229,7 +229,10 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess {
     public function setName($name) {
         $allowedValues = $this->getNameAllowableValues();
         if (!in_array($name, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf("Invalid value for 'name', must be one of '%s'", implode("', '", $allowedValues)));
+            throw new InvalidArgumentException(sprintf(
+                "Invalid value '%s' for 'name', must be one of '%s'",
+                $name, implode("', '", $allowedValues)
+            ));
         }
         $this->container['name'] = $name;
 
