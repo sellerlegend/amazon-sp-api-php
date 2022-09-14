@@ -68,7 +68,7 @@ $config->setAccessKey($assumedRole->getAccessKeyId());
 $config->setSecretKey($assumedRole->getSecretAccessKey());
 $config->setRegion($options['region']);
 $config->setSecurityToken($assumedRole->getSessionToken());
-$apiInstance = new \SellerLegend\AmazonSellingPartnerAPI\Api\CatalogApi($config);
+$apiInstance = new \SellerLegend\AmazonSellingPartnerAPI\Api\CatalogItemsApi($config);
 $marketplace_id = 'A1PA6795UKMFR9';
 $asin = 'B0002ZFTJA';
 
@@ -105,7 +105,7 @@ $config->setAccessToken($accessToken);
 $config->setAccessKey($options['access_key']);
 $config->setSecretKey($options['secret_key']);
 $config->setRegion($options['region']);
-$apiInstance = new \SellerLegend\AmazonSellingPartnerAPI\Api\CatalogApi($config);
+$apiInstance = new \SellerLegend\AmazonSellingPartnerAPI\Api\CatalogItemsApi($config);
 $marketplace_id = 'A1PA6795UKMFR9';
 $asin = 'B0002ZFTJA';
 
