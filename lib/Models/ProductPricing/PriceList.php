@@ -236,6 +236,6 @@ class PriceList implements ModelInterface, ArrayAccess, IterableType {
     }
 
     public function getSubClass() {
-        return PriceType::class;
+        return Price::class;
     }
 }
