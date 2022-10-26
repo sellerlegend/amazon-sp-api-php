@@ -191,7 +191,7 @@ class FbaInventoryApi {
 
         // query params
         if (null !== $details) {
-            $queryParams['details'] = ObjectSerializer::toQueryValue($details);
+            $queryParams['details'] = $details;
         }
         // query params
         if (null !== $granularity_type) {

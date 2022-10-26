@@ -219,7 +219,11 @@ class ItemImage implements ModelInterface, ArrayAccess, JsonSerializable, Iterat
             $invalidProperties[] = "'variant' can't be null";
         }
         $allowedValues = $this->getVariantAllowableValues();
+<<<<<<< HEAD
         if (!is_null($this->container['variant']) && !in_array(strtoupper($this->container['variant']), $allowedValues, true)) {
+=======
+        if (!is_null($this->container['variant']) && !in_array($this->container['variant'], $allowedValues, true)) {
+>>>>>>> pricing_api_updates
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'variant', must be one of '%s'",
                 $this->container['variant'],
@@ -256,7 +260,11 @@ class ItemImage implements ModelInterface, ArrayAccess, JsonSerializable, Iterat
      * @return string
      */
     public function getVariant() {
+<<<<<<< HEAD
         return strtoupper($this->container['variant']);
+=======
+        return $this->container['variant'];
+>>>>>>> pricing_api_updates
     }
 
     /**
@@ -268,7 +276,11 @@ class ItemImage implements ModelInterface, ArrayAccess, JsonSerializable, Iterat
      */
     public function setVariant($variant) {
         $allowedValues = $this->getVariantAllowableValues();
+<<<<<<< HEAD
         if (!in_array(strtoupper($variant), $allowedValues, true)) {
+=======
+        if (!in_array($variant, $allowedValues, true)) {
+>>>>>>> pricing_api_updates
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'variant', must be one of '%s'",
@@ -277,7 +289,11 @@ class ItemImage implements ModelInterface, ArrayAccess, JsonSerializable, Iterat
                 )
             );
         }
+<<<<<<< HEAD
         $this->container['variant'] = strtoupper($variant);
+=======
+        $this->container['variant'] = $variant;
+>>>>>>> pricing_api_updates
 
         return $this;
     }
