@@ -25,6 +25,9 @@ namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
  * @author   Stefan Neuhaus / ClouSale
  */
 class ShipmentStatus {
+
+    public $value;
+
     /**
      * Possible values of this enum.
      */
@@ -38,6 +41,9 @@ class ShipmentStatus {
     const IN_TRANSIT = 'IN_TRANSIT';
     const DELIVERED = 'DELIVERED';
     const CHECKED_IN = 'CHECKED_IN';
+    const READY_TO_SHIP = 'READY_TO_SHIP';
+    const CREATED = 'CREATED';
+    const ABANDONED = 'ABANDONED';
 
     /**
      * Gets allowable values of the enum.
@@ -55,6 +61,27 @@ class ShipmentStatus {
             self::ERROR,
             self::IN_TRANSIT,
             self::DELIVERED,
-            self::CHECKED_IN,];
+            self::CHECKED_IN,
+            self::READY_TO_SHIP,
+            self::CREATED,
+            self::ABANDONED,
+        ];
+    }
+
+    public function __construct($value) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'ShipmentStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->value;
     }
 }
