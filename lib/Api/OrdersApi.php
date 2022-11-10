@@ -25,7 +25,7 @@ use SellerLegend\AmazonSellingPartnerAPI\Models\Orders\UpdateVerificationStatusR
 use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
- * OrdersV0Api Class Doc Comment
+ * OrdersApi Class Doc Comment
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -97,8 +97,6 @@ class OrdersApi {
     /**
      * Operation getOrderAsync
      *
-     *
-     *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
@@ -116,8 +114,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderAsyncWithHttpInfo
-     *
-     *
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
@@ -143,9 +139,7 @@ class OrdersApi {
     public function getOrderRequest($order_id, $data_elements = null) {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $order_id when calling getOrder'
-            );
+            throw new InvalidArgumentException('Missing the required parameter $order_id when calling getOrder');
         }
 
         $resourcePath = '/orders/v0/orders/{orderId}';
@@ -194,7 +188,7 @@ class OrdersApi {
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrderAddressResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of GetOrderAddressResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws InvalidArgumentException
      * @throws ApiException on non-2xx response
      */
@@ -205,8 +199,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderAddressAsync
-     *
-     *
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -224,8 +216,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderAddressAsyncWithHttpInfo
-     *
-     *
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -249,9 +239,7 @@ class OrdersApi {
     public function getOrderAddressRequest($order_id) {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $order_id when calling getOrderAddress'
-            );
+            throw new InvalidArgumentException('Missing the required parameter $order_id when calling getOrderAddress');
         }
 
         $resourcePath = '/orders/v0/orders/{orderId}/address';
@@ -292,7 +280,7 @@ class OrdersApi {
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrderBuyerInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of GetOrderBuyerInfoResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws InvalidArgumentException
      * @throws ApiException on non-2xx response
      */
@@ -303,8 +291,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderBuyerInfoAsync
-     *
-     *
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -322,8 +308,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderBuyerInfoAsyncWithHttpInfo
-     *
-     *
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -347,9 +331,7 @@ class OrdersApi {
     public function getOrderBuyerInfoRequest($order_id) {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $order_id when calling getOrderBuyerInfo'
-            );
+            throw new InvalidArgumentException('Missing the required parameter $order_id when calling getOrderBuyerInfo');
         }
 
         $resourcePath = '/orders/v0/orders/{orderId}/buyerInfo';
@@ -394,7 +376,7 @@ class OrdersApi {
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      * @param string[] $data_elements An array of restricted order data elements to retrieve (the only valid array element is \&quot;buyerInfo\&quot;) (optional)
      *
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrderItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of GetOrderItemsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws InvalidArgumentException
      * @throws ApiException on non-2xx response
      */
@@ -405,8 +387,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderItemsAsync
-     *
-     *
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -422,8 +402,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderItemsAsyncWithHttpInfo
-     *
-     *
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -512,7 +490,7 @@ class OrdersApi {
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrderItemsBuyerInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of GetOrderItemsBuyerInfoResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws InvalidArgumentException
      * @throws ApiException on non-2xx response
      */
@@ -523,8 +501,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderItemsBuyerInfoAsync
-     *
-     *
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -543,8 +519,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderItemsBuyerInfoAsyncWithHttpInfo
-     *
-     *
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -621,7 +595,7 @@ class OrdersApi {
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrderRegulatedInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of GetOrderRegulatedInfoResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws InvalidArgumentException
      * @throws ApiException on non-2xx response
      */
@@ -632,8 +606,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderRegulatedInfoAsync
-     *
-     *
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -652,8 +624,6 @@ class OrdersApi {
 
     /**
      * Operation getOrderRegulatedInfoAsyncWithHttpInfo
-     *
-     *
      *
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -758,7 +728,7 @@ class OrdersApi {
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrdersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of GetOrdersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null) {
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
@@ -767,8 +737,6 @@ class OrdersApi {
 
     /**
      * Operation getOrdersAsync
-     *
-     *
      *
      * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
@@ -804,8 +772,6 @@ class OrdersApi {
 
     /**
      * Operation getOrdersAsyncWithHttpInfo
-     *
-     *
      *
      * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
@@ -870,11 +836,11 @@ class OrdersApi {
             );
         }
         if (count($marketplace_ids) > 50) {
-            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling OrdersApi.getOrders, number of items must be less than or equal to 50.');
         }
 
         if ($amazon_order_ids !== null && count($amazon_order_ids) > 50) {
-            throw new InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+            throw new InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersApi.getOrders, number of items must be less than or equal to 50.');
         }
 
 
