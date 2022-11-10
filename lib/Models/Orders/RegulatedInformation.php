@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * RegulatedInformation Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The regulated information collected during purchase and used to verify the order.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class RegulatedInformation implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'RegulatedInformation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'fields' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformationField[]'
     ];
 
     /**
@@ -46,8 +45,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'fields' => null
     ];
 
     /**
@@ -75,9 +73,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'fields' => 'Fields'
     ];
 
     /**
@@ -86,9 +82,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'fields' => 'setFields'
     ];
 
     /**
@@ -97,9 +91,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'fields' => 'getFields'
     ];
 
     /**
@@ -153,8 +145,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['fields'] = $data['fields'] ?? null;
     }
 
     /**
@@ -164,6 +155,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
+        if ($this->container['fields'] === null) {
+            $invalidProperties[] = "'fields' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,67 +171,25 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets fields
      *
-     * @return array[string]
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformationField[]
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getFields() {
+        return $this->container['fields'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets fields
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformationField[] $fields A list of regulated information fields as collected from the regulatory form.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
-     */
-    public function getErrors() {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
-     *
-     * @return self
-     */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setFields($fields) {
+        $this->container['fields'] = $fields;
 
         return $this;
     }
@@ -363,7 +315,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformation
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

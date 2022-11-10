@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * OrderRegulatedInfo Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The order&#39;s regulated information along with its verification status.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class OrderRegulatedInfo implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'OrderRegulatedInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'amazon_order_id'                     => 'string',
+        'regulated_information'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformation',
+        'requires_dosage_label'               => 'bool',
+        'regulated_order_verification_status' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedOrderVerificationStatus'
     ];
 
     /**
@@ -46,8 +48,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'amazon_order_id'                     => null,
+        'regulated_information'               => null,
+        'requires_dosage_label'               => null,
+        'regulated_order_verification_status' => null
     ];
 
     /**
@@ -75,9 +79,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'amazon_order_id'                     => 'AmazonOrderId',
+        'regulated_information'               => 'RegulatedInformation',
+        'requires_dosage_label'               => 'RequiresDosageLabel',
+        'regulated_order_verification_status' => 'RegulatedOrderVerificationStatus'
     ];
 
     /**
@@ -86,9 +91,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'amazon_order_id'                     => 'setAmazonOrderId',
+        'regulated_information'               => 'setRegulatedInformation',
+        'requires_dosage_label'               => 'setRequiresDosageLabel',
+        'regulated_order_verification_status' => 'setRegulatedOrderVerificationStatus'
     ];
 
     /**
@@ -97,9 +103,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'amazon_order_id'                     => 'getAmazonOrderId',
+        'regulated_information'               => 'getRegulatedInformation',
+        'requires_dosage_label'               => 'getRequiresDosageLabel',
+        'regulated_order_verification_status' => 'getRegulatedOrderVerificationStatus'
     ];
 
     /**
@@ -153,8 +160,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
+        $this->container['regulated_information'] = $data['regulated_information'] ?? null;
+        $this->container['requires_dosage_label'] = $data['requires_dosage_label'] ?? null;
+        $this->container['regulated_order_verification_status'] = $data['regulated_order_verification_status'] ?? null;
     }
 
     /**
@@ -164,6 +173,18 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
+        if ($this->container['amazon_order_id'] === null) {
+            $invalidProperties[] = "'amazon_order_id' can't be null";
+        }
+        if ($this->container['regulated_information'] === null) {
+            $invalidProperties[] = "'regulated_information' can't be null";
+        }
+        if ($this->container['requires_dosage_label'] === null) {
+            $invalidProperties[] = "'requires_dosage_label' can't be null";
+        }
+        if ($this->container['regulated_order_verification_status'] === null) {
+            $invalidProperties[] = "'regulated_order_verification_status' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,67 +198,91 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets amazon_order_id
      *
-     * @return array[string]
+     * @return string
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getAmazonOrderId() {
+        return $this->container['amazon_order_id'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets amazon_order_id
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string $amazon_order_id An Amazon-defined order identifier, in 3-7-7 format.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setAmazonOrderId($amazon_order_id) {
+        $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets regulated_information
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformation
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getRegulatedInformation() {
+        return $this->container['regulated_information'];
     }
 
     /**
-     * Sets errors
+     * Sets regulated_information
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedInformation $regulated_information regulated_information
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setRegulatedInformation($regulated_information) {
+        $this->container['regulated_information'] = $regulated_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets requires_dosage_label
+     *
+     * @return bool
+     */
+    public function getRequiresDosageLabel() {
+        return $this->container['requires_dosage_label'];
+    }
+
+    /**
+     * Sets requires_dosage_label
+     *
+     * @param bool $requires_dosage_label When true, the order requires attaching a dosage information label when shipped.
+     *
+     * @return self
+     */
+    public function setRequiresDosageLabel($requires_dosage_label) {
+        $this->container['requires_dosage_label'] = $requires_dosage_label;
+
+        return $this;
+    }
+
+    /**
+     * Gets regulated_order_verification_status
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedOrderVerificationStatus
+     */
+    public function getRegulatedOrderVerificationStatus() {
+        return $this->container['regulated_order_verification_status'];
+    }
+
+    /**
+     * Sets regulated_order_verification_status
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedOrderVerificationStatus $regulated_order_verification_status regulated_order_verification_status
+     *
+     * @return self
+     */
+    public function setRegulatedOrderVerificationStatus($regulated_order_verification_status) {
+        $this->container['regulated_order_verification_status'] = $regulated_order_verification_status;
 
         return $this;
     }
@@ -363,7 +408,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderRegulatedInfo
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

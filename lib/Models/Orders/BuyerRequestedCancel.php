@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * BuyerRequestedCancel Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description Information about whether or not a buyer requested cancellation.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class BuyerRequestedCancel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'BuyerRequestedCancel';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'is_buyer_requested_cancel' => 'bool',
+        'buyer_cancel_reason'       => 'string'
     ];
 
     /**
@@ -46,8 +46,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'is_buyer_requested_cancel' => null,
+        'buyer_cancel_reason'       => null
     ];
 
     /**
@@ -75,9 +75,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'is_buyer_requested_cancel' => 'IsBuyerRequestedCancel',
+        'buyer_cancel_reason'       => 'BuyerCancelReason'
     ];
 
     /**
@@ -86,9 +85,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'is_buyer_requested_cancel' => 'setIsBuyerRequestedCancel',
+        'buyer_cancel_reason'       => 'setBuyerCancelReason'
     ];
 
     /**
@@ -97,9 +95,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'is_buyer_requested_cancel' => 'getIsBuyerRequestedCancel',
+        'buyer_cancel_reason'       => 'getBuyerCancelReason'
     ];
 
     /**
@@ -153,8 +150,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['is_buyer_requested_cancel'] = $data['is_buyer_requested_cancel'] ?? null;
+        $this->container['buyer_cancel_reason'] = $data['buyer_cancel_reason'] ?? null;
     }
 
     /**
@@ -177,67 +174,47 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets is_buyer_requested_cancel
      *
-     * @return array[string]
+     * @return bool|null
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getIsBuyerRequestedCancel() {
+        return $this->container['is_buyer_requested_cancel'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets is_buyer_requested_cancel
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param bool|null $is_buyer_requested_cancel When true, the buyer has requested cancellation.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setIsBuyerRequestedCancel($is_buyer_requested_cancel) {
+        $this->container['is_buyer_requested_cancel'] = $is_buyer_requested_cancel;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets buyer_cancel_reason
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return string|null
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getBuyerCancelReason() {
+        return $this->container['buyer_cancel_reason'];
     }
 
     /**
-     * Sets errors
+     * Sets buyer_cancel_reason
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param string|null $buyer_cancel_reason The reason that the buyer requested cancellation.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setBuyerCancelReason($buyer_cancel_reason) {
+        $this->container['buyer_cancel_reason'] = $buyer_cancel_reason;
 
         return $this;
     }
@@ -363,7 +340,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerRequestedCancel
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

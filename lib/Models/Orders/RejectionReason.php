@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * RejectionReason Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The reason for rejecting the order&#39;s regulated information. Not present if the order isn&#39;t rejected.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class RejectionReason implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'RejectionReason';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'rejection_reason_id'          => 'string',
+        'rejection_reason_description' => 'string'
     ];
 
     /**
@@ -46,8 +46,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'rejection_reason_id'          => null,
+        'rejection_reason_description' => null
     ];
 
     /**
@@ -75,9 +75,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'rejection_reason_id'          => 'RejectionReasonId',
+        'rejection_reason_description' => 'RejectionReasonDescription'
     ];
 
     /**
@@ -86,9 +85,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'rejection_reason_id'          => 'setRejectionReasonId',
+        'rejection_reason_description' => 'setRejectionReasonDescription'
     ];
 
     /**
@@ -97,9 +95,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'rejection_reason_id'          => 'getRejectionReasonId',
+        'rejection_reason_description' => 'getRejectionReasonDescription'
     ];
 
     /**
@@ -153,8 +150,8 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['rejection_reason_id'] = $data['rejection_reason_id'] ?? null;
+        $this->container['rejection_reason_description'] = $data['rejection_reason_description'] ?? null;
     }
 
     /**
@@ -164,6 +161,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
+        if ($this->container['rejection_reason_id'] === null) {
+            $invalidProperties[] = "'rejection_reason_id' can't be null";
+        }
+        if ($this->container['rejection_reason_description'] === null) {
+            $invalidProperties[] = "'rejection_reason_description' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,67 +180,47 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets rejection_reason_id
      *
-     * @return array[string]
+     * @return string
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getRejectionReasonId() {
+        return $this->container['rejection_reason_id'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets rejection_reason_id
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string $rejection_reason_id The unique identifier for the rejection reason.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setRejectionReasonId($rejection_reason_id) {
+        $this->container['rejection_reason_id'] = $rejection_reason_id;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets rejection_reason_description
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return string
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getRejectionReasonDescription() {
+        return $this->container['rejection_reason_description'];
     }
 
     /**
-     * Sets errors
+     * Sets rejection_reason_description
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param string $rejection_reason_description The description of this rejection reason.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setRejectionReasonDescription($rejection_reason_description) {
+        $this->container['rejection_reason_description'] = $rejection_reason_description;
 
         return $this;
     }
@@ -363,7 +346,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

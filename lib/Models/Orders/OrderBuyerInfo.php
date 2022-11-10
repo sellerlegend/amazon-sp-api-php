@@ -1,35 +1,25 @@
 <?php
-/**
- * OrderBuyerInfo.
- *
- * PHP version 5
- *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Orders.
- *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
- *
- * OpenAPI spec version: v0
- */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * OrderBuyerInfo Class Doc Comment.
+ * OrderBuyerInfo Class Doc Comment
  *
+ * @category Class
  * @description Buyer information for an order.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellerLegend\AmazonSellingPartnerAPI
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class OrderBuyerInfo implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class OrderBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,7 +29,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'OrderBuyerInfo';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
@@ -49,12 +39,15 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
         'buyer_name'            => 'string',
         'buyer_county'          => 'string',
         'buyer_tax_info'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInfo',
-        'purchase_order_number' => 'string',];
+        'purchase_order_number' => 'string'
+    ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'amazon_order_id'       => null,
@@ -62,10 +55,11 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
         'buyer_name'            => null,
         'buyer_county'          => null,
         'buyer_tax_info'        => null,
-        'purchase_order_number' => null,];
+        'purchase_order_number' => null
+    ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -74,7 +68,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -84,7 +78,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -94,10 +88,11 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
         'buyer_name'            => 'BuyerName',
         'buyer_county'          => 'BuyerCounty',
         'buyer_tax_info'        => 'BuyerTaxInfo',
-        'purchase_order_number' => 'PurchaseOrderNumber',];
+        'purchase_order_number' => 'PurchaseOrderNumber'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -107,10 +102,11 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
         'buyer_name'            => 'setBuyerName',
         'buyer_county'          => 'setBuyerCounty',
         'buyer_tax_info'        => 'setBuyerTaxInfo',
-        'purchase_order_number' => 'setPurchaseOrderNumber',];
+        'purchase_order_number' => 'setPurchaseOrderNumber'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -120,11 +116,12 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
         'buyer_name'            => 'getBuyerName',
         'buyer_county'          => 'getBuyerCounty',
         'buyer_tax_info'        => 'getBuyerTaxInfo',
-        'purchase_order_number' => 'getPurchaseOrderNumber',];
+        'purchase_order_number' => 'getPurchaseOrderNumber'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -133,7 +130,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -142,7 +139,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -160,25 +157,25 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['amazon_order_id'] = isset($data['amazon_order_id']) ? $data['amazon_order_id'] : null;
-        $this->container['buyer_email'] = isset($data['buyer_email']) ? $data['buyer_email'] : null;
-        $this->container['buyer_name'] = isset($data['buyer_name']) ? $data['buyer_name'] : null;
-        $this->container['buyer_county'] = isset($data['buyer_county']) ? $data['buyer_county'] : null;
-        $this->container['buyer_tax_info'] = isset($data['buyer_tax_info']) ? $data['buyer_tax_info'] : null;
-        $this->container['purchase_order_number'] = isset($data['purchase_order_number']) ? $data['purchase_order_number'] : null;
+        $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
+        $this->container['buyer_email'] = $data['buyer_email'] ?? null;
+        $this->container['buyer_name'] = $data['buyer_name'] ?? null;
+        $this->container['buyer_county'] = $data['buyer_county'] ?? null;
+        $this->container['buyer_tax_info'] = $data['buyer_tax_info'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
     }
 
     /**
@@ -188,26 +185,25 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['amazon_order_id']) {
+        if ($this->container['amazon_order_id'] === null) {
             $invalidProperties[] = "'amazon_order_id' can't be null";
         }
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets amazon_order_id.
+     * Gets amazon_order_id
      *
      * @return string
      */
@@ -216,11 +212,11 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets amazon_order_id.
+     * Sets amazon_order_id
      *
-     * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
+     * @param string $amazon_order_id An Amazon-defined order identifier, in 3-7-7 format.
      *
-     * @return $this
+     * @return self
      */
     public function setAmazonOrderId($amazon_order_id) {
         $this->container['amazon_order_id'] = $amazon_order_id;
@@ -229,20 +225,20 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets buyer_email.
+     * Gets buyer_email
      *
-     * @return string
+     * @return string|null
      */
     public function getBuyerEmail() {
         return $this->container['buyer_email'];
     }
 
     /**
-     * Sets buyer_email.
+     * Sets buyer_email
      *
-     * @param string $buyer_email the anonymized email address of the buyer
+     * @param string|null $buyer_email The anonymized email address of the buyer.
      *
-     * @return $this
+     * @return self
      */
     public function setBuyerEmail($buyer_email) {
         $this->container['buyer_email'] = $buyer_email;
@@ -251,20 +247,20 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets buyer_name.
+     * Gets buyer_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBuyerName() {
         return $this->container['buyer_name'];
     }
 
     /**
-     * Sets buyer_name.
+     * Sets buyer_name
      *
-     * @param string $buyer_name the name of the buyer
+     * @param string|null $buyer_name The name of the buyer.
      *
-     * @return $this
+     * @return self
      */
     public function setBuyerName($buyer_name) {
         $this->container['buyer_name'] = $buyer_name;
@@ -273,20 +269,20 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets buyer_county.
+     * Gets buyer_county
      *
-     * @return string
+     * @return string|null
      */
     public function getBuyerCounty() {
         return $this->container['buyer_county'];
     }
 
     /**
-     * Sets buyer_county.
+     * Sets buyer_county
      *
-     * @param string $buyer_county the county of the buyer
+     * @param string|null $buyer_county The county of the buyer.
      *
-     * @return $this
+     * @return self
      */
     public function setBuyerCounty($buyer_county) {
         $this->container['buyer_county'] = $buyer_county;
@@ -295,20 +291,20 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets buyer_tax_info.
+     * Gets buyer_tax_info
      *
-     * @return BuyerTaxInfo
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInfo|null
      */
     public function getBuyerTaxInfo() {
         return $this->container['buyer_tax_info'];
     }
 
     /**
-     * Sets buyer_tax_info.
+     * Sets buyer_tax_info
      *
-     * @param BuyerTaxInfo $buyer_tax_info buyer_tax_info
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInfo|null $buyer_tax_info buyer_tax_info
      *
-     * @return $this
+     * @return self
      */
     public function setBuyerTaxInfo($buyer_tax_info) {
         $this->container['buyer_tax_info'] = $buyer_tax_info;
@@ -317,20 +313,20 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets purchase_order_number.
+     * Gets purchase_order_number
      *
-     * @return string
+     * @return string|null
      */
     public function getPurchaseOrderNumber() {
         return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets purchase_order_number.
+     * Sets purchase_order_number
      *
-     * @param string $purchase_order_number The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+     * @param string|null $purchase_order_number The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
      *
-     * @return $this
+     * @return self
      */
     public function setPurchaseOrderNumber($purchase_order_number) {
         $this->container['purchase_order_number'] = $purchase_order_number;
@@ -341,10 +337,11 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -352,22 +349,24 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -379,27 +378,91 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

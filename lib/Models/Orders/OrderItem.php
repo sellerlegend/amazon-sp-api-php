@@ -1,36 +1,25 @@
 <?php
-/**
- * OrderItem.
- *
- * PHP version 5
- *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Orders.
- *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
- *
- * OpenAPI spec version: v0
- */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
-use ArrayAccess;
-use InvalidArgumentException;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * OrderItem Class Doc Comment.
+ * OrderItem Class Doc Comment
  *
+ * @category Class
  * @description A single order item.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellerLegend\AmazonSellingPartnerAPI
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class OrderItem implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -40,7 +29,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'OrderItem';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
@@ -52,7 +41,6 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'int',
         'quantity_shipped'              => 'int',
         'product_info'                  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail',
-        'buyer_info'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderItemBuyerInfo',
         'points_granted'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail',
         'item_price'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
         'shipping_price'                => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
@@ -62,7 +50,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'shipping_discount_tax'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
         'promotion_discount'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
         'promotion_discount_tax'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
-        'promotion_ids'                 => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PromotionIdList',
+        'promotion_ids'                 => 'string[]',
         'cod_fee'                       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
         'cod_fee_discount'              => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
         'is_gift'                       => 'bool',
@@ -76,12 +64,18 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'serial_number_required'        => 'bool',
         'is_transparency'               => 'bool',
         'ioss_number'                   => 'string',
-        'deemed_reseller_category'      => 'string',];
+        'store_chain_store_id'          => 'string',
+        'deemed_reseller_category'      => 'string',
+        'buyer_info'                    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ItemBuyerInfo',
+        'buyer_requested_cancel'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerRequestedCancel'
+    ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'asin'                          => null,
@@ -91,7 +85,6 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => null,
         'quantity_shipped'              => null,
         'product_info'                  => null,
-        'buyer_info'                    => null,
         'points_granted'                => null,
         'item_price'                    => null,
         'shipping_price'                => null,
@@ -115,10 +108,14 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'serial_number_required'        => null,
         'is_transparency'               => null,
         'ioss_number'                   => null,
-        'deemed_reseller_category'      => null,];
+        'store_chain_store_id'          => null,
+        'deemed_reseller_category'      => null,
+        'buyer_info'                    => null,
+        'buyer_requested_cancel'        => null
+    ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -127,7 +124,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -137,7 +134,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -149,7 +146,6 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'QuantityOrdered',
         'quantity_shipped'              => 'QuantityShipped',
         'product_info'                  => 'ProductInfo',
-        'buyer_info'                    => 'BuyerInfo',
         'points_granted'                => 'PointsGranted',
         'item_price'                    => 'ItemPrice',
         'shipping_price'                => 'ShippingPrice',
@@ -173,10 +169,14 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'serial_number_required'        => 'SerialNumberRequired',
         'is_transparency'               => 'IsTransparency',
         'ioss_number'                   => 'IossNumber',
-        'deemed_reseller_category'      => 'DeemedResellerCategory',];
+        'store_chain_store_id'          => 'StoreChainStoreId',
+        'deemed_reseller_category'      => 'DeemedResellerCategory',
+        'buyer_info'                    => 'BuyerInfo',
+        'buyer_requested_cancel'        => 'BuyerRequestedCancel'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -188,7 +188,6 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'setQuantityOrdered',
         'quantity_shipped'              => 'setQuantityShipped',
         'product_info'                  => 'setProductInfo',
-        'buyer_info'                    => 'setBuyerInfo',
         'points_granted'                => 'setPointsGranted',
         'item_price'                    => 'setItemPrice',
         'shipping_price'                => 'setShippingPrice',
@@ -212,10 +211,14 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'serial_number_required'        => 'setSerialNumberRequired',
         'is_transparency'               => 'setIsTransparency',
         'ioss_number'                   => 'setIossNumber',
-        'deemed_reseller_category'      => 'setDeemedResellerCategory',];
+        'store_chain_store_id'          => 'setStoreChainStoreId',
+        'deemed_reseller_category'      => 'setDeemedResellerCategory',
+        'buyer_info'                    => 'setBuyerInfo',
+        'buyer_requested_cancel'        => 'setBuyerRequestedCancel'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -227,7 +230,6 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'quantity_ordered'              => 'getQuantityOrdered',
         'quantity_shipped'              => 'getQuantityShipped',
         'product_info'                  => 'getProductInfo',
-        'buyer_info'                    => 'getBuyerInfo',
         'points_granted'                => 'getPointsGranted',
         'item_price'                    => 'getItemPrice',
         'shipping_price'                => 'getShippingPrice',
@@ -251,11 +253,15 @@ class OrderItem implements ModelInterface, ArrayAccess {
         'serial_number_required'        => 'getSerialNumberRequired',
         'is_transparency'               => 'getIsTransparency',
         'ioss_number'                   => 'getIossNumber',
-        'deemed_reseller_category'      => 'getDeemedResellerCategory',];
+        'store_chain_store_id'          => 'getStoreChainStoreId',
+        'deemed_reseller_category'      => 'getDeemedResellerCategory',
+        'buyer_info'                    => 'getBuyerInfo',
+        'buyer_requested_cancel'        => 'getBuyerRequestedCancel'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -264,7 +270,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -273,7 +279,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -292,16 +298,13 @@ class OrderItem implements ModelInterface, ArrayAccess {
 
     const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
-    const DEEMED_RESELLER_CATEGORY_AU_VOEC = 'AU_VOEC';
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
-    const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
-    const DEEMED_RESELLER_CATEGORY_KZ_VOEC = 'KZ_VOEC';
-    const DEEMED_RESELLER_CATEGORY_CA_MBF = 'CA_MBF';
     const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
 
+
     /**
-     * Gets allowable values of the enum.
+     * Gets allowable values of the enum
      *
      * @return string[]
      */
@@ -309,25 +312,21 @@ class OrderItem implements ModelInterface, ArrayAccess {
         return [
             self::DEEMED_RESELLER_CATEGORY_IOSS,
             self::DEEMED_RESELLER_CATEGORY_UOSS,
-            self::DEEMED_RESELLER_CATEGORY_AU_VOEC,
             self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_NZ_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_KZ_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_CA_MBF,
             self::DEEMED_RESELLER_CATEGORY_CA_MPF,
         ];
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
@@ -340,7 +339,6 @@ class OrderItem implements ModelInterface, ArrayAccess {
         $this->container['quantity_ordered'] = $data['quantity_ordered'] ?? null;
         $this->container['quantity_shipped'] = $data['quantity_shipped'] ?? null;
         $this->container['product_info'] = $data['product_info'] ?? null;
-        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['points_granted'] = $data['points_granted'] ?? null;
         $this->container['item_price'] = $data['item_price'] ?? null;
         $this->container['shipping_price'] = $data['shipping_price'] ?? null;
@@ -364,7 +362,10 @@ class OrderItem implements ModelInterface, ArrayAccess {
         $this->container['serial_number_required'] = $data['serial_number_required'] ?? null;
         $this->container['is_transparency'] = $data['is_transparency'] ?? null;
         $this->container['ioss_number'] = $data['ioss_number'] ?? null;
+        $this->container['store_chain_store_id'] = $data['store_chain_store_id'] ?? null;
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
+        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
+        $this->container['buyer_requested_cancel'] = $data['buyer_requested_cancel'] ?? null;
     }
 
     /**
@@ -374,21 +375,21 @@ class OrderItem implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['asin']) {
+        if ($this->container['asin'] === null) {
             $invalidProperties[] = "'asin' can't be null";
         }
-        if (null === $this->container['order_item_id']) {
+        if ($this->container['order_item_id'] === null) {
             $invalidProperties[] = "'order_item_id' can't be null";
         }
-        if (null === $this->container['quantity_ordered']) {
+        if ($this->container['quantity_ordered'] === null) {
             $invalidProperties[] = "'quantity_ordered' can't be null";
         }
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
         if (!is_null($this->container['deemed_reseller_category']) && !in_array($this->container['deemed_reseller_category'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
-                $this->container['deemed_reseller_category'], implode("', '", $allowedValues)
+                $this->container['deemed_reseller_category'],
+                implode("', '", $allowedValues)
             );
         }
 
@@ -397,16 +398,17 @@ class OrderItem implements ModelInterface, ArrayAccess {
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets asin.
+     * Gets asin
      *
      * @return string
      */
@@ -415,11 +417,11 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets asin.
+     * Sets asin
      *
-     * @param string $asin the Amazon Standard Identification Number (ASIN) of the item
+     * @param string $asin The Amazon Standard Identification Number (ASIN) of the item.
      *
-     * @return $this
+     * @return self
      */
     public function setAsin($asin) {
         $this->container['asin'] = $asin;
@@ -428,20 +430,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets seller_sku.
+     * Gets seller_sku
      *
-     * @return string
+     * @return string|null
      */
     public function getSellerSku() {
         return $this->container['seller_sku'];
     }
 
     /**
-     * Sets seller_sku.
+     * Sets seller_sku
      *
-     * @param string $seller_sku the seller stock keeping unit (SKU) of the item
+     * @param string|null $seller_sku The seller stock keeping unit (SKU) of the item.
      *
-     * @return $this
+     * @return self
      */
     public function setSellerSku($seller_sku) {
         $this->container['seller_sku'] = $seller_sku;
@@ -450,7 +452,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets order_item_id.
+     * Gets order_item_id
      *
      * @return string
      */
@@ -459,11 +461,11 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets order_item_id.
+     * Sets order_item_id
      *
-     * @param string $order_item_id an Amazon-defined order item identifier
+     * @param string $order_item_id An Amazon-defined order item identifier.
      *
-     * @return $this
+     * @return self
      */
     public function setOrderItemId($order_item_id) {
         $this->container['order_item_id'] = $order_item_id;
@@ -472,20 +474,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets title.
+     * Gets title
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle() {
         return $this->container['title'];
     }
 
     /**
-     * Sets title.
+     * Sets title
      *
-     * @param string $title the name of the item
+     * @param string|null $title The name of the item.
      *
-     * @return $this
+     * @return self
      */
     public function setTitle($title) {
         $this->container['title'] = $title;
@@ -494,7 +496,7 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets quantity_ordered.
+     * Gets quantity_ordered
      *
      * @return int
      */
@@ -503,11 +505,11 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets quantity_ordered.
+     * Sets quantity_ordered
      *
-     * @param int $quantity_ordered the number of items in the order
+     * @param int $quantity_ordered The number of items in the order.
      *
-     * @return $this
+     * @return self
      */
     public function setQuantityOrdered($quantity_ordered) {
         $this->container['quantity_ordered'] = $quantity_ordered;
@@ -516,20 +518,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets quantity_shipped.
+     * Gets quantity_shipped
      *
-     * @return int
+     * @return int|null
      */
     public function getQuantityShipped() {
         return $this->container['quantity_shipped'];
     }
 
     /**
-     * Sets quantity_shipped.
+     * Sets quantity_shipped
      *
-     * @param int $quantity_shipped the number of items shipped
+     * @param int|null $quantity_shipped The number of items shipped.
      *
-     * @return $this
+     * @return self
      */
     public function setQuantityShipped($quantity_shipped) {
         $this->container['quantity_shipped'] = $quantity_shipped;
@@ -538,20 +540,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets product_info.
+     * Gets product_info
      *
-     * @return ProductInfoDetail
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail|null
      */
     public function getProductInfo() {
         return $this->container['product_info'];
     }
 
     /**
-     * Sets product_info.
+     * Sets product_info
      *
-     * @param ProductInfoDetail $product_info product_info
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ProductInfoDetail|null $product_info product_info
      *
-     * @return $this
+     * @return self
      */
     public function setProductInfo($product_info) {
         $this->container['product_info'] = $product_info;
@@ -560,42 +562,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets buyer_info.
+     * Gets points_granted
      *
-     * @return OrderItemBuyerInfo
-     */
-    public function getBuyerInfo() {
-        return $this->container['buyer_info'];
-    }
-
-    /**
-     * Sets buyer_info.
-     *
-     * @param OrderItemBuyerInfo $buyer_info buyer_info
-     *
-     * @return $this
-     */
-    public function setBuyerInfo($buyer_info) {
-        $this->container['buyer_info'] = $buyer_info;
-
-        return $this;
-    }
-
-    /**
-     * Gets points_granted.
-     *
-     * @return PointsGrantedDetail
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail|null
      */
     public function getPointsGranted() {
         return $this->container['points_granted'];
     }
 
     /**
-     * Sets points_granted.
+     * Sets points_granted
      *
-     * @param PointsGrantedDetail $points_granted points_granted
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\PointsGrantedDetail|null $points_granted points_granted
      *
-     * @return $this
+     * @return self
      */
     public function setPointsGranted($points_granted) {
         $this->container['points_granted'] = $points_granted;
@@ -604,20 +584,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets item_price.
+     * Gets item_price
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getItemPrice() {
         return $this->container['item_price'];
     }
 
     /**
-     * Sets item_price.
+     * Sets item_price
      *
-     * @param Money $item_price item_price
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $item_price item_price
      *
-     * @return $this
+     * @return self
      */
     public function setItemPrice($item_price) {
         $this->container['item_price'] = $item_price;
@@ -626,20 +606,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets shipping_price.
+     * Gets shipping_price
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getShippingPrice() {
         return $this->container['shipping_price'];
     }
 
     /**
-     * Sets shipping_price.
+     * Sets shipping_price
      *
-     * @param Money $shipping_price shipping_price
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $shipping_price shipping_price
      *
-     * @return $this
+     * @return self
      */
     public function setShippingPrice($shipping_price) {
         $this->container['shipping_price'] = $shipping_price;
@@ -648,20 +628,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets item_tax.
+     * Gets item_tax
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getItemTax() {
         return $this->container['item_tax'];
     }
 
     /**
-     * Sets item_tax.
+     * Sets item_tax
      *
-     * @param Money $item_tax item_tax
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $item_tax item_tax
      *
-     * @return $this
+     * @return self
      */
     public function setItemTax($item_tax) {
         $this->container['item_tax'] = $item_tax;
@@ -670,20 +650,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets shipping_tax.
+     * Gets shipping_tax
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getShippingTax() {
         return $this->container['shipping_tax'];
     }
 
     /**
-     * Sets shipping_tax.
+     * Sets shipping_tax
      *
-     * @param Money $shipping_tax shipping_tax
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $shipping_tax shipping_tax
      *
-     * @return $this
+     * @return self
      */
     public function setShippingTax($shipping_tax) {
         $this->container['shipping_tax'] = $shipping_tax;
@@ -692,20 +672,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets shipping_discount.
+     * Gets shipping_discount
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getShippingDiscount() {
         return $this->container['shipping_discount'];
     }
 
     /**
-     * Sets shipping_discount.
+     * Sets shipping_discount
      *
-     * @param Money $shipping_discount shipping_discount
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $shipping_discount shipping_discount
      *
-     * @return $this
+     * @return self
      */
     public function setShippingDiscount($shipping_discount) {
         $this->container['shipping_discount'] = $shipping_discount;
@@ -714,20 +694,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets shipping_discount_tax.
+     * Gets shipping_discount_tax
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getShippingDiscountTax() {
         return $this->container['shipping_discount_tax'];
     }
 
     /**
-     * Sets shipping_discount_tax.
+     * Sets shipping_discount_tax
      *
-     * @param Money $shipping_discount_tax shipping_discount_tax
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $shipping_discount_tax shipping_discount_tax
      *
-     * @return $this
+     * @return self
      */
     public function setShippingDiscountTax($shipping_discount_tax) {
         $this->container['shipping_discount_tax'] = $shipping_discount_tax;
@@ -736,20 +716,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets promotion_discount.
+     * Gets promotion_discount
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getPromotionDiscount() {
         return $this->container['promotion_discount'];
     }
 
     /**
-     * Sets promotion_discount.
+     * Sets promotion_discount
      *
-     * @param Money $promotion_discount promotion_discount
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $promotion_discount promotion_discount
      *
-     * @return $this
+     * @return self
      */
     public function setPromotionDiscount($promotion_discount) {
         $this->container['promotion_discount'] = $promotion_discount;
@@ -758,20 +738,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets promotion_discount_tax.
+     * Gets promotion_discount_tax
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getPromotionDiscountTax() {
         return $this->container['promotion_discount_tax'];
     }
 
     /**
-     * Sets promotion_discount_tax.
+     * Sets promotion_discount_tax
      *
-     * @param Money $promotion_discount_tax promotion_discount_tax
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $promotion_discount_tax promotion_discount_tax
      *
-     * @return $this
+     * @return self
      */
     public function setPromotionDiscountTax($promotion_discount_tax) {
         $this->container['promotion_discount_tax'] = $promotion_discount_tax;
@@ -780,20 +760,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets promotion_ids.
+     * Gets promotion_ids
      *
-     * @return PromotionIdList
+     * @return string[]|null
      */
     public function getPromotionIds() {
         return $this->container['promotion_ids'];
     }
 
     /**
-     * Sets promotion_ids.
+     * Sets promotion_ids
      *
-     * @param PromotionIdList $promotion_ids promotion_ids
+     * @param string[]|null $promotion_ids A list of promotion identifiers provided by the seller when the promotions were created.
      *
-     * @return $this
+     * @return self
      */
     public function setPromotionIds($promotion_ids) {
         $this->container['promotion_ids'] = $promotion_ids;
@@ -802,20 +782,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets cod_fee.
+     * Gets cod_fee
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getCodFee() {
         return $this->container['cod_fee'];
     }
 
     /**
-     * Sets cod_fee.
+     * Sets cod_fee
      *
-     * @param Money $cod_fee cod_fee
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $cod_fee cod_fee
      *
-     * @return $this
+     * @return self
      */
     public function setCodFee($cod_fee) {
         $this->container['cod_fee'] = $cod_fee;
@@ -824,20 +804,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets cod_fee_discount.
+     * Gets cod_fee_discount
      *
-     * @return Money
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
     public function getCodFeeDiscount() {
         return $this->container['cod_fee_discount'];
     }
 
     /**
-     * Sets cod_fee_discount.
+     * Sets cod_fee_discount
      *
-     * @param Money $cod_fee_discount cod_fee_discount
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $cod_fee_discount cod_fee_discount
      *
-     * @return $this
+     * @return self
      */
     public function setCodFeeDiscount($cod_fee_discount) {
         $this->container['cod_fee_discount'] = $cod_fee_discount;
@@ -846,20 +826,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets is_gift.
+     * Gets is_gift
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsGift() {
         return $this->container['is_gift'];
     }
 
     /**
-     * Sets is_gift.
+     * Sets is_gift
      *
-     * @param bool $is_gift when true, the item is a gift
+     * @param bool|null $is_gift When true, the item is a gift.
      *
-     * @return $this
+     * @return self
      */
     public function setIsGift($is_gift) {
         $this->container['is_gift'] = $is_gift;
@@ -868,20 +848,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets condition_note.
+     * Gets condition_note
      *
-     * @return string
+     * @return string|null
      */
     public function getConditionNote() {
         return $this->container['condition_note'];
     }
 
     /**
-     * Sets condition_note.
+     * Sets condition_note
      *
-     * @param string $condition_note the condition of the item as described by the seller
+     * @param string|null $condition_note The condition of the item as described by the seller.
      *
-     * @return $this
+     * @return self
      */
     public function setConditionNote($condition_note) {
         $this->container['condition_note'] = $condition_note;
@@ -890,20 +870,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets condition_id.
+     * Gets condition_id
      *
-     * @return string
+     * @return string|null
      */
     public function getConditionId() {
         return $this->container['condition_id'];
     }
 
     /**
-     * Sets condition_id.
+     * Sets condition_id
      *
-     * @param string $condition_id The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+     * @param string|null $condition_id The condition of the item. Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
      *
-     * @return $this
+     * @return self
      */
     public function setConditionId($condition_id) {
         $this->container['condition_id'] = $condition_id;
@@ -912,20 +892,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets condition_subtype_id.
+     * Gets condition_subtype_id
      *
-     * @return string
+     * @return string|null
      */
     public function getConditionSubtypeId() {
         return $this->container['condition_subtype_id'];
     }
 
     /**
-     * Sets condition_subtype_id.
+     * Sets condition_subtype_id
      *
-     * @param string $condition_subtype_id The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
+     * @param string|null $condition_subtype_id The subcondition of the item. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
      *
-     * @return $this
+     * @return self
      */
     public function setConditionSubtypeId($condition_subtype_id) {
         $this->container['condition_subtype_id'] = $condition_subtype_id;
@@ -934,20 +914,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets scheduled_delivery_start_date.
+     * Gets scheduled_delivery_start_date
      *
-     * @return string
+     * @return string|null
      */
     public function getScheduledDeliveryStartDate() {
         return $this->container['scheduled_delivery_start_date'];
     }
 
     /**
-     * Sets scheduled_delivery_start_date.
+     * Sets scheduled_delivery_start_date
      *
-     * @param string $scheduled_delivery_start_date The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+     * @param string|null $scheduled_delivery_start_date The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
      *
-     * @return $this
+     * @return self
      */
     public function setScheduledDeliveryStartDate($scheduled_delivery_start_date) {
         $this->container['scheduled_delivery_start_date'] = $scheduled_delivery_start_date;
@@ -956,20 +936,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets scheduled_delivery_end_date.
+     * Gets scheduled_delivery_end_date
      *
-     * @return string
+     * @return string|null
      */
     public function getScheduledDeliveryEndDate() {
         return $this->container['scheduled_delivery_end_date'];
     }
 
     /**
-     * Sets scheduled_delivery_end_date.
+     * Sets scheduled_delivery_end_date
      *
-     * @param string $scheduled_delivery_end_date The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+     * @param string|null $scheduled_delivery_end_date The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
      *
-     * @return $this
+     * @return self
      */
     public function setScheduledDeliveryEndDate($scheduled_delivery_end_date) {
         $this->container['scheduled_delivery_end_date'] = $scheduled_delivery_end_date;
@@ -978,20 +958,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets price_designation.
+     * Gets price_designation
      *
-     * @return string
+     * @return string|null
      */
     public function getPriceDesignation() {
         return $this->container['price_designation'];
     }
 
     /**
-     * Sets price_designation.
+     * Sets price_designation
      *
-     * @param string $price_designation Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+     * @param string|null $price_designation Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).  Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
      *
-     * @return $this
+     * @return self
      */
     public function setPriceDesignation($price_designation) {
         $this->container['price_designation'] = $price_designation;
@@ -1000,20 +980,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets tax_collection.
+     * Gets tax_collection
      *
-     * @return TaxCollection
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxCollection|null
      */
     public function getTaxCollection() {
         return $this->container['tax_collection'];
     }
 
     /**
-     * Sets tax_collection.
+     * Sets tax_collection
      *
-     * @param TaxCollection $tax_collection tax_collection
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxCollection|null $tax_collection tax_collection
      *
-     * @return $this
+     * @return self
      */
     public function setTaxCollection($tax_collection) {
         $this->container['tax_collection'] = $tax_collection;
@@ -1022,20 +1002,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets serial_number_required.
+     * Gets serial_number_required
      *
-     * @return bool
+     * @return bool|null
      */
     public function getSerialNumberRequired() {
         return $this->container['serial_number_required'];
     }
 
     /**
-     * Sets serial_number_required.
+     * Sets serial_number_required
      *
-     * @param bool $serial_number_required When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.
+     * @param bool|null $serial_number_required When true, the product type for this item has a serial number. Returned only for Amazon Easy Ship orders.
      *
-     * @return $this
+     * @return self
      */
     public function setSerialNumberRequired($serial_number_required) {
         $this->container['serial_number_required'] = $serial_number_required;
@@ -1044,20 +1024,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets is_transparency.
+     * Gets is_transparency
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsTransparency() {
         return $this->container['is_transparency'];
     }
 
     /**
-     * Sets is_transparency.
+     * Sets is_transparency
      *
-     * @param bool $is_transparency when true, transparency codes are required
+     * @param bool|null $is_transparency When true, transparency codes are required.
      *
-     * @return $this
+     * @return self
      */
     public function setIsTransparency($is_transparency) {
         $this->container['is_transparency'] = $is_transparency;
@@ -1066,20 +1046,20 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets ioss_number.
+     * Gets ioss_number
      *
-     * @return string
+     * @return string|null
      */
     public function getIossNumber() {
         return $this->container['ioss_number'];
     }
 
     /**
-     * Sets ioss_number.
+     * Sets ioss_number
      *
-     * @param string $ioss_number The IOSS number of the seller. Sellers selling in the EU will be assigned a unique IOSS number that must be listed on all packages sent to the EU.
+     * @param string|null $ioss_number The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
      *
-     * @return $this
+     * @return self
      */
     public function setIossNumber($ioss_number) {
         $this->container['ioss_number'] = $ioss_number;
@@ -1088,28 +1068,53 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets deemed_reseller_category.
+     * Gets store_chain_store_id
      *
-     * @return string
+     * @return string|null
+     */
+    public function getStoreChainStoreId() {
+        return $this->container['store_chain_store_id'];
+    }
+
+    /**
+     * Sets store_chain_store_id
+     *
+     * @param string|null $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain.
+     *
+     * @return self
+     */
+    public function setStoreChainStoreId($store_chain_store_id) {
+        $this->container['store_chain_store_id'] = $store_chain_store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets deemed_reseller_category
+     *
+     * @return string|null
      */
     public function getDeemedResellerCategory() {
         return $this->container['deemed_reseller_category'];
     }
 
     /**
-     * Sets deemed_reseller_category.
+     * Sets deemed_reseller_category
      *
-     * @param string $deemed_reseller_category The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
+     * @param string|null $deemed_reseller_category The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
      *
-     * @return $this
+     * @return self
      */
     public function setDeemedResellerCategory($deemed_reseller_category) {
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
         if (!is_null($deemed_reseller_category) && !in_array($deemed_reseller_category, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf(
-                "Invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
-                $deemed_reseller_category, implode("', '", $allowedValues)
-            ));
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
+                    $deemed_reseller_category,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
 
@@ -1117,12 +1122,57 @@ class OrderItem implements ModelInterface, ArrayAccess {
     }
 
     /**
+     * Gets buyer_info
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ItemBuyerInfo|null
+     */
+    public function getBuyerInfo() {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ItemBuyerInfo|null $buyer_info buyer_info
+     *
+     * @return self
+     */
+    public function setBuyerInfo($buyer_info) {
+        $this->container['buyer_info'] = $buyer_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_requested_cancel
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerRequestedCancel|null
+     */
+    public function getBuyerRequestedCancel() {
+        return $this->container['buyer_requested_cancel'];
+    }
+
+    /**
+     * Sets buyer_requested_cancel
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerRequestedCancel|null $buyer_requested_cancel buyer_requested_cancel
+     *
+     * @return self
+     */
+    public function setBuyerRequestedCancel($buyer_requested_cancel) {
+        $this->container['buyer_requested_cancel'] = $buyer_requested_cancel;
+
+        return $this;
+    }
+
+    /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -1130,22 +1180,24 @@ class OrderItem implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -1157,27 +1209,91 @@ class OrderItem implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderItem
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

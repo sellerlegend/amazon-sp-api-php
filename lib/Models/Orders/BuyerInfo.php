@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * BuyerInfo Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description Buyer information.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'BuyerInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'buyer_email'           => 'string',
+        'buyer_name'            => 'string',
+        'buyer_county'          => 'string',
+        'buyer_tax_info'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInfo',
+        'purchase_order_number' => 'string'
     ];
 
     /**
@@ -46,8 +49,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'buyer_email'           => null,
+        'buyer_name'            => null,
+        'buyer_county'          => null,
+        'buyer_tax_info'        => null,
+        'purchase_order_number' => null
     ];
 
     /**
@@ -75,9 +81,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'buyer_email'           => 'BuyerEmail',
+        'buyer_name'            => 'BuyerName',
+        'buyer_county'          => 'BuyerCounty',
+        'buyer_tax_info'        => 'BuyerTaxInfo',
+        'purchase_order_number' => 'PurchaseOrderNumber'
     ];
 
     /**
@@ -86,9 +94,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'buyer_email'           => 'setBuyerEmail',
+        'buyer_name'            => 'setBuyerName',
+        'buyer_county'          => 'setBuyerCounty',
+        'buyer_tax_info'        => 'setBuyerTaxInfo',
+        'purchase_order_number' => 'setPurchaseOrderNumber'
     ];
 
     /**
@@ -97,9 +107,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'buyer_email'           => 'getBuyerEmail',
+        'buyer_name'            => 'getBuyerName',
+        'buyer_county'          => 'getBuyerCounty',
+        'buyer_tax_info'        => 'getBuyerTaxInfo',
+        'purchase_order_number' => 'getPurchaseOrderNumber'
     ];
 
     /**
@@ -153,8 +165,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['buyer_email'] = $data['buyer_email'] ?? null;
+        $this->container['buyer_name'] = $data['buyer_name'] ?? null;
+        $this->container['buyer_county'] = $data['buyer_county'] ?? null;
+        $this->container['buyer_tax_info'] = $data['buyer_tax_info'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
     }
 
     /**
@@ -177,67 +192,113 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets buyer_email
      *
-     * @return array[string]
+     * @return string|null
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getBuyerEmail() {
+        return $this->container['buyer_email'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets buyer_email
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string|null $buyer_email The anonymized email address of the buyer.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setBuyerEmail($buyer_email) {
+        $this->container['buyer_email'] = $buyer_email;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets buyer_name
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return string|null
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getBuyerName() {
+        return $this->container['buyer_name'];
     }
 
     /**
-     * Sets errors
+     * Sets buyer_name
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param string|null $buyer_name The name of the buyer.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setBuyerName($buyer_name) {
+        $this->container['buyer_name'] = $buyer_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_county
+     *
+     * @return string|null
+     */
+    public function getBuyerCounty() {
+        return $this->container['buyer_county'];
+    }
+
+    /**
+     * Sets buyer_county
+     *
+     * @param string|null $buyer_county The county of the buyer.
+     *
+     * @return self
+     */
+    public function setBuyerCounty($buyer_county) {
+        $this->container['buyer_county'] = $buyer_county;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_tax_info
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInfo|null
+     */
+    public function getBuyerTaxInfo() {
+        return $this->container['buyer_tax_info'];
+    }
+
+    /**
+     * Sets buyer_tax_info
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInfo|null $buyer_tax_info buyer_tax_info
+     *
+     * @return self
+     */
+    public function setBuyerTaxInfo($buyer_tax_info) {
+        $this->container['buyer_tax_info'] = $buyer_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchase_order_number
+     *
+     * @return string|null
+     */
+    public function getPurchaseOrderNumber() {
+        return $this->container['purchase_order_number'];
+    }
+
+    /**
+     * Sets purchase_order_number
+     *
+     * @param string|null $purchase_order_number The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+     *
+     * @return self
+     */
+    public function setPurchaseOrderNumber($purchase_order_number) {
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }
@@ -363,7 +424,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerInfo
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

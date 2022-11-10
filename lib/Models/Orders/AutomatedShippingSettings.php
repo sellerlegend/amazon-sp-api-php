@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * AutomatedShippingSettings Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description Contains information regarding the Shipping Settings Automation program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class AutomatedShippingSettings implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'AutomatedShippingSettings';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'has_automated_shipping_settings' => 'bool',
+        'automated_carrier'               => 'string',
+        'automated_ship_method'           => 'string'
     ];
 
     /**
@@ -46,8 +47,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'has_automated_shipping_settings' => null,
+        'automated_carrier'               => null,
+        'automated_ship_method'           => null
     ];
 
     /**
@@ -75,9 +77,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'has_automated_shipping_settings' => 'HasAutomatedShippingSettings',
+        'automated_carrier'               => 'AutomatedCarrier',
+        'automated_ship_method'           => 'AutomatedShipMethod'
     ];
 
     /**
@@ -86,9 +88,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'has_automated_shipping_settings' => 'setHasAutomatedShippingSettings',
+        'automated_carrier'               => 'setAutomatedCarrier',
+        'automated_ship_method'           => 'setAutomatedShipMethod'
     ];
 
     /**
@@ -97,9 +99,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'has_automated_shipping_settings' => 'getHasAutomatedShippingSettings',
+        'automated_carrier'               => 'getAutomatedCarrier',
+        'automated_ship_method'           => 'getAutomatedShipMethod'
     ];
 
     /**
@@ -153,8 +155,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['has_automated_shipping_settings'] = $data['has_automated_shipping_settings'] ?? null;
+        $this->container['automated_carrier'] = $data['automated_carrier'] ?? null;
+        $this->container['automated_ship_method'] = $data['automated_ship_method'] ?? null;
     }
 
     /**
@@ -177,67 +180,69 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets has_automated_shipping_settings
      *
-     * @return array[string]
+     * @return bool|null
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getHasAutomatedShippingSettings() {
+        return $this->container['has_automated_shipping_settings'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets has_automated_shipping_settings
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param bool|null $has_automated_shipping_settings When true, this order has automated shipping settings generated by Amazon. This order could be identified as an SSA order.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setHasAutomatedShippingSettings($has_automated_shipping_settings) {
+        $this->container['has_automated_shipping_settings'] = $has_automated_shipping_settings;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets automated_carrier
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return string|null
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getAutomatedCarrier() {
+        return $this->container['automated_carrier'];
     }
 
     /**
-     * Sets errors
+     * Sets automated_carrier
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param string|null $automated_carrier Auto-generated carrier for SSA orders.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setAutomatedCarrier($automated_carrier) {
+        $this->container['automated_carrier'] = $automated_carrier;
+
+        return $this;
+    }
+
+    /**
+     * Gets automated_ship_method
+     *
+     * @return string|null
+     */
+    public function getAutomatedShipMethod() {
+        return $this->container['automated_ship_method'];
+    }
+
+    /**
+     * Sets automated_ship_method
+     *
+     * @param string|null $automated_ship_method Auto-generated ship method for SSA orders.
+     *
+     * @return self
+     */
+    public function setAutomatedShipMethod($automated_ship_method) {
+        $this->container['automated_ship_method'] = $automated_ship_method;
 
         return $this;
     }
@@ -363,7 +368,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\AutomatedShippingSettings
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

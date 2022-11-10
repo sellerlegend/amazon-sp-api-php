@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * RegulatedOrderVerificationStatus Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The verification status of the order along with associated approval or rejection metadata.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'RegulatedOrderVerificationStatus';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'status'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\VerificationStatus',
+        'requires_merchant_action' => 'bool',
+        'valid_rejection_reasons'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason[]',
+        'rejection_reason'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason',
+        'review_date'              => 'string',
+        'external_reviewer_id'     => 'string'
     ];
 
     /**
@@ -46,8 +50,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'status'                   => null,
+        'requires_merchant_action' => null,
+        'valid_rejection_reasons'  => null,
+        'rejection_reason'         => null,
+        'review_date'              => null,
+        'external_reviewer_id'     => null
     ];
 
     /**
@@ -75,9 +83,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'status'                   => 'Status',
+        'requires_merchant_action' => 'RequiresMerchantAction',
+        'valid_rejection_reasons'  => 'ValidRejectionReasons',
+        'rejection_reason'         => 'RejectionReason',
+        'review_date'              => 'ReviewDate',
+        'external_reviewer_id'     => 'ExternalReviewerId'
     ];
 
     /**
@@ -86,9 +97,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'status'                   => 'setStatus',
+        'requires_merchant_action' => 'setRequiresMerchantAction',
+        'valid_rejection_reasons'  => 'setValidRejectionReasons',
+        'rejection_reason'         => 'setRejectionReason',
+        'review_date'              => 'setReviewDate',
+        'external_reviewer_id'     => 'setExternalReviewerId'
     ];
 
     /**
@@ -97,9 +111,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'status'                   => 'getStatus',
+        'requires_merchant_action' => 'getRequiresMerchantAction',
+        'valid_rejection_reasons'  => 'getValidRejectionReasons',
+        'rejection_reason'         => 'getRejectionReason',
+        'review_date'              => 'getReviewDate',
+        'external_reviewer_id'     => 'getExternalReviewerId'
     ];
 
     /**
@@ -153,8 +170,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['requires_merchant_action'] = $data['requires_merchant_action'] ?? null;
+        $this->container['valid_rejection_reasons'] = $data['valid_rejection_reasons'] ?? null;
+        $this->container['rejection_reason'] = $data['rejection_reason'] ?? null;
+        $this->container['review_date'] = $data['review_date'] ?? null;
+        $this->container['external_reviewer_id'] = $data['external_reviewer_id'] ?? null;
     }
 
     /**
@@ -164,6 +185,15 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        if ($this->container['requires_merchant_action'] === null) {
+            $invalidProperties[] = "'requires_merchant_action' can't be null";
+        }
+        if ($this->container['valid_rejection_reasons'] === null) {
+            $invalidProperties[] = "'valid_rejection_reasons' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,67 +207,135 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets status
      *
-     * @return array[string]
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\VerificationStatus
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getStatus() {
+        return $this->container['status'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets status
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\VerificationStatus $status status
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setStatus($status) {
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets requires_merchant_action
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return bool
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getRequiresMerchantAction() {
+        return $this->container['requires_merchant_action'];
     }
 
     /**
-     * Sets errors
+     * Sets requires_merchant_action
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param bool $requires_merchant_action When true, the regulated information provided in the order requires a review by the merchant.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setRequiresMerchantAction($requires_merchant_action) {
+        $this->container['requires_merchant_action'] = $requires_merchant_action;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_rejection_reasons
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason[]
+     */
+    public function getValidRejectionReasons() {
+        return $this->container['valid_rejection_reasons'];
+    }
+
+    /**
+     * Sets valid_rejection_reasons
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason[] $valid_rejection_reasons A list of valid rejection reasons that may be used to reject the order's regulated information.
+     *
+     * @return self
+     */
+    public function setValidRejectionReasons($valid_rejection_reasons) {
+        $this->container['valid_rejection_reasons'] = $valid_rejection_reasons;
+
+        return $this;
+    }
+
+    /**
+     * Gets rejection_reason
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason|null
+     */
+    public function getRejectionReason() {
+        return $this->container['rejection_reason'];
+    }
+
+    /**
+     * Sets rejection_reason
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RejectionReason|null $rejection_reason rejection_reason
+     *
+     * @return self
+     */
+    public function setRejectionReason($rejection_reason) {
+        $this->container['rejection_reason'] = $rejection_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets review_date
+     *
+     * @return string|null
+     */
+    public function getReviewDate() {
+        return $this->container['review_date'];
+    }
+
+    /**
+     * Sets review_date
+     *
+     * @param string|null $review_date The date the order was reviewed. In ISO 8601 date time format.
+     *
+     * @return self
+     */
+    public function setReviewDate($review_date) {
+        $this->container['review_date'] = $review_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_reviewer_id
+     *
+     * @return string|null
+     */
+    public function getExternalReviewerId() {
+        return $this->container['external_reviewer_id'];
+    }
+
+    /**
+     * Sets external_reviewer_id
+     *
+     * @param string|null $external_reviewer_id The identifier for the order's regulated information reviewer.
+     *
+     * @return self
+     */
+    public function setExternalReviewerId($external_reviewer_id) {
+        $this->container['external_reviewer_id'] = $external_reviewer_id;
 
         return $this;
     }
@@ -363,7 +461,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\RegulatedOrderVerificationStatus
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);
