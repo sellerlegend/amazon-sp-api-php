@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * MarketplaceTaxInfo Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description Tax information about the marketplace.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class MarketplaceTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'MarketplaceTaxInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'tax_classifications' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[]'
     ];
 
     /**
@@ -46,8 +45,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'tax_classifications' => null
     ];
 
     /**
@@ -75,9 +73,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'tax_classifications' => 'TaxClassifications'
     ];
 
     /**
@@ -86,9 +82,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'tax_classifications' => 'setTaxClassifications'
     ];
 
     /**
@@ -97,9 +91,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'tax_classifications' => 'getTaxClassifications'
     ];
 
     /**
@@ -153,8 +145,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['tax_classifications'] = $data['tax_classifications'] ?? null;
     }
 
     /**
@@ -177,67 +168,25 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets tax_classifications
      *
-     * @return array[string]
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[]|null
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getTaxClassifications() {
+        return $this->container['tax_classifications'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets tax_classifications
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\TaxClassification[]|null $tax_classifications A list of tax classifications that apply to the order.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
-     */
-    public function getErrors() {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
-     *
-     * @return self
-     */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setTaxClassifications($tax_classifications) {
+        $this->container['tax_classifications'] = $tax_classifications;
 
         return $this;
     }
@@ -363,7 +312,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\MarketplaceTaxInfo
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

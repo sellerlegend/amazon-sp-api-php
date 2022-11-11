@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * BuyerTaxInformation Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description Contains the business invoice tax information. Available only in the TR marketplace.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'BuyerTaxInformation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'buyer_legal_company_name'  => 'string',
+        'buyer_business_address'    => 'string',
+        'buyer_tax_registration_id' => 'string',
+        'buyer_tax_office'          => 'string'
     ];
 
     /**
@@ -46,8 +48,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'buyer_legal_company_name'  => null,
+        'buyer_business_address'    => null,
+        'buyer_tax_registration_id' => null,
+        'buyer_tax_office'          => null
     ];
 
     /**
@@ -75,9 +79,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'buyer_legal_company_name'  => 'BuyerLegalCompanyName',
+        'buyer_business_address'    => 'BuyerBusinessAddress',
+        'buyer_tax_registration_id' => 'BuyerTaxRegistrationId',
+        'buyer_tax_office'          => 'BuyerTaxOffice'
     ];
 
     /**
@@ -86,9 +91,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'buyer_legal_company_name'  => 'setBuyerLegalCompanyName',
+        'buyer_business_address'    => 'setBuyerBusinessAddress',
+        'buyer_tax_registration_id' => 'setBuyerTaxRegistrationId',
+        'buyer_tax_office'          => 'setBuyerTaxOffice'
     ];
 
     /**
@@ -97,9 +103,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'buyer_legal_company_name'  => 'getBuyerLegalCompanyName',
+        'buyer_business_address'    => 'getBuyerBusinessAddress',
+        'buyer_tax_registration_id' => 'getBuyerTaxRegistrationId',
+        'buyer_tax_office'          => 'getBuyerTaxOffice'
     ];
 
     /**
@@ -153,8 +160,10 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['buyer_legal_company_name'] = $data['buyer_legal_company_name'] ?? null;
+        $this->container['buyer_business_address'] = $data['buyer_business_address'] ?? null;
+        $this->container['buyer_tax_registration_id'] = $data['buyer_tax_registration_id'] ?? null;
+        $this->container['buyer_tax_office'] = $data['buyer_tax_office'] ?? null;
     }
 
     /**
@@ -177,67 +186,91 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets buyer_legal_company_name
      *
-     * @return array[string]
+     * @return string|null
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getBuyerLegalCompanyName() {
+        return $this->container['buyer_legal_company_name'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets buyer_legal_company_name
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string|null $buyer_legal_company_name Business buyer's company legal name.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setBuyerLegalCompanyName($buyer_legal_company_name) {
+        $this->container['buyer_legal_company_name'] = $buyer_legal_company_name;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets buyer_business_address
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return string|null
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getBuyerBusinessAddress() {
+        return $this->container['buyer_business_address'];
     }
 
     /**
-     * Sets errors
+     * Sets buyer_business_address
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param string|null $buyer_business_address Business buyer's address.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setBuyerBusinessAddress($buyer_business_address) {
+        $this->container['buyer_business_address'] = $buyer_business_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_tax_registration_id
+     *
+     * @return string|null
+     */
+    public function getBuyerTaxRegistrationId() {
+        return $this->container['buyer_tax_registration_id'];
+    }
+
+    /**
+     * Sets buyer_tax_registration_id
+     *
+     * @param string|null $buyer_tax_registration_id Business buyer's tax registration ID.
+     *
+     * @return self
+     */
+    public function setBuyerTaxRegistrationId($buyer_tax_registration_id) {
+        $this->container['buyer_tax_registration_id'] = $buyer_tax_registration_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_tax_office
+     *
+     * @return string|null
+     */
+    public function getBuyerTaxOffice() {
+        return $this->container['buyer_tax_office'];
+    }
+
+    /**
+     * Sets buyer_tax_office
+     *
+     * @param string|null $buyer_tax_office Business buyer's tax office.
+     *
+     * @return self
+     */
+    public function setBuyerTaxOffice($buyer_tax_office) {
+        $this->container['buyer_tax_office'] = $buyer_tax_office;
 
         return $this;
     }
@@ -363,7 +396,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerTaxInformation
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

@@ -1,36 +1,25 @@
 <?php
-/**
- * Address.
- *
- * PHP version 5
- *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Orders.
- *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
- *
- * OpenAPI spec version: v0
- */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\Orders;
 
-use ArrayAccess;
-use InvalidArgumentException;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * Address Class Doc Comment.
+ * Address Class Doc Comment
  *
+ * @category Class
  * @description The shipping address for the order.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellerLegend\AmazonSellingPartnerAPI
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class Address implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class Address implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -40,7 +29,7 @@ class Address implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'Address';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
@@ -57,12 +46,15 @@ class Address implements ModelInterface, ArrayAccess {
         'postal_code'     => 'string',
         'country_code'    => 'string',
         'phone'           => 'string',
-        'address_type'    => 'string',];
+        'address_type'    => 'string'
+    ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'name'            => null,
@@ -77,10 +69,11 @@ class Address implements ModelInterface, ArrayAccess {
         'postal_code'     => null,
         'country_code'    => null,
         'phone'           => null,
-        'address_type'    => null,];
+        'address_type'    => null
+    ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -89,7 +82,7 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -99,7 +92,7 @@ class Address implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -116,10 +109,11 @@ class Address implements ModelInterface, ArrayAccess {
         'postal_code'     => 'PostalCode',
         'country_code'    => 'CountryCode',
         'phone'           => 'Phone',
-        'address_type'    => 'AddressType',];
+        'address_type'    => 'AddressType'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -136,10 +130,11 @@ class Address implements ModelInterface, ArrayAccess {
         'postal_code'     => 'setPostalCode',
         'country_code'    => 'setCountryCode',
         'phone'           => 'setPhone',
-        'address_type'    => 'setAddressType',];
+        'address_type'    => 'setAddressType'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -156,11 +151,12 @@ class Address implements ModelInterface, ArrayAccess {
         'postal_code'     => 'getPostalCode',
         'country_code'    => 'getCountryCode',
         'phone'           => 'getPhone',
-        'address_type'    => 'getAddressType',];
+        'address_type'    => 'getAddressType'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -169,7 +165,7 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -178,7 +174,7 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -198,44 +194,46 @@ class Address implements ModelInterface, ArrayAccess {
     const ADDRESS_TYPE_RESIDENTIAL = 'Residential';
     const ADDRESS_TYPE_COMMERCIAL = 'Commercial';
 
+
     /**
-     * Gets allowable values of the enum.
+     * Gets allowable values of the enum
      *
      * @return string[]
      */
     public function getAddressTypeAllowableValues() {
         return [
             self::ADDRESS_TYPE_RESIDENTIAL,
-            self::ADDRESS_TYPE_COMMERCIAL,];
+            self::ADDRESS_TYPE_COMMERCIAL,
+        ];
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
-        $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
-        $this->container['address_line3'] = isset($data['address_line3']) ? $data['address_line3'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['county'] = isset($data['county']) ? $data['county'] : null;
-        $this->container['district'] = isset($data['district']) ? $data['district'] : null;
-        $this->container['state_or_region'] = isset($data['state_or_region']) ? $data['state_or_region'] : null;
-        $this->container['municipality'] = isset($data['municipality']) ? $data['municipality'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
-        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['address_type'] = isset($data['address_type']) ? $data['address_type'] : null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['address_line1'] = $data['address_line1'] ?? null;
+        $this->container['address_line2'] = $data['address_line2'] ?? null;
+        $this->container['address_line3'] = $data['address_line3'] ?? null;
+        $this->container['city'] = $data['city'] ?? null;
+        $this->container['county'] = $data['county'] ?? null;
+        $this->container['district'] = $data['district'] ?? null;
+        $this->container['state_or_region'] = $data['state_or_region'] ?? null;
+        $this->container['municipality'] = $data['municipality'] ?? null;
+        $this->container['postal_code'] = $data['postal_code'] ?? null;
+        $this->container['country_code'] = $data['country_code'] ?? null;
+        $this->container['phone'] = $data['phone'] ?? null;
+        $this->container['address_type'] = $data['address_type'] ?? null;
     }
 
     /**
@@ -245,15 +243,15 @@ class Address implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['name']) {
+        if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         $allowedValues = $this->getAddressTypeAllowableValues();
         if (!is_null($this->container['address_type']) && !in_array($this->container['address_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'address_type', must be one of '%s'",
-                $this->container['address_type'], implode("', '", $allowedValues)
+                $this->container['address_type'],
+                implode("', '", $allowedValues)
             );
         }
 
@@ -262,16 +260,17 @@ class Address implements ModelInterface, ArrayAccess {
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets name.
+     * Gets name
      *
      * @return string
      */
@@ -280,11 +279,11 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets name.
+     * Sets name
      *
-     * @param string $name the name
+     * @param string $name The name.
      *
-     * @return $this
+     * @return self
      */
     public function setName($name) {
         $this->container['name'] = $name;
@@ -293,20 +292,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets address_line1.
+     * Gets address_line1
      *
-     * @return string
+     * @return string|null
      */
     public function getAddressLine1() {
         return $this->container['address_line1'];
     }
 
     /**
-     * Sets address_line1.
+     * Sets address_line1
      *
-     * @param string $address_line1 the street address
+     * @param string|null $address_line1 The street address.
      *
-     * @return $this
+     * @return self
      */
     public function setAddressLine1($address_line1) {
         $this->container['address_line1'] = $address_line1;
@@ -315,20 +314,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets address_line2.
+     * Gets address_line2
      *
-     * @return string
+     * @return string|null
      */
     public function getAddressLine2() {
         return $this->container['address_line2'];
     }
 
     /**
-     * Sets address_line2.
+     * Sets address_line2
      *
-     * @param string $address_line2 additional street address information, if required
+     * @param string|null $address_line2 Additional street address information, if required.
      *
-     * @return $this
+     * @return self
      */
     public function setAddressLine2($address_line2) {
         $this->container['address_line2'] = $address_line2;
@@ -337,20 +336,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets address_line3.
+     * Gets address_line3
      *
-     * @return string
+     * @return string|null
      */
     public function getAddressLine3() {
         return $this->container['address_line3'];
     }
 
     /**
-     * Sets address_line3.
+     * Sets address_line3
      *
-     * @param string $address_line3 additional street address information, if required
+     * @param string|null $address_line3 Additional street address information, if required.
      *
-     * @return $this
+     * @return self
      */
     public function setAddressLine3($address_line3) {
         $this->container['address_line3'] = $address_line3;
@@ -359,20 +358,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets city.
+     * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity() {
         return $this->container['city'];
     }
 
     /**
-     * Sets city.
+     * Sets city
      *
-     * @param string $city The city
+     * @param string|null $city The city
      *
-     * @return $this
+     * @return self
      */
     public function setCity($city) {
         $this->container['city'] = $city;
@@ -381,20 +380,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets county.
+     * Gets county
      *
-     * @return string
+     * @return string|null
      */
     public function getCounty() {
         return $this->container['county'];
     }
 
     /**
-     * Sets county.
+     * Sets county
      *
-     * @param string $county the county
+     * @param string|null $county The county.
      *
-     * @return $this
+     * @return self
      */
     public function setCounty($county) {
         $this->container['county'] = $county;
@@ -403,20 +402,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets district.
+     * Gets district
      *
-     * @return string
+     * @return string|null
      */
     public function getDistrict() {
         return $this->container['district'];
     }
 
     /**
-     * Sets district.
+     * Sets district
      *
-     * @param string $district the district
+     * @param string|null $district The district.
      *
-     * @return $this
+     * @return self
      */
     public function setDistrict($district) {
         $this->container['district'] = $district;
@@ -425,20 +424,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets state_or_region.
+     * Gets state_or_region
      *
-     * @return string
+     * @return string|null
      */
     public function getStateOrRegion() {
         return $this->container['state_or_region'];
     }
 
     /**
-     * Sets state_or_region.
+     * Sets state_or_region
      *
-     * @param string $state_or_region the state or region
+     * @param string|null $state_or_region The state or region.
      *
-     * @return $this
+     * @return self
      */
     public function setStateOrRegion($state_or_region) {
         $this->container['state_or_region'] = $state_or_region;
@@ -447,20 +446,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets municipality.
+     * Gets municipality
      *
-     * @return string
+     * @return string|null
      */
     public function getMunicipality() {
         return $this->container['municipality'];
     }
 
     /**
-     * Sets municipality.
+     * Sets municipality
      *
-     * @param string $municipality the municipality
+     * @param string|null $municipality The municipality.
      *
-     * @return $this
+     * @return self
      */
     public function setMunicipality($municipality) {
         $this->container['municipality'] = $municipality;
@@ -469,20 +468,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets postal_code.
+     * Gets postal_code
      *
-     * @return string
+     * @return string|null
      */
     public function getPostalCode() {
         return $this->container['postal_code'];
     }
 
     /**
-     * Sets postal_code.
+     * Sets postal_code
      *
-     * @param string $postal_code the postal code
+     * @param string|null $postal_code The postal code.
      *
-     * @return $this
+     * @return self
      */
     public function setPostalCode($postal_code) {
         $this->container['postal_code'] = $postal_code;
@@ -491,20 +490,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets country_code.
+     * Gets country_code
      *
-     * @return string
+     * @return string|null
      */
     public function getCountryCode() {
         return $this->container['country_code'];
     }
 
     /**
-     * Sets country_code.
+     * Sets country_code
      *
-     * @param string $country_code The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
+     * @param string|null $country_code The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
      *
-     * @return $this
+     * @return self
      */
     public function setCountryCode($country_code) {
         $this->container['country_code'] = $country_code;
@@ -513,20 +512,20 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets phone.
+     * Gets phone
      *
-     * @return string
+     * @return string|null
      */
     public function getPhone() {
         return $this->container['phone'];
     }
 
     /**
-     * Sets phone.
+     * Sets phone
      *
-     * @param string $phone The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
+     * @param string|null $phone The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
      *
-     * @return $this
+     * @return self
      */
     public function setPhone($phone) {
         $this->container['phone'] = $phone;
@@ -535,28 +534,31 @@ class Address implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets address_type.
+     * Gets address_type
      *
-     * @return string
+     * @return string|null
      */
     public function getAddressType() {
         return $this->container['address_type'];
     }
 
     /**
-     * Sets address_type.
+     * Sets address_type
      *
-     * @param string $address_type the address type of the shipping address
+     * @param string|null $address_type The address type of the shipping address.
      *
-     * @return $this
+     * @return self
      */
     public function setAddressType($address_type) {
         $allowedValues = $this->getAddressTypeAllowableValues();
         if (!is_null($address_type) && !in_array($address_type, $allowedValues, true)) {
-            throw new InvalidArgumentException(sprintf(
-                "Invalid value '%s' for 'address_type', must be one of '%s'",
-                $address_type, implode("', '", $allowedValues)
-            ));
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'address_type', must be one of '%s'",
+                    $address_type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['address_type'] = $address_type;
 
@@ -566,10 +568,11 @@ class Address implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -577,22 +580,24 @@ class Address implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -604,27 +609,91 @@ class Address implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Address
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

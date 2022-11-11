@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * GetOrderRegulatedInfoResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The response schema for the getOrderRegulatedInfo operation.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class GetOrderRegulatedInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'GetOrderRegulatedInfoResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,7 +34,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
+        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderRegulatedInfo',
         'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
     ];
 
@@ -201,7 +201,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets payload
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderRegulatedInfo|null
      */
     public function getPayload() {
         return $this->container['payload'];
@@ -210,7 +210,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets payload
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderRegulatedInfo|null $payload payload
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderRegulatedInfoResponse
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

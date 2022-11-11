@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * UpdateShipmentStatusRequest Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The request body for the updateShipmentStatus operation.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class UpdateShipmentStatusRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'UpdateShipmentStatusRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'marketplace_id'  => 'string',
+        'shipment_status' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ShipmentStatus',
+        'order_items'     => 'object[]'
     ];
 
     /**
@@ -46,8 +47,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'marketplace_id'  => null,
+        'shipment_status' => null,
+        'order_items'     => null
     ];
 
     /**
@@ -75,9 +77,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'marketplace_id'  => 'marketplaceId',
+        'shipment_status' => 'shipmentStatus',
+        'order_items'     => 'orderItems'
     ];
 
     /**
@@ -86,9 +88,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'marketplace_id'  => 'setMarketplaceId',
+        'shipment_status' => 'setShipmentStatus',
+        'order_items'     => 'setOrderItems'
     ];
 
     /**
@@ -97,9 +99,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'marketplace_id'  => 'getMarketplaceId',
+        'shipment_status' => 'getShipmentStatus',
+        'order_items'     => 'getOrderItems'
     ];
 
     /**
@@ -153,8 +155,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['shipment_status'] = $data['shipment_status'] ?? null;
+        $this->container['order_items'] = $data['order_items'] ?? null;
     }
 
     /**
@@ -164,6 +167,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
+        }
+        if ($this->container['shipment_status'] === null) {
+            $invalidProperties[] = "'shipment_status' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,67 +186,69 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets marketplace_id
      *
-     * @return array[string]
+     * @return string
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getMarketplaceId() {
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets marketplace_id
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string $marketplace_id The unobfuscated marketplace identifier.
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setMarketplaceId($marketplace_id) {
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets shipment_status
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ShipmentStatus
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getShipmentStatus() {
+        return $this->container['shipment_status'];
     }
 
     /**
-     * Sets errors
+     * Sets shipment_status
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ShipmentStatus $shipment_status shipment_status
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setShipmentStatus($shipment_status) {
+        $this->container['shipment_status'] = $shipment_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_items
+     *
+     * @return object[]|null
+     */
+    public function getOrderItems() {
+        return $this->container['order_items'];
+    }
+
+    /**
+     * Sets order_items
+     *
+     * @param object[]|null $order_items For partial shipment status updates, the list of order items and quantities to be updated.
+     *
+     * @return self
+     */
+    public function setOrderItems($order_items) {
+        $this->container['order_items'] = $order_items;
 
         return $this;
     }
@@ -363,7 +374,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\UpdateShipmentStatusRequest
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

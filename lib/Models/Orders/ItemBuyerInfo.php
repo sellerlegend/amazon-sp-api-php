@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * ItemBuyerInfo Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description A single item&#39;s buyer information.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class ItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'ItemBuyerInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'buyer_customized_info' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail',
+        'gift_wrap_price'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'gift_wrap_tax'         => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money',
+        'gift_message_text'     => 'string',
+        'gift_wrap_level'       => 'string'
     ];
 
     /**
@@ -46,8 +49,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'buyer_customized_info' => null,
+        'gift_wrap_price'       => null,
+        'gift_wrap_tax'         => null,
+        'gift_message_text'     => null,
+        'gift_wrap_level'       => null
     ];
 
     /**
@@ -75,9 +81,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'buyer_customized_info' => 'BuyerCustomizedInfo',
+        'gift_wrap_price'       => 'GiftWrapPrice',
+        'gift_wrap_tax'         => 'GiftWrapTax',
+        'gift_message_text'     => 'GiftMessageText',
+        'gift_wrap_level'       => 'GiftWrapLevel'
     ];
 
     /**
@@ -86,9 +94,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'buyer_customized_info' => 'setBuyerCustomizedInfo',
+        'gift_wrap_price'       => 'setGiftWrapPrice',
+        'gift_wrap_tax'         => 'setGiftWrapTax',
+        'gift_message_text'     => 'setGiftMessageText',
+        'gift_wrap_level'       => 'setGiftWrapLevel'
     ];
 
     /**
@@ -97,9 +107,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'buyer_customized_info' => 'getBuyerCustomizedInfo',
+        'gift_wrap_price'       => 'getGiftWrapPrice',
+        'gift_wrap_tax'         => 'getGiftWrapTax',
+        'gift_message_text'     => 'getGiftMessageText',
+        'gift_wrap_level'       => 'getGiftWrapLevel'
     ];
 
     /**
@@ -153,8 +165,11 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['buyer_customized_info'] = $data['buyer_customized_info'] ?? null;
+        $this->container['gift_wrap_price'] = $data['gift_wrap_price'] ?? null;
+        $this->container['gift_wrap_tax'] = $data['gift_wrap_tax'] ?? null;
+        $this->container['gift_message_text'] = $data['gift_message_text'] ?? null;
+        $this->container['gift_wrap_level'] = $data['gift_wrap_level'] ?? null;
     }
 
     /**
@@ -177,67 +192,113 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets buyer_customized_info
      *
-     * @return array[string]
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail|null
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getBuyerCustomizedInfo() {
+        return $this->container['buyer_customized_info'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets buyer_customized_info
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\BuyerCustomizedInfoDetail|null $buyer_customized_info buyer_customized_info
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setBuyerCustomizedInfo($buyer_customized_info) {
+        $this->container['buyer_customized_info'] = $buyer_customized_info;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets gift_wrap_price
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getGiftWrapPrice() {
+        return $this->container['gift_wrap_price'];
     }
 
     /**
-     * Sets errors
+     * Sets gift_wrap_price
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $gift_wrap_price gift_wrap_price
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setGiftWrapPrice($gift_wrap_price) {
+        $this->container['gift_wrap_price'] = $gift_wrap_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets gift_wrap_tax
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null
+     */
+    public function getGiftWrapTax() {
+        return $this->container['gift_wrap_tax'];
+    }
+
+    /**
+     * Sets gift_wrap_tax
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Money|null $gift_wrap_tax gift_wrap_tax
+     *
+     * @return self
+     */
+    public function setGiftWrapTax($gift_wrap_tax) {
+        $this->container['gift_wrap_tax'] = $gift_wrap_tax;
+
+        return $this;
+    }
+
+    /**
+     * Gets gift_message_text
+     *
+     * @return string|null
+     */
+    public function getGiftMessageText() {
+        return $this->container['gift_message_text'];
+    }
+
+    /**
+     * Sets gift_message_text
+     *
+     * @param string|null $gift_message_text A gift message provided by the buyer.
+     *
+     * @return self
+     */
+    public function setGiftMessageText($gift_message_text) {
+        $this->container['gift_message_text'] = $gift_message_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets gift_wrap_level
+     *
+     * @return string|null
+     */
+    public function getGiftWrapLevel() {
+        return $this->container['gift_wrap_level'];
+    }
+
+    /**
+     * Sets gift_wrap_level
+     *
+     * @param string|null $gift_wrap_level The gift wrap level specified by the buyer.
+     *
+     * @return self
+     */
+    public function setGiftWrapLevel($gift_wrap_level) {
+        $this->container['gift_wrap_level'] = $gift_wrap_level;
 
         return $this;
     }
@@ -363,7 +424,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\ItemBuyerInfo
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

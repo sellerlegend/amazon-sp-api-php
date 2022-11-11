@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * GetOrderBuyerInfoResponse Class Doc Comment
+ * UpdateVerificationStatusRequestBody Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderBuyerInfo operation.
+ * @description The updated values of the VerificationStatus field.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class UpdateVerificationStatusRequestBody implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
 
     public const DISCRIMINATOR = null;
 
@@ -26,7 +26,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string
      */
-    protected static $swaggerModelName = 'GetOrderBuyerInfoResponse';
+    protected static $swaggerModelName = 'UpdateVerificationStatusRequestBody';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -34,8 +34,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'payload' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo',
-        'errors'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]'
+        'status'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\Orders\VerificationStatus',
+        'external_reviewer_id' => 'string',
+        'rejection_reason_id'  => 'string'
     ];
 
     /**
@@ -46,8 +47,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'payload' => null,
-        'errors'  => null
+        'status'               => null,
+        'external_reviewer_id' => null,
+        'rejection_reason_id'  => null
     ];
 
     /**
@@ -75,9 +77,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'payload' => 'payload',
-        'errors'  => 'errors'
+        'status'               => 'status',
+        'external_reviewer_id' => 'externalReviewerId',
+        'rejection_reason_id'  => 'rejectionReasonId'
     ];
 
     /**
@@ -86,9 +88,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'payload' => 'setPayload',
-        'errors'  => 'setErrors'
+        'status'               => 'setStatus',
+        'external_reviewer_id' => 'setExternalReviewerId',
+        'rejection_reason_id'  => 'setRejectionReasonId'
     ];
 
     /**
@@ -97,9 +99,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'payload' => 'getPayload',
-        'errors'  => 'getErrors'
+        'status'               => 'getStatus',
+        'external_reviewer_id' => 'getExternalReviewerId',
+        'rejection_reason_id'  => 'getRejectionReasonId'
     ];
 
     /**
@@ -153,8 +155,9 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['external_reviewer_id'] = $data['external_reviewer_id'] ?? null;
+        $this->container['rejection_reason_id'] = $data['rejection_reason_id'] ?? null;
     }
 
     /**
@@ -164,6 +167,12 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        if ($this->container['external_reviewer_id'] === null) {
+            $invalidProperties[] = "'external_reviewer_id' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,67 +186,69 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets status
      *
-     * @return array[string]
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\VerificationStatus
      */
-    public function getHeaders() {
-        return $this->container['headers'];
+    public function getStatus() {
+        return $this->container['status'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets status
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\VerificationStatus $status status
      *
      * @return self
      */
-    public function setHeaders($headers) {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets payload
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null
-     */
-    public function getPayload() {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\OrderBuyerInfo|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload) {
-        $this->container['payload'] = $payload;
+    public function setStatus($status) {
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets external_reviewer_id
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null
+     * @return string
      */
-    public function getErrors() {
-        return $this->container['errors'];
+    public function getExternalReviewerId() {
+        return $this->container['external_reviewer_id'];
     }
 
     /**
-     * Sets errors
+     * Sets external_reviewer_id
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param string $external_reviewer_id The identifier for the order's regulated information reviewer.
      *
      * @return self
      */
-    public function setErrors($errors) {
-        $this->container['errors'] = $errors;
+    public function setExternalReviewerId($external_reviewer_id) {
+        $this->container['external_reviewer_id'] = $external_reviewer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets rejection_reason_id
+     *
+     * @return string|null
+     */
+    public function getRejectionReasonId() {
+        return $this->container['rejection_reason_id'];
+    }
+
+    /**
+     * Sets rejection_reason_id
+     *
+     * @param string|null $rejection_reason_id The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+     *
+     * @return self
+     */
+    public function setRejectionReasonId($rejection_reason_id) {
+        $this->container['rejection_reason_id'] = $rejection_reason_id;
 
         return $this;
     }
@@ -363,7 +374,7 @@ class GetOrderBuyerInfoResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\GetOrderBuyerInfoResponse
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Orders\UpdateVerificationStatusRequestBody
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);
