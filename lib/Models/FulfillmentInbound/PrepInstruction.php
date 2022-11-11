@@ -42,6 +42,7 @@ class PrepInstruction {
     const SUFFOCATION_STICKERING = 'SuffocationStickering';
     const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
+    const CAP_SEALING = 'CapSealing';
 
     /**
      * Gets allowable values of the enum.
@@ -61,6 +62,7 @@ class PrepInstruction {
             self::SUFFOCATION_STICKERING,
             self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
+            self::CAP_SEALING,
         ];
     }
 
