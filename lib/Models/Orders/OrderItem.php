@@ -298,8 +298,12 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable, \Iter
 
     const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
+    const DEEMED_RESELLER_CATEGORY_AU_VOEC = 'AU_VOEC';
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
+    const DEEMED_RESELLER_CATEGORY_KZ_VOEC = 'KZ_VOEC';
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
+    const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
+    const DEEMED_RESELLER_CATEGORY_CA_MBF = 'CA_MBF';
     const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
 
 
@@ -312,8 +316,12 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable, \Iter
         return [
             self::DEEMED_RESELLER_CATEGORY_IOSS,
             self::DEEMED_RESELLER_CATEGORY_UOSS,
+            self::DEEMED_RESELLER_CATEGORY_AU_VOEC,
             self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_KZ_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_NZ_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_CA_MBF,
             self::DEEMED_RESELLER_CATEGORY_CA_MPF,
         ];
     }
