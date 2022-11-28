@@ -47,10 +47,10 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
         'shipment_id'             => 'string',
         'seller_sku'              => 'string',
         'fulfillment_network_sku' => 'string',
-        'quantity_shipped'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
-        'quantity_received'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
-        'quantity_in_case'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Quantity',
-        'release_date'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\DateStringType',
+        'quantity_shipped'        => 'int',
+        'quantity_received'       => 'int',
+        'quantity_in_case'        => 'int',
+        'release_date'            => 'string',
         'prep_details_list'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PrepDetailsList'
     ];
 
@@ -63,9 +63,9 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
         'shipment_id'             => null,
         'seller_sku'              => null,
         'fulfillment_network_sku' => null,
-        'quantity_shipped'        => null,
-        'quantity_received'       => null,
-        'quantity_in_case'        => null,
+        'quantity_shipped'        => 'int32',
+        'quantity_received'       => 'int32',
+        'quantity_in_case'        => 'int32',
         'release_date'            => null,
         'prep_details_list'       => null
     ];
@@ -292,7 +292,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Gets quantity_shipped.
      *
-     * @return Quantity
+     * @return int
      */
     public function getQuantityShipped() {
         return $this->container['quantity_shipped'];
@@ -301,7 +301,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Sets quantity_shipped.
      *
-     * @param Quantity $quantity_shipped quantity_shipped
+     * @param int $quantity_shipped quantity_shipped
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Gets quantity_received.
      *
-     * @return Quantity
+     * @return int|null
      */
     public function getQuantityReceived() {
         return $this->container['quantity_received'];
@@ -323,7 +323,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Sets quantity_received.
      *
-     * @param Quantity $quantity_received quantity_received
+     * @param int|null $quantity_received quantity_received
      *
      * @return $this
      */
@@ -336,7 +336,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Gets quantity_in_case.
      *
-     * @return Quantity
+     * @return int|null
      */
     public function getQuantityInCase() {
         return $this->container['quantity_in_case'];
@@ -345,7 +345,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Sets quantity_in_case.
      *
-     * @param Quantity $quantity_in_case quantity_in_case
+     * @param int|null $quantity_in_case quantity_in_case
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Gets release_date.
      *
-     * @return DateStringType
+     * @return string|null
      */
     public function getReleaseDate() {
         return $this->container['release_date'];
@@ -367,7 +367,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess {
     /**
      * Sets release_date.
      *
-     * @param DateStringType $release_date release_date
+     * @param string|null $release_date release_date
      *
      * @return $this
      */
