@@ -31,6 +31,7 @@ class PrepInstruction {
     /**
      * Possible values of this enum.
      */
+    const NO_PREP = 'NoPrep';
     const POLYBAGGING = 'Polybagging';
     const BUBBLE_WRAPPING = 'BubbleWrapping';
     const TAPING = 'Taping';
@@ -51,6 +52,7 @@ class PrepInstruction {
      */
     public static function getAllowableEnumValues() {
         return [
+            self::NO_PREP,
             self::POLYBAGGING,
             self::BUBBLE_WRAPPING,
             self::TAPING,
