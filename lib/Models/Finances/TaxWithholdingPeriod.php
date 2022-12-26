@@ -1,6 +1,6 @@
 <?php
 /**
- * DirectPayment
+ * TaxWithholdingPeriod
  *
  * PHP version 7.3
  *
@@ -26,17 +26,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * DirectPayment Class Doc Comment
+ * TaxWithholdingPeriod Class Doc Comment
  *
  * @category Class
- * @description A payment made directly to a seller.
+ * @description Period which taxwithholding on seller&#39;s account is calculated.
  * @package  SellingPartnerApi
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
     public const DISCRIMINATOR = null;
 
     /**
@@ -44,7 +44,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @var string
      */
-    protected static $swaggerModelName = 'DirectPayment';
+    protected static $swaggerModelName = 'TaxWithholdingPeriod';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -52,8 +52,8 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'direct_payment_type'   => 'string',
-        'direct_payment_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
+        'start_date' => 'string',
+        'end_date'   => 'string'
     ];
 
     /**
@@ -64,8 +64,8 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'direct_payment_type'   => null,
-        'direct_payment_amount' => null
+        'start_date' => null,
+        'end_date'   => null
     ];
 
     /**
@@ -93,8 +93,8 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'direct_payment_type'   => 'DirectPaymentType',
-        'direct_payment_amount' => 'DirectPaymentAmount'
+        'start_date' => 'StartDate',
+        'end_date'   => 'EndDate'
     ];
 
     /**
@@ -103,8 +103,8 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $setters = [
-        'direct_payment_type'   => 'setDirectPaymentType',
-        'direct_payment_amount' => 'setDirectPaymentAmount'
+        'start_date' => 'setStartDate',
+        'end_date'   => 'setEndDate'
     ];
 
     /**
@@ -113,8 +113,8 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $getters = [
-        'direct_payment_type'   => 'getDirectPaymentType',
-        'direct_payment_amount' => 'getDirectPaymentAmount'
+        'start_date' => 'getStartDate',
+        'end_date'   => 'getEndDate'
     ];
 
     /**
@@ -168,8 +168,8 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['direct_payment_type'] = $data['direct_payment_type'] ?? null;
-        $this->container['direct_payment_amount'] = $data['direct_payment_amount'] ?? null;
+        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['end_date'] = $data['end_date'] ?? null;
     }
 
     /**
@@ -194,45 +194,45 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
 
 
     /**
-     * Gets direct_payment_type
+     * Gets start_date
      *
      * @return string|null
      */
-    public function getDirectPaymentType() {
-        return $this->container['direct_payment_type'];
+    public function getStartDate() {
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets direct_payment_type
+     * Sets start_date
      *
-     * @param string|null $direct_payment_type The type of payment. Possible values: * StoredValueCardRevenue - The amount that is deducted from the seller's account because the seller received money through a stored value card. * StoredValueCardRefund - The amount that Amazon returns to the seller if the order that is bought using a stored value card is refunded. * PrivateLabelCreditCardRevenue - The amount that is deducted from the seller's account because the seller received money through a private label credit card offered by Amazon. * PrivateLabelCreditCardRefund - The amount that Amazon returns to the seller if the order that is bought using a private label credit card offered by Amazon is refunded. * CollectOnDeliveryRevenue - The COD amount that the seller collected directly from the buyer. * CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded.
+     * @param string|null $start_date A date string in ISO 8601 format.
      *
      * @return self
      */
-    public function setDirectPaymentType($direct_payment_type) {
-        $this->container['direct_payment_type'] = $direct_payment_type;
+    public function setStartDate($start_date) {
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets direct_payment_amount
+     * Gets end_date
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     * @return string|null
      */
-    public function getDirectPaymentAmount() {
-        return $this->container['direct_payment_amount'];
+    public function getEndDate() {
+        return $this->container['end_date'];
     }
 
     /**
-     * Sets direct_payment_amount
+     * Sets end_date
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $direct_payment_amount direct_payment_amount
+     * @param string|null $end_date A date string in ISO 8601 format.
      *
      * @return self
      */
-    public function setDirectPaymentAmount($direct_payment_amount) {
-        $this->container['direct_payment_amount'] = $direct_payment_amount;
+    public function setEndDate($end_date) {
+        $this->container['end_date'] = $end_date;
 
         return $this;
     }
@@ -358,7 +358,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\DirectPayment
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithholdingPeriod
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

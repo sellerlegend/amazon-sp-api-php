@@ -1,6 +1,6 @@
 <?php
 /**
- * DirectPayment
+ * RemovalShipmentItemAdjustment
  *
  * PHP version 7.3
  *
@@ -26,17 +26,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * DirectPayment Class Doc Comment
+ * RemovalShipmentItemAdjustment Class Doc Comment
  *
  * @category Class
- * @description A payment made directly to a seller.
+ * @description Item-level information for a removal shipment item adjustment.
  * @package  SellingPartnerApi
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
     public const DISCRIMINATOR = null;
 
     /**
@@ -44,7 +44,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @var string
      */
-    protected static $swaggerModelName = 'DirectPayment';
+    protected static $swaggerModelName = 'RemovalShipmentItemAdjustment';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -52,8 +52,13 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'direct_payment_type'   => 'string',
-        'direct_payment_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
+        'removal_shipment_item_id' => 'string',
+        'tax_collection_model'     => 'string',
+        'fulfillment_network_sku'  => 'string',
+        'adjusted_quantity'        => 'int',
+        'revenue_adjustment'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'tax_amount_adjustment'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'tax_withheld_adjustment'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
     ];
 
     /**
@@ -64,8 +69,13 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'direct_payment_type'   => null,
-        'direct_payment_amount' => null
+        'removal_shipment_item_id' => null,
+        'tax_collection_model'     => null,
+        'fulfillment_network_sku'  => null,
+        'adjusted_quantity'        => 'int32',
+        'revenue_adjustment'       => null,
+        'tax_amount_adjustment'    => null,
+        'tax_withheld_adjustment'  => null
     ];
 
     /**
@@ -93,8 +103,13 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'direct_payment_type'   => 'DirectPaymentType',
-        'direct_payment_amount' => 'DirectPaymentAmount'
+        'removal_shipment_item_id' => 'RemovalShipmentItemId',
+        'tax_collection_model'     => 'TaxCollectionModel',
+        'fulfillment_network_sku'  => 'FulfillmentNetworkSKU',
+        'adjusted_quantity'        => 'AdjustedQuantity',
+        'revenue_adjustment'       => 'RevenueAdjustment',
+        'tax_amount_adjustment'    => 'TaxAmountAdjustment',
+        'tax_withheld_adjustment'  => 'TaxWithheldAdjustment'
     ];
 
     /**
@@ -103,8 +118,13 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $setters = [
-        'direct_payment_type'   => 'setDirectPaymentType',
-        'direct_payment_amount' => 'setDirectPaymentAmount'
+        'removal_shipment_item_id' => 'setRemovalShipmentItemId',
+        'tax_collection_model'     => 'setTaxCollectionModel',
+        'fulfillment_network_sku'  => 'setFulfillmentNetworkSku',
+        'adjusted_quantity'        => 'setAdjustedQuantity',
+        'revenue_adjustment'       => 'setRevenueAdjustment',
+        'tax_amount_adjustment'    => 'setTaxAmountAdjustment',
+        'tax_withheld_adjustment'  => 'setTaxWithheldAdjustment'
     ];
 
     /**
@@ -113,8 +133,13 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $getters = [
-        'direct_payment_type'   => 'getDirectPaymentType',
-        'direct_payment_amount' => 'getDirectPaymentAmount'
+        'removal_shipment_item_id' => 'getRemovalShipmentItemId',
+        'tax_collection_model'     => 'getTaxCollectionModel',
+        'fulfillment_network_sku'  => 'getFulfillmentNetworkSku',
+        'adjusted_quantity'        => 'getAdjustedQuantity',
+        'revenue_adjustment'       => 'getRevenueAdjustment',
+        'tax_amount_adjustment'    => 'getTaxAmountAdjustment',
+        'tax_withheld_adjustment'  => 'getTaxWithheldAdjustment'
     ];
 
     /**
@@ -168,8 +193,13 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['direct_payment_type'] = $data['direct_payment_type'] ?? null;
-        $this->container['direct_payment_amount'] = $data['direct_payment_amount'] ?? null;
+        $this->container['removal_shipment_item_id'] = $data['removal_shipment_item_id'] ?? null;
+        $this->container['tax_collection_model'] = $data['tax_collection_model'] ?? null;
+        $this->container['fulfillment_network_sku'] = $data['fulfillment_network_sku'] ?? null;
+        $this->container['adjusted_quantity'] = $data['adjusted_quantity'] ?? null;
+        $this->container['revenue_adjustment'] = $data['revenue_adjustment'] ?? null;
+        $this->container['tax_amount_adjustment'] = $data['tax_amount_adjustment'] ?? null;
+        $this->container['tax_withheld_adjustment'] = $data['tax_withheld_adjustment'] ?? null;
     }
 
     /**
@@ -194,45 +224,155 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
 
 
     /**
-     * Gets direct_payment_type
+     * Gets removal_shipment_item_id
      *
      * @return string|null
      */
-    public function getDirectPaymentType() {
-        return $this->container['direct_payment_type'];
+    public function getRemovalShipmentItemId() {
+        return $this->container['removal_shipment_item_id'];
     }
 
     /**
-     * Sets direct_payment_type
+     * Sets removal_shipment_item_id
      *
-     * @param string|null $direct_payment_type The type of payment. Possible values: * StoredValueCardRevenue - The amount that is deducted from the seller's account because the seller received money through a stored value card. * StoredValueCardRefund - The amount that Amazon returns to the seller if the order that is bought using a stored value card is refunded. * PrivateLabelCreditCardRevenue - The amount that is deducted from the seller's account because the seller received money through a private label credit card offered by Amazon. * PrivateLabelCreditCardRefund - The amount that Amazon returns to the seller if the order that is bought using a private label credit card offered by Amazon is refunded. * CollectOnDeliveryRevenue - The COD amount that the seller collected directly from the buyer. * CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded.
+     * @param string|null $removal_shipment_item_id An identifier for an item in a removal shipment.
      *
      * @return self
      */
-    public function setDirectPaymentType($direct_payment_type) {
-        $this->container['direct_payment_type'] = $direct_payment_type;
+    public function setRemovalShipmentItemId($removal_shipment_item_id) {
+        $this->container['removal_shipment_item_id'] = $removal_shipment_item_id;
 
         return $this;
     }
 
     /**
-     * Gets direct_payment_amount
+     * Gets tax_collection_model
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     * @return string|null
      */
-    public function getDirectPaymentAmount() {
-        return $this->container['direct_payment_amount'];
+    public function getTaxCollectionModel() {
+        return $this->container['tax_collection_model'];
     }
 
     /**
-     * Sets direct_payment_amount
+     * Sets tax_collection_model
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $direct_payment_amount direct_payment_amount
+     * @param string|null $tax_collection_model The tax collection model applied to the item. Possible values: * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller. * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
      *
      * @return self
      */
-    public function setDirectPaymentAmount($direct_payment_amount) {
-        $this->container['direct_payment_amount'] = $direct_payment_amount;
+    public function setTaxCollectionModel($tax_collection_model) {
+        $this->container['tax_collection_model'] = $tax_collection_model;
+
+        return $this;
+    }
+
+    /**
+     * Gets fulfillment_network_sku
+     *
+     * @return string|null
+     */
+    public function getFulfillmentNetworkSku() {
+        return $this->container['fulfillment_network_sku'];
+    }
+
+    /**
+     * Sets fulfillment_network_sku
+     *
+     * @param string|null $fulfillment_network_sku The Amazon fulfillment network SKU for the item.
+     *
+     * @return self
+     */
+    public function setFulfillmentNetworkSku($fulfillment_network_sku) {
+        $this->container['fulfillment_network_sku'] = $fulfillment_network_sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets adjusted_quantity
+     *
+     * @return int|null
+     */
+    public function getAdjustedQuantity() {
+        return $this->container['adjusted_quantity'];
+    }
+
+    /**
+     * Sets adjusted_quantity
+     *
+     * @param int|null $adjusted_quantity Adjusted quantity of removal shipmentItemAdjustment items.
+     *
+     * @return self
+     */
+    public function setAdjustedQuantity($adjusted_quantity) {
+        $this->container['adjusted_quantity'] = $adjusted_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets revenue_adjustment
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     */
+    public function getRevenueAdjustment() {
+        return $this->container['revenue_adjustment'];
+    }
+
+    /**
+     * Sets revenue_adjustment
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $revenue_adjustment revenue_adjustment
+     *
+     * @return self
+     */
+    public function setRevenueAdjustment($revenue_adjustment) {
+        $this->container['revenue_adjustment'] = $revenue_adjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_amount_adjustment
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     */
+    public function getTaxAmountAdjustment() {
+        return $this->container['tax_amount_adjustment'];
+    }
+
+    /**
+     * Sets tax_amount_adjustment
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $tax_amount_adjustment tax_amount_adjustment
+     *
+     * @return self
+     */
+    public function setTaxAmountAdjustment($tax_amount_adjustment) {
+        $this->container['tax_amount_adjustment'] = $tax_amount_adjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_withheld_adjustment
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     */
+    public function getTaxWithheldAdjustment() {
+        return $this->container['tax_withheld_adjustment'];
+    }
+
+    /**
+     * Sets tax_withheld_adjustment
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $tax_withheld_adjustment tax_withheld_adjustment
+     *
+     * @return self
+     */
+    public function setTaxWithheldAdjustment($tax_withheld_adjustment) {
+        $this->container['tax_withheld_adjustment'] = $tax_withheld_adjustment;
 
         return $this;
     }
@@ -358,7 +498,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\DirectPayment
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemAdjustment
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

@@ -1,6 +1,6 @@
 <?php
 /**
- * DirectPayment
+ * TaxWithholdingEvent
  *
  * PHP version 7.3
  *
@@ -26,17 +26,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * DirectPayment Class Doc Comment
+ * TaxWithholdingEvent Class Doc Comment
  *
  * @category Class
- * @description A payment made directly to a seller.
+ * @description A TaxWithholding event on seller&#39;s account.
  * @package  SellingPartnerApi
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class TaxWithholdingEvent implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
     public const DISCRIMINATOR = null;
 
     /**
@@ -44,7 +44,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @var string
      */
-    protected static $swaggerModelName = 'DirectPayment';
+    protected static $swaggerModelName = 'TaxWithholdingEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -52,8 +52,10 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'direct_payment_type'   => 'string',
-        'direct_payment_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
+        'posted_date'            => 'string',
+        'base_amount'            => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'withheld_amount'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency',
+        'tax_withholding_period' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithholdingPeriod'
     ];
 
     /**
@@ -64,8 +66,10 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'direct_payment_type'   => null,
-        'direct_payment_amount' => null
+        'posted_date'            => null,
+        'base_amount'            => null,
+        'withheld_amount'        => null,
+        'tax_withholding_period' => null
     ];
 
     /**
@@ -93,8 +97,10 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'direct_payment_type'   => 'DirectPaymentType',
-        'direct_payment_amount' => 'DirectPaymentAmount'
+        'posted_date'            => 'PostedDate',
+        'base_amount'            => 'BaseAmount',
+        'withheld_amount'        => 'WithheldAmount',
+        'tax_withholding_period' => 'TaxWithholdingPeriod'
     ];
 
     /**
@@ -103,8 +109,10 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $setters = [
-        'direct_payment_type'   => 'setDirectPaymentType',
-        'direct_payment_amount' => 'setDirectPaymentAmount'
+        'posted_date'            => 'setPostedDate',
+        'base_amount'            => 'setBaseAmount',
+        'withheld_amount'        => 'setWithheldAmount',
+        'tax_withholding_period' => 'setTaxWithholdingPeriod'
     ];
 
     /**
@@ -113,8 +121,10 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $getters = [
-        'direct_payment_type'   => 'getDirectPaymentType',
-        'direct_payment_amount' => 'getDirectPaymentAmount'
+        'posted_date'            => 'getPostedDate',
+        'base_amount'            => 'getBaseAmount',
+        'withheld_amount'        => 'getWithheldAmount',
+        'tax_withholding_period' => 'getTaxWithholdingPeriod'
     ];
 
     /**
@@ -168,8 +178,10 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['direct_payment_type'] = $data['direct_payment_type'] ?? null;
-        $this->container['direct_payment_amount'] = $data['direct_payment_amount'] ?? null;
+        $this->container['posted_date'] = $data['posted_date'] ?? null;
+        $this->container['base_amount'] = $data['base_amount'] ?? null;
+        $this->container['withheld_amount'] = $data['withheld_amount'] ?? null;
+        $this->container['tax_withholding_period'] = $data['tax_withholding_period'] ?? null;
     }
 
     /**
@@ -194,45 +206,89 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
 
 
     /**
-     * Gets direct_payment_type
+     * Gets posted_date
      *
      * @return string|null
      */
-    public function getDirectPaymentType() {
-        return $this->container['direct_payment_type'];
+    public function getPostedDate() {
+        return $this->container['posted_date'];
     }
 
     /**
-     * Sets direct_payment_type
+     * Sets posted_date
      *
-     * @param string|null $direct_payment_type The type of payment. Possible values: * StoredValueCardRevenue - The amount that is deducted from the seller's account because the seller received money through a stored value card. * StoredValueCardRefund - The amount that Amazon returns to the seller if the order that is bought using a stored value card is refunded. * PrivateLabelCreditCardRevenue - The amount that is deducted from the seller's account because the seller received money through a private label credit card offered by Amazon. * PrivateLabelCreditCardRefund - The amount that Amazon returns to the seller if the order that is bought using a private label credit card offered by Amazon is refunded. * CollectOnDeliveryRevenue - The COD amount that the seller collected directly from the buyer. * CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded.
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */
-    public function setDirectPaymentType($direct_payment_type) {
-        $this->container['direct_payment_type'] = $direct_payment_type;
+    public function setPostedDate($posted_date) {
+        $this->container['posted_date'] = $posted_date;
 
         return $this;
     }
 
     /**
-     * Gets direct_payment_amount
+     * Gets base_amount
      *
      * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
      */
-    public function getDirectPaymentAmount() {
-        return $this->container['direct_payment_amount'];
+    public function getBaseAmount() {
+        return $this->container['base_amount'];
     }
 
     /**
-     * Sets direct_payment_amount
+     * Sets base_amount
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $direct_payment_amount direct_payment_amount
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $base_amount base_amount
      *
      * @return self
      */
-    public function setDirectPaymentAmount($direct_payment_amount) {
-        $this->container['direct_payment_amount'] = $direct_payment_amount;
+    public function setBaseAmount($base_amount) {
+        $this->container['base_amount'] = $base_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets withheld_amount
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     */
+    public function getWithheldAmount() {
+        return $this->container['withheld_amount'];
+    }
+
+    /**
+     * Sets withheld_amount
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $withheld_amount withheld_amount
+     *
+     * @return self
+     */
+    public function setWithheldAmount($withheld_amount) {
+        $this->container['withheld_amount'] = $withheld_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_withholding_period
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithholdingPeriod|null
+     */
+    public function getTaxWithholdingPeriod() {
+        return $this->container['tax_withholding_period'];
+    }
+
+    /**
+     * Sets tax_withholding_period
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithholdingPeriod|null $tax_withholding_period tax_withholding_period
+     *
+     * @return self
+     */
+    public function setTaxWithholdingPeriod($tax_withholding_period) {
+        $this->container['tax_withholding_period'] = $tax_withholding_period;
 
         return $this;
     }
@@ -358,7 +414,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\DirectPayment
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\TaxWithholdingEvent
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

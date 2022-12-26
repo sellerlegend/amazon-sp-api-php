@@ -1,6 +1,6 @@
 <?php
 /**
- * DirectPayment
+ * RemovalShipmentAdjustmentEvent
  *
  * PHP version 7.3
  *
@@ -26,17 +26,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * DirectPayment Class Doc Comment
+ * RemovalShipmentAdjustmentEvent Class Doc Comment
  *
  * @category Class
- * @description A payment made directly to a seller.
+ * @description A financial adjustment event for FBA liquidated inventory. A positive value indicates money owed to Amazon by the buyer (for example, when the charge was incorrectly calculated as less than it should be). A negative value indicates a full or partial refund owed to the buyer (for example, when the buyer receives damaged items or fewer items than ordered).
  * @package  SellingPartnerApi
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
     public const DISCRIMINATOR = null;
 
     /**
@@ -44,7 +44,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @var string
      */
-    protected static $swaggerModelName = 'DirectPayment';
+    protected static $swaggerModelName = 'RemovalShipmentAdjustmentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -52,8 +52,12 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'direct_payment_type'   => 'string',
-        'direct_payment_amount' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency'
+        'posted_date'                           => 'string',
+        'adjustment_event_id'                   => 'string',
+        'merchant_order_id'                     => 'string',
+        'order_id'                              => 'string',
+        'transaction_type'                      => 'string',
+        'removal_shipment_item_adjustment_list' => '\SellerLegend\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemAdjustment[]'
     ];
 
     /**
@@ -64,8 +68,12 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'direct_payment_type'   => null,
-        'direct_payment_amount' => null
+        'posted_date'                           => null,
+        'adjustment_event_id'                   => null,
+        'merchant_order_id'                     => null,
+        'order_id'                              => null,
+        'transaction_type'                      => null,
+        'removal_shipment_item_adjustment_list' => null
     ];
 
     /**
@@ -93,8 +101,12 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'direct_payment_type'   => 'DirectPaymentType',
-        'direct_payment_amount' => 'DirectPaymentAmount'
+        'posted_date'                           => 'PostedDate',
+        'adjustment_event_id'                   => 'AdjustmentEventId',
+        'merchant_order_id'                     => 'MerchantOrderId',
+        'order_id'                              => 'OrderId',
+        'transaction_type'                      => 'TransactionType',
+        'removal_shipment_item_adjustment_list' => 'RemovalShipmentItemAdjustmentList'
     ];
 
     /**
@@ -103,8 +115,12 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $setters = [
-        'direct_payment_type'   => 'setDirectPaymentType',
-        'direct_payment_amount' => 'setDirectPaymentAmount'
+        'posted_date'                           => 'setPostedDate',
+        'adjustment_event_id'                   => 'setAdjustmentEventId',
+        'merchant_order_id'                     => 'setMerchantOrderId',
+        'order_id'                              => 'setOrderId',
+        'transaction_type'                      => 'setTransactionType',
+        'removal_shipment_item_adjustment_list' => 'setRemovalShipmentItemAdjustmentList'
     ];
 
     /**
@@ -113,8 +129,12 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      * @var string[]
      */
     protected static $getters = [
-        'direct_payment_type'   => 'getDirectPaymentType',
-        'direct_payment_amount' => 'getDirectPaymentAmount'
+        'posted_date'                           => 'getPostedDate',
+        'adjustment_event_id'                   => 'getAdjustmentEventId',
+        'merchant_order_id'                     => 'getMerchantOrderId',
+        'order_id'                              => 'getOrderId',
+        'transaction_type'                      => 'getTransactionType',
+        'removal_shipment_item_adjustment_list' => 'getRemovalShipmentItemAdjustmentList'
     ];
 
     /**
@@ -168,8 +188,12 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['direct_payment_type'] = $data['direct_payment_type'] ?? null;
-        $this->container['direct_payment_amount'] = $data['direct_payment_amount'] ?? null;
+        $this->container['posted_date'] = $data['posted_date'] ?? null;
+        $this->container['adjustment_event_id'] = $data['adjustment_event_id'] ?? null;
+        $this->container['merchant_order_id'] = $data['merchant_order_id'] ?? null;
+        $this->container['order_id'] = $data['order_id'] ?? null;
+        $this->container['transaction_type'] = $data['transaction_type'] ?? null;
+        $this->container['removal_shipment_item_adjustment_list'] = $data['removal_shipment_item_adjustment_list'] ?? null;
     }
 
     /**
@@ -194,45 +218,133 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
 
 
     /**
-     * Gets direct_payment_type
+     * Gets posted_date
      *
      * @return string|null
      */
-    public function getDirectPaymentType() {
-        return $this->container['direct_payment_type'];
+    public function getPostedDate() {
+        return $this->container['posted_date'];
     }
 
     /**
-     * Sets direct_payment_type
+     * Sets posted_date
      *
-     * @param string|null $direct_payment_type The type of payment. Possible values: * StoredValueCardRevenue - The amount that is deducted from the seller's account because the seller received money through a stored value card. * StoredValueCardRefund - The amount that Amazon returns to the seller if the order that is bought using a stored value card is refunded. * PrivateLabelCreditCardRevenue - The amount that is deducted from the seller's account because the seller received money through a private label credit card offered by Amazon. * PrivateLabelCreditCardRefund - The amount that Amazon returns to the seller if the order that is bought using a private label credit card offered by Amazon is refunded. * CollectOnDeliveryRevenue - The COD amount that the seller collected directly from the buyer. * CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded.
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */
-    public function setDirectPaymentType($direct_payment_type) {
-        $this->container['direct_payment_type'] = $direct_payment_type;
+    public function setPostedDate($posted_date) {
+        $this->container['posted_date'] = $posted_date;
 
         return $this;
     }
 
     /**
-     * Gets direct_payment_amount
+     * Gets adjustment_event_id
      *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null
+     * @return string|null
      */
-    public function getDirectPaymentAmount() {
-        return $this->container['direct_payment_amount'];
+    public function getAdjustmentEventId() {
+        return $this->container['adjustment_event_id'];
     }
 
     /**
-     * Sets direct_payment_amount
+     * Sets adjustment_event_id
      *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\Currency|null $direct_payment_amount direct_payment_amount
+     * @param string|null $adjustment_event_id The unique identifier for the adjustment event.
      *
      * @return self
      */
-    public function setDirectPaymentAmount($direct_payment_amount) {
-        $this->container['direct_payment_amount'] = $direct_payment_amount;
+    public function setAdjustmentEventId($adjustment_event_id) {
+        $this->container['adjustment_event_id'] = $adjustment_event_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_order_id
+     *
+     * @return string|null
+     */
+    public function getMerchantOrderId() {
+        return $this->container['merchant_order_id'];
+    }
+
+    /**
+     * Sets merchant_order_id
+     *
+     * @param string|null $merchant_order_id The merchant removal orderId.
+     *
+     * @return self
+     */
+    public function setMerchantOrderId($merchant_order_id) {
+        $this->container['merchant_order_id'] = $merchant_order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_id
+     *
+     * @return string|null
+     */
+    public function getOrderId() {
+        return $this->container['order_id'];
+    }
+
+    /**
+     * Sets order_id
+     *
+     * @param string|null $order_id The orderId for shipping inventory.
+     *
+     * @return self
+     */
+    public function setOrderId($order_id) {
+        $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_type
+     *
+     * @return string|null
+     */
+    public function getTransactionType() {
+        return $this->container['transaction_type'];
+    }
+
+    /**
+     * Sets transaction_type
+     *
+     * @param string|null $transaction_type The type of removal order. Possible values: * WHOLESALE_LIQUIDATION.
+     *
+     * @return self
+     */
+    public function setTransactionType($transaction_type) {
+        $this->container['transaction_type'] = $transaction_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets removal_shipment_item_adjustment_list
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemAdjustment[]|null
+     */
+    public function getRemovalShipmentItemAdjustmentList() {
+        return $this->container['removal_shipment_item_adjustment_list'];
+    }
+
+    /**
+     * Sets removal_shipment_item_adjustment_list
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentItemAdjustment[]|null $removal_shipment_item_adjustment_list A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
+     *
+     * @return self
+     */
+    public function setRemovalShipmentItemAdjustmentList($removal_shipment_item_adjustment_list) {
+        $this->container['removal_shipment_item_adjustment_list'] = $removal_shipment_item_adjustment_list;
 
         return $this;
     }
@@ -358,7 +470,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable, \
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\DirectPayment
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\Finances\RemovalShipmentAdjustmentEvent
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);
