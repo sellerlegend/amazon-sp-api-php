@@ -1,35 +1,32 @@
 <?php
 /**
- * InboundShipmentPlan.
+ * InboundShipmentPlan
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * InboundShipmentPlan Class Doc Comment.
+ * InboundShipmentPlan Class Doc Comment
  *
+ * @category Class
  * @description Inbound shipment information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class InboundShipmentPlan implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,7 +36,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'InboundShipmentPlan';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
@@ -48,14 +45,16 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
         'destination_fulfillment_center_id' => 'string',
         'ship_to_address'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address',
         'label_prep_type'                   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepType',
-        'items'                             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanItemList',
+        'items'                             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanItem[]',
         'estimated_box_contents_fee'        => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BoxContentsFeeDetails'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'shipment_id'                       => null,
@@ -67,7 +66,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -76,7 +75,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -86,7 +85,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -96,10 +95,11 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
         'ship_to_address'                   => 'ShipToAddress',
         'label_prep_type'                   => 'LabelPrepType',
         'items'                             => 'Items',
-        'estimated_box_contents_fee'        => 'EstimatedBoxContentsFee',];
+        'estimated_box_contents_fee'        => 'EstimatedBoxContentsFee'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -109,10 +109,11 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
         'ship_to_address'                   => 'setShipToAddress',
         'label_prep_type'                   => 'setLabelPrepType',
         'items'                             => 'setItems',
-        'estimated_box_contents_fee'        => 'setEstimatedBoxContentsFee',];
+        'estimated_box_contents_fee'        => 'setEstimatedBoxContentsFee'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -122,11 +123,12 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
         'ship_to_address'                   => 'getShipToAddress',
         'label_prep_type'                   => 'getLabelPrepType',
         'items'                             => 'getItems',
-        'estimated_box_contents_fee'        => 'getEstimatedBoxContentsFee',];
+        'estimated_box_contents_fee'        => 'getEstimatedBoxContentsFee'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -135,7 +137,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -144,7 +146,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -162,25 +164,25 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['shipment_id'] = isset($data['shipment_id']) ? $data['shipment_id'] : null;
-        $this->container['destination_fulfillment_center_id'] = isset($data['destination_fulfillment_center_id']) ? $data['destination_fulfillment_center_id'] : null;
-        $this->container['ship_to_address'] = isset($data['ship_to_address']) ? $data['ship_to_address'] : null;
-        $this->container['label_prep_type'] = isset($data['label_prep_type']) ? $data['label_prep_type'] : null;
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
-        $this->container['estimated_box_contents_fee'] = isset($data['estimated_box_contents_fee']) ? $data['estimated_box_contents_fee'] : null;
+        $this->container['shipment_id'] = $data['shipment_id'] ?? null;
+        $this->container['destination_fulfillment_center_id'] = $data['destination_fulfillment_center_id'] ?? null;
+        $this->container['ship_to_address'] = $data['ship_to_address'] ?? null;
+        $this->container['label_prep_type'] = $data['label_prep_type'] ?? null;
+        $this->container['items'] = $data['items'] ?? null;
+        $this->container['estimated_box_contents_fee'] = $data['estimated_box_contents_fee'] ?? null;
     }
 
     /**
@@ -190,38 +192,37 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['shipment_id']) {
+        if ($this->container['shipment_id'] === null) {
             $invalidProperties[] = "'shipment_id' can't be null";
         }
-        if (null === $this->container['destination_fulfillment_center_id']) {
+        if ($this->container['destination_fulfillment_center_id'] === null) {
             $invalidProperties[] = "'destination_fulfillment_center_id' can't be null";
         }
-        if (null === $this->container['ship_to_address']) {
+        if ($this->container['ship_to_address'] === null) {
             $invalidProperties[] = "'ship_to_address' can't be null";
         }
-        if (null === $this->container['label_prep_type']) {
+        if ($this->container['label_prep_type'] === null) {
             $invalidProperties[] = "'label_prep_type' can't be null";
         }
-        if (null === $this->container['items']) {
+        if ($this->container['items'] === null) {
             $invalidProperties[] = "'items' can't be null";
         }
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets shipment_id.
+     * Gets shipment_id
      *
      * @return string
      */
@@ -230,11 +231,11 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets shipment_id.
+     * Sets shipment_id
      *
-     * @param string $shipment_id a shipment identifier originally returned by the createInboundShipmentPlan operation
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation.
      *
-     * @return $this
+     * @return self
      */
     public function setShipmentId($shipment_id) {
         $this->container['shipment_id'] = $shipment_id;
@@ -243,7 +244,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets destination_fulfillment_center_id.
+     * Gets destination_fulfillment_center_id
      *
      * @return string
      */
@@ -252,11 +253,11 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets destination_fulfillment_center_id.
+     * Sets destination_fulfillment_center_id
      *
-     * @param string $destination_fulfillment_center_id an Amazon fulfillment center identifier created by Amazon
+     * @param string $destination_fulfillment_center_id An Amazon fulfillment center identifier created by Amazon.
      *
-     * @return $this
+     * @return self
      */
     public function setDestinationFulfillmentCenterId($destination_fulfillment_center_id) {
         $this->container['destination_fulfillment_center_id'] = $destination_fulfillment_center_id;
@@ -265,20 +266,20 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets ship_to_address.
+     * Gets ship_to_address
      *
-     * @return Address
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address
      */
     public function getShipToAddress() {
         return $this->container['ship_to_address'];
     }
 
     /**
-     * Sets ship_to_address.
+     * Sets ship_to_address
      *
-     * @param Address $ship_to_address ship_to_address
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Address $ship_to_address ship_to_address
      *
-     * @return $this
+     * @return self
      */
     public function setShipToAddress($ship_to_address) {
         $this->container['ship_to_address'] = $ship_to_address;
@@ -287,20 +288,20 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets label_prep_type.
+     * Gets label_prep_type
      *
-     * @return LabelPrepType
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepType
      */
     public function getLabelPrepType() {
         return $this->container['label_prep_type'];
     }
 
     /**
-     * Sets label_prep_type.
+     * Sets label_prep_type
      *
-     * @param LabelPrepType $label_prep_type label_prep_type
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\LabelPrepType $label_prep_type label_prep_type
      *
-     * @return $this
+     * @return self
      */
     public function setLabelPrepType($label_prep_type) {
         $this->container['label_prep_type'] = $label_prep_type;
@@ -309,20 +310,20 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets items.
+     * Gets items
      *
-     * @return InboundShipmentPlanItemList
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanItem[]
      */
     public function getItems() {
         return $this->container['items'];
     }
 
     /**
-     * Sets items.
+     * Sets items
      *
-     * @param InboundShipmentPlanItemList $items items
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlanItem[] $items A list of inbound shipment plan item information.
      *
-     * @return $this
+     * @return self
      */
     public function setItems($items) {
         $this->container['items'] = $items;
@@ -331,20 +332,20 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets estimated_box_contents_fee.
+     * Gets estimated_box_contents_fee
      *
-     * @return BoxContentsFeeDetails
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BoxContentsFeeDetails|null
      */
     public function getEstimatedBoxContentsFee() {
         return $this->container['estimated_box_contents_fee'];
     }
 
     /**
-     * Sets estimated_box_contents_fee.
+     * Sets estimated_box_contents_fee
      *
-     * @param BoxContentsFeeDetails $estimated_box_contents_fee estimated_box_contents_fee
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BoxContentsFeeDetails|null $estimated_box_contents_fee estimated_box_contents_fee
      *
-     * @return $this
+     * @return self
      */
     public function setEstimatedBoxContentsFee($estimated_box_contents_fee) {
         $this->container['estimated_box_contents_fee'] = $estimated_box_contents_fee;
@@ -355,10 +356,11 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -366,22 +368,24 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -393,27 +397,91 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\InboundShipmentPlan
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

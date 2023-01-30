@@ -1,35 +1,31 @@
 <?php
 /**
- * CurrencyCode.
+ * CurrencyCode
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+
 /**
- * CurrencyCode Class Doc Comment.
+ * CurrencyCode Class Doc Comment
  *
+ * @category Class
  * @description The currency code.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
  */
 class CurrencyCode {
-
     public $value;
 
     /**
-     * Possible values of this enum.
+     * Possible values of this enum
      */
     const CAD = 'CAD';
     const USD = 'USD';
@@ -37,8 +33,7 @@ class CurrencyCode {
     const EUR = 'EUR';
 
     /**
-     * Gets allowable values of the enum.
-     *
+     * Gets allowable values of the enum
      * @return string[]
      */
     public static function getAllowableEnumValues() {
@@ -67,3 +62,5 @@ class CurrencyCode {
         return $this->value;
     }
 }
+
+

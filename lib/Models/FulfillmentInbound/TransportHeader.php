@@ -1,35 +1,32 @@
 <?php
 /**
- * TransportHeader.
+ * TransportHeader
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * TransportHeader Class Doc Comment.
+ * TransportHeader Class Doc Comment
  *
+ * @category Class
  * @description The shipping identifier, information about whether the shipment is by an Amazon-partnered carrier, and information about whether the shipment is Small Parcel or Less Than Truckload/Full Truckload (LTL/FTL).
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class TransportHeader implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,7 +36,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'TransportHeader';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
@@ -51,18 +48,21 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'seller_id'     => null,
         'shipment_id'   => null,
         'is_partnered'  => null,
-        'shipment_type' => null,];
+        'shipment_type' => null
+    ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -71,7 +71,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -81,7 +81,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -89,10 +89,11 @@ class TransportHeader implements ModelInterface, ArrayAccess {
         'seller_id'     => 'SellerId',
         'shipment_id'   => 'ShipmentId',
         'is_partnered'  => 'IsPartnered',
-        'shipment_type' => 'ShipmentType',];
+        'shipment_type' => 'ShipmentType'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -100,10 +101,11 @@ class TransportHeader implements ModelInterface, ArrayAccess {
         'seller_id'     => 'setSellerId',
         'shipment_id'   => 'setShipmentId',
         'is_partnered'  => 'setIsPartnered',
-        'shipment_type' => 'setShipmentType',];
+        'shipment_type' => 'setShipmentType'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -111,11 +113,12 @@ class TransportHeader implements ModelInterface, ArrayAccess {
         'seller_id'     => 'getSellerId',
         'shipment_id'   => 'getShipmentId',
         'is_partnered'  => 'getIsPartnered',
-        'shipment_type' => 'getShipmentType',];
+        'shipment_type' => 'getShipmentType'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -124,7 +127,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -133,7 +136,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -151,23 +154,23 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['seller_id'] = isset($data['seller_id']) ? $data['seller_id'] : null;
-        $this->container['shipment_id'] = isset($data['shipment_id']) ? $data['shipment_id'] : null;
-        $this->container['is_partnered'] = isset($data['is_partnered']) ? $data['is_partnered'] : null;
-        $this->container['shipment_type'] = isset($data['shipment_type']) ? $data['shipment_type'] : null;
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
+        $this->container['shipment_id'] = $data['shipment_id'] ?? null;
+        $this->container['is_partnered'] = $data['is_partnered'] ?? null;
+        $this->container['shipment_type'] = $data['shipment_type'] ?? null;
     }
 
     /**
@@ -177,35 +180,34 @@ class TransportHeader implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['seller_id']) {
+        if ($this->container['seller_id'] === null) {
             $invalidProperties[] = "'seller_id' can't be null";
         }
-        if (null === $this->container['shipment_id']) {
+        if ($this->container['shipment_id'] === null) {
             $invalidProperties[] = "'shipment_id' can't be null";
         }
-        if (null === $this->container['is_partnered']) {
+        if ($this->container['is_partnered'] === null) {
             $invalidProperties[] = "'is_partnered' can't be null";
         }
-        if (null === $this->container['shipment_type']) {
+        if ($this->container['shipment_type'] === null) {
             $invalidProperties[] = "'shipment_type' can't be null";
         }
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets seller_id.
+     * Gets seller_id
      *
      * @return string
      */
@@ -214,11 +216,11 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets seller_id.
+     * Sets seller_id
      *
-     * @param string $seller_id the Amazon seller identifier
+     * @param string $seller_id The Amazon seller identifier.
      *
-     * @return $this
+     * @return self
      */
     public function setSellerId($seller_id) {
         $this->container['seller_id'] = $seller_id;
@@ -227,7 +229,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets shipment_id.
+     * Gets shipment_id
      *
      * @return string
      */
@@ -236,11 +238,11 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets shipment_id.
+     * Sets shipment_id
      *
-     * @param string $shipment_id a shipment identifier originally returned by the createInboundShipmentPlan operation
+     * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation.
      *
-     * @return $this
+     * @return self
      */
     public function setShipmentId($shipment_id) {
         $this->container['shipment_id'] = $shipment_id;
@@ -249,7 +251,7 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets is_partnered.
+     * Gets is_partnered
      *
      * @return bool
      */
@@ -258,11 +260,11 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets is_partnered.
+     * Sets is_partnered
      *
-     * @param bool $is_partnered Indicates whether a putTransportDetails request is for a partnered carrier.  Possible values:  * true – Request is for an Amazon-partnered carrier.  * false – Request is for a non-Amazon-partnered carrier.
+     * @param bool $is_partnered Indicates whether a putTransportDetails request is for a partnered carrier. Possible values: * true - Request is for an Amazon-partnered carrier. * false - Request is for a non-Amazon-partnered carrier.
      *
-     * @return $this
+     * @return self
      */
     public function setIsPartnered($is_partnered) {
         $this->container['is_partnered'] = $is_partnered;
@@ -271,20 +273,20 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets shipment_type.
+     * Gets shipment_type
      *
-     * @return ShipmentType
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentType
      */
     public function getShipmentType() {
         return $this->container['shipment_type'];
     }
 
     /**
-     * Sets shipment_type.
+     * Sets shipment_type
      *
-     * @param ShipmentType $shipment_type shipment_type
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\ShipmentType $shipment_type shipment_type
      *
-     * @return $this
+     * @return self
      */
     public function setShipmentType($shipment_type) {
         $this->container['shipment_type'] = $shipment_type;
@@ -295,10 +297,11 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -306,22 +309,24 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -333,27 +338,91 @@ class TransportHeader implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\TransportHeader
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

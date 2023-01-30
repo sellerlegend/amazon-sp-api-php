@@ -1,44 +1,62 @@
 <?php
 /**
- * UnitOfWeight.
+ * UnitOfWeight
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+
 /**
- * UnitOfWeight Class Doc Comment.
+ * UnitOfWeight Class Doc Comment
  *
+ * @category Class
  * @description Indicates the unit of weight.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
  */
 class UnitOfWeight {
+    public $value;
+
     /**
-     * Possible values of this enum.
+     * Possible values of this enum
      */
     const POUNDS = 'pounds';
     const KILOGRAMS = 'kilograms';
 
     /**
-     * Gets allowable values of the enum.
-     *
+     * Gets allowable values of the enum
      * @return string[]
      */
     public static function getAllowableEnumValues() {
         return [
             self::POUNDS,
-            self::KILOGRAMS,];
+            self::KILOGRAMS,
+        ];
+    }
+
+    public function __construct($value) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'UnitOfWeight', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->value;
     }
 }
+
+

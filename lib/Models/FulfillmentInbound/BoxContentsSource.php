@@ -1,32 +1,31 @@
 <?php
 /**
- * BoxContentsSource.
+ * BoxContentsSource
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+
 /**
- * BoxContentsSource Class Doc Comment.
+ * BoxContentsSource Class Doc Comment
  *
+ * @category Class
  * @description Where the seller provided box contents information for a shipment.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
  */
 class BoxContentsSource {
+    public $value;
+
     /**
-     * Possible values of this enum.
+     * Possible values of this enum
      */
     const NONE = 'NONE';
     const FEED = 'FEED';
@@ -34,8 +33,7 @@ class BoxContentsSource {
     const INTERACTIVE = 'INTERACTIVE';
 
     /**
-     * Gets allowable values of the enum.
-     *
+     * Gets allowable values of the enum
      * @return string[]
      */
     public static function getAllowableEnumValues() {
@@ -43,6 +41,26 @@ class BoxContentsSource {
             self::NONE,
             self::FEED,
             self::_2_D_BARCODE,
-            self::INTERACTIVE,];
+            self::INTERACTIVE,
+        ];
+    }
+
+    public function __construct($value) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'BoxContentsSource', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->value;
     }
 }
+
+

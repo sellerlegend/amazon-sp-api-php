@@ -1,35 +1,32 @@
 <?php
 /**
- * Dimensions.
+ * Dimensions
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * Dimensions Class Doc Comment.
+ * Dimensions Class Doc Comment
  *
+ * @category Class
  * @description The dimension values and unit of measurement.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class Dimensions implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,31 +36,33 @@ class Dimensions implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'Dimensions';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'length' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
-        'width'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
-        'height' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\BigDecimalType',
+        'length' => 'double',
+        'width'  => 'double',
+        'height' => 'double',
         'unit'   => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'length' => null,
-        'width'  => null,
-        'height' => null,
+        'length' => 'double',
+        'width'  => 'double',
+        'height' => 'double',
         'unit'   => null
     ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -72,7 +71,7 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -82,7 +81,7 @@ class Dimensions implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -90,10 +89,11 @@ class Dimensions implements ModelInterface, ArrayAccess {
         'length' => 'Length',
         'width'  => 'Width',
         'height' => 'Height',
-        'unit'   => 'Unit',];
+        'unit'   => 'Unit'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -101,10 +101,11 @@ class Dimensions implements ModelInterface, ArrayAccess {
         'length' => 'setLength',
         'width'  => 'setWidth',
         'height' => 'setHeight',
-        'unit'   => 'setUnit',];
+        'unit'   => 'setUnit'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -112,11 +113,12 @@ class Dimensions implements ModelInterface, ArrayAccess {
         'length' => 'getLength',
         'width'  => 'getWidth',
         'height' => 'getHeight',
-        'unit'   => 'getUnit',];
+        'unit'   => 'getUnit'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -125,7 +127,7 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -134,7 +136,7 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -152,23 +154,23 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
+        $this->container['length'] = $data['length'] ?? null;
+        $this->container['width'] = $data['width'] ?? null;
+        $this->container['height'] = $data['height'] ?? null;
+        $this->container['unit'] = $data['unit'] ?? null;
     }
 
     /**
@@ -178,48 +180,47 @@ class Dimensions implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['length']) {
+        if ($this->container['length'] === null) {
             $invalidProperties[] = "'length' can't be null";
         }
-        if (null === $this->container['width']) {
+        if ($this->container['width'] === null) {
             $invalidProperties[] = "'width' can't be null";
         }
-        if (null === $this->container['height']) {
+        if ($this->container['height'] === null) {
             $invalidProperties[] = "'height' can't be null";
         }
-        if (null === $this->container['unit']) {
+        if ($this->container['unit'] === null) {
             $invalidProperties[] = "'unit' can't be null";
         }
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets length.
+     * Gets length
      *
-     * @return BigDecimalType
+     * @return double
      */
     public function getLength() {
         return $this->container['length'];
     }
 
     /**
-     * Sets length.
+     * Sets length
      *
-     * @param BigDecimalType $length length
+     * @param double $length length
      *
-     * @return $this
+     * @return self
      */
     public function setLength($length) {
         $this->container['length'] = $length;
@@ -228,20 +229,20 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets width.
+     * Gets width
      *
-     * @return BigDecimalType
+     * @return double
      */
     public function getWidth() {
         return $this->container['width'];
     }
 
     /**
-     * Sets width.
+     * Sets width
      *
-     * @param BigDecimalType $width width
+     * @param double $width width
      *
-     * @return $this
+     * @return self
      */
     public function setWidth($width) {
         $this->container['width'] = $width;
@@ -250,20 +251,20 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets height.
+     * Gets height
      *
-     * @return BigDecimalType
+     * @return double
      */
     public function getHeight() {
         return $this->container['height'];
     }
 
     /**
-     * Sets height.
+     * Sets height
      *
-     * @param BigDecimalType $height height
+     * @param double $height height
      *
-     * @return $this
+     * @return self
      */
     public function setHeight($height) {
         $this->container['height'] = $height;
@@ -272,20 +273,20 @@ class Dimensions implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets unit.
+     * Gets unit
      *
-     * @return UnitOfMeasurement
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement
      */
     public function getUnit() {
         return $this->container['unit'];
     }
 
     /**
-     * Sets unit.
+     * Sets unit
      *
-     * @param UnitOfMeasurement $unit unit
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnitOfMeasurement $unit unit
      *
-     * @return $this
+     * @return self
      */
     public function setUnit($unit) {
         $this->container['unit'] = $unit;
@@ -296,10 +297,11 @@ class Dimensions implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -307,22 +309,24 @@ class Dimensions implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -334,27 +338,91 @@ class Dimensions implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Dimensions
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

@@ -1,35 +1,32 @@
 <?php
 /**
- * PartneredLtlDataInput.
+ * PartneredLtlDataInput
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * PartneredLtlDataInput Class Doc Comment.
+ * PartneredLtlDataInput Class Doc Comment
  *
+ * @category Class
  * @description Information that is required by an Amazon-partnered carrier to ship a Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,28 +36,30 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'PartneredLtlDataInput';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerTypes = [
         'contact'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Contact',
-        'box_count'             => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\UnsignedIntType',
-        'seller_freight_class'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\SellerFreightClass',
-        'freight_ready_date'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\DateStringType',
-        'pallet_list'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PalletList',
+        'box_count'             => 'int',
+        'seller_freight_class'  => 'string',
+        'freight_ready_date'    => 'string',
+        'pallet_list'           => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Pallet[]',
         'total_weight'          => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight',
         'seller_declared_value' => '\SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'contact'               => null,
-        'box_count'             => null,
+        'box_count'             => 'int64',
         'seller_freight_class'  => null,
         'freight_ready_date'    => null,
         'pallet_list'           => null,
@@ -69,7 +68,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -78,7 +77,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -88,7 +87,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -103,7 +102,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -118,7 +117,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -134,7 +133,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -143,7 +142,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -152,7 +151,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -170,26 +169,26 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
-        $this->container['box_count'] = isset($data['box_count']) ? $data['box_count'] : null;
-        $this->container['seller_freight_class'] = isset($data['seller_freight_class']) ? $data['seller_freight_class'] : null;
-        $this->container['freight_ready_date'] = isset($data['freight_ready_date']) ? $data['freight_ready_date'] : null;
-        $this->container['pallet_list'] = isset($data['pallet_list']) ? $data['pallet_list'] : null;
-        $this->container['total_weight'] = isset($data['total_weight']) ? $data['total_weight'] : null;
-        $this->container['seller_declared_value'] = isset($data['seller_declared_value']) ? $data['seller_declared_value'] : null;
+        $this->container['contact'] = $data['contact'] ?? null;
+        $this->container['box_count'] = $data['box_count'] ?? null;
+        $this->container['seller_freight_class'] = $data['seller_freight_class'] ?? null;
+        $this->container['freight_ready_date'] = $data['freight_ready_date'] ?? null;
+        $this->container['pallet_list'] = $data['pallet_list'] ?? null;
+        $this->container['total_weight'] = $data['total_weight'] ?? null;
+        $this->container['seller_declared_value'] = $data['seller_declared_value'] ?? null;
     }
 
     /**
@@ -199,35 +198,35 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets contact.
+     * Gets contact
      *
-     * @return Contact
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Contact|null
      */
     public function getContact() {
         return $this->container['contact'];
     }
 
     /**
-     * Sets contact.
+     * Sets contact
      *
-     * @param Contact $contact contact
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Contact|null $contact contact
      *
-     * @return $this
+     * @return self
      */
     public function setContact($contact) {
         $this->container['contact'] = $contact;
@@ -236,20 +235,20 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets box_count.
+     * Gets box_count
      *
-     * @return UnsignedIntType
+     * @return int|null
      */
     public function getBoxCount() {
         return $this->container['box_count'];
     }
 
     /**
-     * Sets box_count.
+     * Sets box_count
      *
-     * @param UnsignedIntType $box_count box_count
+     * @param int|null $box_count box_count
      *
-     * @return $this
+     * @return self
      */
     public function setBoxCount($box_count) {
         $this->container['box_count'] = $box_count;
@@ -258,20 +257,20 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets seller_freight_class.
+     * Gets seller_freight_class
      *
-     * @return SellerFreightClass
+     * @return string|null
      */
     public function getSellerFreightClass() {
         return $this->container['seller_freight_class'];
     }
 
     /**
-     * Sets seller_freight_class.
+     * Sets seller_freight_class
      *
-     * @param SellerFreightClass $seller_freight_class seller_freight_class
+     * @param string|null $seller_freight_class The freight class of the shipment. For information about determining the freight class, contact the carrier.
      *
-     * @return $this
+     * @return self
      */
     public function setSellerFreightClass($seller_freight_class) {
         $this->container['seller_freight_class'] = $seller_freight_class;
@@ -280,20 +279,20 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets freight_ready_date.
+     * Gets freight_ready_date
      *
-     * @return DateStringType
+     * @return string|null
      */
     public function getFreightReadyDate() {
         return $this->container['freight_ready_date'];
     }
 
     /**
-     * Sets freight_ready_date.
+     * Sets freight_ready_date
      *
-     * @param DateStringType $freight_ready_date freight_ready_date
+     * @param string|null $freight_ready_date A date string in ISO 8601 format.
      *
-     * @return $this
+     * @return self
      */
     public function setFreightReadyDate($freight_ready_date) {
         $this->container['freight_ready_date'] = $freight_ready_date;
@@ -302,20 +301,20 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets pallet_list.
+     * Gets pallet_list
      *
-     * @return PalletList
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Pallet[]|null
      */
     public function getPalletList() {
         return $this->container['pallet_list'];
     }
 
     /**
-     * Sets pallet_list.
+     * Sets pallet_list
      *
-     * @param PalletList $pallet_list pallet_list
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Pallet[]|null $pallet_list A list of pallet information.
      *
-     * @return $this
+     * @return self
      */
     public function setPalletList($pallet_list) {
         $this->container['pallet_list'] = $pallet_list;
@@ -324,20 +323,20 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets total_weight.
+     * Gets total_weight
      *
-     * @return Weight
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight|null
      */
     public function getTotalWeight() {
         return $this->container['total_weight'];
     }
 
     /**
-     * Sets total_weight.
+     * Sets total_weight
      *
-     * @param Weight $total_weight total_weight
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Weight|null $total_weight total_weight
      *
-     * @return $this
+     * @return self
      */
     public function setTotalWeight($total_weight) {
         $this->container['total_weight'] = $total_weight;
@@ -346,20 +345,20 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets seller_declared_value.
+     * Gets seller_declared_value
      *
-     * @return Amount
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount|null
      */
     public function getSellerDeclaredValue() {
         return $this->container['seller_declared_value'];
     }
 
     /**
-     * Sets seller_declared_value.
+     * Sets seller_declared_value
      *
-     * @param Amount $seller_declared_value seller_declared_value
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\Amount|null $seller_declared_value seller_declared_value
      *
-     * @return $this
+     * @return self
      */
     public function setSellerDeclaredValue($seller_declared_value) {
         $this->container['seller_declared_value'] = $seller_declared_value;
@@ -370,10 +369,11 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -381,22 +381,24 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -408,27 +410,91 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound\PartneredLtlDataInput
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

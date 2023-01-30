@@ -1,37 +1,34 @@
 <?php
 /**
- * PrepInstruction.
+ * PrepInstruction
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+
 /**
- * PrepInstruction Class Doc Comment.
+ * PrepInstruction Class Doc Comment
  *
- * @description Preparation instructions for shipping an item to Amazon&#x27;s fulfillment network. For more information about preparing items for shipment to Amazon&#x27;s fulfillment network, see the Seller Central Help for your marketplace.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @category Class
+ * @description Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.
+ * @package  SellingPartnerApi
+ * @group
  */
 class PrepInstruction {
-
     public $value;
 
     /**
-     * Possible values of this enum.
+     * Possible values of this enum
      */
     const NO_PREP = 'NoPrep';
+    const CAP_SEALING = 'CapSealing';
     const POLYBAGGING = 'Polybagging';
     const BUBBLE_WRAPPING = 'BubbleWrapping';
     const TAPING = 'Taping';
@@ -43,16 +40,15 @@ class PrepInstruction {
     const SUFFOCATION_STICKERING = 'SuffocationStickering';
     const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
-    const CAP_SEALING = 'CapSealing';
 
     /**
-     * Gets allowable values of the enum.
-     *
+     * Gets allowable values of the enum
      * @return string[]
      */
     public static function getAllowableEnumValues() {
         return [
             self::NO_PREP,
+            self::CAP_SEALING,
             self::POLYBAGGING,
             self::BUBBLE_WRAPPING,
             self::TAPING,
@@ -64,7 +60,6 @@ class PrepInstruction {
             self::SUFFOCATION_STICKERING,
             self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
-            self::CAP_SEALING,
         ];
     }
 
@@ -85,3 +80,5 @@ class PrepInstruction {
         return $this->value;
     }
 }
+
+

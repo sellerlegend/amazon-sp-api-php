@@ -1,35 +1,31 @@
 <?php
 /**
- * ShipmentStatus.
+ * ShipmentStatus
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+
 /**
- * ShipmentStatus Class Doc Comment.
+ * ShipmentStatus Class Doc Comment
  *
+ * @category Class
  * @description Indicates the status of the inbound shipment. When used with the createInboundShipment operation, WORKING is the only valid value. When used with the updateInboundShipment operation, possible values are WORKING, SHIPPED or CANCELLED.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
  */
 class ShipmentStatus {
-
     public $value;
 
     /**
-     * Possible values of this enum.
+     * Possible values of this enum
      */
     const WORKING = 'WORKING';
     const SHIPPED = 'SHIPPED';
@@ -46,8 +42,7 @@ class ShipmentStatus {
     const ABANDONED = 'ABANDONED';
 
     /**
-     * Gets allowable values of the enum.
-     *
+     * Gets allowable values of the enum
      * @return string[]
      */
     public static function getAllowableEnumValues() {
@@ -85,3 +80,5 @@ class ShipmentStatus {
         return $this->value;
     }
 }
+
+

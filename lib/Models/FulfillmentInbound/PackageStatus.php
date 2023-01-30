@@ -1,35 +1,35 @@
 <?php
 /**
- * PackageStatus.
+ * PackageStatus
  *
- * PHP version 5
+ * PHP version 7.3
  *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Fulfillment Inbound.
- *
- * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
- *
- * OpenAPI spec version: v0
+ * @category Class
+ * @package  SellingPartnerApi
  */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\FulfillmentInbound;
 
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
+
 /**
- * PackageStatus Class Doc Comment.
+ * PackageStatus Class Doc Comment
  *
+ * @category Class
  * @description The shipment status of the package.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellingPartnerApi
+ * @group
  */
 class PackageStatus {
+    public $value;
+
     /**
-     * Possible values of this enum.
+     * Possible values of this enum
      */
     const SHIPPED = 'SHIPPED';
     const IN_TRANSIT = 'IN_TRANSIT';
+    const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
     const DELIVERED = 'DELIVERED';
     const CHECKED_IN = 'CHECKED_IN';
     const RECEIVING = 'RECEIVING';
@@ -37,18 +37,38 @@ class PackageStatus {
     const DELETED = 'DELETED';
 
     /**
-     * Gets allowable values of the enum.
-     *
+     * Gets allowable values of the enum
      * @return string[]
      */
     public static function getAllowableEnumValues() {
         return [
             self::SHIPPED,
             self::IN_TRANSIT,
+            self::OUT_FOR_DELIVERY,
             self::DELIVERED,
             self::CHECKED_IN,
             self::RECEIVING,
             self::CLOSED,
-            self::DELETED,];
+            self::DELETED,
+        ];
+    }
+
+    public function __construct($value) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PackageStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString() {
+        return $this->value;
     }
 }
+
+
