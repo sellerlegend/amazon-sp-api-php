@@ -2,6 +2,7 @@
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Helpers;
 
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Query;
@@ -10,6 +11,7 @@ use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Utils;
 use RuntimeException;
 use SellerLegend\AmazonSellingPartnerAPI\ApiException;
+use SellerLegend\AmazonSellingPartnerAPI\LimitException;
 use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use SellerLegend\AmazonSellingPartnerAPI\Signature;
 use stdClass;
@@ -98,6 +100,8 @@ trait SellingPartnerApiRequest {
 
     /**
      * @throws ApiException
+     * @throws LimitException
+     * @throws GuzzleException
      */
     private function sendRequest(Request $request, string $returnType): array {
         try {
@@ -105,7 +109,11 @@ trait SellingPartnerApiRequest {
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
+                if ($e->getCode() == '429') {
+                    throw new LimitException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
+                } else {
+                    throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
+                }
             }
             $statusCode = $response->getStatusCode();
 
@@ -122,8 +130,6 @@ trait SellingPartnerApiRequest {
                     $content = json_decode($content);
                 }
             }
-//            var_dump($content);
-//            exit();
 
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
