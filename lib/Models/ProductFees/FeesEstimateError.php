@@ -1,35 +1,24 @@
 <?php
-/**
- * FeesEstimateError.
- *
- * PHP version 5
- *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Product Fees.
- *
- * The Selling Partner API for Product Fees lets you programmatically retrieve estimated fees for a product. You can then account for those fees in your pricing.
- *
- * OpenAPI spec version: v0
- */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * FeesEstimateError Class Doc Comment.
+ * FeesEstimateError Class Doc Comment
  *
+ * @category Class
  * @description An unexpected error occurred during this operation.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellerLegend\AmazonSellingPartnerAPI
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class FeesEstimateError implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,7 +28,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'FeesEstimateError';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
@@ -47,21 +36,25 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
         'type'    => 'string',
         'code'    => 'string',
         'message' => 'string',
-        'detail'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateErrorDetail',];
+        'detail'  => 'object[]'
+    ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
         'type'    => null,
         'code'    => null,
         'message' => null,
-        'detail'  => null,];
+        'detail'  => null
+    ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -70,7 +63,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -80,7 +73,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
@@ -88,10 +81,11 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
         'type'    => 'Type',
         'code'    => 'Code',
         'message' => 'Message',
-        'detail'  => 'Detail',];
+        'detail'  => 'Detail'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
@@ -99,10 +93,11 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
         'type'    => 'setType',
         'code'    => 'setCode',
         'message' => 'setMessage',
-        'detail'  => 'setDetail',];
+        'detail'  => 'setDetail'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
@@ -110,11 +105,12 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
         'type'    => 'getType',
         'code'    => 'getCode',
         'message' => 'getMessage',
-        'detail'  => 'getDetail',];
+        'detail'  => 'getDetail'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -123,7 +119,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -132,7 +128,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -150,23 +146,23 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['detail'] = isset($data['detail']) ? $data['detail'] : null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['detail'] = $data['detail'] ?? null;
     }
 
     /**
@@ -176,35 +172,34 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
-        if (null === $this->container['type']) {
+        if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
-        if (null === $this->container['code']) {
+        if ($this->container['code'] === null) {
             $invalidProperties[] = "'code' can't be null";
         }
-        if (null === $this->container['message']) {
+        if ($this->container['message'] === null) {
             $invalidProperties[] = "'message' can't be null";
         }
-        if (null === $this->container['detail']) {
+        if ($this->container['detail'] === null) {
             $invalidProperties[] = "'detail' can't be null";
         }
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets type.
+     * Gets type
      *
      * @return string
      */
@@ -213,11 +208,11 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets type.
+     * Sets type
      *
-     * @param string $type an error type, identifying either the receiver or the sender as the originator of the error
+     * @param string $type An error type, identifying either the receiver or the sender as the originator of the error.
      *
-     * @return $this
+     * @return self
      */
     public function setType($type) {
         $this->container['type'] = $type;
@@ -226,7 +221,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets code.
+     * Gets code
      *
      * @return string
      */
@@ -235,11 +230,11 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets code.
+     * Sets code
      *
-     * @param string $code an error code that identifies the type of error that occurred
+     * @param string $code An error code that identifies the type of error that occurred.
      *
-     * @return $this
+     * @return self
      */
     public function setCode($code) {
         $this->container['code'] = $code;
@@ -248,7 +243,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets message.
+     * Gets message
      *
      * @return string
      */
@@ -257,11 +252,11 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Sets message.
+     * Sets message
      *
-     * @param string $message a message that describes the error condition in a human-readable form
+     * @param string $message A message that describes the error condition.
      *
-     * @return $this
+     * @return self
      */
     public function setMessage($message) {
         $this->container['message'] = $message;
@@ -270,20 +265,20 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets detail.
+     * Gets detail
      *
-     * @return FeesEstimateErrorDetail
+     * @return object[]
      */
     public function getDetail() {
         return $this->container['detail'];
     }
 
     /**
-     * Sets detail.
+     * Sets detail
      *
-     * @param FeesEstimateErrorDetail $detail detail
+     * @param object[] $detail Additional information that can help the caller understand or fix the issue.
      *
-     * @return $this
+     * @return self
      */
     public function setDetail($detail) {
         $this->container['detail'] = $detail;
@@ -294,10 +289,11 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -305,22 +301,24 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -332,27 +330,91 @@ class FeesEstimateError implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateError
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

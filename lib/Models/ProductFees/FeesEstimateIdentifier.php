@@ -1,35 +1,24 @@
 <?php
-/**
- * FeesEstimateIdentifier.
- *
- * PHP version 5
- *
- * @author   Stefan Neuhaus / ClouSale
- */
-
-/**
- * Selling Partner API for Product Fees.
- *
- * The Selling Partner API for Product Fees lets you programmatically retrieve estimated fees for a product. You can then account for those fees in your pricing.
- *
- * OpenAPI spec version: v0
- */
 
 namespace SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees;
 
-use ArrayAccess;
-use SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
-use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \ArrayAccess;
+use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
+use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * FeesEstimateIdentifier Class Doc Comment.
+ * FeesEstimateIdentifier Class Doc Comment
  *
+ * @category Class
  * @description An item identifier, marketplace, time of request, and other details that identify an estimate.
- *
- * @author   Stefan Neuhaus / ClouSale
+ * @package  SellerLegend\AmazonSellingPartnerAPI
+ * @group
+ * @implements \ArrayAccess<TKey, TValue>
+ * @template TKey int|null
+ * @template TValue mixed|null
  */
-class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
-    const DISCRIMINATOR = null;
+class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -39,35 +28,41 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     protected static $swaggerModelName = 'FeesEstimateIdentifier';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'marketplace_id'          => 'string',
-        'seller_id'               => 'string',
-        'id_type'                 => 'string',
-        'id_value'                => 'string',
-        'is_amazon_fulfilled'     => 'bool',
-        'price_to_estimate_fees'  => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees',
-        'seller_input_identifier' => 'string',];
+        'marketplace_id'               => 'string',
+        'seller_id'                    => 'string',
+        'id_type'                      => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IdType',
+        'id_value'                     => 'string',
+        'is_amazon_fulfilled'          => 'bool',
+        'price_to_estimate_fees'       => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees',
+        'seller_input_identifier'      => 'string',
+        'optional_fulfillment_program' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\OptionalFulfillmentProgram'
+    ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'marketplace_id'          => null,
-        'seller_id'               => null,
-        'id_type'                 => null,
-        'id_value'                => null,
-        'is_amazon_fulfilled'     => null,
-        'price_to_estimate_fees'  => null,
-        'seller_input_identifier' => null,];
+        'marketplace_id'               => null,
+        'seller_id'                    => null,
+        'id_type'                      => null,
+        'id_value'                     => null,
+        'is_amazon_fulfilled'          => null,
+        'price_to_estimate_fees'       => null,
+        'seller_input_identifier'      => null,
+        'optional_fulfillment_program' => null
+    ];
 
     /**
-     * Array of property to type mappings. Used for (de)serialization.
+     * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -76,7 +71,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of property to format mappings. Used for (de)serialization.
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -86,50 +81,56 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplace_id'          => 'MarketplaceId',
-        'seller_id'               => 'SellerId',
-        'id_type'                 => 'IdType',
-        'id_value'                => 'IdValue',
-        'is_amazon_fulfilled'     => 'IsAmazonFulfilled',
-        'price_to_estimate_fees'  => 'PriceToEstimateFees',
-        'seller_input_identifier' => 'SellerInputIdentifier',];
+        'marketplace_id'               => 'MarketplaceId',
+        'seller_id'                    => 'SellerId',
+        'id_type'                      => 'IdType',
+        'id_value'                     => 'IdValue',
+        'is_amazon_fulfilled'          => 'IsAmazonFulfilled',
+        'price_to_estimate_fees'       => 'PriceToEstimateFees',
+        'seller_input_identifier'      => 'SellerInputIdentifier',
+        'optional_fulfillment_program' => 'OptionalFulfillmentProgram'
+    ];
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id'          => 'setMarketplaceId',
-        'seller_id'               => 'setSellerId',
-        'id_type'                 => 'setIdType',
-        'id_value'                => 'setIdValue',
-        'is_amazon_fulfilled'     => 'setIsAmazonFulfilled',
-        'price_to_estimate_fees'  => 'setPriceToEstimateFees',
-        'seller_input_identifier' => 'setSellerInputIdentifier',];
+        'marketplace_id'               => 'setMarketplaceId',
+        'seller_id'                    => 'setSellerId',
+        'id_type'                      => 'setIdType',
+        'id_value'                     => 'setIdValue',
+        'is_amazon_fulfilled'          => 'setIsAmazonFulfilled',
+        'price_to_estimate_fees'       => 'setPriceToEstimateFees',
+        'seller_input_identifier'      => 'setSellerInputIdentifier',
+        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram'
+    ];
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
     protected static $getters = [
-        'marketplace_id'          => 'getMarketplaceId',
-        'seller_id'               => 'getSellerId',
-        'id_type'                 => 'getIdType',
-        'id_value'                => 'getIdValue',
-        'is_amazon_fulfilled'     => 'getIsAmazonFulfilled',
-        'price_to_estimate_fees'  => 'getPriceToEstimateFees',
-        'seller_input_identifier' => 'getSellerInputIdentifier',];
+        'marketplace_id'               => 'getMarketplaceId',
+        'seller_id'                    => 'getSellerId',
+        'id_type'                      => 'getIdType',
+        'id_value'                     => 'getIdValue',
+        'is_amazon_fulfilled'          => 'getIsAmazonFulfilled',
+        'price_to_estimate_fees'       => 'getPriceToEstimateFees',
+        'seller_input_identifier'      => 'getSellerInputIdentifier',
+        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram'
+    ];
 
     /**
      * Array of attributes where the key is the local name,
-     * and the value is the original name.
+     * and the value is the original name
      *
      * @return array
      */
@@ -138,7 +139,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to setter functions (for deserialization of responses).
+     * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
@@ -147,7 +148,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Array of attributes to getter functions (for serialization of requests).
+     * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
@@ -165,26 +166,27 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Associative array for storing property values.
+     * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
-        $this->container['seller_id'] = isset($data['seller_id']) ? $data['seller_id'] : null;
-        $this->container['id_type'] = isset($data['id_type']) ? $data['id_type'] : null;
-        $this->container['id_value'] = isset($data['id_value']) ? $data['id_value'] : null;
-        $this->container['is_amazon_fulfilled'] = isset($data['is_amazon_fulfilled']) ? $data['is_amazon_fulfilled'] : null;
-        $this->container['price_to_estimate_fees'] = isset($data['price_to_estimate_fees']) ? $data['price_to_estimate_fees'] : null;
-        $this->container['seller_input_identifier'] = isset($data['seller_input_identifier']) ? $data['seller_input_identifier'] : null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
+        $this->container['id_type'] = $data['id_type'] ?? null;
+        $this->container['id_value'] = $data['id_value'] ?? null;
+        $this->container['is_amazon_fulfilled'] = $data['is_amazon_fulfilled'] ?? null;
+        $this->container['price_to_estimate_fees'] = $data['price_to_estimate_fees'] ?? null;
+        $this->container['seller_input_identifier'] = $data['seller_input_identifier'] ?? null;
+        $this->container['optional_fulfillment_program'] = $data['optional_fulfillment_program'] ?? null;
     }
 
     /**
@@ -194,35 +196,35 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
 
     /**
      * Validate all the properties in the model
-     * return true if all passed.
+     * return true if all passed
      *
      * @return bool True if all properties are valid
      */
     public function valid() {
-        return 0 === count($this->listInvalidProperties());
+        return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets marketplace_id.
+     * Gets marketplace_id
      *
-     * @return string
+     * @return string|null
      */
     public function getMarketplaceId() {
         return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets marketplace_id.
+     * Sets marketplace_id
      *
-     * @param string $marketplace_id a marketplace identifier
+     * @param string|null $marketplace_id A marketplace identifier.
      *
-     * @return $this
+     * @return self
      */
     public function setMarketplaceId($marketplace_id) {
         $this->container['marketplace_id'] = $marketplace_id;
@@ -231,20 +233,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets seller_id.
+     * Gets seller_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSellerId() {
         return $this->container['seller_id'];
     }
 
     /**
-     * Sets seller_id.
+     * Sets seller_id
      *
-     * @param string $seller_id the seller identifier
+     * @param string|null $seller_id The seller identifier.
      *
-     * @return $this
+     * @return self
      */
     public function setSellerId($seller_id) {
         $this->container['seller_id'] = $seller_id;
@@ -253,20 +255,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets id_type.
+     * Gets id_type
      *
-     * @return string
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IdType|null
      */
     public function getIdType() {
         return $this->container['id_type'];
     }
 
     /**
-     * Sets id_type.
+     * Sets id_type
      *
-     * @param string $id_type the type of item identifier specified
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IdType|null $id_type id_type
      *
-     * @return $this
+     * @return self
      */
     public function setIdType($id_type) {
         $this->container['id_type'] = $id_type;
@@ -275,20 +277,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets id_value.
+     * Gets id_value
      *
-     * @return string
+     * @return string|null
      */
     public function getIdValue() {
         return $this->container['id_value'];
     }
 
     /**
-     * Sets id_value.
+     * Sets id_value
      *
-     * @param string $id_value the item identifier
+     * @param string|null $id_value The item identifier.
      *
-     * @return $this
+     * @return self
      */
     public function setIdValue($id_value) {
         $this->container['id_value'] = $id_value;
@@ -297,20 +299,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets is_amazon_fulfilled.
+     * Gets is_amazon_fulfilled
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsAmazonFulfilled() {
         return $this->container['is_amazon_fulfilled'];
     }
 
     /**
-     * Sets is_amazon_fulfilled.
+     * Sets is_amazon_fulfilled
      *
-     * @param bool $is_amazon_fulfilled when true, the offer is fulfilled by Amazon
+     * @param bool|null $is_amazon_fulfilled When true, the offer is fulfilled by Amazon.
      *
-     * @return $this
+     * @return self
      */
     public function setIsAmazonFulfilled($is_amazon_fulfilled) {
         $this->container['is_amazon_fulfilled'] = $is_amazon_fulfilled;
@@ -319,20 +321,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets price_to_estimate_fees.
+     * Gets price_to_estimate_fees
      *
-     * @return PriceToEstimateFees
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees|null
      */
     public function getPriceToEstimateFees() {
         return $this->container['price_to_estimate_fees'];
     }
 
     /**
-     * Sets price_to_estimate_fees.
+     * Sets price_to_estimate_fees
      *
-     * @param PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\PriceToEstimateFees|null $price_to_estimate_fees price_to_estimate_fees
      *
-     * @return $this
+     * @return self
      */
     public function setPriceToEstimateFees($price_to_estimate_fees) {
         $this->container['price_to_estimate_fees'] = $price_to_estimate_fees;
@@ -341,20 +343,20 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
-     * Gets seller_input_identifier.
+     * Gets seller_input_identifier
      *
-     * @return string
+     * @return string|null
      */
     public function getSellerInputIdentifier() {
         return $this->container['seller_input_identifier'];
     }
 
     /**
-     * Sets seller_input_identifier.
+     * Sets seller_input_identifier
      *
-     * @param string $seller_input_identifier a unique identifier provided by the caller to track this request
+     * @param string|null $seller_input_identifier A unique identifier provided by the caller to track this request.
      *
-     * @return $this
+     * @return self
      */
     public function setSellerInputIdentifier($seller_input_identifier) {
         $this->container['seller_input_identifier'] = $seller_input_identifier;
@@ -363,12 +365,35 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     }
 
     /**
+     * Gets optional_fulfillment_program
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\OptionalFulfillmentProgram|null
+     */
+    public function getOptionalFulfillmentProgram() {
+        return $this->container['optional_fulfillment_program'];
+    }
+
+    /**
+     * Sets optional_fulfillment_program
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\OptionalFulfillmentProgram|null $optional_fulfillment_program optional_fulfillment_program
+     *
+     * @return self
+     */
+    public function setOptionalFulfillmentProgram($optional_fulfillment_program) {
+        $this->container['optional_fulfillment_program'] = $optional_fulfillment_program;
+
+        return $this;
+    }
+
+    /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isset($this->container[$offset]);
     }
@@ -376,22 +401,24 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return mixed
+     * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param int|null $offset Offset
      * @param mixed $value Value to be set
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -403,27 +430,91 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess {
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         unset($this->container[$offset]);
     }
 
     /**
-     * Gets the string presentation of the object.
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
      *
      * @return string
      */
     public function __toString() {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT
+        );
+    }
 
+    /**
+     * Gets a header-safe presentation of the object
+     *
+     * @return string
+     */
+    public function toHeaderValue() {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName) {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateIdentifier
+     */
+    public function __set($propertyName, $propertyValue) {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
+    }
 }
+
+

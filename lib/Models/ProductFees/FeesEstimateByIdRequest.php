@@ -7,17 +7,17 @@ use \SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use \SellerLegend\AmazonSellingPartnerAPI\Models\ModelInterface;
 
 /**
- * IncludedFeeDetail Class Doc Comment
+ * FeesEstimateByIdRequest Class Doc Comment
  *
  * @category Class
- * @description The type of fee, fee amount, and other details.
+ * @description A product, marketplace, and proposed price used to request estimated fees.
  * @package  SellerLegend\AmazonSellingPartnerAPI
  * @group
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
+class FeesEstimateByIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate {
     public const DISCRIMINATOR = null;
 
     /**
@@ -25,7 +25,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string
      */
-    protected static $swaggerModelName = 'IncludedFeeDetail';
+    protected static $swaggerModelName = 'FeesEstimateByIdRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -33,11 +33,9 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'fee_type'      => 'string',
-        'fee_amount'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
-        'fee_promotion' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
-        'tax_amount'    => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType',
-        'final_fee'     => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType'
+        'fees_estimate_request' => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateRequest',
+        'id_type'               => '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IdType',
+        'id_value'              => 'string'
     ];
 
     /**
@@ -48,11 +46,9 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @psalm-var array<string, string|null>
      */
     protected static $swaggerFormats = [
-        'fee_type'      => null,
-        'fee_amount'    => null,
-        'fee_promotion' => null,
-        'tax_amount'    => null,
-        'final_fee'     => null
+        'fees_estimate_request' => null,
+        'id_type'               => null,
+        'id_value'              => null
     ];
 
     /**
@@ -80,11 +76,9 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'fee_type'      => 'FeeType',
-        'fee_amount'    => 'FeeAmount',
-        'fee_promotion' => 'FeePromotion',
-        'tax_amount'    => 'TaxAmount',
-        'final_fee'     => 'FinalFee'
+        'fees_estimate_request' => 'FeesEstimateRequest',
+        'id_type'               => 'IdType',
+        'id_value'              => 'IdValue'
     ];
 
     /**
@@ -93,11 +87,9 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'fee_type'      => 'setFeeType',
-        'fee_amount'    => 'setFeeAmount',
-        'fee_promotion' => 'setFeePromotion',
-        'tax_amount'    => 'setTaxAmount',
-        'final_fee'     => 'setFinalFee'
+        'fees_estimate_request' => 'setFeesEstimateRequest',
+        'id_type'               => 'setIdType',
+        'id_value'              => 'setIdValue'
     ];
 
     /**
@@ -106,11 +98,9 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'fee_type'      => 'getFeeType',
-        'fee_amount'    => 'getFeeAmount',
-        'fee_promotion' => 'getFeePromotion',
-        'tax_amount'    => 'getTaxAmount',
-        'final_fee'     => 'getFinalFee'
+        'fees_estimate_request' => 'getFeesEstimateRequest',
+        'id_type'               => 'getIdType',
+        'id_value'              => 'getIdValue'
     ];
 
     /**
@@ -164,11 +154,9 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      *                      initializing the model
      */
     public function __construct(array $data = null) {
-        $this->container['fee_type'] = $data['fee_type'] ?? null;
-        $this->container['fee_amount'] = $data['fee_amount'] ?? null;
-        $this->container['fee_promotion'] = $data['fee_promotion'] ?? null;
-        $this->container['tax_amount'] = $data['tax_amount'] ?? null;
-        $this->container['final_fee'] = $data['final_fee'] ?? null;
+        $this->container['fees_estimate_request'] = $data['fees_estimate_request'] ?? null;
+        $this->container['id_type'] = $data['id_type'] ?? null;
+        $this->container['id_value'] = $data['id_value'] ?? null;
     }
 
     /**
@@ -178,14 +166,11 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function listInvalidProperties() {
         $invalidProperties = [];
-        if ($this->container['fee_type'] === null) {
-            $invalidProperties[] = "'fee_type' can't be null";
+        if ($this->container['id_type'] === null) {
+            $invalidProperties[] = "'id_type' can't be null";
         }
-        if ($this->container['fee_amount'] === null) {
-            $invalidProperties[] = "'fee_amount' can't be null";
-        }
-        if ($this->container['final_fee'] === null) {
-            $invalidProperties[] = "'final_fee' can't be null";
+        if ($this->container['id_value'] === null) {
+            $invalidProperties[] = "'id_value' can't be null";
         }
         return $invalidProperties;
     }
@@ -202,111 +187,67 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets fee_type
+     * Gets fees_estimate_request
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateRequest|null
+     */
+    public function getFeesEstimateRequest() {
+        return $this->container['fees_estimate_request'];
+    }
+
+    /**
+     * Sets fees_estimate_request
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateRequest|null $fees_estimate_request fees_estimate_request
+     *
+     * @return self
+     */
+    public function setFeesEstimateRequest($fees_estimate_request) {
+        $this->container['fees_estimate_request'] = $fees_estimate_request;
+
+        return $this;
+    }
+
+    /**
+     * Gets id_type
+     *
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IdType
+     */
+    public function getIdType() {
+        return $this->container['id_type'];
+    }
+
+    /**
+     * Sets id_type
+     *
+     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IdType $id_type id_type
+     *
+     * @return self
+     */
+    public function setIdType($id_type) {
+        $this->container['id_type'] = $id_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets id_value
      *
      * @return string
      */
-    public function getFeeType() {
-        return $this->container['fee_type'];
+    public function getIdValue() {
+        return $this->container['id_value'];
     }
 
     /**
-     * Sets fee_type
+     * Sets id_value
      *
-     * @param string $fee_type The type of fee charged to a seller.
+     * @param string $id_value The item identifier.
      *
      * @return self
      */
-    public function setFeeType($fee_type) {
-        $this->container['fee_type'] = $fee_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets fee_amount
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType
-     */
-    public function getFeeAmount() {
-        return $this->container['fee_amount'];
-    }
-
-    /**
-     * Sets fee_amount
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType $fee_amount fee_amount
-     *
-     * @return self
-     */
-    public function setFeeAmount($fee_amount) {
-        $this->container['fee_amount'] = $fee_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets fee_promotion
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType|null
-     */
-    public function getFeePromotion() {
-        return $this->container['fee_promotion'];
-    }
-
-    /**
-     * Sets fee_promotion
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType|null $fee_promotion fee_promotion
-     *
-     * @return self
-     */
-    public function setFeePromotion($fee_promotion) {
-        $this->container['fee_promotion'] = $fee_promotion;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_amount
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType|null
-     */
-    public function getTaxAmount() {
-        return $this->container['tax_amount'];
-    }
-
-    /**
-     * Sets tax_amount
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType|null $tax_amount tax_amount
-     *
-     * @return self
-     */
-    public function setTaxAmount($tax_amount) {
-        $this->container['tax_amount'] = $tax_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets final_fee
-     *
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType
-     */
-    public function getFinalFee() {
-        return $this->container['final_fee'];
-    }
-
-    /**
-     * Sets final_fee
-     *
-     * @param \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\MoneyType $final_fee final_fee
-     *
-     * @return self
-     */
-    public function setFinalFee($final_fee) {
-        $this->container['final_fee'] = $final_fee;
+    public function setIdValue($id_value) {
+        $this->container['id_value'] = $id_value;
 
         return $this;
     }
@@ -432,7 +373,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\IncludedFeeDetail
+     * @return \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateByIdRequest
      */
     public function __set($propertyName, $propertyValue) {
         $ucProp = ucfirst($propertyName);

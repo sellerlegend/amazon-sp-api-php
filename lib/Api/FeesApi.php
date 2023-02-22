@@ -17,21 +17,25 @@ namespace SellerLegend\AmazonSellingPartnerAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Psr7\Request;
 use InvalidArgumentException;
+use SellerLegend\AmazonSellingPartnerAPI\Api\any;
 use SellerLegend\AmazonSellingPartnerAPI\ApiException;
 use SellerLegend\AmazonSellingPartnerAPI\Configuration;
 use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
 use SellerLegend\AmazonSellingPartnerAPI\Helpers\SellingPartnerApiRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateByIdRequest;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateResult;
 use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateRequest;
 use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateResponse;
 use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
- * FeesApi Class Doc Comment.
+ * FeesApi Class Doc Comment
  *
- * @author   Stefan Neuhaus / ClouSale
+ * @category Class
+ * @package  SellerLegend\AmazonSellingPartnerAPI
  */
 class FeesApi {
     use SellingPartnerApiRequest;
@@ -65,51 +69,50 @@ class FeesApi {
     }
 
     /**
-     * Operation getMyFeesEstimateForASIN.
+     * Operation getMyFeesEstimateForASIN
      *
-     * @param GetMyFeesEstimateRequest $body body (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param GetMyFeesEstimateRequest $body body (required)
      *
      * @return GetMyFeesEstimateResponse
-     * @throws ApiException on non-2xx response
-     *
      * @throws InvalidArgumentException
+     * @throws ApiException on non-2xx response
      */
-    public function getMyFeesEstimateForASIN($body, $asin) {
-        [$response] = $this->getMyFeesEstimateForASINWithHttpInfo($body, $asin);
+    public function getMyFeesEstimateForASIN($asin, $body) {
+        [$response] = $this->getMyFeesEstimateForASINWithHttpInfo($asin, $body);
 
         return $response;
     }
 
     /**
-     * Operation getMyFeesEstimateForASINWithHttpInfo.
+     * Operation getMyFeesEstimateForASINWithHttpInfo
      *
-     * @param GetMyFeesEstimateRequest $body (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param GetMyFeesEstimateRequest $body (required)
      *
      * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws ApiException on non-2xx response
-     *
      * @throws InvalidArgumentException
+     * @throws ApiException on non-2xx response
      */
-    public function getMyFeesEstimateForASINWithHttpInfo($body, $asin) {
-        $request = $this->getMyFeesEstimateForASINRequest($body, $asin);
+    public function getMyFeesEstimateForASINWithHttpInfo($asin, $body) {
+        $request = $this->getMyFeesEstimateForASINRequest($asin, $body);
 
         return $this->sendRequest($request, GetMyFeesEstimateResponse::class);
     }
 
     /**
-     * Operation getMyFeesEstimateForASINAsync.
+     * Operation getMyFeesEstimateForASINAsync
      *
-     * @param GetMyFeesEstimateRequest $body (required)
+     *
+     *
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param GetMyFeesEstimateRequest $body (required)
      *
      * @return PromiseInterface
      * @throws InvalidArgumentException
-     *
      */
-    public function getMyFeesEstimateForASINAsync($body, $asin) {
-        return $this->getMyFeesEstimateForASINAsyncWithHttpInfo($body, $asin)
+    public function getMyFeesEstimateForASINAsync($asin, $body) {
+        return $this->getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,46 +121,50 @@ class FeesApi {
     }
 
     /**
-     * Operation getMyFeesEstimateForASINAsyncWithHttpInfo.
+     * Operation getMyFeesEstimateForASINAsyncWithHttpInfo
      *
-     * @param GetMyFeesEstimateRequest $body (required)
+     *
+     *
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param GetMyFeesEstimateRequest $body (required)
      *
      * @return PromiseInterface
      * @throws InvalidArgumentException
-     *
      */
-    public function getMyFeesEstimateForASINAsyncWithHttpInfo($body, $asin) {
-        $request = $this->getMyFeesEstimateForASINRequest($body, $asin);
+    public function getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body) {
+        $request = $this->getMyFeesEstimateForASINRequest($asin, $body);
 
         return $this->sendRequestAsync($request, GetMyFeesEstimateResponse::class);
     }
 
     /**
-     * Create request for operation 'getMyFeesEstimateForASIN'.
+     * Create request for operation 'getMyFeesEstimateForASIN'
      *
-     * @param GetMyFeesEstimateRequest $body (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param GetMyFeesEstimateRequest $body (required)
      *
-     * @return Request
+     * @return \GuzzleHttp\Psr7\Request
      * @throws InvalidArgumentException
-     *
      */
-    protected function getMyFeesEstimateForASINRequest($body, $asin) {
-        // verify the required parameter 'body' is set
-        if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new InvalidArgumentException('Missing the required parameter $body when calling getMyFeesEstimateForASIN');
-        }
+    public function getMyFeesEstimateForASINRequest($asin, $body) {
         // verify the required parameter 'asin' is set
-        if (null === $asin || (is_array($asin) && 0 === count($asin))) {
-            throw new InvalidArgumentException('Missing the required parameter $asin when calling getMyFeesEstimateForASIN');
+        if ($asin === null || (is_array($asin) && count($asin) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $asin when calling getMyFeesEstimateForASIN'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling getMyFeesEstimateForASIN'
+            );
         }
 
         $resourcePath = '/products/fees/v0/items/{Asin}/feesEstimate';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = $body;
+        $httpBody = '';
         $multipart = false;
 
         // path params
@@ -173,51 +180,49 @@ class FeesApi {
     }
 
     /**
-     * Operation getMyFeesEstimateForSKU.
+     * Operation getMyFeesEstimateForSKU
      *
+     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param GetMyFeesEstimateRequest $body body (required)
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @return GetMyFeesEstimateResponse
      * @throws ApiException on non-2xx response
-     *
      * @throws InvalidArgumentException
+     * @return GetMyFeesEstimateResponse
      */
-    public function getMyFeesEstimateForSKU($body, $seller_sku) {
-        [$response] = $this->getMyFeesEstimateForSKUWithHttpInfo($body, $seller_sku);
-
+    public function getMyFeesEstimateForSKU($seller_sku, $body) {
+        [$response] = $this->getMyFeesEstimateForSKUWithHttpInfo($seller_sku, $body);
         return $response;
     }
 
     /**
-     * Operation getMyFeesEstimateForSKUWithHttpInfo.
+     * Operation getMyFeesEstimateForSKUWithHttpInfo
      *
+     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param GetMyFeesEstimateRequest $body (required)
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws ApiException on non-2xx response
-     *
      * @throws InvalidArgumentException
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMyFeesEstimateForSKUWithHttpInfo($body, $seller_sku) {
-        $request = $this->getMyFeesEstimateForSKURequest($body, $seller_sku);
+    public function getMyFeesEstimateForSKUWithHttpInfo($seller_sku, $body) {
+        $request = $this->getMyFeesEstimateForSKURequest($seller_sku, $body);
 
         return $this->sendRequest($request, GetMyFeesEstimateResponse::class);
     }
 
     /**
-     * Operation getMyFeesEstimateForSKUAsync.
+     * Operation getMyFeesEstimateForSKUAsync
      *
+     *
+     *
+     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param GetMyFeesEstimateRequest $body (required)
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @return PromiseInterface
      * @throws InvalidArgumentException
-     *
+     * @return PromiseInterface
      */
-    public function getMyFeesEstimateForSKUAsync($body, $seller_sku) {
-        return $this->getMyFeesEstimateForSKUAsyncWithHttpInfo($body, $seller_sku)
+    public function getMyFeesEstimateForSKUAsync($seller_sku, $body) {
+        return $this->getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -226,56 +231,153 @@ class FeesApi {
     }
 
     /**
-     * Operation getMyFeesEstimateForSKUAsyncWithHttpInfo.
+     * Operation getMyFeesEstimateForSKUAsyncWithHttpInfo
      *
+     *
+     *
+     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param GetMyFeesEstimateRequest $body (required)
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @return PromiseInterface
      * @throws InvalidArgumentException
-     *
+     * @return PromiseInterface
      */
-    public function getMyFeesEstimateForSKUAsyncWithHttpInfo($body, $seller_sku) {
-        $request = $this->getMyFeesEstimateForSKURequest($body, $seller_sku);
+    public function getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body) {
+        $request = $this->getMyFeesEstimateForSKURequest($seller_sku, $body);
 
         return $this->sendRequestAsync($request, GetMyFeesEstimateResponse::class);
     }
 
     /**
-     * Create request for operation 'getMyFeesEstimateForSKU'.
+     * Create request for operation 'getMyFeesEstimateForSKU'
      *
+     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param GetMyFeesEstimateRequest $body (required)
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#x27;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @return Request
      * @throws InvalidArgumentException
-     *
+     * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMyFeesEstimateForSKURequest($body, $seller_sku) {
-        // verify the required parameter 'body' is set
-        if (null === $body || (is_array($body) && 0 === count($body))) {
-            throw new InvalidArgumentException('Missing the required parameter $body when calling getMyFeesEstimateForSKU');
-        }
+    public function getMyFeesEstimateForSKURequest($seller_sku, $body) {
         // verify the required parameter 'seller_sku' is set
-        if (null === $seller_sku || (is_array($seller_sku) && 0 === count($seller_sku))) {
-            throw new InvalidArgumentException('Missing the required parameter $seller_sku when calling getMyFeesEstimateForSKU');
+        if ($seller_sku === null || (is_array($seller_sku) && count($seller_sku) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $seller_sku when calling getMyFeesEstimateForSKU'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling getMyFeesEstimateForSKU'
+            );
         }
 
         $resourcePath = '/products/fees/v0/listings/{SellerSKU}/feesEstimate';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = $body;
+        $httpBody = '';
         $multipart = false;
 
         // path params
-        if (null !== $seller_sku) {
+        if ($seller_sku !== null) {
             $resourcePath = str_replace(
                 '{' . 'SellerSKU' . '}',
                 ObjectSerializer::toPathValue($seller_sku),
                 $resourcePath
             );
         }
+
+        return $this->generateRequest($multipart, $formParams, $queryParams, $resourcePath, $headerParams, 'POST', $httpBody);
+    }
+
+    /**
+     * Operation getMyFeesEstimates
+     *
+     * @param FeesEstimateByIdRequest[] $body body (required)
+     *
+     * @return FeesEstimateResult[]
+     * @throws InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws GuzzleException
+     */
+    public function getMyFeesEstimates($body) {
+        [$response] = $this->getMyFeesEstimatesWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation getMyFeesEstimatesWithHttpInfo
+     *
+     * @param FeesEstimateByIdRequest[] $body (required)
+     *
+     * @return array of \SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateResult[], HTTP status code, HTTP response headers (array of strings)
+     * @throws InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws GuzzleException
+     */
+    public function getMyFeesEstimatesWithHttpInfo($body) {
+        $request = $this->getMyFeesEstimatesRequest($body);
+
+        return $this->sendRequest($request, FeesEstimateResult::class);
+    }
+
+    /**
+     * Operation getMyFeesEstimatesAsync
+     *
+     *
+     *
+     * @param FeesEstimateByIdRequest[] $body (required)
+     *
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
+     */
+    public function getMyFeesEstimatesAsync($body) {
+        return $this->getMyFeesEstimatesAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMyFeesEstimatesAsyncWithHttpInfo
+     *
+     *
+     *
+     * @param FeesEstimateByIdRequest[] $body (required)
+     *
+     * @return PromiseInterface
+     * @throws InvalidArgumentException
+     * @throws ApiException
+     */
+    public function getMyFeesEstimatesAsyncWithHttpInfo($body) {
+        $request = $this->getMyFeesEstimatesRequest($body);
+
+        return $this->sendRequestAsync($request, FeesEstimateResult::class);
+    }
+
+    /**
+     * Create request for operation 'getMyFeesEstimates'
+     *
+     * @param FeesEstimateByIdRequest[] $body (required)
+     *
+     * @return \GuzzleHttp\Psr7\Request
+     * @throws InvalidArgumentException
+     */
+    public function getMyFeesEstimatesRequest($body) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling getMyFeesEstimates'
+            );
+        }
+
+        $resourcePath = '/products/fees/v0/feesEstimate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = $body;
+        $multipart = false;
 
         return $this->generateRequest($multipart, $formParams, $queryParams, $resourcePath, $headerParams, 'POST', $httpBody);
     }
