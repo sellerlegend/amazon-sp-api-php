@@ -315,9 +315,11 @@ class FeesApi {
      * @throws GuzzleException
      */
     public function getMyFeesEstimatesWithHttpInfo($body) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateResult[]';
+
         $request = $this->getMyFeesEstimatesRequest($body);
 
-        return $this->sendRequest($request, FeesEstimateResult::class);
+        return $this->sendRequest($request, $returnType);
     }
 
     /**
@@ -351,9 +353,11 @@ class FeesApi {
      * @throws ApiException
      */
     public function getMyFeesEstimatesAsyncWithHttpInfo($body) {
+        $returnType = '\SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateResult[]';
+
         $request = $this->getMyFeesEstimatesRequest($body);
 
-        return $this->sendRequestAsync($request, FeesEstimateResult::class);
+        return $this->sendRequestAsync($request, $returnType);
     }
 
     /**

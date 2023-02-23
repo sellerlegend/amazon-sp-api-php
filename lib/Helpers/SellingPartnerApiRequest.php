@@ -54,8 +54,8 @@ trait SellingPartnerApiRequest {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
             // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof stdClass && 'application/json' === $headers['Content-Type']) {
-                $httpBody = Utils::jsonEncode($httpBody);
+            if ('application/json' === $headers['Content-Type']) {
+                $httpBody = Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
