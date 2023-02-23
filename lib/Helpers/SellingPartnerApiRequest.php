@@ -14,7 +14,6 @@ use SellerLegend\AmazonSellingPartnerAPI\ApiException;
 use SellerLegend\AmazonSellingPartnerAPI\LimitException;
 use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 use SellerLegend\AmazonSellingPartnerAPI\Signature;
-use stdClass;
 
 /**
  * Trait SellingPartnerApiRequest.
@@ -103,7 +102,7 @@ trait SellingPartnerApiRequest {
      * @throws LimitException
      * @throws GuzzleException
      */
-    private function sendRequest(Request $request, string $returnType): array {
+    private function sendRequest(Request $request, string $returnType, string $errorType = null): array {
         try {
             $options = $this->createHttpClientOption();
             try {
@@ -145,6 +144,13 @@ trait SellingPartnerApiRequest {
                 case 403:
                 case 401:
                 case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        $errorType ?: $returnType,
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),

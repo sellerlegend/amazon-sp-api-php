@@ -20,7 +20,6 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Promise\PromiseInterface;
 use InvalidArgumentException;
-use SellerLegend\AmazonSellingPartnerAPI\Api\any;
 use SellerLegend\AmazonSellingPartnerAPI\ApiException;
 use SellerLegend\AmazonSellingPartnerAPI\Configuration;
 use SellerLegend\AmazonSellingPartnerAPI\HeaderSelector;
@@ -29,6 +28,7 @@ use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateByIdRequ
 use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\FeesEstimateResult;
 use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateRequest;
 use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimateResponse;
+use SellerLegend\AmazonSellingPartnerAPI\Models\ProductFees\GetMyFeesEstimatesErrorList;
 use SellerLegend\AmazonSellingPartnerAPI\ObjectSerializer;
 
 /**
@@ -319,7 +319,7 @@ class FeesApi {
 
         $request = $this->getMyFeesEstimatesRequest($body);
 
-        return $this->sendRequest($request, $returnType);
+        return $this->sendRequest($request, $returnType, GetMyFeesEstimatesErrorList::class);
     }
 
     /**
