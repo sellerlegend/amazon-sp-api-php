@@ -102,7 +102,7 @@ trait SellingPartnerApiRequest {
      * @throws LimitException
      * @throws GuzzleException
      */
-    private function sendRequest(Request $request, string $returnType, string $errorType = null): array {
+    private function sendRequest(Request $request, string $returnType = null, string $errorType = null): array {
         try {
             $options = $this->createHttpClientOption();
             try {
@@ -114,17 +114,19 @@ trait SellingPartnerApiRequest {
                     throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
                 }
             }
+
             $statusCode = $response->getStatusCode();
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ('\SplFileObject' === $returnType) {
-                $content = $responseBody; //stream goes to serializer
+            if (null === $returnType) {
+                $content = null;
+            } elseif ('\SplFileObject' === $returnType) {
+                $content = $response->getBody(); //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = $response->getBody()->getContents();
                 if (!in_array($returnType, ['string', 'integer', 'bool'])) {
                     $content = json_decode($content);
                 }
@@ -188,13 +190,15 @@ trait SellingPartnerApiRequest {
      * @throws ApiException
      *
      */
-    private function sendRequestAsync(Request $request, string $returnType) {
+    private function sendRequestAsync(Request $request, string $returnType = null) {
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
-                    if ('\SplFileObject' === $returnType) {
+                    if (null === $returnType) {
+                        $content = null;
+                    } elseif ('\SplFileObject' === $returnType) {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
